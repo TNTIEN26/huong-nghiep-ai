@@ -1,0 +1,122 @@
+[
+  {
+    "code": "A00",
+    "ten": "Khối A00 (Toán - Lý - Hóa)",
+    "mon_thi": ["Toán", "Vật lý", "Hóa học"],
+    "phu_hop": ["Công nghệ", "Kỹ thuật", "Kinh tế", "Khoa học tự nhiên", "Y - Dược"]
+  },
+  {
+    "code": "A01",
+    "ten": "Khối A01 (Toán - Lý - Anh)",
+    "mon_thi": ["Toán", "Vật lý", "Tiếng Anh"],
+    "phu_hop": ["Công nghệ", "Kỹ thuật", "Kinh tế", "CNTT", "Hàng không"]
+  },
+  {
+    "code": "A02",
+    "ten": "Khối A02 (Toán - Lý - Sinh)",
+    "mon_thi": ["Toán", "Vật lý", "Sinh học"],
+    "phu_hop": ["Kỹ thuật", "Sinh học", "Y - Dược", "Nông nghiệp"]
+  },
+  {
+    "code": "A16",
+    "ten": "Khối A16 (Toán - KHTN - Anh)",
+    "mon_thi": ["Toán", "Khoa học tự nhiên", "Tiếng Anh"],
+    "phu_hop": ["Công nghệ", "Khoa học tự nhiên", "Kỹ thuật", "Y - Dược"]
+  },
+  {
+    "code": "B00",
+    "ten": "Khối B00 (Toán - Hóa - Sinh)",
+    "mon_thi": ["Toán", "Hóa học", "Sinh học"],
+    "phu_hop": ["Y - Dược", "Nông nghiệp", "Hóa học", "Sinh học", "Y tế"]
+  },
+  {
+    "code": "B01",
+    "ten": "Khối B01 (Toán - Sinh - Sử)",
+    "mon_thi": ["Toán", "Sinh học", "Lịch sử"],
+    "phu_hop": ["Y tế", "Nông nghiệp", "Xã hội"]
+  },
+  {
+    "code": "C00",
+    "ten": "Khối C00 (Văn - Sử - Địa)",
+    "mon_thi": ["Ngữ văn", "Lịch sử", "Địa lý"],
+    "phu_hop": ["Xã hội", "Luật", "Báo chí", "Sư phạm", "Du lịch"]
+  },
+  {
+    "code": "C03",
+    "ten": "Khối C03 (Văn - Toán - Sử)",
+    "mon_thi": ["Ngữ văn", "Toán", "Lịch sử"],
+    "phu_hop": ["Xã hội", "Sư phạm", "Quản lý"]
+  },
+  {
+    "code": "C04",
+    "ten": "Khối C04 (Văn - Toán - Địa)",
+    "mon_thi": ["Ngữ văn", "Toán", "Địa lý"],
+    "phu_hop": ["Xã hội", "Địa lý", "Du lịch", "Quản lý"]
+  },
+  {
+    "code": "C19",
+    "ten": "Khối C19 (Văn - Sử - GDCD)",
+    "mon_thi": ["Ngữ văn", "Lịch sử", "Giáo dục công dân"],
+    "phu_hop": ["Luật", "Công an - Quân đội", "Xã hội"]
+  },
+  {
+    "code": "C20",
+    "ten": "Khối C20 (Văn - Địa - GDCD)",
+    "mon_thi": ["Ngữ văn", "Địa lý", "Giáo dục công dân"],
+    "phu_hop": ["Luật", "Công an", "Xã hội", "Quản lý"]
+  },
+  {
+    "code": "D01",
+    "ten": "Khối D01 (Văn - Toán - Anh)",
+    "mon_thi": ["Ngữ văn", "Toán", "Tiếng Anh"],
+    "phu_hop": ["Kinh tế", "Ngoại ngữ", "Du lịch", "Truyền thông", "Quản trị"]
+  },
+  {
+    "code": "D07",
+    "ten": "Khối D07 (Toán - Hóa - Anh)",
+    "mon_thi": ["Toán", "Hóa học", "Tiếng Anh"],
+    "phu_hop": ["Công nghệ", "Y - Dược", "Kinh tế", "Hóa học"]
+  },
+  {
+    "code": "D08",
+    "ten": "Khối D08 (Toán - Sinh - Anh)",
+    "mon_thi": ["Toán", "Sinh học", "Tiếng Anh"],
+    "phu_hop": ["Y tế", "Sinh học", "Nông nghiệp"]
+  },
+  {
+    "code": "D10",
+    "ten": "Khối D10 (Toán - Địa - Anh)",
+    "mon_thi": ["Toán", "Địa lý", "Tiếng Anh"],
+    "phu_hop": ["Du lịch", "Kinh tế", "Địa lý"]
+  },
+  {
+    "code": "D14",
+    "ten": "Khối D14 (Văn - Sử - Anh)",
+    "mon_thi": ["Ngữ văn", "Lịch sử", "Tiếng Anh"],
+    "phu_hop": ["Ngoại ngữ", "Du lịch", "Xã hội", "Báo chí"]
+  },
+  {
+    "code": "D15",
+    "ten": "Khối D15 (Văn - Địa - Anh)",
+    "mon_thi": ["Ngữ văn", "Địa lý", "Tiếng Anh"],
+    "phu_hop": ["Du lịch", "Ngoại ngữ", "Xã hội"]
+  },
+  {
+    "code": "D66",
+    "ten": "Khối D66 (Văn - GDCD - Anh)",
+    "mon_thi": ["Ngữ văn", "Giáo dục công dân", "Tiếng Anh"],
+    "phu_hop": ["Luật", "Công an", "Xã hội", "Ngoại ngữ"]
+  },
+  {
+    "code": "V00",
+    "ten": "Khối V00 (Toán - Lý - Vẽ)",
+    "mon_thi": ["Toán", "Vật lý", "Vẽ mỹ thuật"],
+    "phu_hop": ["Kiến trúc", "Xây dựng", "Thiết kế"]
+  },
+  {
+    "code": "H00",
+    "ten": "Khối H00 (Văn - Vẽ)",
+    "mon_thi": ["Ngữ văn", "Vẽ mỹ thuật"],
+    "phu_hop": ["Mỹ thuật", "Thiết kế", "Kiến trúc"]
+  }
+]
