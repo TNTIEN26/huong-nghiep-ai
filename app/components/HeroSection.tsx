@@ -7,10 +7,6 @@ import SchoolCarousel from "./SchoolCarousel";
 
 type TinNhan = { tuAi: "bot" | "ban"; noiDung: string };
 
-const CAU_TRA_LOI_TAM =
-  "Cảm ơn bạn đã chia sẻ! Tính năng tư vấn đang được hoàn thiện, hãy quay lại sau nhé.";
-
-// TODO(chat): bạn phụ trách tính năng thay đoạn trả lời tạm bằng gọi API chat thật ở đây.
 export default function HeroSection() {
   const [moChat, setMoChat] = useState(false);
   const [nhap, setNhap] = useState("");
@@ -24,17 +20,39 @@ export default function HeroSection() {
     khungRef.current?.scrollTo({ top: khungRef.current.scrollHeight, behavior: "smooth" });
   }, [tinNhans, dangGo, moChat]);
 
-  function gui(e: React.FormEvent) {
+  async function gui(e: React.FormEvent) {
     e.preventDefault();
     const text = nhap.trim();
     if (!text || dangGo) return;
-    setTinNhans((prev) => [...prev, { tuAi: "ban", noiDung: text }]);
+    const lichSu: TinNhan[] = [...tinNhans, { tuAi: "ban", noiDung: text }];
+    setTinNhans(lichSu);
     setNhap("");
     setDangGo(true);
-    setTimeout(() => {
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          messages: lichSu.map((t) => ({
+            role: t.tuAi === "ban" ? "user" : "assistant",
+            content: t.noiDung,
+          })),
+        }),
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error ?? "Đã có lỗi xảy ra.");
+      setTinNhans((prev) => [...prev, { tuAi: "bot", noiDung: data.reply }]);
+    } catch (err) {
+      setTinNhans((prev) => [
+        ...prev,
+        {
+          tuAi: "bot",
+          noiDung: err instanceof Error ? err.message : "Đã có lỗi xảy ra, vui lòng thử lại.",
+        },
+      ]);
+    } finally {
       setDangGo(false);
-      setTinNhans((prev) => [...prev, { tuAi: "bot", noiDung: CAU_TRA_LOI_TAM }]);
-    }, 900);
+    }
   }
 
   return (
