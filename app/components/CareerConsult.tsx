@@ -1,12 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
-import type { ApiResult, FormData } from "@/lib/types";
+import type { ApiResult } from "@/lib/types";
 
-const classOptions = ["Lớp 6", "Lớp 7", "Lớp 8", "Lớp 9", "Lớp 10", "Lớp 11", "Lớp 12"];
+const lopOptions = ["Lớp 6", "Lớp 7", "Lớp 8", "Lớp 9", "Lớp 10", "Lớp 11", "Lớp 12"];
 
-const subjectOptions = [
+const goiYNhanh = [
+  "Mình học lớp 11, giỏi Toán và Tin, yếu Văn. Thích mày mò máy tính, lắp ráp đồ điện tử. Tính kiên trì, thích làm một mình.",
+  "Mình học lớp 10, giỏi Văn và Anh, yếu Lý và Hóa. Thích đọc sách, viết lách, thuyết trình. Hay giúp bạn học bài.",
+  "Mình học lớp 12, giỏi Sinh và Hóa, yếu Toán. Thích chăm sóc người khác, yêu động vật. Tính cẩn thận, nhẹ nhàng.",
+];
+
+const monHocKeywords = [
   "Toán",
   "Ngữ văn",
   "Tiếng Anh",
@@ -19,74 +25,88 @@ const subjectOptions = [
   "Tin học",
 ];
 
-const hobbyOptions = [
-  "Máy tính, công nghệ",
-  "Đọc sách, viết lách",
-  "Vẽ, tạo hình, chụp ảnh",
-  "Chăm sóc người bệnh, người thân",
-  "Thuyết trình, nói trước đám đông",
-  "Lắp ráp, sửa chữa đồ vật",
-  "Chăm sóc cây trồng, vật nuôi",
-  "Thể thao",
-  "Khám phá thiên nhiên",
-  "Kinh doanh, bán hàng online",
-  "Nấu ăn, ẩm thực",
-  "Nghe nhạc, chơi nhạc cụ",
+const soThichKeywords: { key: string[]; label: string }[] = [
+  { key: ["máy tính", "công nghệ", "code", "lập trình", "game", "tin học"], label: "Máy tính, công nghệ" },
+  { key: ["sách", "viết", "văn", "blog"], label: "Đọc sách, viết lách" },
+  { key: ["vẽ", "thiết kế", "ảnh", "chụp"], label: "Vẽ, tạo hình, chụp ảnh" },
+  { key: ["bệnh", "chăm sóc", "giúp người", "y tế"], label: "Chăm sóc người bệnh, người thân" },
+  { key: ["thuyết trình", "nói", "mc", "tranh biện"], label: "Thuyết trình, nói trước đám đông" },
+  { key: ["lắp", "sửa", "điện tử", "robot", "máy móc"], label: "Lắp ráp, sửa chữa đồ vật" },
+  { key: ["cây", "vật nuôi", "động vật", "thú cưng"], label: "Chăm sóc cây trồng, vật nuôi" },
+  { key: ["thể thao", "bóng đá", "chạy", "gym"], label: "Thể thao" },
+  { key: ["thiên nhiên", "du lịch", "khám phá"], label: "Khám phá thiên nhiên" },
+  { key: ["kinh doanh", "bán hàng", "kiếm tiền", "online"], label: "Kinh doanh, bán hàng online" },
+  { key: ["nấu ăn", "ẩm thực", "làm bánh"], label: "Nấu ăn, ẩm thực" },
+  { key: ["nhạc", "đàn", "hát", "guitar", "piano"], label: "Nghe nhạc, chơi nhạc cụ" },
 ];
 
-function Chip({ active, onClick, label }: { active: boolean; onClick: () => void; label: string }) {
+// Tách từ khóa từ đoạn văn tự do để backend cũ vẫn nhận đủ FormData
+function trichXuatTuVanBan(text: string) {
+  const lower = text.toLowerCase();
+  const mon_manh = monHocKeywords.filter((m) => lower.includes(m.toLowerCase()));
+  const so_thich = soThichKeywords
+    .filter((s) => s.key.some((k) => lower.includes(k)))
+    .map((s) => s.label);
+  return { mon_manh, mon_yeu: [] as string[], so_thich };
+}
+
+function thanhDoPhuHop(percent: number) {
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={`rounded-full border px-4 py-2 text-sm transition-colors ${
-        active
-          ? "border-indigo-600 bg-indigo-600 text-white"
-          : "border-slate-300 bg-white text-slate-700 hover:border-indigo-400"
-      }`}
-    >
-      {label}
-    </button>
+    <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/10">
+      <div className="h-full rounded-full bg-zinc-100" style={{ width: `${percent}%` }} />
+    </div>
   );
 }
 
 export default function CareerConsult() {
-  const [form, setForm] = useState<FormData>({
-    lop: "Lớp 9",
-    mon_manh: [],
-    mon_yeu: [],
-    so_thich: [],
-    tinh_cach: "",
-  });
+  const [lop, setLop] = useState("Lớp 10");
+  const [vanBan, setVanBan] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<ApiResult | null>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  function toggle(list: keyof Pick<FormData, "mon_manh" | "mon_yeu" | "so_thich">, value: string) {
-    setForm((prev) => {
-      const current = prev[list] as string[];
-      const next = current.includes(value)
-        ? current.filter((item) => item !== value)
-        : [...current, value];
-      return { ...prev, [list]: next };
-    });
-  }
+  // Nhận nội dung gõ từ ô nhập trên hero
+  useEffect(() => {
+    function onPrompt(e: Event) {
+      const text = (e as CustomEvent<string>).detail ?? "";
+      if (!text) return;
+      setResult(null);
+      setError(null);
+      setVanBan(text);
+      requestAnimationFrame(() => textareaRef.current?.focus({ preventScroll: true }));
+    }
+    window.addEventListener("hn:prompt", onPrompt);
+    return () => window.removeEventListener("hn:prompt", onPrompt);
+  }, []);
+
+  const hopLe = useMemo(() => vanBan.trim().length >= 12, [vanBan]);
+  const soKyTu = vanBan.trim().length;
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (!hopLe || loading) return;
     setLoading(true);
     setError(null);
     try {
+      const { mon_manh, mon_yeu, so_thich } = trichXuatTuVanBan(vanBan);
       const response = await fetch("/api/consult", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          lop,
+          mon_manh,
+          mon_yeu,
+          so_thich,
+          tinh_cach: vanBan.trim(),
+        }),
       });
       const data = await response.json();
-      if (!response.ok) {
-        throw new Error(data.error ?? "Đã có lỗi xảy ra.");
-      }
+      if (!response.ok) throw new Error(data.error ?? "Đã có lỗi xảy ra.");
       setResult(data as ApiResult);
+      setTimeout(() => {
+        document.getElementById("ket-qua")?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Đã có lỗi xảy ra.");
     } finally {
@@ -94,223 +114,215 @@ export default function CareerConsult() {
     }
   }
 
-  function reset() {
+  function lamLai() {
     setResult(null);
     setError(null);
-    setForm({ lop: "Lớp 9", mon_manh: [], mon_yeu: [], so_thich: [], tinh_cach: "" });
+    setVanBan("");
   }
 
+  // ---------- MÀN HÌNH KẾT QUẢ ----------
   if (result) {
     return (
-      <div className="mx-auto w-full max-w-4xl space-y-8">
-        <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-          <p className="text-slate-800 leading-relaxed">{result.gioi_thieu}</p>
+      <div id="ket-qua" className="mx-auto w-full max-w-3xl space-y-4">
+        <div className="rounded-2xl border border-white/10 bg-zinc-900 p-6 sm:p-7">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-500">
+            Kết quả · {lop}
+          </p>
+          <p className="mt-3 text-[15px] leading-relaxed text-zinc-200">{result.gioi_thieu}</p>
+          {result.khoi_thi_de_nghi.length > 0 && (
+            <div className="mt-5">
+              <p className="text-xs font-semibold text-zinc-500">Khối thi nên hướng tới</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {result.khoi_thi_de_nghi.map((k) => (
+                  <span
+                    key={k}
+                    className="rounded-lg border border-white/20 bg-white/5 px-3 py-1.5 text-sm font-bold text-zinc-100"
+                  >
+                    {k}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
-        <div className="space-y-5">
-          {result.nghe_nghiep.map((nganh, index) => (
-            <article
+        <ol className="space-y-4">
+          {result.nghe_nghiep.map((nganh, i) => (
+            <li
               key={nganh.ten}
-              className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200"
+              className="rounded-2xl border border-white/10 bg-zinc-900 p-6 sm:p-7"
             >
-              <div className="flex flex-wrap items-center gap-4">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-100 font-bold text-indigo-700">
-                  {index + 1}
-                </span>
-                <h2 className="text-xl font-bold text-slate-900">{nganh.ten}</h2>
-                <span
-                  className={`ml-auto rounded-full px-3 py-1 text-sm font-semibold ${
-                    nganh.do_phu_hop >= 80
-                      ? "bg-emerald-100 text-emerald-700"
-                      : nganh.do_phu_hop >= 60
-                        ? "bg-amber-100 text-amber-700"
-                        : "bg-slate-100 text-slate-600"
-                  }`}
-                >
-                  {nganh.do_phu_hop}% phù hợp
-                </span>
+              <div className="flex items-baseline justify-between gap-4">
+                <h2 className="text-lg font-extrabold tracking-tight">
+                  <span className="mr-2 text-sm font-bold text-zinc-500">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  {nganh.ten}
+                </h2>
+                <p className="shrink-0 text-sm font-extrabold text-zinc-100">
+                  {nganh.do_phu_hop}%
+                </p>
               </div>
-
-              <p className="mt-3 text-slate-700 leading-relaxed">{nganh.ly_do}</p>
+              <div className="mt-3">{thanhDoPhuHop(nganh.do_phu_hop)}</div>
+              <p className="mt-4 text-[15px] leading-relaxed text-zinc-300">{nganh.ly_do}</p>
 
               <div className="mt-4 flex flex-wrap gap-2">
-                {nganh.khoi_thi.map((khoi) => (
+                {nganh.khoi_thi.map((k) => (
                   <span
-                    key={khoi}
-                    className="rounded-lg bg-indigo-50 px-3 py-1 text-sm font-medium text-indigo-700 ring-1 ring-indigo-200"
+                    key={k}
+                    className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-semibold text-zinc-300"
                   >
-                    {khoi}
+                    {k}
                   </span>
                 ))}
               </div>
 
-              <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              <dl className="mt-5 grid gap-4 border-t border-white/10 pt-5 text-sm sm:grid-cols-2">
                 <div>
-                  <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                    Môn cần ưu tiên
-                  </h3>
-                  <p className="mt-1 text-slate-700">{nganh.mon_trong_tam.join(", ")}</p>
+                  <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+                    Môn trọng tâm
+                  </dt>
+                  <dd className="mt-1 font-medium text-zinc-200">
+                    {nganh.mon_trong_tam.join(" · ")}
+                  </dd>
                 </div>
                 {nganh.truong_tieu_bieu.length > 0 && (
                   <div>
-                    <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                      Trường đại học tiêu biểu
-                    </h3>
-                    <ul className="mt-1 space-y-0.5 text-slate-700">
-                      {nganh.truong_tieu_bieu.map((truong) => (
-                        <li key={truong}>• {truong}</li>
+                    <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+                      Trường tiêu biểu
+                    </dt>
+                    <dd className="mt-1 space-y-1 font-medium text-zinc-200">
+                      {nganh.truong_tieu_bieu.map((t) => (
+                        <p key={t}>— {t}</p>
                       ))}
-                    </ul>
+                    </dd>
                   </div>
                 )}
-              </div>
+              </dl>
 
-              <div className="mt-4 rounded-xl bg-slate-50 p-4 ring-1 ring-slate-100">
-                <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                  Lộ trình
-                </h3>
-                <p className="mt-1 text-slate-700 leading-relaxed">{nganh.lo_trinh}</p>
+              <div className="mt-4 rounded-xl border border-white/10 bg-zinc-950 p-4 text-sm leading-relaxed text-zinc-300">
+                <span className="font-bold text-zinc-100">Lộ trình. </span>
+                {nganh.lo_trinh}
               </div>
-            </article>
+            </li>
           ))}
-        </div>
+        </ol>
 
-        {result.khoi_thi_de_nghi.length > 0 && (
-          <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-            <h2 className="font-semibold text-slate-900">Khối thi nên hướng tới</h2>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {result.khoi_thi_de_nghi.map((khoi) => (
-                <span
-                  key={khoi}
-                  className="rounded-lg bg-rose-50 px-3 py-1 text-sm font-semibold text-rose-700 ring-1 ring-rose-200"
-                >
-                  {khoi}
-                </span>
-              ))}
-            </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="rounded-2xl border border-white/10 bg-zinc-900 p-6">
+            <h3 className="font-bold">Lời khuyên</h3>
+            <p className="mt-2 text-sm leading-relaxed text-zinc-300">{result.loi_khuyen}</p>
           </div>
-        )}
-
-        <div className="rounded-2xl bg-gradient-to-r from-indigo-50 to-violet-50 p-6 ring-1 ring-indigo-100">
-          <h2 className="font-semibold text-indigo-900">Lời khuyên</h2>
-          <p className="mt-2 text-slate-800 leading-relaxed">{result.loi_khuyen}</p>
+          <div className="rounded-2xl border border-white/20 bg-white/[0.03] p-6">
+            <h3 className="font-bold text-zinc-100">Lưu ý</h3>
+            <p className="mt-2 text-sm leading-relaxed text-zinc-400">{result.luu_y}</p>
+          </div>
         </div>
 
-        <p className="rounded-2xl bg-amber-50 p-4 text-sm text-amber-800 ring-1 ring-amber-100">
-          ⚠️ {result.luu_y}
-        </p>
-
-        <div className="text-center">
+        <div className="flex flex-wrap gap-3 pt-1">
           <button
-            onClick={reset}
-            className="rounded-full bg-slate-900 px-8 py-3 font-semibold text-white transition-colors hover:bg-slate-700"
+            onClick={lamLai}
+            className="rounded-xl bg-zinc-100 px-6 py-3 text-sm font-bold text-zinc-950 transition hover:bg-white"
           >
-            Làm lại từ đầu
+            Viết mô tả khác
           </button>
+          <a
+            href="#trai-nghiem"
+            className="rounded-xl border border-white/15 px-6 py-3 text-sm font-semibold text-zinc-300 transition hover:bg-white/5"
+          >
+            Về đầu trang
+          </a>
         </div>
       </div>
     );
   }
 
+  // ---------- MÀN HÌNH NHẬP LIỆU ----------
   return (
-    <form onSubmit={handleSubmit} className="mx-auto w-full max-w-2xl space-y-8">
-      <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-        <h2 className="text-lg font-semibold text-slate-900">Bạn đang học lớp mấy?</h2>
-        <p className="mt-1 text-sm text-slate-500">
-          Học sinh cấp 2 (lớp 6–9) sẽ được tư vấn dài hạn, học sinh cấp 3 (lớp 10–12) được tư vấn sát khối thi hơn.
-        </p>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {classOptions.map((lop) => (
-            <Chip
-              key={lop}
-              active={form.lop === lop}
-              onClick={() => setForm((prev) => ({ ...prev, lop }))}
-              label={lop}
-            />
-          ))}
-        </div>
-      </section>
-
-      <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-        <h2 className="text-lg font-semibold text-slate-900">Môn học bạn học tốt nhất</h2>
-        <p className="mt-1 text-sm text-slate-500">Chọn từ 1 đến 3 môn.</p>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {subjectOptions.map((mon) => (
-            <Chip
-              key={mon}
-              active={form.mon_manh.includes(mon)}
-              onClick={() => toggle("mon_manh", mon)}
-              label={mon}
-            />
-          ))}
-        </div>
-      </section>
-
-      <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-        <h2 className="text-lg font-semibold text-slate-900">Môn học bạn thấy khó nhất</h2>
-        <p className="mt-1 text-sm text-slate-500">Chọn từ 1 đến 3 môn.</p>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {subjectOptions.map((mon) => (
-            <Chip
-              key={mon}
-              active={form.mon_yeu.includes(mon)}
-              onClick={() => toggle("mon_yeu", mon)}
-              label={mon}
-            />
-          ))}
-        </div>
-      </section>
-
-      <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-        <h2 className="text-lg font-semibold text-slate-900">Bạn thích làm gì nhất?</h2>
-        <p className="mt-1 text-sm text-slate-500">Chọn những hoạt động bạn thực sự thấy hứng thú.</p>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {hobbyOptions.map((soThich) => (
-            <Chip
-              key={soThich}
-              active={form.so_thich.includes(soThich)}
-              onClick={() => toggle("so_thich", soThich)}
-              label={soThich}
-            />
-          ))}
-        </div>
-      </section>
-
-      <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-        <h2 className="text-lg font-semibold text-slate-900">
-          Kể thêm về bạn (không bắt buộc){" "}
-        </h2>
-        <p className="mt-1 text-sm text-slate-500">
-          Ví dụ: “Mình thích tự mày mò sửa đồ điện tử”, “Mình hay kèm em học và thích dạy”,…
-        </p>
-        <textarea
-          value={form.tinh_cach}
-          onChange={(e) => setForm((prev) => ({ ...prev, tinh_cach: e.target.value }))}
-          rows={3}
-          className="mt-4 w-full rounded-xl border border-slate-300 p-3 text-slate-800 outline-none transition-colors focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
-          placeholder="Viết ở đây nếu bạn muốn..."
-        />
-      </section>
-
-      {error && (
-        <div className="rounded-xl bg-red-50 p-4 text-sm text-red-700 ring-1 ring-red-200">
-          {error}
-        </div>
-      )}
-
-      <button
-        type="submit"
-        disabled={loading}
-        className="w-full rounded-full bg-indigo-600 px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-indigo-200 transition-colors hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-60"
+    <div className="mx-auto w-full max-w-3xl">
+      <form
+        onSubmit={handleSubmit}
+        className="rounded-2xl border border-white/10 bg-zinc-900 p-6 sm:p-8"
       >
-        {loading ? "Đang phân tích định hướng..." : "Xem kết quả định hướng"}
-      </button>
+        <div>
+          <p className="text-sm font-bold">
+            1. Lớp đang học <span className="text-zinc-500">(bắt buộc)</span>
+          </p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {lopOptions.map((l) => (
+              <button
+                key={l}
+                type="button"
+                onClick={() => setLop(l)}
+                aria-pressed={lop === l}
+                className={`rounded-lg px-3.5 py-2 text-sm font-semibold transition ${
+                  lop === l
+                    ? "bg-zinc-100 text-zinc-950"
+                    : "border border-white/10 text-zinc-400 hover:border-white/25 hover:text-zinc-100"
+                }`}
+              >
+                {l}
+              </button>
+            ))}
+          </div>
+        </div>
 
-      {loading && (
-        <p className="text-center text-sm text-slate-500">
-          AI chuyên gia đang đối chiếu dữ liệu khối thi, ngành nghề và trường đại học… thường mất 30 giây đến 2 phút, bạn nhấn đúng 1 lần và chờ nhé.
+        <div className="mt-7">
+          <div className="flex items-baseline justify-between gap-3">
+            <label htmlFor="mo-ta" className="text-sm font-bold">
+              2. Mô tả về bản thân <span className="text-zinc-500">(bắt buộc)</span>
+            </label>
+            <span className={`text-xs ${hopLe ? "text-zinc-100" : "text-zinc-500"}`}>
+              {soKyTu}/12 ký tự tối thiểu
+            </span>
+          </div>
+          <p className="mt-1 text-[13px] leading-relaxed text-zinc-500">
+            Viết 2–4 câu: môn nào giỏi, môn nào yếu, thích làm gì, tính cách ra sao.
+          </p>
+          <textarea
+            id="mo-ta"
+            ref={textareaRef}
+            value={vanBan}
+            onChange={(e) => setVanBan(e.target.value)}
+            rows={5}
+            maxLength={800}
+            placeholder="Mình học lớp 11, giỏi Toán với Tin, yếu Văn. Thích mày mò máy tính, lắp ráp đồ điện tử. Tính kiên trì, thích làm việc một mình hơn làm nhóm."
+            className="mt-3 w-full resize-none rounded-xl border border-white/10 bg-zinc-950 p-4 text-[15px] leading-relaxed text-zinc-100 outline-none transition placeholder:text-zinc-600 focus:border-white/40"
+          />
+          <div className="mt-4">
+            <p className="text-xs font-semibold text-zinc-500">Chưa biết viết gì, dùng mẫu sau:</p>
+            <div className="mt-2 space-y-2">
+              {goiYNhanh.map((g) => (
+                <button
+                  key={g}
+                  type="button"
+                  onClick={() => setVanBan(g)}
+                  className="block w-full rounded-xl border border-white/10 bg-zinc-950 px-4 py-3 text-left text-[13px] leading-relaxed text-zinc-400 transition hover:border-white/25 hover:text-zinc-200"
+                >
+                  {g}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {error && (
+          <p className="mt-5 rounded-xl border border-red-400/30 bg-red-400/10 px-4 py-3 text-sm text-red-200">
+            {error}
+          </p>
+        )}
+
+        <button
+          type="submit"
+          disabled={!hopLe || loading}
+          className="mt-6 w-full rounded-xl bg-zinc-100 px-6 py-3.5 text-[15px] font-bold text-zinc-950 transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          {loading ? "Đang phân tích, vui lòng chờ…" : "Xem định hướng của mình"}
+        </button>
+        <p className="mt-3 text-center text-xs leading-relaxed text-zinc-600">
+          Phân tích thường mất 30–90 giây. Kết quả chỉ mang tính tham khảo.
         </p>
-      )}
-    </form>
+      </form>
+    </div>
   );
 }
