@@ -52,8 +52,8 @@ function trichXuatTuVanBan(text: string) {
 
 function thanhDoPhuHop(percent: number) {
   return (
-    <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/10">
-      <div className="h-full rounded-full bg-zinc-100" style={{ width: `${percent}%` }} />
+    <div className="h-1.5 w-full overflow-hidden rounded-full bg-stone-900/10 dark:bg-white/10">
+      <div className="h-full rounded-full bg-orange-500" style={{ width: `${percent}%` }} />
     </div>
   );
 }
@@ -189,19 +189,19 @@ export default function CareerConsult() {
   if (result) {
     return (
       <div id="ket-qua" className="mx-auto w-full max-w-3xl space-y-4">
-        <div className="rounded-2xl border border-white/10 bg-zinc-900 p-6 sm:p-7">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-500">
+        <div className="rounded-2xl border border-stone-900/10 bg-white dark:border-white/10 dark:bg-[#0b1a30] p-6 sm:p-7">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500 dark:text-slate-400">
             Kết quả · {lop}
           </p>
-          <p className="mt-3 text-[15px] leading-relaxed text-zinc-200">{result.gioi_thieu}</p>
+          <p className="mt-3 text-[15px] leading-relaxed text-stone-700 dark:text-slate-300">{result.gioi_thieu}</p>
           {result.khoi_thi_de_nghi.length > 0 && (
             <div className="mt-5">
-              <p className="text-xs font-semibold text-zinc-500">Khối thi nên hướng tới</p>
+              <p className="text-xs font-semibold text-stone-500 dark:text-slate-400">Khối thi nên hướng tới</p>
               <div className="mt-2 flex flex-wrap gap-2">
                 {result.khoi_thi_de_nghi.map((k) => (
                   <span
                     key={k}
-                    className="rounded-lg border border-white/20 bg-white/5 px-3 py-1.5 text-sm font-bold text-zinc-100"
+                    className="rounded-lg border border-orange-600/30 bg-orange-50 px-3 py-1.5 text-sm font-bold text-orange-700 dark:text-[#3cdf5f] dark:border-[#00b8be]/40 dark:bg-[#00b8be]/10 dark:text-[#5eead4]"
                   >
                     {k}
                   </span>
@@ -215,11 +215,11 @@ export default function CareerConsult() {
           {result.nghe_nghiep.map((nganh, i) => (
             <li
               key={nganh.ten}
-              className="rounded-2xl border border-white/10 bg-zinc-900 p-6 sm:p-7"
+              className="rounded-2xl border border-stone-900/10 bg-white dark:border-white/10 dark:bg-[#0b1a30] p-6 sm:p-7"
             >
               <div className="flex items-baseline justify-between gap-4">
                 <h2 className="text-lg font-extrabold tracking-tight">
-                  <span className="mr-2 text-sm font-bold text-zinc-500">
+                  <span className="mr-2 text-sm font-bold text-stone-500 dark:text-slate-400">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   {nganh.ten}
@@ -229,34 +229,34 @@ export default function CareerConsult() {
                 </p>
               </div>
               <div className="mt-3">{thanhDoPhuHop(nganh.do_phu_hop)}</div>
-              <p className="mt-4 text-[15px] leading-relaxed text-zinc-300">{nganh.ly_do}</p>
+              <p className="mt-4 text-[15px] leading-relaxed text-stone-600 dark:text-slate-400">{nganh.ly_do}</p>
 
               <div className="mt-4 flex flex-wrap gap-2">
                 {nganh.khoi_thi.map((k) => (
                   <span
                     key={k}
-                    className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-semibold text-zinc-300"
+                    className="rounded-md border border-stone-900/10 bg-stone-900/[0.04] px-2.5 py-1 text-xs font-semibold text-zinc-300 dark:text-slate-300"
                   >
                     {k}
                   </span>
                 ))}
               </div>
 
-              <dl className="mt-5 grid gap-4 border-t border-white/10 pt-5 text-sm sm:grid-cols-2">
+              <dl className="mt-5 grid gap-4 border-t border-stone-900/10 dark:border-white/10 pt-5 text-sm sm:grid-cols-2">
                 <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+                  <dt className="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-slate-400">
                     Môn trọng tâm
                   </dt>
-                  <dd className="mt-1 font-medium text-zinc-200">
+                  <dd className="mt-1 font-medium text-stone-700 dark:text-slate-300">
                     {nganh.mon_trong_tam.join(" · ")}
                   </dd>
                 </div>
                 {nganh.truong_tieu_bieu.length > 0 && (
                   <div>
-                    <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+                    <dt className="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-slate-400">
                       Trường tiêu biểu
                     </dt>
-                    <dd className="mt-1 space-y-1 font-medium text-zinc-200">
+                    <dd className="mt-1 space-y-1 font-medium text-stone-700 dark:text-slate-300">
                       {nganh.truong_tieu_bieu.map((t) => (
                         <p key={t}>— {t}</p>
                       ))}
@@ -265,8 +265,8 @@ export default function CareerConsult() {
                 )}
               </dl>
 
-              <div className="mt-4 rounded-xl border border-white/10 bg-zinc-950 p-4 text-sm leading-relaxed text-zinc-300">
-                <span className="font-bold text-zinc-100">Lộ trình. </span>
+              <div className="mt-4 rounded-xl border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] p-4 text-sm leading-relaxed text-stone-600 dark:text-slate-400">
+                <span className="font-bold text-stone-900 dark:text-slate-100">Lộ trình. </span>
                 {nganh.lo_trinh}
               </div>
             </li>
@@ -274,26 +274,26 @@ export default function CareerConsult() {
         </ol>
 
         <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-2xl border border-white/10 bg-zinc-900 p-6">
+          <div className="rounded-2xl border border-stone-900/10 bg-white dark:border-white/10 dark:bg-[#0b1a30] p-6">
             <h3 className="font-bold">Lời khuyên</h3>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-300">{result.loi_khuyen}</p>
+            <p className="mt-2 text-sm leading-relaxed text-stone-500 dark:text-slate-400">{result.loi_khuyen}</p>
           </div>
-          <div className="rounded-2xl border border-white/20 bg-white/[0.03] p-6">
-            <h3 className="font-bold text-zinc-100">Lưu ý</h3>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-400">{result.luu_y}</p>
+          <div className="rounded-2xl border border-stone-900/15 bg-stone-900/[0.03] p-6 dark:border-white/15 dark:bg-white/[0.03]">
+            <h3 className="font-bold text-stone-900 dark:text-slate-100">Lưu ý</h3>
+            <p className="mt-2 text-sm leading-relaxed text-stone-400 dark:text-slate-500">{result.luu_y}</p>
           </div>
         </div>
 
         <div className="flex flex-wrap gap-3 pt-1">
           <button
             onClick={lamLai}
-            className="rounded-xl bg-zinc-100 px-6 py-3 text-sm font-bold text-zinc-950 transition hover:bg-white"
+            className="rounded-xl bg-orange-600 px-6 py-3 text-sm font-bold text-white transition hover:bg-orange-500"
           >
             Viết mô tả khác
           </button>
           <a
             href="#trai-nghiem"
-            className="rounded-xl border border-white/15 px-6 py-3 text-sm font-semibold text-zinc-300 transition hover:bg-white/5"
+            className="rounded-xl border border-stone-900/15 px-6 py-3 text-sm font-semibold text-stone-600 dark:text-slate-300 transition hover:bg-stone-900/5 dark:border-white/15 dark:hover:bg-white/5"
           >
             Về đầu trang
           </a>
@@ -307,11 +307,11 @@ export default function CareerConsult() {
     <div className="mx-auto w-full max-w-3xl">
       <form
         onSubmit={handleSubmit}
-        className="rounded-2xl border border-white/10 bg-zinc-900 p-6 sm:p-8"
+        className="rounded-2xl border border-stone-900/10 bg-white dark:border-white/10 dark:bg-[#0b1a30] p-6 sm:p-8"
       >
         <div>
           <p className="text-sm font-bold">
-            1. Lớp đang học <span className="text-zinc-500">(bắt buộc)</span>
+            1. Lớp đang học <span className="text-stone-500 dark:text-slate-400">(bắt buộc)</span>
           </p>
           <div className="mt-3 flex flex-wrap gap-2">
             {lopOptions.map((l) => (
@@ -322,8 +322,8 @@ export default function CareerConsult() {
                 aria-pressed={lop === l}
                 className={`rounded-lg px-3.5 py-2 text-sm font-semibold transition ${
                   lop === l
-                    ? "bg-zinc-100 text-zinc-950"
-                    : "border border-white/10 text-zinc-400 hover:border-white/25 hover:text-zinc-100"
+                    ? "bg-stone-900 text-[#faf4e9] dark:bg-gradient-to-r dark:from-[#3cdf5f] dark:to-[#00a0dd] dark:text-[#06121f]"
+                    : "border border-stone-900/10 text-stone-500 hover:border-stone-900/25 hover:text-stone-900 dark:border-white/10 dark:text-slate-400 dark:hover:border-white/25 dark:hover:text-slate-100"
                 }`}
               >
                 {l}
@@ -335,13 +335,13 @@ export default function CareerConsult() {
         <div className="mt-7">
           <div className="flex items-baseline justify-between gap-3">
             <label htmlFor="mo-ta" className="text-sm font-bold">
-              2. Mô tả về bản thân <span className="text-zinc-500">(bắt buộc)</span>
+              2. Mô tả về bản thân <span className="text-stone-500 dark:text-slate-400">(bắt buộc)</span>
             </label>
-            <span className={`text-xs ${hopLe ? "text-zinc-100" : "text-zinc-500"}`}>
+            <span className={`text-xs ${hopLe ? "text-zinc-100" : "text-stone-500 dark:text-slate-400"}`}>
               {soKyTu}/12 ký tự tối thiểu
             </span>
           </div>
-          <p className="mt-1 text-[13px] leading-relaxed text-zinc-500">
+          <p className="mt-1 text-[13px] leading-relaxed text-stone-500 dark:text-slate-400">
             Viết 2–4 câu: môn nào giỏi, môn nào yếu, thích làm gì, tính cách ra sao.
           </p>
           <textarea
@@ -352,17 +352,17 @@ export default function CareerConsult() {
             rows={5}
             maxLength={800}
             placeholder="Mình học lớp 11, giỏi Toán với Tin, yếu Văn. Thích mày mò máy tính, lắp ráp đồ điện tử. Tính kiên trì, thích làm việc một mình hơn làm nhóm."
-            className="mt-3 w-full resize-none rounded-xl border border-white/10 bg-zinc-950 p-4 text-[15px] leading-relaxed text-zinc-100 outline-none transition placeholder:text-zinc-600 focus:border-white/40"
+            className="mt-3 w-full resize-none rounded-xl border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] p-4 text-[15px] leading-relaxed text-stone-900 dark:text-slate-100 outline-none transition placeholder:text-stone-400 focus:border-orange-500/60 dark:placeholder:text-slate-500 dark:focus:border-[#00b8be]/60"
           />
           <div className="mt-4">
-            <p className="text-xs font-semibold text-zinc-500">Chưa biết viết gì, dùng mẫu sau:</p>
+            <p className="text-xs font-semibold text-stone-500 dark:text-slate-400">Chưa biết viết gì, dùng mẫu sau:</p>
             <div className="mt-2 space-y-2">
               {goiYNhanh.map((g) => (
                 <button
                   key={g}
                   type="button"
                   onClick={() => setVanBan(g)}
-                  className="block w-full rounded-xl border border-white/10 bg-zinc-950 px-4 py-3 text-left text-[13px] leading-relaxed text-zinc-400 transition hover:border-white/25 hover:text-zinc-200"
+                  className="block w-full rounded-xl border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] px-4 py-3 text-left text-[13px] leading-relaxed text-stone-500 dark:text-slate-400 transition hover:border-orange-400/60 hover:text-stone-800 dark:hover:border-[#00b8be]/60 dark:hover:text-slate-100"
                 >
                   {g}
                 </button>
@@ -372,7 +372,7 @@ export default function CareerConsult() {
         </div>
 
         {error && (
-          <p className="mt-5 rounded-xl border border-red-400/30 bg-red-400/10 px-4 py-3 text-sm text-red-200">
+          <p className="mt-5 rounded-xl border border-red-500/30 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
             {error}
           </p>
         )}
@@ -380,16 +380,16 @@ export default function CareerConsult() {
         <button
           type="submit"
           disabled={!hopLe || loading}
-          className="mt-6 w-full rounded-xl bg-zinc-100 px-6 py-3.5 text-[15px] font-bold text-zinc-950 transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-40"
+          className="mt-6 w-full rounded-xl bg-orange-600 px-6 py-3.5 text-[15px] font-bold text-white transition hover:bg-orange-500 disabled:cursor-not-allowed disabled:opacity-40"
         >
           {loading ? "Đang phân tích, vui lòng chờ…" : "Xem định hướng của mình"}
         </button>
         {status && (
-          <p aria-live="polite" className="mt-3 text-center text-[13px] font-semibold text-zinc-400">
+          <p aria-live="polite" className="mt-3 text-center text-[13px] font-semibold text-stone-500 dark:text-slate-400">
             {status}
           </p>
         )}
-        <p className="mt-3 text-center text-xs leading-relaxed text-zinc-600">
+        <p className="mt-3 text-center text-xs leading-relaxed text-stone-500 dark:text-slate-400">
           Phân tích thường mất 30–90 giây. Kết quả chỉ mang tính tham khảo.
         </p>
       </form>

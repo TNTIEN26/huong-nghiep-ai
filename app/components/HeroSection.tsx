@@ -216,16 +216,16 @@ export default function HeroSection() {
         }`}
       >
         <div className="overflow-hidden">
-          <div className="overflow-hidden rounded-2xl border border-white/10 bg-zinc-900">
-            <div className="flex items-center gap-3 border-b border-white/10 px-5 py-3.5">
-              <span className="h-2.5 w-2.5 rounded-full bg-zinc-100" />
+          <div className="overflow-hidden rounded-2xl border border-stone-900/10 bg-white shadow-[0_24px_70px_-30px_rgba(234,88,12,0.4)] dark:border-white/10 dark:bg-[#0b1a30] dark:shadow-[0_24px_70px_-30px_rgba(0,184,190,0.5)]">
+            <div className="flex items-center gap-3 border-b border-stone-900/10 px-5 py-3.5 dark:border-white/10">
+              <span className="h-2.5 w-2.5 rounded-full bg-orange-500" />
               <p className="text-sm font-bold">Trợ lý AI</p>
-              <span className="text-xs text-zinc-500">đang hoạt động</span>
+              <span className="text-xs text-stone-500 dark:text-slate-400">đang hoạt động</span>
               <button
                 type="button"
                 onClick={xoaLichSu}
                 aria-label="Xóa lịch sử chat"
-                className="ml-auto rounded-lg px-2.5 py-1 text-xs font-semibold text-zinc-500 transition hover:bg-white/5 hover:text-zinc-100"
+                className="ml-auto rounded-lg px-2.5 py-1 text-xs font-semibold text-stone-500 transition hover:bg-stone-900/5 hover:text-stone-900 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-slate-100"
               >
                 Xóa lịch sử
               </button>
@@ -233,7 +233,7 @@ export default function HeroSection() {
                 type="button"
                 onClick={() => setMoChat(false)}
                 aria-label="Đóng chat"
-                className="rounded-lg px-2.5 py-1 text-lg leading-none text-zinc-500 transition hover:bg-white/5 hover:text-zinc-100"
+                className="rounded-lg px-2.5 py-1 text-lg leading-none text-stone-500 transition hover:bg-stone-900/5 hover:text-stone-900 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-slate-100"
               >
                 ×
               </button>
@@ -243,11 +243,11 @@ export default function HeroSection() {
               {tinNhans.map((t, i) => (
                 <div key={`${t.tuAi}-${i}`} className={`flex ${t.tuAi === "ban" ? "justify-end" : "justify-start"}`}>
                   {t.tuAi === "ban" ? (
-                    <p className="max-w-[85%] rounded-2xl bg-zinc-100 px-4 py-2.5 text-sm leading-relaxed text-zinc-950">
+                    <p className="max-w-[85%] rounded-2xl bg-stone-900 px-4 py-2.5 text-sm leading-relaxed text-[#faf4e9]">
                       {t.noiDung}
                     </p>
                   ) : (
-                    <div className="chat-md max-w-[85%] rounded-2xl border border-white/10 bg-zinc-800 px-4 py-2.5 text-sm leading-relaxed text-zinc-100">
+                    <div className="chat-md max-w-[85%] rounded-2xl border border-stone-900/10 bg-orange-50 px-4 py-2.5 text-sm leading-relaxed text-stone-900 dark:border-white/10 dark:bg-white/5 dark:text-slate-100">
                       <ReactMarkdown remarkPlugins={[remarkGfm]}>{t.noiDung}</ReactMarkdown>
                     </div>
                   )}
@@ -255,32 +255,32 @@ export default function HeroSection() {
               ))}
               {dangGo && (
                 <div className="flex justify-start">
-                  <p className="rounded-2xl border border-white/10 bg-zinc-800 px-4 py-3 text-sm text-zinc-400">
+                  <p className="rounded-2xl border border-stone-900/10 bg-orange-50 px-4 py-3 text-sm text-stone-500 dark:border-white/10 dark:bg-white/5 dark:text-slate-400">
                     <span className="animate-pulse">…</span>
                   </p>
                 </div>
               )}
             </div>
 
-            <form onSubmit={gui} className="border-t border-white/10 p-3">
-              <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-zinc-950 py-1.5 pl-4 pr-1.5 transition focus-within:border-white/30">
+            <form onSubmit={gui} className="border-t border-stone-900/10 p-3 dark:border-white/10">
+              <div className="flex items-center gap-2 rounded-xl border border-stone-900/10 bg-[#faf4e9] py-1.5 pl-4 pr-1.5 transition focus-within:border-orange-500/60 dark:border-white/10 dark:bg-[#060f1e] dark:focus-within:border-[#00b8be]/60">
                 <input
                   value={nhap}
                   maxLength={2000}
                   onChange={(e) => setNhap(e.target.value)}
                   placeholder="Nhập tin nhắn…"
                   aria-label="Nhập tin nhắn"
-                  className="h-10 w-full bg-transparent text-sm text-zinc-100 outline-none placeholder:text-zinc-600"
+                  className="h-10 w-full bg-transparent text-sm text-stone-900 outline-none placeholder:text-stone-400 dark:text-slate-100 dark:placeholder:text-slate-500"
                 />
                 <button
                   type="submit"
                   aria-label="Gửi tin nhắn"
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-zinc-100 text-base font-bold text-zinc-950 transition hover:bg-white"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-orange-600 text-base font-bold text-white transition hover:bg-orange-500"
                 >
                   →
                 </button>
               </div>
-              <p className="mt-1.5 text-[11px] leading-snug text-zinc-600">
+              <p className="mt-1.5 text-[11px] leading-snug text-stone-500 dark:text-slate-500">
                 Trợ lý AI có sai sót — kết quả chỉ mang tính tham khảo, không thay thế tư vấn trực tiếp từ thầy cô.
               </p>
             </form>

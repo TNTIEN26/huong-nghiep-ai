@@ -71,11 +71,11 @@ function The({ s, an }: { s: School; an?: boolean }) {
       data-card
       aria-hidden={an || undefined}
       tabIndex={an ? -1 : undefined}
-      className="relative mr-5 w-72 shrink-0 origin-center overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 text-left transition-all duration-200 last:mr-5 hover:z-10 hover:scale-[1.07] hover:border-white/30 hover:shadow-[0_0_36px_-8px_rgba(255,255,255,0.45)] sm:w-[26rem]"
+      className="relative mr-5 w-72 shrink-0 origin-center overflow-hidden rounded-2xl border border-stone-900/10 bg-white text-left transition-all duration-200 last:mr-5 hover:z-10 hover:scale-[1.07] hover:border-orange-400/60 hover:shadow-[0_0_36px_-8px_rgba(234,88,12,0.45)] dark:border-white/10 dark:bg-[#0b1a30] dark:hover:border-[#00b8be]/60 dark:hover:shadow-[0_0_36px_-8px_rgba(0,184,190,0.5)] sm:w-[26rem]"
     >
-      <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-800">
+      <div className="relative aspect-[16/10] w-full overflow-hidden bg-orange-100 dark:bg-[#06121f]">
         {loi || !s.anh ? (
-          <span className="flex h-full w-full items-center justify-center text-5xl font-black text-zinc-700">
+          <span className="flex h-full w-full items-center justify-center text-5xl font-black text-orange-300 dark:text-[#00b8be]/40">
             {s.ten.charAt(0)}
           </span>
         ) : (
@@ -92,8 +92,8 @@ function The({ s, an }: { s: School; an?: boolean }) {
         )}
       </div>
       <div className="px-5 py-4">
-        <p className="truncate text-base font-bold text-zinc-100">{s.ten}</p>
-        <p className="mt-1 text-[13px] text-zinc-500">{s.host}</p>
+        <p className="truncate text-base font-bold text-stone-900 dark:text-slate-100">{s.ten}</p>
+        <p className="mt-1 text-[13px] text-stone-500 dark:text-slate-400">{s.host}</p>
       </div>
     </a>
   );

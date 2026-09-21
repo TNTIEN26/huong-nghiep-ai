@@ -1,8 +1,17 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #09090b;
-  --foreground: #f4f4f5;
+  --background: #faf4e9;
+  --foreground: #1c1917;
+  --dot: rgba(28, 25, 23, 0.08);
+}
+
+.dark {
+  --background: #060f1e;
+  --foreground: #f1f7fe;
+  --dot: rgba(255, 255, 255, 0.07);
 }
 
 @theme inline {
@@ -23,9 +32,21 @@ body {
 }
 
 ::selection {
-  background: #f4f4f5;
-  color: #09090b;
+  background: #ea580c;
+  color: #fff7ed;
 }
+
+/* Mascot: chớp mắt + bay nhẹ */
+@keyframes chop-mat {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95%, 97% { transform: scaleY(0.08); }
+}
+@keyframes bob-nhe {
+  0%, 100% { transform: translateY(0) rotate(var(--xoay, 0deg)); }
+  50% { transform: translateY(-14px) rotate(var(--xoay, 0deg)); }
+}
+.mat-chop { transform-origin: center; animation: chop-mat 4.5s ease-in-out infinite; }
+.bob-nhe { animation: bob-nhe 6s ease-in-out infinite; }
 
 /* ---------- Markdown trong khung chat (react-markdown) ---------- */
 .chat-md > :first-child { margin-top: 0; }
@@ -40,14 +61,14 @@ body {
 .chat-md h2,
 .chat-md h3,
 .chat-md h4 { margin: 0.6em 0 0.25em; font-weight: 800; }
-.chat-md strong { font-weight: 800; color: #fafafa; }
+.chat-md strong { font-weight: 800; color: #7c2d12; }
 .chat-md em { font-style: italic; }
-.chat-md code { background: rgba(255, 255, 255, 0.09); border-radius: 0.35em; padding: 0.1em 0.35em; font-size: 0.85em; }
-.chat-md pre { background: #18181b; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 0.6em; padding: 0.7em 0.9em; overflow-x: auto; font-size: 0.82em; }
+.chat-md code { background: rgba(28, 25, 23, 0.07); border-radius: 0.35em; padding: 0.1em 0.35em; font-size: 0.85em; }
+.chat-md pre { background: #1c1917; color: #faf4e9; border: 1px solid rgba(28, 25, 23, 0.15); border-radius: 0.6em; padding: 0.7em 0.9em; overflow-x: auto; font-size: 0.82em; }
 .chat-md pre code { background: transparent; padding: 0; }
-.chat-md a { color: #a1a1aa; text-decoration: underline; text-underline-offset: 2px; }
-.chat-md blockquote { border-left: 3px solid rgba(255, 255, 255, 0.2); padding-left: 0.7em; margin: 0.4em 0; color: #a1a1aa; }
+.chat-md a { color: #ea580c; text-decoration: underline; text-underline-offset: 2px; }
+.chat-md blockquote { border-left: 3px solid rgba(234, 88, 12, 0.4); padding-left: 0.7em; margin: 0.4em 0; color: #78716c; }
 .chat-md table { border-collapse: collapse; font-size: 0.85em; margin: 0.4em 0; }
 .chat-md th,
-.chat-md td { border: 1px solid rgba(255, 255, 255, 0.15); padding: 0.3em 0.6em; }
-.chat-md hr { border: 0; border-top: 1px solid rgba(255, 255, 255, 0.15); margin: 0.6em 0; }
+.chat-md td { border: 1px solid rgba(28, 25, 23, 0.18); padding: 0.3em 0.6em; }
+.chat-md hr { border: 0; border-top: 1px solid rgba(28, 25, 23, 0.15); margin: 0.6em 0; }
