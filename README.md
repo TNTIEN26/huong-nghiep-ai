@@ -27,6 +27,10 @@ Dựa trên câu trả lời của học sinh, hệ thống gợi ý ngành ngh�
 
 > **Thời gian phản hồi:** mỗi lần tư vấn mất khoảng **20–90 giây** (model AI miễn phí sinh văn bản chậm hơn model trả phí). App tự động thử lần lượt nhiều model nếu model đầu bị quá tải. Có thể đổi thứ tự/ thêm model trong `OPENROUTER_MODEL` ở `.env.local`.
 >
+> **Streaming (SSE):** the chat bot streams its reply token by token, and the career form
+> shows live status updates ("Đọc dữ li…", "Viết phân tinh…") while the AI works.
+> The non-streaming JSON endpoints still work for API clients (just omit `stream: true`).
+>
 > **Nếu muốn đổi sang Google Gemini:** trong `.env.local` đặt `AI_PROVIDER=gemini`
 > và thêm `GEMINI_API_KEY`. Lưu ý: từ giữa 2026 Google cấp key dạng mới `AQ.`
 > và hiện có lỗi khiến nhiều key bị từ chối (`API key not valid`).

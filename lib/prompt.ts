@@ -95,6 +95,23 @@ export function buildUserPrompt(form: FormData): string {
   ].join("\n");
 }
 
+export function buildChatSystemPrompt(context?: string): string {
+  const base = chatSystemPromptBase();
+  if (!context || !context.trim()) return base;
+  return `${base}\n\nTHÔNG TIN HỌC SINH (hệ thống cung cấp từ app; dùng chỉ để trả lời cho đúng, phù hợp độ tuổi, khối thi, môn mạnh/yếu học sinh):\n${context.trim()}`;
+}
+
+function chatSystemPromptBase(): string {
+  return `Bạn là trợ lý AI thân thiện, trò chuyện bằng tiếng Việt, hỗ trợ học sinh Việt Nam từ cấp 2 đến cấp 3 trong học tập và định hướng nghề nghiệp.
+
+NHIỆM VỤ:
+- Trả lời trực tiếp câu hỏi của học sinh: giải đáp bài tập, giải thích khái niệm, gợi ý cách học hiệu quả, hỗ trợ chọn khối thi và ngành nghề phù hợp.
+- Giọng điệu gần gũi, dễ hiểu, phù hợp độ tuổi; câu trả lời ngắn gọn, súc tích (3-5 câu cho câu hỏi đơn giản).
+- Thắc mắc ngoài phạm vi học tập/hướng nghiệp: từ chối nhẹ nhàng và gợi ý quay lại đúng nội dung.
+- Không hứa hẹn chắc chắn đỗ; điểm chuẩn và kết quả luôn thay đổi tùy nỗ lực.
+- Theo dõi mạch hội thoại: nếu học sinh hỏi tiếp, dựa vào tin nhắn trước đó để trả lời cho liền mạch.`;
+}
+
 export function buildFormatInstruction(): string {
   return [
     `YÊU CẦU ĐỊNH DẠNG ĐẦU RA (trả về DUY NHẤT một object JSON, dùng ĐÚNG tên trường sau):`,

@@ -63,6 +63,7 @@ export default function CareerConsult() {
   const [vanBan, setVanBan] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [status, setStatus] = useState<string | null>(null);
   const [result, setResult] = useState<ApiResult | null>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -88,6 +89,16 @@ export default function CareerConsult() {
     if (!hopLe || loading) return;
     setLoading(true);
     setError(null);
+    setStatus(null);
+
+    // Lưu bối cảnh học sinh (Lớp, mô tả) để chat bot biết về ai học sinh
+    try {
+      localStorage.setItem("hn:student-context", JSON.stringify({ lop, vanBan: vanBan.trim() }));
+    } catch {
+      // lưu không thành công — chat vẫn chạy, chỉ mất lịch sử thôi
+    }
+
+    let gotResult = false;
     try {
       const { mon_manh, mon_yeu, so_thich } = trichXuatTuVanBan(vanBan);
       const response = await fetch("/api/consult", {
@@ -99,18 +110,72 @@ export default function CareerConsult() {
           mon_yeu,
           so_thich,
           tinh_cach: vanBan.trim(),
+          stream: true,
         }),
       });
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.error ?? "Đã có lỗi xảy ra.");
-      setResult(data as ApiResult);
-      setTimeout(() => {
-        document.getElementById("ket-qua")?.scrollIntoView({ behavior: "smooth" });
-      }, 100);
+
+      const contentType = response.headers.get("content-type") ?? "";
+      if (!response.body || !contentType.includes("text/event-stream")) {
+        // Old JSON format — read the whole result at once.
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error ?? "Đã có lỗi xảy ra.");
+        setResult(data as ApiResult);
+        gotResult = true;
+        setTimeout(() => {
+          document.getElementById("ket-qua")?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+        return;
+      }
+
+      // SSE: live status lines, then the final { r: ... } event.
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let buf = "";
+      outer: while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buf += decoder.decode(value, { stream: true });
+
+        let idx: number;
+        while ((idx = buf.indexOf("\n")) >= 0) {
+          const line = buf.slice(0, idx).trim();
+          buf = buf.slice(idx + 1);
+          if (!line.startsWith("data:")) continue;
+          const payload = line.slice(5).trim();
+          if (!payload) continue;
+          let ev: { s?: string; r?: ApiResult; e?: string };
+          try {
+            ev = JSON.parse(payload);
+          } catch {
+            continue;
+          }
+          if (typeof ev.s === "string") {
+            setStatus(ev.s);
+          } else if (typeof ev.e === "string") {
+            throw new Error(ev.e);
+          } else if (ev.r && typeof ev.r === "object") {
+            setResult(ev.r);
+            gotResult = true;
+            setTimeout(() => {
+              document.getElementById("ket-qua")?.scrollIntoView({ behavior: "smooth" });
+            }, 100);
+            break outer;
+          }
+        }
+      }
+      try {
+        reader.cancel();
+      } catch {
+        // ignore
+      }
+      if (!gotResult) throw new Error("Đã có lỗi xảy ra, vui lòng thử lại.");
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Đã có lỗi xảy ra.");
+      if (!gotResult) {
+        setError(err instanceof Error ? err.message : "Đã có lỗi xảy ra.");
+      }
     } finally {
       setLoading(false);
+      setStatus(null);
     }
   }
 
@@ -319,6 +384,11 @@ export default function CareerConsult() {
         >
           {loading ? "Đang phân tích, vui lòng chờ…" : "Xem định hướng của mình"}
         </button>
+        {status && (
+          <p aria-live="polite" className="mt-3 text-center text-[13px] font-semibold text-zinc-400">
+            {status}
+          </p>
+        )}
         <p className="mt-3 text-center text-xs leading-relaxed text-zinc-600">
           Phân tích thường mất 30–90 giây. Kết quả chỉ mang tính tham khảo.
         </p>

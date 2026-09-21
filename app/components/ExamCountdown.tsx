@@ -16,22 +16,21 @@ function pad(n: number) {
 }
 
 export default function ExamCountdown() {
-  const [now, setNow] = useState<number | null>(null);
+  const [now, setNow] = useState<number>(() => Date.now());
   const [chon, setChon] = useState<string | null>(null);
 
   useEffect(() => {
-    setNow(Date.now());
     const id = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(id);
   }, []);
 
-  const t = now ?? 0;
+  const t = now;
   // Mốc sắp tới gần nhất (tự động)
   const sapToi = lichThi.find((m) => t < m.at) ?? null;
   // Môn đang hiển thị: ưu tiên môn người dùng bấm chọn, nếu chưa chọn thì theo mốc sắp tới
   const dangXem = lichThi.find((m) => m.mon === chon) ?? sapToi ?? lichThi[0];
-  const daThiXong = now !== null && dangXem.at <= now;
-  const diff = now === null ? 0 : Math.max(0, dangXem.at - now);
+  const daThiXong = dangXem.at <= now;
+  const diff = Math.max(0, dangXem.at - now);
 
   const ngay = Math.floor(diff / 86_400_000);
   const gio = Math.floor((diff % 86_400_000) / 3_600_000);
@@ -61,9 +60,7 @@ export default function ExamCountdown() {
             ) : (
               <>
                 Thời gian còn lại:{" "}
-                <span className="font-bold text-zinc-100">
-                  {now === null ? "…" : dangXem.mon}
-                </span>
+                <span className="font-bold text-zinc-100">{dangXem.mon}</span>
               </>
             )}
           </p>
@@ -74,7 +71,7 @@ export default function ExamCountdown() {
               <div key={label} className="min-w-0 text-center">
                 <div className="flex min-h-[10rem] items-center justify-center rounded-2xl bg-zinc-100 px-1 py-10 sm:min-h-[14rem] sm:py-12">
                   <p className="whitespace-nowrap text-4xl font-black tabular-nums leading-none tracking-tighter text-zinc-950 sm:text-6xl 2xl:text-7xl">
-                    {now === null ? "–" : so}
+                    {so}
                   </p>
                 </div>
                 <p className="mt-2.5 text-sm font-semibold text-zinc-400">{label}</p>
@@ -97,7 +94,7 @@ export default function ExamCountdown() {
           <ul className="space-y-3">
             {lichThi.map((m) => {
               const active = dangXem.mon === m.mon;
-              const quaRoi = now !== null && m.at <= now;
+              const quaRoi = m.at <= now;
               return (
                 <li key={m.mon}>
                   <button
