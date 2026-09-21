@@ -95,7 +95,13 @@ export function buildUserPrompt(form: FormData): string {
   ].join("\n");
 }
 
-export function buildChatSystemPrompt(): string {
+export function buildChatSystemPrompt(context?: string): string {
+  const base = chatSystemPromptBase();
+  if (!context || !context.trim()) return base;
+  return `${base}\n\nTHÔNG TIN HỌC SINH (hệ thống cung cấp từ app; dùng chỉ để trả lời cho đúng, phù hợp độ tuổi, khối thi, môn mạnh/yếu học sinh):\n${context.trim()}`;
+}
+
+function chatSystemPromptBase(): string {
   return `Bạn là trợ lý AI thân thiện, trò chuyện bằng tiếng Việt, hỗ trợ học sinh Việt Nam từ cấp 2 đến cấp 3 trong học tập và định hướng nghề nghiệp.
 
 NHIỆM VỤ:

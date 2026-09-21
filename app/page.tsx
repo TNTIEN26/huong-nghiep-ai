@@ -1,3 +1,4 @@
+import CareerConsult from "./components/CareerConsult";
 import ExamCountdown from "./components/ExamCountdown";
 import HeroSection from "./components/HeroSection";
 
@@ -81,6 +82,11 @@ export default function Home() {
       {/* BỘ ĐẾM NGƯỢC */}
       <main id="trai-nghiem" className="mx-auto w-full max-w-[1440px] scroll-mt-20 px-4 py-12 sm:px-8 sm:py-16">
         <ExamCountdown />
+
+        {/* AI career consult: form + result */}
+        <section aria-label="Tư vấn định hướng nghẹ" className="mt-16 sm:mt-24">
+          <CareerConsult />
+        </section>
       </main>
 
       {/* FOOTER */}

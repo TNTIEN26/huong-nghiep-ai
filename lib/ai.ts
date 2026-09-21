@@ -385,8 +385,253 @@ async function callOpenRouterChat(messages: ChatMessage[], systemPrompt: string)
   );
 }
 
-export async function chatReply(messages: ChatMessage[]): Promise<string> {
-  const systemPrompt = buildChatSystemPrompt();
+// ---------- STREAMING (SSE) ----------
+
+export type ChatStreamEvent =
+  | { type: "delta"; delta: string }
+  | { type: "done" }
+  | { type: "error"; error: string };
+
+type ChatStreamAttempt =
+  | { ok: true; emitted: boolean; error: "" }
+  | { ok: false; fatal: boolean; emitted: boolean; error: string };
+
+// Streams one chat completion through OpenRouter (SSE). onDelta is called per token;
+// returns ok:true when the stream finished cleanly.
+async function tryChatModelStream(
+  model: string,
+  messages: ChatMessage[],
+  systemPrompt: string,
+  onDelta: (delta: string) => void,
+): Promise<ChatStreamAttempt> {
+  let emitted = false;
+  const post = async (body: Record<string, unknown>) => {
+    return fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${openRouterApiKey}`,
+      },
+      body: JSON.stringify(body),
+      cache: "no-store",
+      signal: AbortSignal.timeout(120000),
+    });
+  };
+
+  const baseBody = {
+    model,
+    messages: [
+      { role: "system", content: systemPrompt },
+      ...messages.map((m) => ({
+        role: m.role === "assistant" ? "assistant" : "user",
+        content: m.content,
+      })),
+    ],
+    temperature: 0.7,
+    stream: true,
+  };
+
+  try {
+    const res = await post(baseBody);
+    if (!res.ok) {
+      const text = await res.text();
+      if (res.status === 401 || res.status === 403) {
+        const isAuthError = /invalid api key|unauthorized|authentication|permission/i.test(text);
+        if (isAuthError) {
+          return {
+            ok: false,
+            fatal: true,
+            emitted,
+            error: `OpenRouter từ chối key (${res.status}). Kiểm tra OPENROUTER_API_KEY trong .env.local.`,
+          };
+        }
+      }
+      return { ok: false, fatal: false, emitted, error: `HTTP ${res.status}: ${text.slice(0, 160)}` };
+    }
+
+    if (!res.body) {
+      return { ok: false, fatal: false, emitted, error: "OpenRouter không trả về content stream." };
+    }
+
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let buf = "";
+    let finishOk = false;
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buf += decoder.decode(value, { stream: true });
+
+      let idx: number;
+      while ((idx = buf.indexOf("\n")) >= 0) {
+        const line = buf.slice(0, idx).trim();
+        buf = buf.slice(idx + 1);
+        if (!line.startsWith("data:")) continue;
+        const payload = line.slice(5).trim();
+        if (payload === "[DONE]") {
+          finishOk = true;
+          break;
+        }
+        if (!payload) continue;
+        try {
+          const json = JSON.parse(payload) as {
+            choices?: { delta?: { content?: string }; message?: { content?: string } }[];
+          };
+          const piece =
+            json?.choices?.[0]?.delta?.content ??
+            json?.choices?.[0]?.message?.content ??
+            "";
+          if (piece) {
+            emitted = true;
+            onDelta(piece);
+          }
+        } catch {
+          // ignore broken/empty SSE frames
+        }
+      }
+      if (finishOk) break;
+    }
+    try {
+      reader.cancel();
+    } catch {
+      // client closed — ignore
+    }
+    return { ok: true, emitted, error: "" };
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    return { ok: false, fatal: false, emitted, error: msg };
+  }
+}
+
+async function streamGeminiChat(
+  messages: ChatMessage[],
+  systemPrompt: string,
+  onEvent: (ev: ChatStreamEvent) => void,
+): Promise<void> {
+  if (!geminiClient) {
+    onEvent({
+      type: "error",
+      error: "Thiếu GEMINI_API_KEY. Thêm vào .env.local (xem .env.local.example).",
+    });
+    return;
+  }
+  try {
+    const contents = messages.map((m) => ({
+      role: m.role === "assistant" ? "model" : "user",
+      parts: [{ text: m.content }],
+    }));
+    const stream = await geminiClient.models.generateContentStream({
+      model: geminiModel,
+      contents,
+      config: {
+        systemInstruction: systemPrompt,
+        temperature: 0.7,
+      },
+    });
+    let any = false;
+    for await (const chunk of stream) {
+      const piece = chunk.text ?? "";
+      if (piece) {
+        any = true;
+        onEvent({ type: "delta", delta: piece });
+      }
+    }
+    if (any) {
+      onEvent({ type: "done" });
+    } else {
+      onEvent({ type: "error", error: "Model trả về nội dung rỗng." });
+    }
+  } catch (err) {
+    onEvent({ type: "error", error: err instanceof Error ? err.message : String(err) });
+  }
+}
+
+async function streamOpenRouterChat(
+  messages: ChatMessage[],
+  systemPrompt: string,
+  onEvent: (ev: ChatStreamEvent) => void,
+): Promise<void> {
+  if (!openRouterApiKey) {
+    onEvent({
+      type: "error",
+      error:
+        "Thiếu OPENROUTER_API_KEY. Tạo key miễn phí tại https://openrouter.ai/keys rồi thêm vào .env.local (xem .env.local.example).",
+    });
+    return;
+  }
+
+  const models = await resolveCandidateModels();
+  if (models.length === 0) {
+    onEvent({ type: "error", error: "Không tìm thấy model miễn phí nào trên OpenRouter." });
+    return;
+  }
+
+  const deadline = Date.now() + 145000;
+  const errors: string[] = [];
+  for (const model of models) {
+    if (Date.now() > deadline) break;
+    const attempt = await tryChatModelStream(model, messages, systemPrompt, (delta) => {
+      onEvent({ type: "delta", delta });
+    });
+    if (attempt.ok) {
+      if (!attempt.emitted) {
+        errors.push(`${model} → nội dung rỗng`);
+        continue;
+      }
+      onEvent({ type: "done" });
+      return;
+    }
+    if (attempt.emitted) {
+      // Stream already started — can't restart with another model mid-way, report error.
+      onEvent({
+        type: "error",
+        error: `Trả lời đang sinh bị ngắt: ${attempt.error.slice(0, 160)}. Hãy thử lại.`,
+      });
+      return;
+    }
+    errors.push(`${model} → ${attempt.error}`);
+    if (attempt.fatal) break;
+  }
+
+  const timeoutCount = errors.filter((e) => /timeout|abort/i.test(e)).length;
+  if (timeoutCount === errors.length && errors.length > 0) {
+    onEvent({
+      type: "error",
+      error:
+        "Các model AI miễn phí đang phản hồi quá chậm (quá tải). Hãy chờ 1–2 minúty rồi thử lại, hoặc thêm model khác vào OPENROUTER_MODEL trong .env.local.",
+    });
+    return;
+  }
+  onEvent({
+    type: "error",
+    error: errors[0]
+      ? `Các model AI miễn phí đang quá tải: ${errors[0].slice(0, 160)}. Hãy thử lại sau 1–2 minúty.`
+      : "Không có model AI nào phản hồi. Hãy thử lại sau.",
+  });
+}
+
+export async function streamChatReply(
+  messages: ChatMessage[],
+  context: string,
+  onEvent: (ev: ChatStreamEvent) => void,
+): Promise<void> {
+  const systemPrompt = buildChatSystemPrompt(context);
+  if (provider === "gemini") {
+    await streamGeminiChat(messages, systemPrompt, onEvent);
+    return;
+  }
+  if (provider === "openrouter") {
+    await streamOpenRouterChat(messages, systemPrompt, onEvent);
+    return;
+  }
+  onEvent({
+    type: "error",
+    error: `AI_PROVIDER không hợp lệ: "${provider}" (chỉ chấp nhận "gemini" hoặc "openrouter").`,
+  });
+}
+export async function chatReply(messages: ChatMessage[], context?: string): Promise<string> {
+  const systemPrompt = buildChatSystemPrompt(context);
   if (provider === "gemini") {
     return callGeminiChat(messages, systemPrompt);
   }
