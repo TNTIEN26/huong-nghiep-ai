@@ -4,8 +4,26 @@ import { useEffect, useRef, useState } from "react";
 
 type School = { ten: string; url: string; host: string; anh: string };
 
-// Ô thứ 5: bạn gửi thêm link mình thêm vào đúng 1 dòng ở đây.
-const truongs: School[] = [
+// Kho link tuyển sinh + thông tin thi: mỗi lần mở web sẽ xáo ngẫu nhiên lấy 5 ô.
+const KHO_LINK: School[] = [
+  {
+    ten: "Bộ Giáo dục và Đào tạo",
+    url: "https://moet.gov.vn/",
+    host: "moet.gov.vn",
+    anh: "https://moet.gov.vn/upload/2007219/20251022/bannerbgd_2b22b.png",
+  },
+  {
+    ten: "Cổng tuyển sinh Bộ GD&ĐT",
+    url: "https://tuyensinh.moet.gov.vn/",
+    host: "tuyensinh.moet.gov.vn",
+    anh: "https://tuyensinh.moet.gov.vn/ts/Content/images/banner.png",
+  },
+  {
+    ten: "Hệ thống thí sinh THPT",
+    url: "https://thisinh.thitotnghiepthpt.edu.vn/",
+    host: "thisinh.thitotnghiepthpt.edu.vn",
+    anh: "",
+  },
   {
     ten: "Nhạc viện TP. Hồ Chí Minh",
     url: "https://hcmcons.vn/",
@@ -32,6 +50,17 @@ const truongs: School[] = [
   },
 ];
 
+const SO_O_MOI_LAN = 5;
+
+function xaoMang<T>(mang: T[]): T[] {
+  const a = [...mang];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 function The({ s, an }: { s: School; an?: boolean }) {
   const [loi, setLoi] = useState(false);
   return (
@@ -45,7 +74,7 @@ function The({ s, an }: { s: School; an?: boolean }) {
       className="relative mr-5 w-72 shrink-0 origin-center overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 text-left transition-all duration-200 last:mr-5 hover:z-10 hover:scale-[1.07] hover:border-white/30 hover:shadow-[0_0_36px_-8px_rgba(255,255,255,0.45)] sm:w-[26rem]"
     >
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-800">
-        {loi ? (
+        {loi || !s.anh ? (
           <span className="flex h-full w-full items-center justify-center text-5xl font-black text-zinc-700">
             {s.ten.charAt(0)}
           </span>
@@ -80,20 +109,22 @@ export default function SchoolCarousel() {
   const vanToc = useRef(0);
   const raf = useRef(0);
   const hinh = useRef({ low: 0, size: 0 });
+  // 5 ô đầu để render phía server, mở web trên trình duyệt sẽ xáo ngẫu nhiên
+  const [hien, setHien] = useState<School[]>(() => KHO_LINK.slice(0, SO_O_MOI_LAN));
 
   // Đo chính xác chiều rộng 1 bản (gồm khoảng cách đều nhau sau mỗi ô)
-  function doRong() {
+  function doRong(datLai = false) {
     const el = ref.current;
     if (!el) return;
     const items = el.querySelectorAll<HTMLElement>("[data-card]");
-    const n = truongs.length;
-    if (items.length < n || n === 0) return;
+    const n = items.length / LAN;
+    if (!Number.isInteger(n) || n === 0 || items.length < n) return;
     const dau = items[0];
     const cuoiSet = items[n - 1];
     const mr = parseFloat(getComputedStyle(cuoiSet).marginRight || "0");
     const size = cuoiSet.offsetLeft + cuoiSet.offsetWidth + mr - dau.offsetLeft;
     hinh.current = { low: dau.offsetLeft + BAN_DAU * size, size };
-    if (el.scrollLeft < dau.offsetLeft + 1) el.scrollLeft = hinh.current.low;
+    if (datLai || el.scrollLeft < dau.offsetLeft + 1) el.scrollLeft = hinh.current.low;
   }
 
   function quanVong(muon: number) {
@@ -156,16 +187,23 @@ export default function SchoolCarousel() {
   }
 
   useEffect(() => {
-    doRong();
-    window.addEventListener("resize", doRong);
-    return () => {
-      window.removeEventListener("resize", doRong);
-      cancelAnimationFrame(raf.current);
-    };
+    // Xáo ngẫu nhiên mỗi lần mở web
+    setHien(xaoMang(KHO_LINK).slice(0, SO_O_MOI_LAN));
   }, []);
 
+  useEffect(() => {
+    doRong(true);
+    const trenResize = () => doRong();
+    window.addEventListener("resize", trenResize);
+    return () => {
+      window.removeEventListener("resize", trenResize);
+      cancelAnimationFrame(raf.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hien]);
+
   const tatCa = Array.from({ length: LAN }, (_, i) => i).flatMap((i) =>
-    truongs.map((s) => ({ s, key: `${i}-${s.url}`, an: i !== BAN_DAU })),
+    hien.map((s) => ({ s, key: `${i}-${s.url}`, an: i !== BAN_DAU })),
   );
 
   return (

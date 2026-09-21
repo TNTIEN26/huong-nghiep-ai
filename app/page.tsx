@@ -1,44 +1,11 @@
 import ExamCountdown from "./components/ExamCountdown";
 import HeroSection from "./components/HeroSection";
+import SiteNav from "./components/SiteNav";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col overflow-x-clip bg-zinc-950 text-zinc-100">
-      {/* NAV */}
-      <nav className="sticky top-0 z-50 border-b border-white/10 bg-zinc-950/90 backdrop-blur">
-        <div className="relative flex w-full items-center gap-3 px-5 py-3.5 sm:px-8">
-          <p className="text-[15px] font-bold tracking-tight">
-            Hướng nghiệp AI
-            <span className="ml-2 rounded border border-white/15 px-1.5 py-0.5 align-middle text-[11px] font-semibold text-zinc-400">
-              Beta
-            </span>
-          </p>
-          <div className="absolute left-1/2 flex -translate-x-1/2 items-center gap-1">
-            {/* TODO(pages): các trang Thông tin / Tính điểm / Lịch thi sẽ được thêm sau */}
-            <button
-              type="button"
-              title="Sắp ra mắt"
-              className="rounded-lg px-5 py-2.5 text-[15px] text-zinc-400 transition hover:bg-white/5 hover:text-zinc-100"
-            >
-              Thông tin
-            </button>
-            <button
-              type="button"
-              title="Sắp ra mắt"
-              className="rounded-lg px-5 py-2.5 text-[15px] text-zinc-400 transition hover:bg-white/5 hover:text-zinc-100"
-            >
-              Tính điểm
-            </button>
-            <button
-              type="button"
-              title="Sắp ra mắt"
-              className="rounded-lg px-5 py-2.5 text-[15px] text-zinc-400 transition hover:bg-white/5 hover:text-zinc-100"
-            >
-              Lịch thi
-            </button>
-          </div>
-        </div>
-      </nav>
+      <SiteNav />
 
       {/* HERO — chiếm 1 màn hình */}
       <header className="relative flex min-h-[calc(100vh-65px)] items-center overflow-hidden border-b border-white/10">
