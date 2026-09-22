@@ -2,8 +2,11 @@ import Link from "next/link";
 
 import ThemeToggle from "./ThemeToggle";
 
-export default function SiteNav({ active }: { active?: "tinh-diem" }) {
+export default function SiteNav({ active }: { active?: "trang-chu" | "tinh-diem" }) {
   const nutChung = "rounded-lg px-5 py-2.5 text-[15px] transition";
+  const nutThuong = `${nutChung} text-stone-500 hover:bg-stone-900/5 hover:text-stone-900 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-slate-100`;
+  const nutDangXem =
+    "bg-stone-900 font-semibold text-[#faf4e9] dark:bg-orange-600 dark:text-white";
   return (
     <nav className="sticky top-0 z-50 border-b border-stone-900/10 bg-[#faf4e9]/90 backdrop-blur dark:border-white/10 dark:bg-[#060f1e]/90">
       <div className="relative flex w-full items-center gap-3 px-5 py-3.5 sm:px-8">
@@ -14,32 +17,23 @@ export default function SiteNav({ active }: { active?: "tinh-diem" }) {
           </span>
         </Link>
         <div className="absolute left-1/2 flex -translate-x-1/2 items-center gap-1">
-          {/* TODO(pages): trang Thông tin / Lịch thi sẽ được thêm sau */}
-          <button
-            type="button"
-            title="Sắp ra mắt"
-            className={`${nutChung} text-stone-500 hover:bg-stone-900/5 hover:text-stone-900 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-slate-100`}
-          >
-            Thông tin
-          </button>
-          {active === "tinh-diem" ? (
-            <span className={`${nutChung} bg-stone-900 font-semibold text-[#faf4e9] dark:bg-gradient-to-r dark:from-[#3cdf5f] dark:to-[#00a0dd] dark:text-[#06121f]`}>
-              Tính điểm
-            </span>
+          {active === "trang-chu" ? (
+            <span className={`${nutChung} ${nutDangXem}`}>Trang chủ</span>
           ) : (
-            <Link
-              href="/tinh-diem"
-              className={`${nutChung} text-stone-500 hover:bg-stone-900/5 hover:text-stone-900 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-slate-100`}
-            >
+            <Link href="/" className={nutThuong}>
+              Trang chủ
+            </Link>
+          )}
+          {active === "tinh-diem" ? (
+            <span className={`${nutChung} ${nutDangXem}`}>Tính điểm</span>
+          ) : (
+            <Link href="/tinh-diem" className={nutThuong}>
               Tính điểm
             </Link>
           )}
-          <button
-            type="button"
-            title="Sắp ra mắt"
-            className={`${nutChung} text-stone-500 hover:bg-stone-900/5 hover:text-stone-900 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-slate-100`}
-          >
-            Lịch thi
+          {/* TODO(pages): trang Tra cứu sẽ được thêm sau */}
+          <button type="button" title="Sắp ra mắt" className={nutThuong}>
+            Tra cứu
           </button>
         </div>
         <div className="ml-auto">

@@ -201,7 +201,7 @@ export default function CareerConsult() {
                 {result.khoi_thi_de_nghi.map((k) => (
                   <span
                     key={k}
-                    className="rounded-lg border border-orange-600/30 bg-orange-50 px-3 py-1.5 text-sm font-bold text-orange-700 dark:text-[#3cdf5f] dark:border-[#00b8be]/40 dark:bg-[#00b8be]/10 dark:text-[#5eead4]"
+                    className="rounded-lg border border-orange-600/30 bg-orange-50 px-3 py-1.5 text-sm font-bold text-orange-700 dark:border-orange-500/40 dark:bg-orange-500/10 dark:text-orange-200"
                   >
                     {k}
                   </span>
@@ -322,7 +322,7 @@ export default function CareerConsult() {
                 aria-pressed={lop === l}
                 className={`rounded-lg px-3.5 py-2 text-sm font-semibold transition ${
                   lop === l
-                    ? "bg-stone-900 text-[#faf4e9] dark:bg-gradient-to-r dark:from-[#3cdf5f] dark:to-[#00a0dd] dark:text-[#06121f]"
+                    ? "bg-stone-900 text-[#faf4e9] dark:bg-orange-600 dark:text-white"
                     : "border border-stone-900/10 text-stone-500 hover:border-stone-900/25 hover:text-stone-900 dark:border-white/10 dark:text-slate-400 dark:hover:border-white/25 dark:hover:text-slate-100"
                 }`}
               >
@@ -352,7 +352,7 @@ export default function CareerConsult() {
             rows={5}
             maxLength={800}
             placeholder="Mình học lớp 11, giỏi Toán với Tin, yếu Văn. Thích mày mò máy tính, lắp ráp đồ điện tử. Tính kiên trì, thích làm việc một mình hơn làm nhóm."
-            className="mt-3 w-full resize-none rounded-xl border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] p-4 text-[15px] leading-relaxed text-stone-900 dark:text-slate-100 outline-none transition placeholder:text-stone-400 focus:border-orange-500/60 dark:placeholder:text-slate-500 dark:focus:border-[#00b8be]/60"
+            className="mt-3 w-full resize-none rounded-xl border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] p-4 text-[15px] leading-relaxed text-stone-900 dark:text-slate-100 outline-none transition placeholder:text-stone-400 focus:border-orange-500/60 dark:placeholder:text-slate-500 dark:focus:border-orange-500/60"
           />
           <div className="mt-4">
             <p className="text-xs font-semibold text-stone-500 dark:text-slate-400">Chưa biết viết gì, dùng mẫu sau:</p>
@@ -362,7 +362,7 @@ export default function CareerConsult() {
                   key={g}
                   type="button"
                   onClick={() => setVanBan(g)}
-                  className="block w-full rounded-xl border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] px-4 py-3 text-left text-[13px] leading-relaxed text-stone-500 dark:text-slate-400 transition hover:border-orange-400/60 hover:text-stone-800 dark:hover:border-[#00b8be]/60 dark:hover:text-slate-100"
+                  className="block w-full rounded-xl border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] px-4 py-3 text-left text-[13px] leading-relaxed text-stone-500 dark:text-slate-400 transition hover:border-orange-400/60 hover:text-stone-800 dark:hover:border-orange-400/60 dark:hover:text-slate-100"
                 >
                   {g}
                 </button>

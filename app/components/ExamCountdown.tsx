@@ -45,7 +45,7 @@ export default function ExamCountdown() {
   ] as const;
 
   return (
-    <section aria-label="Đếm ngược kỳ thi" className="w-full rounded-[2rem] border border-stone-900/10 bg-white p-8 shadow-[0_30px_80px_-40px_rgba(234,88,12,0.45)] dark:border-white/10 dark:bg-[#0b1a30] dark:shadow-[0_30px_80px_-40px_rgba(0,184,190,0.5)] sm:p-14 xl:p-20">
+    <section aria-label="Đếm ngược kỳ thi" className="w-full rounded-[2rem] border border-stone-900/10 bg-white p-8 shadow-[0_30px_80px_-40px_rgba(234,88,12,0.45)] dark:border-white/10 dark:bg-[#0b1a30] dark:shadow-[0_30px_80px_-40px_rgba(234,88,12,0.4)] sm:p-14 xl:p-20">
       <div className="grid items-start gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
         {/* Trái: tiêu đề + đếm ngược */}
         <div>
@@ -60,7 +60,7 @@ export default function ExamCountdown() {
             ) : (
               <>
                 Thời gian còn lại:{" "}
-                <span className="font-bold text-orange-700 dark:text-[#3cdf5f]">{dangXem.mon}</span>
+                <span className="font-bold text-orange-700 dark:text-orange-400">{dangXem.mon}</span>
               </>
             )}
           </p>
@@ -101,21 +101,21 @@ export default function ExamCountdown() {
                     type="button"
                     onClick={() => setChon(m.mon)}
                     aria-pressed={active}
-                    className={`block w-full rounded-xl border px-5 py-4 text-left transition hover:shadow-[0_0_24px_-8px_rgba(234,88,12,0.4)] focus-visible:outline-none focus-visible:shadow-[0_0_24px_-8px_rgba(234,88,12,0.4)] dark:hover:shadow-[0_0_24px_-8px_rgba(0,184,190,0.45)] dark:focus-visible:shadow-[0_0_24px_-8px_rgba(0,184,190,0.45)] ${
+                    className={`block w-full rounded-xl border px-5 py-4 text-left transition hover:shadow-[0_0_24px_-8px_rgba(234,88,12,0.4)] focus-visible:outline-none focus-visible:shadow-[0_0_24px_-8px_rgba(234,88,12,0.4)] dark:hover:shadow-[0_0_24px_-8px_rgba(234,88,12,0.45)] dark:focus-visible:shadow-[0_0_24px_-8px_rgba(234,88,12,0.45)] ${
                       active
-                        ? "border-orange-600 bg-orange-600 text-white shadow-[0_0_24px_-10px_rgba(234,88,12,0.6)] dark:border-transparent dark:bg-gradient-to-r dark:from-[#3cdf5f] dark:to-[#00a0dd] dark:text-[#06121f]"
-                        : "border-stone-900/10 bg-white text-stone-700 hover:border-orange-400/60 dark:border-white/10 dark:bg-[#0b1a30] dark:text-slate-200 dark:hover:border-[#00b8be]/60"
+                        ? "border-orange-600 bg-orange-600 text-white shadow-[0_0_24px_-10px_rgba(234,88,12,0.6)] dark:border-orange-600 dark:bg-orange-600 dark:text-white dark:shadow-[0_0_24px_-10px_rgba(234,88,12,0.6)]"
+                        : "border-stone-900/10 bg-white text-stone-700 hover:border-orange-400/60 dark:border-white/10 dark:bg-[#0b1a30] dark:text-slate-200 dark:hover:border-orange-400/60"
                     }`}
                   >
                     <div className="flex items-center justify-between gap-3">
                       <p className="text-sm font-bold">{m.mon}</p>
                       {active && (
-                        <span className="shrink-0 rounded-full border border-white/40 px-2.5 py-1 text-[11px] font-bold dark:border-[#06121f]/25">
+                        <span className="shrink-0 rounded-full border border-white/40 px-2.5 py-1 text-[11px] font-bold">
                           {quaRoi ? "Đã kết thúc" : "Đang đếm ngược"}
                         </span>
                       )}
                     </div>
-                    <p className={`mt-1 text-[13px] ${active ? "text-orange-100 dark:text-[#06121f]/70" : "text-stone-500 dark:text-slate-400"}`}>
+                    <p className={`mt-1 text-[13px] ${active ? "text-orange-100" : "text-stone-500 dark:text-slate-400"}`}>
                       {m.ngay} · {m.gio}
                     </p>
                   </button>

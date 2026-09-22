@@ -20,7 +20,7 @@ export default function HeroPrompt({ khiMo }: { khiMo?: () => void }) {
     <form onSubmit={go} className="relative">
       {/* Cú đậu trên ô nhập */}
       <MascotOwl className="pointer-events-none absolute -top-[4.7rem] right-4 h-20 w-20 sm:right-8" />
-      <div className="flex items-center gap-3 rounded-2xl border border-stone-900/10 bg-white py-2.5 pl-6 pr-2.5 shadow-[0_18px_50px_-20px_rgba(234,88,12,0.35)] transition hover:border-orange-400/60 hover:shadow-[0_0_28px_-8px_rgba(234,88,12,0.4)] focus-within:border-orange-500/70 focus-within:shadow-[0_0_32px_-6px_rgba(234,88,12,0.45)] dark:border-white/10 dark:bg-[#0b1a30] dark:hover:border-[#00b8be]/60 dark:hover:shadow-[0_0_28px_-8px_rgba(0,184,190,0.45)] dark:focus-within:border-[#00b8be]/70 dark:focus-within:shadow-[0_0_32px_-6px_rgba(0,184,190,0.5)]">
+      <div className="flex items-center gap-3 rounded-2xl border border-stone-900/10 bg-white py-2.5 pl-6 pr-2.5 shadow-[0_18px_50px_-20px_rgba(234,88,12,0.35)] transition hover:border-orange-400/60 hover:shadow-[0_0_28px_-8px_rgba(234,88,12,0.4)] focus-within:border-orange-500/70 focus-within:shadow-[0_0_32px_-6px_rgba(234,88,12,0.45)] dark:border-white/10 dark:bg-[#0b1a30] dark:hover:border-orange-400/60 dark:hover:shadow-[0_0_28px_-8px_rgba(234,88,12,0.45)] dark:focus-within:border-orange-500/70 dark:focus-within:shadow-[0_0_32px_-6px_rgba(234,88,12,0.5)]">
         <input
           value={value}
           onChange={(e) => setValue(e.target.value)}

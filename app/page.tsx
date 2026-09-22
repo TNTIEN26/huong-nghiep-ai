@@ -4,8 +4,8 @@ import SiteNav from "./components/SiteNav";
 
 export default function Home() {
   return (
-    <div className="relative z-10 flex min-h-screen flex-col overflow-x-clip text-stone-900">
-      <SiteNav />
+    <div className="relative z-10 flex min-h-screen flex-col overflow-x-clip text-stone-900 dark:text-slate-100">
+      <SiteNav active="trang-chu" />
 
       {/* HERO — chiếm 1 màn hình */}
       <header className="relative flex min-h-[calc(100vh-65px)] items-center overflow-hidden border-b border-stone-900/10 dark:border-white/10">
@@ -23,7 +23,7 @@ export default function Home() {
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute -top-32 left-1/2 h-64 w-[720px] max-w-full -translate-x-1/2 rounded-full bg-orange-300/30 blur-[100px] dark:bg-[#00b8be]/15"
+          className="pointer-events-none absolute -top-32 left-1/2 h-64 w-[720px] max-w-full -translate-x-1/2 rounded-full bg-orange-300/30 blur-[100px] dark:bg-orange-500/10"
         />
 
         <div className="relative mx-auto w-full max-w-5xl px-5 py-16 sm:py-20">

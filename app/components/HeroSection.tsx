@@ -216,7 +216,7 @@ export default function HeroSection() {
         }`}
       >
         <div className="overflow-hidden">
-          <div className="overflow-hidden rounded-2xl border border-stone-900/10 bg-white shadow-[0_24px_70px_-30px_rgba(234,88,12,0.4)] dark:border-white/10 dark:bg-[#0b1a30] dark:shadow-[0_24px_70px_-30px_rgba(0,184,190,0.5)]">
+          <div className="overflow-hidden rounded-2xl border border-stone-900/10 bg-white shadow-[0_24px_70px_-30px_rgba(234,88,12,0.4)] dark:border-white/10 dark:bg-[#0b1a30] dark:shadow-[0_24px_70px_-30px_rgba(234,88,12,0.4)]">
             <div className="flex items-center gap-3 border-b border-stone-900/10 px-5 py-3.5 dark:border-white/10">
               <span className="h-2.5 w-2.5 rounded-full bg-orange-500" />
               <p className="text-sm font-bold">Trợ lý AI</p>
@@ -263,7 +263,7 @@ export default function HeroSection() {
             </div>
 
             <form onSubmit={gui} className="border-t border-stone-900/10 p-3 dark:border-white/10">
-              <div className="flex items-center gap-2 rounded-xl border border-stone-900/10 bg-[#faf4e9] py-1.5 pl-4 pr-1.5 transition focus-within:border-orange-500/60 dark:border-white/10 dark:bg-[#060f1e] dark:focus-within:border-[#00b8be]/60">
+              <div className="flex items-center gap-2 rounded-xl border border-stone-900/10 bg-[#faf4e9] py-1.5 pl-4 pr-1.5 transition focus-within:border-orange-500/60 dark:border-white/10 dark:bg-[#060f1e] dark:focus-within:border-orange-500/60">
                 <input
                   value={nhap}
                   maxLength={2000}
