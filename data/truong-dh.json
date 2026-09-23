@@ -4,9 +4,9 @@
     "ten": "Đại học Bách khoa Hà Nội",
     "thanh_pho": "Hà Nội",
     "nhom_nganh": [
-      { "ten": "Công nghệ thông tin", "to_hop": ["A00", "A01", "D01"], "diem_chuan_tk": 28.5, "ghichu": "Điểm cao nhất toàn trường" },
-      { "ten": "Điện - Điện tử", "to_hop": ["A00", "A01"], "diem_chuan_tk": 26.5, "ghichu": "" },
-      { "ten": "Kỹ thuật cơ khí", "to_hop": ["A00", "A01"], "diem_chuan_tk": 25.0, "ghichu": "" }
+      { "ten": "Công nghệ thông tin", "to_hop": ["A00", "A01", "D01"], "diem_chuan_tk": 28.5, "ghichu": "Điểm cao nhất toàn trường", "hoc_phi_tk": "≈ 5–8 mln/year (bakalavr, tham khào)", "hoc_bong": "Scholarship for high score / olympiad" },
+      { "ten": "Điện - Điện tử", "to_hop": ["A00", "A01"], "diem_chuan_tk": 26.5, "ghichu": "", "hoc_phi_tk": "≈ 5–8 mln/year (bakalavr, tham khào)", "hoc_bong": "Scholarship for high score / olympiad" },
+      { "ten": "Kỹ thuật cơ khí", "to_hop": ["A00", "A01"], "diem_chuan_tk": 25.0, "ghichu": "", "hoc_phi_tk": "≈ 5–8 mln/year (bakalavr, tham khào)", "hoc_bong": "Scholarship for high score / olympiad", "hoc_phi_tk": "≈ 5–8 mln/year (bakalavr, tham khào)", "hoc_bong": "Scholarship for high score / olympiad" }
     ]
   },
   {
@@ -14,9 +14,9 @@
     "ten": "Đại học Ngoại thương",
     "thanh_pho": "Hà Nội",
     "nhom_nganh": [
-      { "ten": "Kinh tế quốc tế", "to_hop": ["A00", "A01", "D01"], "diem_chuan_tk": 28.2, "ghichu": "" },
-      { "ten": "Quản trị kinh doanh", "to_hop": ["A00", "A01", "D01"], "diem_chuan_tk": 28.2, "ghichu": "" },
-      { "ten": "Kinh doanh quốc tế", "to_hop": ["A00", "A01", "D01"], "diem_chuan_tk": 28.5, "ghichu": "" }
+      { "ten": "Kinh tế quốc tế", "to_hop": ["A00", "A01", "D01"], "diem_chuan_tk": 28.2, "ghichu": "", "hoc_phi_tk": "≈ 5–7 mln/year (tham khào)", "hoc_bong": "Scholarship for high score" },
+      { "ten": "Quản trị kinh doanh", "to_hop": ["A00", "A01", "D01"], "diem_chuan_tk": 28.2, "ghichu": "", "hoc_phi_tk": "≈ 5–7 mln/year (tham khào)", "hoc_bong": "Scholarship for high score" },
+      { "ten": "Kinh doanh quốc tế", "to_hop": ["A00", "A01", "D01"], "diem_chuan_tk": 28.5, "ghichu": "", "hoc_phi_tk": "≈ 5–7 mln/year (tham khào)", "hoc_bong": "Scholarship for high score", "hoc_phi_tk": "≈ 5–7 mln/year (tham khào)", "hoc_bong": "Scholarship for high score" }
     ]
   },
   {
@@ -24,9 +24,9 @@
     "ten": "Đại học Kinh tế Quốc dân",
     "thanh_pho": "Hà Nội",
     "nhom_nganh": [
-      { "ten": "Kế toán", "to_hop": ["A00", "A01", "D01"], "diem_chuan_tk": 27.0, "ghichu": "" },
-      { "ten": "Tài chính - Ngân hàng", "to_hop": ["A00", "A01", "D01"], "diem_chuan_tk": 27.2, "ghichu": "" },
-      { "ten": "Marketing", "to_hop": ["D01", "A00", "A01"], "diem_chuan_tk": 27.6, "ghichu": "" }
+      { "ten": "Kế toán", "to_hop": ["A00", "A01", "D01"], "diem_chuan_tk": 27.0, "ghichu": "", "hoc_phi_tk": "≈ 5–7 mln/year (tham khào)", "hoc_bong": "Scholarship for high score" },
+      { "ten": "Tài chính - Ngân hàng", "to_hop": ["A00", "A01", "D01"], "diem_chuan_tk": 27.2, "ghichu": "", "hoc_phi_tk": "≈ 5–7 mln/year (tham khào)", "hoc_bong": "Scholarship for high score" },
+      { "ten": "Marketing", "to_hop": ["D01", "A00", "A01"], "diem_chuan_tk": 27.6, "ghichu": "", "hoc_phi_tk": "≈ 5–7 mln/year (tham khào)", "hoc_bong": "Scholarship for high score", "hoc_phi_tk": "≈ 5–7 mln/year (tham khào)", "hoc_bong": "Scholarship for high score" }
     ]
   },
   {
@@ -34,9 +34,9 @@
     "ten": "Đại học Sư phạm Hà Nội",
     "thanh_pho": "Hà Nội",
     "nhom_nganh": [
-      { "ten": "Sư phạm Toán", "to_hop": ["A00", "A01"], "diem_chuan_tk": 28.2, "ghichu": "Kèm quy định ưu tiên riêng, thi năng khiếu tùy ngành" },
-      { "ten": "Sư phạm Ngữ văn", "to_hop": ["C00", "D01"], "diem_chuan_tk": 27.8, "ghichu": "" },
-      { "ten": "Sư phạm Tiếng Anh", "to_hop": ["D01", "D14", "D66"], "diem_chuan_tk": 28.0, "ghichu": "" }
+      { "ten": "Sư phạm Toán", "to_hop": ["A00", "A01"], "diem_chuan_tk": 28.2, "ghichu": "Kèm quy định ưu tiên riêng, thi năng khiếu tùy ngành", "hoc_phi_tk": "≈ 3–5 mln/year; ped.discounts (tham khào)", "hoc_bong": "Ped. quotas + scholarship for high score" },
+      { "ten": "Sư phạm Ngữ văn", "to_hop": ["C00", "D01"], "diem_chuan_tk": 27.8, "ghichu": "", "hoc_phi_tk": "≈ 3–5 mln/year; ped.discounts (tham khào)", "hoc_bong": "Ped. quotas + scholarship for high score" },
+      { "ten": "Sư phạm Tiếng Anh", "to_hop": ["D01", "D14", "D66"], "diem_chuan_tk": 28.0, "ghichu": "", "hoc_phi_tk": "≈ 3–5 mln/year; ped.discounts (tham khào)", "hoc_bong": "Ped. quotas + scholarship for high score", "hoc_phi_tk": "≈ 3–5 mln/year; ped.discounts (tham khào)", "hoc_bong": "Ped. quotas + scholarship for high score" }
     ]
   },
   {
@@ -44,8 +44,8 @@
     "ten": "Đại học Y Hà Nội",
     "thanh_pho": "Hà Nội",
     "nhom_nganh": [
-      { "ten": "Y khoa", "to_hop": ["B00", "A00", "D07"], "diem_chuan_tk": 28.4, "ghichu": "Thuộc nhóm điểm chuẩn cao nhất cả nước" },
-      { "ten": "Điều dưỡng", "to_hop": ["B00", "A02"], "diem_chuan_tk": 24.5, "ghichu": "" }
+      { "ten": "Y khoa", "to_hop": ["B00", "A00", "D07"], "diem_chuan_tk": 28.4, "ghichu": "Thuộc nhóm điểm chuẩn cao nhất cả nước", "hoc_phi_tk": "≈ 6–10 mln/year (tham khào)", "hoc_bong": "Competitive; high score gives scholarship" },
+      { "ten": "Điều dưỡng", "to_hop": ["B00", "A02"], "diem_chuan_tk": 24.5, "ghichu": "", "hoc_phi_tk": "≈ 6–10 mln/year (tham khào)", "hoc_bong": "Competitive; high score gives scholarship", "hoc_phi_tk": "≈ 6–10 mln/year (tham khào)", "hoc_bong": "Competitive; high score gives scholarship" }
     ]
   },
   {
@@ -53,7 +53,7 @@
     "ten": "Đại học Dược Hà Nội",
     "thanh_pho": "Hà Nội",
     "nhom_nganh": [
-      { "ten": "Dược học", "to_hop": ["A00", "B00", "D07"], "diem_chuan_tk": 28.0, "ghichu": "" }
+      { "ten": "Dược học", "to_hop": ["A00", "B00", "D07"], "diem_chuan_tk": 28.0, "ghichu": "", "hoc_phi_tk": "≈ 5–8 mln/year (tham khào)", "hoc_bong": "Scholarship for high score", "hoc_phi_tk": "≈ 5–8 mln/year (tham khào)", "hoc_bong": "Scholarship for high score" }
     ]
   },
   {
@@ -61,9 +61,9 @@
     "ten": "Đại học Quốc gia Hà Nội",
     "thanh_pho": "Hà Nội",
     "nhom_nganh": [
-      { "ten": "CNTT (Trường CNTT&TT)", "to_hop": ["A00", "A01", "D01"], "diem_chuan_tk": 28.2, "ghichu": "" },
-      { "ten": "Luật (Trường ĐH Luật)", "to_hop": ["C00", "D01", "C19"], "diem_chuan_tk": 25.5, "ghichu": "" },
-      { "ten": "Báo chí - Truyền thông", "to_hop": ["D01", "C00"], "diem_chuan_tk": 25.0, "ghichu": "" }
+      { "ten": "CNTT (Trường CNTT&TT)", "to_hop": ["A00", "A01", "D01"], "diem_chuan_tk": 28.2, "ghichu": "", "hoc_phi_tk": "≈ 4–7 mln/year (tham khào)", "hoc_bong": "Scholarship for high score" },
+      { "ten": "Luật (Trường ĐH Luật)", "to_hop": ["C00", "D01", "C19"], "diem_chuan_tk": 25.5, "ghichu": "", "hoc_phi_tk": "≈ 4–7 mln/year (tham khào)", "hoc_bong": "Scholarship for high score" },
+      { "ten": "Báo chí - Truyền thông", "to_hop": ["D01", "C00"], "diem_chuan_tk": 25.0, "ghichu": "", "hoc_phi_tk": "≈ 4–7 mln/year (tham khào)", "hoc_bong": "Scholarship for high score", "hoc_phi_tk": "≈ 4–7 mln/year (tham khào)", "hoc_bong": "Scholarship for high score" }
     ]
   },
   {
@@ -71,9 +71,9 @@
     "ten": "Đại học Bách khoa TP.HCM",
     "thanh_pho": "TP.HCM",
     "nhom_nganh": [
-      { "ten": "Công nghệ thông tin", "to_hop": ["A00", "A01", "D01"], "diem_chuan_tk": 28.0, "ghichu": "" },
-      { "ten": "Kỹ thuật điện - Điện tử", "to_hop": ["A00", "A01"], "diem_chuan_tk": 26.0, "ghichu": "" },
-      { "ten": "Xây dựng", "to_hop": ["A00", "A01"], "diem_chuan_tk": 23.0, "ghichu": "" }
+      { "ten": "Công nghệ thông tin", "to_hop": ["A00", "A01", "D01"], "diem_chuan_tk": 28.0, "ghichu": "", "hoc_phi_tk": "≈ 5–10 mln/year (tham khào)", "hoc_bong": "Scholarship for high score" },
+      { "ten": "Kỹ thuật điện - Điện tử", "to_hop": ["A00", "A01"], "diem_chuan_tk": 26.0, "ghichu": "", "hoc_phi_tk": "≈ 5–10 mln/year (tham khào)", "hoc_bong": "Scholarship for high score" },
+      { "ten": "Xây dựng", "to_hop": ["A00", "A01"], "diem_chuan_tk": 23.0, "ghichu": "", "hoc_phi_tk": "≈ 5–10 mln/year (tham khào)", "hoc_bong": "Scholarship for high score", "hoc_phi_tk": "≈ 5–10 mln/year (tham khào)", "hoc_bong": "Scholarship for high score" }
     ]
   },
   {
@@ -81,8 +81,8 @@
     "ten": "Đại học Kinh tế TP.HCM",
     "thanh_pho": "TP.HCM",
     "nhom_nganh": [
-      { "ten": "Kinh doanh quốc tế", "to_hop": ["D01", "A00", "A01"], "diem_chuan_tk": 27.5, "ghichu": "" },
-      { "ten": "Marketing", "to_hop": ["D01", "A00", "A01"], "diem_chuan_tk": 27.3, "ghichu": "" }
+      { "ten": "Kinh doanh quốc tế", "to_hop": ["D01", "A00", "A01"], "diem_chuan_tk": 27.5, "ghichu": "", "hoc_phi_tk": "≈ 5–7 mln/year (tham khào)", "hoc_bong": "Scholarship for high score" },
+      { "ten": "Marketing", "to_hop": ["D01", "A00", "A01"], "diem_chuan_tk": 27.3, "ghichu": "", "hoc_phi_tk": "≈ 5–7 mln/year (tham khào)", "hoc_bong": "Scholarship for high score", "hoc_phi_tk": "≈ 5–7 mln/year (tham khào)", "hoc_bong": "Scholarship for high score" }
     ]
   },
   {
@@ -90,8 +90,8 @@
     "ten": "Đại học Y Dược TP.HCM",
     "thanh_pho": "TP.HCM",
     "nhom_nganh": [
-      { "ten": "Y khoa", "to_hop": ["B00", "A00", "D07"], "diem_chuan_tk": 28.3, "ghichu": "" },
-      { "ten": "Dược học", "to_hop": ["B00", "A00", "D07"], "diem_chuan_tk": 27.5, "ghichu": "" }
+      { "ten": "Y khoa", "to_hop": ["B00", "A00", "D07"], "diem_chuan_tk": 28.3, "ghichu": "", "hoc_phi_tk": "≈ 6–10 mln/year (tham khào)", "hoc_bong": "Scholarship for high score" },
+      { "ten": "Dược học", "to_hop": ["B00", "A00", "D07"], "diem_chuan_tk": 27.5, "ghichu": "", "hoc_phi_tk": "≈ 6–10 mln/year (tham khào)", "hoc_bong": "Scholarship for high score", "hoc_phi_tk": "≈ 6–10 mln/year (tham khào)", "hoc_bong": "Scholarship for high score" }
     ]
   },
   {
@@ -99,7 +99,7 @@
     "ten": "Đại học Luật TP.HCM",
     "thanh_pho": "TP.HCM",
     "nhom_nganh": [
-      { "ten": "Luật", "to_hop": ["C00", "C19", "D66", "D01"], "diem_chuan_tk": 26.0, "ghichu": "" }
+      { "ten": "Luật", "to_hop": ["C00", "C19", "D66", "D01"], "diem_chuan_tk": 26.0, "ghichu": "", "hoc_phi_tk": "≈ 5–7 mln/year (tham khào)", "hoc_bong": "Scholarship for high score", "hoc_phi_tk": "≈ 5–7 mln/year (tham khào)", "hoc_bong": "Scholarship for high score" }
     ]
   },
   {
@@ -107,8 +107,8 @@
     "ten": "Học viện Bưu chính Viễn thông",
     "thanh_pho": "Hà Nội",
     "nhom_nganh": [
-      { "ten": "CNTT", "to_hop": ["A00", "A01", "D01"], "diem_chuan_tk": 27.0, "ghichu": "" },
-      { "ten": "Truyền thông đa phương tiện", "to_hop": ["D01", "A00", "A01"], "diem_chuan_tk": 26.1, "ghichu": "" }
+      { "ten": "CNTT", "to_hop": ["A00", "A01", "D01"], "diem_chuan_tk": 27.0, "ghichu": "", "hoc_phi_tk": "≈ 4–6 mln/year (tham khào)", "hoc_bong": "Telecom corporate scholarships" },
+      { "ten": "Truyền thông đa phương tiện", "to_hop": ["D01", "A00", "A01"], "diem_chuan_tk": 26.1, "ghichu": "", "hoc_phi_tk": "≈ 4–6 mln/year (tham khào)", "hoc_bong": "Telecom corporate scholarships", "hoc_phi_tk": "≈ 4–6 mln/year (tham khào)", "hoc_bong": "Telecom corporate scholarships" }
     ]
   },
   {
@@ -116,8 +116,8 @@
     "ten": "Học viện Ngân hàng",
     "thanh_pho": "Hà Nội",
     "nhom_nganh": [
-      { "ten": "Tài chính - Ngân hàng", "to_hop": ["A00", "A01", "D01"], "diem_chuan_tk": 26.5, "ghichu": "" },
-      { "ten": "Kế toán", "to_hop": ["A00", "A01", "D01"], "diem_chuan_tk": 26.0, "ghichu": "" }
+      { "ten": "Tài chính - Ngân hàng", "to_hop": ["A00", "A01", "D01"], "diem_chuan_tk": 26.5, "ghichu": "", "hoc_phi_tk": "≈ 4–6 mln/year (tham khào)", "hoc_bong": "Banking scholarships" },
+      { "ten": "Kế toán", "to_hop": ["A00", "A01", "D01"], "diem_chuan_tk": 26.0, "ghichu": "", "hoc_phi_tk": "≈ 4–6 mln/year (tham khào)", "hoc_bong": "Banking scholarships", "hoc_phi_tk": "≈ 4–6 mln/year (tham khào)", "hoc_bong": "Banking scholarships" }
     ]
   }
 ]

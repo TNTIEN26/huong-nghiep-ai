@@ -70,6 +70,14 @@ const GEMINI_RESPONSE_SCHEMA = {
             description: "Tên các trường đại học tiêu biểu, chỉ lấy từ danh sách trong dữ liệu.",
             items: { type: "string" },
           },
+          muc_luong_tk: {
+            type: "string",
+            description: "Reference salary band (tham khào only), short, e.g. \"≈ 25–60 mln/tháng\".",
+          },
+          rui_ro: {
+            type: "string",
+            description: "Automation/AI-replacement risk and market outlook for this career (tham khào only).",
+          },
         },
         required: ["ten", "do_phu_hop", "ly_do", "khoi_thi", "mon_trong_tam", "lo_trinh", "truong_tieu_bieu"],
       },
@@ -86,6 +94,16 @@ const GEMINI_RESPONSE_SCHEMA = {
     luu_y: {
       type: "string",
       description: "Lưu ý quan trọng: điểm chuẩn thay đổi hằng năm, kết quả phụ thuộc nỗ lực, không phải lời hứa đỗ.",
+    },
+    canh_bao: {
+      type: "array",
+      description: "2-4 career-choice traps relevant for THIS student (following the trend, family pressure, flashy name, score-chasing without interest).",
+      items: { type: "string" },
+    },
+    xu_truong: {
+      type: "array",
+      description: "3-5 labor-market facts: where demand grows, automation/AI risk, reference salary level (approx only).",
+      items: { type: "string" },
     },
   },
   required: ["gioi_thieu", "nghe_nghiep", "khoi_thi_de_nghi", "loi_khuyen", "luu_y"],
@@ -114,7 +132,23 @@ function parseResult(text: string): ApiResult {
   if (!isApiResult(parsed)) {
     throw new Error("Kết quả AI thiếu thông tin cần thiết. Hãy thử lại.");
   }
-  return parsed;
+  return normalizeApiResult(parsed);
+}
+
+// Fill optional fields with safe defaults so the UI and types are bulletproof.
+function normalizeApiResult(result: ApiResult): ApiResult {
+  result.canh_bao = Array.isArray(result.canh_bao)
+    ? result.canh_bao.filter((s): s is string => typeof s === "string" && s.trim() !== "")
+    : [];
+  result.xu_truong = Array.isArray(result.xu_truong)
+    ? result.xu_truong.filter((s): s is string => typeof s === "string" && s.trim() !== "")
+    : [];
+  result.nghe_nghiep = result.nghe_nghiep.map((n) => ({
+    ...n,
+    muc_luong_tk: typeof n.muc_luong_tk === "string" ? n.muc_luong_tk : "",
+    rui_ro: typeof n.rui_ro === "string" ? n.rui_ro : "",
+  }));
+  return result;
 }
 
 async function callGemini(userMessage: string, systemPrompt: string): Promise<ApiResult> {
@@ -599,14 +633,14 @@ async function streamOpenRouterChat(
     onEvent({
       type: "error",
       error:
-        "Các model AI miễn phí đang phản hồi quá chậm (quá tải). Hãy chờ 1–2 minúty rồi thử lại, hoặc thêm model khác vào OPENROUTER_MODEL trong .env.local.",
+        "Các model AI miễn phí đang phản hồi quá chậm (quá tải). Hãy chờ 1–2 phút rồi thử lại, hoặc thêm model khác vào OPENROUTER_MODEL trong .env.local.",
     });
     return;
   }
   onEvent({
     type: "error",
     error: errors[0]
-      ? `Các model AI miễn phí đang quá tải: ${errors[0].slice(0, 160)}. Hãy thử lại sau 1–2 minúty.`
+      ? `Các model AI miễn phí đang quá tải: ${errors[0].slice(0, 160)}. Hãy thử lại sau 1–2 phút.`
       : "Không có model AI nào phản hồi. Hãy thử lại sau.",
   });
 }

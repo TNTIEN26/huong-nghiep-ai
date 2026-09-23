@@ -24,7 +24,7 @@ const STATUS_MESSAGES = [
   "Nối môn học, sở thích với ngành…",
   "Trò chuyện với model AI…",
   "Viết phân tích…",
-  "Đang phân tinh, vui lòng chờ…",
+  "Đang phân tích, vui lòng chờ…",
 ] as const;
 
 function isValidForm(body: unknown): body is FormData {

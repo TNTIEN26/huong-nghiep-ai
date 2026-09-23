@@ -187,8 +187,11 @@ export default function SchoolCarousel() {
   }
 
   useEffect(() => {
-    // Xáo ngẫu nhiên mỗi lần mở web
-    setHien(xaoMang(KHO_LINK).slice(0, SO_O_MOI_LAN));
+    // Xáo ngẫu nhiên mỗi lần mở web (deferred — не синхронно в теле эффекта)
+    const timer = setTimeout(() => {
+      setHien(xaoMang(KHO_LINK).slice(0, SO_O_MOI_LAN));
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -199,7 +202,6 @@ export default function SchoolCarousel() {
       window.removeEventListener("resize", trenResize);
       cancelAnimationFrame(raf.current);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hien]);
 
   const tatCa = Array.from({ length: LAN }, (_, i) => i).flatMap((i) =>

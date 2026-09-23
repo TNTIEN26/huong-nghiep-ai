@@ -2,7 +2,10 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 
-import type { ApiResult } from "@/lib/types";
+import type { ApiResult, TruongDH } from "@/lib/types";
+import truongDhData from "@/data/truong-dh.json";
+
+const truongDhRaw = truongDhData as TruongDH[];
 
 const lopOptions = ["Lớp 6", "Lớp 7", "Lớp 8", "Lớp 9", "Lớp 10", "Lớp 11", "Lớp 12"];
 
@@ -56,6 +59,36 @@ function thanhDoPhuHop(percent: number) {
       <div className="h-full rounded-full bg-orange-500" style={{ width: `${percent}%` }} />
     </div>
   );
+}
+
+type TruongKetQua = {
+  ten: string;
+  thanh_pho: string;
+  nhom_nganh: TruongDH["nhom_nganh"];
+  khu: string;
+};
+
+// Match university names from the AI result against our local dataset.
+function findTruong(uniNames: string[]): TruongKetQua[] {
+  const out: TruongKetQua[] = [];
+  for (const uniName of uniNames) {
+    const target = uniName.trim().toLowerCase();
+    if (!target) continue;
+    const uni = truongDhRaw.find((u) => u.ten.toLowerCase() === target);
+    if (!uni) continue;
+    const all = uni.nhom_nganh.map((n) => n.diem_chuan_tk);
+    const khu = all.length > 0 ? `${Math.min(...all).toFixed(1)}–${Math.max(...all).toFixed(1)}` : "";
+    out.push({ ten: uni.ten, thanh_pho: uni.thanh_pho, nhom_nganh: uni.nhom_nganh, khu });
+  }
+  return out;
+}
+
+function diemTieu(p: TruongDH["nhom_nganh"][number]): string {
+  const bits = [`${p.diem_chuan_tk.toFixed(1)} điểm`];
+  if (p.to_hop.length > 0) bits.push(`khối: ${p.to_hop.join(", ")}`);
+  if (p.hoc_phi_tk) bits.push(p.hoc_phi_tk);
+  if (p.ghichu) bits.push(p.ghichu);
+  return bits.join(" · ");
 }
 
 export default function CareerConsult() {
@@ -211,6 +244,32 @@ export default function CareerConsult() {
           )}
         </div>
 
+        {(result.canh_bao ?? []).length > 0 && (
+          <div className="rounded-2xl border border-amber-400/40 bg-amber-50 p-5 sm:p-6 dark:border-amber-400/30 dark:bg-amber-400/10">
+            <h3 className="text-sm font-extrabold text-amber-900 dark:text-amber-200">
+              ⚠ Bẫy hướng nghiệp — xem trước chọn nghé
+            </h3>
+            <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-amber-900 dark:text-amber-200">
+              {(result.canh_bao ?? []).map((c) => (
+                <li key={c}>{c}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {(result.xu_truong ?? []).length > 0 && (
+          <div className="rounded-2xl border border-sky-300/40 bg-sky-50 p-5 sm:p-6 dark:border-sky-400/30 dark:bg-sky-400/10">
+            <h3 className="text-sm font-extrabold text-sky-900 dark:text-sky-200">
+              Xu hướng thịргола lao dòng · tham khào
+            </h3>
+            <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-sky-900 dark:text-sky-200">
+              {(result.xu_truong ?? []).map((x) => (
+                <li key={x}>{x}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         <ol className="space-y-4">
           {result.nghe_nghiep.map((nganh, i) => (
             <li
@@ -229,7 +288,10 @@ export default function CareerConsult() {
                 </p>
               </div>
               <div className="mt-3">{thanhDoPhuHop(nganh.do_phu_hop)}</div>
-              <p className="mt-4 text-[15px] leading-relaxed text-stone-600 dark:text-slate-400">{nganh.ly_do}</p>
+              <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-slate-400">
+                Vì sao phù hợp
+              </p>
+              <p className="mt-1 text-[15px] leading-relaxed text-stone-600 dark:text-slate-400">{nganh.ly_do}</p>
 
               <div className="mt-4 flex flex-wrap gap-2">
                 {nganh.khoi_thi.map((k) => (
@@ -251,6 +313,22 @@ export default function CareerConsult() {
                     {nganh.mon_trong_tam.join(" · ")}
                   </dd>
                 </div>
+                {nganh.muc_luong_tk && (
+                  <div>
+                    <dt className="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-slate-400">
+                      Mức luong (tham khào)
+                    </dt>
+                    <dd className="mt-1 font-medium text-stone-700 dark:text-slate-300">{nganh.muc_luong_tk}</dd>
+                  </div>
+                )}
+                {nganh.rui_ro && (
+                  <div>
+                    <dt className="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-slate-400">
+                      Rủi ro / xu hướng
+                    </dt>
+                    <dd className="mt-1 font-medium text-stone-700 dark:text-slate-300">{nganh.rui_ro}</dd>
+                  </div>
+                )}
                 {nganh.truong_tieu_bieu.length > 0 && (
                   <div>
                     <dt className="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-slate-400">
@@ -269,6 +347,29 @@ export default function CareerConsult() {
                 <span className="font-bold text-stone-900 dark:text-slate-100">Lộ trình. </span>
                 {nganh.lo_trinh}
               </div>
+
+              {findTruong(nganh.truong_tieu_bieu).map((t) => (
+                <div key={t.ten} className="mt-4 rounded-xl border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] p-4">
+                  <p className="text-sm font-bold text-stone-900 dark:text-slate-100">
+                    {t.ten}
+                    <span className="ml-1.5 text-xs font-medium text-stone-500 dark:text-slate-400">
+                      · {t.thanh_pho} · điểm {t.khu} (tham khào)
+                    </span>
+                  </p>
+                  <ul className="mt-2 space-y-1.5 text-[13px] leading-snug text-stone-600 dark:text-slate-400">
+                    {t.nhom_nganh.map((p) => (
+                      <li key={`${t.ten}-${p.ten}`}>
+                        <span className="font-semibold text-stone-800 dark:text-slate-200">{p.ten}</span>
+                        {" — "}
+                        {diemTieu(p)}
+                      </li>
+                    ))}
+                  </ul>
+                  {t.nhom_nganh[0]?.hoc_bong && (
+                    <p className="mt-1.5 text-xs text-stone-500 dark:text-slate-500">Hoc bong: {t.nhom_nganh[0].hoc_bong}</p>
+                  )}
+                </div>
+              ))}
             </li>
           ))}
         </ol>

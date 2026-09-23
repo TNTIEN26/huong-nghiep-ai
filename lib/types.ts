@@ -16,6 +16,10 @@ export type NganhNghe = {
   tinh_cach: string[];
   cong_viec: string[];
   trien_vong: string;
+  /** Reference salary band (tham khào only), e.g. "≈ 25–60 mln/tháng". */
+  muc_luong_tk?: string;
+  /** Automation/replacement risk + labor market note (tham khào only). */
+  rui_ro_thay_the?: string;
   muc_hoc_phu_hop: string[];
 };
 
@@ -28,6 +32,8 @@ export type TruongDH = {
     to_hop: string[];
     diem_chuan_tk: number;
     ghichu?: string;
+    hoc_phi_tk?: string;
+    hoc_bong?: string;
   }[];
 };
 
@@ -52,6 +58,10 @@ export type GoiYNganh = {
   mon_trong_tam: string[];
   lo_trinh: string;
   truong_tieu_bieu: string[];
+  /** Reference salary band (tham khào only), e.g. "≈ 25–60 mln/tháng". */
+  muc_luong_tk?: string;
+  /** Automation/replacement risk note (tham khào only). */
+  rui_ro?: string;
 };
 
 export type ApiResult = {
@@ -60,4 +70,8 @@ export type ApiResult = {
   khoi_thi_de_nghi: string[];
   loi_khuyen: string;
   luu_y: string;
+  /** Career-choice traps specific to this student (fashion, family pressure, flashy title...). */
+  canh_bao?: string[];
+  /** Labor-market trends: demand growth, automation risk, salary range (approx). */
+  xu_truong?: string[];
 };

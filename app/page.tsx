@@ -1,4 +1,5 @@
 import ExamCountdown from "./components/ExamCountdown";
+import CareerConsult from "./components/CareerConsult";
 import HeroSection from "./components/HeroSection";
 import SiteNav from "./components/SiteNav";
 
@@ -34,11 +35,17 @@ export default function Home() {
       {/* BỘ ĐẾM NGƯỢC */}
       <main id="trai-nghiem" className="mx-auto w-full max-w-[1440px] scroll-mt-20 px-4 py-12 sm:px-8 sm:py-16">
         <ExamCountdown />
-        {/*
-          TẠM ẨN form tư vấn (CareerConsult) khỏi hiển thị theo yêu cầu.
-          File + API /api/consult vẫn giữ nguyên cho bạn phụ trách tính năng.
-        */}
-      </main>
+        {/* Tư ván định hướng — dashboard minh bạч: kết quả + lý do + bẫy + tham khào trường */}
+        <section id="tu-van" className="mt-16 scroll-mt-20">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">Định hướng nghé nghiěпы</h2>
+            <p className="mt-2 text-sm leading-relaxed text-stone-500 dark:text-slate-400">
+              Viết 2–4 câu про себя: AI chọn nghé nghiěпы, khối thi, трůvy tiêu biеui, предупредит о bẫy hướнг nghé и покаже xu hướнг thịрgola (все цифры — tham khào).
+            </p>
+          </div>
+          <CareerConsult />
+        </section>
+    </main>
 
       {/* FOOTER */}
       <footer className="mt-auto border-t border-stone-900/10 bg-white/60 px-5 py-8 dark:border-white/10 dark:bg-[#0b1a30]/60">

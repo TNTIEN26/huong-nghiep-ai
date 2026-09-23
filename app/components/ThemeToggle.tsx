@@ -31,7 +31,11 @@ export default function ThemeToggle() {
   const [toi, setToi] = useState(false);
 
   useEffect(() => {
-    setToi(document.documentElement.classList.contains("dark"));
+    // Initial state — from <html> class (deferred, non-blocking inside the effect)
+    const timer = setTimeout(() => {
+      setToi(document.documentElement.classList.contains("dark"));
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   function doi() {

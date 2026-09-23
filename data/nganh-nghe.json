@@ -10,6 +10,8 @@
     "tinh_cach": ["Thích máy tính và công nghệ", "Kiên nhẫn", "Thích thử - sai - sửa"],
     "cong_viec": ["Lập trình viên", "Kỹ sư AI", "Chuyên gia an ninh mạng", "Phân tích dữ liệu", "Quản trị hệ thống"],
     "trien_vong": "Rất cao tại Việt Nam và toàn cầu, nhu cầu nhân lực lớn, thu nhập cao.",
+    "muc_luong_tk": "≈ 25–60 mln/tháng (tham khào)",
+    "rui_ro_thay_the": "Routine tasks get automated; demand stays high - learn AI tools & architecture",
     "muc_hoc_phu_hop": ["C2", "C3"]
   },
   {
@@ -23,6 +25,8 @@
     "tinh_cach": ["Quan tâm đến sức khỏe con người", "Cẩn thận", "Bền bỉ"],
     "cong_viec": ["Bác sĩ đa khoa", "Bác sĩ chuyên khoa", "Nghiên cứu y sinh"],
     "trien_vong": "Nhu cầu cao, điểm chuẩn thuộc nhóm cao nhất cả nước; đòi hỏi nhiều năm học tập.",
+    "muc_luong_tk": "≈ 35–90 mln/tháng (later, tham khào)",
+    "rui_ro_thay_the": "Not replaced by AI; hard admission, many years of study",
     "muc_hoc_phu_hop": ["C3"]
   },
   {
@@ -36,6 +40,8 @@
     "tinh_cach": ["Yêu thích hóa học", "Cẩn trọng", "Kiên nhẫn"],
     "cong_viec": ["Dược sĩ nhà thuốc", "Dược sĩ bệnh viện", "Nghiên cứu phát triển thuốc", "Kiểm nghiệm"],
     "trien_vong": "Ổn định và phát triển khi dân số già và nhu cầu chăm sóc sức khỏe tăng.",
+    "muc_luong_tk": "≈ 25–45 mln/tháng (tham khào)",
+    "rui_ro_thay_the": "Stable demand; low automation risk",
     "muc_hoc_phu_hop": ["C3"]
   },
   {
@@ -49,6 +55,8 @@
     "tinh_cach": ["Thích sửa chữa, tháo ráp", "Yêu thích vật lý", "Tỉ mỉ"],
     "cong_viec": ["Kỹ sư điện", "Kỹ sư tự động hóa", "Kỹ sư vi mạch bán dẫn", "Kỹ thuật viên điện lực"],
     "trien_vong": "Rất cao nhờ dịch chuyển sản xuất vi mạch, điện tử vào Việt Nam.",
+    "muc_luong_tk": "≈ 20–45 mln/tháng (tham khào)",
+    "rui_ro_thay_the": "Demand growing (chip manufacturing in VN)",
     "muc_hoc_phu_hop": ["C2", "C3"]
   },
   {
@@ -62,6 +70,8 @@
     "tinh_cach": ["Yêu trẻ em", "Truyền cảm hứng", "Có trách nhiệm xã hội"],
     "cong_viec": ["Giáo viên cấp 2, cấp 3", "Giảng viên đại học", "Chuyên viên giáo dục"],
     "trien_vong": "Ưu đãi về học phí, ngành sư phạm luôn được nhà nước hỗ trợ, nhu cầu ổn định.",
+    "muc_luong_tk": "≈ 15–28 mln/tháng (tham khào)",
+    "rui_ro_thay_the": "Teacher shortage; AI is a helper, not a replacement",
     "muc_hoc_phu_hop": ["C2", "C3"]
   },
   {
@@ -75,6 +85,8 @@
     "tinh_cach": ["Cẩn trọng", "Thích số liệu", "Chịu được công việc ổn định"],
     "cong_viec": ["Kế toán viên", "Kiểm toán viên", "Chuyên viên tài chính"],
     "trien_vong": "Nhu cầu ổn định ở mọi doanh nghiệp, tăng mạnh khi hội nhập chuẩn kiểm toán quốc tế.",
+    "muc_luong_tk": "≈ 15–30 mln/tháng (tham khào)",
+    "rui_ro_thay_the": "Manual bookkeeping is automated - need data/audit skills",
     "muc_hoc_phu_hop": ["C3"]
   },
   {
@@ -88,6 +100,8 @@
     "tinh_cach": ["Thích đọc báo kinh tế", "Ham hiểu biết xã hội", "Thích phân tích"],
     "cong_viec": ["Chuyên viên phân tích kinh tế", "Nghiên cứu thị trường", "Cán bộ ngân hàng"],
     "trien_vong": "Rộng, kết hợp được với tài chính, ngân hàng, dữ liệu.",
+    "muc_luong_tk": "≈ 20–40 mln/tháng (tham khào)",
+    "rui_ro_thay_the": "Broad base; analytics & data win",
     "muc_hoc_phu_hop": ["C3"]
   },
   {
@@ -101,6 +115,8 @@
     "tinh_cach": ["Sáng tạo", "Năng động", "Thích tương tác xã hội"],
     "cong_viec": ["Chuyên viên marketing", "Quản lý thương hiệu", "Digital marketing", "Content creator"],
     "trien_vong": "Phát triển mạnh cùng thương mại điện tử và mạng xã hội.",
+    "muc_luong_tk": "≈ 15–35 mln/tháng (tham khào)",
+    "rui_ro_thay_the": "Digital grows; AI changes the role - learn analytics",
     "muc_hoc_phu_hop": ["C3"]
   },
   {
@@ -114,6 +130,8 @@
     "tinh_cach": ["Thích tranh luận", "Công bằng", "Kiên định"],
     "cong_viec": ["Luật sư", "Chuyên viên pháp chế", "Công chứng viên", "Cán bộ tư pháp"],
     "trien_vong": "Ổn định, khan hiếm luật sư giỏi, thu nhập tốt khi có uy tín.",
+    "muc_luong_tk": "≈ 25–70 mln/tháng, more with experience (tham khào)",
+    "rui_ro_thay_the": "High competition; legal services going digital",
     "muc_hoc_phu_hop": ["C3"]
   },
   {
@@ -127,6 +145,8 @@
     "tinh_cach": ["Tò mò", "Bản lĩnh", "Ham đọc", "Quan sát"],
     "cong_viec": ["Phóng viên", "Biên tập viên", "Quản lý truyền thông", "Sản xuất nội dung"],
     "trien_vong": "Chuyển dịch mạnh sang số, khó khăn với báo in nhưng mở ra nhiều vị trí mới.",
+    "muc_luong_tk": "≈ 12–25 mln/tháng (tham khào)",
+    "rui_ro_thay_the": "Press under pressure; digital media stronger",
     "muc_hoc_phu_hop": ["C3"]
   },
   {
@@ -140,6 +160,8 @@
     "tinh_cach": ["Thích ngôn ngữ", "Tự tin giao tiếp", "Thích du học, khám phá"],
     "cong_viec": ["Giáo viên tiếng Anh", "Biên dịch viên", "Phiên dịch viên", "Chuyên viên xuất nhập khẩu"],
     "trien_vong": "Nền tảng mạnh để kết hợp với nhiều ngành khác, cơ hội làm việc quốc tế.",
+    "muc_luong_tk": "≈ 15–30 mln/tháng (tham khào)",
+    "rui_ro_thay_the": "Translation is automated; specialized language & culture matter",
     "muc_hoc_phu_hop": ["C2", "C3"]
   },
   {
@@ -153,6 +175,8 @@
     "tinh_cach": ["Thân thiện", "Năng động", "Yêu thích khám phá"],
     "cong_viec": ["Hướng dẫn viên", "Quản lý khách sạn", "Chuyên viên lữ hành", "Tổ chức sự kiện"],
     "trien_vong": "Việt Nam là điểm đến du lịch hàng đầu, nhu cầu nhân lực ngoại ngữ + dịch vụ tăng.",
+    "muc_luong_tk": "≈ 15–30 mln/tháng (tham khào)",
+    "rui_ro_thay_the": "Hospitality recovers with tourism; service automation rising",
     "muc_hoc_phu_hop": ["C2", "C3"]
   },
   {
@@ -166,6 +190,8 @@
     "tinh_cach": ["Yêu cái đẹp", "Sáng tạo", "Thích quan sát công trình"],
     "cong_viec": ["Kiến trúc sư", "Thiết kế nội thất", "Quy hoạch đô thị"],
     "trien_vong": "Ổn định khi đô thị hóa tiếp tục; cần thêm năng khiếu vẽ ngay từ phổ thông.",
+    "muc_luong_tk": "≈ 20–45 mln/tháng (tham khào)",
+    "rui_ro_thay_the": "Urbanization keeps demand; learn BIM & digital tools",
     "muc_hoc_phu_hop": ["C2", "C3"]
   },
   {
@@ -179,6 +205,8 @@
     "tinh_cach": ["Thích kỹ thuật", "Cẩn thận", "Chịu khó"],
     "cong_viec": ["Kỹ sư kết cấu", "Giám sát xây dựng", "Quản lý dự án"],
     "trien_vong": "Gắn với phát triển hạ tầng, cơ hội từ dự án lớn của nhà nước và FDI.",
+    "muc_luong_tk": "≈ 18–35 mln/tháng (tham khào)",
+    "rui_ro_thay_the": "Stable demand; construction digitalization (BIM)",
     "muc_hoc_phu_hop": ["C3"]
   },
   {
@@ -192,6 +220,8 @@
     "tinh_cach": ["Yêu thiên nhiên", "Thích thực nghiệm", "Kiên trì"],
     "cong_viec": ["Kỹ sư nông nghiệp", "Quản lý trang trại", "Nghiên cứu giống cây trồng", "Chế biến nông sản"],
     "trien_vong": "Việt Nam xuất khẩu nông sản lớn, đang thiếu nhân lực tech trong nông nghiệp.",
+    "muc_luong_tk": "≈ 18–35 mln/tháng (tham khào)",
+    "rui_ro_thay_the": "Staff shortage; agrotech growing",
     "muc_hoc_phu_hop": ["C2", "C3"]
   },
   {
@@ -205,6 +235,8 @@
     "tinh_cach": ["Thấu cảm", "Chín chắn", "Thích giúp đỡ người khác"],
     "cong_viec": ["Chuyên viên tham vấn", "Nhà tâm lý học lâm sàng", "Tư vấn hướng nghiệp", "HR"],
     "trien_vong": "Đang phát triển mạnh khi nhu cầu sức khỏe tinh thần tăng lên.",
+    "muc_luong_tk": "≈ 20–40 mln/tháng (tham khào)",
+    "rui_ro_thay_the": "Mental-health demand growing",
     "muc_hoc_phu_hop": ["C3"]
   },
   {
@@ -218,6 +250,8 @@
     "tinh_cach": ["Nhạy cảm thẩm mỹ", "Sáng tạo", "Chăm chút chi tiết"],
     "cong_viec": ["Designer đồ họa", "Thiết kế UI/UX", "Đồ họa chuyển động", "Thiết kế nội dung mạng xã hội"],
     "trien_vong": "Gắn chặt với kỷ nguyên số và marketing; có thể tự do (freelance) hoặc làm công ty.",
+    "muc_luong_tk": "≈ 15–35 mln/tháng (tham khào)",
+    "rui_ro_thay_the": "AI generates graphics - learn UI/UX & product thinking",
     "muc_hoc_phu_hop": ["C2", "C3"]
   },
   {
@@ -231,6 +265,8 @@
     "tinh_cach": ["Công bằng", "Kỷ luật", "Dũng cảm"],
     "cong_viec": ["Cảnh sát", "An ninh điều tra", "Phòng cháy chữa cháy", "Quản lý hành chính"],
     "trien_vong": "Điểm chuẩn cao, cạnh tranh; cần lý lịch trong sạch, hồ sơ xét tuyển riêng.",
+    "muc_luong_tk": "≈ 15–25 mln/tháng (tham khào)",
+    "rui_ro_thay_the": "Civil service stable; competitive admission",
     "muc_hoc_phu_hop": ["C3"]
   },
   {
@@ -244,6 +280,8 @@
     "tinh_cach": ["Kỷ luật", "Trách nhiệm", "Yêu nước"],
     "cong_viec": ["Sĩ quan chỉ huy", "Kỹ sư quân sự", "Vận hành thiết bị quốc phòng"],
     "trien_vong": "Miễn phí đào tạo; cần sức khỏe tốt, hồ sơ lý lịch rõ ràng, đăng ký xét tuyển riêng.",
+    "muc_luong_tk": "≈ 20–40 mln/tháng + guarantees (tham khào)",
+    "rui_ro_thay_the": "Free education, but strong commitment required",
     "muc_hoc_phu_hop": ["C3"]
   },
   {
@@ -257,6 +295,8 @@
     "tinh_cach": ["Quan tâm người khác", "Bền bỉ", "Trách nhiệm"],
     "cong_viec": ["Điều dưỡng bệnh viện", "Điều dưỡng chăm sóc dài hạn", "Y tế cộng đồng"],
     "trien_vong": "Thiếu hụt nhân lực trên toàn cầu, cơ hội xuất khẩu lao động y tế tốt.",
+    "muc_luong_tk": "≈ 18–35 mln/tháng (tham khào)",
+    "rui_ro_thay_the": "Massive staff shortage; work abroad possible",
     "muc_hoc_phu_hop": ["C3"]
   },
   {
@@ -270,6 +310,8 @@
     "tinh_cach": ["Yêu động vật", "Cẩn thận", "Kiên nhẫn"],
     "cong_viec": ["Bác sĩ thú y", "Quản lý trang trại chăn nuôi", "Kiểm dịch động vật"],
     "trien_vong": "Nhu cầu tăng cùng ngành chăn nuôi bền vững và thú cưng.",
+    "muc_luong_tk": "≈ 25–45 mln/tháng (tham khào)",
+    "rui_ro_thay_the": "Few specialists; demand rising with pet ownership",
     "muc_hoc_phu_hop": ["C2", "C3"]
   },
   {
@@ -283,6 +325,8 @@
     "tinh_cach": ["Nhanh nhạy", "Có tổ chức", "Thích vận hành"],
     "cong_viec": ["Chuyên viên logistics", "Điều phối vận tải", "Quản lý kho", "Chuyên viên xuất nhập khẩu"],
     "trien_vong": "Việt Nam là trung tâm thương mại khu vực, ngành logistics thiếu nhân lực.",
+    "muc_luong_tk": "≈ 20–40 mln/tháng (tham khào)",
+    "rui_ro_thay_the": "Staff shortage; learn data/logistics software",
     "muc_hoc_phu_hop": ["C3"]
   },
   {
@@ -296,6 +340,8 @@
     "tinh_cach": ["Học thuật", "Thích thực nghiệm", "Kiên trì"],
     "cong_viec": ["Chuyên viên nghiên cứu", "Kỹ sư sinh học", "Kiểm nghiệm thực phẩm"],
     "trien_vong": "Ngành mũi nhọn, hấp dẫn nhưng cần học lên cao và định hướng rõ trước.",
+    "muc_luong_tk": "≈ 25–50 mln/tháng (tham khào)",
+    "rui_ro_thay_the": "Needs master's degree + research skills",
     "muc_hoc_phu_hop": ["C2", "C3"]
   }
 ]

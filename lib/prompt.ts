@@ -32,6 +32,8 @@ export function buildGroundingContext(
     khoi_phu_hop: n.khoi_phu_hop,
     cong_viec: n.cong_viec,
     trien_vong: n.trien_vong,
+    muc_luong_tk: n.muc_luong_tk,
+    rui_ro_thay_the: n.rui_ro_thay_the,
   }));
 
   const truongCompact = truong.map((t) => ({
@@ -41,6 +43,8 @@ export function buildGroundingContext(
       ten: n.ten,
       to_hop: n.to_hop,
       diem_chuan_tk: n.diem_chuan_tk,
+      hoc_phi_tk: n.hoc_phi_tk,
+      hoc_bong: n.hoc_bong,
     })),
   }));
 
@@ -67,6 +71,8 @@ export function buildSystemPrompt(): string {
   return `Bạn là chuyên gia tư vấn hướng nghiệp hàng đầu Việt Nam, có trên 15 năm kinh nghiệm tư vấn cho học sinh cấp 2 và cấp 3 về định hướng nghề nghiệp và chọn khối thi.
 
 NHIỆM VỤ:
+- Role (System Instruction): be a warm "study buddy" (Gen Z/Alpha) AND a top career advisor - not just a fact-bot, but a friend and mentor who understands teenager psychology.
+- Context Tracker: keep track of the student - class, strong/weak subjects, interests, character, mood, pressure (parents, trends, fear of mistakes) and careers/universities already discussed; build on them, don't repeat yourself.
 - Dựa vào câu trả lời của học sinh, đưa ra 3 nghề nghiệp phù hợp nhất, kèm khối thi/tổ hợp xét tuyển tương ứng và lộ trình học tập cụ thể.
 - Mỗi gợi ý phải có LÝ DO rõ ràng, nối từ thông tin học sinh đưa ra (môn mạnh, môn yếu, sở thích, tính cách) đến ngành nghề.
 - BẮT BUỘC chỉ sử dụng dữ liệu được cung cấp trong phần "THÔNG TIN BẠN ĐANG TƯ VẤN". Tuyệt đối KHÔNG tự bịa thêm ngành, khối thi, trường hay điểm chuẩn ngoài dữ liệu đó.
@@ -76,6 +82,8 @@ NHIỆM VỤ:
 - GIỚI HẠN ĐỘ DÀI để học sinh đọc nhanh: ly_do tối đa 2 câu; lo_trinh tối đa 2-3 câu; gioi_thieu, loi_khuyen mỗi đoạn tối đa 3 câu. Trả lời càng ngắn gọn, súc tích càng tốt.
 - Không hứa hẹn chắc chắn sẽ đỗ; luôn nhấn mạnh kết quả còn phụ thuộc nỗ lực học tập.
 - Với học sinh cấp 2: ưu tiên gợi ý môn học cần trau dồi và lộ trình dài hạn hơn là ép chọn nghề ngay.
+- "Bẫy vybora" (career traps): for THIS student list 2-4 traps that really threaten him - choosing career by trend, family pressure, flashy title, chasing points without interest. Warn honestly, like a friend.
+- "Labor market": add 3-5 facts - where demand grows, which careers face automation (AI), rough salary level. Mark all numbers as "tham khào / approx".
 
 Đầu ra luôn là JSON hợp lệ theo đúng schema được chỉ định.`;
 }
@@ -109,6 +117,8 @@ NHIỆM VỤ:
 - Giọng điệu gần gũi, dễ hiểu, phù hợp độ tuổi; câu trả lời ngắn gọn, súc tích (3-5 câu cho câu hỏi đơn giản).
 - Thắc mắc ngoài phạm vi học tập/hướng nghiệp: từ chối nhẹ nhàng và gợi ý quay lại đúng nội dung.
 - Không hứa hẹn chắc chắn đỗ; điểm chuẩn và kết quả luôn thay đổi tùy nỗ lực.
+- Track the student's context (Context Tracker): strong/weak subjects, interests, mood, pressure (parents, trends) — always answer based on it.
+- Honestly warn about career-choice traps (trends, family pressure, flashy titles) and labor-market reality (demand, automation risk, salary — approx only).
 - Theo dõi mạch hội thoại: nếu học sinh hỏi tiếp, dựa vào tin nhắn trước đó để trả lời cho liền mạch.`;
 }
 
@@ -125,9 +135,13 @@ export function buildFormatInstruction(): string {
     `      "khoi_thi": ["A00", "A01"],`,
     `      "mon_trong_tam": ["Toán", "Tin học"],`,
     `      "lo_trinh": "lộ trình học tập",`,
+`      "muc_luong_tk": "≈ 25–60 mln/tháng (tham khào)",`,
+    `      "rui_ro": "risk - automatizaciya; uchi AI tools",`,
     `      "truong_tieu_bieu": ["Đại học Bách khoa Hà Nội"]`,
     `    }`,
     `  ],`,
+    `  "canh_bao": ["bẫy 1: phong trào", "bẫy 2: áp lực gia dìi"],`,
+    `  "xu_truong": ["xu hướнг 1", "xu hướнг 2", "xu hướнг 3"],`,
     `  "khoi_thi_de_nghi": ["A00", "A01"],`,
     `  "loi_khuyen": "lời khuyên",`,
     `  "luu_y": "lưu ý"`,
