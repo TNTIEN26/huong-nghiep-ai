@@ -45,22 +45,22 @@ export default function ExamCountdown() {
   ] as const;
 
   return (
-    <section aria-label="Đếm ngược kỳ thi" className="w-full rounded-[2rem] border border-stone-900/10 bg-white p-8 shadow-[0_30px_80px_-40px_rgba(234,88,12,0.45)] dark:border-white/10 dark:bg-[#0b1a30] dark:shadow-[0_30px_80px_-40px_rgba(234,88,12,0.4)] sm:p-14 xl:p-20">
+    <section aria-label="Đếm ngược kỳ thi" className="w-full rounded-[2rem] border border-stone-900/10 bg-white p-8 shadow-[0_30px_80px_-40px_rgba(234,88,12,0.45)] sm:p-14 xl:p-20">
       <div className="grid items-start gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
         {/* Trái: tiêu đề + đếm ngược */}
         <div>
           <h2 className="text-3xl font-extrabold leading-snug tracking-tight sm:text-4xl xl:text-5xl">
             Thời gian dự kiến thi tốt nghiệp THPT 2027
           </h2>
-          <p className="mt-3 text-[15px] text-stone-500 dark:text-slate-400">
+          <p className="mt-3 text-[15px] text-stone-500">
             {daThiXong ? (
               <>
-                <span className="font-bold text-stone-900 dark:text-slate-100">{dangXem.mon}</span> đã kết thúc.
+                <span className="font-bold text-stone-900">{dangXem.mon}</span> đã kết thúc.
               </>
             ) : (
               <>
                 Thời gian còn lại:{" "}
-                <span className="font-bold text-orange-700 dark:text-orange-400">{dangXem.mon}</span>
+                <span className="font-bold text-orange-700">{dangXem.mon}</span>
               </>
             )}
           </p>
@@ -69,26 +69,26 @@ export default function ExamCountdown() {
           <div className="mt-8 grid grid-cols-4 gap-2 sm:gap-5">
             {o.map(([so, label]) => (
               <div key={label} className="min-w-0 text-center">
-                <div className="flex min-h-[10rem] items-center justify-center rounded-2xl bg-stone-900 px-1 py-10 dark:bg-slate-100 sm:min-h-[14rem] sm:py-12">
-                  <p className="whitespace-nowrap text-4xl font-black tabular-nums leading-none tracking-tighter text-[#faf4e9] sm:text-6xl 2xl:text-7xl dark:text-[#06121f]">
+                <div className="flex min-h-[8rem] items-center justify-center overflow-hidden rounded-2xl bg-stone-900 px-1 py-8 sm:min-h-[11rem] sm:py-10">
+                  <p className="whitespace-nowrap text-3xl font-black tabular-nums leading-none tracking-tighter text-[#faf4e9] md:text-4xl xl:text-5xl">
                     {so}
                   </p>
                 </div>
-                <p className="mt-2.5 text-sm font-semibold text-stone-500 dark:text-slate-400">{label}</p>
+                <p className="mt-2.5 text-sm font-semibold text-stone-500">{label}</p>
               </div>
             ))}
           </div>
 
-          <p className="mt-6 text-xs leading-relaxed text-stone-500 dark:text-slate-500">
+          <p className="mt-6 text-xs leading-relaxed text-stone-500">
             Lịch trên là dự kiến theo khung các năm gần đây. Lịch chính thức chờ Bộ Giáo dục
             và Đào tạo công bố.
           </p>
         </div>
 
         {/* Phải: lịch thi tổng quan — bấm vào từng môn để xem đếm ngược riêng */}
-        <div className="rounded-2xl border border-stone-900/10 bg-[#faf4e9] p-5 dark:border-white/10 dark:bg-[#060f1e] sm:p-7">
+        <div className="rounded-2xl border border-stone-900/10 bg-[#faf4e9] p-5 sm:p-7">
           <p className="px-1 pb-1 text-base font-bold">Lịch thi tổng quan 2027</p>
-          <p className="px-1 pb-3 text-xs text-stone-500 dark:text-slate-400">
+          <p className="px-1 pb-3 text-xs text-stone-500">
             Bấm vào từng môn để xem đếm ngược riêng.
           </p>
           <ul className="space-y-3">
@@ -101,10 +101,10 @@ export default function ExamCountdown() {
                     type="button"
                     onClick={() => setChon(m.mon)}
                     aria-pressed={active}
-                    className={`block w-full rounded-xl border px-5 py-4 text-left transition hover:shadow-[0_0_24px_-8px_rgba(234,88,12,0.4)] focus-visible:outline-none focus-visible:shadow-[0_0_24px_-8px_rgba(234,88,12,0.4)] dark:hover:shadow-[0_0_24px_-8px_rgba(234,88,12,0.45)] dark:focus-visible:shadow-[0_0_24px_-8px_rgba(234,88,12,0.45)] ${
+                    className={`block w-full rounded-xl border px-5 py-4 text-left transition hover:shadow-[0_0_24px_-8px_rgba(234,88,12,0.4)] focus-visible:outline-none focus-visible:shadow-[0_0_24px_-8px_rgba(234,88,12,0.4)] ${
                       active
-                        ? "border-orange-600 bg-orange-600 text-white shadow-[0_0_24px_-10px_rgba(234,88,12,0.6)] dark:border-orange-600 dark:bg-orange-600 dark:text-white dark:shadow-[0_0_24px_-10px_rgba(234,88,12,0.6)]"
-                        : "border-stone-900/10 bg-white text-stone-700 hover:border-orange-400/60 dark:border-white/10 dark:bg-[#0b1a30] dark:text-slate-200 dark:hover:border-orange-400/60"
+                        ? "border-orange-600 bg-orange-600 text-white shadow-[0_0_24px_-10px_rgba(234,88,12,0.6)]"
+                        : "border-stone-900/10 bg-white text-stone-700 hover:border-orange-400/60"
                     }`}
                   >
                     <div className="flex items-center justify-between gap-3">
@@ -115,7 +115,7 @@ export default function ExamCountdown() {
                         </span>
                       )}
                     </div>
-                    <p className={`mt-1 text-[13px] ${active ? "text-orange-100" : "text-stone-500 dark:text-slate-400"}`}>
+                    <p className={`mt-1 text-[13px] ${active ? "text-orange-100" : "text-stone-500"}`}>
                       {m.ngay} · {m.gio}
                     </p>
                   </button>

@@ -10,7 +10,7 @@ const beVietnam = Be_Vietnam_Pro({
 });
 
 export const metadata: Metadata = {
-  title: "Trợ lý AI định hướng nghề nghiệp & chọn khối thi",
+  title: "Cú Đậu — Trợ lý AI định hướng nghề nghiệp & chọn khối thi",
   description:
     "Kể về bản thân bằng vài câu — AI gợi ý ngành phù hợp, khối thi và lộ trình cho học sinh cấp 2, cấp 3 Việt Nam.",
 };
@@ -19,12 +19,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="vi" className={`${beVietnam.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
-        <script
-          dangerouslySetInnerHTML={{
-            __html:
-              "(function(){try{var t=localStorage.getItem('hn-theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})()",
-          }}
-        />
         <FloatingSupplies />
         {children}
       </body>
