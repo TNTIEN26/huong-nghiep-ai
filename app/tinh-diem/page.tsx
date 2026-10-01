@@ -20,12 +20,12 @@ function parseDiem(v: string, max = 10): number | null {
 }
 
 const oNhap =
-  "w-full rounded-xl border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] px-4 py-3 text-[15px] text-stone-900 dark:text-slate-100 outline-none transition placeholder:text-stone-400 focus:border-orange-500/60 dark:placeholder:text-slate-500 dark:focus:border-orange-500/60";
+  "w-full rounded-xl border border-stone-900/10 bg-[#faf4e9] px-4 py-3 text-[15px] text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-orange-500/60";
 
 function Nhan({ ten, children }: { ten: string; children: React.ReactNode }) {
   return (
     <label className="block">
-      <span className="mb-1.5 block text-sm font-semibold text-stone-700 dark:text-slate-300">{ten}</span>
+      <span className="mb-1.5 block text-sm font-semibold text-stone-700">{ten}</span>
       {children}
     </label>
   );
@@ -33,10 +33,10 @@ function Nhan({ ten, children }: { ten: string; children: React.ReactNode }) {
 
 function KetQua({ tieuDe, so, nhanXet }: { tieuDe: string; so: string; nhanXet: string }) {
   return (
-    <div className="mt-6 rounded-2xl border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] p-6 text-center">
-      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500 dark:text-slate-400">{tieuDe}</p>
-            <p className="mt-2 text-5xl font-black tabular-nums text-orange-700 dark:text-orange-400">{so}</p>
-      <p className="mt-3 text-sm font-bold text-stone-900 dark:text-slate-100">{nhanXet}</p>
+    <div className="mt-6 rounded-2xl border border-stone-900/10 bg-[#faf4e9] p-6 text-center">
+      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">{tieuDe}</p>
+            <p className="mt-2 text-5xl font-black tabular-nums text-orange-700">{so}</p>
+      <p className="mt-3 text-sm font-bold text-stone-900">{nhanXet}</p>
     </div>
   );
 }
@@ -80,11 +80,11 @@ function MucHocBa({
       {tb3 !== null ? (
         <KetQua tieuDe="Điểm TB các năm (trọng số 1–2–3)" so={tb3} nhanXet="Đã tự chuyển sang mục 2 để tính tốt nghiệp." />
       ) : (
-        <p className="mt-6 rounded-2xl border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] p-6 text-center text-sm text-stone-500 dark:text-slate-400">
+        <p className="mt-6 rounded-2xl border border-stone-900/10 bg-[#faf4e9] p-6 text-center text-sm text-stone-500">
           Nhập đủ điểm 3 năm để tính trung bình. Thang điểm 0–10.
         </p>
       )}
-      <p className="mt-4 text-xs leading-relaxed text-stone-500 dark:text-slate-400">
+      <p className="mt-4 text-xs leading-relaxed text-stone-500">
         Công thức: (ĐTB lớp 10 × 1 + ĐTB lớp 11 × 2 + ĐTB lớp 12 × 3) / 6.
       </p>
     </div>
@@ -133,7 +133,7 @@ function MucTotNghiep({ tbSan, hocBa }: { tbSan: string; hocBa: { lop10: string;
         />
       </Nhan>
       {tbSan && tbTay === "" && (
-        <p className="mt-1.5 text-xs text-stone-500 dark:text-slate-400">Đang dùng TB 3 năm từ mục 1 — bấm vào để sửa tay.</p>
+        <p className="mt-1.5 text-xs text-stone-500">Đang dùng TB 3 năm từ mục 1 — bấm vào để sửa tay.</p>
       )}
 
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -153,7 +153,7 @@ function MucTotNghiep({ tbSan, hocBa }: { tbSan: string; hocBa: { lop10: string;
           <input value={kk} onChange={(e) => setKk(e.target.value)} inputMode="decimal" placeholder="VD: 1.5" className={oNhap} />
         </Nhan>
         <Nhan ten="Diện ưu tiên tốt nghiệp">
-          <select value={dien} onChange={(e) => setDien(e.target.value)} className="w-full rounded-xl border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] px-4 py-3 text-[15px] font-bold text-stone-900 dark:text-slate-100 outline-none focus:border-orange-500/60 dark:focus:border-orange-500/60">
+          <select value={dien} onChange={(e) => setDien(e.target.value)} className="w-full rounded-xl border border-stone-900/10 bg-[#faf4e9] px-4 py-3 text-[15px] font-bold text-stone-900 outline-none focus:border-orange-500/60">
             <option value="D1">Diện 1 — bình thường (+0)</option>
             <option value="D2">Diện 2 (+0.25)</option>
             <option value="D3">Diện 3 (+0.5)</option>
@@ -162,7 +162,7 @@ function MucTotNghiep({ tbSan, hocBa }: { tbSan: string; hocBa: { lop10: string;
       </div>
 
       {kq === null ? (
-        <p className="mt-6 rounded-2xl border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] p-6 text-center text-sm text-stone-500 dark:text-slate-400">
+        <p className="mt-6 rounded-2xl border border-stone-900/10 bg-[#faf4e9] p-6 text-center text-sm text-stone-500">
           Nhập đủ điểm các ô để xem có đỗ tốt nghiệp không.
         </p>
       ) : (
@@ -178,18 +178,18 @@ function MucTotNghiep({ tbSan, hocBa }: { tbSan: string; hocBa: { lop10: string;
           }
         />
       )}
-      <p className="mt-4 text-xs leading-relaxed text-stone-500 dark:text-slate-400">
+      <p className="mt-4 text-xs leading-relaxed text-stone-500">
         Công thức: [(tổng 4 bài thi + điểm khuyến khích) / 4 + điểm TB] / 2 + điểm ưu tiên.
         Đỗ khi mọi môn thi đều trên 1.0 và ĐXTN từ 5.0 trở lên. Kết quả tham khảo.
       </p>
       </div>
 
       {/* Sơ đồ tính điểm kiểu Phenikaa — số nhảy theo từng ô nhập */}
-      <aside className="h-fit rounded-2xl border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] p-4 xl:sticky xl:top-24">
-        <p className="text-xs font-bold uppercase tracking-[0.14em] text-stone-500 dark:text-slate-400">Sơ đồ tính điểm</p>
+      <aside className="h-fit rounded-2xl border border-stone-900/10 bg-[#faf4e9] p-4 xl:sticky xl:top-24">
+        <p className="text-xs font-bold uppercase tracking-[0.14em] text-stone-500">Sơ đồ tính điểm</p>
 
         {/* Khung 1: ĐTB các năm học */}
-        <div className="mt-3 rounded-md border-[3px] border-dashed border-blue-800 bg-white p-2.5 text-stone-900 dark:text-stone-900">
+        <div className="mt-3 rounded-md border-[3px] border-dashed border-blue-800 bg-white p-2.5 text-stone-900">
           <p className="mx-auto w-fit rounded bg-red-600 px-2 py-0.5 text-center text-[10px] font-bold leading-tight text-white">
             ĐIỂM TRUNG BÌNH CÁC NĂM HỌC
           </p>
@@ -207,7 +207,7 @@ function MucTotNghiep({ tbSan, hocBa }: { tbSan: string; hocBa: { lop10: string;
               <span className="block pt-0.5 font-bold">6</span>
             </span>
           </div>
-          <p className="mt-1.5 border-t border-dashed border-stone-900/15 dark:border-white/15 pt-1.5 text-center text-[13px] tabular-nums text-stone-700 dark:text-stone-700">
+          <p className="mt-1.5 border-t border-dashed border-stone-900/15 pt-1.5 text-center text-[13px] tabular-nums text-stone-700">
             = ({hien(hocBa.lop10)}×1 + {hien(hocBa.lop11)}×2 + {hien(hocBa.lop12)}×3) ÷ 6 ={" "}
             <span className="font-black text-orange-700">
               {hbDu && tb ? Number(tb).toFixed(2) : "…"}
@@ -216,7 +216,7 @@ function MucTotNghiep({ tbSan, hocBa }: { tbSan: string; hocBa: { lop10: string;
         </div>
 
         {/* Khung 2: ĐXTN */}
-        <div className="mt-3 rounded-md border-[3px] border-dashed border-blue-800 bg-white p-2.5 text-stone-900 dark:text-stone-900">
+        <div className="mt-3 rounded-md border-[3px] border-dashed border-blue-800 bg-white p-2.5 text-stone-900">
           <p className="mx-auto w-fit rounded bg-yellow-300 px-2 py-0.5 text-center text-[10px] font-bold leading-tight">
             CÁCH TÍNH ĐIỂM XÉT TỐT NGHIỆP
           </p>
@@ -254,7 +254,7 @@ function MucTotNghiep({ tbSan, hocBa }: { tbSan: string; hocBa: { lop10: string;
               (NẾU CÓ)
             </span>
           </div>
-          <p className="mt-1.5 border-t border-dashed border-stone-900/15 dark:border-white/15 pt-1.5 text-center text-[13px] tabular-nums leading-relaxed text-stone-700 dark:text-stone-700">
+          <p className="mt-1.5 border-t border-dashed border-stone-900/15 pt-1.5 text-center text-[13px] tabular-nums leading-relaxed text-stone-700">
             = [({hien(toan)}+{hien(van)}+{hien(tc1)}+{hien(tc2)}+{kk.trim() === "" ? "0" : hien(kk)})÷4
             + {tb !== "" ? Number(tb).toFixed(2) : "…"}]÷2+{u.toFixed(2)} ={" "}
             <span className="font-black text-orange-700">{kq === null ? "…" : kq.toFixed(2)}</span>
@@ -420,26 +420,26 @@ function MucQuyDoi() {
   ];
 
   const oSelect =
-    "w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] px-3 py-2.5 text-sm font-bold text-stone-900 dark:text-slate-100 outline-none focus:border-orange-500/60 dark:focus:border-orange-500/60";
+    "w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] px-3 py-2.5 text-sm font-bold text-stone-900 outline-none focus:border-orange-500/60";
 
   return (
     <div className="space-y-5">
       {/* Thẻ 1: điểm các kỳ thi */}
-      <section className="rounded-2xl border border-stone-900/10 bg-white dark:border-white/10 dark:bg-[#0b1a30] p-5 sm:p-6">
+      <section className="rounded-2xl border border-stone-900/10 bg-white p-5 sm:p-6">
         <h2 className="text-base font-extrabold">Điểm của các kỳ thi</h2>
-        <p className="mt-1 text-[13px] text-stone-500 dark:text-slate-400">
+        <p className="mt-1 text-[13px] text-stone-500">
           Có điểm kỳ thi hoặc chứng chỉ nào thì nhập vào hệ thống.
         </p>
         <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-5">
           {oKyThi.map(([ten, goiY, val, set]) => (
             <label key={ten} className="block">
-              <span className="mb-1 block text-[13px] font-bold text-stone-700 dark:text-slate-300">{ten}</span>
+              <span className="mb-1 block text-[13px] font-bold text-stone-700">{ten}</span>
               <input
                 value={val}
                 onChange={(e) => set(e.target.value)}
                 inputMode="decimal"
                 placeholder={goiY}
-                className="w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] px-3 py-2.5 text-sm text-stone-900 dark:text-slate-100 outline-none transition placeholder:text-stone-400 focus:border-orange-500/60 dark:placeholder:text-slate-500 dark:focus:border-orange-500/60"
+                className="w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] px-3 py-2.5 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-orange-500/60"
               />
             </label>
           ))}
@@ -447,21 +447,21 @@ function MucQuyDoi() {
       </section>
 
       {/* Thẻ 2: điểm thi THPT + tổ hợp */}
-      <section className="rounded-2xl border border-stone-900/10 bg-white dark:border-white/10 dark:bg-[#0b1a30] p-5 sm:p-6">
+      <section className="rounded-2xl border border-stone-900/10 bg-white p-5 sm:p-6">
         <h2 className="text-base font-extrabold">Điểm thi THPT</h2>
-        <p className="mt-1 text-[13px] text-stone-500 dark:text-slate-400">
+        <p className="mt-1 text-[13px] text-stone-500">
           Toán + Văn bắt buộc, chọn thêm 1–2 môn tự chọn — đủ điểm là tổ hợp hiện ra.
         </p>
         <div className="mt-4 grid grid-cols-2 gap-3">
           {oThpt.map(([ten, val, set]) => (
             <label key={ten} className="block">
-              <span className="mb-1 block text-[13px] font-bold text-stone-700 dark:text-slate-300">{ten}</span>
+              <span className="mb-1 block text-[13px] font-bold text-stone-700">{ten}</span>
               <input
                 value={val}
                 onChange={(e) => set(e.target.value)}
                 inputMode="decimal"
                 placeholder="0–10"
-                className="w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] px-3 py-2.5 text-sm text-stone-900 dark:text-slate-100 outline-none transition placeholder:text-stone-400 focus:border-orange-500/60 dark:placeholder:text-slate-500 dark:focus:border-orange-500/60"
+                className="w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] px-3 py-2.5 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-orange-500/60"
               />
             </label>
           ))}
@@ -469,7 +469,7 @@ function MucQuyDoi() {
         <div className="mt-3 grid gap-3 sm:grid-cols-2">
           <div className="grid grid-cols-2 gap-3">
             <label className="block">
-              <span className="mb-1 block text-[13px] font-bold text-stone-700 dark:text-slate-300">Môn tự chọn 1</span>
+              <span className="mb-1 block text-[13px] font-bold text-stone-700">Môn tự chọn 1</span>
               <select
                 value={mon3}
                 onChange={(e) => {
@@ -484,19 +484,19 @@ function MucQuyDoi() {
               </select>
             </label>
             <label className="block">
-              <span className="mb-1 block text-[13px] font-bold text-stone-700 dark:text-slate-300">Điểm {mon3}</span>
+              <span className="mb-1 block text-[13px] font-bold text-stone-700">Điểm {mon3}</span>
               <input
                 value={d3}
                 onChange={(e) => setD3(e.target.value)}
                 inputMode="decimal"
                 placeholder="0–10"
-                className="w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] px-3 py-2.5 text-sm text-stone-900 dark:text-slate-100 outline-none transition placeholder:text-stone-400 focus:border-orange-500/60 dark:placeholder:text-slate-500 dark:focus:border-orange-500/60"
+                className="w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] px-3 py-2.5 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-orange-500/60"
               />
             </label>
           </div>
           <div className="grid grid-cols-2 gap-3">
             <label className="block">
-              <span className="mb-1 block text-[13px] font-bold text-stone-700 dark:text-slate-300">Môn tự chọn 2</span>
+              <span className="mb-1 block text-[13px] font-bold text-stone-700">Môn tự chọn 2</span>
               <select value={mon4} onChange={(e) => setMon4(e.target.value)} className={oSelect}>
                 <option value="">Không thêm</option>
                 {MON_TU_CHON.filter((m) => m !== mon3).map((m) => (
@@ -505,7 +505,7 @@ function MucQuyDoi() {
               </select>
             </label>
             <label className="block">
-              <span className="mb-1 block text-[13px] font-bold text-stone-700 dark:text-slate-300">
+              <span className="mb-1 block text-[13px] font-bold text-stone-700">
                 Điểm {mon4 || "…"}
               </span>
               <input
@@ -514,21 +514,21 @@ function MucQuyDoi() {
                 disabled={!mon4}
                 inputMode="decimal"
                 placeholder={mon4 ? "0–10" : "–"}
-                className="w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] px-3 py-2.5 text-sm text-stone-900 dark:text-slate-100 outline-none transition placeholder:text-stone-400 focus:border-orange-500/60 dark:placeholder:text-slate-500 dark:focus:border-orange-500/60 disabled:opacity-40"
+                className="w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] px-3 py-2.5 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-orange-500/60 disabled:opacity-40"
               />
             </label>
           </div>
         </div>
         {combosHien.length === 0 ? (
-          <p className="mt-4 rounded-xl border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] px-4 py-3 text-center text-sm text-stone-500 dark:text-slate-400">
+          <p className="mt-4 rounded-xl border border-stone-900/10 bg-[#faf4e9] px-4 py-3 text-center text-sm text-stone-500">
             Nhập đủ điểm 3 môn của 1 tổ hợp để xem tổng điểm.
           </p>
         ) : (
           <div className="mt-4 grid grid-cols-2 gap-3 xl:grid-cols-4">
             {combosHien.map((c) => (
-              <div key={c.ma} className="rounded-xl border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] px-4 py-3">
+              <div key={c.ma} className="rounded-xl border border-stone-900/10 bg-[#faf4e9] px-4 py-3">
                 <p className="text-sm font-extrabold">{c.ma}</p>
-                <p className="text-xs text-stone-500 dark:text-slate-400">{c.mons}</p>
+                <p className="text-xs text-stone-500">{c.mons}</p>
                 <p className="mt-1 text-lg font-black tabular-nums">
                   {c.tong === null ? "–" : c.tong.toFixed(2)}
                 </p>
@@ -539,15 +539,15 @@ function MucQuyDoi() {
       </section>
 
       {/* Thẻ 3: ưu tiên */}
-      <section className="rounded-2xl border border-stone-900/10 bg-white dark:border-white/10 dark:bg-[#0b1a30] p-5 sm:p-6">
+      <section className="rounded-2xl border border-stone-900/10 bg-white p-5 sm:p-6">
         <h2 className="text-base font-extrabold">Ưu tiên</h2>
         <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
           <label className="block">
-            <span className="mb-1 block text-[13px] font-bold text-stone-700 dark:text-slate-300">Khu vực ưu tiên</span>
+            <span className="mb-1 block text-[13px] font-bold text-stone-700">Khu vực ưu tiên</span>
             <select
               value={kv.id}
               onChange={(e) => setKv(KV_UT.find((k) => k.id === e.target.value) ?? KV_UT[0])}
-              className="w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] px-3 py-2.5 text-sm text-stone-900 dark:text-slate-100 outline-none focus:border-orange-500/60 dark:focus:border-orange-500/60"
+              className="w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] px-3 py-2.5 text-sm text-stone-900 outline-none focus:border-orange-500/60"
             >
               {KV_UT.map((k) => (
                 <option key={k.id} value={k.id}>{k.ten}</option>
@@ -555,11 +555,11 @@ function MucQuyDoi() {
             </select>
           </label>
           <label className="block">
-            <span className="mb-1 block text-[13px] font-bold text-stone-700 dark:text-slate-300">Đối tượng ưu tiên</span>
+            <span className="mb-1 block text-[13px] font-bold text-stone-700">Đối tượng ưu tiên</span>
             <select
               value={dt.id}
               onChange={(e) => setDt(DT_UT.find((k) => k.id === e.target.value) ?? DT_UT[0])}
-              className="w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] px-3 py-2.5 text-sm text-stone-900 dark:text-slate-100 outline-none focus:border-orange-500/60 dark:focus:border-orange-500/60"
+              className="w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] px-3 py-2.5 text-sm text-stone-900 outline-none focus:border-orange-500/60"
             >
               {DT_UT.map((k) => (
                 <option key={k.id} value={k.id}>{k.ten}</option>
@@ -567,11 +567,11 @@ function MucQuyDoi() {
             </select>
           </label>
           <label className="block">
-            <span className="mb-1 block text-[13px] font-bold text-stone-700 dark:text-slate-300">Ưu tiên xét tuyển (giải HSG)</span>
+            <span className="mb-1 block text-[13px] font-bold text-stone-700">Ưu tiên xét tuyển (giải HSG)</span>
             <select
               value={hsg.id}
               onChange={(e) => setHsg(HSG_UT.find((k) => k.id === e.target.value) ?? HSG_UT[0])}
-              className="w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] dark:border-white/10 dark:bg-[#060f1e] px-3 py-2.5 text-sm text-stone-900 dark:text-slate-100 outline-none focus:border-orange-500/60 dark:focus:border-orange-500/60"
+              className="w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] px-3 py-2.5 text-sm text-stone-900 outline-none focus:border-orange-500/60"
             >
               {HSG_UT.map((k) => (
                 <option key={k.id} value={k.id}>{k.ten}</option>
@@ -579,51 +579,51 @@ function MucQuyDoi() {
             </select>
           </label>
         </div>
-        <p className="mt-3 text-xs leading-relaxed text-stone-500 dark:text-slate-400">
+        <p className="mt-3 text-xs leading-relaxed text-stone-500">
           Điểm thưởng giải HSG (nhất 1,5; nhì 1,0; ba 0,5) cộng thẳng vào tổng điểm tổ hợp THPT
           (với thí sinh xét bằng tổ hợp điểm THPT).
         </p>
-        <p className="mt-1 text-xs leading-relaxed text-stone-500 dark:text-slate-400">
+        <p className="mt-1 text-xs leading-relaxed text-stone-500">
           Điểm ưu tiên KV + ĐT cộng lũy thoái theo Bộ GD&ĐT: nếu tổng điểm đạt được ≥ 22,5 thì
           UT = [(30 − tổng điểm)/7,5] × mức. Điểm xét tuyển ≤ 30.
         </p>
       </section>
 
       {/* Thẻ 4: kết quả quy đổi */}
-      <section className="rounded-2xl border border-stone-900/10 bg-white dark:border-white/10 dark:bg-[#0b1a30] p-5 sm:p-6">
+      <section className="rounded-2xl border border-stone-900/10 bg-white p-5 sm:p-6">
         <h2 className="text-base font-extrabold">Kết quả quy đổi</h2>
         {totNhat === null ? (
-          <p className="mt-3 text-sm text-stone-500 dark:text-slate-400">
+          <p className="mt-3 text-sm text-stone-500">
             Nhập ít nhất 1 điểm ở các thẻ trên để xem quy đổi sang thang 30.
           </p>
         ) : (
           <div className="mt-4 grid gap-5 lg:grid-cols-[280px_1fr]">
-            <div className="rounded-2xl border border-orange-600/30 bg-orange-50 p-6 text-center dark:border-orange-500/40 dark:bg-orange-500/10">
-              <p className="text-[13px] text-stone-500 dark:text-slate-400">Điểm quy đổi cao nhất</p>
-              <p className="mt-1 text-6xl font-black tabular-nums text-orange-700 dark:text-orange-400">
+            <div className="rounded-2xl border border-orange-600/30 bg-orange-50 p-6 text-center">
+              <p className="text-[13px] text-stone-500">Điểm quy đổi cao nhất</p>
+              <p className="mt-1 text-6xl font-black tabular-nums text-orange-700">
                 {totNhat.diem.toFixed(2)}
               </p>
-              <p className="mt-1 text-sm text-stone-500 dark:text-slate-400">
-                điểm xét · theo phương thức <span className="font-bold text-stone-900 dark:text-slate-100">{totNhat.ten}</span>
+              <p className="mt-1 text-sm text-stone-500">
+                điểm xét · theo phương thức <span className="font-bold text-stone-900">{totNhat.ten}</span>
               </p>
             </div>
             <div>
               <p className="text-sm font-bold">Tất cả phương thức</p>
-              <ol className="mt-2 list-decimal space-y-1.5 pl-5 text-sm text-stone-700 dark:text-slate-300">
+              <ol className="mt-2 list-decimal space-y-1.5 pl-5 text-sm text-stone-700">
                 {pp.map((p) => (
                   <li key={p.ten}>
-                    {p.ten}: <span className="font-extrabold text-stone-900 dark:text-slate-100">{p.diem.toFixed(2)}</span>{" "}
-                    <span className="text-stone-500 dark:text-slate-400">({p.chiTiet} = {p.diem.toFixed(2)})</span>
+                    {p.ten}: <span className="font-extrabold text-stone-900">{p.diem.toFixed(2)}</span>{" "}
+                    <span className="text-stone-500">({p.chiTiet} = {p.diem.toFixed(2)})</span>
                   </li>
                 ))}
                 {anhPhu.map((a) => (
-                  <li key={a} className="text-stone-500 dark:text-slate-400">{a} (thang 10)</li>
+                  <li key={a} className="text-stone-500">{a} (thang 10)</li>
                 ))}
               </ol>
             </div>
           </div>
         )}
-        <p className="mt-4 text-xs leading-relaxed text-stone-500 dark:text-slate-400">
+        <p className="mt-4 text-xs leading-relaxed text-stone-500">
           Kỳ thi riêng quy đổi tuyến tính về thang 30 rồi cộng ưu tiên (trần 30). Chứng chỉ tiếng Anh
           đổi sang điểm môn Anh thang 10 (IELTS theo bảng NEU 2026, TOEFL/TOEIC tương đương gần đúng).
           Mỗi trường có bảng riêng từng năm — đối chiếu đề án của trường. Kết quả tham khảo.
@@ -643,12 +643,12 @@ export default function TinhDiemPage() {
     : "";
 
   return (
-    <div className="relative z-10 flex min-h-screen flex-col text-stone-900 dark:text-slate-100">
+    <div className="relative z-10 flex min-h-screen flex-col text-stone-900">
       <SiteNav active="tinh-diem" />
 
       <main className="mx-auto w-full max-w-[1440px] flex-1 px-4 py-12 sm:px-8 sm:py-16">
         <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Tính điểm</h1>
-        <p className="mt-2 text-sm leading-relaxed text-stone-500 dark:text-slate-400">
+        <p className="mt-2 text-sm leading-relaxed text-stone-500">
           Làm theo thứ tự 3 mục: nhập học bạ, tính tốt nghiệp, quy đổi ĐGNL. Chỉ mang tính tham khảo.
         </p>
 
@@ -663,20 +663,20 @@ export default function TinhDiemPage() {
                 aria-pressed={muc === d.id}
                 className={`flex min-w-[220px] items-start gap-3 rounded-2xl border p-4 text-left transition lg:min-w-0 ${
                   muc === d.id
-                    ? "border-stone-900 bg-stone-900 text-[#faf4e9] shadow-[0_16px_40px_-20px_rgba(28,25,23,0.5)] dark:border-orange-600 dark:bg-orange-600 dark:text-white dark:shadow-[0_16px_40px_-20px_rgba(234,88,12,0.4)]"
-                    : "border-stone-900/10 bg-white dark:border-white/10 dark:bg-[#0b1a30] text-stone-700 dark:text-slate-300 hover:border-stone-900/25 hover:text-stone-900 dark:hover:border-white/25 dark:hover:text-slate-100"
+                    ? "border-stone-900 bg-stone-900 text-[#faf4e9] shadow-[0_16px_40px_-20px_rgba(28,25,23,0.5)]"
+                    : "border-stone-900/10 bg-white text-stone-700 hover:border-stone-900/25 hover:text-stone-900"
                 }`}
               >
                 <span
                   className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm font-black ${
-                    muc === d.id ? "bg-orange-500 text-white" : "bg-stone-900/5 text-stone-500 dark:text-slate-400 dark:bg-white/5"
+                    muc === d.id ? "bg-orange-500 text-white" : "bg-stone-900/5 text-stone-500"
                   }`}
                 >
                   {d.so}
                 </span>
                 <span>
                   <span className="block text-sm font-bold">{d.ten}</span>
-                  <span className={`mt-0.5 block text-xs ${muc === d.id ? "text-stone-300 dark:text-white/80" : "text-stone-500 dark:text-slate-400"}`}>
+                  <span className={`mt-0.5 block text-xs ${muc === d.id ? "text-stone-300" : "text-stone-500"}`}>
                     {d.moTa}
                   </span>
                 </span>
@@ -685,7 +685,7 @@ export default function TinhDiemPage() {
           </nav>
 
           {/* Nội dung */}
-          <div className="rounded-2xl border border-stone-900/10 bg-white dark:border-white/10 dark:bg-[#0b1a30] p-6 shadow-[0_20px_60px_-30px_rgba(234,88,12,0.35)] dark:shadow-[0_20px_60px_-30px_rgba(234,88,12,0.35)] sm:p-8">
+          <div className="rounded-2xl border border-stone-900/10 bg-white p-6 shadow-[0_20px_60px_-30px_rgba(234,88,12,0.35)] sm:p-8">
             {muc === "hocba" && <MucHocBa hocBa={hocBa} setHocBa={setHocBa} />}
             {muc === "totnghiep" && <MucTotNghiep tbSan={tb3} hocBa={hocBa} />}
             {muc === "quydoi" && <MucQuyDoi />}
@@ -693,7 +693,7 @@ export default function TinhDiemPage() {
         </div>
       </main>
 
-      <footer className="border-t border-stone-900/10 dark:border-white/10 px-5 py-6 text-center text-xs text-stone-500 dark:text-slate-400">
+      <footer className="border-t border-stone-900/10 px-5 py-6 text-center text-xs text-stone-500">
         Kết quả chỉ mang tính tham khảo.
       </footer>
     </div>

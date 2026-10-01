@@ -108,14 +108,14 @@ function Compa() {
 }
 
 const items = [
-  { C: ButChi, cls: "left-[3%] top-[12%] h-36 w-16 text-teal-700/20 dark:text-teal-200/15", t: "7s", d: "0s", x: "12deg" },
-  { C: Thuoc, cls: "right-[4%] top-[9%] h-16 w-44 text-sky-800/20 dark:text-sky-300/15", t: "8s", d: "1s", x: "-8deg" },
-  { C: MayTinh, cls: "left-[6%] top-[46%] h-32 w-24 text-emerald-700/15 dark:text-emerald-200/10", t: "9s", d: "0.5s", x: "6deg" },
-  { C: QuyenSach, cls: "right-[5%] top-[42%] hidden w-40 text-teal-700/15 dark:text-teal-100/10 sm:block", t: "7.5s", d: "2s", x: "-10deg" },
-  { C: QuyenVo, cls: "left-[10%] bottom-[8%] h-32 w-28 text-sky-800/15 dark:text-sky-200/10", t: "8.5s", d: "1.2s", x: "8deg" },
-  { C: DenBan, cls: "right-[9%] bottom-[10%] h-36 w-32 text-emerald-700/15 dark:text-emerald-100/10", t: "9.5s", d: "0.3s", x: "-6deg" },
-  { C: Compa, cls: "left-[45%] top-[4%] hidden h-28 w-24 text-cyan-800/15 dark:text-cyan-200/10 lg:block", t: "8s", d: "2.5s", x: "10deg" },
-  { C: ButChi, cls: "right-[30%] bottom-[5%] hidden h-28 w-12 text-teal-700/15 dark:text-teal-200/10 md:block", t: "7s", d: "1.8s", x: "-14deg" },
+  { C: ButChi, cls: "left-[3%] top-[12%] h-36 w-16 text-teal-700/20", t: "7s", d: "0s", x: "12deg" },
+  { C: Thuoc, cls: "right-[4%] top-[9%] h-16 w-44 text-sky-800/20", t: "8s", d: "1s", x: "-8deg" },
+  { C: MayTinh, cls: "left-[6%] top-[46%] h-32 w-24 text-emerald-700/15", t: "9s", d: "0.5s", x: "6deg" },
+  { C: QuyenSach, cls: "right-[5%] top-[42%] hidden w-40 text-teal-700/15 sm:block", t: "7.5s", d: "2s", x: "-10deg" },
+  { C: QuyenVo, cls: "left-[10%] bottom-[8%] h-32 w-28 text-sky-800/15", t: "8.5s", d: "1.2s", x: "8deg" },
+  { C: DenBan, cls: "right-[9%] bottom-[10%] h-36 w-32 text-emerald-700/15", t: "9.5s", d: "0.3s", x: "-6deg" },
+  { C: Compa, cls: "left-[45%] top-[4%] hidden h-28 w-24 text-cyan-800/15 lg:block", t: "8s", d: "2.5s", x: "10deg" },
+  { C: ButChi, cls: "right-[30%] bottom-[5%] hidden h-28 w-12 text-teal-700/15 md:block", t: "7s", d: "1.8s", x: "-14deg" },
 ];
 
 export default function FloatingSupplies() {

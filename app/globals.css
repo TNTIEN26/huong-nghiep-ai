@@ -1,17 +1,9 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 :root {
   --background: #faf4e9;
   --foreground: #1c1917;
   --dot: rgba(28, 25, 23, 0.08);
-}
-
-.dark {
-  --background: #060f1e;
-  --foreground: #f1f7fe;
-  --dot: rgba(255, 255, 255, 0.07);
 }
 
 @theme inline {
@@ -47,6 +39,20 @@ body {
 }
 .mat-chop { transform-origin: center; animation: chop-mat 4.5s ease-in-out infinite; }
 .bob-nhe { animation: bob-nhe 6s ease-in-out infinite; }
+
+/* Thẻ spotlight đổi nội dung: trượt nhẹ + mờ dần */
+@keyframes spot-hien {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.spot-hien { animation: spot-hien 0.45s ease-out; }
+
+/* Dải chữ chạy vô hạn */
+@keyframes marquee-chay {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-chay { animation: marquee-chay 22s linear infinite; }
 
 /* ---------- Markdown trong khung chat (react-markdown) ---------- */
 .chat-md > :first-child { margin-top: 0; }
