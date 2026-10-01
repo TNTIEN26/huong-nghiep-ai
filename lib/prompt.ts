@@ -149,3 +149,32 @@ export function buildFormatInstruction(): string {
     `Lưu ý: "do_phu_hop" là số nguyên 1-100; mảng "nghe_nghiep" có 1-3 phần tử; TUYỆT ĐỐI không đổi tên trường, không thêm trường khác, không bọc trong markdown.`,
   ].join("\n");
 }
+
+export function buildSurveyPrompt(): string {
+  return `Bạn là trợ lý AI tư vấn hướng nghiệp cho học sinh Việt Nam. Học sinh muốn được tư vấn NHANH, nên bạn phải tạo một PHIẾU KHẢO SÁT ngắn để thu thập thông tin trong MỘT màn hình duy nhất — thay vì hỏi từng câu qua lại trong chat.
+
+YÊU CẦU PHIẾU KHẢO SÁT:
+- Tối đa 6 câu hỏi, viết bằng tiếng Việt, thân thiện, dễ hiểu với học sinh cấp 2 đến cấp 3.
+- BẮT BUỘC phải có ĐÚNG 5 câu với các id sau (không đổi tên id):
+  - "lop": type "lop" — hỏi lớp đang học (hệ thống tự hiện các nút Lớp 6 → Lớp 12, không cần "options").
+  - "mon_manh": type "multi" — các môn học giỏi nhất. options nên lấy trong: Toán, Ngữ văn, Tiếng Anh, Vật lý, Hóa học, Sinh học, Lịch sử, Địa lý, GDCD, Tin học.
+  - "mon_yeu": type "multi" — các môn còn yếu, dùng cùng danh sách môn như trên.
+  - "so_thich": type "multi" — sở thích/hoạt động, options nên lấy trong: Máy tính, công nghệ; Đọc sách, viết lách; Vẽ, thiết kế, chụp ảnh; Chăm sóc người bệnh, người thân; Thuyết trình, nói trước đám đông; Lắp ráp, sửa chữa; Chăm sóc cây trồng, vật nuôi; Thể thao; Khám phá thiên nhiên; Kinh doanh, bán hàng; Nấu ăn, ẩm thực; Nghe nhạc, chơi nhạc cụ.
+  - "tinh_cach": type "text" — yêu cầu học sinh tự mô tả ngắn tính cách, điểm đặc biệt, áp lực hoặc mong muốn (kèm "placeholder" gợi ý).
+- Có thể thêm TỐI ĐA 1 câu hỏi phụ (id khác, type "choice", "multi", "scale" hoặc "text") nếu thật sự bổ ích.
+- "bat_buoc": true cho các câu cần thiết để tư vấn ("lop", "mon_manh", "so_thich", "tinh_cach").
+
+ĐẦU RA (trả về DUY NHẤT object JSON hợp lệ, không bọc markdown, đúng trường):
+{
+  "title": "tiêu đề ngắn gọn",
+  "moTa": "mô tả ngắn 1 câu",
+  "questions": [
+    { "id": "lop", "type": "lop", "title": "Bạn đang học lớp mấy?", "bat_buoc": true },
+    { "id": "mon_manh", "type": "multi", "title": "...", "options": ["Toán", "..."], "bat_buoc": true },
+    { "id": "mon_yeu", "type": "multi", "title": "...", "options": ["..."] },
+    { "id": "so_thich", "type": "multi", "title": "...", "options": ["..."], "bat_buoc": true },
+    { "id": "tinh_cach", "type": "text", "title": "...", "placeholder": "...", "bat_buoc": true }
+  ]
+}
+Lưu ý: type chỉ nhận "lop", "choice", "multi", "text" hoặc "scale"; với "choice"/"multi" bắt buộc có "options" (2-8 lựa chọn); questions tối đa 6 phần tử.`;
+}

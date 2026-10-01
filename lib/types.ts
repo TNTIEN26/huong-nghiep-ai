@@ -75,3 +75,20 @@ export type ApiResult = {
   /** Labor-market trends: demand growth, automation risk, salary range (approx). */
   xu_truong?: string[];
 };
+
+// ---------- SURVEY (phiếu khảo sát nhanh do AI sinh trong chat) ----------
+
+export type SurveyQuestion =
+  | { id: "lop"; type: "lop"; title: string; bat_buoc?: boolean }
+  | { id: string; type: "choice"; title: string; options: string[]; bat_buoc?: boolean }
+  | { id: string; type: "multi"; title: string; options: string[]; bat_buoc?: boolean }
+  | { id: string; type: "text"; title: string; placeholder?: string; bat_buoc?: boolean }
+  | { id: string; type: "scale"; title: string; bat_buoc?: boolean };
+
+export type Survey = {
+  title?: string;
+  moTa?: string;
+  questions: SurveyQuestion[];
+};
+
+export type SurveyAnswers = Record<string, string | string[] | number>;

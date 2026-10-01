@@ -1,14 +1,16 @@
 import { GoogleGenAI } from "@google/genai";
 
-import type { FormData, ApiResult } from "./types";
+import type { FormData, ApiResult, Survey } from "./types";
 import {
   buildSystemPrompt,
   buildUserPrompt,
   buildGroundingContext,
   buildFormatInstruction,
   buildChatSystemPrompt,
+  buildSurveyPrompt,
   findByLop,
 } from "./prompt";
+import { parseSurvey } from "./survey";
 import { khoiThiList, nganhNgheList, truongDhList } from "./data";
 
 export type ChatMessage = {
@@ -25,11 +27,10 @@ const geminiClient = geminiApiKey ? new GoogleGenAI({ apiKey: geminiApiKey }) : 
 const openRouterApiKey = process.env.OPENROUTER_API_KEY ?? "";
 
 const DEFAULT_FREE_MODELS = [
-  "nex-agi/nex-n2.5-pro:free",
-  "nex-agi/nex-n2.5-mini:free",
   "dots-studio/dots-3-note-preview:free",
-  "poolside/laguna-xs-2.1:free",
+  "qwen/qwen3.8-27b:free",
   "google/gemma-4-26b-a4b-it:free",
+  "poolside/laguna-xs-2.1:free",
   "liquid/lfm-2.5-2.6b:free",
 ];
 
@@ -643,6 +644,80 @@ async function streamOpenRouterChat(
       ? `Các model AI miễn phí đang quá tải: ${errors[0].slice(0, 160)}. Hãy thử lại sau 1–2 phút.`
       : "Không có model AI nào phản hồi. Hãy thử lại sau.",
   });
+}
+
+// AI sinh phiếu khảo sát nhanh (JSON) để học sinh điền một lượt thay vì chat qua lại.
+// Trả null khi mọi model đều thất bại → route sẽ dùng SURVEY_DEFAULT dự phòng.
+export async function generateSurvey(): Promise<Survey | null> {
+  const systemPrompt = buildSurveyPrompt();
+  const userMessage =
+    "Tạo phiếu khảo sát hướng nghiệp nhanh cho học sinh, theo đúng yêu cầu định dạng ở trên.";
+
+  if (provider === "gemini") {
+    if (!geminiClient) return null;
+    try {
+      const response = await geminiClient.models.generateContent({
+        model: geminiModel,
+        contents: userMessage,
+        config: {
+          systemInstruction: systemPrompt,
+          responseMimeType: "application/json",
+          temperature: 0.6,
+        },
+      });
+      return parseSurvey(response.text ?? "");
+    } catch {
+      return null;
+    }
+  }
+
+  if (provider !== "openrouter" || !openRouterApiKey) return null;
+
+  const models = await resolveCandidateModels();
+  if (models.length === 0) return null;
+
+  const deadline = Date.now() + 90000;
+  for (const model of models) {
+    if (Date.now() > deadline) break;
+    const baseBody: Record<string, unknown> = {
+      model,
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: userMessage },
+      ],
+      temperature: 0.6,
+      response_format: { type: "json_object" },
+    };
+    const post = (body: Record<string, unknown>) =>
+      fetch("https://openrouter.ai/api/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${openRouterApiKey}`,
+        },
+        body: JSON.stringify(body),
+        cache: "no-store",
+        signal: AbortSignal.timeout(60000),
+      });
+
+    try {
+      let res = await post(baseBody);
+      if (res.status === 400) {
+        const fallback = { ...baseBody };
+        delete (fallback as { response_format?: unknown }).response_format;
+        res = await post(fallback);
+      }
+      if (!res.ok) continue;
+      const data = (await res.json()) as {
+        choices?: { message?: { content?: string } }[];
+      };
+      const survey = parseSurvey(data?.choices?.[0]?.message?.content ?? "");
+      if (survey) return survey;
+    } catch {
+      // model lỗi/timeout → thử model kế tiếp
+    }
+  }
+  return null;
 }
 
 export async function streamChatReply(
