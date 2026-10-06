@@ -12,13 +12,33 @@ type TruongKetQua = {
   khu: string;
 };
 
-// Match university names from the AI result against our local dataset.
+// Match university names from the AI result against our local dataset (fuzzy: bỏ dấu, chứa từ khóa).
+function norm(s: string): string {
+  return s
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9 ]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
 function findTruong(uniNames: string[]): TruongKetQua[] {
   const out: TruongKetQua[] = [];
   for (const uniName of uniNames) {
-    const target = uniName.trim().toLowerCase();
+    const target = norm(uniName);
     if (!target) continue;
-    const uni = truongDhRaw.find((u) => u.ten.toLowerCase() === target);
+    const words = target.split(" ").filter((w) => w.length > 2 && !["dai", "hoc"].includes(w));
+    const uni =
+      truongDhRaw.find((u) => norm(u.ten) === target) ??
+      truongDhRaw.find((u) => {
+        const n = norm(u.ten);
+        return target.includes(n) || n.includes(target);
+      }) ??
+      truongDhRaw.find((u) => {
+        const n = norm(u.ten);
+        const hit = words.filter((w) => n.includes(w)).length;
+        return hit >= 2 || (words.length === 1 && hit === 1);
+      });
     if (!uni) continue;
     const all = uni.nhom_nganh.map((n) => n.diem_chuan_tk);
     const khu =
@@ -77,7 +97,7 @@ export default function CareerResult({
       {(result.canh_bao ?? []).length > 0 && (
         <div className="rounded-2xl border border-amber-400/40 bg-amber-50 p-5 sm:p-6 dark:border-amber-400/30 dark:bg-amber-400/10">
           <h3 className="text-sm font-extrabold text-amber-900 dark:text-amber-200">
-            ⚠ Bẫy hướng nghiệp — xem trước chọn nghé
+            ⚠ Bẫy hướng nghiệp — xem trước khi chọn
           </h3>
           <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-amber-900 dark:text-amber-200">
             {(result.canh_bao ?? []).map((c) => (
@@ -146,7 +166,7 @@ export default function CareerResult({
               {nganh.muc_luong_tk && (
                 <div>
                   <dt className="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-slate-400">
-                    Mức luong (tham khào)
+                    Mức lương (tham khảo)
                   </dt>
                   <dd className="mt-1 font-medium text-stone-700 dark:text-slate-300">{nganh.muc_luong_tk}</dd>
                 </div>
@@ -196,7 +216,7 @@ export default function CareerResult({
                   ))}
                 </ul>
                 {t.nhom_nganh[0]?.hoc_bong && (
-                  <p className="mt-1.5 text-xs text-stone-500 dark:text-slate-500">Hoc bong: {t.nhom_nganh[0].hoc_bong}</p>
+                  <p className="mt-1.5 text-xs text-stone-500 dark:text-slate-500">Học bổng: {t.nhom_nganh[0].hoc_bong}</p>
                 )}
               </div>
             ))}

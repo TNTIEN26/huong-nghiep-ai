@@ -138,17 +138,25 @@ function parseResult(text: string): ApiResult {
 
 // Fill optional fields with safe defaults so the UI and types are bulletproof.
 function normalizeApiResult(result: ApiResult): ApiResult {
+  const khoiHopLe = new Set(khoiThiList.map((k) => k.code));
   result.canh_bao = Array.isArray(result.canh_bao)
     ? result.canh_bao.filter((s): s is string => typeof s === "string" && s.trim() !== "")
     : [];
   result.xu_truong = Array.isArray(result.xu_truong)
     ? result.xu_truong.filter((s): s is string => typeof s === "string" && s.trim() !== "")
     : [];
-  result.nghe_nghiep = result.nghe_nghiep.map((n) => ({
+  result.nghe_nghiep = result.nghe_nghiep.slice(0, 3).map((n) => ({
     ...n,
+    do_phu_hop: Math.min(100, Math.max(1, Math.round(Number(n.do_phu_hop) || 50))),
+    khoi_thi: Array.isArray(n.khoi_thi)
+      ? n.khoi_thi.filter((c): c is string => typeof c === "string" && khoiHopLe.has(c))
+      : [],
     muc_luong_tk: typeof n.muc_luong_tk === "string" ? n.muc_luong_tk : "",
     rui_ro: typeof n.rui_ro === "string" ? n.rui_ro : "",
   }));
+  result.khoi_thi_de_nghi = Array.isArray(result.khoi_thi_de_nghi)
+    ? result.khoi_thi_de_nghi.filter((c): c is string => typeof c === "string" && khoiHopLe.has(c))
+    : [];
   return result;
 }
 
@@ -171,7 +179,15 @@ async function callGemini(userMessage: string, systemPrompt: string): Promise<Ap
 
 const SPECIALIZED_MODEL = /vl|sante|fin|content-safety|code|note-preview|omni|inkling|nemotron|gemma-4-31b/i;
 
+// Cache danh sách model free 10 phút để mỗi tin nhắn không phải fetch /models một lần.
+let modelCache: { at: number; models: string[] } | null = null;
+const MODEL_CACHE_MS = 10 * 60 * 1000;
+const MAX_CANDIDATE_MODELS = 3;
+
 async function resolveCandidateModels(): Promise<string[]> {
+  if (modelCache && Date.now() - modelCache.at < MODEL_CACHE_MS) {
+    return modelCache.models;
+  }
   const candidates: string[] = [];
   try {
     const res = await fetch("https://openrouter.ai/api/v1/models", { cache: "no-store" });
@@ -203,7 +219,9 @@ async function resolveCandidateModels(): Promise<string[]> {
   for (const preferred of openRouterModels) {
     if (!candidates.includes(preferred)) candidates.push(preferred);
   }
-  return candidates.slice(0, 8);
+  const trimmed = candidates.slice(0, MAX_CANDIDATE_MODELS);
+  modelCache = { at: Date.now(), models: trimmed };
+  return trimmed;
 }
 
 type ModelAttempt =
@@ -224,7 +242,7 @@ async function tryModel(
       },
       body: JSON.stringify(body),
       cache: "no-store",
-      signal: AbortSignal.timeout(90000),
+      signal: AbortSignal.timeout(60000),
     });
   };
 
@@ -285,7 +303,7 @@ async function callOpenRouter(userMessage: string, systemPrompt: string): Promis
     throw new Error("Không tìm thấy model miễn phí nào trên OpenRouter.");
   }
 
-  const deadline = Date.now() + 145000;
+  const deadline = Date.now() + 90000;
   const errors: string[] = [];
   for (const model of models) {
     if (Date.now() > deadline) break;
@@ -345,7 +363,7 @@ async function tryChatModel(
       },
       body: JSON.stringify(body),
       cache: "no-store",
-      signal: AbortSignal.timeout(90000),
+      signal: AbortSignal.timeout(30000),
     });
   };
 
@@ -403,7 +421,7 @@ async function callOpenRouterChat(messages: ChatMessage[], systemPrompt: string)
     throw new Error("Không tìm thấy model miễn phí nào trên OpenRouter.");
   }
 
-  const deadline = Date.now() + 145000;
+  const deadline = Date.now() + 60000;
   const errors: string[] = [];
   for (const model of models) {
     if (Date.now() > deadline) break;
@@ -449,7 +467,7 @@ async function tryChatModelStream(
       },
       body: JSON.stringify(body),
       cache: "no-store",
-      signal: AbortSignal.timeout(120000),
+      signal: AbortSignal.timeout(60000),
     });
   };
 
@@ -602,7 +620,7 @@ async function streamOpenRouterChat(
     return;
   }
 
-  const deadline = Date.now() + 145000;
+  const deadline = Date.now() + 90000;
   const errors: string[] = [];
   for (const model of models) {
     if (Date.now() > deadline) break;
@@ -752,7 +770,38 @@ export async function chatReply(messages: ChatMessage[], context?: string): Prom
 
 export async function getCareerAdvice(form: FormData): Promise<ApiResult> {
   const cap = findByLop(form.lop).cap;
-  const grounding = buildGroundingContext(khoiThiList, nganhNgheList, truongDhList, cap);
+  const hint = [...form.mon_manh, ...form.so_thich, form.tinh_cach].join(" ").toLowerCase();
+  const scored = nganhNgheList.map((n) => {
+    const text = [...n.mon_trong_tam, ...n.ky_nang, ...n.tinh_cach, n.mo_ta, n.linh_vuc]
+      .join(" ")
+      .toLowerCase();
+    let score = 0;
+    for (const m of form.mon_manh) if (m && text.includes(m.toLowerCase())) score += 2;
+    for (const s of form.so_thich) if (s && text.includes(s.split(",")[0].toLowerCase())) score += 1;
+    if (n.muc_hoc_phu_hop.includes(cap)) score += 1;
+    if (!hint) score = 1;
+    return { n, score };
+  });
+  const topNganh = scored
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 8)
+    .map((s) => s.n);
+  const khoiCan = new Set(topNganh.flatMap((n) => n.khoi_phu_hop));
+  const topTruong = truongDhList
+    .map((t) => ({
+      t,
+      hit: t.nhom_nganh.filter((g) => g.to_hop.some((c) => khoiCan.has(c))).length,
+    }))
+    .filter((x) => x.hit > 0)
+    .sort((a, b) => b.hit - a.hit)
+    .slice(0, 6)
+    .map((x) => x.t);
+  const grounding = buildGroundingContext(
+    khoiThiList,
+    topNganh.length > 0 ? topNganh : nganhNgheList.slice(0, 8),
+    topTruong.length > 0 ? topTruong : truongDhList.slice(0, 6),
+    cap,
+  );
   const userMessage = `${buildUserPrompt(form)}\n\n${buildFormatInstruction()}\n\n${grounding}`;
   const systemPrompt = buildSystemPrompt();
 

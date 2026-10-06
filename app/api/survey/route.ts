@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 
-import { generateSurvey } from "@/lib/ai";
 import { SURVEY_DEFAULT } from "@/lib/survey";
 
 export const runtime = "nodejs";
@@ -25,7 +24,7 @@ export async function POST(request: Request) {
     );
   }
 
-  // AI tạo phiếu khảo sát; nếu thất bại (quá tải/JSON sai) thì dùng phiếu mặc định.
-  const survey = await generateSurvey();
-  return NextResponse.json({ survey: survey ?? SURVEY_DEFAULT });
+  // Trả phiếu mẫu ngay để học sinh điền luôn (<100ms); AI cá nhân hóa sau nếu cần.
+  // Giữ generateSurvey cho tương lai nhưng không chặn UX hiện tại.
+  return NextResponse.json({ survey: SURVEY_DEFAULT, nguon: "mac-dinh" });
 }
