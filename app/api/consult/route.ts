@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 
 import type { FormData, ApiResult } from "@/lib/types";
 import { getCareerAdvice } from "@/lib/ai";
+import { ghiLogConsult, kiemTraGrounding } from "@/lib/eval-log";
+import { kiemTraGioiHan } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 
@@ -52,6 +54,11 @@ function sseResponse(readStream: ReadableStream<Uint8Array>): Response {
 }
 
 export async function POST(request: Request) {
+  const biChan = kiemTraGioiHan(request, "consult");
+  if (biChan) {
+    return NextResponse.json({ error: biChan }, { status: 429 });
+  }
+
   let body: unknown;
   try {
     body = await request.json();
@@ -68,6 +75,10 @@ export async function POST(request: Request) {
 
   const form = body as FormData;
   const stream = (body as { stream?: unknown }).stream === true;
+  // Mã phiên ẩn danh do trình duyệt tự sinh — chỉ để nối log với phiếu
+  // đánh giá, không phải tên/def định danh HS (xem lib/eval-log.ts).
+  const phien_ma = (body as { phien_ma?: unknown }).phien_ma;
+  const batDau = Date.now();
 
   // ---------- STREAMING (SSE): live status + final result ----------
   if (stream) {
@@ -113,10 +124,26 @@ export async function POST(request: Request) {
         }
 
         if (finalError !== null) {
-          send({
-            e: finalError instanceof Error ? finalError.message : "Đã có lỗi xảy ra, vui lòng thử lại.",
+          const loi =
+            finalError instanceof Error ? finalError.message : "Đã có lỗi xảy ra, vui lòng thử lại.";
+          ghiLogConsult({
+            phien_ma: String(phien_ma ?? ""),
+            lop: form.lop,
+            kenh: "stream",
+            thanh_cong: false,
+            ms: Date.now() - batDau,
+            loi,
           });
+          send({ e: loi });
         } else if (finalResult) {
+          ghiLogConsult({
+            phien_ma: String(phien_ma ?? ""),
+            lop: form.lop,
+            kenh: "stream",
+            thanh_cong: true,
+            ms: Date.now() - batDau,
+            grounding: kiemTraGrounding(finalResult),
+          });
           send({ r: finalResult });
         } else {
           send({ e: "Đã có lỗi xảy ra, vui lòng thử lại." });
@@ -136,10 +163,26 @@ export async function POST(request: Request) {
   // ---------- NON-STREAMING (JSON) ----------
   try {
     const result = await getCareerAdvice(form);
+    ghiLogConsult({
+      phien_ma: String(phien_ma ?? ""),
+      lop: form.lop,
+      kenh: "json",
+      thanh_cong: true,
+      ms: Date.now() - batDau,
+      grounding: kiemTraGrounding(result),
+    });
     return NextResponse.json(result);
   } catch (error) {
     const errorMessage =
       error instanceof Error ? error.message : "Đã có lỗi xảy ra, vui lòng thử lại.";
+    ghiLogConsult({
+      phien_ma: String(phien_ma ?? ""),
+      lop: form.lop,
+      kenh: "json",
+      thanh_cong: false,
+      ms: Date.now() - batDau,
+      loi: errorMessage,
+    });
     return NextResponse.json({ error: errorMessage }, { status: 500 });
   }
 }

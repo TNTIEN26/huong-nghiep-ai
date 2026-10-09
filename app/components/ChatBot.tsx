@@ -3,11 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 // Render câu trả lời AI dạng Markdown (react-markdown + remark-gfm)
 import ReactMarkdown from "react-markdown";
+import rehypeSanitize from "rehype-sanitize";
 import remarkGfm from "remark-gfm";
 
 import type { ApiResult, FormData, Survey, SurveyAnswers } from "@/lib/types";
 import { surveyAnswersToForm } from "@/lib/survey";
+import { luuKetQua } from "@/lib/ket-qua-luu";
 import CareerResult from "./CareerResult";
+import { layPhienMa } from "./DanhGia";
 import SurveyCard from "./SurveyCard";
 
 type TinVanBan = { tuAi: "bot" | "ban"; noiDung: string; id?: string };
@@ -199,7 +202,7 @@ export default function ChatBot() {
       const response = await fetch("/api/consult", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, stream: true }),
+        body: JSON.stringify({ ...form, stream: true, phien_ma: layPhienMa() }),
       });
 
       const contentType = response.headers.get("content-type") ?? "";
@@ -207,6 +210,7 @@ export default function ChatBot() {
         const data = await response.json();
         if (!response.ok) throw new Error(data.error ?? "Đã có lỗi xảy ra.");
         update({ result: data as ApiResult, dangChay: false });
+        luuKetQua(data as ApiResult, form.lop);
         gotResult = true;
         return;
       }
@@ -239,6 +243,7 @@ export default function ChatBot() {
             return;
           } else if (ev.r && typeof ev.r === "object") {
             update({ result: ev.r as ApiResult, dangChay: false });
+            luuKetQua(ev.r as ApiResult, form.lop);
             gotResult = true;
             break outer;
           }
@@ -416,7 +421,24 @@ export default function ChatBot() {
                 </p>
               ) : (
                 <div className="chat-md max-w-[85%] rounded-2xl border border-stone-900/10 bg-orange-50 px-4 py-2.5 text-sm leading-relaxed text-stone-900">
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{t.noiDung}</ReactMarkdown>
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    rehypePlugins={[rehypeSanitize]}
+                    components={{
+                      a: ({ href, children }) => (
+                        <a
+                          href={href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="font-semibold text-orange-700 underline decoration-orange-300 underline-offset-2"
+                        >
+                          {children}
+                        </a>
+                      ),
+                    }}
+                  >
+                    {t.noiDung}
+                  </ReactMarkdown>
                 </div>
               )}
             </div>

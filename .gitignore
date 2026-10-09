@@ -41,6 +41,9 @@ server.log
 # vercel
 .vercel
 
+# du lieu danh gia an danh cua HS (KHKT) — khong commit len GitHub
+data/.danh-gia/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

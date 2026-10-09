@@ -73,7 +73,7 @@ const GEMINI_RESPONSE_SCHEMA = {
           },
           muc_luong_tk: {
             type: "string",
-            description: "Reference salary band (tham khào only), short, e.g. \"≈ 25–60 mln/tháng\".",
+            description: "Reference salary band (tham khảo only), short, e.g. \"≈ 25–60 triệu đồng/tháng\".",
           },
           rui_ro: {
             type: "string",
@@ -110,16 +110,43 @@ const GEMINI_RESPONSE_SCHEMA = {
   required: ["gioi_thieu", "nghe_nghiep", "khoi_thi_de_nghi", "loi_khuyen", "luu_y"],
 };
 
+function laChuoi(str: unknown): str is string {
+  return typeof str === "string" && str.trim() !== "";
+}
+
+function laGoiYNganh(value: unknown): boolean {
+  if (typeof value !== "object" || value === null) return false;
+  const n = value as Record<string, unknown>;
+  return (
+    laChuoi(n.ten) &&
+    typeof n.do_phu_hop === "number" &&
+    Number.isFinite(n.do_phu_hop) &&
+    n.do_phu_hop >= 1 &&
+    n.do_phu_hop <= 100 &&
+    laChuoi(n.ly_do) &&
+    Array.isArray(n.khoi_thi) &&
+    Array.isArray(n.mon_trong_tam) &&
+    laChuoi(n.lo_trinh) &&
+    Array.isArray(n.truong_tieu_bieu)
+  );
+}
+
 function isApiResult(value: unknown): value is ApiResult {
   if (typeof value !== "object" || value === null) return false;
   const obj = value as Record<string, unknown>;
-  return (
-    typeof obj.gioi_thieu === "string" &&
-    Array.isArray(obj.nghe_nghiep) &&
-    Array.isArray(obj.khoi_thi_de_nghi) &&
-    typeof obj.loi_khuyen === "string" &&
-    typeof obj.luu_y === "string"
-  );
+  if (
+    !laChuoi(obj.gioi_thieu) ||
+    !Array.isArray(obj.nghe_nghiep) ||
+    obj.nghe_nghiep.length < 1 ||
+    obj.nghe_nghiep.length > 3 ||
+    !obj.nghe_nghiep.every(laGoiYNganh) ||
+    !Array.isArray(obj.khoi_thi_de_nghi) ||
+    !laChuoi(obj.loi_khuyen) ||
+    !laChuoi(obj.luu_y)
+  ) {
+    return false;
+  }
+  return true;
 }
 
 function parseResult(text: string): ApiResult {
@@ -277,7 +304,8 @@ async function tryModel(
           };
         }
       }
-      return { ok: false, fatal: false, error: `HTTP ${res.status}: ${text.slice(0, 160)}` };
+      console.error(`[ai] model ${model} HTTP ${res.status}:`, text.slice(0, 500));
+      return { ok: false, fatal: false, error: `Model ${model} quá tải (HTTP ${res.status}).` };
     }
 
     const data = (await res.json()) as {
@@ -393,7 +421,8 @@ async function tryChatModel(
           };
         }
       }
-      return { ok: false, fatal: false, error: `HTTP ${res.status}: ${text.slice(0, 160)}` };
+      console.error(`[ai] model ${model} HTTP ${res.status}:`, text.slice(0, 500));
+      return { ok: false, fatal: false, error: `Model ${model} quá tải (HTTP ${res.status}).` };
     }
     const data = (await res.json()) as {
       choices?: { message?: { content?: string } }[];
@@ -768,16 +797,43 @@ export async function chatReply(messages: ChatMessage[], context?: string): Prom
   throw new Error(`AI_PROVIDER không hợp lệ: "${provider}" (chỉ chấp nhận "gemini" hoặc "openrouter").`);
 }
 
+// So khớp theo từ nguyên (bỏ dấu, tách từ): "Toán" khớp từ "toán" đứng
+// riêng, không khớp một phần chữ ("kế toán", "thanh toán" vẫn khớp vì cùng
+// họ từ — chấp nhận được; nhưng "tin" không khớp "tin đồn", "sử" không khớp
+// "lịch sử" nhờ ranh giới từ).
+function chuanHoaTu(s: string): string {
+  return s
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9 ]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function khopTu(haystack: string, kim: string): boolean {
+  const tuHay = new Set(haystack.split(" ").filter(Boolean));
+  const tuKim = kim.split(" ").filter(Boolean);
+  if (tuKim.length === 0) return false;
+  return tuKim.every((t) => tuHay.has(t));
+}
+
 export async function getCareerAdvice(form: FormData): Promise<ApiResult> {
   const cap = findByLop(form.lop).cap;
   const hint = [...form.mon_manh, ...form.so_thich, form.tinh_cach].join(" ").toLowerCase();
   const scored = nganhNgheList.map((n) => {
-    const text = [...n.mon_trong_tam, ...n.ky_nang, ...n.tinh_cach, n.mo_ta, n.linh_vuc]
-      .join(" ")
-      .toLowerCase();
+    const text = chuanHoaTu(
+      [...n.mon_trong_tam, ...n.ky_nang, ...n.tinh_cach, n.mo_ta, n.linh_vuc].join(" "),
+    );
     let score = 0;
-    for (const m of form.mon_manh) if (m && text.includes(m.toLowerCase())) score += 2;
-    for (const s of form.so_thich) if (s && text.includes(s.split(",")[0].toLowerCase())) score += 1;
+    for (const m of form.mon_manh) {
+      if (m && khopTu(text, chuanHoaTu(m))) score += 2;
+    }
+    for (const s of form.so_thich) {
+      // Dùng toàn bộ cụm sở thích ("Máy tính, công nghệ" → cả 3 từ phải có),
+      // không cắt lấy nửa đầu như trước.
+      if (s && khopTu(text, chuanHoaTu(s))) score += 1;
+    }
     if (n.muc_hoc_phu_hop.includes(cap)) score += 1;
     if (!hint) score = 1;
     return { n, score };

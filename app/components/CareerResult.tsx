@@ -2,6 +2,7 @@
 
 import type { ApiResult, TruongDH } from "@/lib/types";
 import truongDhData from "@/data/truong-dh.json";
+import DanhGia from "./DanhGia";
 
 const truongDhRaw = truongDhData as TruongDH[];
 
@@ -49,7 +50,9 @@ function findTruong(uniNames: string[]): TruongKetQua[] {
 }
 
 function diemTieu(p: TruongDH["nhom_nganh"][number]): string {
-  const bits = [`${p.diem_chuan_tk.toFixed(1)} điểm`];
+  const bits = [
+    `${p.diem_chuan_tk.toFixed(1)} điểm${p.nam ? ` (${p.nam})` : ""}`,
+  ];
   if (p.to_hop.length > 0) bits.push(`khối: ${p.to_hop.join(", ")}`);
   if (p.hoc_phi_tk) bits.push(p.hoc_phi_tk);
   if (p.ghichu) bits.push(p.ghichu);
@@ -68,9 +71,12 @@ function thanhDoPhuHop(percent: number) {
 export default function CareerResult({
   result,
   tieuDe = "Kết quả tư vấn",
+  anDanhGia = false,
 }: {
   result: ApiResult;
   tieuDe?: string;
+  /** Ẩn form Likert (dùng khi xem lại bản đã lưu — tránh chấm trùng). */
+  anDanhGia?: boolean;
 }) {
   return (
     <div className="mx-auto w-full max-w-3xl space-y-4">
@@ -110,7 +116,7 @@ export default function CareerResult({
       {(result.xu_truong ?? []).length > 0 && (
         <div className="rounded-2xl border border-sky-300/40 bg-sky-50 p-5 sm:p-6 dark:border-sky-400/30 dark:bg-sky-400/10">
           <h3 className="text-sm font-extrabold text-sky-900 dark:text-sky-200">
-            Xu hướng thị trường lao động · tham khào
+            Xu hướng thị trường lao động · tham khảo
           </h3>
           <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-sky-900 dark:text-sky-200">
             {(result.xu_truong ?? []).map((x) => (
@@ -153,6 +159,15 @@ export default function CareerResult({
                 </span>
               ))}
             </div>
+
+            {nganh.khoi_thi.length > 0 && (
+              <a
+                href={`/tinh-diem?khoi=${encodeURIComponent(nganh.khoi_thi[0])}#chon-truong`}
+                className="mt-3 inline-block rounded-xl bg-orange-600 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-orange-500"
+              >
+                Tính điểm cho khối {nganh.khoi_thi[0]} →
+              </a>
+            )}
 
             <dl className="mt-5 grid gap-4 border-t border-stone-900/10 pt-5 text-sm sm:grid-cols-2">
               <div>
@@ -203,7 +218,7 @@ export default function CareerResult({
                 <p className="text-sm font-bold text-stone-900 dark:text-slate-100">
                   {t.ten}
                   <span className="ml-1.5 text-xs font-medium text-stone-500 dark:text-slate-400">
-                    · {t.thanh_pho} · điểm {t.khu} (tham khào)
+                    · {t.thanh_pho} · điểm {t.khu} (tham khảo)
                   </span>
                 </p>
                 <ul className="mt-2 space-y-1.5 text-[13px] leading-snug text-stone-600 dark:text-slate-400">
@@ -212,6 +227,24 @@ export default function CareerResult({
                       <span className="font-semibold text-stone-800 dark:text-slate-200">{p.ten}</span>
                       {" — "}
                       {diemTieu(p)}
+                      {p.nguon ? (
+                        <>
+                          {" · "}
+                          <a
+                            href={p.nguon}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="font-semibold text-orange-700 underline decoration-orange-300 underline-offset-2 hover:text-orange-600"
+                          >
+                            Đề án ↗
+                          </a>
+                        </>
+                      ) : (
+                        <>
+                          {" · "}
+                          <span className="text-stone-400">đang kiểm chứng nguồn</span>
+                        </>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -234,6 +267,8 @@ export default function CareerResult({
           <p className="mt-2 text-sm leading-relaxed text-stone-400">{result.luu_y}</p>
         </div>
       </div>
+
+      {!anDanhGia && <DanhGia />}
     </div>
   );
 }

@@ -1,4 +1,6 @@
 import ChatBot from "../components/ChatBot";
+import KetQuaDaLuu from "../components/KetQuaDaLuu";
+import LoTrinh from "../components/LoTrinh";
 import MascotOwl from "../components/MascotOwl";
 import SiteNav from "../components/SiteNav";
 
@@ -6,6 +8,7 @@ export default function HuongNghiepPage() {
   return (
     <div className="relative z-10 flex min-h-screen flex-col text-stone-900">
       <SiteNav active="huong-nghiep" />
+      <LoTrinh hienTai="kham-pha" />
 
       <main className="mx-auto flex w-full max-w-[1440px] flex-1 flex-col px-4 py-6 sm:px-8 sm:py-8">
         <div className="mb-5 flex items-center gap-4">
@@ -21,6 +24,9 @@ export default function HuongNghiepPage() {
         </div>
         <div className="flex flex-1 flex-col">
           <ChatBot />
+        </div>
+        <div className="mt-6">
+          <KetQuaDaLuu />
         </div>
       </main>
     </div>

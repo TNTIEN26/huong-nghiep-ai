@@ -16,9 +16,9 @@ export type NganhNghe = {
   tinh_cach: string[];
   cong_viec: string[];
   trien_vong: string;
-  /** Reference salary band (tham khào only), e.g. "≈ 25–60 mln/tháng". */
+  /** Reference salary band (tham khảo only), e.g. "≈ 25–60 triệu đồng/tháng". */
   muc_luong_tk?: string;
-  /** Automation/replacement risk + labor market note (tham khào only). */
+  /** Automation/replacement risk + labor market note (tham khảo only). */
   rui_ro_thay_the?: string;
   muc_hoc_phu_hop: string[];
 };
@@ -34,6 +34,12 @@ export type TruongDH = {
     ghichu?: string;
     hoc_phi_tk?: string;
     hoc_bong?: string;
+    /** Điểm chuẩn của năm tuyển sinh nào (ví dụ 2024). */
+    nam?: number;
+    /** Link đề án tuyển sinh chính thức của trường. */
+    nguon?: string;
+    /** Ngày kiểm chứng dữ liệu (YYYY-MM-DD). */
+    ngay_cap_nhat?: string;
   }[];
 };
 
@@ -58,9 +64,9 @@ export type GoiYNganh = {
   mon_trong_tam: string[];
   lo_trinh: string;
   truong_tieu_bieu: string[];
-  /** Reference salary band (tham khào only), e.g. "≈ 25–60 mln/tháng". */
+  /** Reference salary band (tham khảo only), e.g. "≈ 25–60 triệu đồng/tháng". */
   muc_luong_tk?: string;
-  /** Automation/replacement risk note (tham khào only). */
+  /** Automation/replacement risk note (tham khảo only). */
   rui_ro?: string;
 };
 

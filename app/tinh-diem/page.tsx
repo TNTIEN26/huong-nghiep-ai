@@ -1,15 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
+import LoTrinh, { danhDauTienTrinh } from "../components/LoTrinh";
 import SiteNav from "../components/SiteNav";
 
-type Muc = "hocba" | "totnghiep" | "quydoi";
+import type { TruongDH } from "@/lib/types";
+import truongDhData from "@/data/truong-dh.json";
+import khoiThiData from "@/data/khoi-thi.json";
+
+const truongDhRaw = truongDhData as TruongDH[];
+const khoiThiCodes = (khoiThiData as { code: string }[]).map((k) => k.code);
+
+type Muc = "hocba" | "totnghiep" | "quydoi" | "chontruong";
 
 const DANH_MUC: { id: Muc; so: string; ten: string; moTa: string }[] = [
   { id: "hocba", so: "1", ten: "Học bạ cấp 3", moTa: "Nhập điểm TB cả năm lớp 10, 11, 12" },
   { id: "totnghiep", so: "2", ten: "Xét tốt nghiệp", moTa: "Tự lấy TB 3 năm, nhập thêm 4 môn thi" },
   { id: "quydoi", so: "3", ten: "Quy đổi ĐGNL", moTa: "Đổi điểm HSA, V-ACT, TSA sang thang 30" },
+  { id: "chontruong", so: "4", ten: "Chọn trường", moTa: "Điểm này với tới trường nào (tham khảo)" },
 ];
 
 function parseDiem(v: string, max = 10): number | null {
@@ -32,6 +41,10 @@ function Nhan({ ten, children }: { ten: string; children: React.ReactNode }) {
 }
 
 function KetQua({ tieuDe, so, nhanXet }: { tieuDe: string; so: string; nhanXet: string }) {
+  // Thẻ kết quả chỉ hiện khi đã tính ra số → đánh dấu bước "Thử sức" đã xong.
+  useEffect(() => {
+    danhDauTienTrinh("thu-suc");
+  }, []);
   return (
     <div className="mt-6 rounded-2xl border border-stone-900/10 bg-[#faf4e9] p-6 text-center">
       <p className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">{tieuDe}</p>
@@ -633,9 +646,191 @@ function MucQuyDoi() {
   );
 }
 
+/* ---------- MỤC 4: CHỌN TRƯỜNG (điểm này với tới trường nào) ---------- */
+type DongTruong = {
+  truong: string;
+  thanhPho: string;
+  nganh: string;
+  toHop: string[];
+  diemChuan: number;
+  nam?: number;
+  nguon?: string;
+};
+
+function MucChonTruong({ diemGoiY }: { diemGoiY: string }) {
+  const [diem, setDiem] = useState(diemGoiY);
+  const [khoi, setKhoi] = useState("");
+
+  // Nhận khối từ trang tư vấn (?khoi=A00#chon-truong) — đọc 1 lần sau mount.
+  // Đồng bộ mount với URL trình duyệt là việc của effect (không render được
+  // ở server vì window không tồn tại), nên tắt rule set-state-in-effect ở đây.
+  /* eslint-disable react-hooks/set-state-in-effect */
+  useEffect(() => {
+    try {
+      const k = new URLSearchParams(window.location.search).get("khoi");
+      if (k && khoiThiCodes.includes(k.trim().toUpperCase())) {
+        setKhoi(k.trim().toUpperCase());
+      }
+    } catch {
+      // bỏ qua
+    }
+  }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
+
+  const diemSo = parseDiem(diem, 30);
+  const khoiChuan = khoi.trim().toUpperCase();
+
+  const danhSach: DongTruong[] = [];
+  if (diemSo !== null) {
+    for (const t of truongDhRaw) {
+      for (const n of t.nhom_nganh) {
+        if (khoiChuan && !n.to_hop.map((c) => c.toUpperCase()).includes(khoiChuan)) continue;
+        if (n.diem_chuan_tk > diemSo) continue;
+        danhSach.push({
+          truong: t.ten,
+          thanhPho: t.thanh_pho,
+          nganh: n.ten,
+          toHop: n.to_hop,
+          diemChuan: n.diem_chuan_tk,
+          ...(n.nam ? { nam: n.nam } : {}),
+          ...(n.nguon ? { nguon: n.nguon } : {}),
+        });
+      }
+    }
+    danhSach.sort((a, b) => b.diemChuan - a.diemChuan);
+  }
+  const hienThi = danhSach.slice(0, 15);
+
+  // Có kết quả khớp → đánh dấu bước "Về đích" đã chạm tới.
+  useEffect(() => {
+    if (hienThi.length > 0) danhDauTienTrinh("ve-dich");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hienThi.length > 0]);
+
+  return (
+    <div id="chon-truong" className="scroll-mt-24">
+      <div className="grid gap-4 sm:grid-cols-2">
+        <Nhan ten="Điểm xét tuyển của em (thang 30)">
+          <input
+            value={diem}
+            onChange={(e) => setDiem(e.target.value)}
+            inputMode="decimal"
+            placeholder="VD: 24.5"
+            className={oNhap}
+          />
+        </Nhan>
+        <Nhan ten="Lọc theo khối (không bắt buộc)">
+          <input
+            value={khoi}
+            onChange={(e) => setKhoi(e.target.value.toUpperCase())}
+            placeholder="VD: A00"
+            list="ds-khoi"
+            className={oNhap}
+          />
+          <datalist id="ds-khoi">
+            {khoiThiCodes.map((c) => (
+              <option key={c} value={c} />
+            ))}
+          </datalist>
+        </Nhan>
+      </div>
+      {diemGoiY && diemGoiY !== diem && (
+        <button
+          type="button"
+          onClick={() => setDiem(diemGoiY)}
+          className="mt-3 rounded-xl border border-orange-600/30 bg-orange-50 px-4 py-2 text-[13px] font-bold text-orange-700 transition hover:bg-orange-100"
+        >
+          Dùng điểm học bạ vừa tính ({diemGoiY}) →
+        </button>
+      )}
+
+      {diemSo === null ? (
+        <p className="mt-5 text-sm text-stone-500">
+          Nhập điểm xét tuyển thang 30 (lấy từ mục 1–3, hoặc điểm thi thử) để xem các ngành trong
+          tầm với.
+        </p>
+      ) : hienThi.length === 0 ? (
+        <p className="mt-5 rounded-xl border border-amber-400/40 bg-amber-50 px-4 py-3 text-sm leading-relaxed text-amber-900">
+          Chưa thấy ngành nào trong data khớp {diemSo.toFixed(2)} điểm
+          {khoiChuan ? ` khối ${khoiChuan}` : ""}. Data mới có {truongDhRaw.length} trường —
+          hãy đối chiếu thêm đề án tuyển sinh của trường em thích.
+        </p>
+      ) : (
+        <div className="mt-5">
+          <p className="text-sm font-bold text-stone-900">
+            {danhSach.length} ngành trong tầm với {diemSo.toFixed(2)} điểm
+            {khoiChuan ? ` · khối ${khoiChuan}` : ""} (tham khảo)
+          </p>
+          <ul className="mt-3 space-y-2.5">
+            {hienThi.map((d) => (
+              <li
+                key={`${d.truong}-${d.nganh}`}
+                className="rounded-xl border border-stone-900/10 bg-[#faf4e9] px-4 py-3"
+              >
+                <p className="text-sm font-bold text-stone-900">
+                  {d.nganh} <span className="font-medium text-stone-500">· {d.truong}</span>
+                </p>
+                <p className="mt-1 text-[13px] text-stone-600">
+                  {d.thanhPho} · chuẩn {d.diemChuan.toFixed(1)} điểm{d.nam ? ` (${d.nam})` : ""}
+                  {d.toHop.length > 0 ? ` · khối: ${d.toHop.join(", ")}` : ""}
+                  {d.nguon ? (
+                    <>
+                      {" · "}
+                      <a
+                        href={d.nguon}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="font-semibold text-orange-700 underline decoration-orange-300 underline-offset-2 hover:text-orange-600"
+                      >
+                        Đề án ↗
+                      </a>
+                    </>
+                  ) : (
+                    " · đang kiểm chứng nguồn"
+                  )}
+                </p>
+              </li>
+            ))}
+          </ul>
+          {danhSach.length > hienThi.length && (
+            <p className="mt-2 text-xs text-stone-500">
+              + {danhSach.length - hienThi.length} ngành nữa — nâng điểm hoặc đổi khối để thu hẹp.
+            </p>
+          )}
+          <p className="mt-3 text-xs leading-relaxed text-stone-500">
+            Điểm chuẩn thay đổi hằng năm và theo phương thức. Đối chiếu đề án chính thức của
+            trường trước khi đăng ký nguyện vọng.
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function TinhDiemPage() {
   const [muc, setMuc] = useState<Muc>("hocba");
   const [hocBa, setHocBa] = useState({ lop10: "", lop11: "", lop12: "" });
+
+  // Deep-link từ trang tư vấn (?khoi=A00#chon-truong): mở thẳng mục 4 và cuộn tới.
+  // Đồng bộ mount với URL trình duyệt là việc của effect (không render được
+  // ở server vì window không tồn tại), nên tắt rule set-state-in-effect ở đây.
+  /* eslint-disable react-hooks/set-state-in-effect */
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("khoi") || window.location.hash === "#chon-truong") {
+        setMuc("chontruong");
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            document.getElementById("chon-truong")?.scrollIntoView({ behavior: "smooth" });
+          }, 150);
+        });
+      }
+    } catch {
+      // bỏ qua
+    }
+  }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   const ds = [hocBa.lop10, hocBa.lop11, hocBa.lop12].map((v) => parseDiem(v));
   const tb3 = ds.every((d) => d !== null)
@@ -645,6 +840,7 @@ export default function TinhDiemPage() {
   return (
     <div className="relative z-10 flex min-h-screen flex-col text-stone-900">
       <SiteNav active="tinh-diem" />
+      <LoTrinh hienTai="thu-suc" />
 
       <main className="mx-auto w-full max-w-[1440px] flex-1 px-4 py-12 sm:px-8 sm:py-16">
         <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Tính điểm</h1>
@@ -689,6 +885,7 @@ export default function TinhDiemPage() {
             {muc === "hocba" && <MucHocBa hocBa={hocBa} setHocBa={setHocBa} />}
             {muc === "totnghiep" && <MucTotNghiep tbSan={tb3} hocBa={hocBa} />}
             {muc === "quydoi" && <MucQuyDoi />}
+            {muc === "chontruong" && <MucChonTruong diemGoiY={tb3} />}
           </div>
         </div>
       </main>

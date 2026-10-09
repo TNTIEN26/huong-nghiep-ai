@@ -1,21 +1,26 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 
-// Lịch DỰ KIẾN kỳ thi tốt nghiệp THPT 2027 (lịch chính thức chờ Bộ GD&ĐT công bố).
-// Bạn phụ trách tính năng có thể chuyển sang lấy từ API/data khi có lịch thật.
-const lichThi = [
-  { mon: "Ngữ văn", ngay: "11/06/2027", gio: "07:30", at: new Date(2027, 5, 11, 7, 30).getTime() },
-  { mon: "Toán", ngay: "11/06/2027", gio: "14:20", at: new Date(2027, 5, 11, 14, 20).getTime() },
-  { mon: "Bài thi tự chọn thứ nhất", ngay: "12/06/2027", gio: "07:30", at: new Date(2027, 5, 12, 7, 30).getTime() },
-  { mon: "Bài thi tự chọn thứ hai", ngay: "12/06/2027", gio: "10:30", at: new Date(2027, 5, 12, 10, 30).getTime() },
-];
+import { LICH_THI_2027 } from "@/lib/lich-thi";
+
+// Lịch DỰ KIẾN kỳ thi tốt nghiệp THPT 2027 — lấy từ lib/lich-thi (dùng chung
+// với trang chủ). Lịch chính thức chờ Bộ GD&ĐT công bố.
+const lichThi = LICH_THI_2027;
 
 function pad(n: number) {
   return String(Math.max(0, n)).padStart(2, "0");
 }
 
 export default function ExamCountdown() {
+  // Cờ "đã mount ở client": server và lần render đầu của client đều thấy
+  // false nên HTML giống nhau 100%, tránh lỗi hydration do Date.now()
+  // mỗi bên một khác. Số thật chỉ hiện sau khi mount xong.
+  const daMount = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
   const [now, setNow] = useState<number>(() => Date.now());
   const [chon, setChon] = useState<string | null>(null);
 
@@ -24,25 +29,35 @@ export default function ExamCountdown() {
     return () => clearInterval(id);
   }, []);
 
-  const t = now;
+  // Trước khi mount: dùng mốc cố định (0) nên mọi chữ số đều xác định,
+  // ô số hiện "--" thay vì số nhảy.
+  const t = daMount ? now : 0;
   // Mốc sắp tới gần nhất (tự động)
   const sapToi = lichThi.find((m) => t < m.at) ?? null;
   // Môn đang hiển thị: ưu tiên môn người dùng bấm chọn, nếu chưa chọn thì theo mốc sắp tới
   const dangXem = lichThi.find((m) => m.mon === chon) ?? sapToi ?? lichThi[0];
-  const daThiXong = dangXem.at <= now;
-  const diff = Math.max(0, dangXem.at - now);
+  const daThiXong = daMount && dangXem.at <= now;
+  const diff = daMount ? Math.max(0, dangXem.at - now) : 0;
 
   const ngay = Math.floor(diff / 86_400_000);
   const gio = Math.floor((diff % 86_400_000) / 3_600_000);
   const phut = Math.floor((diff % 3_600_000) / 60_000);
   const giay = Math.floor((diff % 60_000) / 1000);
 
-  const o = [
-    [String(ngay).padStart(3, "0"), "Ngày"],
-    [pad(gio), "Giờ"],
-    [pad(phut), "Phút"],
-    [pad(giay), "Giây"],
-  ] as const;
+  const o: [string, string][] =
+    !daMount
+      ? [
+          ["---", "Ngày"],
+          ["--", "Giờ"],
+          ["--", "Phút"],
+          ["--", "Giây"],
+        ]
+      : [
+          [String(ngay).padStart(3, "0"), "Ngày"],
+          [pad(gio), "Giờ"],
+          [pad(phut), "Phút"],
+          [pad(giay), "Giây"],
+        ];
 
   return (
     <section aria-label="Đếm ngược kỳ thi" className="w-full rounded-[2rem] border border-stone-900/10 bg-white p-8 shadow-[0_30px_80px_-40px_rgba(234,88,12,0.45)] sm:p-14 xl:p-20">
@@ -94,7 +109,7 @@ export default function ExamCountdown() {
           <ul className="space-y-3">
             {lichThi.map((m) => {
               const active = dangXem.mon === m.mon;
-              const quaRoi = m.at <= now;
+              const quaRoi = daMount && m.at <= now;
               return (
                 <li key={m.mon}>
                   <button

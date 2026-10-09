@@ -3,7 +3,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import type { ApiResult } from "@/lib/types";
+import { luuKetQua } from "@/lib/ket-qua-luu";
 import CareerResult from "./CareerResult";
+import { layPhienMa } from "./DanhGia";
 
 const lopOptions = ["Lớp 6", "Lớp 7", "Lớp 8", "Lớp 9", "Lớp 10", "Lớp 11", "Lớp 12"];
 
@@ -104,6 +106,9 @@ export default function CareerConsult() {
           so_thich,
           tinh_cach: vanBan.trim(),
           stream: true,
+          // Mã phiên ẩn danh (ngẫu nhiên, không phải tên HS) để nối
+          // log tư vấn với phiếu đánh giá Likert cho nghiên cứu KHKT.
+          phien_ma: layPhienMa(),
         }),
       });
 
@@ -113,6 +118,7 @@ export default function CareerConsult() {
         const data = await response.json();
         if (!response.ok) throw new Error(data.error ?? "Đã có lỗi xảy ra.");
         setResult(data as ApiResult);
+        luuKetQua(data as ApiResult, lop);
         gotResult = true;
         setTimeout(() => {
           document.getElementById("ket-qua")?.scrollIntoView({ behavior: "smooth" });
@@ -148,6 +154,7 @@ export default function CareerConsult() {
             throw new Error(ev.e);
           } else if (ev.r && typeof ev.r === "object") {
             setResult(ev.r);
+            luuKetQua(ev.r, lop);
             gotResult = true;
             setTimeout(() => {
               document.getElementById("ket-qua")?.scrollIntoView({ behavior: "smooth" });

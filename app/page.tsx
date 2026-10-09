@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import ExamCountdown from "./components/ExamCountdown";
+import DemNguocBadge from "./components/DemNguocBadge";
 import MascotOwl from "./components/MascotOwl";
 import QuizTinhCach from "./components/QuizTinhCach";
 import SiteNav from "./components/SiteNav";
@@ -182,13 +183,7 @@ export default function Home() {
               <p className="text-xs font-bold">ĐXTN 8.48</p>
               <p className="text-[11px] text-stone-500">Đỗ tốt nghiệp</p>
             </div>
-            <div
-              className="bob-nhe absolute bottom-6 left-10 rounded-2xl border border-stone-900/10 bg-white/90 px-4 py-2.5 text-left shadow-lg backdrop-blur"
-              style={{ animationDelay: "3.2s" }}
-            >
-              <p className="text-xs font-bold">Còn 261 ngày</p>
-              <p className="text-[11px] text-stone-500">Tới kỳ thi THPT 2027</p>
-            </div>
+            <DemNguocBadge />
           </div>
         </div>
       </header>

@@ -1,0 +1,46 @@
+{
+  "_huong_dan": "File MẪU cho Tân điền 25 trường Gia Lai. File này KHÔNG được app đọc (app chỉ đọc truong-dh.json). Quy tắc: (1) Copy object trong 'vi_du_mau', thay toàn bộ giá trị TODO. (2) diem_chuan_tk là SỐ của đúng 1 năm, ghi kèm 'nam'. (3) 'nguon' là link đề án tuyển sinh chính thức của trường, 'ngay_cap_nhat' là ngày Tân tra cứu (YYYY-MM-DD). (4) Số liệu nào chưa kiểm chứng được thì XÓA cả nhóm ngành đó đi, tuyệt đối không bịa. (5) Xong 1 trường thì paste object vào truong-dh.json, đánh dấu trong 'danh_sach_25_truong'. Học phí/học bổng viết TIẾNG VIỆT, dạng 'Khoảng X–Y triệu đồng/năm (tham khảo)'.",
+  "vi_du_mau": {
+    "id": "dhtn-tay-nguyen",
+    "ten": "Đại học Tây Nguyên",
+    "thanh_pho": "Đắk Lắk",
+    "nhom_nganh": [
+      {
+        "ten": "TODO-ten-nganh-dung-nhu-de-an (ví dụ: Sư phạm Toán)",
+        "to_hop": ["TODO", "TODO"],
+        "diem_chuan_tk": "TODO-so-diem-cua-dung-1-nam (ví dụ: 24.5)",
+        "nam": "TODO-nam-cua-diem-chuan (ví dụ: 2024)",
+        "nguon": "TODO-link-de-an-tuyen-sinh-chinh-thuc-cua-truong",
+        "ngay_cap_nhat": "TODO-ngay-tra-cuu-YYYY-MM-DD",
+        "ghichu": "",
+        "hoc_phi_tk": "Khoảng X–Y triệu đồng/năm (tham khảo)",
+        "hoc_bong": "TODO-chinh-sach-hoc-bong-tieng-Viet"
+      }
+    ]
+  },
+  "danh_sach_25_truong": [
+    { "ten": "Đại học Tây Nguyên", "nhom": "Tay Nguyen", "trang_thai": "chua-lam" },
+    { "ten": "Phân hiệu ĐH Đà Nẵng tại Kon Tum", "nhom": "Tay Nguyen", "trang_thai": "chua-lam" },
+    { "ten": "Cao đẳng Gia Lai", "nhom": "Tay Nguyen", "trang_thai": "chua-lam" },
+    { "ten": "Cao đẳng Y tế Gia Lai / Bình Định", "nhom": "Tay Nguyen", "trang_thai": "chua-lam" },
+    { "ten": "Đại học Đà Lạt", "nhom": "Tay Nguyen", "trang_thai": "chua-lam" },
+    { "ten": "Đại học Quy Nhơn", "nhom": "Mien Trung", "trang_thai": "chua-lam" },
+    { "ten": "Đại học Nha Trang", "nhom": "Mien Trung", "trang_thai": "chua-lam" },
+    { "ten": "Đại học Phú Yên", "nhom": "Mien Trung", "trang_thai": "chua-lam" },
+    { "ten": "ĐH Bách khoa – ĐH Đà Nẵng", "nhom": "Mien Trung", "trang_thai": "chua-lam" },
+    { "ten": "ĐH Kinh tế – ĐH Đà Nẵng", "nhom": "Mien Trung", "trang_thai": "chua-lam" },
+    { "ten": "ĐH Sư phạm – ĐH Đà Nẵng", "nhom": "Mien Trung", "trang_thai": "chua-lam" },
+    { "ten": "ĐH Ngoại ngữ – ĐH Đà Nẵng", "nhom": "Mien Trung", "trang_thai": "chua-lam" },
+    { "ten": "ĐH Khoa học – ĐH Huế", "nhom": "Mien Trung", "trang_thai": "chua-lam" },
+    { "ten": "ĐH Kinh tế – ĐH Huế", "nhom": "Mien Trung", "trang_thai": "chua-lam" },
+    { "ten": "ĐH Sư phạm – ĐH Huế", "nhom": "Mien Trung", "trang_thai": "chua-lam" },
+    { "ten": "ĐH Y Dược – ĐH Huế", "nhom": "Mien Trung", "trang_thai": "chua-lam" },
+    { "ten": "ĐH Nông Lâm TP.HCM", "nhom": "TPHCM", "trang_thai": "chua-lam" },
+    { "ten": "ĐH Sài Gòn", "nhom": "TPHCM", "trang_thai": "chua-lam" },
+    { "ten": "ĐH Mở TP.HCM", "nhom": "TPHCM", "trang_thai": "chua-lam" },
+    { "ten": "ĐH Công nghiệp TP.HCM", "nhom": "TPHCM", "trang_thai": "chua-lam" },
+    { "ten": "ĐH Nguyễn Tất Thành / Văn Hiến", "nhom": "TPHCM", "trang_thai": "chua-lam" },
+    { "ten": "ĐH Y Dược TP.HCM", "nhom": "TPHCM", "trang_thai": "chua-lam" },
+    { "ten": "13 truong top HN/SG co san trong truong-dh.json", "nhom": "Top", "trang_thai": "da-co-can-bo-sung-nam-va-nguon" }
+  ]
+}
