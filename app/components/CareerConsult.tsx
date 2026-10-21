@@ -3,6 +3,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import type { ApiResult } from "@/lib/types";
+import { luuKetQua } from "@/lib/ket-qua-luu";
+import CareerResult from "./CareerResult";
+import { layPhienMa } from "./DanhGia";
 
 const lopOptions = ["Lớp 6", "Lớp 7", "Lớp 8", "Lớp 9", "Lớp 10", "Lớp 11", "Lớp 12"];
 
@@ -48,14 +51,6 @@ function trichXuatTuVanBan(text: string) {
     .filter((s) => s.key.some((k) => lower.includes(k)))
     .map((s) => s.label);
   return { mon_manh, mon_yeu: [] as string[], so_thich };
-}
-
-function thanhDoPhuHop(percent: number) {
-  return (
-    <div className="h-1.5 w-full overflow-hidden rounded-full bg-stone-900/10">
-      <div className="h-full rounded-full bg-blue-500" style={{ width: `${percent}%` }} />
-    </div>
-  );
 }
 
 export default function CareerConsult() {
@@ -111,6 +106,9 @@ export default function CareerConsult() {
           so_thich,
           tinh_cach: vanBan.trim(),
           stream: true,
+          // Mã phiên ẩn danh (ngẫu nhiên, không phải tên HS) để nối
+          // log tư vấn với phiếu đánh giá Likert cho nghiên cứu KHKT.
+          phien_ma: layPhienMa(),
         }),
       });
 
@@ -120,6 +118,7 @@ export default function CareerConsult() {
         const data = await response.json();
         if (!response.ok) throw new Error(data.error ?? "Đã có lỗi xảy ra.");
         setResult(data as ApiResult);
+        luuKetQua(data as ApiResult, lop);
         gotResult = true;
         setTimeout(() => {
           document.getElementById("ket-qua")?.scrollIntoView({ behavior: "smooth" });
@@ -155,6 +154,7 @@ export default function CareerConsult() {
             throw new Error(ev.e);
           } else if (ev.r && typeof ev.r === "object") {
             setResult(ev.r);
+            luuKetQua(ev.r, lop);
             gotResult = true;
             setTimeout(() => {
               document.getElementById("ket-qua")?.scrollIntoView({ behavior: "smooth" });
@@ -189,100 +189,7 @@ export default function CareerConsult() {
   if (result) {
     return (
       <div id="ket-qua" className="mx-auto w-full max-w-3xl space-y-4">
-        <div className="rounded-2xl border border-stone-900/10 bg-white p-6 sm:p-7">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">
-            Kết quả · {lop}
-          </p>
-          <p className="mt-3 text-[15px] leading-relaxed text-stone-700">{result.gioi_thieu}</p>
-          {result.khoi_thi_de_nghi.length > 0 && (
-            <div className="mt-5">
-              <p className="text-xs font-semibold text-stone-500">Khối thi nên hướng tới</p>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {result.khoi_thi_de_nghi.map((k) => (
-                  <span
-                    key={k}
-                    className="rounded-lg border border-blue-600/30 bg-blue-50 px-3 py-1.5 text-sm font-bold text-blue-700"
-                  >
-                    {k}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-
-        <ol className="space-y-4">
-          {result.nghe_nghiep.map((nganh, i) => (
-            <li
-              key={nganh.ten}
-              className="rounded-2xl border border-stone-900/10 bg-white p-6 sm:p-7"
-            >
-              <div className="flex items-baseline justify-between gap-4">
-                <h2 className="text-lg font-extrabold tracking-tight">
-                  <span className="mr-2 text-sm font-bold text-stone-500">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  {nganh.ten}
-                </h2>
-                <p className="shrink-0 text-sm font-extrabold text-zinc-100">
-                  {nganh.do_phu_hop}%
-                </p>
-              </div>
-              <div className="mt-3">{thanhDoPhuHop(nganh.do_phu_hop)}</div>
-              <p className="mt-4 text-[15px] leading-relaxed text-stone-600">{nganh.ly_do}</p>
-
-              <div className="mt-4 flex flex-wrap gap-2">
-                {nganh.khoi_thi.map((k) => (
-                  <span
-                    key={k}
-                    className="rounded-md border border-stone-900/10 bg-stone-900/[0.04] px-2.5 py-1 text-xs font-semibold text-zinc-300"
-                  >
-                    {k}
-                  </span>
-                ))}
-              </div>
-
-              <dl className="mt-5 grid gap-4 border-t border-stone-900/10 pt-5 text-sm sm:grid-cols-2">
-                <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wider text-stone-500">
-                    Môn trọng tâm
-                  </dt>
-                  <dd className="mt-1 font-medium text-stone-700">
-                    {nganh.mon_trong_tam.join(" · ")}
-                  </dd>
-                </div>
-                {nganh.truong_tieu_bieu.length > 0 && (
-                  <div>
-                    <dt className="text-xs font-semibold uppercase tracking-wider text-stone-500">
-                      Trường tiêu biểu
-                    </dt>
-                    <dd className="mt-1 space-y-1 font-medium text-stone-700">
-                      {nganh.truong_tieu_bieu.map((t) => (
-                        <p key={t}>— {t}</p>
-                      ))}
-                    </dd>
-                  </div>
-                )}
-              </dl>
-
-              <div className="mt-4 rounded-xl border border-stone-900/10 bg-[#F4F8FE] p-4 text-sm leading-relaxed text-stone-600">
-                <span className="font-bold text-stone-900">Lộ trình. </span>
-                {nganh.lo_trinh}
-              </div>
-            </li>
-          ))}
-        </ol>
-
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-2xl border border-stone-900/10 bg-white p-6">
-            <h3 className="font-bold">Lời khuyên</h3>
-            <p className="mt-2 text-sm leading-relaxed text-stone-500">{result.loi_khuyen}</p>
-          </div>
-          <div className="rounded-2xl border border-stone-900/15 bg-stone-900/[0.03] p-6">
-            <h3 className="font-bold text-stone-900">Lưu ý</h3>
-            <p className="mt-2 text-sm leading-relaxed text-stone-400">{result.luu_y}</p>
-          </div>
-        </div>
+        <CareerResult result={result} tieuDe={`Ket qua tu van · ${lop}`} />
 
         <div className="flex flex-wrap gap-3 pt-1">
           <button

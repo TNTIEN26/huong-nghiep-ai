@@ -70,7 +70,7 @@ body {
 .chat-md strong { font-weight: 800; color: #1e40af; }
 .chat-md em { font-style: italic; }
 .chat-md code { background: rgba(28, 25, 23, 0.07); border-radius: 0.35em; padding: 0.1em 0.35em; font-size: 0.85em; }
-.chat-md pre { background: #1c1917; color: #faf4e9; border: 1px solid rgba(28, 25, 23, 0.15); border-radius: 0.6em; padding: 0.7em 0.9em; overflow-x: auto; font-size: 0.82em; }
+.chat-md pre { background: #1c1917; color: #F4F8FE; border: 1px solid rgba(28, 25, 23, 0.15); border-radius: 0.6em; padding: 0.7em 0.9em; overflow-x: auto; font-size: 0.82em; }
 .chat-md pre code { background: transparent; padding: 0; }
 .chat-md a { color: #2563eb; text-decoration: underline; text-underline-offset: 2px; }
 .chat-md blockquote { border-left: 3px solid rgba(37, 99, 235, 0.4); padding-left: 0.7em; margin: 0.4em 0; color: #78716c; }

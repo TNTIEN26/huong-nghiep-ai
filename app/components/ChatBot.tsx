@@ -3,9 +3,31 @@
 import { useEffect, useRef, useState } from "react";
 // Render câu trả lời AI dạng Markdown (react-markdown + remark-gfm)
 import ReactMarkdown from "react-markdown";
+import rehypeSanitize from "rehype-sanitize";
 import remarkGfm from "remark-gfm";
 
-type TinNhan = { tuAi: "bot" | "ban"; noiDung: string; id?: string };
+import type { ApiResult, FormData, Survey, SurveyAnswers } from "@/lib/types";
+import { surveyAnswersToForm } from "@/lib/survey";
+import { luuKetQua } from "@/lib/ket-qua-luu";
+import CareerResult from "./CareerResult";
+import { layPhienMa } from "./DanhGia";
+import SurveyCard from "./SurveyCard";
+
+type TinVanBan = { tuAi: "bot" | "ban"; noiDung: string; id?: string };
+type TinKetQua = {
+  tuAi: "ket-qua";
+  id: string;
+  result?: ApiResult | null;
+  dangChay?: boolean;
+  trangThai?: string;
+  loi?: string;
+};
+type TinNhan = TinVanBan | TinKetQua;
+
+const isTinVanBan = (t: TinNhan): t is TinVanBan =>
+  (t.tuAi === "bot" || t.tuAi === "ban") &&
+  "noiDung" in t &&
+  typeof t.noiDung === "string";
 
 const KH_HISTORY = "hn:chat-history";
 const KH_CONTEXT = "hn:student-context";
@@ -55,9 +77,20 @@ function readStudentContext(): string {
   }
 }
 
+// Đọc bản nháp gõ từ trang chủ (một lần rồi xoá) — lazy init để không setState trong effect
+function consumeDraft(): string {
+  try {
+    const draft = localStorage.getItem(KH_DRAFT);
+    if (draft) localStorage.removeItem(KH_DRAFT);
+    return draft ?? "";
+  } catch {
+    return "";
+  }
+}
+
 // Khung chat AI full màn hình — logic giữ nguyên từ HeroSection.
 export default function ChatBot() {
-  const [nhap, setNhap] = useState("");
+  const [nhap, setNhap] = useState(consumeDraft);
   const [dangGo, setDangGo] = useState(false);
   const [tinNhans, setTinNhans] = useState<TinNhan[]>(() => {
     // Restore chat history from localStorage without setState-in-effect
@@ -73,28 +106,22 @@ export default function ChatBot() {
         ];
   });
   const khungRef = useRef<HTMLDivElement>(null);
-
-  // Nhận bản nháp gõ từ trang chủ gửi sang
-  useEffect(() => {
-    try {
-      const draft = localStorage.getItem(KH_DRAFT);
-      if (draft) {
-        setNhap(draft);
-        localStorage.removeItem(KH_DRAFT);
-      }
-    } catch {
-      // storage not available — ignore
-    }
-  }, []);
+  // Phiếu khảo sát đang mở (survey = null nghĩa là đang chờ AI soạn)
+  const [surveyMsg, setSurveyMsg] = useState<{
+    id: string;
+    survey: Survey | null;
+    loi?: string;
+  } | null>(null);
 
   useEffect(() => {
     khungRef.current?.scrollTo({ top: khungRef.current.scrollHeight, behavior: "smooth" });
-  }, [tinNhans, dangGo]);
+  }, [tinNhans, dangGo, surveyMsg]);
 
-  // Lưu tự động lịch sử chat (giới hạn 30 tin)
+  // Lưu tự động lịch sử chat — chỉ lưu tin nhắn văn bản; thẻ khảo sát/kết quả là tạm thời.
   useEffect(() => {
     try {
-      localStorage.setItem(KH_HISTORY, JSON.stringify(tinNhans.slice(-MAX_TIN)));
+      const vanBanMsgs = tinNhans.filter(isTinVanBan);
+      localStorage.setItem(KH_HISTORY, JSON.stringify(vanBanMsgs.slice(-MAX_TIN)));
     } catch {
       // storage not available — ignore
     }
@@ -102,17 +129,167 @@ export default function ChatBot() {
 
   function xoaLichSu() {
     setTinNhans([]);
+    setSurveyMsg(null);
     try {
       localStorage.removeItem(KH_HISTORY);
     } catch {
       // storage not available — ignore
     }
   }
+  async function batDauSurvey() {
+    if (surveyMsg) return; // đang mở rồi
+    const id = `sv${Date.now()}`;
+    setSurveyMsg({ id, survey: null });
+    try {
+      const response = await fetch("/api/survey", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "generate" }),
+      });
+      const data = (await response.json()) as { survey?: Survey; error?: string };
+      if (!response.ok) throw new Error(data.error ?? "Đã có lỗi xảy ra.");
+      if (
+        !data.survey ||
+        !Array.isArray(data.survey.questions) ||
+        data.survey.questions.length === 0
+      ) {
+        throw new Error("Phiếu khảo sát trống. Hãy thử lại.");
+      }
+      setSurveyMsg((m) => (m && m.id === id ? { id, survey: data.survey as Survey } : m));
+    } catch (err) {
+      setSurveyMsg((m) =>
+        m && m.id === id
+          ? {
+              id,
+              survey: null,
+              loi: err instanceof Error ? err.message : "Đã có lỗi xảy ra, hãy thử lại.",
+            }
+          : m,
+      );
+    }
+  }
+
+  function tomTatCauTraLoi(answers: SurveyAnswers): string {
+    const lop = typeof answers.lop === "string" ? answers.lop : "";
+    const pick = (key: string) =>
+      Array.isArray(answers[key]) ? (answers[key] as string[]).join(", ") : "";
+    const tuMoTa = typeof answers.tinh_cach === "string" ? answers.tinh_cach : "";
+    const chiTiet = [
+      lop && `Lớp: ${lop}`,
+      pick("mon_manh") && `Môn mạnh: ${pick("mon_manh")}`,
+      pick("mon_yeu") && `Môn yếu: ${pick("mon_yeu")}`,
+      pick("so_thich") && `Sở thích: ${pick("so_thich")}`,
+      tuMoTa && `Bản thân: ${tuMoTa}`,
+    ]
+      .filter(Boolean)
+      .join(" | ");
+    return `📋 Đã điền phiếu khảo sát nhanh. ${chiTiet}`;
+  }
+
+  async function chayTuVan(form: FormData) {
+    const msgId = `q${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+    setTinNhans((prev) => [
+      ...prev,
+      { tuAi: "ket-qua", id: msgId, result: null, dangChay: true },
+    ]);
+    const update = (p: Partial<TinKetQua>) =>
+      setTinNhans((prev) =>
+        prev.map((t) => (t.tuAi === "ket-qua" && t.id === msgId ? { ...t, ...p } : t)),
+      );
+
+    let gotResult = false;
+    try {
+      const response = await fetch("/api/consult", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, stream: true, phien_ma: layPhienMa() }),
+      });
+
+      const contentType = response.headers.get("content-type") ?? "";
+      if (!response.body || !contentType.includes("text/event-stream")) {
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error ?? "Đã có lỗi xảy ra.");
+        update({ result: data as ApiResult, dangChay: false });
+        luuKetQua(data as ApiResult, form.lop);
+        gotResult = true;
+        return;
+      }
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let buf = "";
+      outer: while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buf += decoder.decode(value, { stream: true });
+
+        let idx: number;
+        while ((idx = buf.indexOf("\n")) >= 0) {
+          const line = buf.slice(0, idx).trim();
+          buf = buf.slice(idx + 1);
+          if (!line.startsWith("data:")) continue;
+          const payload = line.slice(5).trim();
+          if (!payload) continue;
+          let ev: { s?: string; r?: ApiResult; e?: string };
+          try {
+            ev = JSON.parse(payload);
+          } catch {
+            continue;
+          }
+          if (typeof ev.s === "string") {
+            update({ trangThai: ev.s, dangChay: true });
+          } else if (typeof ev.e === "string") {
+            update({ loi: ev.e, dangChay: false });
+            return;
+          } else if (ev.r && typeof ev.r === "object") {
+            update({ result: ev.r as ApiResult, dangChay: false });
+            luuKetQua(ev.r as ApiResult, form.lop);
+            gotResult = true;
+            break outer;
+          }
+        }
+      }
+      try {
+        reader.cancel();
+      } catch {
+        // ignore
+      }
+      if (!gotResult) update({ loi: "Đã có lỗi xảy ra, vui lòng thử lại.", dangChay: false });
+    } catch (err) {
+      update({
+        loi: err instanceof Error ? err.message : "Đã có lỗi xảy ra, vui lòng thử lại.",
+        dangChay: false,
+      });
+    }
+  }
+
+  async function guiSurvey(answers: SurveyAnswers) {
+    const form = surveyAnswersToForm(answers);
+    if (!form) {
+      setSurveyMsg((m) =>
+        m ? { ...m, loi: "Bạn chưa chọn lớp học. Vui lòng kiểm tra lại." } : m,
+      );
+      return;
+    }
+    // Lưu bối cảnh học sinh để chat tiếp vẫn biết về bạn
+    try {
+      localStorage.setItem(KH_CONTEXT, JSON.stringify({ lop: form.lop, vanBan: form.tinh_cach }));
+    } catch {
+      // lưu không quan trọng — chat vẫn chạy
+    }
+    setTinNhans((prev) => [...prev, { tuAi: "ban", noiDung: tomTatCauTraLoi(answers) }]);
+    setSurveyMsg(null);
+    await chayTuVan(form);
+  }
+
   async function gui(e: React.FormEvent) {
     e.preventDefault();
     const text = nhap.trim();
     if (!text || dangGo) return;
-    const lichSu: TinNhan[] = [...tinNhans, { tuAi: "ban", noiDung: text }];
+    const lichSu: TinVanBan[] = [
+      ...tinNhans.filter(isTinVanBan),
+      { tuAi: "ban", noiDung: text },
+    ];
     setTinNhans(lichSu);
     setNhap("");
     setDangGo(true);
@@ -212,19 +389,61 @@ export default function ChatBot() {
       </div>
 
       <div ref={khungRef} className="flex-1 space-y-3 overflow-y-auto p-5 sm:p-6">
-        {tinNhans.map((t, i) => (
-          <div key={`${t.tuAi}-${i}`} className={`flex ${t.tuAi === "ban" ? "justify-end" : "justify-start"}`}>
-            {t.tuAi === "ban" ? (
-              <p className="max-w-[85%] rounded-2xl bg-stone-900 px-4 py-2.5 text-sm leading-relaxed text-[#F4F8FE]">
-                {t.noiDung}
-              </p>
-            ) : (
-              <div className="chat-md max-w-[85%] rounded-2xl border border-stone-900/10 bg-blue-50 px-4 py-2.5 text-sm leading-relaxed text-stone-900">
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>{t.noiDung}</ReactMarkdown>
+        {tinNhans.map((t, i) => {
+          if (t.tuAi === "ket-qua") {
+            return (
+              <div key={`ket-qua-${t.id}`} className="flex justify-start">
+                {t.dangChay ? (
+                  <p className="min-w-[220px] max-w-[85%] rounded-2xl border border-stone-900/10 bg-blue-50 px-4 py-3 text-sm text-stone-500">
+                    <span className="animate-pulse">
+                      🔎 {t.trangThai ?? "Đang phân tích, vui lòng chờ…"}
+                    </span>
+                  </p>
+                ) : t.loi ? (
+                  <p className="max-w-[85%] rounded-2xl border border-red-500/30 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+                    ⚠️ {t.loi}
+                  </p>
+                ) : t.result ? (
+                  <CareerResult result={t.result} tieuDe="Kết quả tư vấn nhanh" />
+                ) : (
+                  <p className="max-w-[85%] rounded-2xl border border-red-500/30 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+                    ⚠️ Đã có lỗi xảy ra, vui lòng thử lại.
+                  </p>
+                )}
               </div>
-            )}
-          </div>
-        ))}
+            );
+          }
+          return (
+            <div key={`${t.tuAi}-${i}`} className={`flex ${t.tuAi === "ban" ? "justify-end" : "justify-start"}`}>
+              {t.tuAi === "ban" ? (
+                <p className="max-w-[85%] rounded-2xl bg-stone-900 px-4 py-2.5 text-sm leading-relaxed text-[#F4F8FE]">
+                  {t.noiDung}
+                </p>
+              ) : (
+                <div className="chat-md max-w-[85%] rounded-2xl border border-stone-900/10 bg-blue-50 px-4 py-2.5 text-sm leading-relaxed text-stone-900">
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    rehypePlugins={[rehypeSanitize]}
+                    components={{
+                      a: ({ href, children }) => (
+                        <a
+                          href={href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="font-semibold text-blue-700 underline decoration-blue-300 underline-offset-2"
+                        >
+                          {children}
+                        </a>
+                      ),
+                    }}
+                  >
+                    {t.noiDung}
+                  </ReactMarkdown>
+                </div>
+              )}
+            </div>
+          );
+        })}
         {dangGo && (
           <div className="flex justify-start">
             <p className="rounded-2xl border border-stone-900/10 bg-blue-50 px-4 py-3 text-sm text-stone-500">
@@ -232,6 +451,30 @@ export default function ChatBot() {
             </p>
           </div>
         )}
+
+        {surveyMsg && (
+          <div className="flex justify-start">
+            <SurveyCard
+              survey={surveyMsg.survey}
+              loi={surveyMsg.loi}
+              dangTao={!surveyMsg.survey && !surveyMsg.loi}
+              onGui={guiSurvey}
+              onDong={() => setSurveyMsg(null)}
+              onThuLai={batDauSurvey}
+            />
+          </div>
+        )}
+      </div>
+
+      <div className="flex justify-end px-3 pb-1.5">
+        <button
+          type="button"
+          onClick={batDauSurvey}
+          disabled={dangGo || !!surveyMsg}
+          className="rounded-lg border border-blue-600/30 bg-blue-50 px-3 py-1.5 text-xs font-bold text-blue-700 transition hover:bg-blue-100 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          📋 Tư vấn nhanh — điền phiếu khảo sát
+        </button>
       </div>
 
       <form onSubmit={gui} className="border-t border-stone-900/10 p-3">

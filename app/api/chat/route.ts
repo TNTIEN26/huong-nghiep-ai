@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 import { chatReply, streamChatReply } from "@/lib/ai";
 import type { ChatMessage } from "@/lib/ai";
+import { kiemTraGioiHan } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 
@@ -42,6 +43,11 @@ function isValidChatRequest(body: unknown): body is {
 }
 
 export async function POST(request: Request) {
+  const biChan = kiemTraGioiHan(request, "chat");
+  if (biChan) {
+    return NextResponse.json({ error: biChan }, { status: 429 });
+  }
+
   let body: unknown;
   try {
     body = await request.json();
