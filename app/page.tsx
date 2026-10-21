@@ -92,7 +92,7 @@ const LO_TRINH = [
 function TieuDeMuc({ nho, to, moTa }: { nho: string; to: string; moTa: string }) {
   return (
     <div className="mx-auto max-w-2xl text-center">
-      <p className="text-xs font-bold uppercase tracking-[0.18em] text-orange-600">{nho}</p>
+      <p className="text-xs font-bold uppercase tracking-[0.18em] text-blue-600">{nho}</p>
       <h2 className="mt-2 text-2xl font-black tracking-tight sm:text-3xl">{to}</h2>
       <p className="mt-2 text-sm leading-relaxed text-stone-500 sm:text-[15px]">{moTa}</p>
     </div>
@@ -119,18 +119,18 @@ export default function Home() {
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute -top-32 left-1/2 h-64 w-[720px] max-w-full -translate-x-1/2 rounded-full bg-orange-300/30 blur-[100px]"
+          className="pointer-events-none absolute -top-32 left-1/2 h-64 w-[720px] max-w-full -translate-x-1/2 rounded-full bg-blue-300/30 blur-[100px]"
         />
-        <div className="relative mx-auto grid w-full max-w-[1440px] items-center gap-8 px-4 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="relative mx-auto grid w-full max-w-[1440px] items-center gap-8 px-4 py-10 sm:px-8 sm:py-12 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <p className="inline-flex items-center gap-2 rounded-full border border-orange-600/30 bg-orange-50 px-4 py-1.5 text-xs font-bold text-orange-700">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-orange-500" />
+            <p className="inline-flex items-center gap-2 rounded-full border border-blue-600/30 bg-blue-50 px-4 py-1.5 text-xs font-bold text-blue-700">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-blue-500" />
               CÚ ĐẬU • HƯỚNG NGHIỆP AI
             </p>
-            <h1 className="mt-4 text-4xl font-black leading-[1.08] tracking-tight sm:text-6xl">
+            <h1 className="mt-4 text-4xl font-black leading-[1.08] tracking-tight sm:text-5xl">
               Chọn đúng ngành,
               <br />
-              <span className="bg-gradient-to-r from-orange-600 via-orange-500 to-amber-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-sky-500 bg-clip-text text-transparent">
                 đi đúng đường.
               </span>
             </h1>
@@ -141,18 +141,18 @@ export default function Home() {
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 href="/huong-nghiep"
-                className="rounded-2xl bg-orange-600 px-7 py-3.5 text-[15px] font-bold text-white shadow-[0_18px_40px_-16px_rgba(234,88,12,0.6)] transition hover:bg-orange-500"
+                className="rounded-2xl bg-blue-600 px-7 py-3.5 text-[15px] font-bold text-white shadow-[0_18px_40px_-16px_rgba(37,99,235,0.6)] transition hover:bg-blue-500"
               >
                 Chat với Cú Đậu →
               </Link>
               <Link
                 href="/tinh-diem"
-                className="rounded-2xl border border-stone-900/15 bg-white px-7 py-3.5 text-[15px] font-bold transition hover:border-orange-400/60"
+                className="rounded-2xl border border-stone-900/15 bg-white px-7 py-3.5 text-[15px] font-bold transition hover:border-blue-400/60"
               >
                 Tính điểm ngay
               </Link>
             </div>
-            <dl className="mt-8 flex gap-7">
+            <dl className="mt-6 flex gap-7">
               {[
                 ["12", "tổ hợp môn"],
                 ["7", "cổng tra cứu"],
@@ -167,7 +167,7 @@ export default function Home() {
             </dl>
           </div>
           <div className="relative hidden justify-center lg:flex">
-            <MascotOwl className="h-72 w-72" />
+            <MascotOwl className="h-52 w-52" />
             <div
               className="bob-nhe absolute -left-2 top-8 rounded-2xl border border-stone-900/10 bg-white/90 px-4 py-2.5 text-left shadow-lg backdrop-blur"
               style={{ animationDelay: "0.8s" }}
@@ -195,7 +195,7 @@ export default function Home() {
 
       <main className="mx-auto w-full max-w-[1440px] flex-1 px-4 sm:px-8">
         {/* 3 BƯỚC */}
-        <section className="py-12 sm:py-16">
+        <section className="py-10 sm:py-12">
           <TieuDeMuc
             nho="Bắt đầu tại đây"
             to="3 bước để bắt đầu ngay"
@@ -207,12 +207,12 @@ export default function Home() {
                 key={b.so}
                 className="flex flex-col rounded-3xl border border-stone-900/10 bg-white p-6 shadow-[0_16px_40px_-24px_rgba(28,25,23,0.3)]"
               >
-                <p className="text-sm font-black text-orange-600">{b.so}</p>
+                <p className="text-sm font-black text-blue-600">{b.so}</p>
                 <h3 className="mt-2 font-extrabold">{b.ten}</h3>
                 <p className="mt-1.5 flex-1 text-sm leading-relaxed text-stone-500">{b.moTa}</p>
                 <Link
                   href={b.href}
-                  className="mt-4 text-sm font-bold text-orange-700 hover:text-orange-600"
+                  className="mt-4 text-sm font-bold text-blue-700 hover:text-blue-600"
                 >
                   {b.nut}
                 </Link>
@@ -269,14 +269,14 @@ export default function Home() {
               <Link
                 key={c.ten}
                 href={c.href}
-                className="group rounded-3xl border border-stone-900/10 bg-white p-6 transition hover:border-orange-400/60 hover:shadow-[0_0_28px_-10px_rgba(234,88,12,0.4)]"
+                className="group rounded-3xl border border-stone-900/10 bg-white p-6 transition hover:border-blue-400/60 hover:shadow-[0_0_28px_-10px_rgba(37,99,235,0.4)]"
               >
-                <p className="text-sm font-black text-orange-600">
+                <p className="text-sm font-black text-blue-600">
                   {String(i + 1).padStart(2, "0")}
                 </p>
                 <h3 className="mt-2 font-extrabold">{c.ten}</h3>
                 <p className="mt-1 text-sm text-stone-500">{c.moTa}</p>
-                <p className="mt-3 text-sm font-bold text-orange-700">
+                <p className="mt-3 text-sm font-bold text-blue-700">
                   Khám phá ngay <span className="inline-block transition group-hover:translate-x-1">→</span>
                 </p>
               </Link>
@@ -299,21 +299,21 @@ export default function Home() {
                   href={c.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-3xl border border-stone-900/10 bg-white p-6 transition hover:border-orange-400/60"
+                  className="rounded-3xl border border-stone-900/10 bg-white p-6 transition hover:border-blue-400/60"
                 >
                   <h3 className="font-extrabold leading-snug">{c.ten}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-stone-500">{c.moTa}</p>
-                  <p className="mt-3 text-sm font-bold text-orange-700">Đọc ngay →</p>
+                  <p className="mt-3 text-sm font-bold text-blue-700">Đọc ngay →</p>
                 </a>
               ) : (
                 <Link
                   key={c.ten}
                   href={c.href}
-                  className="rounded-3xl border border-stone-900/10 bg-white p-6 transition hover:border-orange-400/60"
+                  className="rounded-3xl border border-stone-900/10 bg-white p-6 transition hover:border-blue-400/60"
                 >
                   <h3 className="font-extrabold leading-snug">{c.ten}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-stone-500">{c.moTa}</p>
-                  <p className="mt-3 text-sm font-bold text-orange-700">Đọc ngay →</p>
+                  <p className="mt-3 text-sm font-bold text-blue-700">Đọc ngay →</p>
                 </Link>
               ),
             )}
@@ -333,10 +333,10 @@ export default function Home() {
                 key={g.nam}
                 className="relative rounded-3xl border border-stone-900/10 bg-white p-6"
               >
-                <span className="absolute -top-3.5 left-6 rounded-full bg-stone-900 px-3 py-1 text-[11px] font-black text-[#faf4e9]">
+                <span className="absolute -top-3.5 left-6 rounded-full bg-stone-900 px-3 py-1 text-[11px] font-black text-[#F4F8FE]">
                   {i + 1}
                 </span>
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-orange-600">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-blue-600">
                   {g.nam}
                 </p>
                 <h3 className="mt-1 font-extrabold">{g.ten}</h3>
@@ -346,14 +346,14 @@ export default function Home() {
                     href={g.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-3 inline-block text-sm font-bold text-orange-700 hover:text-orange-600"
+                    className="mt-3 inline-block text-sm font-bold text-blue-700 hover:text-blue-600"
                   >
                     {g.nut}
                   </a>
                 ) : (
                   <Link
                     href={g.href}
-                    className="mt-3 inline-block text-sm font-bold text-orange-700 hover:text-orange-600"
+                    className="mt-3 inline-block text-sm font-bold text-blue-700 hover:text-blue-600"
                   >
                     {g.nut}
                   </Link>
@@ -365,7 +365,7 @@ export default function Home() {
 
         {/* CTA CHAT */}
         <section className="pb-14 sm:pb-20">
-          <div className="flex flex-col items-center gap-5 rounded-[2rem] bg-stone-900 px-6 py-10 text-center text-[#faf4e9] sm:flex-row sm:gap-8 sm:p-10 sm:text-left">
+          <div className="flex flex-col items-center gap-5 rounded-[2rem] bg-stone-900 px-6 py-10 text-center text-[#F4F8FE] sm:flex-row sm:gap-8 sm:p-10 sm:text-left">
             <MascotOwl className="h-28 w-28 shrink-0 sm:h-36 sm:w-36" />
             <div className="min-w-0 flex-1">
               <h2 className="text-2xl font-black tracking-tight sm:text-3xl">
@@ -376,7 +376,7 @@ export default function Home() {
               </p>
               <Link
                 href="/huong-nghiep"
-                className="mt-5 inline-block rounded-2xl bg-orange-600 px-8 py-3.5 text-[15px] font-bold text-white transition hover:bg-orange-500"
+                className="mt-5 inline-block rounded-2xl bg-blue-600 px-8 py-3.5 text-[15px] font-bold text-white transition hover:bg-blue-500"
               >
                 Hãy bắt đầu →
               </Link>
@@ -401,17 +401,17 @@ export default function Home() {
           <nav aria-label="Công cụ">
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-stone-400">Công cụ</p>
             <ul className="mt-3 space-y-2 text-sm font-semibold">
-              <li><Link href="/tinh-diem" className="hover:text-orange-700">Tính điểm</Link></li>
-              <li><Link href="/huong-nghiep" className="hover:text-orange-700">Chat hướng nghiệp</Link></li>
-              <li><Link href="#lich-thi" className="hover:text-orange-700">Lịch thi 2027</Link></li>
+              <li><Link href="/tinh-diem" className="hover:text-blue-700">Tính điểm</Link></li>
+              <li><Link href="/huong-nghiep" className="hover:text-blue-700">Chat hướng nghiệp</Link></li>
+              <li><Link href="#lich-thi" className="hover:text-blue-700">Lịch thi 2027</Link></li>
             </ul>
           </nav>
           <nav aria-label="Tham khảo">
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-stone-400">Tham khảo</p>
             <ul className="mt-3 space-y-2 text-sm font-semibold">
-              <li><a href="https://moet.gov.vn/" target="_blank" rel="noreferrer" className="hover:text-orange-700">Bộ GD&ĐT</a></li>
-              <li><a href="https://tuyensinh.moet.gov.vn/" target="_blank" rel="noreferrer" className="hover:text-orange-700">Cổng tuyển sinh</a></li>
-              <li><a href="https://thisinh.thitotnghiepthpt.edu.vn/" target="_blank" rel="noreferrer" className="hover:text-orange-700">Hệ thống thí sinh</a></li>
+              <li><a href="https://moet.gov.vn/" target="_blank" rel="noreferrer" className="hover:text-blue-700">Bộ GD&ĐT</a></li>
+              <li><a href="https://tuyensinh.moet.gov.vn/" target="_blank" rel="noreferrer" className="hover:text-blue-700">Cổng tuyển sinh</a></li>
+              <li><a href="https://thisinh.thitotnghiepthpt.edu.vn/" target="_blank" rel="noreferrer" className="hover:text-blue-700">Hệ thống thí sinh</a></li>
             </ul>
           </nav>
           <div>

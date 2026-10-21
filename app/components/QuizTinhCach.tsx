@@ -106,7 +106,7 @@ export default function QuizTinhCach() {
     const thang = (Object.keys(diem) as Nhom[]).reduce((a, b) => (diem[a] >= diem[b] ? a : b));
     const kq = NHOMS[thang];
     return (
-      <div className="rounded-3xl border border-stone-900/10 bg-white p-6 text-center shadow-[0_20px_60px_-30px_rgba(234,88,12,0.35)] sm:p-10">
+      <div className="rounded-3xl border border-stone-900/10 bg-white p-6 text-center shadow-[0_20px_60px_-30px_rgba(37,99,235,0.35)] sm:p-10">
         <p className="text-xs font-bold uppercase tracking-[0.18em] text-stone-500">
           Nhóm tính cách của bạn
         </p>
@@ -116,7 +116,7 @@ export default function QuizTinhCach() {
           {kq.khoi.map((k) => (
             <span
               key={k}
-              className="rounded-xl border border-orange-600/30 bg-orange-50 px-4 py-2 text-sm font-extrabold text-orange-700"
+              className="rounded-xl border border-blue-600/30 bg-blue-50 px-4 py-2 text-sm font-extrabold text-blue-700"
             >
               Khối {k}
             </span>
@@ -125,7 +125,7 @@ export default function QuizTinhCach() {
         <div className="mt-7 flex flex-wrap justify-center gap-3">
           <a
             href="/huong-nghiep"
-            className="rounded-xl bg-orange-600 px-7 py-3 text-sm font-bold text-white transition hover:bg-orange-500"
+            className="rounded-xl bg-blue-600 px-7 py-3 text-sm font-bold text-white transition hover:bg-blue-500"
           >
             Hỏi Cú Đậu thêm →
           </a>
@@ -146,7 +146,7 @@ export default function QuizTinhCach() {
 
   const ch = CAU_HOI[buoc];
   return (
-    <div className="rounded-3xl border border-stone-900/10 bg-white p-6 shadow-[0_20px_60px_-30px_rgba(234,88,12,0.35)] sm:p-10">
+    <div className="rounded-3xl border border-stone-900/10 bg-white p-6 shadow-[0_20px_60px_-30px_rgba(37,99,235,0.35)] sm:p-10">
       <div className="flex items-center justify-between text-xs font-bold text-stone-500">
         <span>
           Câu {buoc + 1}/{CAU_HOI.length}
@@ -157,7 +157,7 @@ export default function QuizTinhCach() {
       </div>
       <div className="mt-2 h-2 overflow-hidden rounded-full bg-stone-900/10">
         <div
-          className="h-full rounded-full bg-orange-500 transition-all duration-300"
+          className="h-full rounded-full bg-blue-500 transition-all duration-300"
           style={{ width: `${((buoc + 1) / CAU_HOI.length) * 100}%` }}
         />
       </div>
@@ -168,7 +168,7 @@ export default function QuizTinhCach() {
             key={d.text}
             type="button"
             onClick={() => chon(d.nhom)}
-            className="rounded-2xl border border-stone-900/10 bg-[#faf4e9] px-5 py-4 text-left text-[15px] font-semibold text-stone-700 transition hover:border-orange-400/60 hover:bg-orange-50 hover:text-stone-900"
+            className="rounded-2xl border border-stone-900/10 bg-[#F4F8FE] px-5 py-4 text-left text-[15px] font-semibold text-stone-700 transition hover:border-blue-400/60 hover:bg-blue-50 hover:text-stone-900"
           >
             {d.text}
           </button>

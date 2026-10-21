@@ -20,7 +20,7 @@ function parseDiem(v: string, max = 10): number | null {
 }
 
 const oNhap =
-  "w-full rounded-xl border border-stone-900/10 bg-[#faf4e9] px-4 py-3 text-[15px] text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-orange-500/60";
+  "w-full rounded-xl border border-stone-900/10 bg-[#F4F8FE] px-4 py-3 text-[15px] text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-blue-500/60";
 
 function Nhan({ ten, children }: { ten: string; children: React.ReactNode }) {
   return (
@@ -33,9 +33,9 @@ function Nhan({ ten, children }: { ten: string; children: React.ReactNode }) {
 
 function KetQua({ tieuDe, so, nhanXet }: { tieuDe: string; so: string; nhanXet: string }) {
   return (
-    <div className="mt-6 rounded-2xl border border-stone-900/10 bg-[#faf4e9] p-6 text-center">
+    <div className="mt-6 rounded-2xl border border-stone-900/10 bg-[#F4F8FE] p-6 text-center">
       <p className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">{tieuDe}</p>
-            <p className="mt-2 text-5xl font-black tabular-nums text-orange-700">{so}</p>
+            <p className="mt-2 text-5xl font-black tabular-nums text-blue-700">{so}</p>
       <p className="mt-3 text-sm font-bold text-stone-900">{nhanXet}</p>
     </div>
   );
@@ -80,7 +80,7 @@ function MucHocBa({
       {tb3 !== null ? (
         <KetQua tieuDe="Điểm TB các năm (trọng số 1–2–3)" so={tb3} nhanXet="Đã tự chuyển sang mục 2 để tính tốt nghiệp." />
       ) : (
-        <p className="mt-6 rounded-2xl border border-stone-900/10 bg-[#faf4e9] p-6 text-center text-sm text-stone-500">
+        <p className="mt-6 rounded-2xl border border-stone-900/10 bg-[#F4F8FE] p-6 text-center text-sm text-stone-500">
           Nhập đủ điểm 3 năm để tính trung bình. Thang điểm 0–10.
         </p>
       )}
@@ -153,7 +153,7 @@ function MucTotNghiep({ tbSan, hocBa }: { tbSan: string; hocBa: { lop10: string;
           <input value={kk} onChange={(e) => setKk(e.target.value)} inputMode="decimal" placeholder="VD: 1.5" className={oNhap} />
         </Nhan>
         <Nhan ten="Diện ưu tiên tốt nghiệp">
-          <select value={dien} onChange={(e) => setDien(e.target.value)} className="w-full rounded-xl border border-stone-900/10 bg-[#faf4e9] px-4 py-3 text-[15px] font-bold text-stone-900 outline-none focus:border-orange-500/60">
+          <select value={dien} onChange={(e) => setDien(e.target.value)} className="w-full rounded-xl border border-stone-900/10 bg-[#F4F8FE] px-4 py-3 text-[15px] font-bold text-stone-900 outline-none focus:border-blue-500/60">
             <option value="D1">Diện 1 — bình thường (+0)</option>
             <option value="D2">Diện 2 (+0.25)</option>
             <option value="D3">Diện 3 (+0.5)</option>
@@ -162,7 +162,7 @@ function MucTotNghiep({ tbSan, hocBa }: { tbSan: string; hocBa: { lop10: string;
       </div>
 
       {kq === null ? (
-        <p className="mt-6 rounded-2xl border border-stone-900/10 bg-[#faf4e9] p-6 text-center text-sm text-stone-500">
+        <p className="mt-6 rounded-2xl border border-stone-900/10 bg-[#F4F8FE] p-6 text-center text-sm text-stone-500">
           Nhập đủ điểm các ô để xem có đỗ tốt nghiệp không.
         </p>
       ) : (
@@ -185,7 +185,7 @@ function MucTotNghiep({ tbSan, hocBa }: { tbSan: string; hocBa: { lop10: string;
       </div>
 
       {/* Sơ đồ tính điểm kiểu Phenikaa — số nhảy theo từng ô nhập */}
-      <aside className="h-fit rounded-2xl border border-stone-900/10 bg-[#faf4e9] p-4 xl:sticky xl:top-24">
+      <aside className="h-fit rounded-2xl border border-stone-900/10 bg-[#F4F8FE] p-4 xl:sticky xl:top-24">
         <p className="text-xs font-bold uppercase tracking-[0.14em] text-stone-500">Sơ đồ tính điểm</p>
 
         {/* Khung 1: ĐTB các năm học */}
@@ -209,7 +209,7 @@ function MucTotNghiep({ tbSan, hocBa }: { tbSan: string; hocBa: { lop10: string;
           </div>
           <p className="mt-1.5 border-t border-dashed border-stone-900/15 pt-1.5 text-center text-[13px] tabular-nums text-stone-700">
             = ({hien(hocBa.lop10)}×1 + {hien(hocBa.lop11)}×2 + {hien(hocBa.lop12)}×3) ÷ 6 ={" "}
-            <span className="font-black text-orange-700">
+            <span className="font-black text-blue-700">
               {hbDu && tb ? Number(tb).toFixed(2) : "…"}
             </span>
           </p>
@@ -257,7 +257,7 @@ function MucTotNghiep({ tbSan, hocBa }: { tbSan: string; hocBa: { lop10: string;
           <p className="mt-1.5 border-t border-dashed border-stone-900/15 pt-1.5 text-center text-[13px] tabular-nums leading-relaxed text-stone-700">
             = [({hien(toan)}+{hien(van)}+{hien(tc1)}+{hien(tc2)}+{kk.trim() === "" ? "0" : hien(kk)})÷4
             + {tb !== "" ? Number(tb).toFixed(2) : "…"}]÷2+{u.toFixed(2)} ={" "}
-            <span className="font-black text-orange-700">{kq === null ? "…" : kq.toFixed(2)}</span>
+            <span className="font-black text-blue-700">{kq === null ? "…" : kq.toFixed(2)}</span>
           </p>
         </div>
       </aside>
@@ -420,7 +420,7 @@ function MucQuyDoi() {
   ];
 
   const oSelect =
-    "w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] px-3 py-2.5 text-sm font-bold text-stone-900 outline-none focus:border-orange-500/60";
+    "w-full rounded-lg border border-stone-900/10 bg-[#F4F8FE] px-3 py-2.5 text-sm font-bold text-stone-900 outline-none focus:border-blue-500/60";
 
   return (
     <div className="space-y-5">
@@ -439,7 +439,7 @@ function MucQuyDoi() {
                 onChange={(e) => set(e.target.value)}
                 inputMode="decimal"
                 placeholder={goiY}
-                className="w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] px-3 py-2.5 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-orange-500/60"
+                className="w-full rounded-lg border border-stone-900/10 bg-[#F4F8FE] px-3 py-2.5 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-blue-500/60"
               />
             </label>
           ))}
@@ -461,7 +461,7 @@ function MucQuyDoi() {
                 onChange={(e) => set(e.target.value)}
                 inputMode="decimal"
                 placeholder="0–10"
-                className="w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] px-3 py-2.5 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-orange-500/60"
+                className="w-full rounded-lg border border-stone-900/10 bg-[#F4F8FE] px-3 py-2.5 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-blue-500/60"
               />
             </label>
           ))}
@@ -490,7 +490,7 @@ function MucQuyDoi() {
                 onChange={(e) => setD3(e.target.value)}
                 inputMode="decimal"
                 placeholder="0–10"
-                className="w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] px-3 py-2.5 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-orange-500/60"
+                className="w-full rounded-lg border border-stone-900/10 bg-[#F4F8FE] px-3 py-2.5 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-blue-500/60"
               />
             </label>
           </div>
@@ -514,19 +514,19 @@ function MucQuyDoi() {
                 disabled={!mon4}
                 inputMode="decimal"
                 placeholder={mon4 ? "0–10" : "–"}
-                className="w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] px-3 py-2.5 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-orange-500/60 disabled:opacity-40"
+                className="w-full rounded-lg border border-stone-900/10 bg-[#F4F8FE] px-3 py-2.5 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-blue-500/60 disabled:opacity-40"
               />
             </label>
           </div>
         </div>
         {combosHien.length === 0 ? (
-          <p className="mt-4 rounded-xl border border-stone-900/10 bg-[#faf4e9] px-4 py-3 text-center text-sm text-stone-500">
+          <p className="mt-4 rounded-xl border border-stone-900/10 bg-[#F4F8FE] px-4 py-3 text-center text-sm text-stone-500">
             Nhập đủ điểm 3 môn của 1 tổ hợp để xem tổng điểm.
           </p>
         ) : (
           <div className="mt-4 grid grid-cols-2 gap-3 xl:grid-cols-4">
             {combosHien.map((c) => (
-              <div key={c.ma} className="rounded-xl border border-stone-900/10 bg-[#faf4e9] px-4 py-3">
+              <div key={c.ma} className="rounded-xl border border-stone-900/10 bg-[#F4F8FE] px-4 py-3">
                 <p className="text-sm font-extrabold">{c.ma}</p>
                 <p className="text-xs text-stone-500">{c.mons}</p>
                 <p className="mt-1 text-lg font-black tabular-nums">
@@ -547,7 +547,7 @@ function MucQuyDoi() {
             <select
               value={kv.id}
               onChange={(e) => setKv(KV_UT.find((k) => k.id === e.target.value) ?? KV_UT[0])}
-              className="w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] px-3 py-2.5 text-sm text-stone-900 outline-none focus:border-orange-500/60"
+              className="w-full rounded-lg border border-stone-900/10 bg-[#F4F8FE] px-3 py-2.5 text-sm text-stone-900 outline-none focus:border-blue-500/60"
             >
               {KV_UT.map((k) => (
                 <option key={k.id} value={k.id}>{k.ten}</option>
@@ -559,7 +559,7 @@ function MucQuyDoi() {
             <select
               value={dt.id}
               onChange={(e) => setDt(DT_UT.find((k) => k.id === e.target.value) ?? DT_UT[0])}
-              className="w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] px-3 py-2.5 text-sm text-stone-900 outline-none focus:border-orange-500/60"
+              className="w-full rounded-lg border border-stone-900/10 bg-[#F4F8FE] px-3 py-2.5 text-sm text-stone-900 outline-none focus:border-blue-500/60"
             >
               {DT_UT.map((k) => (
                 <option key={k.id} value={k.id}>{k.ten}</option>
@@ -571,7 +571,7 @@ function MucQuyDoi() {
             <select
               value={hsg.id}
               onChange={(e) => setHsg(HSG_UT.find((k) => k.id === e.target.value) ?? HSG_UT[0])}
-              className="w-full rounded-lg border border-stone-900/10 bg-[#faf4e9] px-3 py-2.5 text-sm text-stone-900 outline-none focus:border-orange-500/60"
+              className="w-full rounded-lg border border-stone-900/10 bg-[#F4F8FE] px-3 py-2.5 text-sm text-stone-900 outline-none focus:border-blue-500/60"
             >
               {HSG_UT.map((k) => (
                 <option key={k.id} value={k.id}>{k.ten}</option>
@@ -598,9 +598,9 @@ function MucQuyDoi() {
           </p>
         ) : (
           <div className="mt-4 grid gap-5 lg:grid-cols-[280px_1fr]">
-            <div className="rounded-2xl border border-orange-600/30 bg-orange-50 p-6 text-center">
+            <div className="rounded-2xl border border-blue-600/30 bg-blue-50 p-6 text-center">
               <p className="text-[13px] text-stone-500">Điểm quy đổi cao nhất</p>
-              <p className="mt-1 text-6xl font-black tabular-nums text-orange-700">
+              <p className="mt-1 text-6xl font-black tabular-nums text-blue-700">
                 {totNhat.diem.toFixed(2)}
               </p>
               <p className="mt-1 text-sm text-stone-500">
@@ -663,13 +663,13 @@ export default function TinhDiemPage() {
                 aria-pressed={muc === d.id}
                 className={`flex min-w-[220px] items-start gap-3 rounded-2xl border p-4 text-left transition lg:min-w-0 ${
                   muc === d.id
-                    ? "border-stone-900 bg-stone-900 text-[#faf4e9] shadow-[0_16px_40px_-20px_rgba(28,25,23,0.5)]"
+                    ? "border-stone-900 bg-stone-900 text-[#F4F8FE] shadow-[0_16px_40px_-20px_rgba(28,25,23,0.5)]"
                     : "border-stone-900/10 bg-white text-stone-700 hover:border-stone-900/25 hover:text-stone-900"
                 }`}
               >
                 <span
                   className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm font-black ${
-                    muc === d.id ? "bg-orange-500 text-white" : "bg-stone-900/5 text-stone-500"
+                    muc === d.id ? "bg-blue-500 text-white" : "bg-stone-900/5 text-stone-500"
                   }`}
                 >
                   {d.so}
@@ -685,7 +685,7 @@ export default function TinhDiemPage() {
           </nav>
 
           {/* Nội dung */}
-          <div className="rounded-2xl border border-stone-900/10 bg-white p-6 shadow-[0_20px_60px_-30px_rgba(234,88,12,0.35)] sm:p-8">
+          <div className="rounded-2xl border border-stone-900/10 bg-white p-6 shadow-[0_20px_60px_-30px_rgba(37,99,235,0.35)] sm:p-8">
             {muc === "hocba" && <MucHocBa hocBa={hocBa} setHocBa={setHocBa} />}
             {muc === "totnghiep" && <MucTotNghiep tbSan={tb3} hocBa={hocBa} />}
             {muc === "quydoi" && <MucQuyDoi />}

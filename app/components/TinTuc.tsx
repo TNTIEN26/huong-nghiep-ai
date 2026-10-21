@@ -158,7 +158,7 @@ function AnhTin({ tin }: { tin: Tin }) {
     );
   }
   return (
-    <span className="flex h-full w-full items-center justify-center bg-gradient-to-br from-orange-100 via-amber-50 to-[#faf4e9] px-4 text-center text-3xl font-black tracking-tight text-stone-900/25 sm:text-4xl">
+    <span className="flex h-full w-full items-center justify-center bg-gradient-to-br from-blue-100 via-sky-50 to-[#F4F8FE] px-4 text-center text-3xl font-black tracking-tight text-stone-900/25 sm:text-4xl">
       {tin.chu}
     </span>
   );
@@ -179,7 +179,7 @@ export default function TinTuc() {
             aria-pressed={tab === i}
             className={`rounded-full px-5 py-2.5 text-sm font-bold transition ${
               tab === i
-                ? "bg-stone-900 text-[#faf4e9]"
+                ? "bg-stone-900 text-[#F4F8FE]"
                 : "border border-stone-900/10 bg-white text-stone-500 hover:border-stone-900/25 hover:text-stone-900"
             }`}
           >
@@ -192,7 +192,7 @@ export default function TinTuc() {
         {TABS[tab].tins.map((tin) => {
           const noiDung = (
             <>
-              <span className="block h-44 w-full overflow-hidden bg-orange-100 sm:h-48">
+              <span className="block h-44 w-full overflow-hidden bg-blue-100 sm:h-48">
                 <AnhTin tin={tin} />
               </span>
               <span className="block p-5">
@@ -200,12 +200,12 @@ export default function TinTuc() {
                 <span className="mt-2 line-clamp-3 block text-sm leading-relaxed text-stone-500">
                   {tin.moTa}
                 </span>
-                <span className="mt-3 block text-sm font-bold text-orange-700">Đọc thêm →</span>
+                <span className="mt-3 block text-sm font-bold text-blue-700">Đọc thêm →</span>
               </span>
             </>
           );
           const lop =
-            "block overflow-hidden rounded-3xl border border-stone-900/10 bg-white transition hover:border-orange-400/60 hover:shadow-[0_20px_50px_-24px_rgba(234,88,12,0.45)]";
+            "block overflow-hidden rounded-3xl border border-stone-900/10 bg-white transition hover:border-blue-400/60 hover:shadow-[0_20px_50px_-24px_rgba(37,99,235,0.45)]";
           return ngoai(tin.href) ? (
             <a key={tin.tieuDe} href={tin.href} target="_blank" rel="noreferrer" className={lop}>
               {noiDung}

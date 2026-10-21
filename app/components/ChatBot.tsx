@@ -196,9 +196,9 @@ export default function ChatBot() {
   }
 
   return (
-    <div className="flex h-[calc(100dvh-16rem)] min-h-[420px] flex-col overflow-hidden rounded-2xl border border-stone-900/10 bg-white shadow-[0_24px_70px_-30px_rgba(234,88,12,0.4)]">
+    <div className="flex h-[calc(100dvh-16rem)] min-h-[420px] flex-col overflow-hidden rounded-2xl border border-stone-900/10 bg-white shadow-[0_24px_70px_-30px_rgba(37,99,235,0.4)]">
       <div className="flex items-center gap-3 border-b border-stone-900/10 px-5 py-3.5">
-        <span className="h-2.5 w-2.5 rounded-full bg-orange-500" />
+        <span className="h-2.5 w-2.5 rounded-full bg-blue-500" />
         <p className="text-sm font-bold">Trợ lý AI</p>
         <span className="text-xs text-stone-500">đang hoạt động</span>
         <button
@@ -215,11 +215,11 @@ export default function ChatBot() {
         {tinNhans.map((t, i) => (
           <div key={`${t.tuAi}-${i}`} className={`flex ${t.tuAi === "ban" ? "justify-end" : "justify-start"}`}>
             {t.tuAi === "ban" ? (
-              <p className="max-w-[85%] rounded-2xl bg-stone-900 px-4 py-2.5 text-sm leading-relaxed text-[#faf4e9]">
+              <p className="max-w-[85%] rounded-2xl bg-stone-900 px-4 py-2.5 text-sm leading-relaxed text-[#F4F8FE]">
                 {t.noiDung}
               </p>
             ) : (
-              <div className="chat-md max-w-[85%] rounded-2xl border border-stone-900/10 bg-orange-50 px-4 py-2.5 text-sm leading-relaxed text-stone-900">
+              <div className="chat-md max-w-[85%] rounded-2xl border border-stone-900/10 bg-blue-50 px-4 py-2.5 text-sm leading-relaxed text-stone-900">
                 <ReactMarkdown remarkPlugins={[remarkGfm]}>{t.noiDung}</ReactMarkdown>
               </div>
             )}
@@ -227,7 +227,7 @@ export default function ChatBot() {
         ))}
         {dangGo && (
           <div className="flex justify-start">
-            <p className="rounded-2xl border border-stone-900/10 bg-orange-50 px-4 py-3 text-sm text-stone-500">
+            <p className="rounded-2xl border border-stone-900/10 bg-blue-50 px-4 py-3 text-sm text-stone-500">
               <span className="animate-pulse">…</span>
             </p>
           </div>
@@ -235,7 +235,7 @@ export default function ChatBot() {
       </div>
 
       <form onSubmit={gui} className="border-t border-stone-900/10 p-3">
-        <div className="flex items-center gap-2 rounded-xl border border-stone-900/10 bg-[#faf4e9] py-1.5 pl-4 pr-1.5 transition focus-within:border-orange-500/60">
+        <div className="flex items-center gap-2 rounded-xl border border-stone-900/10 bg-[#F4F8FE] py-1.5 pl-4 pr-1.5 transition focus-within:border-blue-500/60">
           <input
             value={nhap}
             maxLength={2000}
@@ -247,7 +247,7 @@ export default function ChatBot() {
           <button
             type="submit"
             aria-label="Gửi tin nhắn"
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-orange-600 text-base font-bold text-white transition hover:bg-orange-500"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-600 text-base font-bold text-white transition hover:bg-blue-500"
           >
             →
           </button>

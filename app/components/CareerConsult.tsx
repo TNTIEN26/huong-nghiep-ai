@@ -53,7 +53,7 @@ function trichXuatTuVanBan(text: string) {
 function thanhDoPhuHop(percent: number) {
   return (
     <div className="h-1.5 w-full overflow-hidden rounded-full bg-stone-900/10">
-      <div className="h-full rounded-full bg-orange-500" style={{ width: `${percent}%` }} />
+      <div className="h-full rounded-full bg-blue-500" style={{ width: `${percent}%` }} />
     </div>
   );
 }
@@ -201,7 +201,7 @@ export default function CareerConsult() {
                 {result.khoi_thi_de_nghi.map((k) => (
                   <span
                     key={k}
-                    className="rounded-lg border border-orange-600/30 bg-orange-50 px-3 py-1.5 text-sm font-bold text-orange-700"
+                    className="rounded-lg border border-blue-600/30 bg-blue-50 px-3 py-1.5 text-sm font-bold text-blue-700"
                   >
                     {k}
                   </span>
@@ -265,7 +265,7 @@ export default function CareerConsult() {
                 )}
               </dl>
 
-              <div className="mt-4 rounded-xl border border-stone-900/10 bg-[#faf4e9] p-4 text-sm leading-relaxed text-stone-600">
+              <div className="mt-4 rounded-xl border border-stone-900/10 bg-[#F4F8FE] p-4 text-sm leading-relaxed text-stone-600">
                 <span className="font-bold text-stone-900">Lộ trình. </span>
                 {nganh.lo_trinh}
               </div>
@@ -287,7 +287,7 @@ export default function CareerConsult() {
         <div className="flex flex-wrap gap-3 pt-1">
           <button
             onClick={lamLai}
-            className="rounded-xl bg-orange-600 px-6 py-3 text-sm font-bold text-white transition hover:bg-orange-500"
+            className="rounded-xl bg-blue-600 px-6 py-3 text-sm font-bold text-white transition hover:bg-blue-500"
           >
             Viết mô tả khác
           </button>
@@ -322,7 +322,7 @@ export default function CareerConsult() {
                 aria-pressed={lop === l}
                 className={`rounded-lg px-3.5 py-2 text-sm font-semibold transition ${
                   lop === l
-                    ? "bg-stone-900 text-[#faf4e9]"
+                    ? "bg-stone-900 text-[#F4F8FE]"
                     : "border border-stone-900/10 text-stone-500 hover:border-stone-900/25 hover:text-stone-900"
                 }`}
               >
@@ -352,7 +352,7 @@ export default function CareerConsult() {
             rows={5}
             maxLength={800}
             placeholder="Mình học lớp 11, giỏi Toán với Tin, yếu Văn. Thích mày mò máy tính, lắp ráp đồ điện tử. Tính kiên trì, thích làm việc một mình hơn làm nhóm."
-            className="mt-3 w-full resize-none rounded-xl border border-stone-900/10 bg-[#faf4e9] p-4 text-[15px] leading-relaxed text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-orange-500/60"
+            className="mt-3 w-full resize-none rounded-xl border border-stone-900/10 bg-[#F4F8FE] p-4 text-[15px] leading-relaxed text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-blue-500/60"
           />
           <div className="mt-4">
             <p className="text-xs font-semibold text-stone-500">Chưa biết viết gì, dùng mẫu sau:</p>
@@ -362,7 +362,7 @@ export default function CareerConsult() {
                   key={g}
                   type="button"
                   onClick={() => setVanBan(g)}
-                  className="block w-full rounded-xl border border-stone-900/10 bg-[#faf4e9] px-4 py-3 text-left text-[13px] leading-relaxed text-stone-500 transition hover:border-orange-400/60 hover:text-stone-800"
+                  className="block w-full rounded-xl border border-stone-900/10 bg-[#F4F8FE] px-4 py-3 text-left text-[13px] leading-relaxed text-stone-500 transition hover:border-blue-400/60 hover:text-stone-800"
                 >
                   {g}
                 </button>
@@ -380,7 +380,7 @@ export default function CareerConsult() {
         <button
           type="submit"
           disabled={!hopLe || loading}
-          className="mt-6 w-full rounded-xl bg-orange-600 px-6 py-3.5 text-[15px] font-bold text-white transition hover:bg-orange-500 disabled:cursor-not-allowed disabled:opacity-40"
+          className="mt-6 w-full rounded-xl bg-blue-600 px-6 py-3.5 text-[15px] font-bold text-white transition hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-40"
         >
           {loading ? "Đang phân tích, vui lòng chờ…" : "Xem định hướng của mình"}
         </button>
