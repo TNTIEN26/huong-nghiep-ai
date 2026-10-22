@@ -33,7 +33,7 @@
           "A00",
           "A01"
         ],
-        "diem_chuan_tk": 25.0,
+        "diem_chuan_tk": 25,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–8 triệu đồng/năm (tham khảo)",
         "hoc_bong": "Học bổng cho thí sinh điểm cao / giải học sinh giỏi"
@@ -95,7 +95,7 @@
           "A01",
           "D01"
         ],
-        "diem_chuan_tk": 27.0,
+        "diem_chuan_tk": 27,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
         "hoc_bong": "Học bổng cho thí sinh điểm cao"
@@ -160,7 +160,7 @@
           "D14",
           "D66"
         ],
-        "diem_chuan_tk": 28.0,
+        "diem_chuan_tk": 28,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 3–5 triệu đồng/năm; chính sách miễn giảm sư phạm (tham khảo)",
         "hoc_bong": "Chỉ tiêu sư phạm + học bổng điểm cao"
@@ -209,7 +209,7 @@
           "B00",
           "D07"
         ],
-        "diem_chuan_tk": 28.0,
+        "diem_chuan_tk": 28,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–8 triệu đồng/năm (tham khảo)",
         "hoc_bong": "Học bổng cho thí sinh điểm cao"
@@ -251,7 +251,7 @@
           "D01",
           "C00"
         ],
-        "diem_chuan_tk": 25.0,
+        "diem_chuan_tk": 25,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 4–7 triệu đồng/năm (tham khảo)",
         "hoc_bong": "Học bổng cho thí sinh điểm cao"
@@ -270,7 +270,7 @@
           "A01",
           "D01"
         ],
-        "diem_chuan_tk": 28.0,
+        "diem_chuan_tk": 28,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–10 triệu đồng/năm (tham khảo)",
         "hoc_bong": "Học bổng cho thí sinh điểm cao"
@@ -281,7 +281,7 @@
           "A00",
           "A01"
         ],
-        "diem_chuan_tk": 26.0,
+        "diem_chuan_tk": 26,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–10 triệu đồng/năm (tham khảo)",
         "hoc_bong": "Học bổng cho thí sinh điểm cao"
@@ -292,7 +292,7 @@
           "A00",
           "A01"
         ],
-        "diem_chuan_tk": 23.0,
+        "diem_chuan_tk": 23,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–10 triệu đồng/năm (tham khảo)",
         "hoc_bong": "Học bổng cho thí sinh điểm cao"
@@ -374,7 +374,7 @@
           "D66",
           "D01"
         ],
-        "diem_chuan_tk": 26.0,
+        "diem_chuan_tk": 26,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
         "hoc_bong": "Học bổng cho thí sinh điểm cao"
@@ -393,7 +393,7 @@
           "A01",
           "D01"
         ],
-        "diem_chuan_tk": 27.0,
+        "diem_chuan_tk": 27,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 4–6 triệu đồng/năm (tham khảo)",
         "hoc_bong": "Học bổng doanh nghiệp viễn thông"
@@ -436,7 +436,7 @@
           "A01",
           "D01"
         ],
-        "diem_chuan_tk": 26.0,
+        "diem_chuan_tk": 26,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 4–6 triệu đồng/năm (tham khảo)",
         "hoc_bong": "Học bổng khối ngành ngân hàng"
