@@ -7,7 +7,10 @@
     "nhom_nganh": [
       {
         "ten": "TODO-ten-nganh-dung-nhu-de-an (ví dụ: Sư phạm Toán)",
-        "to_hop": ["TODO", "TODO"],
+        "to_hop": [
+          "TODO",
+          "TODO"
+        ],
         "diem_chuan_tk": "TODO-so-diem-cua-dung-1-nam (ví dụ: 24.5)",
         "nam": "TODO-nam-cua-diem-chuan (ví dụ: 2024)",
         "nguon": "TODO-link-de-an-tuyen-sinh-chinh-thuc-cua-truong",
@@ -19,28 +22,120 @@
     ]
   },
   "danh_sach_25_truong": [
-    { "ten": "Đại học Tây Nguyên", "nhom": "Tay Nguyen", "trang_thai": "chua-lam" },
-    { "ten": "Phân hiệu ĐH Đà Nẵng tại Kon Tum", "nhom": "Tay Nguyen", "trang_thai": "chua-lam" },
-    { "ten": "Cao đẳng Gia Lai", "nhom": "Tay Nguyen", "trang_thai": "chua-lam" },
-    { "ten": "Cao đẳng Y tế Gia Lai / Bình Định", "nhom": "Tay Nguyen", "trang_thai": "chua-lam" },
-    { "ten": "Đại học Đà Lạt", "nhom": "Tay Nguyen", "trang_thai": "chua-lam" },
-    { "ten": "Đại học Quy Nhơn", "nhom": "Mien Trung", "trang_thai": "chua-lam" },
-    { "ten": "Đại học Nha Trang", "nhom": "Mien Trung", "trang_thai": "chua-lam" },
-    { "ten": "Đại học Phú Yên", "nhom": "Mien Trung", "trang_thai": "chua-lam" },
-    { "ten": "ĐH Bách khoa – ĐH Đà Nẵng", "nhom": "Mien Trung", "trang_thai": "chua-lam" },
-    { "ten": "ĐH Kinh tế – ĐH Đà Nẵng", "nhom": "Mien Trung", "trang_thai": "chua-lam" },
-    { "ten": "ĐH Sư phạm – ĐH Đà Nẵng", "nhom": "Mien Trung", "trang_thai": "chua-lam" },
-    { "ten": "ĐH Ngoại ngữ – ĐH Đà Nẵng", "nhom": "Mien Trung", "trang_thai": "chua-lam" },
-    { "ten": "ĐH Khoa học – ĐH Huế", "nhom": "Mien Trung", "trang_thai": "chua-lam" },
-    { "ten": "ĐH Kinh tế – ĐH Huế", "nhom": "Mien Trung", "trang_thai": "chua-lam" },
-    { "ten": "ĐH Sư phạm – ĐH Huế", "nhom": "Mien Trung", "trang_thai": "chua-lam" },
-    { "ten": "ĐH Y Dược – ĐH Huế", "nhom": "Mien Trung", "trang_thai": "chua-lam" },
-    { "ten": "ĐH Nông Lâm TP.HCM", "nhom": "TPHCM", "trang_thai": "chua-lam" },
-    { "ten": "ĐH Sài Gòn", "nhom": "TPHCM", "trang_thai": "chua-lam" },
-    { "ten": "ĐH Mở TP.HCM", "nhom": "TPHCM", "trang_thai": "chua-lam" },
-    { "ten": "ĐH Công nghiệp TP.HCM", "nhom": "TPHCM", "trang_thai": "chua-lam" },
-    { "ten": "ĐH Nguyễn Tất Thành / Văn Hiến", "nhom": "TPHCM", "trang_thai": "chua-lam" },
-    { "ten": "ĐH Y Dược TP.HCM", "nhom": "TPHCM", "trang_thai": "chua-lam" },
-    { "ten": "13 truong top HN/SG co san trong truong-dh.json", "nhom": "Top", "trang_thai": "da-co-can-bo-sung-nam-va-nguon" }
+    {
+      "ten": "Đại học Tây Nguyên",
+      "nhom": "Tay Nguyen",
+      "trang_thai": "da-co-trong-truong-dh-json"
+    },
+    {
+      "ten": "Phân hiệu ĐH Đà Nẵng tại Kon Tum",
+      "nhom": "Tay Nguyen",
+      "trang_thai": "da-co-trong-truong-dh-json"
+    },
+    {
+      "ten": "Cao đẳng Gia Lai",
+      "nhom": "Tay Nguyen",
+      "trang_thai": "chua-lam"
+    },
+    {
+      "ten": "Cao đẳng Y tế Gia Lai / Bình Định",
+      "nhom": "Tay Nguyen",
+      "trang_thai": "chua-lam"
+    },
+    {
+      "ten": "Đại học Đà Lạt",
+      "nhom": "Tay Nguyen",
+      "trang_thai": "da-co-trong-truong-dh-json"
+    },
+    {
+      "ten": "Đại học Quy Nhơn",
+      "nhom": "Mien Trung",
+      "trang_thai": "da-co-trong-truong-dh-json"
+    },
+    {
+      "ten": "Đại học Nha Trang",
+      "nhom": "Mien Trung",
+      "trang_thai": "da-co-trong-truong-dh-json"
+    },
+    {
+      "ten": "Đại học Phú Yên",
+      "nhom": "Mien Trung",
+      "trang_thai": "da-co-trong-truong-dh-json"
+    },
+    {
+      "ten": "ĐH Bách khoa – ĐH Đà Nẵng",
+      "nhom": "Mien Trung",
+      "trang_thai": "da-co-trong-truong-dh-json"
+    },
+    {
+      "ten": "ĐH Kinh tế – ĐH Đà Nẵng",
+      "nhom": "Mien Trung",
+      "trang_thai": "da-co-trong-truong-dh-json"
+    },
+    {
+      "ten": "ĐH Sư phạm – ĐH Đà Nẵng",
+      "nhom": "Mien Trung",
+      "trang_thai": "da-co-trong-truong-dh-json"
+    },
+    {
+      "ten": "ĐH Ngoại ngữ – ĐH Đà Nẵng",
+      "nhom": "Mien Trung",
+      "trang_thai": "da-co-trong-truong-dh-json"
+    },
+    {
+      "ten": "ĐH Khoa học – ĐH Huế",
+      "nhom": "Mien Trung",
+      "trang_thai": "da-co-trong-truong-dh-json"
+    },
+    {
+      "ten": "ĐH Kinh tế – ĐH Huế",
+      "nhom": "Mien Trung",
+      "trang_thai": "da-co-trong-truong-dh-json"
+    },
+    {
+      "ten": "ĐH Sư phạm – ĐH Huế",
+      "nhom": "Mien Trung",
+      "trang_thai": "da-co-trong-truong-dh-json"
+    },
+    {
+      "ten": "ĐH Y Dược – ĐH Huế",
+      "nhom": "Mien Trung",
+      "trang_thai": "da-co-trong-truong-dh-json"
+    },
+    {
+      "ten": "ĐH Nông Lâm TP.HCM",
+      "nhom": "TPHCM",
+      "trang_thai": "da-co-trong-truong-dh-json"
+    },
+    {
+      "ten": "ĐH Sài Gòn",
+      "nhom": "TPHCM",
+      "trang_thai": "da-co-trong-truong-dh-json"
+    },
+    {
+      "ten": "ĐH Mở TP.HCM",
+      "nhom": "TPHCM",
+      "trang_thai": "chua-lam"
+    },
+    {
+      "ten": "ĐH Công nghiệp TP.HCM",
+      "nhom": "TPHCM",
+      "trang_thai": "da-co-trong-truong-dh-json"
+    },
+    {
+      "ten": "ĐH Nguyễn Tất Thành / Văn Hiến",
+      "nhom": "TPHCM",
+      "trang_thai": "chua-lam"
+    },
+    {
+      "ten": "ĐH Y Dược TP.HCM",
+      "nhom": "TPHCM",
+      "trang_thai": "da-co-trong-truong-dh-json"
+    },
+    {
+      "ten": "13 truong top HN/SG co san trong truong-dh.json",
+      "nhom": "Top",
+      "trang_thai": "da-co-trong-truong-dh-json"
+    }
   ]
 }

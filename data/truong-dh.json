@@ -14,7 +14,10 @@
         "diem_chuan_tk": 28.5,
         "ghichu": "Điểm cao nhất toàn trường",
         "hoc_phi_tk": "Khoảng 5–8 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng cho thí sinh điểm cao / giải học sinh giỏi"
+        "hoc_bong": "Học bổng cho thí sinh điểm cao / giải học sinh giỏi",
+        "nam": 2025,
+        "nguon": "https://ts-seee.hust.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
       },
       {
         "ten": "Điện - Điện tử",
@@ -25,7 +28,10 @@
         "diem_chuan_tk": 26.5,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–8 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng cho thí sinh điểm cao / giải học sinh giỏi"
+        "hoc_bong": "Học bổng cho thí sinh điểm cao / giải học sinh giỏi",
+        "nam": 2025,
+        "nguon": "https://ts-seee.hust.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
       },
       {
         "ten": "Kỹ thuật cơ khí",
@@ -33,10 +39,13 @@
           "A00",
           "A01"
         ],
-        "diem_chuan_tk": 25.0,
+        "diem_chuan_tk": 25,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–8 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng cho thí sinh điểm cao / giải học sinh giỏi"
+        "hoc_bong": "Học bổng cho thí sinh điểm cao / giải học sinh giỏi",
+        "nam": 2025,
+        "nguon": "https://ts-seee.hust.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
       }
     ]
   },
@@ -50,36 +59,48 @@
         "to_hop": [
           "A00",
           "A01",
-          "D01"
+          "D01",
+          "D07"
         ],
         "diem_chuan_tk": 28.2,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng cho thí sinh điểm cao"
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2025,
+        "nguon": "https://fbe.ftu.edu.vn/nghien-cuu-khoa-hoc/toa-dam/thong-tin-tuyen-sinh-nam-2025-trinh-do-dai-hoc-hinh-thuc-vua-lam-vua-hoc/",
+        "ngay_cap_nhat": "2026-10-22"
       },
       {
         "ten": "Quản trị kinh doanh",
         "to_hop": [
           "A00",
           "A01",
-          "D01"
+          "D01",
+          "D07"
         ],
         "diem_chuan_tk": 28.2,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng cho thí sinh điểm cao"
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2025,
+        "nguon": "https://fbe.ftu.edu.vn/nghien-cuu-khoa-hoc/toa-dam/thong-tin-tuyen-sinh-nam-2025-trinh-do-dai-hoc-hinh-thuc-vua-lam-vua-hoc/",
+        "ngay_cap_nhat": "2026-10-22"
       },
       {
         "ten": "Kinh doanh quốc tế",
         "to_hop": [
           "A00",
           "A01",
-          "D01"
+          "D01",
+          "D07"
         ],
         "diem_chuan_tk": 28.5,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng cho thí sinh điểm cao"
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2025,
+        "nguon": "https://fbe.ftu.edu.vn/nghien-cuu-khoa-hoc/toa-dam/thong-tin-tuyen-sinh-nam-2025-trinh-do-dai-hoc-hinh-thuc-vua-lam-vua-hoc/",
+        "ngay_cap_nhat": "2026-10-22"
       }
     ]
   },
@@ -93,36 +114,48 @@
         "to_hop": [
           "A00",
           "A01",
-          "D01"
+          "D01",
+          "D07"
         ],
-        "diem_chuan_tk": 27.0,
+        "diem_chuan_tk": 27,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng cho thí sinh điểm cao"
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2025,
+        "nguon": "https://daotao.neu.edu.vn/Resources/Docs/SubDomain/daotao/CDR/2.%20Th%C3%B4ng%20tin%20tuy%E1%BB%83n%20sinh%20n%C4%83m%202025%20H%C3%ACnh%20th%E1%BB%A9c%20%C4%91%C3%A0o%20t%E1%BA%A1o%20%C4%90%E1%BA%A1i%20h%E1%BB%8Dc%20ch%C3%ADnh%20quy.pdf",
+        "ngay_cap_nhat": "2026-10-22"
       },
       {
         "ten": "Tài chính - Ngân hàng",
         "to_hop": [
           "A00",
           "A01",
-          "D01"
+          "D01",
+          "D07"
         ],
         "diem_chuan_tk": 27.2,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng cho thí sinh điểm cao"
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2025,
+        "nguon": "https://daotao.neu.edu.vn/Resources/Docs/SubDomain/daotao/CDR/2.%20Th%C3%B4ng%20tin%20tuy%E1%BB%83n%20sinh%20n%C4%83m%202025%20H%C3%ACnh%20th%E1%BB%A9c%20%C4%91%C3%A0o%20t%E1%BA%A1o%20%C4%90%E1%BA%A1i%20h%E1%BB%8Dc%20ch%C3%ADnh%20quy.pdf",
+        "ngay_cap_nhat": "2026-10-22"
       },
       {
         "ten": "Marketing",
         "to_hop": [
           "D01",
           "A00",
-          "A01"
+          "A01",
+          "D07"
         ],
         "diem_chuan_tk": 27.6,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng cho thí sinh điểm cao"
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2025,
+        "nguon": "https://daotao.neu.edu.vn/Resources/Docs/SubDomain/daotao/CDR/2.%20Th%C3%B4ng%20tin%20tuy%E1%BB%83n%20sinh%20n%C4%83m%202025%20H%C3%ACnh%20th%E1%BB%A9c%20%C4%91%C3%A0o%20t%E1%BA%A1o%20%C4%90%E1%BA%A1i%20h%E1%BB%8Dc%20ch%C3%ADnh%20quy.pdf",
+        "ngay_cap_nhat": "2026-10-22"
       }
     ]
   },
@@ -140,7 +173,10 @@
         "diem_chuan_tk": 28.2,
         "ghichu": "Kèm quy định ưu tiên riêng, thi năng khiếu tùy ngành",
         "hoc_phi_tk": "Khoảng 3–5 triệu đồng/năm; chính sách miễn giảm sư phạm (tham khảo)",
-        "hoc_bong": "Chỉ tiêu sư phạm + học bổng điểm cao"
+        "hoc_bong": "Chỉ tiêu sư phạm + học bổng điểm cao",
+        "nam": 2025,
+        "nguon": "https://hnue.edu.vn/tin-tuc/10732/thong-bao-ve-phuong-an-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2025.html",
+        "ngay_cap_nhat": "2026-10-22"
       },
       {
         "ten": "Sư phạm Ngữ văn",
@@ -151,7 +187,10 @@
         "diem_chuan_tk": 27.8,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 3–5 triệu đồng/năm; chính sách miễn giảm sư phạm (tham khảo)",
-        "hoc_bong": "Chỉ tiêu sư phạm + học bổng điểm cao"
+        "hoc_bong": "Chỉ tiêu sư phạm + học bổng điểm cao",
+        "nam": 2025,
+        "nguon": "https://hnue.edu.vn/tin-tuc/10732/thong-bao-ve-phuong-an-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2025.html",
+        "ngay_cap_nhat": "2026-10-22"
       },
       {
         "ten": "Sư phạm Tiếng Anh",
@@ -160,10 +199,13 @@
           "D14",
           "D66"
         ],
-        "diem_chuan_tk": 28.0,
+        "diem_chuan_tk": 28,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 3–5 triệu đồng/năm; chính sách miễn giảm sư phạm (tham khảo)",
-        "hoc_bong": "Chỉ tiêu sư phạm + học bổng điểm cao"
+        "hoc_bong": "Chỉ tiêu sư phạm + học bổng điểm cao",
+        "nam": 2025,
+        "nguon": "https://hnue.edu.vn/tin-tuc/10732/thong-bao-ve-phuong-an-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2025.html",
+        "ngay_cap_nhat": "2026-10-22"
       }
     ]
   },
@@ -175,25 +217,28 @@
       {
         "ten": "Y khoa",
         "to_hop": [
-          "B00",
-          "A00",
-          "D07"
+          "B00"
         ],
         "diem_chuan_tk": 28.4,
         "ghichu": "Thuộc nhóm điểm chuẩn cao nhất cả nước",
         "hoc_phi_tk": "Khoảng 6–10 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Xét học bổng cạnh tranh theo điểm đầu vào"
+        "hoc_bong": "Xét học bổng cạnh tranh theo điểm đầu vào",
+        "nam": 2025,
+        "nguon": "https://hmu.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
       },
       {
         "ten": "Điều dưỡng",
         "to_hop": [
-          "B00",
-          "A02"
+          "B00"
         ],
         "diem_chuan_tk": 24.5,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 6–10 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Xét học bổng cạnh tranh theo điểm đầu vào"
+        "hoc_bong": "Xét học bổng cạnh tranh theo điểm đầu vào",
+        "nam": 2025,
+        "nguon": "https://hmu.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
       }
     ]
   },
@@ -206,13 +251,15 @@
         "ten": "Dược học",
         "to_hop": [
           "A00",
-          "B00",
-          "D07"
+          "A02"
         ],
-        "diem_chuan_tk": 28.0,
+        "diem_chuan_tk": 24.5,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–8 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng cho thí sinh điểm cao"
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2025,
+        "nguon": "https://hup.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
       }
     ]
   },
@@ -222,7 +269,7 @@
     "thanh_pho": "Hà Nội",
     "nhom_nganh": [
       {
-        "ten": "CNTT (Trường CNTT&TT)",
+        "ten": "Công nghệ thông tin",
         "to_hop": [
           "A00",
           "A01",
@@ -231,19 +278,26 @@
         "diem_chuan_tk": 28.2,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 4–7 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng cho thí sinh điểm cao"
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2025,
+        "nguon": "https://ueb.edu.vn/Tin-Tuc/UEB/truong-dai-hoc-kinh-te-dhqghn-ban-hanh-thong-tin-tuyen-sinh-dai-hoc-nam-2026/46139",
+        "ngay_cap_nhat": "2026-10-22"
       },
       {
-        "ten": "Luật (Trường ĐH Luật)",
+        "ten": "Luật",
         "to_hop": [
           "C00",
           "D01",
-          "C19"
+          "C19",
+          "A00"
         ],
         "diem_chuan_tk": 25.5,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 4–7 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng cho thí sinh điểm cao"
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2025,
+        "nguon": "https://ueb.edu.vn/Tin-Tuc/UEB/truong-dai-hoc-kinh-te-dhqghn-ban-hanh-thong-tin-tuyen-sinh-dai-hoc-nam-2026/46139",
+        "ngay_cap_nhat": "2026-10-22"
       },
       {
         "ten": "Báo chí - Truyền thông",
@@ -251,10 +305,13 @@
           "D01",
           "C00"
         ],
-        "diem_chuan_tk": 25.0,
+        "diem_chuan_tk": 25,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 4–7 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng cho thí sinh điểm cao"
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2025,
+        "nguon": "https://ueb.edu.vn/Tin-Tuc/UEB/truong-dai-hoc-kinh-te-dhqghn-ban-hanh-thong-tin-tuyen-sinh-dai-hoc-nam-2026/46139",
+        "ngay_cap_nhat": "2026-10-22"
       }
     ]
   },
@@ -270,10 +327,13 @@
           "A01",
           "D01"
         ],
-        "diem_chuan_tk": 28.0,
+        "diem_chuan_tk": 28,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–10 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng cho thí sinh điểm cao"
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2025,
+        "nguon": "https://hcmut.edu.vn/tuyen-sinh/dai-hoc-chinh-quy/gioi-thieu-chung",
+        "ngay_cap_nhat": "2026-10-22"
       },
       {
         "ten": "Kỹ thuật điện - Điện tử",
@@ -281,10 +341,13 @@
           "A00",
           "A01"
         ],
-        "diem_chuan_tk": 26.0,
+        "diem_chuan_tk": 26,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–10 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng cho thí sinh điểm cao"
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2025,
+        "nguon": "https://hcmut.edu.vn/tuyen-sinh/dai-hoc-chinh-quy/gioi-thieu-chung",
+        "ngay_cap_nhat": "2026-10-22"
       },
       {
         "ten": "Xây dựng",
@@ -292,10 +355,13 @@
           "A00",
           "A01"
         ],
-        "diem_chuan_tk": 23.0,
+        "diem_chuan_tk": 23,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–10 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng cho thí sinh điểm cao"
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2025,
+        "nguon": "https://hcmut.edu.vn/tuyen-sinh/dai-hoc-chinh-quy/gioi-thieu-chung",
+        "ngay_cap_nhat": "2026-10-22"
       }
     ]
   },
@@ -309,24 +375,32 @@
         "to_hop": [
           "D01",
           "A00",
-          "A01"
+          "A01",
+          "D07"
         ],
         "diem_chuan_tk": 27.5,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng cho thí sinh điểm cao"
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2025,
+        "nguon": "https://hotro.ueh.edu.vn/bai-viet/thong-tin-tuyen-sinh-1753",
+        "ngay_cap_nhat": "2026-10-22"
       },
       {
         "ten": "Marketing",
         "to_hop": [
           "D01",
           "A00",
-          "A01"
+          "A01",
+          "D07"
         ],
         "diem_chuan_tk": 27.3,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng cho thí sinh điểm cao"
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2025,
+        "nguon": "https://hotro.ueh.edu.vn/bai-viet/thong-tin-tuyen-sinh-1753",
+        "ngay_cap_nhat": "2026-10-22"
       }
     ]
   },
@@ -338,26 +412,42 @@
       {
         "ten": "Y khoa",
         "to_hop": [
-          "B00",
-          "A00",
-          "D07"
+          "B00"
         ],
-        "diem_chuan_tk": 28.3,
+        "diem_chuan_tk": 27.34,
+        "ghichu": "Điểm cao nhất trường",
+        "hoc_phi_tk": "Khoảng 45–80 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "Học bổng khuyến khích học tập",
+        "nam": 2025,
+        "nguon": "https://yds.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Răng - Hàm - Mặt",
+        "to_hop": [
+          "B00"
+        ],
+        "diem_chuan_tk": 26.45,
         "ghichu": "",
-        "hoc_phi_tk": "Khoảng 6–10 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng cho thí sinh điểm cao"
+        "hoc_phi_tk": "Khoảng 45–80 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://yds.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
       },
       {
         "ten": "Dược học",
         "to_hop": [
-          "B00",
           "A00",
-          "D07"
+          "B00"
         ],
-        "diem_chuan_tk": 27.5,
+        "diem_chuan_tk": 23.65,
         "ghichu": "",
-        "hoc_phi_tk": "Khoảng 6–10 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng cho thí sinh điểm cao"
+        "hoc_phi_tk": "Khoảng 45–80 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://yds.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
       }
     ]
   },
@@ -369,15 +459,54 @@
       {
         "ten": "Luật",
         "to_hop": [
-          "C00",
-          "C19",
-          "D66",
+          "A00"
+        ],
+        "diem_chuan_tk": 21.64,
+        "ghichu": "Xét tuyển khối A00",
+        "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2025,
+        "nguon": "https://ts.hcmulaw.edu.vn/thong-tin-tuyen-sinh-dai-hoc/diem-trung-tuyen-doi-voi-cac-nganh-dao-tao-trinh-do-dai-hoc-hinh-thuc-dao-tao-chinh-quy-nam-2025-639.html",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Luật",
+        "to_hop": [
+          "A01"
+        ],
+        "diem_chuan_tk": 20.54,
+        "ghichu": "Xét tuyển khối A01",
+        "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2025,
+        "nguon": "https://ts.hcmulaw.edu.vn/thong-tin-tuyen-sinh-dai-hoc/diem-trung-tuyen-doi-voi-cac-nganh-dao-tao-trinh-do-dai-hoc-hinh-thuc-dao-tao-chinh-quy-nam-2025-639.html",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Luật",
+        "to_hop": [
+          "C00"
+        ],
+        "diem_chuan_tk": 24.94,
+        "ghichu": "Xét tuyển khối C00",
+        "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2025,
+        "nguon": "https://ts.hcmulaw.edu.vn/thong-tin-tuyen-sinh-dai-hoc/diem-trung-tuyen-doi-voi-cac-nganh-dao-tao-trinh-do-dai-hoc-hinh-thuc-dao-tao-chinh-quy-nam-2025-639.html",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Luật",
+        "to_hop": [
           "D01"
         ],
-        "diem_chuan_tk": 26.0,
-        "ghichu": "",
+        "diem_chuan_tk": 20.94,
+        "ghichu": "Xét tuyển khối D01",
         "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng cho thí sinh điểm cao"
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2025,
+        "nguon": "https://ts.hcmulaw.edu.vn/thong-tin-tuyen-sinh-dai-hoc/diem-trung-tuyen-doi-voi-cac-nganh-dao-tao-trinh-do-dai-hoc-hinh-thuc-dao-tao-chinh-quy-nam-2025-639.html",
+        "ngay_cap_nhat": "2026-10-22"
       }
     ]
   },
@@ -387,28 +516,33 @@
     "thanh_pho": "Hà Nội",
     "nhom_nganh": [
       {
-        "ten": "CNTT",
+        "ten": "Công nghệ thông tin",
+        "to_hop": [
+          "A00",
+          "A01"
+        ],
+        "diem_chuan_tk": 25.8,
+        "ghichu": "",
+        "hoc_phi_tk": "Khoảng 4–6 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "Học bổng doanh nghiệp viễn thông",
+        "nam": 2025,
+        "nguon": "https://ptit.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Truyền thông đa phương tiện",
         "to_hop": [
           "A00",
           "A01",
           "D01"
         ],
-        "diem_chuan_tk": 27.0,
-        "ghichu": "",
-        "hoc_phi_tk": "Khoảng 4–6 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng doanh nghiệp viễn thông"
-      },
-      {
-        "ten": "Truyền thông đa phương tiện",
-        "to_hop": [
-          "D01",
-          "A00",
-          "A01"
-        ],
         "diem_chuan_tk": 26.1,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 4–6 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng doanh nghiệp viễn thông"
+        "hoc_bong": "Học bổng doanh nghiệp viễn thông",
+        "nam": 2025,
+        "nguon": "https://ptit.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
       }
     ]
   },
@@ -422,24 +556,716 @@
         "to_hop": [
           "A00",
           "A01",
-          "D01"
+          "D01",
+          "D07"
         ],
         "diem_chuan_tk": 26.5,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 4–6 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng khối ngành ngân hàng"
+        "hoc_bong": "Học bổng khối ngành ngân hàng",
+        "nam": 2025,
+        "nguon": "https://hvnh.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
       },
       {
         "ten": "Kế toán",
         "to_hop": [
           "A00",
           "A01",
-          "D01"
+          "D01",
+          "D07"
         ],
-        "diem_chuan_tk": 26.0,
+        "diem_chuan_tk": 26,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 4–6 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng khối ngành ngân hàng"
+        "hoc_bong": "Học bổng khối ngành ngân hàng",
+        "nam": 2025,
+        "nguon": "https://hvnh.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "dhtn",
+    "ten": "Đại học Tây Nguyên",
+    "thanh_pho": "Đắk Lắk",
+    "nhom_nganh": [
+      {
+        "ten": "Sư phạm Toán học",
+        "to_hop": [
+          "A00",
+          "A01"
+        ],
+        "diem_chuan_tk": 28.15,
+        "ghichu": "Ngành sức khỏe",
+        "hoc_phi_tk": "Khoảng 12–15 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2025,
+        "nguon": "https://ttts.ttn.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Y khoa",
+        "to_hop": [
+          "B00"
+        ],
+        "diem_chuan_tk": 21.76,
+        "ghichu": "Khối sức khỏe",
+        "hoc_phi_tk": "Khoảng 27–30 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://ttts.ttn.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Kinh tế",
+        "to_hop": [
+          "A00",
+          "A01",
+          "D01"
+        ],
+        "diem_chuan_tk": 20.36,
+        "ghichu": "",
+        "hoc_phi_tk": "Khoảng 10–12 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://ttts.ttn.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "phdhdnkontum",
+    "ten": "Phân hiệu Đại học Đà Nẵng tại Kon Tum",
+    "thanh_pho": "Kon Tum",
+    "nhom_nganh": [
+      {
+        "ten": "Giáo dục Mầm non",
+        "to_hop": [
+          "D01"
+        ],
+        "diem_chuan_tk": 24.85,
+        "ghichu": "Điểm cao nhất trường",
+        "hoc_phi_tk": "Khoảng 10–12 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://kontum.udn.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Công nghệ thông tin",
+        "to_hop": [
+          "A00",
+          "A01"
+        ],
+        "diem_chuan_tk": 15,
+        "ghichu": "",
+        "hoc_phi_tk": "Khoảng 12–14 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://kontum.udn.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "dhdalt",
+    "ten": "Đại học Đà Lạt",
+    "thanh_pho": "Lâm Đồng",
+    "nhom_nganh": [
+      {
+        "ten": "Sư phạm Toán học",
+        "to_hop": [
+          "A00",
+          "A01",
+          "A02",
+          "D07"
+        ],
+        "diem_chuan_tk": 28.5,
+        "ghichu": "Điểm cao nhất trường",
+        "hoc_phi_tk": "Miễn học phí theo quy định nhà nước (tham khảo)",
+        "hoc_bong": "Học bổng khuyến khích học tập",
+        "nam": 2025,
+        "nguon": "https://dlu.edu.vn/thong-bao-diem-chuan-trung-tuyen-dai-hoc-he-chinh-quy-nam-2025-truong-dai-hoc-da-lat/",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Quản trị kinh doanh",
+        "to_hop": [
+          "A00",
+          "A01",
+          "C04",
+          "D01"
+        ],
+        "diem_chuan_tk": 21,
+        "ghichu": "",
+        "hoc_phi_tk": "Khoảng 14–18 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://dlu.edu.vn/thong-bao-diem-chuan-trung-tuyen-dai-hoc-he-chinh-quy-nam-2025-truong-dai-hoc-da-lat/",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Luật",
+        "to_hop": [
+          "C00",
+          "C03",
+          "C04",
+          "D01"
+        ],
+        "diem_chuan_tk": 23,
+        "ghichu": "",
+        "hoc_phi_tk": "Khoảng 14–18 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://dlu.edu.vn/thong-bao-diem-chuan-trung-tuyen-dai-hoc-he-chinh-quy-nam-2025-truong-dai-hoc-da-lat/",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Sư phạm Ngữ văn",
+        "to_hop": [
+          "C00",
+          "D01"
+        ],
+        "diem_chuan_tk": 27.75,
+        "ghichu": "",
+        "hoc_phi_tk": "",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://dlu.edu.vn/thong-bao-diem-chuan-trung-tuyen-dai-hoc-he-chinh-quy-nam-2025-truong-dai-hoc-da-lat/",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Sư phạm Tiếng Anh",
+        "to_hop": [
+          "D01"
+        ],
+        "diem_chuan_tk": 27.75,
+        "ghichu": "",
+        "hoc_phi_tk": "",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://dlu.edu.vn/thong-bao-diem-chuan-trung-tuyen-dai-hoc-he-chinh-quy-nam-2025-truong-dai-hoc-da-lat/",
+        "ngay_cap_nhat": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "dhquynhon",
+    "ten": "Đại học Quy Nhơn",
+    "thanh_pho": "Bình Định",
+    "nhom_nganh": [
+      {
+        "ten": "Sư phạm Lịch sử",
+        "to_hop": [
+          "C00"
+        ],
+        "diem_chuan_tk": 27.21,
+        "ghichu": "Điểm cao nhất trường",
+        "hoc_phi_tk": "Miễn học phí theo quy định nhà nước (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://tuyensinh.qnu.edu.vn/vi/diem-chuan-cac-nam/diem-chuan-trung-tuyen-dai-hoc-he-chinh-quy-nam-2025",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Sư phạm Toán học",
+        "to_hop": [
+          "A00"
+        ],
+        "diem_chuan_tk": 25.85,
+        "ghichu": "",
+        "hoc_phi_tk": "Miễn học phí theo quy định nhà nước (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://tuyensinh.qnu.edu.vn/vi/diem-chuan-cac-nam/diem-chuan-trung-tuyen-dai-hoc-he-chinh-quy-nam-2025",
+        "ngay_cap_nhat": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "dhnhatrang",
+    "ten": "Đại học Nha Trang",
+    "thanh_pho": "Khánh Hòa",
+    "nhom_nganh": [
+      {
+        "ten": "Marketing",
+        "to_hop": [
+          "A00",
+          "A01",
+          "D01"
+        ],
+        "diem_chuan_tk": 27,
+        "ghichu": "Điểm cao nhất trường",
+        "hoc_phi_tk": "Khoảng 18–22 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://tuyensinh.ntu.edu.vn/diem-trung-tuyen-cac-nam",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Luật",
+        "to_hop": [
+          "A00",
+          "C00",
+          "D01"
+        ],
+        "diem_chuan_tk": 27,
+        "ghichu": "Điểm cao nhất trường",
+        "hoc_phi_tk": "Khoảng 18–22 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://tuyensinh.ntu.edu.vn/diem-trung-tuyen-cac-nam",
+        "ngay_cap_nhat": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "dhphuyen",
+    "ten": "Đại học Phú Yên",
+    "thanh_pho": "Phú Yên",
+    "nhom_nganh": [
+      {
+        "ten": "Sư phạm Ngữ văn",
+        "to_hop": [
+          "C00",
+          "D01"
+        ],
+        "diem_chuan_tk": 26.25,
+        "ghichu": "Điểm cao nhất trường",
+        "hoc_phi_tk": "Miễn học phí theo quy định nhà nước (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://tuyensinh.pyu.edu.vn/tuyen-sinh/tin-tuc/diem-trung-tuyen-dai-hoc-he-chinh-quy-n-m-2025-dot-1",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Giáo dục Tiểu học",
+        "to_hop": [
+          "A00",
+          "D01"
+        ],
+        "diem_chuan_tk": 26.03,
+        "ghichu": "",
+        "hoc_phi_tk": "Miễn học phí theo quy định nhà nước (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://tuyensinh.pyu.edu.vn/tuyen-sinh/tin-tuc/diem-trung-tuyen-dai-hoc-he-chinh-quy-n-m-2025-dot-1",
+        "ngay_cap_nhat": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "dhbachkhoadanang",
+    "ten": "ĐH Bách khoa – ĐH Đà Nẵng",
+    "thanh_pho": "Đà Nẵng",
+    "nhom_nganh": [
+      {
+        "ten": "Công nghệ thông tin",
+        "to_hop": [
+          "A00",
+          "A01"
+        ],
+        "diem_chuan_tk": 27.2,
+        "ghichu": "Chuyên ngành Khoa học dữ liệu và Trí tuệ nhân tạo",
+        "hoc_phi_tk": "Khoảng 25–30 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "Học bổng tuyển sinh",
+        "nam": 2025,
+        "nguon": "https://ts.udn.vn/DHCD/Chinhquy/diemchuan/15062",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Kỹ thuật điện tử viễn thông",
+        "to_hop": [
+          "A00",
+          "A01"
+        ],
+        "diem_chuan_tk": 27,
+        "ghichu": "Chuyên ngành Vi điện tử - thiết kế vi mạch",
+        "hoc_phi_tk": "Khoảng 25–30 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://ts.udn.vn/DHCD/Chinhquy/diemchuan/15062",
+        "ngay_cap_nhat": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "dhkinhtedanang",
+    "ten": "ĐH Kinh tế – ĐH Đà Nẵng",
+    "thanh_pho": "Đà Nẵng",
+    "nhom_nganh": [
+      {
+        "ten": "Kinh doanh quốc tế",
+        "to_hop": [
+          "A00",
+          "A01",
+          "D01"
+        ],
+        "diem_chuan_tk": 24,
+        "ghichu": "",
+        "hoc_phi_tk": "Khoảng 20–25 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://due.udn.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Marketing",
+        "to_hop": [
+          "A00",
+          "A01",
+          "D01"
+        ],
+        "diem_chuan_tk": 22.5,
+        "ghichu": "",
+        "hoc_phi_tk": "Khoảng 20–25 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://due.udn.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "dhsuphamdanang",
+    "ten": "ĐH Sư phạm – ĐH Đà Nẵng",
+    "thanh_pho": "Đà Nẵng",
+    "nhom_nganh": [
+      {
+        "ten": "Sư phạm Ngữ văn",
+        "to_hop": [
+          "C00",
+          "D01"
+        ],
+        "diem_chuan_tk": 28.84,
+        "ghichu": "Điểm cao nhất trường",
+        "hoc_phi_tk": "Miễn học phí theo quy định nhà nước (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://ued.udn.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Sư phạm Lịch sử",
+        "to_hop": [
+          "C00",
+          "D14"
+        ],
+        "diem_chuan_tk": 28.76,
+        "ghichu": "",
+        "hoc_phi_tk": "Miễn học phí theo quy định nhà nước (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://ued.udn.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "dhkhoahochue",
+    "ten": "ĐH Khoa học – ĐH Huế",
+    "thanh_pho": "Thừa Thiên Huế",
+    "nhom_nganh": [
+      {
+        "ten": "Công nghệ thông tin",
+        "to_hop": [
+          "A00",
+          "A01",
+          "D01"
+        ],
+        "diem_chuan_tk": 17.5,
+        "ghichu": "",
+        "hoc_phi_tk": "Khoảng 14–16 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://husc.hueuni.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Kỹ thuật phần mềm",
+        "to_hop": [
+          "A00",
+          "A01",
+          "D01"
+        ],
+        "diem_chuan_tk": 17.5,
+        "ghichu": "",
+        "hoc_phi_tk": "Khoảng 14–16 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://husc.hueuni.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "dhyduochue",
+    "ten": "ĐH Y Dược – ĐH Huế",
+    "thanh_pho": "Thừa Thiên Huế",
+    "nhom_nganh": [
+      {
+        "ten": "Y khoa",
+        "to_hop": [
+          "B00"
+        ],
+        "diem_chuan_tk": 25.17,
+        "ghichu": "Điểm cao nhất trường",
+        "hoc_phi_tk": "Khoảng 27–35 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "Học bổng khuyến khích học tập",
+        "nam": 2025,
+        "nguon": "https://huemp.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Răng - Hàm - Mặt",
+        "to_hop": [
+          "B00"
+        ],
+        "diem_chuan_tk": 24.4,
+        "ghichu": "",
+        "hoc_phi_tk": "Khoảng 27–35 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://huemp.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Dược học",
+        "to_hop": [
+          "A00",
+          "B00"
+        ],
+        "diem_chuan_tk": 21.25,
+        "ghichu": "",
+        "hoc_phi_tk": "Khoảng 27–35 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://huemp.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "dhnonglamtphcm",
+    "ten": "ĐH Nông Lâm TP.HCM",
+    "thanh_pho": "TP.HCM",
+    "nhom_nganh": [
+      {
+        "ten": "Thú y",
+        "to_hop": [
+          "A00",
+          "B00"
+        ],
+        "diem_chuan_tk": 24.5,
+        "ghichu": "",
+        "hoc_phi_tk": "Khoảng 16–20 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://hcmuaf.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Công nghệ thông tin",
+        "to_hop": [
+          "A00",
+          "A01"
+        ],
+        "diem_chuan_tk": 23,
+        "ghichu": "",
+        "hoc_phi_tk": "Khoảng 18–22 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://hcmuaf.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "dhsaigon",
+    "ten": "ĐH Sài Gòn",
+    "thanh_pho": "TP.HCM",
+    "nhom_nganh": [
+      {
+        "ten": "Sư phạm Toán học",
+        "to_hop": [
+          "A00"
+        ],
+        "diem_chuan_tk": 27.1,
+        "ghichu": "",
+        "hoc_phi_tk": "Miễn học phí theo quy định nhà nước (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://sgu.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Sư phạm Lịch sử",
+        "to_hop": [
+          "C00"
+        ],
+        "diem_chuan_tk": 28.25,
+        "ghichu": "Điểm cao nhất trường",
+        "hoc_phi_tk": "Miễn học phí theo quy định nhà nước (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://sgu.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Sư phạm Ngữ văn",
+        "to_hop": [
+          "C00"
+        ],
+        "diem_chuan_tk": 28.11,
+        "ghichu": "",
+        "hoc_phi_tk": "",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://sgu.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "dhcongnghieptphcm",
+    "ten": "ĐH Công nghiệp TP.HCM",
+    "thanh_pho": "TP.HCM",
+    "nhom_nganh": [
+      {
+        "ten": "Công nghệ kỹ thuật cơ điện tử",
+        "to_hop": [
+          "A00",
+          "A01"
+        ],
+        "diem_chuan_tk": 26.5,
+        "ghichu": "Điểm cao nhất trường",
+        "hoc_phi_tk": "Khoảng 25–30 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://iuh.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Tự động hóa",
+        "to_hop": [
+          "A00",
+          "A01"
+        ],
+        "diem_chuan_tk": 26.5,
+        "ghichu": "Điểm cao nhất trường",
+        "hoc_phi_tk": "Khoảng 25–30 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://iuh.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "dhngoaingu-danang",
+    "ten": "ĐH Ngoại ngữ – ĐH Đà Nẵng",
+    "thanh_pho": "Đà Nẵng",
+    "nhom_nganh": [
+      {
+        "ten": "Sư phạm Tiếng Anh",
+        "to_hop": [
+          "D01"
+        ],
+        "diem_chuan_tk": 27.25,
+        "ghichu": "",
+        "hoc_phi_tk": "",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://tuyensinh.ufl.udn.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Ngôn ngữ Anh",
+        "to_hop": [
+          "A01",
+          "D01",
+          "D14"
+        ],
+        "diem_chuan_tk": 24.5,
+        "ghichu": "",
+        "hoc_phi_tk": "",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://tuyensinh.ufl.udn.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "dhkinhte-hue",
+    "ten": "ĐH Kinh tế – ĐH Huế",
+    "thanh_pho": "Huế",
+    "nhom_nganh": [
+      {
+        "ten": "Kinh tế",
+        "to_hop": [
+          "A00",
+          "A01",
+          "D01"
+        ],
+        "diem_chuan_tk": 16,
+        "ghichu": "",
+        "hoc_phi_tk": "",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://tuyensinh.hce.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Quản trị kinh doanh",
+        "to_hop": [
+          "A00",
+          "A01",
+          "D01"
+        ],
+        "diem_chuan_tk": 16,
+        "ghichu": "",
+        "hoc_phi_tk": "",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://tuyensinh.hce.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "dhsupham-hue",
+    "ten": "ĐH Sư phạm – ĐH Huế",
+    "thanh_pho": "Huế",
+    "nhom_nganh": [
+      {
+        "ten": "Sư phạm Toán học",
+        "to_hop": [
+          "A00",
+          "A01"
+        ],
+        "diem_chuan_tk": 26,
+        "ghichu": "",
+        "hoc_phi_tk": "",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://dhs.hueuni.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Sư phạm Ngữ văn",
+        "to_hop": [
+          "C00",
+          "D01"
+        ],
+        "diem_chuan_tk": 27.5,
+        "ghichu": "",
+        "hoc_phi_tk": "",
+        "hoc_bong": "",
+        "nam": 2025,
+        "nguon": "https://dhs.hueuni.edu.vn",
+        "ngay_cap_nhat": "2026-10-22"
       }
     ]
   }
