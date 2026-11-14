@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
 
 import type { FormData, ApiResult } from "@/lib/types";
-import { getCareerAdvice } from "@/lib/ai";
+import { getCareerAdvice, moTaModel } from "@/lib/ai";
 import { ghiLogConsult, kiemTraGrounding } from "@/lib/eval-log";
 import { kiemTraGioiHan } from "@/lib/rate-limit";
+import { PROMPT_VERSION } from "@/lib/prompt";
 
 export const runtime = "nodejs";
 
@@ -78,7 +79,15 @@ export async function POST(request: Request) {
   // Mã phiên ẩn danh do trình duyệt tự sinh — chỉ để nối log với phiếu
   // đánh giá, không phải tên/def định danh HS (xem lib/eval-log.ts).
   const phien_ma = (body as { phien_ma?: unknown }).phien_ma;
+  // Chế độ đo lường (grounded/baseline) chỉ bật khi server cho phép rõ ràng;
+  // mọi giá trị khác đều bị bỏ qua để không ảnh hưởng luồng production.
+  const cheDoRaw = (body as { che_do?: unknown }).che_do;
+  const cheDo =
+    process.env.CHO_PHEP_DO_LUONG === "1" && (cheDoRaw === "grounded" || cheDoRaw === "baseline")
+      ? cheDoRaw
+      : undefined;
   const batDau = Date.now();
+  const mo = moTaModel();
 
   // ---------- STREAMING (SSE): live status + final result ----------
   if (stream) {
@@ -100,7 +109,7 @@ export async function POST(request: Request) {
         const settled = new Promise<void>((resolve) => {
           void (async () => {
             try {
-              finalResult = await getCareerAdvice(form);
+              finalResult = await getCareerAdvice(form, { cheDo });
             } catch (err) {
               finalError = err;
             } finally {
@@ -126,22 +135,28 @@ export async function POST(request: Request) {
         if (finalError !== null) {
           const loi =
             finalError instanceof Error ? finalError.message : "Đã có lỗi xảy ra, vui lòng thử lại.";
-          ghiLogConsult({
+          await ghiLogConsult({
             phien_ma: String(phien_ma ?? ""),
             lop: form.lop,
             kenh: "stream",
             thanh_cong: false,
             ms: Date.now() - batDau,
+            che_do: cheDo,
+            prompt_version: PROMPT_VERSION,
+            model: mo,
             loi,
           });
           send({ e: loi });
         } else if (finalResult) {
-          ghiLogConsult({
+          await ghiLogConsult({
             phien_ma: String(phien_ma ?? ""),
             lop: form.lop,
             kenh: "stream",
             thanh_cong: true,
             ms: Date.now() - batDau,
+            che_do: cheDo,
+            prompt_version: PROMPT_VERSION,
+            model: mo,
             grounding: kiemTraGrounding(finalResult),
           });
           send({ r: finalResult });
@@ -162,25 +177,31 @@ export async function POST(request: Request) {
 
   // ---------- NON-STREAMING (JSON) ----------
   try {
-    const result = await getCareerAdvice(form);
-    ghiLogConsult({
+    const result = await getCareerAdvice(form, { cheDo });
+    await ghiLogConsult({
       phien_ma: String(phien_ma ?? ""),
       lop: form.lop,
       kenh: "json",
       thanh_cong: true,
       ms: Date.now() - batDau,
+      che_do: cheDo,
+      prompt_version: PROMPT_VERSION,
+      model: mo,
       grounding: kiemTraGrounding(result),
     });
     return NextResponse.json(result);
   } catch (error) {
     const errorMessage =
       error instanceof Error ? error.message : "Đã có lỗi xảy ra, vui lòng thử lại.";
-    ghiLogConsult({
+    await ghiLogConsult({
       phien_ma: String(phien_ma ?? ""),
       lop: form.lop,
       kenh: "json",
       thanh_cong: false,
       ms: Date.now() - batDau,
+      che_do: cheDo,
+      prompt_version: PROMPT_VERSION,
+      model: mo,
       loi: errorMessage,
     });
     return NextResponse.json({ error: errorMessage }, { status: 500 });

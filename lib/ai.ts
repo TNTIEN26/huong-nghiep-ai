@@ -26,6 +26,12 @@ const geminiClient = geminiApiKey ? new GoogleGenAI({ apiKey: geminiApiKey }) : 
 
 const openRouterApiKey = process.env.OPENROUTER_API_KEY ?? "";
 
+export function moTaModel(): string {
+  if (provider === "gemini") return `gemini:${geminiModel}`;
+  if (provider === "openrouter") return "openrouter";
+  return provider;
+}
+
 const DEFAULT_FREE_MODELS = [
   "dots-studio/dots-3-note-preview:free",
   "qwen/qwen3.8-27b:free",
@@ -818,7 +824,11 @@ function khopTu(haystack: string, kim: string): boolean {
   return tuKim.every((t) => tuHay.has(t));
 }
 
-export async function getCareerAdvice(form: FormData): Promise<ApiResult> {
+export async function getCareerAdvice(
+  form: FormData,
+  opts: { cheDo?: "grounded" | "baseline" } = {},
+): Promise<ApiResult> {
+  const cheDo = opts.cheDo === "baseline" ? "baseline" : "grounded";
   const cap = findByLop(form.lop).cap;
   const hint = [...form.mon_manh, ...form.so_thich, form.tinh_cach].join(" ").toLowerCase();
   const scored = nganhNgheList.map((n) => {
@@ -858,8 +868,11 @@ export async function getCareerAdvice(form: FormData): Promise<ApiResult> {
     topTruong.length > 0 ? topTruong : truongDhList.slice(0, 6),
     cap,
   );
-  const userMessage = `${buildUserPrompt(form)}\n\n${buildFormatInstruction()}\n\n${grounding}`;
-  const systemPrompt = buildSystemPrompt();
+  const userMessage =
+    cheDo === "baseline"
+      ? `${buildUserPrompt(form)}\n\n${buildFormatInstruction()}`
+      : `${buildUserPrompt(form)}\n\n${buildFormatInstruction()}\n\n${grounding}`;
+  const systemPrompt = buildSystemPrompt(cheDo);
 
   if (provider === "gemini") {
     return callGemini(userMessage, systemPrompt);

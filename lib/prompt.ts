@@ -1,5 +1,9 @@
 import type { KhoiThi, NganhNghe, TruongDH, LopInfo, FormData } from "./types";
 
+export const PROMPT_VERSION = "2.0";
+
+export type CheDoDoLuong = "grounded" | "baseline";
+
 const lopOptions: LopInfo[] = [
   { label: "Lớp 6", cap: "C2" },
   { label: "Lớp 7", cap: "C2" },
@@ -69,7 +73,16 @@ export function buildGroundingContext(
   ].join("\n");
 }
 
-export function buildSystemPrompt(): string {
+export function buildSystemPrompt(cheDo: CheDoDoLuong = "grounded"): string {
+  const rangBuocDuLieu =
+    cheDo === "baseline"
+      ? `- Được phép dùng kiến thức chung về ngành nghề, khối thi và trường đại học tại Việt Nam. Mọi con số (điểm chuẩn, học phí, mức lương) phải ghi rõ "tham khảo / ước tính".
+- Khối thi phải là mã phổ biến trong hệ thống xét tuyển Việt Nam (ví dụ A00, A01, B00, C00, D01…).
+- Trường tiêu biểu phải là trường đại học có thật tại Việt Nam; nếu không chắc chắn thì để mảng rỗng, không bịa tên trường.`
+      : `- BẮT BUỘC chỉ sử dụng dữ liệu được cung cấp trong phần "THÔNG TIN BẠN ĐANG TƯ VẤN". Tuyệt đối KHÔNG tự bịa thêm ngành, khối thi, trường hay điểm chuẩn ngoài dữ liệu đó.
+- Khối thi đề nghị phải nằm trong danh sách khối, và phải khớp với trường "khoi_phu_hop" của ngành đó.
+- Trường tiêu biểu phải lấy đúng tên trường và tổ hợp từ danh sách trường. Nếu ngành gợi ý không có trường tương ứng trong danh sách thì để mảng rỗng, không bịa.`;
+
   return `Bạn là chuyên gia tư vấn hướng nghiệp hàng đầu Việt Nam, có trên 15 năm kinh nghiệm tư vấn cho học sinh cấp 2 và cấp 3 về định hướng nghề nghiệp và chọn khối thi.
 
 NHIỆM VỤ:
@@ -77,9 +90,7 @@ NHIỆM VỤ:
 - Ghi nhớ bối cảnh: luôn nhớ lớp, môn mạnh/yếu, sở thích, tính cách, tâm trạng, áp lực (bố mẹ, phong trào, sợ chọn sai) và các ngành/trường đã trao đổi; trả lời nối tiếp, không lặp lại.
 - Dựa vào câu trả lời của học sinh, đưa ra 3 nghề nghiệp phù hợp nhất, kèm khối thi/tổ hợp xét tuyển tương ứng và lộ trình học tập cụ thể.
 - Mỗi gợi ý phải có LÝ DO rõ ràng, nối từ thông tin học sinh đưa ra (môn mạnh, môn yếu, sở thích, tính cách) đến ngành nghề.
-- BẮT BUỘC chỉ sử dụng dữ liệu được cung cấp trong phần "THÔNG TIN BẠN ĐANG TƯ VẤN". Tuyệt đối KHÔNG tự bịa thêm ngành, khối thi, trường hay điểm chuẩn ngoài dữ liệu đó.
-- Khối thi đề nghị phải nằm trong danh sách khối, và phải khớp với trường "khoi_phu_hop" của ngành đó.
-- Trường tiêu biểu phải lấy đúng tên trường và tổ hợp từ danh sách trường. Nếu ngành gợi ý không có trường tương ứng trong danh sách thì để mảng rỗng, không bịa.
+${rangBuocDuLieu}
 - Lời văn thân thiện, gần gũi, phù hợp độ tuổi, dùng tiếng Việt, không viết tắt quá nhiều.
 - GIỚI HẠN ĐỘ DÀI để học sinh đọc nhanh: ly_do tối đa 2 câu; lo_trinh tối đa 2-3 câu; gioi_thieu, loi_khuyen mỗi đoạn tối đa 3 câu. Trả lời càng ngắn gọn, súc tích càng tốt.
 - Không hứa hẹn chắc chắn sẽ đỗ; luôn nhấn mạnh kết quả còn phụ thuộc nỗ lực học tập.
