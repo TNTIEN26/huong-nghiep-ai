@@ -117,12 +117,12 @@
           "D01",
           "D07"
         ],
-        "diem_chuan_tk": 27,
+        "diem_chuan_tk": 27.3,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
         "hoc_bong": "Học bổng cho thí sinh điểm cao",
-        "nam": 2025,
-        "nguon": "https://daotao.neu.edu.vn/Resources/Docs/SubDomain/daotao/CDR/2.%20Th%C3%B4ng%20tin%20tuy%E1%BB%83n%20sinh%20n%C4%83m%202025%20H%C3%ACnh%20th%E1%BB%A9c%20%C4%91%C3%A0o%20t%E1%BA%A1o%20%C4%90%E1%BA%A1i%20h%E1%BB%8Dc%20ch%C3%ADnh%20quy.pdf",
+        "nam": 2026,
+        "nguon": "https://neu.edu.vn/thong-bao-diem-chuan-trung-tuyen-dai-hoc-chinh-quy-nam-2026-cua-dai-hoc-kinh-te-quoc-dan/",
         "ngay_cap_nhat": "2026-10-22"
       },
       {
@@ -133,28 +133,28 @@
           "D01",
           "D07"
         ],
-        "diem_chuan_tk": 27.2,
+        "diem_chuan_tk": 27.43,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
         "hoc_bong": "Học bổng cho thí sinh điểm cao",
-        "nam": 2025,
-        "nguon": "https://daotao.neu.edu.vn/Resources/Docs/SubDomain/daotao/CDR/2.%20Th%C3%B4ng%20tin%20tuy%E1%BB%83n%20sinh%20n%C4%83m%202025%20H%C3%ACnh%20th%E1%BB%A9c%20%C4%91%C3%A0o%20t%E1%BA%A1o%20%C4%90%E1%BA%A1i%20h%E1%BB%8Dc%20ch%C3%ADnh%20quy.pdf",
+        "nam": 2026,
+        "nguon": "https://neu.edu.vn/thong-bao-diem-chuan-trung-tuyen-dai-hoc-chinh-quy-nam-2026-cua-dai-hoc-kinh-te-quoc-dan/",
         "ngay_cap_nhat": "2026-10-22"
       },
       {
         "ten": "Marketing",
         "to_hop": [
-          "D01",
           "A00",
           "A01",
+          "D01",
           "D07"
         ],
-        "diem_chuan_tk": 27.6,
+        "diem_chuan_tk": 27.99,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
         "hoc_bong": "Học bổng cho thí sinh điểm cao",
-        "nam": 2025,
-        "nguon": "https://daotao.neu.edu.vn/Resources/Docs/SubDomain/daotao/CDR/2.%20Th%C3%B4ng%20tin%20tuy%E1%BB%83n%20sinh%20n%C4%83m%202025%20H%C3%ACnh%20th%E1%BB%A9c%20%C4%91%C3%A0o%20t%E1%BA%A1o%20%C4%90%E1%BA%A1i%20h%E1%BB%8Dc%20ch%C3%ADnh%20quy.pdf",
+        "nam": 2026,
+        "nguon": "https://neu.edu.vn/thong-bao-diem-chuan-trung-tuyen-dai-hoc-chinh-quy-nam-2026-cua-dai-hoc-kinh-te-quoc-dan/",
         "ngay_cap_nhat": "2026-10-22"
       }
     ]
@@ -275,42 +275,41 @@
           "A01",
           "D01"
         ],
-        "diem_chuan_tk": 28.2,
-        "ghichu": "",
+        "diem_chuan_tk": 25,
+        "ghichu": "Điểm chuẩn 2026 - Trường ĐH Công nghệ (VNU-UET)",
         "hoc_phi_tk": "Khoảng 4–7 triệu đồng/năm (tham khảo)",
         "hoc_bong": "Học bổng cho thí sinh điểm cao",
-        "nam": 2025,
-        "nguon": "https://ueb.edu.vn/Tin-Tuc/UEB/truong-dai-hoc-kinh-te-dhqghn-ban-hanh-thong-tin-tuyen-sinh-dai-hoc-nam-2026/46139",
+        "nam": 2026,
+        "nguon": "https://vnu.edu.vn/diem-chuan-diem-trung-tuyen-dai-hoc-chinh-quy-nam-2026-post40358.html",
         "ngay_cap_nhat": "2026-10-22"
       },
       {
         "ten": "Luật",
         "to_hop": [
+          "A00",
           "C00",
-          "D01",
-          "C19",
-          "A00"
+          "D01"
         ],
-        "diem_chuan_tk": 25.5,
-        "ghichu": "",
+        "diem_chuan_tk": 24.5,
+        "ghichu": "Điểm chuẩn 2026 - Trường ĐH Luật (VNU-L); khối C19 không xét",
         "hoc_phi_tk": "Khoảng 4–7 triệu đồng/năm (tham khảo)",
         "hoc_bong": "Học bổng cho thí sinh điểm cao",
-        "nam": 2025,
-        "nguon": "https://ueb.edu.vn/Tin-Tuc/UEB/truong-dai-hoc-kinh-te-dhqghn-ban-hanh-thong-tin-tuyen-sinh-dai-hoc-nam-2026/46139",
+        "nam": 2026,
+        "nguon": "https://vnu.edu.vn/diem-chuan-diem-trung-tuyen-dai-hoc-chinh-quy-nam-2026-post40358.html",
         "ngay_cap_nhat": "2026-10-22"
       },
       {
         "ten": "Báo chí - Truyền thông",
         "to_hop": [
-          "D01",
-          "C00"
+          "A01",
+          "D01"
         ],
-        "diem_chuan_tk": 25,
-        "ghichu": "",
+        "diem_chuan_tk": 22,
+        "ghichu": "Điểm chuẩn 2026 - Trường KHXH&NV (VNU-USSH); khối C00 không xét",
         "hoc_phi_tk": "Khoảng 4–7 triệu đồng/năm (tham khảo)",
         "hoc_bong": "Học bổng cho thí sinh điểm cao",
-        "nam": 2025,
-        "nguon": "https://ueb.edu.vn/Tin-Tuc/UEB/truong-dai-hoc-kinh-te-dhqghn-ban-hanh-thong-tin-tuyen-sinh-dai-hoc-nam-2026/46139",
+        "nam": 2026,
+        "nguon": "https://vnu.edu.vn/diem-chuan-diem-trung-tuyen-dai-hoc-chinh-quy-nam-2026-post40358.html",
         "ngay_cap_nhat": "2026-10-22"
       }
     ]
@@ -328,7 +327,7 @@
           "D01"
         ],
         "diem_chuan_tk": 28,
-        "ghichu": "",
+        "ghichu": "Năm 2026 trường xét tuyển theo phương thức tổng hợp (thang điểm 100, gồm ĐGNL + học bạ) - không quy đổi được sang điểm thang 30",
         "hoc_phi_tk": "Khoảng 5–10 triệu đồng/năm (tham khảo)",
         "hoc_bong": "Học bổng cho thí sinh điểm cao",
         "nam": 2025,
@@ -342,7 +341,7 @@
           "A01"
         ],
         "diem_chuan_tk": 26,
-        "ghichu": "",
+        "ghichu": "Năm 2026 trường xét tuyển theo phương thức tổng hợp (thang điểm 100, gồm ĐGNL + học bạ) - không quy đổi được sang điểm thang 30",
         "hoc_phi_tk": "Khoảng 5–10 triệu đồng/năm (tham khảo)",
         "hoc_bong": "Học bổng cho thí sinh điểm cao",
         "nam": 2025,
@@ -356,7 +355,7 @@
           "A01"
         ],
         "diem_chuan_tk": 23,
-        "ghichu": "",
+        "ghichu": "Năm 2026 trường xét tuyển theo phương thức tổng hợp (thang điểm 100, gồm ĐGNL + học bạ) - không quy đổi được sang điểm thang 30",
         "hoc_phi_tk": "Khoảng 5–10 triệu đồng/năm (tham khảo)",
         "hoc_bong": "Học bổng cho thí sinh điểm cao",
         "nam": 2025,
@@ -459,14 +458,14 @@
       {
         "ten": "Luật",
         "to_hop": [
-          "A00"
+          "C00"
         ],
-        "diem_chuan_tk": 21.64,
-        "ghichu": "Xét tuyển khối A00",
+        "diem_chuan_tk": 20.5,
+        "ghichu": "Xét tuyển khối C00",
         "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
         "hoc_bong": "Học bổng cho thí sinh điểm cao",
-        "nam": 2025,
-        "nguon": "https://ts.hcmulaw.edu.vn/thong-tin-tuyen-sinh-dai-hoc/diem-trung-tuyen-doi-voi-cac-nganh-dao-tao-trinh-do-dai-hoc-hinh-thuc-dao-tao-chinh-quy-nam-2025-639.html",
+        "nam": 2026,
+        "nguon": "https://ts.hcmulaw.edu.vn/thong-tin-tuyen-sinh-dai-hoc/cong-bo-diem-xet-trung-tuyen-trinh-do-dai-hoc-hinh-thuc-dao-tao-chinh-quy-nam-2026-776.html",
         "ngay_cap_nhat": "2026-10-22"
       },
       {
@@ -474,25 +473,12 @@
         "to_hop": [
           "A01"
         ],
-        "diem_chuan_tk": 20.54,
+        "diem_chuan_tk": 20,
         "ghichu": "Xét tuyển khối A01",
         "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
         "hoc_bong": "Học bổng cho thí sinh điểm cao",
-        "nam": 2025,
-        "nguon": "https://ts.hcmulaw.edu.vn/thong-tin-tuyen-sinh-dai-hoc/diem-trung-tuyen-doi-voi-cac-nganh-dao-tao-trinh-do-dai-hoc-hinh-thuc-dao-tao-chinh-quy-nam-2025-639.html",
-        "ngay_cap_nhat": "2026-10-22"
-      },
-      {
-        "ten": "Luật",
-        "to_hop": [
-          "C00"
-        ],
-        "diem_chuan_tk": 24.94,
-        "ghichu": "Xét tuyển khối C00",
-        "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
-        "hoc_bong": "Học bổng cho thí sinh điểm cao",
-        "nam": 2025,
-        "nguon": "https://ts.hcmulaw.edu.vn/thong-tin-tuyen-sinh-dai-hoc/diem-trung-tuyen-doi-voi-cac-nganh-dao-tao-trinh-do-dai-hoc-hinh-thuc-dao-tao-chinh-quy-nam-2025-639.html",
+        "nam": 2026,
+        "nguon": "https://ts.hcmulaw.edu.vn/thong-tin-tuyen-sinh-dai-hoc/cong-bo-diem-xet-trung-tuyen-trinh-do-dai-hoc-hinh-thuc-dao-tao-chinh-quy-nam-2026-776.html",
         "ngay_cap_nhat": "2026-10-22"
       },
       {
@@ -500,12 +486,64 @@
         "to_hop": [
           "D01"
         ],
-        "diem_chuan_tk": 20.94,
+        "diem_chuan_tk": 20,
         "ghichu": "Xét tuyển khối D01",
         "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
         "hoc_bong": "Học bổng cho thí sinh điểm cao",
-        "nam": 2025,
-        "nguon": "https://ts.hcmulaw.edu.vn/thong-tin-tuyen-sinh-dai-hoc/diem-trung-tuyen-doi-voi-cac-nganh-dao-tao-trinh-do-dai-hoc-hinh-thuc-dao-tao-chinh-quy-nam-2025-639.html",
+        "nam": 2026,
+        "nguon": "https://ts.hcmulaw.edu.vn/thong-tin-tuyen-sinh-dai-hoc/cong-bo-diem-xet-trung-tuyen-trinh-do-dai-hoc-hinh-thuc-dao-tao-chinh-quy-nam-2026-776.html",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Luật",
+        "to_hop": [
+          "D07"
+        ],
+        "diem_chuan_tk": 20,
+        "ghichu": "Xét tuyển khối D07",
+        "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2026,
+        "nguon": "https://ts.hcmulaw.edu.vn/thong-tin-tuyen-sinh-dai-hoc/cong-bo-diem-xet-trung-tuyen-trinh-do-dai-hoc-hinh-thuc-dao-tao-chinh-quy-nam-2026-776.html",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Luật",
+        "to_hop": [
+          "D10"
+        ],
+        "diem_chuan_tk": 20,
+        "ghichu": "Xét tuyển khối D10",
+        "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2026,
+        "nguon": "https://ts.hcmulaw.edu.vn/thong-tin-tuyen-sinh-dai-hoc/cong-bo-diem-xet-trung-tuyen-trinh-do-dai-hoc-hinh-thuc-dao-tao-chinh-quy-nam-2026-776.html",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Luật",
+        "to_hop": [
+          "D14"
+        ],
+        "diem_chuan_tk": 20,
+        "ghichu": "Xét tuyển khối D14",
+        "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2026,
+        "nguon": "https://ts.hcmulaw.edu.vn/thong-tin-tuyen-sinh-dai-hoc/cong-bo-diem-xet-trung-tuyen-trinh-do-dai-hoc-hinh-thuc-dao-tao-chinh-quy-nam-2026-776.html",
+        "ngay_cap_nhat": "2026-10-22"
+      },
+      {
+        "ten": "Luật",
+        "to_hop": [
+          "D15"
+        ],
+        "diem_chuan_tk": 20,
+        "ghichu": "Xét tuyển khối D15",
+        "hoc_phi_tk": "Khoảng 5–7 triệu đồng/năm (tham khảo)",
+        "hoc_bong": "Học bổng cho thí sinh điểm cao",
+        "nam": 2026,
+        "nguon": "https://ts.hcmulaw.edu.vn/thong-tin-tuyen-sinh-dai-hoc/cong-bo-diem-xet-trung-tuyen-trinh-do-dai-hoc-hinh-thuc-dao-tao-chinh-quy-nam-2026-776.html",
         "ngay_cap_nhat": "2026-10-22"
       }
     ]
@@ -681,12 +719,12 @@
           "A02",
           "D07"
         ],
-        "diem_chuan_tk": 28.5,
+        "diem_chuan_tk": 24.8,
         "ghichu": "Điểm cao nhất trường",
         "hoc_phi_tk": "Miễn học phí theo quy định nhà nước (tham khảo)",
         "hoc_bong": "Học bổng khuyến khích học tập",
-        "nam": 2025,
-        "nguon": "https://dlu.edu.vn/thong-bao-diem-chuan-trung-tuyen-dai-hoc-he-chinh-quy-nam-2025-truong-dai-hoc-da-lat/",
+        "nam": 2026,
+        "nguon": "https://dlu.edu.vn/tuyen-sinh-2026-thong-bao-diem-chuan-trung-tuyen-dai-hoc-he-chinh-quy-nam-2026-truong-dai-hoc-da-lat/",
         "ngay_cap_nhat": "2026-10-22"
       },
       {
@@ -697,12 +735,12 @@
           "C04",
           "D01"
         ],
-        "diem_chuan_tk": 21,
+        "diem_chuan_tk": 19,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 14–18 triệu đồng/năm (tham khảo)",
         "hoc_bong": "",
-        "nam": 2025,
-        "nguon": "https://dlu.edu.vn/thong-bao-diem-chuan-trung-tuyen-dai-hoc-he-chinh-quy-nam-2025-truong-dai-hoc-da-lat/",
+        "nam": 2026,
+        "nguon": "https://dlu.edu.vn/tuyen-sinh-2026-thong-bao-diem-chuan-trung-tuyen-dai-hoc-he-chinh-quy-nam-2026-truong-dai-hoc-da-lat/",
         "ngay_cap_nhat": "2026-10-22"
       },
       {
@@ -713,12 +751,12 @@
           "C04",
           "D01"
         ],
-        "diem_chuan_tk": 23,
+        "diem_chuan_tk": 20,
         "ghichu": "",
         "hoc_phi_tk": "Khoảng 14–18 triệu đồng/năm (tham khảo)",
         "hoc_bong": "",
-        "nam": 2025,
-        "nguon": "https://dlu.edu.vn/thong-bao-diem-chuan-trung-tuyen-dai-hoc-he-chinh-quy-nam-2025-truong-dai-hoc-da-lat/",
+        "nam": 2026,
+        "nguon": "https://dlu.edu.vn/tuyen-sinh-2026-thong-bao-diem-chuan-trung-tuyen-dai-hoc-he-chinh-quy-nam-2026-truong-dai-hoc-da-lat/",
         "ngay_cap_nhat": "2026-10-22"
       },
       {
@@ -728,7 +766,7 @@
           "D01"
         ],
         "diem_chuan_tk": 27.75,
-        "ghichu": "",
+        "ghichu": "Chưa có điểm chuẩn 2026 - cần tra bảng TB 1302/TB-ĐHDL",
         "hoc_phi_tk": "",
         "hoc_bong": "",
         "nam": 2025,
@@ -741,7 +779,7 @@
           "D01"
         ],
         "diem_chuan_tk": 27.75,
-        "ghichu": "",
+        "ghichu": "Chưa có điểm chuẩn 2026 - cần tra bảng TB 1302/TB-ĐHDL",
         "hoc_phi_tk": "",
         "hoc_bong": "",
         "nam": 2025,
