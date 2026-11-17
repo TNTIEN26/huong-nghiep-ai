@@ -1,94 +1,9 @@
 import Link from "next/link";
 
 import ExamCountdown from "./components/ExamCountdown";
-import DemNguocBadge from "./components/DemNguocBadge";
 import MascotOwl from "./components/MascotOwl";
-import QuizTinhCach from "./components/QuizTinhCach";
 import SiteNav from "./components/SiteNav";
 import TinTuc from "./components/TinTuc";
-
-const BUOCS = [
-  {
-    so: "01",
-    ten: "Chat với Cú Đậu",
-    moTa: "Kể về bản thân, AI gợi ý ngành, khối thi và lộ trình phù hợp.",
-    href: "/huong-nghiep",
-    nut: "Chat ngay →",
-  },
-  {
-    so: "02",
-    ten: "Tính điểm",
-    moTa: "Học bạ, xét tốt nghiệp, quy đổi ĐGNL — tính đúng quy chế Bộ.",
-    href: "/tinh-diem",
-    nut: "Tính ngay →",
-  },
-  {
-    so: "03",
-    ten: "Xem lịch thi",
-    moTa: "Đếm ngược từng môn thi tốt nghiệp THPT 2027 theo giờ thật.",
-    href: "#lich-thi",
-    nut: "Xem lịch →",
-  },
-];
-
-const CONG_CU = [
-  { ten: "Tính điểm học bạ", moTa: "TB 3 năm trọng số 1–2–3", href: "/tinh-diem" },
-  { ten: "Tính điểm tốt nghiệp", moTa: "Kèm sơ đồ công thức trực quan", href: "/tinh-diem" },
-  { ten: "Quy đổi ĐGNL", moTa: "HSA, V-ACT, TSA, SAT, IELTS…", href: "/tinh-diem" },
-  { ten: "Tra tổ hợp môn", moTa: "Chọn môn, hiện tổ hợp tương ứng", href: "/tinh-diem" },
-  { ten: "Đếm ngược kỳ thi", moTa: "Từng môn, từng giây", href: "#lich-thi" },
-  { ten: "Chat hướng nghiệp", moTa: "Hỏi đáp cùng Cú Đậu", href: "/huong-nghiep" },
-];
-
-const CAM_NANG = [
-  {
-    ten: "Cách tính điểm tốt nghiệp 2027",
-    moTa: "Trọng số học bạ, điểm liệt, điểm ưu tiên — giải thích từng bước.",
-    href: "/tinh-diem",
-  },
-  {
-    ten: "Lịch thi tốt nghiệp 2027",
-    moTa: "Ngày giờ từng môn + đồng hồ đếm ngược theo giờ thật.",
-    href: "#lich-thi",
-  },
-  {
-    ten: "Quy chế tuyển sinh mới nhất",
-    moTa: "Cổng thông tin tuyển sinh chính thức của Bộ GD&ĐT.",
-    href: "https://tuyensinh.moet.gov.vn/",
-    ngoai: true,
-  },
-];
-
-const LO_TRINH = [
-  {
-    nam: "Lớp 10",
-    ten: "Khám phá",
-    moTa: "Làm quiz tính cách, chat với Cú Đậu để biết mình hợp nhóm nào.",
-    href: "/huong-nghiep",
-    nut: "Chat ngay →",
-  },
-  {
-    nam: "Lớp 11",
-    ten: "Thử sức",
-    moTa: "Nhập học bạ, quy đổi thử điểm HSA, V-ACT, TSA xem tới đâu.",
-    href: "/tinh-diem",
-    nut: "Tính thử →",
-  },
-  {
-    nam: "Lớp 12",
-    ten: "Về đích",
-    moTa: "Theo dõi đếm ngược, tính điểm tốt nghiệp, chốt nguyện vọng.",
-    href: "#lich-thi",
-    nut: "Xem lịch →",
-  },
-  {
-    nam: "Tân sinh viên",
-    ten: "Nhập học",
-    moTa: "Đối chiếu đề án trường, chuẩn bị hồ sơ nhập học tự tin.",
-    href: "https://tuyensinh.moet.gov.vn/",
-    nut: "Cổng Bộ →",
-  },
-];
 
 function TieuDeMuc({ nho, to, moTa }: { nho: string; to: string; moTa: string }) {
   return (
@@ -168,66 +83,12 @@ export default function Home() {
             </dl>
           </div>
           <div className="relative hidden justify-center lg:flex">
-            <MascotOwl className="h-52 w-52" />
-            <div
-              className="bob-nhe absolute -left-2 top-8 rounded-2xl border border-stone-900/10 bg-white/90 px-4 py-2.5 text-left shadow-lg backdrop-blur"
-              style={{ animationDelay: "0.8s" }}
-            >
-              <p className="text-xs font-bold">A00 • Toán Lý Hóa</p>
-              <p className="text-[11px] text-stone-500">Tư duy Logic hợp nhất</p>
-            </div>
-            <div
-              className="bob-nhe absolute -right-2 top-1/3 rounded-2xl border border-stone-900/10 bg-white/90 px-4 py-2.5 text-left shadow-lg backdrop-blur"
-              style={{ animationDelay: "2s" }}
-            >
-              <p className="text-xs font-bold">ĐXTN 8.48</p>
-              <p className="text-[11px] text-stone-500">Đỗ tốt nghiệp</p>
-            </div>
-            <DemNguocBadge />
+            <MascotOwl className="h-80 w-80 lg:h-96 lg:w-96" src="/cudemhocbai.png" />
           </div>
         </div>
       </header>
 
 <main id="trai-nghiem" className="mx-auto w-full max-w-[1440px] flex-1 px-4 sm:px-8">
-        {/* 3 BƯỚC */}
-        <section className="py-10 sm:py-12">
-          <TieuDeMuc
-            nho="Bắt đầu tại đây"
-            to="3 bước để bắt đầu ngay"
-            moTa="Dù bạn đang mông lung chọn ngành hay cần tính điểm gấp, cứ đi theo 3 bước này."
-          />
-          <ol className="mt-8 grid gap-4 sm:grid-cols-3">
-            {BUOCS.map((b) => (
-              <li
-                key={b.so}
-                className="flex flex-col rounded-3xl border border-stone-900/10 bg-white p-6 shadow-[0_16px_40px_-24px_rgba(28,25,23,0.3)]"
-              >
-                <p className="text-sm font-black text-blue-600">{b.so}</p>
-                <h3 className="mt-2 font-extrabold">{b.ten}</h3>
-                <p className="mt-1.5 flex-1 text-sm leading-relaxed text-stone-500">{b.moTa}</p>
-                <Link
-                  href={b.href}
-                  className="mt-4 text-sm font-bold text-blue-700 hover:text-blue-600"
-                >
-                  {b.nut}
-                </Link>
-              </li>
-            ))}
-          </ol>
-        </section>
-
-        {/* QUIZ */}
-        <section className="border-t border-stone-900/10 py-12 sm:py-16">
-          <TieuDeMuc
-            nho="Khám phá bản thân"
-            to="Bạn thuộc nhóm tính cách nào?"
-            moTa="6 câu hỏi ngắn, 1 phút — biết ngay nhóm tính cách và khối thi gợi ý."
-          />
-          <div className="mx-auto mt-8 max-w-4xl">
-            <QuizTinhCach />
-          </div>
-        </section>
-
         {/* TIN TỨC */}
         <section className="border-t border-stone-900/10 py-12 sm:py-16">
           <TieuDeMuc
@@ -250,112 +111,6 @@ export default function Home() {
           <div className="mx-auto mt-8 max-w-6xl">
             <ExamCountdown />
           </div>
-        </section>
-
-        {/* BỘ CÔNG CỤ */}
-        <section className="border-t border-stone-900/10 py-12 sm:py-16">
-          <TieuDeMuc
-            nho="Trọn bộ công cụ"
-            to="Mọi thứ bạn cần, ở một chỗ"
-            moTa="Tính toán đúng quy chế Bộ, miễn phí, không cần tài khoản."
-          />
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {CONG_CU.map((c, i) => (
-              <Link
-                key={c.ten}
-                href={c.href}
-                className="group rounded-3xl border border-stone-900/10 bg-white p-6 transition hover:border-blue-400/60 hover:shadow-[0_0_28px_-10px_rgba(37,99,235,0.4)]"
-              >
-                <p className="text-sm font-black text-blue-600">
-                  {String(i + 1).padStart(2, "0")}
-                </p>
-                <h3 className="mt-2 font-extrabold">{c.ten}</h3>
-                <p className="mt-1 text-sm text-stone-500">{c.moTa}</p>
-                <p className="mt-3 text-sm font-bold text-blue-700">
-                  Khám phá ngay <span className="inline-block transition group-hover:translate-x-1">→</span>
-                </p>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* CẨM NANG */}
-        <section className="border-t border-stone-900/10 py-12 sm:py-16">
-          <TieuDeMuc
-            nho="Cẩm nang"
-            to="Đọc hiểu trước khi thi"
-            moTa="Những bài giải thích ngắn gọn, đọc 3 phút hiểu ngay."
-          />
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            {CAM_NANG.map((c) =>
-              c.ngoai ? (
-                <a
-                  key={c.ten}
-                  href={c.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-3xl border border-stone-900/10 bg-white p-6 transition hover:border-blue-400/60"
-                >
-                  <h3 className="font-extrabold leading-snug">{c.ten}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-stone-500">{c.moTa}</p>
-                  <p className="mt-3 text-sm font-bold text-blue-700">Đọc ngay →</p>
-                </a>
-              ) : (
-                <Link
-                  key={c.ten}
-                  href={c.href}
-                  className="rounded-3xl border border-stone-900/10 bg-white p-6 transition hover:border-blue-400/60"
-                >
-                  <h3 className="font-extrabold leading-snug">{c.ten}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-stone-500">{c.moTa}</p>
-                  <p className="mt-3 text-sm font-bold text-blue-700">Đọc ngay →</p>
-                </Link>
-              ),
-            )}
-          </div>
-        </section>
-
-        {/* LỘ TRÌNH 4 NĂM */}
-        <section className="border-t border-stone-900/10 py-12 sm:py-16">
-          <TieuDeMuc
-            nho="Đồng hành dài hạn"
-            to="Lộ trình 4 năm cùng Cú Đậu"
-            moTa="Mỗi năm một việc — đi hết lộ trình là tới cổng trường mơ ước."
-          />
-          <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {LO_TRINH.map((g, i) => (
-              <li
-                key={g.nam}
-                className="relative rounded-3xl border border-stone-900/10 bg-white p-6"
-              >
-                <span className="absolute -top-3.5 left-6 rounded-full bg-stone-900 px-3 py-1 text-[11px] font-black text-[#F4F8FE]">
-                  {i + 1}
-                </span>
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-blue-600">
-                  {g.nam}
-                </p>
-                <h3 className="mt-1 font-extrabold">{g.ten}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-stone-500">{g.moTa}</p>
-                {g.href.startsWith("http") ? (
-                  <a
-                    href={g.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-3 inline-block text-sm font-bold text-blue-700 hover:text-blue-600"
-                  >
-                    {g.nut}
-                  </a>
-                ) : (
-                  <Link
-                    href={g.href}
-                    className="mt-3 inline-block text-sm font-bold text-blue-700 hover:text-blue-600"
-                  >
-                    {g.nut}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ol>
         </section>
 
         {/* CTA CHAT */}

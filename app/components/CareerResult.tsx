@@ -162,7 +162,7 @@ export default function CareerResult({
 
             {nganh.khoi_thi.length > 0 && (
               <a
-                href={`/tinh-diem?khoi=${encodeURIComponent(nganh.khoi_thi[0])}#chon-truong`}
+                href="/tinh-diem"
                 className="mt-3 inline-block rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-blue-500"
               >
                 Tính điểm cho khối {nganh.khoi_thi[0]} →
