@@ -1,0 +1,4077 @@
+[
+ {
+  "ten": "Đại Học Bách Khoa Hà Nội",
+  "id": 40,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 65,
+  "so_to_hop": 13,
+  "diem_min": 19.5,
+  "diem_max": 29.39,
+  "de_an": {
+   "slug": "dai-hoc-bach-khoa-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/dai-hoc-bach-khoa-ha-noi",
+   "so_nganh": 1897,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Đại Học Cần Thơ",
+  "id": 469,
+  "thanh_pho": "Thành phố Cần Thơ",
+  "so_nganh": 119,
+  "so_to_hop": 36,
+  "diem_min": 15,
+  "diem_max": 28.61,
+  "de_an": {
+   "slug": "dai-hoc-can-tho",
+   "link": "https://huongnghiep.hocmai.vn/de-an/dai-hoc-can-tho",
+   "so_nganh": 1899,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Đại Học Công Nghiệp Hà Nội",
+  "id": null,
+  "thanh_pho": null,
+  "so_nganh": 60,
+  "so_to_hop": 12,
+  "diem_min": 18,
+  "diem_max": 26.27,
+  "de_an": null
+ },
+ {
+  "ten": "Đại Học Duy Tân",
+  "id": 653,
+  "thanh_pho": "Thành phố Đà Nẵng",
+  "so_nganh": 68,
+  "so_to_hop": 23,
+  "diem_min": 15,
+  "diem_max": 20.5,
+  "de_an": {
+   "slug": "dai-hoc-duy-tan",
+   "link": "https://huongnghiep.hocmai.vn/de-an/dai-hoc-duy-tan",
+   "so_nganh": 1897,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Đại Học Kinh Tế Quốc Dân",
+  "id": 39,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 87,
+  "so_to_hop": 4,
+  "diem_min": 23,
+  "diem_max": 28.83,
+  "de_an": {
+   "slug": "dai-hoc-kinh-te-quoc-dan",
+   "link": "https://huongnghiep.hocmai.vn/de-an/dai-hoc-kinh-te-quoc-dan",
+   "so_nganh": 1898,
+   "phuong_thuc": 4
+  }
+ },
+ {
+  "ten": "Đại Học Kinh Tế TPHCM",
+  "id": 510,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 59,
+  "so_to_hop": 28,
+  "diem_min": 22.8,
+  "diem_max": 27.7,
+  "de_an": {
+   "slug": "dai-hoc-kinh-te-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/dai-hoc-kinh-te-tphcm",
+   "so_nganh": 1896,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Đại học Kinh Tế TPHCM – Phân hiệu Vĩnh Long",
+  "id": 680,
+  "thanh_pho": null,
+  "so_nganh": 1,
+  "so_to_hop": 5,
+  "diem_min": 17,
+  "diem_max": 17,
+  "de_an": null
+ },
+ {
+  "ten": "Đại Học Phenikaa",
+  "id": 417,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 64,
+  "so_to_hop": 44,
+  "diem_min": 17,
+  "diem_max": 25.5,
+  "de_an": {
+   "slug": "dai-hoc-phenikaa",
+   "link": "https://huongnghiep.hocmai.vn/de-an/dai-hoc-phenikaa",
+   "so_nganh": 1897,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Đại Học Sư Phạm Thái Nguyên",
+  "id": 465,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 18,
+  "so_to_hop": 29,
+  "diem_min": 21.25,
+  "diem_max": 28.03,
+  "de_an": {
+   "slug": "dai-hoc-su-pham-thai-nguyen",
+   "link": "https://huongnghiep.hocmai.vn/de-an/dai-hoc-su-pham-thai-nguyen",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Đại Học Y Dược TPHCM",
+  "id": 374,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 16,
+  "so_to_hop": 4,
+  "diem_min": 17,
+  "diem_max": 27.34,
+  "de_an": {
+   "slug": "dai-hoc-y-duoc-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/dai-hoc-y-duoc-tphcm",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Học Viện An Ninh Nhân Dân",
+  "id": 396,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 13,
+  "so_to_hop": 6,
+  "diem_min": 18.78,
+  "diem_max": 26.27,
+  "de_an": {
+   "slug": "hoc-vien-an-ninh-nhan-dan",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-an-ninh-nhan-dan",
+   "so_nganh": 1894,
+   "phuong_thuc": 0
+  }
+ },
+ {
+  "ten": "Học viện Báo chí và Tuyên truyền",
+  "id": 883,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 69,
+  "so_to_hop": 6,
+  "diem_min": 23.11,
+  "diem_max": 38.93,
+  "de_an": {
+   "slug": "hoc-vien-bao-chi-va-tuyen-truyen",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-bao-chi-va-tuyen-truyen",
+   "so_nganh": 1898,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Học Viện Biên Phòng",
+  "id": 473,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 6,
+  "so_to_hop": 5,
+  "diem_min": 29.52,
+  "diem_max": 31.33,
+  "de_an": {
+   "slug": "hoc-vien-bien-phong",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-bien-phong",
+   "so_nganh": 1895,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Học viện cán bộ TPHCM",
+  "id": 602,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 5,
+  "so_to_hop": 8,
+  "diem_min": 22.5,
+  "diem_max": 24,
+  "de_an": {
+   "slug": "hoc-vien-can-bo-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-can-bo-tphcm",
+   "so_nganh": 1893,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Học Viện Cảnh Sát Nhân Dân",
+  "id": 405,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 8,
+  "so_to_hop": 4,
+  "diem_min": 18.67,
+  "diem_max": 26.01,
+  "de_an": {
+   "slug": "hoc-vien-canh-sat-nhan-dan",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-canh-sat-nhan-dan",
+   "so_nganh": 1893,
+   "phuong_thuc": 0
+  }
+ },
+ {
+  "ten": "Học Viện Chính Sách và Phát Triển",
+  "id": 551,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 15,
+  "so_to_hop": 7,
+  "diem_min": 22,
+  "diem_max": 30.02,
+  "de_an": {
+   "slug": "hoc-vien-chinh-sach-va-phat-trien",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-chinh-sach-va-phat-trien",
+   "so_nganh": 1894,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Học Viện Chính Trị Công An Nhân Dân",
+  "id": 541,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 4,
+  "so_to_hop": 4,
+  "diem_min": 21.74,
+  "diem_max": 25.21,
+  "de_an": {
+   "slug": "hoc-vien-chinh-tri-cong-an-nhan-dan",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-chinh-tri-cong-an-nhan-dan",
+   "so_nganh": 1900,
+   "phuong_thuc": 0
+  }
+ },
+ {
+  "ten": "Học Viện Công Nghệ Bưu Chính Viễn Thông",
+  "id": 366,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 30,
+  "so_to_hop": 4,
+  "diem_min": 21,
+  "diem_max": 26.21,
+  "de_an": {
+   "slug": "hoc-vien-cong-nghe-buu-chinh-vien-thong",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-cong-nghe-buu-chinh-vien-thong",
+   "so_nganh": 1895,
+   "phuong_thuc": 4
+  }
+ },
+ {
+  "ten": "Học Viện Công Nghệ Bưu Chính Viễn Thông (Cơ sở TP.HCM)",
+  "id": 526,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 11,
+  "so_to_hop": 4,
+  "diem_min": 16.25,
+  "diem_max": 24,
+  "de_an": null
+ },
+ {
+  "ten": "Học Viện Dân Tộc",
+  "id": 758,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 1,
+  "so_to_hop": 4,
+  "diem_min": 15,
+  "diem_max": 15,
+  "de_an": {
+   "slug": "hoc-vien-dan-toc",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-dan-toc",
+   "so_nganh": 1901,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Học Viện Hải Quân",
+  "id": 413,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 2,
+  "so_to_hop": 3,
+  "diem_min": 23.08,
+  "diem_max": 23.96,
+  "de_an": {
+   "slug": "hoc-vien-hai-quan",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-hai-quan",
+   "so_nganh": 1893,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Học Viện Hàng không Việt Nam",
+  "id": 415,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 28,
+  "so_to_hop": 48,
+  "diem_min": 18,
+  "diem_max": 27,
+  "de_an": {
+   "slug": "hoc-vien-hang-khong-viet-nam",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-hang-khong-viet-nam",
+   "so_nganh": 1895,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Học Viện Hành Chính và Quản trị công",
+  "id": 565,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 23,
+  "so_to_hop": 19,
+  "diem_min": 19.75,
+  "diem_max": 26.2,
+  "de_an": {
+   "slug": "hoc-vien-hanh-chinh-va-quan-tri-cong",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-hanh-chinh-va-quan-tri-cong",
+   "so_nganh": 1896,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Học Viện Hậu Cần - Hệ Dân sự",
+  "id": 879,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 3,
+  "so_to_hop": 3,
+  "diem_min": 18,
+  "diem_max": 18,
+  "de_an": {
+   "slug": "hoc-vien-hau-can-he-dan-su",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-hau-can-he-dan-su",
+   "so_nganh": 1900,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Học Viện Hậu Cần – Hệ Quân sự",
+  "id": 505,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 4,
+  "so_to_hop": 3,
+  "diem_min": 23.67,
+  "diem_max": 28.33,
+  "de_an": null
+ },
+ {
+  "ten": "Học Viện Khoa Học Quân Sự - Hệ Dân sự",
+  "id": 871,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 3,
+  "so_to_hop": 3,
+  "diem_min": 19,
+  "diem_max": 20.81,
+  "de_an": null
+ },
+ {
+  "ten": "Học Viện Khoa Học Quân Sự - Hệ Quân sự",
+  "id": 482,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 10,
+  "so_to_hop": 5,
+  "diem_min": 24.19,
+  "diem_max": 30,
+  "de_an": {
+   "slug": "hoc-vien-khoa-hoc-quan-su-he-quan-su",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-khoa-hoc-quan-su-he-quan-su",
+   "so_nganh": 1894,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Học Viện Kỹ Thuật Mật Mã",
+  "id": 384,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 4,
+  "so_to_hop": 2,
+  "diem_min": 23.2,
+  "diem_max": 24.42,
+  "de_an": {
+   "slug": "hoc-vien-ky-thuat-mat-ma",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-ky-thuat-mat-ma",
+   "so_nganh": 1900,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Học Viện Kỹ Thuật Quân Sự - Hệ Dân sự",
+  "id": 869,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 10,
+  "so_to_hop": 2,
+  "diem_min": 20.25,
+  "diem_max": 26.51,
+  "de_an": {
+   "slug": "hoc-vien-ky-thuat-quan-su-he-dan-su",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-ky-thuat-quan-su-he-dan-su",
+   "so_nganh": 1894,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Học Viện Kỹ Thuật Quân Sự – Hệ Quân sự",
+  "id": 427,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 7,
+  "so_to_hop": 2,
+  "diem_min": 26.4,
+  "diem_max": 29.25,
+  "de_an": {
+   "slug": "hoc-vien-ky-thuat-quan-su-he-quan-su",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-ky-thuat-quan-su-he-quan-su",
+   "so_nganh": 1893,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Học viện Kỹ thuật và Công nghệ an ninh (Phía Bắc)",
+  "id": null,
+  "thanh_pho": null,
+  "so_nganh": 4,
+  "so_to_hop": 3,
+  "diem_min": 20.53,
+  "diem_max": 25.21,
+  "de_an": null
+ },
+ {
+  "ten": "Học viện Kỹ thuật và Công nghệ an ninh (Phía Nam)",
+  "id": null,
+  "thanh_pho": null,
+  "so_nganh": 4,
+  "so_to_hop": 3,
+  "diem_min": 20.53,
+  "diem_max": 25.21,
+  "de_an": null
+ },
+ {
+  "ten": "Học Viện Ngân Hàng",
+  "id": 359,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 42,
+  "so_to_hop": 8,
+  "diem_min": 21,
+  "diem_max": 26.97,
+  "de_an": {
+   "slug": "hoc-vien-ngan-hang",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-ngan-hang",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Học Viện Ngân Hàng (Phân Viện Bắc Ninh)",
+  "id": 631,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 4,
+  "so_to_hop": 4,
+  "diem_min": 20.35,
+  "diem_max": 21.25,
+  "de_an": {
+   "slug": "hoc-vien-ngan-hang-phan-vien-bac-ninh",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-ngan-hang-phan-vien-bac-ninh",
+   "so_nganh": 1900,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Học Viện Ngân Hàng (Phân Viện Phú Yên)",
+  "id": 804,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 5,
+  "so_to_hop": 4,
+  "diem_min": 15,
+  "diem_max": 15,
+  "de_an": {
+   "slug": "hoc-vien-ngan-hang-phan-vien-phu-yen",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-ngan-hang-phan-vien-phu-yen",
+   "so_nganh": 1893,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Học Viện Ngoại Giao",
+  "id": 431,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 11,
+  "so_to_hop": 13,
+  "diem_min": 24.17,
+  "diem_max": 26.09,
+  "de_an": {
+   "slug": "hoc-vien-ngoai-giao",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-ngoai-giao",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Học Viện Nông Nghiệp Việt Nam",
+  "id": 451,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 19,
+  "so_to_hop": 24,
+  "diem_min": 17,
+  "diem_max": 24.1,
+  "de_an": {
+   "slug": "hoc-vien-nong-nghiep-viet-nam",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-nong-nghiep-viet-nam",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Học Viện Phòng Không – Không Quân",
+  "id": 419,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 4,
+  "so_to_hop": 3,
+  "diem_min": 23.25,
+  "diem_max": 26.5,
+  "de_an": {
+   "slug": "hoc-vien-phong-khong-khong-quan",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-phong-khong-khong-quan",
+   "so_nganh": 1893,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Học Viện Phụ Nữ Việt Nam",
+  "id": 392,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 13,
+  "so_to_hop": 10,
+  "diem_min": 20.68,
+  "diem_max": 26.62,
+  "de_an": {
+   "slug": "hoc-vien-phu-nu-viet-nam",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-phu-nu-viet-nam",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Học Viện Quản Lý Giáo Dục",
+  "id": 651,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 7,
+  "so_to_hop": 11,
+  "diem_min": 15,
+  "diem_max": 25.5,
+  "de_an": {
+   "slug": "hoc-vien-quan-ly-giao-duc",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-quan-ly-giao-duc",
+   "so_nganh": 1893,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Học Viện Quân Y - Hệ Dân sự",
+  "id": 873,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 2,
+  "so_to_hop": 3,
+  "diem_min": 23.93,
+  "diem_max": 27.33,
+  "de_an": {
+   "slug": "hoc-vien-quan-y-he-dan-su",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-quan-y-he-dan-su",
+   "so_nganh": 1891,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Học Viện Quân Y – Hệ Quân sự",
+  "id": 501,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 8,
+  "so_to_hop": 3,
+  "diem_min": 24.81,
+  "diem_max": 30,
+  "de_an": null
+ },
+ {
+  "ten": "Học Viện Tài chính",
+  "id": 358,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 38,
+  "so_to_hop": 4,
+  "diem_min": 21,
+  "diem_max": 26.6,
+  "de_an": {
+   "slug": "hoc-vien-tai-chinh",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-tai-chinh",
+   "so_nganh": 1896,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Học Viện Thanh Thiếu Niên Việt Nam",
+  "id": 498,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 9,
+  "so_to_hop": 10,
+  "diem_min": 18.5,
+  "diem_max": 25.8,
+  "de_an": {
+   "slug": "hoc-vien-thanh-thieu-nien-viet-nam",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-thanh-thieu-nien-viet-nam",
+   "so_nganh": 1893,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Học viện Tòa án",
+  "id": 486,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 4,
+  "so_to_hop": 4,
+  "diem_min": 21.03,
+  "diem_max": 23,
+  "de_an": {
+   "slug": "hoc-vien-toa-an",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-toa-an",
+   "so_nganh": 1901,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Học Viện Y Dược Học Cổ Truyền Việt Nam",
+  "id": 402,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 3,
+  "so_to_hop": 20,
+  "diem_min": 21,
+  "diem_max": 24.25,
+  "de_an": {
+   "slug": "hoc-vien-y-duoc-hoc-co-truyen-viet-nam",
+   "link": "https://huongnghiep.hocmai.vn/de-an/hoc-vien-y-duoc-hoc-co-truyen-viet-nam",
+   "so_nganh": 1892,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Khoa Kỹ thuật và Công nghệ - Đại học Huế",
+  "id": 754,
+  "thanh_pho": "Thành phố Huế",
+  "so_nganh": 7,
+  "so_to_hop": 9,
+  "diem_min": 16,
+  "diem_max": 24.05,
+  "de_an": null
+ },
+ {
+  "ten": "Khoa Quốc tế - Đại học Huế",
+  "id": 633,
+  "thanh_pho": "Thành phố Huế",
+  "so_nganh": 5,
+  "so_to_hop": 5,
+  "diem_min": 15,
+  "diem_max": 21.5,
+  "de_an": null
+ },
+ {
+  "ten": "Khoa Quốc Tế - Đại Học Thái Nguyên",
+  "id": 772,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 7,
+  "so_to_hop": 15,
+  "diem_min": 16,
+  "diem_max": 17,
+  "de_an": {
+   "slug": "khoa-quoc-te-dai-hoc-thai-nguyen",
+   "link": "https://huongnghiep.hocmai.vn/de-an/khoa-quoc-te-dai-hoc-thai-nguyen",
+   "so_nganh": 1893,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Phân Hiệu Đại Học Đà Nẵng tại Kon Tum",
+  "id": 594,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 7,
+  "so_to_hop": 15,
+  "diem_min": 15,
+  "diem_max": 24.6,
+  "de_an": {
+   "slug": "phan-hieu-dai-hoc-da-nang-tai-kon-tum",
+   "link": "https://huongnghiep.hocmai.vn/de-an/phan-hieu-dai-hoc-da-nang-tai-kon-tum",
+   "so_nganh": 1893,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Phân Hiệu Đại Học Huế tại Quảng Trị",
+  "id": 785,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 3,
+  "so_to_hop": 4,
+  "diem_min": 15,
+  "diem_max": 15,
+  "de_an": {
+   "slug": "phan-hieu-dai-hoc-hue-tai-quang-tri",
+   "link": "https://huongnghiep.hocmai.vn/de-an/phan-hieu-dai-hoc-hue-tai-quang-tri",
+   "so_nganh": 1892,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Phân hiệu Đại Học Lâm nghiệp tại Đồng Nai",
+  "id": 765,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 15,
+  "so_to_hop": 11,
+  "diem_min": null,
+  "diem_max": null,
+  "de_an": {
+   "slug": "phan-hieu-dai-hoc-lam-nghiep-tai-dong-nai",
+   "link": "https://huongnghiep.hocmai.vn/de-an/phan-hieu-dai-hoc-lam-nghiep-tai-dong-nai",
+   "so_nganh": 1894,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Phân hiệu Đại học Lâm nghiệp tỉnh Gia Lai",
+  "id": 802,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 6,
+  "so_to_hop": 19,
+  "diem_min": null,
+  "diem_max": null,
+  "de_an": {
+   "slug": "phan-hieu-dai-hoc-lam-nghiep-tinh-gia-lai",
+   "link": "https://huongnghiep.hocmai.vn/de-an/phan-hieu-dai-hoc-lam-nghiep-tinh-gia-lai",
+   "so_nganh": 1893,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Phân hiệu Đại học Nông Lâm TPHCM tại Gia Lai",
+  "id": 778,
+  "thanh_pho": null,
+  "so_nganh": 3,
+  "so_to_hop": 11,
+  "diem_min": 16,
+  "diem_max": 18,
+  "de_an": null
+ },
+ {
+  "ten": "Phân hiệu Đại học Nông Lâm TPHCM tại Ninh Thuận",
+  "id": 687,
+  "thanh_pho": null,
+  "so_nganh": 5,
+  "so_to_hop": 15,
+  "diem_min": 16,
+  "diem_max": 18,
+  "de_an": null
+ },
+ {
+  "ten": "Phân hiệu Đại học Thái Nguyên tại Hà Giang",
+  "id": 824,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 5,
+  "so_to_hop": 12,
+  "diem_min": 20.05,
+  "diem_max": 26.14,
+  "de_an": {
+   "slug": "phan-hieu-dai-hoc-thai-nguyen-tai-ha-giang",
+   "link": "https://huongnghiep.hocmai.vn/de-an/phan-hieu-dai-hoc-thai-nguyen-tai-ha-giang",
+   "so_nganh": 1893,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Phân Hiệu Đại Học Thái Nguyên Tại Lào Cai",
+  "id": 820,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 9,
+  "so_to_hop": 8,
+  "diem_min": 15,
+  "diem_max": 24.33,
+  "de_an": {
+   "slug": "phan-hieu-dai-hoc-thai-nguyen-tai-lao-cai",
+   "link": "https://huongnghiep.hocmai.vn/de-an/phan-hieu-dai-hoc-thai-nguyen-tai-lao-cai",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Phân hiệu Đại học Xây dựng miền Trung tại Đà Nẵng",
+  "id": 816,
+  "thanh_pho": "Thành phố Đà Nẵng",
+  "so_nganh": 12,
+  "so_to_hop": 5,
+  "diem_min": 15,
+  "diem_max": 15,
+  "de_an": null
+ },
+ {
+  "ten": "Trường Du Lịch - Đại Học Huế",
+  "id": 641,
+  "thanh_pho": "Thành phố Huế",
+  "so_nganh": 7,
+  "so_to_hop": 9,
+  "diem_min": 15,
+  "diem_max": 21.5,
+  "de_an": {
+   "slug": "truong-du-lich-dai-hoc-hue",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-du-lich-dai-hoc-hue",
+   "so_nganh": 1893,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học An Giang",
+  "id": 563,
+  "thanh_pho": null,
+  "so_nganh": 39,
+  "so_to_hop": 34,
+  "diem_min": 16,
+  "diem_max": 25.95,
+  "de_an": null
+ },
+ {
+  "ten": "Trường Đại Học An Ninh Nhân Dân",
+  "id": 433,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 10,
+  "so_to_hop": 4,
+  "diem_min": 17.66,
+  "diem_max": 26.05,
+  "de_an": {
+   "slug": "truong-dai-hoc-an-ninh-nhan-dan",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-an-ninh-nhan-dan",
+   "so_nganh": 1894,
+   "phuong_thuc": 0
+  }
+ },
+ {
+  "ten": "Trường Đại Học Bà Rịa – Vũng Tàu",
+  "id": 887,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 91,
+  "so_to_hop": 9,
+  "diem_min": 15,
+  "diem_max": 17,
+  "de_an": {
+   "slug": "truong-dai-hoc-ba-ria-vung-tau",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-ba-ria-vung-tau",
+   "so_nganh": 1898,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Bạc Liêu",
+  "id": 590,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 10,
+  "so_to_hop": 21,
+  "diem_min": 15,
+  "diem_max": 20,
+  "de_an": {
+   "slug": "truong-dai-hoc-bac-lieu",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-bac-lieu",
+   "so_nganh": 1894,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Bách Khoa Đà Nẵng",
+  "id": 514,
+  "thanh_pho": "Thành phố Đà Nẵng",
+  "so_nganh": 36,
+  "so_to_hop": 13,
+  "diem_min": 16.5,
+  "diem_max": 27.2,
+  "de_an": {
+   "slug": "truong-dai-hoc-bach-khoa-da-nang",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-bach-khoa-da-nang",
+   "so_nganh": 1895,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Bình Dương",
+  "id": 701,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 15,
+  "so_to_hop": 24,
+  "diem_min": 15,
+  "diem_max": 15,
+  "de_an": {
+   "slug": "truong-dai-hoc-binh-duong",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-binh-duong",
+   "so_nganh": 1894,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Cảnh Sát Nhân Dân",
+  "id": 421,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 10,
+  "so_to_hop": 4,
+  "diem_min": 15.95,
+  "diem_max": 26.28,
+  "de_an": {
+   "slug": "truong-dai-hoc-canh-sat-nhan-dan",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-canh-sat-nhan-dan",
+   "so_nganh": 1894,
+   "phuong_thuc": 0
+  }
+ },
+ {
+  "ten": "Trường Đại Học Chu Văn An",
+  "id": 774,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 6,
+  "so_to_hop": 7,
+  "diem_min": null,
+  "diem_max": null,
+  "de_an": {
+   "slug": "truong-dai-hoc-chu-van-an",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-chu-van-an",
+   "so_nganh": 1893,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học CMC",
+  "id": 635,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 6,
+  "so_to_hop": 0,
+  "diem_min": 24,
+  "diem_max": 28,
+  "de_an": {
+   "slug": "truong-dai-hoc-cmc",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-cmc",
+   "so_nganh": 1893,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Công Đoàn",
+  "id": 555,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 17,
+  "so_to_hop": 17,
+  "diem_min": 18.2,
+  "diem_max": 25.25,
+  "de_an": {
+   "slug": "truong-dai-hoc-cong-doan",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-cong-doan",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Công Nghệ – Đại Học Quốc Gia Hà Nội",
+  "id": 376,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 20,
+  "so_to_hop": 4,
+  "diem_min": 22,
+  "diem_max": 28.19,
+  "de_an": {
+   "slug": "truong-dai-hoc-cong-nghe-dai-hoc-quoc-gia-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-cong-nghe-dai-hoc-quoc-gia-ha-noi",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Công Nghệ Đông Á",
+  "id": 859,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 16,
+  "so_to_hop": 30,
+  "diem_min": null,
+  "diem_max": null,
+  "de_an": {
+   "slug": "truong-dai-hoc-cong-nghe-dong-a",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-cong-nghe-dong-a",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Công Nghệ Đồng Nai",
+  "id": 746,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 25,
+  "so_to_hop": 24,
+  "diem_min": 17.33,
+  "diem_max": 22.8,
+  "de_an": {
+   "slug": "truong-dai-hoc-cong-nghe-dong-nai",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-cong-nghe-dong-nai",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại học Công nghệ Giao thông vận tải",
+  "id": 607,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 68,
+  "so_to_hop": 11,
+  "diem_min": 16,
+  "diem_max": 24.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-cong-nghe-giao-thong-van-tai",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-cong-nghe-giao-thong-van-tai",
+   "so_nganh": 1897,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại học Công nghệ Miền Đông",
+  "id": 708,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 19,
+  "so_to_hop": 18,
+  "diem_min": 15,
+  "diem_max": 19,
+  "de_an": {
+   "slug": "truong-dai-hoc-cong-nghe-mien-dong",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-cong-nghe-mien-dong",
+   "so_nganh": 1894,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Công Nghệ Sài Gòn",
+  "id": 814,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 18,
+  "so_to_hop": 63,
+  "diem_min": 15,
+  "diem_max": 18,
+  "de_an": {
+   "slug": "truong-dai-hoc-cong-nghe-sai-gon",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-cong-nghe-sai-gon",
+   "so_nganh": 1894,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Công Nghệ Thông Tin - ĐHQG TPHCM",
+  "id": 478,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 14,
+  "so_to_hop": 10,
+  "diem_min": 24,
+  "diem_max": 29.6,
+  "de_an": {
+   "slug": "truong-dai-hoc-cong-nghe-thong-tin-dhqg-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-cong-nghe-thong-tin-dhqg-tphcm",
+   "so_nganh": 1894,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại học Công Nghệ Thông Tin và Truyền Thông Thái Nguyên",
+  "id": 645,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 23,
+  "so_to_hop": 40,
+  "diem_min": 18,
+  "diem_max": 23,
+  "de_an": {
+   "slug": "truong-dai-hoc-cong-nghe-thong-tin-va-truyen-thong-thai-nguyen",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-cong-nghe-thong-tin-va-truyen-thong-thai-nguyen",
+   "so_nganh": 1895,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại học Công nghệ Thông tin và Truyền thông Việt Hàn - Đại học Đà Nẵng",
+  "id": 867,
+  "thanh_pho": "Thành phố Đà Nẵng",
+  "so_nganh": 19,
+  "so_to_hop": 6,
+  "diem_min": 18,
+  "diem_max": 24,
+  "de_an": null
+ },
+ {
+  "ten": "Trường Đại học Công Nghệ TPHCM",
+  "id": 689,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 59,
+  "so_to_hop": 30,
+  "diem_min": 15,
+  "diem_max": 17,
+  "de_an": {
+   "slug": "truong-dai-hoc-cong-nghe-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-cong-nghe-tphcm",
+   "so_nganh": 1897,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Công Nghệ và Quản Lý Hữu Nghị",
+  "id": 783,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 14,
+  "so_to_hop": 9,
+  "diem_min": 16,
+  "diem_max": 18,
+  "de_an": {
+   "slug": "truong-dai-hoc-cong-nghe-va-quan-ly-huu-nghi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-cong-nghe-va-quan-ly-huu-nghi",
+   "so_nganh": 1894,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Công Nghiệp Hà Nội",
+  "id": 386,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 29,
+  "so_to_hop": 8,
+  "diem_min": 18,
+  "diem_max": 23,
+  "de_an": {
+   "slug": "truong-dai-hoc-cong-nghiep-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-cong-nghiep-ha-noi",
+   "so_nganh": 1897,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Công Nghiệp Quảng Ninh",
+  "id": 810,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 11,
+  "so_to_hop": 8,
+  "diem_min": 15,
+  "diem_max": 18,
+  "de_an": {
+   "slug": "truong-dai-hoc-cong-nghiep-quang-ninh",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-cong-nghiep-quang-ninh",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Công Nghiệp TPHCM",
+  "id": 390,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 59,
+  "so_to_hop": 27,
+  "diem_min": 16,
+  "diem_max": 26.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-cong-nghiep-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-cong-nghiep-tphcm",
+   "so_nganh": 1897,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại học Công nghiệp và Thương mại Hà Nội",
+  "id": 768,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 11,
+  "so_to_hop": 11,
+  "diem_min": 16,
+  "diem_max": 19,
+  "de_an": {
+   "slug": "truong-dai-hoc-cong-nghiep-va-thuong-mai-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-cong-nghiep-va-thuong-mai-ha-noi",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Công Nghiệp Việt - Hung",
+  "id": 800,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 12,
+  "so_to_hop": 20,
+  "diem_min": 16,
+  "diem_max": 18.4,
+  "de_an": {
+   "slug": "truong-dai-hoc-cong-nghiep-viet-hung",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-cong-nghiep-viet-hung",
+   "so_nganh": 1894,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Công Nghiệp Việt Trì",
+  "id": 769,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 13,
+  "so_to_hop": 9,
+  "diem_min": 15,
+  "diem_max": 15,
+  "de_an": {
+   "slug": "truong-dai-hoc-cong-nghiep-viet-tri",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-cong-nghiep-viet-tri",
+   "so_nganh": 1894,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại học Công nghiệp Vinh",
+  "id": 599,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 4,
+  "so_to_hop": 12,
+  "diem_min": 15,
+  "diem_max": 28.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-cong-nghiep-vinh",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-cong-nghiep-vinh",
+   "so_nganh": 1900,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Công Thương TPHCM",
+  "id": 409,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 39,
+  "so_to_hop": 15,
+  "diem_min": 16,
+  "diem_max": 24.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-cong-thuong-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-cong-thuong-tphcm",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Cửu Long",
+  "id": 663,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 38,
+  "so_to_hop": 30,
+  "diem_min": 15,
+  "diem_max": 20.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-cuu-long",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-cuu-long",
+   "so_nganh": 1895,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Dầu Khí Việt Nam",
+  "id": 722,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 3,
+  "so_to_hop": 7,
+  "diem_min": 20,
+  "diem_max": 20,
+  "de_an": {
+   "slug": "truong-dai-hoc-dau-khi-viet-nam",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-dau-khi-viet-nam",
+   "so_nganh": 1892,
+   "phuong_thuc": 4
+  }
+ },
+ {
+  "ten": "Trường Đại Học Dược Hà Nội",
+  "id": 394,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 4,
+  "so_to_hop": 2,
+  "diem_min": 20,
+  "diem_max": 24.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-duoc-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-duoc-ha-noi",
+   "so_nganh": 1900,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Đà Lạt",
+  "id": 819,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 26,
+  "so_to_hop": 35,
+  "diem_min": 16,
+  "diem_max": 28.25,
+  "de_an": {
+   "slug": "truong-dai-hoc-da-lat",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-da-lat",
+   "so_nganh": 1896,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Đại Nam",
+  "id": 673,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 33,
+  "so_to_hop": 22,
+  "diem_min": 15,
+  "diem_max": 15,
+  "de_an": {
+   "slug": "truong-dai-hoc-dai-nam",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-dai-nam",
+   "so_nganh": 1896,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Điện Lực",
+  "id": 611,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 32,
+  "so_to_hop": 13,
+  "diem_min": 16.5,
+  "diem_max": 23.33,
+  "de_an": {
+   "slug": "truong-dai-hoc-dien-luc",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-dien-luc",
+   "so_nganh": 1895,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Điều Dưỡng Nam Định",
+  "id": 742,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 3,
+  "so_to_hop": 8,
+  "diem_min": 15,
+  "diem_max": 21,
+  "de_an": {
+   "slug": "truong-dai-hoc-dieu-duong-nam-dinh",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-dieu-duong-nam-dinh",
+   "so_nganh": 1892,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Đông Á",
+  "id": 885,
+  "thanh_pho": "Thành phố Đà Nẵng",
+  "so_nganh": 48,
+  "so_to_hop": 40,
+  "diem_min": 15,
+  "diem_max": 17,
+  "de_an": {
+   "slug": "truong-dai-hoc-dong-a",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-dong-a",
+   "so_nganh": 1897,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Đông Đô",
+  "id": 690,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 13,
+  "so_to_hop": 18,
+  "diem_min": 14,
+  "diem_max": 18,
+  "de_an": {
+   "slug": "truong-dai-hoc-dong-do",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-dong-do",
+   "so_nganh": 1894,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Đồng Nai",
+  "id": 764,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 9,
+  "so_to_hop": 12,
+  "diem_min": 16,
+  "diem_max": 26.51,
+  "de_an": {
+   "slug": "truong-dai-hoc-dong-nai",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-dong-nai",
+   "so_nganh": 1896,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Đồng Tháp",
+  "id": 567,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 50,
+  "so_to_hop": 42,
+  "diem_min": 14.85,
+  "diem_max": 29.23,
+  "de_an": {
+   "slug": "truong-dai-hoc-dong-thap",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-dong-thap",
+   "so_nganh": 1896,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học FPT",
+  "id": 710,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 7,
+  "so_to_hop": 4,
+  "diem_min": null,
+  "diem_max": null,
+  "de_an": {
+   "slug": "truong-dai-hoc-fpt",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-fpt",
+   "so_nganh": 1893,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Gia Định",
+  "id": 808,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 26,
+  "so_to_hop": 13,
+  "diem_min": 15,
+  "diem_max": 20.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-gia-dinh",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-gia-dinh",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Giáo Dục – ĐHQG Hà Nội",
+  "id": 493,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 10,
+  "so_to_hop": 18,
+  "diem_min": null,
+  "diem_max": null,
+  "de_an": {
+   "slug": "truong-dai-hoc-giao-duc-dhqg-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-giao-duc-dhqg-ha-noi",
+   "so_nganh": 1894,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Giao Thông Vận Tải",
+  "id": 380,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 50,
+  "so_to_hop": 10,
+  "diem_min": 16.36,
+  "diem_max": 27.52,
+  "de_an": {
+   "slug": "truong-dai-hoc-giao-thong-van-tai",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-giao-thong-van-tai",
+   "so_nganh": 1896,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Giao Thông Vận Tải (Cơ sở 2)",
+  "id": 520,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 24,
+  "so_to_hop": 6,
+  "diem_min": 15.06,
+  "diem_max": 27.38,
+  "de_an": {
+   "slug": "truong-dai-hoc-giao-thong-van-tai-co-so-2",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-giao-thong-van-tai-co-so-2",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Hạ Long",
+  "id": 581,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 25,
+  "so_to_hop": 30,
+  "diem_min": 15,
+  "diem_max": 27.32,
+  "de_an": {
+   "slug": "truong-dai-hoc-ha-long",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-ha-long",
+   "so_nganh": 1895,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Hà Nội",
+  "id": 425,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 27,
+  "so_to_hop": 8,
+  "diem_min": 22.1,
+  "diem_max": 34.35,
+  "de_an": {
+   "slug": "truong-dai-hoc-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-ha-noi",
+   "so_nganh": 1895,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Hà Tĩnh",
+  "id": 585,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 17,
+  "so_to_hop": 20,
+  "diem_min": 15,
+  "diem_max": 25.85,
+  "de_an": {
+   "slug": "truong-dai-hoc-ha-tinh",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-ha-tinh",
+   "so_nganh": 1894,
+   "phuong_thuc": 4
+  }
+ },
+ {
+  "ten": "Trường Đại Học Hải Dương",
+  "id": 582,
+  "thanh_pho": "Thành phố Hải Phòng",
+  "so_nganh": 31,
+  "so_to_hop": 44,
+  "diem_min": 15,
+  "diem_max": 26.83,
+  "de_an": {
+   "slug": "truong-dai-hoc-hai-duong",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-hai-duong",
+   "so_nganh": 1895,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Hải Phòng",
+  "id": 549,
+  "thanh_pho": "Thành phố Hải Phòng",
+  "so_nganh": 36,
+  "so_to_hop": 25,
+  "diem_min": 17,
+  "diem_max": 33.25,
+  "de_an": {
+   "slug": "truong-dai-hoc-hai-phong",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-hai-phong",
+   "so_nganh": 1895,
+   "phuong_thuc": 4
+  }
+ },
+ {
+  "ten": "Trường Đại Học Hàng Hải Việt Nam",
+  "id": 556,
+  "thanh_pho": "Thành phố Hải Phòng",
+  "so_nganh": 50,
+  "so_to_hop": 12,
+  "diem_min": 19.35,
+  "diem_max": 28.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-hang-hai-viet-nam",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-hang-hai-viet-nam",
+   "so_nganh": 1896,
+   "phuong_thuc": 4
+  }
+ },
+ {
+  "ten": "Trường Đại Học Hòa Bình",
+  "id": 671,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 18,
+  "so_to_hop": 24,
+  "diem_min": 15,
+  "diem_max": 19,
+  "de_an": {
+   "slug": "truong-dai-hoc-hoa-binh",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-hoa-binh",
+   "so_nganh": 1895,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Hoa Lư",
+  "id": 825,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 5,
+  "so_to_hop": 7,
+  "diem_min": 16,
+  "diem_max": 23,
+  "de_an": {
+   "slug": "truong-dai-hoc-hoa-lu",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-hoa-lu",
+   "so_nganh": 1893,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Hoa Sen",
+  "id": 736,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 31,
+  "so_to_hop": 11,
+  "diem_min": 15,
+  "diem_max": 17,
+  "de_an": {
+   "slug": "truong-dai-hoc-hoa-sen",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-hoa-sen",
+   "so_nganh": 1895,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Hồng Đức",
+  "id": 763,
+  "thanh_pho": null,
+  "so_nganh": 35,
+  "so_to_hop": 36,
+  "diem_min": 14.75,
+  "diem_max": 28.2,
+  "de_an": null
+ },
+ {
+  "ten": "Trường Đại Học Hùng Vương",
+  "id": 547,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 22,
+  "so_to_hop": 17,
+  "diem_min": 18,
+  "diem_max": 27.9,
+  "de_an": {
+   "slug": "truong-dai-hoc-hung-vuong",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-hung-vuong",
+   "so_nganh": 1895,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại học Hùng Vương TPHCM",
+  "id": 789,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 12,
+  "so_to_hop": 8,
+  "diem_min": 18,
+  "diem_max": 18,
+  "de_an": {
+   "slug": "truong-dai-hoc-hung-vuong-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-hung-vuong-tphcm",
+   "so_nganh": 1896,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại học Khánh Hòa",
+  "id": 627,
+  "thanh_pho": null,
+  "so_nganh": 17,
+  "so_to_hop": 28,
+  "diem_min": 15,
+  "diem_max": 26.41,
+  "de_an": null
+ },
+ {
+  "ten": "Trường Đại Học Khoa Học Huế",
+  "id": 760,
+  "thanh_pho": "Thành phố Huế",
+  "so_nganh": 23,
+  "so_to_hop": 26,
+  "diem_min": 15,
+  "diem_max": 22,
+  "de_an": {
+   "slug": "truong-dai-hoc-khoa-hoc-hue",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-khoa-hoc-hue",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại học Khoa học sức khỏe TPHCM",
+  "id": 543,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 5,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null,
+  "de_an": {
+   "slug": "truong-dai-hoc-khoa-hoc-suc-khoe-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-khoa-hoc-suc-khoe-tphcm",
+   "so_nganh": 1893,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Khoa Học Thái Nguyên",
+  "id": 762,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 28,
+  "so_to_hop": 36,
+  "diem_min": 15.65,
+  "diem_max": 20.25,
+  "de_an": {
+   "slug": "truong-dai-hoc-khoa-hoc-thai-nguyen",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-khoa-hoc-thai-nguyen",
+   "so_nganh": 1895,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Khoa Học Tự Nhiên Hà Nội",
+  "id": 459,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 28,
+  "so_to_hop": 29,
+  "diem_min": 20.05,
+  "diem_max": 26,
+  "de_an": {
+   "slug": "truong-dai-hoc-khoa-hoc-tu-nhien-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-khoa-hoc-tu-nhien-ha-noi",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Khoa Học Tự Nhiên TPHCM",
+  "id": 445,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 29,
+  "so_to_hop": 20,
+  "diem_min": 17,
+  "diem_max": 29.56,
+  "de_an": {
+   "slug": "truong-dai-hoc-khoa-hoc-tu-nhien-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-khoa-hoc-tu-nhien-tphcm",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Khoa Học Và Công Nghệ Hà Nội",
+  "id": 598,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 15,
+  "so_to_hop": 19,
+  "diem_min": 18.25,
+  "diem_max": 23.22,
+  "de_an": {
+   "slug": "truong-dai-hoc-khoa-hoc-va-cong-nghe-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-khoa-hoc-va-cong-nghe-ha-noi",
+   "so_nganh": 1895,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Khoa Học Xã Hội và Nhân Văn Hà Nội",
+  "id": 452,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 28,
+  "so_to_hop": 10,
+  "diem_min": 21.75,
+  "diem_max": 27.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-khoa-hoc-xa-hoi-va-nhan-van-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-khoa-hoc-xa-hoi-va-nhan-van-ha-noi",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Khoa Học Xã Hội và Nhân Văn TPHCM",
+  "id": 463,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 45,
+  "so_to_hop": 19,
+  "diem_min": 20.3,
+  "diem_max": 27.75,
+  "de_an": {
+   "slug": "truong-dai-hoc-khoa-hoc-xa-hoi-va-nhan-van-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-khoa-hoc-xa-hoi-va-nhan-van-tphcm",
+   "so_nganh": 1896,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại học Kiểm Sát",
+  "id": 471,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 6,
+  "so_to_hop": 11,
+  "diem_min": 21.87,
+  "diem_max": 26.87,
+  "de_an": {
+   "slug": "truong-dai-hoc-kiem-sat",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-kiem-sat",
+   "so_nganh": 1893,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại học Kiên Giang",
+  "id": 822,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 23,
+  "so_to_hop": 31,
+  "diem_min": 15,
+  "diem_max": 24.85,
+  "de_an": {
+   "slug": "truong-dai-hoc-kien-giang",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-kien-giang",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Kiến Trúc Đà Nẵng",
+  "id": 619,
+  "thanh_pho": "Thành phố Đà Nẵng",
+  "so_nganh": 15,
+  "so_to_hop": 6,
+  "diem_min": 16,
+  "diem_max": 16,
+  "de_an": {
+   "slug": "truong-dai-hoc-kien-truc-da-nang",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-kien-truc-da-nang",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Kiến Trúc Hà Nội",
+  "id": 558,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 18,
+  "so_to_hop": 4,
+  "diem_min": 16.1,
+  "diem_max": 22,
+  "de_an": {
+   "slug": "truong-dai-hoc-kien-truc-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-kien-truc-ha-noi",
+   "so_nganh": 1895,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Kiến Trúc TPHCM",
+  "id": 539,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 15,
+  "so_to_hop": 9,
+  "diem_min": 17.01,
+  "diem_max": 24.43,
+  "de_an": {
+   "slug": "truong-dai-hoc-kien-truc-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-kien-truc-tphcm",
+   "so_nganh": 1894,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Kinh Bắc",
+  "id": 669,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 6,
+  "so_to_hop": 11,
+  "diem_min": null,
+  "diem_max": null,
+  "de_an": {
+   "slug": "truong-dai-hoc-kinh-bac",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-kinh-bac",
+   "so_nganh": 1893,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Kinh Doanh và Công Nghệ Hà Nội",
+  "id": 621,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 21,
+  "so_to_hop": 29,
+  "diem_min": 17,
+  "diem_max": 21,
+  "de_an": {
+   "slug": "truong-dai-hoc-kinh-doanh-va-cong-nghe-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-kinh-doanh-va-cong-nghe-ha-noi",
+   "so_nganh": 1895,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Kinh Tế - Đại Học Huế",
+  "id": 639,
+  "thanh_pho": "Thành phố Huế",
+  "so_nganh": 21,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 20,
+  "de_an": {
+   "slug": "truong-dai-hoc-kinh-te-dai-hoc-hue",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-kinh-te-dai-hoc-hue",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Kinh Tế - ĐHQG Hà Nội",
+  "id": 461,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 6,
+  "so_to_hop": 8,
+  "diem_min": 24.2,
+  "diem_max": 25.72,
+  "de_an": {
+   "slug": "truong-dai-hoc-kinh-te-dhqg-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-kinh-te-dhqg-ha-noi",
+   "so_nganh": 1893,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Kinh Tế – Đại Học Đà Nẵng",
+  "id": 579,
+  "thanh_pho": "Thành phố Đà Nẵng",
+  "so_nganh": 35,
+  "so_to_hop": 5,
+  "diem_min": 20,
+  "diem_max": 27,
+  "de_an": {
+   "slug": "truong-dai-hoc-kinh-te-dai-hoc-da-nang",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-kinh-te-dai-hoc-da-nang",
+   "so_nganh": null,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Kinh tế công nghệ Thái Nguyên",
+  "id": 791,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 11,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 15,
+  "de_an": {
+   "slug": "truong-dai-hoc-kinh-te-cong-nghe-thai-nguyen",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-kinh-te-cong-nghe-thai-nguyen",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Kinh Tế Công Nghiệp Long An",
+  "id": 775,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 2,
+  "so_to_hop": 5,
+  "diem_min": 15,
+  "diem_max": 15,
+  "de_an": {
+   "slug": "truong-dai-hoc-kinh-te-cong-nghiep-long-an",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-kinh-te-cong-nghiep-long-an",
+   "so_nganh": 1893,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Kinh Tế Kỹ Thuật Bình Dương",
+  "id": 712,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 18,
+  "so_to_hop": 24,
+  "diem_min": 14,
+  "diem_max": 19,
+  "de_an": {
+   "slug": "truong-dai-hoc-kinh-te-ky-thuat-binh-duong",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-kinh-te-ky-thuat-binh-duong",
+   "so_nganh": 1894,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Kinh Tế Kỹ Thuật Công Nghiệp",
+  "id": 407,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 50,
+  "so_to_hop": 27,
+  "diem_min": 19,
+  "diem_max": 25,
+  "de_an": {
+   "slug": "truong-dai-hoc-kinh-te-ky-thuat-cong-nghiep",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-kinh-te-ky-thuat-cong-nghiep",
+   "so_nganh": 1896,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại học Kinh Tế Luật TPHCM",
+  "id": 503,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 35,
+  "so_to_hop": 5,
+  "diem_min": 23.5,
+  "diem_max": 28.08,
+  "de_an": {
+   "slug": "truong-dai-hoc-kinh-te-luat-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-kinh-te-luat-tphcm",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại học Kinh tế Quản trị kinh doanh Thái Nguyên",
+  "id": 720,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 21,
+  "so_to_hop": 9,
+  "diem_min": 17,
+  "diem_max": 19.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-kinh-te-quan-tri-kinh-doanh-thai-nguyen",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-kinh-te-quan-tri-kinh-doanh-thai-nguyen",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Kinh Tế Tài Chính TPHCM",
+  "id": 714,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 36,
+  "so_to_hop": 9,
+  "diem_min": 15,
+  "diem_max": 16,
+  "de_an": {
+   "slug": "truong-dai-hoc-kinh-te-tai-chinh-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-kinh-te-tai-chinh-tphcm",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Kỹ Thuật - Hậu Cần Công An Nhân Dân (Phía Bắc)",
+  "id": 677,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 4,
+  "so_to_hop": 3,
+  "diem_min": 20.53,
+  "diem_max": 25.21,
+  "de_an": {
+   "slug": "truong-dai-hoc-ky-thuat-hau-can-cong-an-nhan-dan-phia-bac",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-ky-thuat-hau-can-cong-an-nhan-dan-phia-bac",
+   "so_nganh": 1900,
+   "phuong_thuc": 0
+  }
+ },
+ {
+  "ten": "Trường Đại Học Kỹ Thuật - Hậu Cần Công An Nhân Dân (Phía Nam)",
+  "id": 678,
+  "thanh_pho": null,
+  "so_nganh": 4,
+  "so_to_hop": 3,
+  "diem_min": 20.53,
+  "diem_max": 25.21,
+  "de_an": {
+   "slug": "truong-dai-hoc-ky-thuat-hau-can-cong-an-nhan-dan-phia-nam",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-ky-thuat-hau-can-cong-an-nhan-dan-phia-nam",
+   "so_nganh": null,
+   "phuong_thuc": 0
+  }
+ },
+ {
+  "ten": "Trường Đại học Kỹ Thuật Công Nghệ Cần Thơ",
+  "id": 596,
+  "thanh_pho": "Thành phố Cần Thơ",
+  "so_nganh": 21,
+  "so_to_hop": 30,
+  "diem_min": 20.15,
+  "diem_max": 24.68,
+  "de_an": {
+   "slug": "truong-dai-hoc-ky-thuat-cong-nghe-can-tho",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-ky-thuat-cong-nghe-can-tho",
+   "so_nganh": 1896,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Kỹ Thuật Công Nghiệp Thái Nguyên",
+  "id": 623,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 20,
+  "so_to_hop": 14,
+  "diem_min": 15,
+  "diem_max": 22,
+  "de_an": {
+   "slug": "truong-dai-hoc-ky-thuat-cong-nghiep-thai-nguyen",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-ky-thuat-cong-nghiep-thai-nguyen",
+   "so_nganh": 1895,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại học Kỹ thuật Y Dược Đà Nẵng",
+  "id": 530,
+  "thanh_pho": "Thành phố Đà Nẵng",
+  "so_nganh": 9,
+  "so_to_hop": 4,
+  "diem_min": 15,
+  "diem_max": 22.85,
+  "de_an": {
+   "slug": "truong-dai-hoc-ky-thuat-y-duoc-da-nang",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-ky-thuat-y-duoc-da-nang",
+   "so_nganh": 1893,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Kỹ Thuật Y Tế Hải Dương",
+  "id": 398,
+  "thanh_pho": "Thành phố Hải Phòng",
+  "so_nganh": 5,
+  "so_to_hop": 4,
+  "diem_min": 21,
+  "diem_max": 23.8,
+  "de_an": {
+   "slug": "truong-dai-hoc-ky-thuat-y-te-hai-duong",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-ky-thuat-y-te-hai-duong",
+   "so_nganh": 1893,
+   "phuong_thuc": 4
+  }
+ },
+ {
+  "ten": "Trường Đại Học Lạc Hồng",
+  "id": 691,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 25,
+  "so_to_hop": 21,
+  "diem_min": 15,
+  "diem_max": 19.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-lac-hong",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-lac-hong",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Lao Động – Xã Hội",
+  "id": 589,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 15,
+  "so_to_hop": 5,
+  "diem_min": 14,
+  "diem_max": 24.3,
+  "de_an": {
+   "slug": "truong-dai-hoc-lao-dong-xa-hoi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-lao-dong-xa-hoi",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Lao Động – Xã Hội (Cơ sở II)",
+  "id": 592,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 11,
+  "so_to_hop": 5,
+  "diem_min": 14,
+  "diem_max": 24.75,
+  "de_an": {
+   "slug": "truong-dai-hoc-lao-dong-xa-hoi-co-so-ii",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-lao-dong-xa-hoi-co-so-ii",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Lâm nghiệp",
+  "id": 730,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 28,
+  "so_to_hop": 22,
+  "diem_min": 15,
+  "diem_max": 20.1,
+  "de_an": {
+   "slug": "truong-dai-hoc-lam-nghiep",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-lam-nghiep",
+   "so_nganh": 1895,
+   "phuong_thuc": 4
+  }
+ },
+ {
+  "ten": "Trường Đại học Luật – ĐHQG Hà Nội",
+  "id": 475,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 4,
+  "so_to_hop": 6,
+  "diem_min": 23.72,
+  "diem_max": 24.2,
+  "de_an": {
+   "slug": "truong-dai-hoc-luat-dhqg-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-luat-dhqg-ha-noi",
+   "so_nganh": 1900,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Luật Hà Nội",
+  "id": 455,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 5,
+  "so_to_hop": 9,
+  "diem_min": 22.99,
+  "diem_max": 25.55,
+  "de_an": {
+   "slug": "truong-dai-hoc-luat-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-luat-ha-noi",
+   "so_nganh": 1893,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại học Luật Huế",
+  "id": 695,
+  "thanh_pho": "Thành phố Huế",
+  "so_nganh": 2,
+  "so_to_hop": 6,
+  "diem_min": 22,
+  "diem_max": 22,
+  "de_an": {
+   "slug": "truong-dai-hoc-luat-hue",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-luat-hue",
+   "so_nganh": 1891,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Luật TPHCM",
+  "id": 507,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 5,
+  "so_to_hop": 11,
+  "diem_min": null,
+  "diem_max": null,
+  "de_an": {
+   "slug": "truong-dai-hoc-luat-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-luat-tphcm",
+   "so_nganh": 1893,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Lương Thế Vinh",
+  "id": 703,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 1,
+  "so_to_hop": 23,
+  "diem_min": null,
+  "diem_max": null,
+  "de_an": {
+   "slug": "truong-dai-hoc-luong-the-vinh",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-luong-the-vinh",
+   "so_nganh": 1893,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Mỏ Địa Chất",
+  "id": 609,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 43,
+  "so_to_hop": 31,
+  "diem_min": 15,
+  "diem_max": 25.25,
+  "de_an": {
+   "slug": "truong-dai-hoc-mo-dia-chat",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-mo-dia-chat",
+   "so_nganh": 1896,
+   "phuong_thuc": 4
+  }
+ },
+ {
+  "ten": "Trường Đại Học Mở Hà Nội",
+  "id": 553,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 17,
+  "so_to_hop": 12,
+  "diem_min": 17.03,
+  "diem_max": 25.17,
+  "de_an": {
+   "slug": "truong-dai-hoc-mo-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-mo-ha-noi",
+   "so_nganh": 1895,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Mở TPHCM",
+  "id": 605,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 43,
+  "so_to_hop": 59,
+  "diem_min": 15,
+  "diem_max": 25,
+  "de_an": {
+   "slug": "truong-dai-hoc-mo-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-mo-tphcm",
+   "so_nganh": 1896,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Mỹ Thuật TPHCM",
+  "id": 835,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 3,
+  "so_to_hop": 0,
+  "diem_min": 18.5,
+  "diem_max": 24.25,
+  "de_an": {
+   "slug": "truong-dai-hoc-my-thuat-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-my-thuat-tphcm",
+   "so_nganh": 1894,
+   "phuong_thuc": 0
+  }
+ },
+ {
+  "ten": "Trường Đại học Nam Cần Thơ",
+  "id": 655,
+  "thanh_pho": "Thành phố Cần Thơ",
+  "so_nganh": 40,
+  "so_to_hop": 35,
+  "diem_min": 15,
+  "diem_max": 20.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-nam-can-tho",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-nam-can-tho",
+   "so_nganh": 1896,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Ngân Hàng TPHCM",
+  "id": 588,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 25,
+  "so_to_hop": 7,
+  "diem_min": 18.35,
+  "diem_max": 23.6,
+  "de_an": {
+   "slug": "truong-dai-hoc-ngan-hang-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-ngan-hang-tphcm",
+   "so_nganh": 1895,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại học Nghệ An",
+  "id": 728,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 16,
+  "so_to_hop": 7,
+  "diem_min": 16,
+  "diem_max": 25,
+  "de_an": {
+   "slug": "truong-dai-hoc-nghe-an",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-nghe-an",
+   "so_nganh": 1894,
+   "phuong_thuc": 4
+  }
+ },
+ {
+  "ten": "Trường Đại Học Ngoại Ngữ - ĐH Quốc gia Hà Nội",
+  "id": 457,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 14,
+  "so_to_hop": 41,
+  "diem_min": 21.88,
+  "diem_max": 30,
+  "de_an": {
+   "slug": "truong-dai-hoc-ngoai-ngu-dh-quoc-gia-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-ngoai-ngu-dh-quoc-gia-ha-noi",
+   "so_nganh": 1894,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Ngoại Ngữ Đà Nẵng",
+  "id": 509,
+  "thanh_pho": "Thành phố Đà Nẵng",
+  "so_nganh": 16,
+  "so_to_hop": 14,
+  "diem_min": 17.25,
+  "diem_max": 27.25,
+  "de_an": {
+   "slug": "truong-dai-hoc-ngoai-ngu-da-nang",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-ngoai-ngu-da-nang",
+   "so_nganh": 1894,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Ngoại Ngữ Huế",
+  "id": 516,
+  "thanh_pho": "Thành phố Huế",
+  "so_nganh": 12,
+  "so_to_hop": 18,
+  "diem_min": 15,
+  "diem_max": 30,
+  "de_an": {
+   "slug": "truong-dai-hoc-ngoai-ngu-hue",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-ngoai-ngu-hue",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Ngoại Ngữ Tin Học TPHCM",
+  "id": 724,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 21,
+  "so_to_hop": 22,
+  "diem_min": 15,
+  "diem_max": 17,
+  "de_an": {
+   "slug": "truong-dai-hoc-ngoai-ngu-tin-hoc-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-ngoai-ngu-tin-hoc-tphcm",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại học Ngoại thương",
+  "id": 360,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 29,
+  "so_to_hop": 8,
+  "diem_min": 24,
+  "diem_max": 35.15,
+  "de_an": {
+   "slug": "truong-dai-hoc-ngoai-thuong",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-ngoai-thuong",
+   "so_nganh": 1896,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại học Ngoại thương (Cơ sở II)",
+  "id": 484,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 7,
+  "so_to_hop": 5,
+  "diem_min": 25.75,
+  "diem_max": 28.3,
+  "de_an": {
+   "slug": "truong-dai-hoc-ngoai-thuong-co-so-ii",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-ngoai-thuong-co-so-ii",
+   "so_nganh": 1893,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Nguyễn Tất Thành",
+  "id": 637,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 57,
+  "so_to_hop": 42,
+  "diem_min": 15,
+  "diem_max": 20.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-nguyen-tat-thanh",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-nguyen-tat-thanh",
+   "so_nganh": 1897,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Nguyễn Trãi",
+  "id": 767,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 6,
+  "so_to_hop": 17,
+  "diem_min": 15,
+  "diem_max": 15,
+  "de_an": {
+   "slug": "truong-dai-hoc-nguyen-trai",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-nguyen-trai",
+   "so_nganh": 1893,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Nha Trang",
+  "id": 522,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 49,
+  "so_to_hop": 8,
+  "diem_min": 18.87,
+  "diem_max": 25.47,
+  "de_an": {
+   "slug": "truong-dai-hoc-nha-trang",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-nha-trang",
+   "so_nganh": 1896,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại học Nông Lâm Bắc Giang",
+  "id": 817,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 18,
+  "so_to_hop": 18,
+  "diem_min": 15,
+  "diem_max": 17.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-nong-lam-bac-giang",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-nong-lam-bac-giang",
+   "so_nganh": 1895,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Nông Lâm Huế",
+  "id": 771,
+  "thanh_pho": "Thành phố Huế",
+  "so_nganh": 20,
+  "so_to_hop": 26,
+  "diem_min": 15,
+  "diem_max": 19.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-nong-lam-hue",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-nong-lam-hue",
+   "so_nganh": 1895,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Nông Lâm Thái Nguyên",
+  "id": 779,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 25,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 15,
+  "de_an": {
+   "slug": "truong-dai-hoc-nong-lam-thai-nguyen",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-nong-lam-thai-nguyen",
+   "so_nganh": 1895,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Nông Lâm TPHCM",
+  "id": 601,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 43,
+  "so_to_hop": 20,
+  "diem_min": 16,
+  "diem_max": 24.9,
+  "de_an": {
+   "slug": "truong-dai-hoc-nong-lam-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-nong-lam-tphcm",
+   "so_nganh": 1896,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Phạm Văn Đồng",
+  "id": 584,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 14,
+  "so_to_hop": 16,
+  "diem_min": 15,
+  "diem_max": 27.25,
+  "de_an": {
+   "slug": "truong-dai-hoc-pham-van-dong",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-pham-van-dong",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Phan Châu Trinh",
+  "id": 667,
+  "thanh_pho": "Thành phố Đà Nẵng",
+  "so_nganh": 4,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 21.75,
+  "de_an": {
+   "slug": "truong-dai-hoc-phan-chau-trinh",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-phan-chau-trinh",
+   "so_nganh": 1893,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Phan Thiết",
+  "id": 738,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 19,
+  "so_to_hop": 17,
+  "diem_min": 15,
+  "diem_max": 18,
+  "de_an": {
+   "slug": "truong-dai-hoc-phan-thiet",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-phan-thiet",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Phòng Cháy Chữa Cháy (Phía Bắc)",
+  "id": 686,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 4,
+  "so_to_hop": 4,
+  "diem_min": 21.1,
+  "diem_max": 24.23,
+  "de_an": {
+   "slug": "truong-dai-hoc-phong-chay-chua-chay-phia-bac",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-phong-chay-chua-chay-phia-bac",
+   "so_nganh": 1900,
+   "phuong_thuc": 0
+  }
+ },
+ {
+  "ten": "Trường Đại Học Phòng Cháy Chữa Cháy (phía Nam)",
+  "id": 685,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 4,
+  "so_to_hop": 4,
+  "diem_min": 19.75,
+  "diem_max": 23.62,
+  "de_an": null
+ },
+ {
+  "ten": "Trường Đại Học Phú Xuân",
+  "id": 793,
+  "thanh_pho": "Thành phố Huế",
+  "so_nganh": 6,
+  "so_to_hop": 23,
+  "diem_min": 15,
+  "diem_max": 15,
+  "de_an": {
+   "slug": "truong-dai-hoc-phu-xuan",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-phu-xuan",
+   "so_nganh": 1893,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Phú Yên",
+  "id": 593,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 12,
+  "so_to_hop": 21,
+  "diem_min": 15,
+  "diem_max": 26.25,
+  "de_an": {
+   "slug": "truong-dai-hoc-phu-yen",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-phu-yen",
+   "so_nganh": 1894,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Phương Đông",
+  "id": 615,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 15,
+  "so_to_hop": 16,
+  "diem_min": 15,
+  "diem_max": 18,
+  "de_an": {
+   "slug": "truong-dai-hoc-phuong-dong",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-phuong-dong",
+   "so_nganh": 1894,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại học Quản lý và Công nghệ Hải Phòng",
+  "id": 796,
+  "thanh_pho": "Thành phố Hải Phòng",
+  "so_nganh": 6,
+  "so_to_hop": 70,
+  "diem_min": 15,
+  "diem_max": 16.1,
+  "de_an": {
+   "slug": "truong-dai-hoc-quan-ly-va-cong-nghe-hai-phong",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-quan-ly-va-cong-nghe-hai-phong",
+   "so_nganh": 1893,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại học Quản lý và công nghệ TPHCM",
+  "id": 781,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 9,
+  "so_to_hop": 22,
+  "diem_min": 15,
+  "diem_max": 25,
+  "de_an": {
+   "slug": "truong-dai-hoc-quan-ly-va-cong-nghe-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-quan-ly-va-cong-nghe-tphcm",
+   "so_nganh": 1893,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Quảng Bình",
+  "id": 583,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 15,
+  "so_to_hop": 42,
+  "diem_min": 15,
+  "diem_max": 26.45,
+  "de_an": {
+   "slug": "truong-dai-hoc-quang-binh",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-quang-binh",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Quảng Nam",
+  "id": 591,
+  "thanh_pho": "Thành phố Đà Nẵng",
+  "so_nganh": 14,
+  "so_to_hop": 23,
+  "diem_min": 14,
+  "diem_max": 25.2,
+  "de_an": {
+   "slug": "truong-dai-hoc-quang-nam",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-quang-nam",
+   "so_nganh": 1894,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Quang Trung",
+  "id": 734,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 10,
+  "so_to_hop": 30,
+  "diem_min": 13,
+  "diem_max": 17,
+  "de_an": {
+   "slug": "truong-dai-hoc-quang-trung",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-quang-trung",
+   "so_nganh": 1894,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Quốc Tế - ĐHQG TPHCM",
+  "id": 545,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 9,
+  "so_to_hop": 14,
+  "diem_min": 17.5,
+  "diem_max": 31,
+  "de_an": {
+   "slug": "truong-dai-hoc-quoc-te-dhqg-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-quoc-te-dhqg-tphcm",
+   "so_nganh": 1894,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Quốc Tế Hồng Bàng",
+  "id": 657,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 38,
+  "so_to_hop": 26,
+  "diem_min": 15,
+  "diem_max": 20.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-quoc-te-hong-bang",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-quoc-te-hong-bang",
+   "so_nganh": 1896,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Quốc Tế Miền Đông",
+  "id": 748,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 10,
+  "so_to_hop": 16,
+  "diem_min": 15,
+  "diem_max": 17,
+  "de_an": {
+   "slug": "truong-dai-hoc-quoc-te-mien-dong",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-quoc-te-mien-dong",
+   "so_nganh": 1894,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Quy Nhơn",
+  "id": 572,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 52,
+  "so_to_hop": 45,
+  "diem_min": 15,
+  "diem_max": 27.21,
+  "de_an": {
+   "slug": "truong-dai-hoc-quy-nhon",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-quy-nhon",
+   "so_nganh": 1896,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Sài Gòn",
+  "id": 480,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 47,
+  "so_to_hop": 58,
+  "diem_min": 18.72,
+  "diem_max": 29.27,
+  "de_an": {
+   "slug": "truong-dai-hoc-sai-gon",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-sai-gon",
+   "so_nganh": 1896,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại học Sao Đỏ",
+  "id": 684,
+  "thanh_pho": "Thành phố Hải Phòng",
+  "so_nganh": 15,
+  "so_to_hop": 19,
+  "diem_min": 15,
+  "diem_max": 26.1,
+  "de_an": {
+   "slug": "truong-dai-hoc-sao-do",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-sao-do",
+   "so_nganh": 1894,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Sư Phạm - Đại Học Đà Nẵng",
+  "id": 489,
+  "thanh_pho": "Thành phố Đà Nẵng",
+  "so_nganh": 35,
+  "so_to_hop": 28,
+  "diem_min": 16.71,
+  "diem_max": 28.84,
+  "de_an": {
+   "slug": "truong-dai-hoc-su-pham-dai-hoc-da-nang",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-su-pham-dai-hoc-da-nang",
+   "so_nganh": 1895,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Sư Phạm Hà Nội",
+  "id": 368,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 48,
+  "so_to_hop": 26,
+  "diem_min": 19,
+  "diem_max": 29.06,
+  "de_an": {
+   "slug": "truong-dai-hoc-su-pham-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-su-pham-ha-noi",
+   "so_nganh": 1896,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Sư Phạm Hà Nội 2",
+  "id": 491,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 26,
+  "so_to_hop": 27,
+  "diem_min": 20.25,
+  "diem_max": 28.52,
+  "de_an": {
+   "slug": "truong-dai-hoc-su-pham-ha-noi-2",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-su-pham-ha-noi-2",
+   "so_nganh": 1895,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Sư Phạm Huế",
+  "id": 477,
+  "thanh_pho": "Thành phố Huế",
+  "so_nganh": 20,
+  "so_to_hop": 30,
+  "diem_min": 17.5,
+  "diem_max": 28.9,
+  "de_an": {
+   "slug": "truong-dai-hoc-su-pham-hue",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-su-pham-hue",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại học Sư phạm Kỹ thuật - Đại học Đà Nẵng",
+  "id": 629,
+  "thanh_pho": "Thành phố Đà Nẵng",
+  "so_nganh": 22,
+  "so_to_hop": 11,
+  "diem_min": 17,
+  "diem_max": 22.58,
+  "de_an": {
+   "slug": "truong-dai-hoc-su-pham-ky-thuat-dai-hoc-da-nang",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-su-pham-ky-thuat-dai-hoc-da-nang",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Sư Phạm Kỹ Thuật Hưng Yên",
+  "id": 604,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 25,
+  "so_to_hop": 8,
+  "diem_min": 15,
+  "diem_max": 26.7,
+  "de_an": {
+   "slug": "truong-dai-hoc-su-pham-ky-thuat-hung-yen",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-su-pham-ky-thuat-hung-yen",
+   "so_nganh": 1895,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Sư Phạm Kỹ Thuật Nam Định",
+  "id": 777,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 16,
+  "so_to_hop": 25,
+  "diem_min": 14,
+  "diem_max": 14,
+  "de_an": {
+   "slug": "truong-dai-hoc-su-pham-ky-thuat-nam-dinh",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-su-pham-ky-thuat-nam-dinh",
+   "so_nganh": 1895,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Sư Phạm Kỹ Thuật TPHCM",
+  "id": 497,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 86,
+  "so_to_hop": 23,
+  "diem_min": 20.57,
+  "diem_max": 30.08,
+  "de_an": {
+   "slug": "truong-dai-hoc-su-pham-ky-thuat-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-su-pham-ky-thuat-tphcm",
+   "so_nganh": 1898,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Sư Phạm Kỹ Thuật Vinh",
+  "id": 726,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 14,
+  "so_to_hop": 8,
+  "diem_min": 16,
+  "diem_max": 19.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-su-pham-ky-thuat-vinh",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-su-pham-ky-thuat-vinh",
+   "so_nganh": 1894,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Sư Phạm Kỹ Thuật Vĩnh Long",
+  "id": 617,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 41,
+  "so_to_hop": 39,
+  "diem_min": 14,
+  "diem_max": 22,
+  "de_an": {
+   "slug": "truong-dai-hoc-su-pham-ky-thuat-vinh-long",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-su-pham-ky-thuat-vinh-long",
+   "so_nganh": 1896,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Sư Phạm Nghệ Thuật Trung Ương",
+  "id": 577,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 4,
+  "so_to_hop": 4,
+  "diem_min": 18,
+  "diem_max": 26,
+  "de_an": {
+   "slug": "truong-dai-hoc-su-pham-nghe-thuat-trung-uong",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-su-pham-nghe-thuat-trung-uong",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Sư Phạm Thể Dục Thể Thao Hà Nội",
+  "id": 595,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 1,
+  "so_to_hop": 4,
+  "diem_min": 37.21,
+  "diem_max": 37.21,
+  "de_an": {
+   "slug": "truong-dai-hoc-su-pham-the-duc-the-thao-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-su-pham-the-duc-the-thao-ha-noi",
+   "so_nganh": 1892,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Sư Phạm Thể Dục Thể Thao TPHCM",
+  "id": 625,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 3,
+  "so_to_hop": 3,
+  "diem_min": 22.85,
+  "diem_max": 26,
+  "de_an": {
+   "slug": "truong-dai-hoc-su-pham-the-duc-the-thao-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-su-pham-the-duc-the-thao-tphcm",
+   "so_nganh": 1892,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Sư Phạm TPHCM",
+  "id": 372,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 45,
+  "so_to_hop": 35,
+  "diem_min": 17.5,
+  "diem_max": 30.88,
+  "de_an": {
+   "slug": "truong-dai-hoc-su-pham-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-su-pham-tphcm",
+   "so_nganh": 1896,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại học Tài Chính Kế Toán",
+  "id": 806,
+  "thanh_pho": null,
+  "so_nganh": 5,
+  "so_to_hop": 4,
+  "diem_min": 15,
+  "diem_max": 18,
+  "de_an": null
+ },
+ {
+  "ten": "Trường Đại Học Tài Chính Marketing",
+  "id": 518,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 18,
+  "so_to_hop": 21,
+  "diem_min": 22.1,
+  "diem_max": 25.63,
+  "de_an": {
+   "slug": "truong-dai-hoc-tai-chinh-marketing",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-tai-chinh-marketing",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Tài Chính Ngân Hàng Hà Nội",
+  "id": 606,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 10,
+  "so_to_hop": 11,
+  "diem_min": 17,
+  "diem_max": 24.25,
+  "de_an": {
+   "slug": "truong-dai-hoc-tai-chinh-ngan-hang-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-tai-chinh-ngan-hang-ha-noi",
+   "so_nganh": 1894,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại học Tài chính Quản trị kinh doanh",
+  "id": 716,
+  "thanh_pho": null,
+  "so_nganh": 7,
+  "so_to_hop": 6,
+  "diem_min": null,
+  "diem_max": null,
+  "de_an": null
+ },
+ {
+  "ten": "Trường Đại học Tài Nguyên và Môi Trường Hà Nội",
+  "id": 586,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 24,
+  "so_to_hop": 22,
+  "diem_min": 15,
+  "diem_max": 26.65,
+  "de_an": {
+   "slug": "truong-dai-hoc-tai-nguyen-va-moi-truong-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-tai-nguyen-va-moi-truong-ha-noi",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại học Tài Nguyên và Môi Trường TPHCM",
+  "id": 766,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 21,
+  "so_to_hop": 8,
+  "diem_min": 15,
+  "diem_max": 23.7,
+  "de_an": {
+   "slug": "truong-dai-hoc-tai-nguyen-va-moi-truong-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-tai-nguyen-va-moi-truong-tphcm",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại học Tân Tạo",
+  "id": 659,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 9,
+  "so_to_hop": 11,
+  "diem_min": 15,
+  "diem_max": 20.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-tan-tao",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-tan-tao",
+   "so_nganh": 1894,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại học Tân Trào",
+  "id": 821,
+  "thanh_pho": null,
+  "so_nganh": 3,
+  "so_to_hop": 16,
+  "diem_min": 19.6,
+  "diem_max": 22.6,
+  "de_an": {
+   "slug": "truong-dai-hoc-tan-trao",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-tan-trao",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Tây Bắc",
+  "id": 818,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 23,
+  "so_to_hop": 45,
+  "diem_min": 15,
+  "diem_max": 28.11,
+  "de_an": {
+   "slug": "truong-dai-hoc-tay-bac",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-tay-bac",
+   "so_nganh": 1895,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Tây Đô",
+  "id": 688,
+  "thanh_pho": "Thành phố Cần Thơ",
+  "so_nganh": 22,
+  "so_to_hop": 26,
+  "diem_min": 15,
+  "diem_max": 18,
+  "de_an": {
+   "slug": "truong-dai-hoc-tay-do",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-tay-do",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Tây Nguyên",
+  "id": 571,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 32,
+  "so_to_hop": 19,
+  "diem_min": 15,
+  "diem_max": 27.91,
+  "de_an": {
+   "slug": "truong-dai-hoc-tay-nguyen",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-tay-nguyen",
+   "so_nganh": 1895,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Thái Bình",
+  "id": 756,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 10,
+  "so_to_hop": 7,
+  "diem_min": 16,
+  "diem_max": 16,
+  "de_an": {
+   "slug": "truong-dai-hoc-thai-binh",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-thai-binh",
+   "so_nganh": 1894,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Thái Bình Dương",
+  "id": 787,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 16,
+  "so_to_hop": 27,
+  "diem_min": 15,
+  "diem_max": 18,
+  "de_an": {
+   "slug": "truong-dai-hoc-thai-binh-duong",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-thai-binh-duong",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại học Thành Đô",
+  "id": 699,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 12,
+  "so_to_hop": 10,
+  "diem_min": 16,
+  "diem_max": 16,
+  "de_an": {
+   "slug": "truong-dai-hoc-thanh-do",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-thanh-do",
+   "so_nganh": 1894,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Thành Đông",
+  "id": 692,
+  "thanh_pho": "Thành phố Hải Phòng",
+  "so_nganh": 21,
+  "so_to_hop": 13,
+  "diem_min": null,
+  "diem_max": null,
+  "de_an": {
+   "slug": "truong-dai-hoc-thanh-dong",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-thanh-dong",
+   "so_nganh": 1895,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Thăng Long",
+  "id": 441,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 22,
+  "so_to_hop": 24,
+  "diem_min": 15,
+  "diem_max": 25.75,
+  "de_an": {
+   "slug": "truong-dai-hoc-thang-long",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-thang-long",
+   "so_nganh": 1895,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Thể Dục Thể Thao Bắc Ninh",
+  "id": 752,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 3,
+  "so_to_hop": 4,
+  "diem_min": 18,
+  "diem_max": 24.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-the-duc-the-thao-bac-ninh",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-the-duc-the-thao-bac-ninh",
+   "so_nganh": 1892,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Thể Dục Thể Thao Đà Nẵng",
+  "id": 661,
+  "thanh_pho": "Thành phố Đà Nẵng",
+  "so_nganh": 2,
+  "so_to_hop": 5,
+  "diem_min": 21.5,
+  "diem_max": 23.93,
+  "de_an": {
+   "slug": "truong-dai-hoc-the-duc-the-thao-da-nang",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-the-duc-the-thao-da-nang",
+   "so_nganh": 1892,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Thể Dục Thể Thao TPHCM",
+  "id": 613,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 4,
+  "so_to_hop": 3,
+  "diem_min": 21,
+  "diem_max": 35.36,
+  "de_an": null
+ },
+ {
+  "ten": "Trường Đại học Thủ Dầu Một",
+  "id": 437,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 40,
+  "so_to_hop": 48,
+  "diem_min": 15,
+  "diem_max": 26.86,
+  "de_an": {
+   "slug": "truong-dai-hoc-thu-dau-mot",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-thu-dau-mot",
+   "so_nganh": 1896,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại học Thủ Đô Hà Nội",
+  "id": 378,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 30,
+  "so_to_hop": 35,
+  "diem_min": 20.86,
+  "diem_max": 28.13,
+  "de_an": {
+   "slug": "truong-dai-hoc-thu-do-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-thu-do-ha-noi",
+   "so_nganh": 1895,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Thủy Lợi",
+  "id": 443,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 43,
+  "so_to_hop": 29,
+  "diem_min": 17,
+  "diem_max": 25.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-thuy-loi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-thuy-loi",
+   "so_nganh": 1896,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Thủy Lợi (Cơ sở 2)",
+  "id": 683,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 15,
+  "so_to_hop": 15,
+  "diem_min": 15,
+  "diem_max": 21,
+  "de_an": {
+   "slug": "truong-dai-hoc-thuy-loi-co-so-2",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-thuy-loi-co-so-2",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Thương Mại",
+  "id": 370,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 42,
+  "so_to_hop": 10,
+  "diem_min": 22.5,
+  "diem_max": 27.8,
+  "de_an": {
+   "slug": "truong-dai-hoc-thuong-mai",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-thuong-mai",
+   "so_nganh": 1896,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Đại Học Tiền Giang",
+  "id": 718,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 16,
+  "so_to_hop": 20,
+  "diem_min": 15,
+  "diem_max": 18,
+  "de_an": {
+   "slug": "truong-dai-hoc-tien-giang",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-tien-giang",
+   "so_nganh": 1894,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Tôn Đức Thắng",
+  "id": 449,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 123,
+  "so_to_hop": 26,
+  "diem_min": 20,
+  "diem_max": 32.3,
+  "de_an": {
+   "slug": "truong-dai-hoc-ton-duc-thang",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-ton-duc-thang",
+   "so_nganh": 1899,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Trà Vinh",
+  "id": 600,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 48,
+  "so_to_hop": 40,
+  "diem_min": 14,
+  "diem_max": 22.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-tra-vinh",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-tra-vinh",
+   "so_nganh": 1896,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Trưng Vương",
+  "id": 740,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 14,
+  "so_to_hop": 22,
+  "diem_min": 15,
+  "diem_max": 16.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-trung-vuong",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-trung-vuong",
+   "so_nganh": 1894,
+   "phuong_thuc": 4
+  }
+ },
+ {
+  "ten": "Trường Đại học Tư thục Quốc Tế Sài Gòn",
+  "id": 773,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 14,
+  "so_to_hop": 21,
+  "diem_min": 15,
+  "diem_max": 18,
+  "de_an": {
+   "slug": "truong-dai-hoc-tu-thuc-quoc-te-sai-gon",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-tu-thuc-quoc-te-sai-gon",
+   "so_nganh": 1894,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Văn Hiến",
+  "id": 732,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 43,
+  "so_to_hop": 35,
+  "diem_min": 15,
+  "diem_max": 18,
+  "de_an": {
+   "slug": "truong-dai-hoc-van-hien",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-van-hien",
+   "so_nganh": 1896,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Văn Hóa Hà Nội",
+  "id": 447,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 20,
+  "so_to_hop": 9,
+  "diem_min": 23.2,
+  "diem_max": 26.81,
+  "de_an": {
+   "slug": "truong-dai-hoc-van-hoa-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-van-hoa-ha-noi",
+   "so_nganh": 1895,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Văn Hóa TPHCM",
+  "id": 495,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 14,
+  "so_to_hop": 10,
+  "diem_min": 24.1,
+  "diem_max": 26.75,
+  "de_an": {
+   "slug": "truong-dai-hoc-van-hoa-tphcm",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-van-hoa-tphcm",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Văn Hóa, Thể Thao Và Du Lịch Thanh Hóa",
+  "id": 823,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 17,
+  "so_to_hop": 18,
+  "diem_min": 15,
+  "diem_max": 27.32,
+  "de_an": {
+   "slug": "truong-dai-hoc-van-hoa-the-thao-va-du-lich-thanh-hoa",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-van-hoa-the-thao-va-du-lich-thanh-hoa",
+   "so_nganh": 1895,
+   "phuong_thuc": 4
+  }
+ },
+ {
+  "ten": "Trường Đại Học Văn Lang",
+  "id": 665,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 47,
+  "so_to_hop": 25,
+  "diem_min": 15,
+  "diem_max": 20.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-van-lang",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-van-lang",
+   "so_nganh": 1896,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại học Việt Nhật - ĐHQG Hà Nội",
+  "id": 705,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 8,
+  "so_to_hop": 24,
+  "diem_min": 20,
+  "diem_max": 22,
+  "de_an": null
+ },
+ {
+  "ten": "Trường Đại Học Vinh",
+  "id": 560,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 58,
+  "so_to_hop": 28,
+  "diem_min": 16,
+  "diem_max": 27.4,
+  "de_an": {
+   "slug": "truong-dai-hoc-vinh",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-vinh",
+   "so_nganh": 1897,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Võ Trường Toản",
+  "id": 674,
+  "thanh_pho": "Thành phố Cần Thơ",
+  "so_nganh": 1,
+  "so_to_hop": 1,
+  "diem_min": null,
+  "diem_max": null,
+  "de_an": {
+   "slug": "truong-dai-hoc-vo-truong-toan",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-vo-truong-toan",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Xây Dựng Hà Nội",
+  "id": 603,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 39,
+  "so_to_hop": 16,
+  "diem_min": 20.4,
+  "diem_max": 27,
+  "de_an": {
+   "slug": "truong-dai-hoc-xay-dung-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-xay-dung-ha-noi",
+   "so_nganh": 1896,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Xây Dựng Miền Tây",
+  "id": 798,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 9,
+  "so_to_hop": 15,
+  "diem_min": 15,
+  "diem_max": 15,
+  "de_an": {
+   "slug": "truong-dai-hoc-xay-dung-mien-tay",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-xay-dung-mien-tay",
+   "so_nganh": 1893,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Xây Dựng Miền Trung",
+  "id": 812,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 15,
+  "so_to_hop": 5,
+  "diem_min": 15,
+  "diem_max": 15,
+  "de_an": {
+   "slug": "truong-dai-hoc-xay-dung-mien-trung",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-xay-dung-mien-trung",
+   "so_nganh": 1894,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại học Y Dược – ĐHQG Hà Nội",
+  "id": 513,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 6,
+  "so_to_hop": 4,
+  "diem_min": 17.75,
+  "diem_max": 26.68,
+  "de_an": null
+ },
+ {
+  "ten": "Trường Đại học Y Dược Buôn Ma Thuột",
+  "id": 863,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 6,
+  "so_to_hop": 20,
+  "diem_min": 16,
+  "diem_max": 22,
+  "de_an": {
+   "slug": "truong-dai-hoc-y-duoc-buon-ma-thuot",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-y-duoc-buon-ma-thuot",
+   "so_nganh": 1893,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Y Dược Cần Thơ",
+  "id": 435,
+  "thanh_pho": "Thành phố Cần Thơ",
+  "so_nganh": 12,
+  "so_to_hop": 2,
+  "diem_min": 17,
+  "diem_max": 23.88,
+  "de_an": {
+   "slug": "truong-dai-hoc-y-duoc-can-tho",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-y-duoc-can-tho",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Y Dược Hải Phòng",
+  "id": 388,
+  "thanh_pho": "Thành phố Hải Phòng",
+  "so_nganh": 7,
+  "so_to_hop": 3,
+  "diem_min": 19.35,
+  "diem_max": 25.33,
+  "de_an": {
+   "slug": "truong-dai-hoc-y-duoc-hai-phong",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-y-duoc-hai-phong",
+   "so_nganh": 1893,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Y Dược Huế",
+  "id": 534,
+  "thanh_pho": "Thành phố Huế",
+  "so_nganh": 11,
+  "so_to_hop": 4,
+  "diem_min": 17,
+  "diem_max": 25.17,
+  "de_an": {
+   "slug": "truong-dai-hoc-y-duoc-hue",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-y-duoc-hue",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Y Dược Thái Bình",
+  "id": 382,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 6,
+  "so_to_hop": 5,
+  "diem_min": 17,
+  "diem_max": 24.6,
+  "de_an": {
+   "slug": "truong-dai-hoc-y-duoc-thai-binh",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-y-duoc-thai-binh",
+   "so_nganh": 1893,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Y Dược Thái Nguyên",
+  "id": 532,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 9,
+  "so_to_hop": 7,
+  "diem_min": 18.3,
+  "diem_max": 26.15,
+  "de_an": {
+   "slug": "truong-dai-hoc-y-duoc-thai-nguyen",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-y-duoc-thai-nguyen",
+   "so_nganh": 1893,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Y Hà Nội",
+  "id": 364,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 14,
+  "so_to_hop": 5,
+  "diem_min": 17,
+  "diem_max": 27.34,
+  "de_an": {
+   "slug": "truong-dai-hoc-y-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-y-ha-noi",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Y Khoa Phạm Ngọc Thạch",
+  "id": 439,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 12,
+  "so_to_hop": 5,
+  "diem_min": 18,
+  "diem_max": 25.55,
+  "de_an": {
+   "slug": "truong-dai-hoc-y-khoa-pham-ngoc-thach",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-y-khoa-pham-ngoc-thach",
+   "so_nganh": 1894,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại học Y khoa Tokyo Việt Nam",
+  "id": 744,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 4,
+  "so_to_hop": 10,
+  "diem_min": 17,
+  "diem_max": 17,
+  "de_an": {
+   "slug": "truong-dai-hoc-y-khoa-tokyo-viet-nam",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-y-khoa-tokyo-viet-nam",
+   "so_nganh": 1900,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Y Khoa Vinh",
+  "id": 528,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 5,
+  "so_to_hop": 3,
+  "diem_min": 17.25,
+  "diem_max": 22.1,
+  "de_an": {
+   "slug": "truong-dai-hoc-y-khoa-vinh",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-y-khoa-vinh",
+   "so_nganh": 1893,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Đại Học Y Tế Công Cộng",
+  "id": 429,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 6,
+  "so_to_hop": 17,
+  "diem_min": 18.3,
+  "diem_max": 23.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-y-te-cong-cong",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-y-te-cong-cong",
+   "so_nganh": 1893,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Đại Học Yersin Đà Lạt",
+  "id": 697,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 13,
+  "so_to_hop": 30,
+  "diem_min": 15.5,
+  "diem_max": 15.5,
+  "de_an": {
+   "slug": "truong-dai-hoc-yersin-da-lat",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-dai-hoc-yersin-da-lat",
+   "so_nganh": 1894,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Khoa học liên ngành và Nghệ thuật Hà Nội",
+  "id": 569,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 11,
+  "so_to_hop": 42,
+  "diem_min": 21.85,
+  "diem_max": 24.91,
+  "de_an": {
+   "slug": "truong-khoa-hoc-lien-nganh-va-nghe-thuat-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-khoa-hoc-lien-nganh-va-nghe-thuat-ha-noi",
+   "so_nganh": null,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Ngoại Ngữ Thái Nguyên",
+  "id": 580,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 4,
+  "so_to_hop": 8,
+  "diem_min": 19.35,
+  "diem_max": 27.07,
+  "de_an": {
+   "slug": "truong-ngoai-ngu-thai-nguyen",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-ngoai-ngu-thai-nguyen",
+   "so_nganh": 1900,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Trường Quản Trị và Kinh Doanh - ĐHQG Hà Nội",
+  "id": 681,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 6,
+  "so_to_hop": 7,
+  "diem_min": 19,
+  "diem_max": 21.5,
+  "de_an": {
+   "slug": "truong-quan-tri-va-kinh-doanh-dhqg-ha-noi",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-quan-tri-va-kinh-doanh-dhqg-ha-noi",
+   "so_nganh": 1893,
+   "phuong_thuc": 2
+  }
+ },
+ {
+  "ten": "Trường Quốc Tế - ĐHQG Hà Nội",
+  "id": 597,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 13,
+  "so_to_hop": 12,
+  "diem_min": 19,
+  "diem_max": 22,
+  "de_an": null
+ },
+ {
+  "ten": "Trường Sĩ Quan Chính Trị – Đại Học Chính Trị",
+  "id": 467,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 2,
+  "so_to_hop": 5,
+  "diem_min": 30.32,
+  "diem_max": 31.33,
+  "de_an": {
+   "slug": "truong-si-quan-chinh-tri-dai-hoc-chinh-tri",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-si-quan-chinh-tri-dai-hoc-chinh-tri",
+   "so_nganh": 1894,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Sĩ Quan Công Binh – Hệ Quân sự – Đại học Ngô Quyền",
+  "id": 675,
+  "thanh_pho": "Thành phố Hồ Chí Minh",
+  "so_nganh": 2,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null,
+  "de_an": {
+   "slug": "truong-si-quan-cong-binh-he-quan-su-dai-hoc-ngo-quyen",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-si-quan-cong-binh-he-quan-su-dai-hoc-ngo-quyen",
+   "so_nganh": 1891,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Sĩ Quan Đặc Công",
+  "id": 676,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 2,
+  "so_to_hop": 3,
+  "diem_min": 21.5,
+  "diem_max": 22.5,
+  "de_an": {
+   "slug": "truong-si-quan-dac-cong",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-si-quan-dac-cong",
+   "so_nganh": 1901,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Sĩ Quan Không Quân - Hệ Đại học",
+  "id": 643,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 6,
+  "so_to_hop": 2,
+  "diem_min": 16.85,
+  "diem_max": 16.85,
+  "de_an": {
+   "slug": "truong-si-quan-khong-quan-he-dai-hoc",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-si-quan-khong-quan-he-dai-hoc",
+   "so_nganh": 1893,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Sĩ Quan Lục Quân 1 – Đại học Trần Quốc Tuấn",
+  "id": 411,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 5,
+  "so_to_hop": 4,
+  "diem_min": 15.85,
+  "diem_max": 24.2,
+  "de_an": {
+   "slug": "truong-si-quan-luc-quan-1-dai-hoc-tran-quoc-tuan",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-si-quan-luc-quan-1-dai-hoc-tran-quoc-tuan",
+   "so_nganh": 1891,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Sĩ Quan Lục Quân 2 – Đại học Nguyễn Huệ",
+  "id": 524,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 4,
+  "so_to_hop": 3,
+  "diem_min": 21.75,
+  "diem_max": 23.72,
+  "de_an": {
+   "slug": "truong-si-quan-luc-quan-2-dai-hoc-nguyen-hue",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-si-quan-luc-quan-2-dai-hoc-nguyen-hue",
+   "so_nganh": 1900,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Sĩ Quan Pháo Binh",
+  "id": 679,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 2,
+  "so_to_hop": 3,
+  "diem_min": 22.25,
+  "diem_max": 24.4,
+  "de_an": {
+   "slug": "truong-si-quan-phao-binh",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-si-quan-phao-binh",
+   "so_nganh": 1891,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Sĩ Quan Phòng Hóa",
+  "id": 647,
+  "thanh_pho": "Thành phố Hà Nội",
+  "so_nganh": 2,
+  "so_to_hop": 4,
+  "diem_min": 22.45,
+  "diem_max": 22.99,
+  "de_an": {
+   "slug": "truong-si-quan-phong-hoa-3",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-si-quan-phong-hoa-3",
+   "so_nganh": 1891,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Sĩ Quan Tăng – Thiết Giáp",
+  "id": 649,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 2,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null,
+  "de_an": {
+   "slug": "truong-si-quan-tang-thiet-giap",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-si-quan-tang-thiet-giap",
+   "so_nganh": 1891,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Sĩ Quan Thông Tin - Hệ Dân Sự - Đại Học Thông Tin Liên Lạc",
+  "id": 881,
+  "thanh_pho": null,
+  "so_nganh": 2,
+  "so_to_hop": 4,
+  "diem_min": 19.5,
+  "diem_max": 20.85,
+  "de_an": null
+ },
+ {
+  "ten": "Trường Sĩ Quan Thông Tin – Hệ Quân sự – Đại Học Thông Tin Liên Lạc",
+  "id": 423,
+  "thanh_pho": "Tỉnh/thành khác",
+  "so_nganh": 2,
+  "so_to_hop": 3,
+  "diem_min": 22.75,
+  "diem_max": 23.84,
+  "de_an": {
+   "slug": "truong-si-quan-thong-tin-he-quan-su-dai-hoc-thong-tin-lien-lac",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-si-quan-thong-tin-he-quan-su-dai-hoc-thong-tin-lien-lac",
+   "so_nganh": 1891,
+   "phuong_thuc": 3
+  }
+ },
+ {
+  "ten": "Trường Y Dược Đà Nẵng",
+  "id": 536,
+  "thanh_pho": "Thành phố Đà Nẵng",
+  "so_nganh": 7,
+  "so_to_hop": 7,
+  "diem_min": 16.5,
+  "diem_max": 23.23,
+  "de_an": {
+   "slug": "truong-y-duoc-da-nang",
+   "link": "https://huongnghiep.hocmai.vn/de-an/truong-y-duoc-da-nang",
+   "so_nganh": 1893,
+   "phuong_thuc": 1
+  }
+ },
+ {
+  "ten": "Viện nghiên cứu và đào tạo Việt Anh - Đại học Đà Nẵng",
+  "id": 750,
+  "thanh_pho": "Thành phố Đà Nẵng",
+  "so_nganh": 5,
+  "so_to_hop": 12,
+  "diem_min": 15.25,
+  "diem_max": 16,
+  "de_an": {
+   "slug": "vien-nghien-cuu-va-dao-tao-viet-anh-dai-hoc-da-nang",
+   "link": "https://huongnghiep.hocmai.vn/de-an/vien-nghien-cuu-va-dao-tao-viet-anh-dai-hoc-da-nang",
+   "so_nganh": 1893,
+   "phuong_thuc": 1
+  }
+ }
+]

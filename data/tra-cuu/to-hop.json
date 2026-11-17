@@ -1,0 +1,1038 @@
+[
+ {
+  "ma": "D01",
+  "so_truong": 256,
+  "so_nganh": 1919,
+  "diem_min": 13,
+  "diem_max": 38.93
+ },
+ {
+  "ma": "A01",
+  "so_truong": 248,
+  "so_nganh": 1786,
+  "diem_min": 13,
+  "diem_max": 31.33
+ },
+ {
+  "ma": "A00",
+  "so_truong": 257,
+  "so_nganh": 1697,
+  "diem_min": 13,
+  "diem_max": 31.33
+ },
+ {
+  "ma": "D07",
+  "so_truong": 181,
+  "so_nganh": 1142,
+  "diem_min": 14,
+  "diem_max": 31.24
+ },
+ {
+  "ma": "C01",
+  "so_truong": 154,
+  "so_nganh": 973,
+  "diem_min": 13,
+  "diem_max": 32.3
+ },
+ {
+  "ma": "C02",
+  "so_truong": 110,
+  "so_nganh": 678,
+  "diem_min": 13,
+  "diem_max": 32.3
+ },
+ {
+  "ma": "C03",
+  "so_truong": 138,
+  "so_nganh": 580,
+  "diem_min": 13,
+  "diem_max": 35.26
+ },
+ {
+  "ma": "C04",
+  "so_truong": 122,
+  "so_nganh": 508,
+  "diem_min": 13,
+  "diem_max": 32.3
+ },
+ {
+  "ma": "C00",
+  "so_truong": 151,
+  "so_nganh": 502,
+  "diem_min": 13,
+  "diem_max": 37.21
+ },
+ {
+  "ma": "B00",
+  "so_truong": 143,
+  "so_nganh": 482,
+  "diem_min": 14,
+  "diem_max": 30.88
+ },
+ {
+  "ma": "X01",
+  "so_truong": 101,
+  "so_nganh": 480,
+  "diem_min": 14,
+  "diem_max": 28.84
+ },
+ {
+  "ma": "D14",
+  "so_truong": 135,
+  "so_nganh": 445,
+  "diem_min": 13,
+  "diem_max": 38.93
+ },
+ {
+  "ma": "D09",
+  "so_truong": 98,
+  "so_nganh": 405,
+  "diem_min": 14,
+  "diem_max": 32
+ },
+ {
+  "ma": "B03",
+  "so_truong": 84,
+  "so_nganh": 384,
+  "diem_min": 14,
+  "diem_max": 29.39
+ },
+ {
+  "ma": "D10",
+  "so_truong": 111,
+  "so_nganh": 373,
+  "diem_min": 13,
+  "diem_max": 32
+ },
+ {
+  "ma": "A02",
+  "so_truong": 82,
+  "so_nganh": 355,
+  "diem_min": 14,
+  "diem_max": 29.27
+ },
+ {
+  "ma": "D15",
+  "so_truong": 126,
+  "so_nganh": 347,
+  "diem_min": 13,
+  "diem_max": 32
+ },
+ {
+  "ma": "X25",
+  "so_truong": 69,
+  "so_nganh": 335,
+  "diem_min": 14,
+  "diem_max": 28.84
+ },
+ {
+  "ma": "B08",
+  "so_truong": 76,
+  "so_nganh": 291,
+  "diem_min": 14,
+  "diem_max": 29.56
+ },
+ {
+  "ma": "A07",
+  "so_truong": 51,
+  "so_nganh": 254,
+  "diem_min": 14,
+  "diem_max": 28.84
+ },
+ {
+  "ma": "D04",
+  "so_truong": 69,
+  "so_nganh": 239,
+  "diem_min": 14,
+  "diem_max": 35.15
+ },
+ {
+  "ma": "A04",
+  "so_truong": 41,
+  "so_nganh": 231,
+  "diem_min": 13,
+  "diem_max": 29.27
+ },
+ {
+  "ma": "A03",
+  "so_truong": 27,
+  "so_nganh": 230,
+  "diem_min": 14,
+  "diem_max": 29.27
+ },
+ {
+  "ma": "X05",
+  "so_truong": 33,
+  "so_nganh": 229,
+  "diem_min": 15,
+  "diem_max": 29.27
+ },
+ {
+  "ma": "X78",
+  "so_truong": 66,
+  "so_nganh": 213,
+  "diem_min": 14,
+  "diem_max": 38.93
+ },
+ {
+  "ma": "D03",
+  "so_truong": 31,
+  "so_nganh": 197,
+  "diem_min": 14,
+  "diem_max": 30
+ },
+ {
+  "ma": "X14",
+  "so_truong": 34,
+  "so_nganh": 194,
+  "diem_min": 14,
+  "diem_max": 28.84
+ },
+ {
+  "ma": "A06",
+  "so_truong": 23,
+  "so_nganh": 193,
+  "diem_min": 14,
+  "diem_max": 28.98
+ },
+ {
+  "ma": "C14",
+  "so_truong": 61,
+  "so_nganh": 190,
+  "diem_min": 13,
+  "diem_max": 28.1
+ },
+ {
+  "ma": "B02",
+  "so_truong": 30,
+  "so_nganh": 186,
+  "diem_min": 14,
+  "diem_max": 28.84
+ },
+ {
+  "ma": "X70",
+  "so_truong": 62,
+  "so_nganh": 174,
+  "diem_min": 14,
+  "diem_max": 35.26
+ },
+ {
+  "ma": "D06",
+  "so_truong": 37,
+  "so_nganh": 167,
+  "diem_min": 14,
+  "diem_max": 32
+ },
+ {
+  "ma": "X21",
+  "so_truong": 29,
+  "so_nganh": 164,
+  "diem_min": 14,
+  "diem_max": 28.84
+ },
+ {
+  "ma": "D08",
+  "so_truong": 56,
+  "so_nganh": 157,
+  "diem_min": 14,
+  "diem_max": 30
+ },
+ {
+  "ma": "A05",
+  "so_truong": 18,
+  "so_nganh": 149,
+  "diem_min": 15,
+  "diem_max": 28.98
+ },
+ {
+  "ma": "X17",
+  "so_truong": 22,
+  "so_nganh": 140,
+  "diem_min": 14,
+  "diem_max": 28.84
+ },
+ {
+  "ma": "D02",
+  "so_truong": 15,
+  "so_nganh": 128,
+  "diem_min": 14,
+  "diem_max": 29.17
+ },
+ {
+  "ma": "X13",
+  "so_truong": 22,
+  "so_nganh": 128,
+  "diem_min": 14,
+  "diem_max": 28.84
+ },
+ {
+  "ma": "D30",
+  "so_truong": 14,
+  "so_nganh": 124,
+  "diem_min": 14,
+  "diem_max": 30
+ },
+ {
+  "ma": "X74",
+  "so_truong": 52,
+  "so_nganh": 123,
+  "diem_min": 14,
+  "diem_max": 29.33
+ },
+ {
+  "ma": "X09",
+  "so_truong": 20,
+  "so_nganh": 121,
+  "diem_min": 14,
+  "diem_max": 28.98
+ },
+ {
+  "ma": "K01",
+  "so_truong": 26,
+  "so_nganh": 120,
+  "diem_min": 15,
+  "diem_max": 27.74
+ },
+ {
+  "ma": "D28",
+  "so_truong": 14,
+  "so_nganh": 113,
+  "diem_min": 14,
+  "diem_max": 28.1
+ },
+ {
+  "ma": "D25",
+  "so_truong": 12,
+  "so_nganh": 112,
+  "diem_min": 14,
+  "diem_max": 30
+ },
+ {
+  "ma": "D29",
+  "so_truong": 12,
+  "so_nganh": 110,
+  "diem_min": 14,
+  "diem_max": 27.83
+ },
+ {
+  "ma": "C20",
+  "so_truong": 38,
+  "so_nganh": 109,
+  "diem_min": 14,
+  "diem_max": 37.21
+ },
+ {
+  "ma": "DD2",
+  "so_truong": 26,
+  "so_nganh": 109,
+  "diem_min": 14,
+  "diem_max": 32.07
+ },
+ {
+  "ma": "D23",
+  "so_truong": 11,
+  "so_nganh": 108,
+  "diem_min": 14,
+  "diem_max": 28.1
+ },
+ {
+  "ma": "D84",
+  "so_truong": 26,
+  "so_nganh": 104,
+  "diem_min": 14,
+  "diem_max": 29.9
+ },
+ {
+  "ma": "B01",
+  "so_truong": 17,
+  "so_nganh": 102,
+  "diem_min": 15,
+  "diem_max": 28.84
+ },
+ {
+  "ma": "D24",
+  "so_truong": 9,
+  "so_nganh": 99,
+  "diem_min": 14,
+  "diem_max": 27.7
+ },
+ {
+  "ma": "A09",
+  "so_truong": 24,
+  "so_nganh": 96,
+  "diem_min": 13,
+  "diem_max": 26.67
+ },
+ {
+  "ma": "D27",
+  "so_truong": 7,
+  "so_nganh": 96,
+  "diem_min": 14,
+  "diem_max": 27.7
+ },
+ {
+  "ma": "X16",
+  "so_truong": 25,
+  "so_nganh": 96,
+  "diem_min": 14,
+  "diem_max": 28.84
+ },
+ {
+  "ma": "C19",
+  "so_truong": 39,
+  "so_nganh": 95,
+  "diem_min": 14,
+  "diem_max": 37.21
+ },
+ {
+  "ma": "D05",
+  "so_truong": 8,
+  "so_nganh": 95,
+  "diem_min": 14,
+  "diem_max": 28.35
+ },
+ {
+  "ma": "D22",
+  "so_truong": 6,
+  "so_nganh": 94,
+  "diem_min": 14,
+  "diem_max": 27.7
+ },
+ {
+  "ma": "D66",
+  "so_truong": 45,
+  "so_nganh": 94,
+  "diem_min": 14,
+  "diem_max": 37.21
+ },
+ {
+  "ma": "D26",
+  "so_truong": 7,
+  "so_nganh": 90,
+  "diem_min": 14,
+  "diem_max": 27.7
+ },
+ {
+  "ma": "AH3",
+  "so_truong": 6,
+  "so_nganh": 87,
+  "diem_min": 14,
+  "diem_max": 27.81
+ },
+ {
+  "ma": "AH2",
+  "so_truong": 7,
+  "so_nganh": 85,
+  "diem_min": 14,
+  "diem_max": 27.81
+ },
+ {
+  "ma": "D11",
+  "so_truong": 27,
+  "so_nganh": 82,
+  "diem_min": 15,
+  "diem_max": 31.34
+ },
+ {
+  "ma": "D21",
+  "so_truong": 5,
+  "so_nganh": 79,
+  "diem_min": 14,
+  "diem_max": 27.7
+ },
+ {
+  "ma": "A08",
+  "so_truong": 19,
+  "so_nganh": 69,
+  "diem_min": 14,
+  "diem_max": 27.63
+ },
+ {
+  "ma": "A10",
+  "so_truong": 17,
+  "so_nganh": 63,
+  "diem_min": 15,
+  "diem_max": 23.21
+ },
+ {
+  "ma": "C08",
+  "so_truong": 20,
+  "so_nganh": 61,
+  "diem_min": 14,
+  "diem_max": 24.94
+ },
+ {
+  "ma": "D40",
+  "so_truong": 5,
+  "so_nganh": 59,
+  "diem_min": 15,
+  "diem_max": 28.13
+ },
+ {
+  "ma": "D38",
+  "so_truong": 3,
+  "so_nganh": 57,
+  "diem_min": 15,
+  "diem_max": 26.65
+ },
+ {
+  "ma": "X22",
+  "so_truong": 9,
+  "so_nganh": 57,
+  "diem_min": 13,
+  "diem_max": 28.84
+ },
+ {
+  "ma": "D37",
+  "so_truong": 2,
+  "so_nganh": 56,
+  "diem_min": 15,
+  "diem_max": 26.65
+ },
+ {
+  "ma": "X18",
+  "so_truong": 3,
+  "so_nganh": 53,
+  "diem_min": 18,
+  "diem_max": 28.84
+ },
+ {
+  "ma": "B04",
+  "so_truong": 18,
+  "so_nganh": 50,
+  "diem_min": 14,
+  "diem_max": 25
+ },
+ {
+  "ma": "D13",
+  "so_truong": 17,
+  "so_nganh": 50,
+  "diem_min": 14,
+  "diem_max": 26.25
+ },
+ {
+  "ma": "A11",
+  "so_truong": 14,
+  "so_nganh": 49,
+  "diem_min": 14,
+  "diem_max": 24.7
+ },
+ {
+  "ma": "V00",
+  "so_truong": 20,
+  "so_nganh": 48,
+  "diem_min": 15,
+  "diem_max": 28.54
+ },
+ {
+  "ma": "D12",
+  "so_truong": 17,
+  "so_nganh": 47,
+  "diem_min": 14,
+  "diem_max": 27.2
+ },
+ {
+  "ma": "D36",
+  "so_truong": 1,
+  "so_nganh": 47,
+  "diem_min": 22.8,
+  "diem_max": 26.65
+ },
+ {
+  "ma": "V01",
+  "so_truong": 21,
+  "so_nganh": 47,
+  "diem_min": 15,
+  "diem_max": 25.95
+ },
+ {
+  "ma": "D65",
+  "so_truong": 16,
+  "so_nganh": 37,
+  "diem_min": 15,
+  "diem_max": 30
+ },
+ {
+  "ma": "C07",
+  "so_truong": 9,
+  "so_nganh": 36,
+  "diem_min": 14,
+  "diem_max": 28.39
+ },
+ {
+  "ma": "C13",
+  "so_truong": 10,
+  "so_nganh": 36,
+  "diem_min": 15,
+  "diem_max": 28.55
+ },
+ {
+  "ma": "C05",
+  "so_truong": 12,
+  "so_nganh": 34,
+  "diem_min": 14,
+  "diem_max": 26.23
+ },
+ {
+  "ma": "C12",
+  "so_truong": 9,
+  "so_nganh": 34,
+  "diem_min": 15,
+  "diem_max": 28.39
+ },
+ {
+  "ma": "D20",
+  "so_truong": 6,
+  "so_nganh": 30,
+  "diem_min": 15,
+  "diem_max": 24
+ },
+ {
+  "ma": "H01",
+  "so_truong": 13,
+  "so_nganh": 30,
+  "diem_min": 15,
+  "diem_max": 30.78
+ },
+ {
+  "ma": "C10",
+  "so_truong": 7,
+  "so_nganh": 29,
+  "diem_min": 15,
+  "diem_max": 28.39
+ },
+ {
+  "ma": "V02",
+  "so_truong": 13,
+  "so_nganh": 29,
+  "diem_min": 15,
+  "diem_max": 24.95
+ },
+ {
+  "ma": "C09",
+  "so_truong": 7,
+  "so_nganh": 28,
+  "diem_min": 15,
+  "diem_max": 28.55
+ },
+ {
+  "ma": "D45",
+  "so_truong": 16,
+  "so_nganh": 28,
+  "diem_min": 15,
+  "diem_max": 30
+ },
+ {
+  "ma": "D35",
+  "so_truong": 7,
+  "so_nganh": 27,
+  "diem_min": 15,
+  "diem_max": 30
+ },
+ {
+  "ma": "M01",
+  "so_truong": 10,
+  "so_nganh": 27,
+  "diem_min": 15,
+  "diem_max": 25.95
+ },
+ {
+  "ma": "M00",
+  "so_truong": 10,
+  "so_nganh": 26,
+  "diem_min": 16,
+  "diem_max": 27.32
+ },
+ {
+  "ma": "T00",
+  "so_truong": 14,
+  "so_nganh": 26,
+  "diem_min": 15,
+  "diem_max": 35.36
+ },
+ {
+  "ma": "Y07",
+  "so_truong": 4,
+  "so_nganh": 24,
+  "diem_min": 15,
+  "diem_max": 23.48
+ },
+ {
+  "ma": "D33",
+  "so_truong": 8,
+  "so_nganh": 23,
+  "diem_min": 15,
+  "diem_max": 28.1
+ },
+ {
+  "ma": "C06",
+  "so_truong": 6,
+  "so_nganh": 22,
+  "diem_min": 14,
+  "diem_max": 24.5
+ },
+ {
+  "ma": "C11",
+  "so_truong": 4,
+  "so_nganh": 22,
+  "diem_min": 15,
+  "diem_max": 28.55
+ },
+ {
+  "ma": "D63",
+  "so_truong": 11,
+  "so_nganh": 22,
+  "diem_min": 15,
+  "diem_max": 28.1
+ },
+ {
+  "ma": "H06",
+  "so_truong": 7,
+  "so_nganh": 22,
+  "diem_min": 15,
+  "diem_max": 28.54
+ },
+ {
+  "ma": "X75",
+  "so_truong": 7,
+  "so_nganh": 21,
+  "diem_min": 15,
+  "diem_max": 28.55
+ },
+ {
+  "ma": "T05",
+  "so_truong": 9,
+  "so_nganh": 20,
+  "diem_min": 15,
+  "diem_max": 33.25
+ },
+ {
+  "ma": "D71",
+  "so_truong": 4,
+  "so_nganh": 19,
+  "diem_min": 15,
+  "diem_max": 28.1
+ },
+ {
+  "ma": "D64",
+  "so_truong": 7,
+  "so_nganh": 17,
+  "diem_min": 15,
+  "diem_max": 28.61
+ },
+ {
+  "ma": "D32",
+  "so_truong": 5,
+  "so_nganh": 16,
+  "diem_min": 15,
+  "diem_max": 24.25
+ },
+ {
+  "ma": "D44",
+  "so_truong": 7,
+  "so_nganh": 16,
+  "diem_min": 15,
+  "diem_max": 28.32
+ },
+ {
+  "ma": "DH5",
+  "so_truong": 7,
+  "so_nganh": 16,
+  "diem_min": 15,
+  "diem_max": 27.81
+ },
+ {
+  "ma": "V03",
+  "so_truong": 6,
+  "so_nganh": 16,
+  "diem_min": 15,
+  "diem_max": 22.1
+ },
+ {
+  "ma": "A15",
+  "so_truong": 3,
+  "so_nganh": 15,
+  "diem_min": 15,
+  "diem_max": 16.1
+ },
+ {
+  "ma": "D34",
+  "so_truong": 4,
+  "so_nganh": 15,
+  "diem_min": 15,
+  "diem_max": 24.25
+ },
+ {
+  "ma": "T03",
+  "so_truong": 5,
+  "so_nganh": 14,
+  "diem_min": 15,
+  "diem_max": 27.74
+ },
+ {
+  "ma": "X66",
+  "so_truong": 7,
+  "so_nganh": 14,
+  "diem_min": 15,
+  "diem_max": 27.74
+ },
+ {
+  "ma": "C16",
+  "so_truong": 3,
+  "so_nganh": 13,
+  "diem_min": 15,
+  "diem_max": 27.95
+ },
+ {
+  "ma": "D43",
+  "so_truong": 6,
+  "so_nganh": 13,
+  "diem_min": 15,
+  "diem_max": 28.1
+ },
+ {
+  "ma": "DH1",
+  "so_truong": 4,
+  "so_nganh": 11,
+  "diem_min": 15,
+  "diem_max": 27.81
+ },
+ {
+  "ma": "T01",
+  "so_truong": 13,
+  "so_nganh": 11,
+  "diem_min": 17.59,
+  "diem_max": 35.36
+ },
+ {
+  "ma": "T02",
+  "so_truong": 11,
+  "so_nganh": 11,
+  "diem_min": 16,
+  "diem_max": 33.25
+ },
+ {
+  "ma": "AH4",
+  "so_truong": 3,
+  "so_nganh": 9,
+  "diem_min": 15,
+  "diem_max": 27.81
+ },
+ {
+  "ma": "D55",
+  "so_truong": 5,
+  "so_nganh": 9,
+  "diem_min": 15,
+  "diem_max": 30.4
+ },
+ {
+  "ma": "D86",
+  "so_truong": 1,
+  "so_nganh": 9,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ma": "D87",
+  "so_truong": 1,
+  "so_nganh": 9,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ma": "D88",
+  "so_truong": 1,
+  "so_nganh": 9,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ma": "D61",
+  "so_truong": 2,
+  "so_nganh": 8,
+  "diem_min": 17.5,
+  "diem_max": 25
+ },
+ {
+  "ma": "D69",
+  "so_truong": 2,
+  "so_nganh": 8,
+  "diem_min": 15,
+  "diem_max": 25
+ },
+ {
+  "ma": "H04",
+  "so_truong": 3,
+  "so_nganh": 8,
+  "diem_min": 15,
+  "diem_max": 30.78
+ },
+ {
+  "ma": "D42",
+  "so_truong": 3,
+  "so_nganh": 7,
+  "diem_min": 15,
+  "diem_max": 25
+ },
+ {
+  "ma": "D62",
+  "so_truong": 3,
+  "so_nganh": 7,
+  "diem_min": 15,
+  "diem_max": 25
+ },
+ {
+  "ma": "H08",
+  "so_truong": 3,
+  "so_nganh": 7,
+  "diem_min": 15,
+  "diem_max": 24.91
+ },
+ {
+  "ma": "T04",
+  "so_truong": 3,
+  "so_nganh": 7,
+  "diem_min": 19.8,
+  "diem_max": 35.36
+ },
+ {
+  "ma": "D31",
+  "so_truong": 3,
+  "so_nganh": 6,
+  "diem_min": 16,
+  "diem_max": 24.56
+ },
+ {
+  "ma": "D67",
+  "so_truong": 1,
+  "so_nganh": 6,
+  "diem_min": 17.5,
+  "diem_max": 25
+ },
+ {
+  "ma": "D68",
+  "so_truong": 1,
+  "so_nganh": 6,
+  "diem_min": 17.5,
+  "diem_max": 25
+ },
+ {
+  "ma": "D70",
+  "so_truong": 1,
+  "so_nganh": 6,
+  "diem_min": 17.5,
+  "diem_max": 25
+ },
+ {
+  "ma": "V06",
+  "so_truong": 6,
+  "so_nganh": 6,
+  "diem_min": 15,
+  "diem_max": 22.1
+ },
+ {
+  "ma": "X67",
+  "so_truong": 2,
+  "so_nganh": 6,
+  "diem_min": 16,
+  "diem_max": 23.48
+ },
+ {
+  "ma": "M02",
+  "so_truong": 6,
+  "so_nganh": 5,
+  "diem_min": 15,
+  "diem_max": 26.05
+ },
+ {
+  "ma": "C17",
+  "so_truong": 2,
+  "so_nganh": 4,
+  "diem_min": 15,
+  "diem_max": 16
+ },
+ {
+  "ma": "M03",
+  "so_truong": 5,
+  "so_nganh": 3,
+  "diem_min": 22.75,
+  "diem_max": 26.05
+ },
+ {
+  "ma": "N01",
+  "so_truong": 6,
+  "so_nganh": 3,
+  "diem_min": 15,
+  "diem_max": 28.12
+ },
+ {
+  "ma": "N05",
+  "so_truong": 3,
+  "so_nganh": 3,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ma": "V10",
+  "so_truong": 3,
+  "so_nganh": 3,
+  "diem_min": 21.9,
+  "diem_max": 24.95
+ },
+ {
+  "ma": "X59",
+  "so_truong": 2,
+  "so_nganh": 3,
+  "diem_min": 21.24,
+  "diem_max": 23.48
+ },
+ {
+  "ma": "H07",
+  "so_truong": 3,
+  "so_nganh": 2,
+  "diem_min": 22.3,
+  "diem_max": 25.46
+ },
+ {
+  "ma": "M09",
+  "so_truong": 3,
+  "so_nganh": 2,
+  "diem_min": 24,
+  "diem_max": 25.88
+ },
+ {
+  "ma": "M11",
+  "so_truong": 3,
+  "so_nganh": 2,
+  "diem_min": 22.56,
+  "diem_max": 26.12
+ },
+ {
+  "ma": "TH9",
+  "so_truong": 1,
+  "so_nganh": 2,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ma": "M10",
+  "so_truong": 1,
+  "so_nganh": 1,
+  "diem_min": 22.56,
+  "diem_max": 22.56
+ },
+ {
+  "ma": "M13",
+  "so_truong": 1,
+  "so_nganh": 1,
+  "diem_min": 22.56,
+  "diem_max": 22.56
+ },
+ {
+  "ma": "S00",
+  "so_truong": 1,
+  "so_nganh": 1,
+  "diem_min": 18,
+  "diem_max": 18
+ }
+]

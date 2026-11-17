@@ -1,0 +1,33 @@
+{
+ "nguon": "https://huongnghiep.hocmai.vn (HOCMAI) — du lieu diem chuan theo de an tuyen sinh",
+ "ngay_cao": "2026-11-17",
+ "so_ban_ghi_goc": {
+  "de-an": 268,
+  "danh-sach-nganh": 392,
+  "to-hop": 4161
+ },
+ "so_dong_bang_doc_duoc": 5326,
+ "so_dong_to_hop_doc_duoc": 187521,
+ "so_muc_sau_gop": 5496,
+ "so_truong": 280,
+ "so_nganh": 833,
+ "so_to_hop": 148,
+ "so_bai_khong_doc_duoc": 54,
+ "vi_du_loi": [
+  "danh-sach-nganh#31503 nhac-jazz: 0 dong",
+  "danh-sach-nganh#31502 bieu-dien-nhac-cu-phuong-tay: 0 dong",
+  "danh-sach-nganh#31501 chi-huy-am-nhac: 0 dong",
+  "danh-sach-nganh#31500 sang-tac-am-nhac: 0 dong",
+  "danh-sach-nganh#31278: khong co truong tax (dung ten trong bang)",
+  "to-hop#8881 to-hop-b08-truong-dai-hoc-giao-duc-dhqg-ha-noi: 0 dong",
+  "to-hop#8757 to-hop-d10-truong-dai-hoc-luong-the-vinh: 0 dong",
+  "to-hop#8537 to-hop-b01-truong-dai-hoc-luong-the-vinh: 0 dong",
+  "to-hop#8313 to-hop-c04-truong-dai-hoc-luong-the-vinh: 0 dong",
+  "to-hop#8243 to-hop-a03-truong-dai-hoc-luong-the-vinh: 0 dong",
+  "to-hop#8197 to-hop-c04-truong-dai-hoc-giao-duc-dhqg-ha-noi: 0 dong",
+  "to-hop#8093 to-hop-a02-truong-dai-hoc-luong-the-vinh: 0 dong",
+  "to-hop#8039 to-hop-b02-truong-dai-hoc-luong-the-vinh: 0 dong",
+  "to-hop#7997 to-hop-a02-truong-dai-hoc-giao-duc-dhqg-ha-noi: 0 dong",
+  "to-hop#7900 to-hop-a06-truong-dai-hoc-luong-the-vinh: 0 dong"
+ ]
+}

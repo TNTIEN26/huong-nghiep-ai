@@ -1,0 +1,6666 @@
+[
+ {
+  "ten": "Quản trị kinh doanh",
+  "id": 929,
+  "so_truong": 144,
+  "so_to_hop": 103,
+  "diem_min": 13,
+  "diem_max": 29.05
+ },
+ {
+  "ten": "Ngôn ngữ Anh",
+  "id": 1222,
+  "so_truong": 127,
+  "so_to_hop": 87,
+  "diem_min": 14,
+  "diem_max": 33.89
+ },
+ {
+  "ten": "Công nghệ thông tin",
+  "id": 957,
+  "so_truong": 126,
+  "so_to_hop": 92,
+  "diem_min": 14,
+  "diem_max": 28.83
+ },
+ {
+  "ten": "Kế toán",
+  "id": 908,
+  "so_truong": 125,
+  "so_to_hop": 86,
+  "diem_min": 13,
+  "diem_max": 27.1
+ },
+ {
+  "ten": "Tài chính",
+  "id": 910,
+  "so_truong": 88,
+  "so_to_hop": 94,
+  "diem_min": 13,
+  "diem_max": 28.09
+ },
+ {
+  "ten": "Quản trị dịch vụ du lịch và lữ hành",
+  "id": 950,
+  "so_truong": 71,
+  "so_to_hop": 82,
+  "diem_min": 13,
+  "diem_max": 27.58
+ },
+ {
+  "ten": "Luật",
+  "id": 1230,
+  "so_truong": 69,
+  "so_to_hop": 63,
+  "diem_min": 14,
+  "diem_max": 31.3
+ },
+ {
+  "ten": "Ngôn ngữ Trung Quốc",
+  "id": 1224,
+  "so_truong": 64,
+  "so_to_hop": 75,
+  "diem_min": 14,
+  "diem_max": 34.35
+ },
+ {
+  "ten": "Marketing",
+  "id": 1051,
+  "so_truong": 63,
+  "so_to_hop": 85,
+  "diem_min": 14,
+  "diem_max": 31.24
+ },
+ {
+  "ten": "Logistics và Quản lý chuỗi cung ứng",
+  "id": 932,
+  "so_truong": 59,
+  "so_to_hop": 85,
+  "diem_min": 14,
+  "diem_max": 29.03
+ },
+ {
+  "ten": "Luật kinh tế",
+  "id": 1090,
+  "so_truong": 59,
+  "so_to_hop": 83,
+  "diem_min": 14,
+  "diem_max": 26.97
+ },
+ {
+  "ten": "Thương mai điện tử",
+  "id": 955,
+  "so_truong": 57,
+  "so_to_hop": 69,
+  "diem_min": 14,
+  "diem_max": 28.83
+ },
+ {
+  "ten": "Kinh tế",
+  "id": 927,
+  "so_truong": 55,
+  "so_to_hop": 77,
+  "diem_min": 14,
+  "diem_max": 26.79
+ },
+ {
+  "ten": "Kinh doanh quốc tế",
+  "id": 928,
+  "so_truong": 50,
+  "so_to_hop": 80,
+  "diem_min": 15,
+  "diem_max": 31.01
+ },
+ {
+  "ten": "Quản trị khách sạn",
+  "id": 954,
+  "so_truong": 49,
+  "so_to_hop": 90,
+  "diem_min": 13,
+  "diem_max": 28.5
+ },
+ {
+  "ten": "Công nghệ kỹ thuật ô tô",
+  "id": 972,
+  "so_truong": 45,
+  "so_to_hop": 59,
+  "diem_min": 14,
+  "diem_max": 27.03
+ },
+ {
+  "ten": "Công nghệ kỹ thuật điện, điển tử",
+  "id": 1024,
+  "so_truong": 42,
+  "so_to_hop": 76,
+  "diem_min": 14,
+  "diem_max": 28.13
+ },
+ {
+  "ten": "Truyền thông đa phương tiện",
+  "id": 998,
+  "so_truong": 41,
+  "so_to_hop": 65,
+  "diem_min": 14,
+  "diem_max": 38.93
+ },
+ {
+  "ten": "Công nghệ thực phẩm",
+  "id": 1052,
+  "so_truong": 35,
+  "so_to_hop": 74,
+  "diem_min": 14,
+  "diem_max": 25.25
+ },
+ {
+  "ten": "Điều dưỡng",
+  "id": 1148,
+  "so_truong": 35,
+  "so_to_hop": 29,
+  "diem_min": 17,
+  "diem_max": 24.13
+ },
+ {
+  "ten": "Giáo dục Tiểu học",
+  "id": 1133,
+  "so_truong": 35,
+  "so_to_hop": 52,
+  "diem_min": 15,
+  "diem_max": 27.82
+ },
+ {
+  "ten": "Kỹ thuật xây dựng",
+  "id": 1242,
+  "so_truong": 35,
+  "so_to_hop": 58,
+  "diem_min": 15,
+  "diem_max": 25.7
+ },
+ {
+  "ten": "Công nghệ tài chính",
+  "id": 915,
+  "so_truong": 34,
+  "so_to_hop": 71,
+  "diem_min": 15,
+  "diem_max": 27.25
+ },
+ {
+  "ten": "Công tác xã hội thanh thiếu niên",
+  "id": 1277,
+  "so_truong": 33,
+  "so_to_hop": 47,
+  "diem_min": 14,
+  "diem_max": 30.11
+ },
+ {
+  "ten": "Du lịch",
+  "id": 946,
+  "so_truong": 33,
+  "so_to_hop": 62,
+  "diem_min": 14,
+  "diem_max": 32.3
+ },
+ {
+  "ten": "Kiểm toán",
+  "id": 909,
+  "so_truong": 32,
+  "so_to_hop": 77,
+  "diem_min": 14,
+  "diem_max": 28.38
+ },
+ {
+  "ten": "Khoa học máy tính",
+  "id": 965,
+  "so_truong": 31,
+  "so_to_hop": 62,
+  "diem_min": 14,
+  "diem_max": 30.27
+ },
+ {
+  "ten": "Sư phạm Tiếng Anh",
+  "id": 1079,
+  "so_truong": 31,
+  "so_to_hop": 40,
+  "diem_min": 21.85,
+  "diem_max": 32
+ },
+ {
+  "ten": "Trí tuệ nhân tạo",
+  "id": 967,
+  "so_truong": 31,
+  "so_to_hop": 59,
+  "diem_min": 15,
+  "diem_max": 29.6
+ },
+ {
+  "ten": "Dược học",
+  "id": 1146,
+  "so_truong": 30,
+  "so_to_hop": 22,
+  "diem_min": 19,
+  "diem_max": 28.31
+ },
+ {
+  "ten": "Quản lý tài nguyên và môi trường",
+  "id": 1167,
+  "so_truong": 30,
+  "so_to_hop": 48,
+  "diem_min": 14,
+  "diem_max": 24.17
+ },
+ {
+  "ten": "Kỹ thuật phần mềm",
+  "id": 988,
+  "so_truong": 29,
+  "so_to_hop": 67,
+  "diem_min": 14,
+  "diem_max": 29.83
+ },
+ {
+  "ten": "Kỹ thuật xét nghiệm y học",
+  "id": null,
+  "so_truong": 29,
+  "so_to_hop": 20,
+  "diem_min": 15,
+  "diem_max": 24.01
+ },
+ {
+  "ten": "Tâm lý học",
+  "id": 1183,
+  "so_truong": 29,
+  "so_to_hop": 57,
+  "diem_min": 15,
+  "diem_max": 27.75
+ },
+ {
+  "ten": "Khoa học dữ liệu và trí tuệ nhân tạo",
+  "id": 980,
+  "so_truong": 28,
+  "so_to_hop": 56,
+  "diem_min": 15,
+  "diem_max": 29.39
+ },
+ {
+  "ten": "Ngôn ngữ Hàn Quốc",
+  "id": 1296,
+  "so_truong": 28,
+  "so_to_hop": 65,
+  "diem_min": 14,
+  "diem_max": 32.07
+ },
+ {
+  "ten": "Kinh doanh",
+  "id": 925,
+  "so_truong": 27,
+  "so_to_hop": 73,
+  "diem_min": 15,
+  "diem_max": 28
+ },
+ {
+  "ten": "Sư phạm Ngữ văn",
+  "id": 1077,
+  "so_truong": 27,
+  "so_to_hop": 27,
+  "diem_min": 24.65,
+  "diem_max": 30.57
+ },
+ {
+  "ten": "Thú y",
+  "id": 1182,
+  "so_truong": 27,
+  "so_to_hop": 34,
+  "diem_min": 14,
+  "diem_max": 24.65
+ },
+ {
+  "ten": "Y khoa",
+  "id": 1142,
+  "so_truong": 27,
+  "so_to_hop": 20,
+  "diem_min": 20.5,
+  "diem_max": 27.34
+ },
+ {
+  "ten": "Công nghệ kỹ thuật cơ điện tử",
+  "id": 1022,
+  "so_truong": 26,
+  "so_to_hop": 53,
+  "diem_min": 14,
+  "diem_max": 29.08
+ },
+ {
+  "ten": "Công nghệ kỹ thuât cơ khí",
+  "id": 1009,
+  "so_truong": 26,
+  "so_to_hop": 70,
+  "diem_min": 14,
+  "diem_max": 27.83
+ },
+ {
+  "ten": "Kỹ thuật điều khiển và tự động hóa",
+  "id": null,
+  "so_truong": 26,
+  "so_to_hop": 34,
+  "diem_min": 15,
+  "diem_max": 29.1
+ },
+ {
+  "ten": "Sư phạm Toán",
+  "id": 1074,
+  "so_truong": 26,
+  "so_to_hop": 39,
+  "diem_min": 23.3,
+  "diem_max": 29.23
+ },
+ {
+  "ten": "Công nghệ sinh học",
+  "id": 1068,
+  "so_truong": 25,
+  "so_to_hop": 31,
+  "diem_min": 15,
+  "diem_max": 25.27
+ },
+ {
+  "ten": "Kỹ thuật cơ điện tử",
+  "id": 1011,
+  "so_truong": 25,
+  "so_to_hop": 34,
+  "diem_min": 15,
+  "diem_max": 28.55
+ },
+ {
+  "ten": "Việt Nam học",
+  "id": 1271,
+  "so_truong": 25,
+  "so_to_hop": 62,
+  "diem_min": 14,
+  "diem_max": 26.87
+ },
+ {
+  "ten": "Giáo dục Mầm non",
+  "id": 1125,
+  "so_truong": 24,
+  "so_to_hop": 32,
+  "diem_min": 21.5,
+  "diem_max": 26.28
+ },
+ {
+  "ten": "Kiến trúc",
+  "id": 1248,
+  "so_truong": 24,
+  "so_to_hop": 37,
+  "diem_min": 15,
+  "diem_max": 28.54
+ },
+ {
+  "ten": "Kỹ thuật điện",
+  "id": 1027,
+  "so_truong": 24,
+  "so_to_hop": 38,
+  "diem_min": 14.75,
+  "diem_max": 27.61
+ },
+ {
+  "ten": "Quản lý đất đai",
+  "id": 1165,
+  "so_truong": 24,
+  "so_to_hop": 43,
+  "diem_min": 15,
+  "diem_max": 24.38
+ },
+ {
+  "ten": "Quan hệ công chúng",
+  "id": 1056,
+  "so_truong": 23,
+  "so_to_hop": 28,
+  "diem_min": 14,
+  "diem_max": 38.67
+ },
+ {
+  "ten": "Quản trị nhân lực",
+  "id": 1255,
+  "so_truong": 23,
+  "so_to_hop": 73,
+  "diem_min": 15,
+  "diem_max": 27.1
+ },
+ {
+  "ten": "Sư phạm Khoa học Tự nhiên",
+  "id": 1091,
+  "so_truong": 23,
+  "so_to_hop": 25,
+  "diem_min": 19.41,
+  "diem_max": 28.08
+ },
+ {
+  "ten": "Ngôn ngữ Nhật",
+  "id": 1286,
+  "so_truong": 22,
+  "so_to_hop": 58,
+  "diem_min": 14,
+  "diem_max": 29
+ },
+ {
+  "ten": "Công nghệ kỹ thuật điều khiển và tự động hóa",
+  "id": 1025,
+  "so_truong": 21,
+  "so_to_hop": 55,
+  "diem_min": 14,
+  "diem_max": 30.08
+ },
+ {
+  "ten": "Công nghệ kỹ thuật hóa học",
+  "id": 1044,
+  "so_truong": 21,
+  "so_to_hop": 29,
+  "diem_min": 15,
+  "diem_max": 29.73
+ },
+ {
+  "ten": "Răng hàm mặt",
+  "id": 1144,
+  "so_truong": 21,
+  "so_to_hop": 14,
+  "diem_min": 19,
+  "diem_max": 27.34
+ },
+ {
+  "ten": "Sư phạm Lịch sử",
+  "id": 1086,
+  "so_truong": 21,
+  "so_to_hop": 23,
+  "diem_min": 24.66,
+  "diem_max": 29.23
+ },
+ {
+  "ten": "Thiết kế đồ họa",
+  "id": 1234,
+  "so_truong": 21,
+  "so_to_hop": 57,
+  "diem_min": 15,
+  "diem_max": 30.78
+ },
+ {
+  "ten": "Công nghệ kỹ thuật môi trường",
+  "id": 1156,
+  "so_truong": 20,
+  "so_to_hop": 35,
+  "diem_min": 15,
+  "diem_max": 24.48
+ },
+ {
+  "ten": "Đông phương học",
+  "id": 1275,
+  "so_truong": 20,
+  "so_to_hop": 56,
+  "diem_min": 15,
+  "diem_max": 24.5
+ },
+ {
+  "ten": "Quản lý xây dựng",
+  "id": 1260,
+  "so_truong": 20,
+  "so_to_hop": 55,
+  "diem_min": 15,
+  "diem_max": 24.45
+ },
+ {
+  "ten": "Văn học",
+  "id": 1269,
+  "so_truong": 20,
+  "so_to_hop": 22,
+  "diem_min": 15,
+  "diem_max": 27.97
+ },
+ {
+  "ten": "Công nghệ kỹ thuật điện tử - viễn thông",
+  "id": 969,
+  "so_truong": 19,
+  "so_to_hop": 43,
+  "diem_min": 15,
+  "diem_max": 28
+ },
+ {
+  "ten": "Kỹ thuật xây dựng công trình giao thông",
+  "id": 1256,
+  "so_truong": 19,
+  "so_to_hop": 29,
+  "diem_min": 15,
+  "diem_max": 23.88
+ },
+ {
+  "ten": "Sư phạm Hóa học",
+  "id": 1081,
+  "so_truong": 19,
+  "so_to_hop": 10,
+  "diem_min": 21.8,
+  "diem_max": 30.88
+ },
+ {
+  "ten": "Sư phạm Sinh học",
+  "id": 1083,
+  "so_truong": 19,
+  "so_to_hop": 15,
+  "diem_min": 19.75,
+  "diem_max": 27.25
+ },
+ {
+  "ten": "Hệ thống thông tin",
+  "id": 977,
+  "so_truong": 18,
+  "so_to_hop": 16,
+  "diem_min": 15,
+  "diem_max": 26.38
+ },
+ {
+  "ten": "Kỹ thuật cơ khí",
+  "id": 1013,
+  "so_truong": 18,
+  "so_to_hop": 36,
+  "diem_min": 15,
+  "diem_max": 26.62
+ },
+ {
+  "ten": "Kỹ thuật điện tử viễn thông",
+  "id": 984,
+  "so_truong": 18,
+  "so_to_hop": 33,
+  "diem_min": 15,
+  "diem_max": 29.4
+ },
+ {
+  "ten": "Quản trị nhà hàng và dịch vụ ăn uống",
+  "id": 958,
+  "so_truong": 18,
+  "so_to_hop": 45,
+  "diem_min": 14,
+  "diem_max": 23.5
+ },
+ {
+  "ten": "Sư phạm Tin học",
+  "id": 1113,
+  "so_truong": 18,
+  "so_to_hop": 13,
+  "diem_min": 20.35,
+  "diem_max": 27.1
+ },
+ {
+  "ten": "Y học cổ truyền",
+  "id": 1149,
+  "so_truong": 18,
+  "so_to_hop": 42,
+  "diem_min": 19,
+  "diem_max": 24.03
+ },
+ {
+  "ten": "Hệ thống thông tin quản lý",
+  "id": 943,
+  "so_truong": 17,
+  "so_to_hop": 46,
+  "diem_min": 14,
+  "diem_max": 27.72
+ },
+ {
+  "ten": "Sư phạm Vật lý",
+  "id": 1075,
+  "so_truong": 17,
+  "so_to_hop": 10,
+  "diem_min": 23.21,
+  "diem_max": 29.27
+ },
+ {
+  "ten": "Kỹ thuật hình ảnh y học",
+  "id": 1163,
+  "so_truong": 16,
+  "so_to_hop": 16,
+  "diem_min": 17,
+  "diem_max": 23.57
+ },
+ {
+  "ten": "Chăn nuôi",
+  "id": 1184,
+  "so_truong": 15,
+  "so_to_hop": 28,
+  "diem_min": 15,
+  "diem_max": 20.26
+ },
+ {
+  "ten": "Công nghệ chế tạo máy",
+  "id": 976,
+  "so_truong": 15,
+  "so_to_hop": 50,
+  "diem_min": 14,
+  "diem_max": 26.53
+ },
+ {
+  "ten": "Công nghệ kỹ thuật",
+  "id": 978,
+  "so_truong": 15,
+  "so_to_hop": 37,
+  "diem_min": 14,
+  "diem_max": 24.08
+ },
+ {
+  "ten": "Kỹ thuật môi trường",
+  "id": 1159,
+  "so_truong": 15,
+  "so_to_hop": 46,
+  "diem_min": 14,
+  "diem_max": 23
+ },
+ {
+  "ten": "Kỹ thuật phục hồi chức năng",
+  "id": 1166,
+  "so_truong": 15,
+  "so_to_hop": 17,
+  "diem_min": 17,
+  "diem_max": 23
+ },
+ {
+  "ten": "Quản lý nhà nước",
+  "id": null,
+  "so_truong": 15,
+  "so_to_hop": 35,
+  "diem_min": 14,
+  "diem_max": 25.75
+ },
+ {
+  "ten": "An toàn thông tin",
+  "id": 959,
+  "so_truong": 14,
+  "so_to_hop": 28,
+  "diem_min": 15,
+  "diem_max": 26.27
+ },
+ {
+  "ten": "Bất động sản",
+  "id": 914,
+  "so_truong": 14,
+  "so_to_hop": 55,
+  "diem_min": 15,
+  "diem_max": 25.41
+ },
+ {
+  "ten": "Chính trị học",
+  "id": 1267,
+  "so_truong": 14,
+  "so_to_hop": 23,
+  "diem_min": 14,
+  "diem_max": 26.93
+ },
+ {
+  "ten": "Giáo dục Thể chất",
+  "id": 1131,
+  "so_truong": 14,
+  "so_to_hop": 6,
+  "diem_min": 18.75,
+  "diem_max": 35.36
+ },
+ {
+  "ten": "Hóa học",
+  "id": 1072,
+  "so_truong": 14,
+  "so_to_hop": 15,
+  "diem_min": 15,
+  "diem_max": 26.25
+ },
+ {
+  "ten": "Khoa học cây trồng",
+  "id": 1215,
+  "so_truong": 14,
+  "so_to_hop": 38,
+  "diem_min": 15,
+  "diem_max": 19
+ },
+ {
+  "ten": "Kinh tế quốc tế",
+  "id": 935,
+  "so_truong": 14,
+  "so_to_hop": 35,
+  "diem_min": 15,
+  "diem_max": 28.13
+ },
+ {
+  "ten": "Kỹ thuật ô tô",
+  "id": 974,
+  "so_truong": 14,
+  "so_to_hop": 25,
+  "diem_min": 14,
+  "diem_max": 27.03
+ },
+ {
+  "ten": "Quản trị văn phòng",
+  "id": 1257,
+  "so_truong": 14,
+  "so_to_hop": 48,
+  "diem_min": 14,
+  "diem_max": 27.43
+ },
+ {
+  "ten": "Bảo vệ thực vật",
+  "id": 1213,
+  "so_truong": 13,
+  "so_to_hop": 33,
+  "diem_min": 14,
+  "diem_max": 21.5
+ },
+ {
+  "ten": "Dinh dưỡng",
+  "id": 1155,
+  "so_truong": 13,
+  "so_to_hop": 16,
+  "diem_min": 15,
+  "diem_max": 22.1
+ },
+ {
+  "ten": "Giáo dục Chính trị",
+  "id": 1117,
+  "so_truong": 13,
+  "so_to_hop": 40,
+  "diem_min": 24.04,
+  "diem_max": 28.33
+ },
+ {
+  "ten": "Khoa học môi trường",
+  "id": 1157,
+  "so_truong": 13,
+  "so_to_hop": 38,
+  "diem_min": 15,
+  "diem_max": 21.9
+ },
+ {
+  "ten": "Kinh tế số",
+  "id": 937,
+  "so_truong": 13,
+  "so_to_hop": 41,
+  "diem_min": 15,
+  "diem_max": 25.1
+ },
+ {
+  "ten": "Kinh tế xây dựng",
+  "id": 1240,
+  "so_truong": 13,
+  "so_to_hop": 16,
+  "diem_min": 15,
+  "diem_max": 24.9
+ },
+ {
+  "ten": "Kỹ thuật máy tính",
+  "id": 986,
+  "so_truong": 13,
+  "so_to_hop": 64,
+  "diem_min": 15,
+  "diem_max": 27
+ },
+ {
+  "ten": "Nuôi trồng thủy sản",
+  "id": 1219,
+  "so_truong": 13,
+  "so_to_hop": 41,
+  "diem_min": 14,
+  "diem_max": 20
+ },
+ {
+  "ten": "Tâm lý học giáo dục",
+  "id": 1185,
+  "so_truong": 13,
+  "so_to_hop": 18,
+  "diem_min": 22.8,
+  "diem_max": 26.82
+ },
+ {
+  "ten": "Thiết kế thời trang",
+  "id": 1199,
+  "so_truong": 13,
+  "so_to_hop": 18,
+  "diem_min": 15,
+  "diem_max": 29.23
+ },
+ {
+  "ten": "Công nghệ vật liệu",
+  "id": 1040,
+  "so_truong": 12,
+  "so_to_hop": 16,
+  "diem_min": 15,
+  "diem_max": 25.6
+ },
+ {
+  "ten": "Hóa dược",
+  "id": 1158,
+  "so_truong": 12,
+  "so_to_hop": 14,
+  "diem_min": 14,
+  "diem_max": 23.7
+ },
+ {
+  "ten": "Mạng máy tính và truyền thông dữ liệu",
+  "id": null,
+  "so_truong": 12,
+  "so_to_hop": 14,
+  "diem_min": 15,
+  "diem_max": 26.78
+ },
+ {
+  "ten": "Quan hệ quốc tế",
+  "id": 1067,
+  "so_truong": 12,
+  "so_to_hop": 35,
+  "diem_min": 15,
+  "diem_max": 37.64
+ },
+ {
+  "ten": "Quản lý công nghiệp",
+  "id": 970,
+  "so_truong": 12,
+  "so_to_hop": 35,
+  "diem_min": 15,
+  "diem_max": 25.98
+ },
+ {
+  "ten": "Tài chính ngân hàng",
+  "id": 912,
+  "so_truong": 12,
+  "so_to_hop": 32,
+  "diem_min": 15,
+  "diem_max": 24.09
+ },
+ {
+  "ten": "Xã hội học",
+  "id": 1273,
+  "so_truong": 12,
+  "so_to_hop": 65,
+  "diem_min": 15,
+  "diem_max": 31.76
+ },
+ {
+  "ten": "Y học dự phòng",
+  "id": 1152,
+  "so_truong": 12,
+  "so_to_hop": 22,
+  "diem_min": 17,
+  "diem_max": 19.35
+ },
+ {
+  "ten": "Công nghệ kỹ thuật xây dựng",
+  "id": 1244,
+  "so_truong": 11,
+  "so_to_hop": 20,
+  "diem_min": 13,
+  "diem_max": 23.6
+ },
+ {
+  "ten": "Đảm bảo chất lượng và an toàn thực phẩm",
+  "id": 1053,
+  "so_truong": 11,
+  "so_to_hop": 60,
+  "diem_min": 15,
+  "diem_max": 22
+ },
+ {
+  "ten": "Hộ sinh",
+  "id": 1160,
+  "so_truong": 11,
+  "so_to_hop": 14,
+  "diem_min": 17,
+  "diem_max": 20.35
+ },
+ {
+  "ten": "Nông nghiệp",
+  "id": 1209,
+  "so_truong": 11,
+  "so_to_hop": 37,
+  "diem_min": 14,
+  "diem_max": 20
+ },
+ {
+  "ten": "Quốc tế học",
+  "id": 962,
+  "so_truong": 11,
+  "so_to_hop": 25,
+  "diem_min": 15,
+  "diem_max": 26.83
+ },
+ {
+  "ten": "Sư phạm Công nghệ",
+  "id": 1095,
+  "so_truong": 11,
+  "so_to_hop": 14,
+  "diem_min": 19,
+  "diem_max": 28.27
+ },
+ {
+  "ten": "Sư phạm Địa lý",
+  "id": 1088,
+  "so_truong": 11,
+  "so_to_hop": 14,
+  "diem_min": 26.41,
+  "diem_max": 29.33
+ },
+ {
+  "ten": "Y tế công cộng",
+  "id": 1153,
+  "so_truong": 11,
+  "so_to_hop": 30,
+  "diem_min": 14,
+  "diem_max": 20.5
+ },
+ {
+  "ten": "Nông học",
+  "id": 1211,
+  "so_truong": 10,
+  "so_to_hop": 20,
+  "diem_min": 15,
+  "diem_max": 21.5
+ },
+ {
+  "ten": "Quản lý văn hóa",
+  "id": 1265,
+  "so_truong": 10,
+  "so_to_hop": 17,
+  "diem_min": 15,
+  "diem_max": 26.55
+ },
+ {
+  "ten": "Thiết kế nội thất",
+  "id": 1258,
+  "so_truong": 10,
+  "so_to_hop": 18,
+  "diem_min": 15,
+  "diem_max": 28.93
+ },
+ {
+  "ten": "Công nghệ kỹ thuật nhiệt",
+  "id": 1032,
+  "so_truong": 9,
+  "so_to_hop": 33,
+  "diem_min": 14,
+  "diem_max": 26.08
+ },
+ {
+  "ten": "Công nghệ truyền thông",
+  "id": null,
+  "so_truong": 9,
+  "so_to_hop": 46,
+  "diem_min": 15,
+  "diem_max": 24.7
+ },
+ {
+  "ten": "Giáo dục Công dân",
+  "id": 1120,
+  "so_truong": 9,
+  "so_to_hop": 19,
+  "diem_min": 25.57,
+  "diem_max": 27.95
+ },
+ {
+  "ten": "Kỹ thuật cơ khí động lực",
+  "id": 979,
+  "so_truong": 9,
+  "so_to_hop": 28,
+  "diem_min": 15,
+  "diem_max": 26.25
+ },
+ {
+  "ten": "Kỹ thuật hóa học",
+  "id": 1046,
+  "so_truong": 9,
+  "so_to_hop": 15,
+  "diem_min": 14,
+  "diem_max": 27.85
+ },
+ {
+  "ten": "Kỹ thuật y sinh",
+  "id": 1076,
+  "so_truong": 9,
+  "so_to_hop": 13,
+  "diem_min": 15,
+  "diem_max": 27.18
+ },
+ {
+  "ten": "Lịch sử",
+  "id": 1281,
+  "so_truong": 9,
+  "so_to_hop": 16,
+  "diem_min": 19.05,
+  "diem_max": 27.75
+ },
+ {
+  "ten": "Luật thương mại quốc tế",
+  "id": 1094,
+  "so_truong": 9,
+  "so_to_hop": 23,
+  "diem_min": 15,
+  "diem_max": 26.44
+ },
+ {
+  "ten": "Ngôn ngữ Nga",
+  "id": 1226,
+  "so_truong": 9,
+  "so_to_hop": 19,
+  "diem_min": 15,
+  "diem_max": 29.17
+ },
+ {
+  "ten": "Ngôn ngữ Pháp",
+  "id": 1288,
+  "so_truong": 9,
+  "so_to_hop": 17,
+  "diem_min": 15,
+  "diem_max": 27.25
+ },
+ {
+  "ten": "Quản lý kinh tế",
+  "id": null,
+  "so_truong": 9,
+  "so_to_hop": 35,
+  "diem_min": 15,
+  "diem_max": 23.96
+ },
+ {
+  "ten": "Toán ứng dụng",
+  "id": 1243,
+  "so_truong": 9,
+  "so_to_hop": 39,
+  "diem_min": 19.25,
+  "diem_max": 26.67
+ },
+ {
+  "ten": "Báo chí",
+  "id": 1049,
+  "so_truong": 8,
+  "so_to_hop": 24,
+  "diem_min": 19,
+  "diem_max": 37.27
+ },
+ {
+  "ten": "Bảo hiểm",
+  "id": 913,
+  "so_truong": 8,
+  "so_to_hop": 36,
+  "diem_min": 14,
+  "diem_max": 25.25
+ },
+ {
+  "ten": "Digital Marketing",
+  "id": 1069,
+  "so_truong": 8,
+  "so_to_hop": 20,
+  "diem_min": 15,
+  "diem_max": 26.42
+ },
+ {
+  "ten": "Kinh tế đầu tư",
+  "id": 921,
+  "so_truong": 8,
+  "so_to_hop": 32,
+  "diem_min": 17.5,
+  "diem_max": 27.5
+ },
+ {
+  "ten": "Kỹ thuật nhiệt",
+  "id": 1029,
+  "so_truong": 8,
+  "so_to_hop": 7,
+  "diem_min": 15,
+  "diem_max": 25.47
+ },
+ {
+  "ten": "Kỹ thuật robot",
+  "id": 1033,
+  "so_truong": 8,
+  "so_to_hop": 16,
+  "diem_min": 14,
+  "diem_max": 26
+ },
+ {
+  "ten": "Logistics",
+  "id": 930,
+  "so_truong": 8,
+  "so_to_hop": 28,
+  "diem_min": 15,
+  "diem_max": 23.66
+ },
+ {
+  "ten": "Quản lý giáo dục",
+  "id": 1139,
+  "so_truong": 8,
+  "so_to_hop": 17,
+  "diem_min": 15,
+  "diem_max": 25.5
+ },
+ {
+  "ten": "Quản lý thể dục thể thao",
+  "id": 1189,
+  "so_truong": 8,
+  "so_to_hop": 26,
+  "diem_min": 15,
+  "diem_max": 27.98
+ },
+ {
+  "ten": "Công nghệ dệt may",
+  "id": 1191,
+  "so_truong": 7,
+  "so_to_hop": 17,
+  "diem_min": 15,
+  "diem_max": 22.48
+ },
+ {
+  "ten": "Công nghệ giáo dục",
+  "id": 1071,
+  "so_truong": 7,
+  "so_to_hop": 9,
+  "diem_min": 15,
+  "diem_max": 23.8
+ },
+ {
+  "ten": "Giáo dục học",
+  "id": 1123,
+  "so_truong": 7,
+  "so_to_hop": 18,
+  "diem_min": 14,
+  "diem_max": 26.3
+ },
+ {
+  "ten": "Kỹ thuật cấp thoát nước",
+  "id": 1161,
+  "so_truong": 7,
+  "so_to_hop": 13,
+  "diem_min": 15,
+  "diem_max": 21.65
+ },
+ {
+  "ten": "Sư phạm Tiếng Trung",
+  "id": 1111,
+  "so_truong": 7,
+  "so_to_hop": 17,
+  "diem_min": 21.53,
+  "diem_max": 30
+ },
+ {
+  "ten": "Thông tin thư viện",
+  "id": 1293,
+  "so_truong": 7,
+  "so_to_hop": 37,
+  "diem_min": 15,
+  "diem_max": 24.8
+ },
+ {
+  "ten": "Triết học",
+  "id": 1295,
+  "so_truong": 7,
+  "so_to_hop": 35,
+  "diem_min": 16,
+  "diem_max": 25.41
+ },
+ {
+  "ten": "Văn hóa học",
+  "id": 1263,
+  "so_truong": 7,
+  "so_to_hop": 13,
+  "diem_min": 15,
+  "diem_max": 26.75
+ },
+ {
+  "ten": "Vật lý kỹ thuật",
+  "id": 1015,
+  "so_truong": 7,
+  "so_to_hop": 10,
+  "diem_min": 18.25,
+  "diem_max": 27.6
+ },
+ {
+  "ten": "Điện",
+  "id": 983,
+  "so_truong": 6,
+  "so_to_hop": 41,
+  "diem_min": 17,
+  "diem_max": 25.3
+ },
+ {
+  "ten": "Điện tử động",
+  "id": 995,
+  "so_truong": 6,
+  "so_to_hop": 40,
+  "diem_min": 19.25,
+  "diem_max": 26.55
+ },
+ {
+  "ten": "Hàn Quốc học",
+  "id": 1287,
+  "so_truong": 6,
+  "so_to_hop": 18,
+  "diem_min": 15,
+  "diem_max": 25.1
+ },
+ {
+  "ten": "Huấn luyện thể thao",
+  "id": 1187,
+  "so_truong": 6,
+  "so_to_hop": 11,
+  "diem_min": 15,
+  "diem_max": 23.93
+ },
+ {
+  "ten": "Khoa học vật liệu",
+  "id": 1042,
+  "so_truong": 6,
+  "so_to_hop": 12,
+  "diem_min": 14.75,
+  "diem_max": 24.2
+ },
+ {
+  "ten": "Kinh doanh nông nghiệp",
+  "id": 1217,
+  "so_truong": 6,
+  "so_to_hop": 48,
+  "diem_min": 15,
+  "diem_max": 23.75
+ },
+ {
+  "ten": "Kinh tế phát triển",
+  "id": 933,
+  "so_truong": 6,
+  "so_to_hop": 11,
+  "diem_min": 15,
+  "diem_max": 26.77
+ },
+ {
+  "ten": "Kỹ thuật hệ thống công nghiệp",
+  "id": 981,
+  "so_truong": 6,
+  "so_to_hop": 9,
+  "diem_min": 15,
+  "diem_max": 21.75
+ },
+ {
+  "ten": "Luật kinh doanh",
+  "id": 1087,
+  "so_truong": 6,
+  "so_to_hop": 31,
+  "diem_min": 23.44,
+  "diem_max": 25.5
+ },
+ {
+  "ten": "Ngân hàng",
+  "id": 911,
+  "so_truong": 6,
+  "so_to_hop": 27,
+  "diem_min": 15,
+  "diem_max": 25.25
+ },
+ {
+  "ten": "Nhật Bản học",
+  "id": 1289,
+  "so_truong": 6,
+  "so_to_hop": 17,
+  "diem_min": 15,
+  "diem_max": 24.43
+ },
+ {
+  "ten": "Quản lý công",
+  "id": 1253,
+  "so_truong": 6,
+  "so_to_hop": 33,
+  "diem_min": 16.5,
+  "diem_max": 25.42
+ },
+ {
+  "ten": "Quản lý tài nguyên rừng",
+  "id": 1164,
+  "so_truong": 6,
+  "so_to_hop": 26,
+  "diem_min": 15,
+  "diem_max": 17
+ },
+ {
+  "ten": "Quản trị dịch vụ du lịch & lữ hành",
+  "id": null,
+  "so_truong": 6,
+  "so_to_hop": 18,
+  "diem_min": 15,
+  "diem_max": 25.81
+ },
+ {
+  "ten": "Quản trị sự kiện",
+  "id": 960,
+  "so_truong": 6,
+  "so_to_hop": 35,
+  "diem_min": 15,
+  "diem_max": 25.5
+ },
+ {
+  "ten": "Sư phạm Âm nhạc",
+  "id": 1093,
+  "so_truong": 6,
+  "so_to_hop": 1,
+  "diem_min": 19,
+  "diem_max": 28.12
+ },
+ {
+  "ten": "Tiếng Việt và Văn hóa Việt Nam",
+  "id": null,
+  "so_truong": 6,
+  "so_to_hop": 19,
+  "diem_min": 15,
+  "diem_max": 26.36
+ },
+ {
+  "ten": "Toán học",
+  "id": 1239,
+  "so_truong": 6,
+  "so_to_hop": 12,
+  "diem_min": 18,
+  "diem_max": 25.9
+ },
+ {
+  "ten": "Trung Quốc học",
+  "id": 1285,
+  "so_truong": 6,
+  "so_to_hop": 32,
+  "diem_min": 19.45,
+  "diem_max": 26.09
+ },
+ {
+  "ten": "Tự động hóa",
+  "id": 993,
+  "so_truong": 6,
+  "so_to_hop": 40,
+  "diem_min": 18,
+  "diem_max": 26.51
+ },
+ {
+  "ten": "Công nghệ kỹ thuật máy tính",
+  "id": 971,
+  "so_truong": 5,
+  "so_to_hop": 11,
+  "diem_min": 16,
+  "diem_max": 27.58
+ },
+ {
+  "ten": "Địa lý học",
+  "id": 968,
+  "so_truong": 5,
+  "so_to_hop": 13,
+  "diem_min": 22,
+  "diem_max": 27.23
+ },
+ {
+  "ten": "Kiến trúc nội thất",
+  "id": 1252,
+  "so_truong": 5,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 21.55
+ },
+ {
+  "ten": "Kỹ thuật cơ sở hạ tầng",
+  "id": 1254,
+  "so_truong": 5,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 22.28
+ },
+ {
+  "ten": "Kỹ thuật Hàng không",
+  "id": null,
+  "so_truong": 5,
+  "so_to_hop": 32,
+  "diem_min": 15,
+  "diem_max": 26.6
+ },
+ {
+  "ten": "Kỹ thuật vật liệu",
+  "id": 1037,
+  "so_truong": 5,
+  "so_to_hop": 18,
+  "diem_min": 16,
+  "diem_max": 25.39
+ },
+ {
+  "ten": "Lâm sinh",
+  "id": null,
+  "so_truong": 5,
+  "so_to_hop": 27,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Luật quốc tế",
+  "id": 1092,
+  "so_truong": 5,
+  "so_to_hop": 24,
+  "diem_min": 16,
+  "diem_max": 24.95
+ },
+ {
+  "ten": "Ngôn ngữ học",
+  "id": 1283,
+  "so_truong": 5,
+  "so_to_hop": 10,
+  "diem_min": 20,
+  "diem_max": 25.75
+ },
+ {
+  "ten": "Quản lý đô thị và công trình",
+  "id": null,
+  "so_truong": 5,
+  "so_to_hop": 14,
+  "diem_min": 15,
+  "diem_max": 22.62
+ },
+ {
+  "ten": "Robot và trí tuệ nhân tạo",
+  "id": 994,
+  "so_truong": 5,
+  "so_to_hop": 27,
+  "diem_min": 15,
+  "diem_max": 28.88
+ },
+ {
+  "ten": "Sinh học",
+  "id": 1070,
+  "so_truong": 5,
+  "so_to_hop": 13,
+  "diem_min": 17,
+  "diem_max": 20.57
+ },
+ {
+  "ten": "Sư phạm Mỹ thuật",
+  "id": 1097,
+  "so_truong": 5,
+  "so_to_hop": 2,
+  "diem_min": 22,
+  "diem_max": 26.46
+ },
+ {
+  "ten": "Sư phạm Tiếng Pháp",
+  "id": 1110,
+  "so_truong": 5,
+  "so_to_hop": 8,
+  "diem_min": 21.45,
+  "diem_max": 27.4
+ },
+ {
+  "ten": "Sư phạm Vật Lí",
+  "id": null,
+  "so_truong": 5,
+  "so_to_hop": 8,
+  "diem_min": 24.8,
+  "diem_max": 28.31
+ },
+ {
+  "ten": "Thống kê",
+  "id": 1249,
+  "so_truong": 5,
+  "so_to_hop": 14,
+  "diem_min": 15,
+  "diem_max": 26.79
+ },
+ {
+  "ten": "Vật lý học",
+  "id": 1048,
+  "so_truong": 5,
+  "so_to_hop": 10,
+  "diem_min": 16,
+  "diem_max": 24.65
+ },
+ {
+  "ten": "Xây dựng dân dụng và công nghiệp",
+  "id": null,
+  "so_truong": 5,
+  "so_to_hop": 12,
+  "diem_min": 15,
+  "diem_max": 20.75
+ },
+ {
+  "ten": "Xây dựng Đảng và Chính quyền Nhà nước",
+  "id": null,
+  "so_truong": 5,
+  "so_to_hop": 15,
+  "diem_min": 19.5,
+  "diem_max": 31.33
+ },
+ {
+  "ten": "Công nghệ bán dẫn",
+  "id": 961,
+  "so_truong": 4,
+  "so_to_hop": 20,
+  "diem_min": 20.25,
+  "diem_max": 25.55
+ },
+ {
+  "ten": "Công nghệ chế biến thủy sản",
+  "id": 1201,
+  "so_truong": 4,
+  "so_to_hop": 8,
+  "diem_min": 15.4,
+  "diem_max": 21
+ },
+ {
+  "ten": "Công nghệ đa phương tiện",
+  "id": 964,
+  "so_truong": 4,
+  "so_to_hop": 5,
+  "diem_min": 21.35,
+  "diem_max": 24
+ },
+ {
+  "ten": "Công nghệ may",
+  "id": 1193,
+  "so_truong": 4,
+  "so_to_hop": 9,
+  "diem_min": 15,
+  "diem_max": 23.38
+ },
+ {
+  "ten": "Giáo dục Quốc phòng An ninh",
+  "id": 1129,
+  "so_truong": 4,
+  "so_to_hop": 13,
+  "diem_min": 23.25,
+  "diem_max": 27.06
+ },
+ {
+  "ten": "Kinh tế chính trị",
+  "id": 1297,
+  "so_truong": 4,
+  "so_to_hop": 30,
+  "diem_min": 15,
+  "diem_max": 27.11
+ },
+ {
+  "ten": "Kỹ thuật địa chất",
+  "id": 1102,
+  "so_truong": 4,
+  "so_to_hop": 26,
+  "diem_min": 15,
+  "diem_max": 22.7
+ },
+ {
+  "ten": "Kỹ thuật trắc địa bản đồ",
+  "id": 1100,
+  "so_truong": 4,
+  "so_to_hop": 31,
+  "diem_min": 15,
+  "diem_max": 15.5
+ },
+ {
+  "ten": "Kỹ thuật xây dựng công trình thủy",
+  "id": 1282,
+  "so_truong": 4,
+  "so_to_hop": 7,
+  "diem_min": 15,
+  "diem_max": 20.48
+ },
+ {
+  "ten": "Logistic và quản lý chuỗi cung ứng",
+  "id": null,
+  "so_truong": 4,
+  "so_to_hop": 24,
+  "diem_min": 15,
+  "diem_max": 23.7
+ },
+ {
+  "ten": "Nhóm ngành Kỹ thuật",
+  "id": null,
+  "so_truong": 4,
+  "so_to_hop": 3,
+  "diem_min": 20.53,
+  "diem_max": 25.21
+ },
+ {
+  "ten": "Phân tích dữ liệu kinh doanh",
+  "id": 919,
+  "so_truong": 4,
+  "so_to_hop": 26,
+  "diem_min": 20,
+  "diem_max": 26.4
+ },
+ {
+  "ten": "Quản lý tài nguyên",
+  "id": 1171,
+  "so_truong": 4,
+  "so_to_hop": 14,
+  "diem_min": 15,
+  "diem_max": 20.57
+ },
+ {
+  "ten": "Quản lý thông tin",
+  "id": 991,
+  "so_truong": 4,
+  "so_to_hop": 17,
+  "diem_min": 15,
+  "diem_max": 24.99
+ },
+ {
+  "ten": "Quy hoạch vùng và đô thị",
+  "id": 1272,
+  "so_truong": 4,
+  "so_to_hop": 12,
+  "diem_min": 15,
+  "diem_max": 24.58
+ },
+ {
+  "ten": "Sinh học ứng dụng",
+  "id": 1078,
+  "so_truong": 4,
+  "so_to_hop": 12,
+  "diem_min": 15.1,
+  "diem_max": 24
+ },
+ {
+  "ten": "Sư phạm Địa Lí",
+  "id": null,
+  "so_truong": 4,
+  "so_to_hop": 8,
+  "diem_min": 25.53,
+  "diem_max": 28.79
+ },
+ {
+  "ten": "Thanh nhạc",
+  "id": 1135,
+  "so_truong": 4,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 18
+ },
+ {
+  "ten": "Toán tài chính",
+  "id": 1251,
+  "so_truong": 4,
+  "so_to_hop": 30,
+  "diem_min": 21,
+  "diem_max": 27.8
+ },
+ {
+  "ten": "Công nghệ chế biến lâm sản",
+  "id": 1225,
+  "so_truong": 3,
+  "so_to_hop": 11,
+  "diem_min": 15,
+  "diem_max": 16
+ },
+ {
+  "ten": "Công nghệ điện ảnh truyền hình",
+  "id": 1128,
+  "so_truong": 3,
+  "so_to_hop": 14,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Công nghệ kỹ thuật năng lượng",
+  "id": 992,
+  "so_truong": 3,
+  "so_to_hop": 9,
+  "diem_min": 18.5,
+  "diem_max": 22.5
+ },
+ {
+  "ten": "Công nghệ kỹ thuật vật liệu xây dựng",
+  "id": 1041,
+  "so_truong": 3,
+  "so_to_hop": 9,
+  "diem_min": 18.85,
+  "diem_max": 23.3
+ },
+ {
+  "ten": "Công nghệ sau thu hoạch",
+  "id": 1227,
+  "so_truong": 3,
+  "so_to_hop": 30,
+  "diem_min": 15,
+  "diem_max": 17
+ },
+ {
+  "ten": "Cơ điện tử",
+  "id": null,
+  "so_truong": 3,
+  "so_to_hop": 41,
+  "diem_min": 18,
+  "diem_max": 26.19
+ },
+ {
+  "ten": "Địa chất học",
+  "id": 1103,
+  "so_truong": 3,
+  "so_to_hop": 31,
+  "diem_min": 15,
+  "diem_max": 22.05
+ },
+ {
+  "ten": "Giáo dục đặc biệt",
+  "id": 1121,
+  "so_truong": 3,
+  "so_to_hop": 10,
+  "diem_min": 24.17,
+  "diem_max": 28.7
+ },
+ {
+  "ten": "Hướng dẫn du lịch",
+  "id": 948,
+  "so_truong": 3,
+  "so_to_hop": 8,
+  "diem_min": 19,
+  "diem_max": 23.3
+ },
+ {
+  "ten": "Khai thác vận tải",
+  "id": 1262,
+  "so_truong": 3,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 25.78
+ },
+ {
+  "ten": "Khí tượng và Khí hậu học",
+  "id": 1008,
+  "so_truong": 3,
+  "so_to_hop": 17,
+  "diem_min": 15,
+  "diem_max": 22.8
+ },
+ {
+  "ten": "Khoa học quản lý",
+  "id": 947,
+  "so_truong": 3,
+  "so_to_hop": 15,
+  "diem_min": 16.25,
+  "diem_max": 26.06
+ },
+ {
+  "ten": "Khoa học y sinh",
+  "id": 1045,
+  "so_truong": 3,
+  "so_to_hop": 11,
+  "diem_min": 15,
+  "diem_max": 17
+ },
+ {
+  "ten": "Kiến trúc cảnh quan",
+  "id": 1250,
+  "so_truong": 3,
+  "so_to_hop": 6,
+  "diem_min": 16,
+  "diem_max": 21.04
+ },
+ {
+  "ten": "Kinh doanh thời trang và dệt may",
+  "id": 1197,
+  "so_truong": 3,
+  "so_to_hop": 9,
+  "diem_min": 15,
+  "diem_max": 18.5
+ },
+ {
+  "ten": "Kinh tế vận tải",
+  "id": 1264,
+  "so_truong": 3,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 25.46
+ },
+ {
+  "ten": "Kỹ thuật hạt nhân",
+  "id": 1031,
+  "so_truong": 3,
+  "so_to_hop": 9,
+  "diem_min": 21,
+  "diem_max": 25.07
+ },
+ {
+  "ten": "Lâm nghiệp",
+  "id": 1205,
+  "so_truong": 3,
+  "so_to_hop": 12,
+  "diem_min": 15,
+  "diem_max": 17
+ },
+ {
+  "ten": "Lưu trữ học",
+  "id": 1299,
+  "so_truong": 3,
+  "so_to_hop": 12,
+  "diem_min": 22.6,
+  "diem_max": 25.04
+ },
+ {
+  "ten": "Ngành Ngôn ngữ Anh",
+  "id": null,
+  "so_truong": 3,
+  "so_to_hop": 8,
+  "diem_min": 15,
+  "diem_max": 35.25
+ },
+ {
+  "ten": "Ngành Quản trị Kinh doanh",
+  "id": null,
+  "so_truong": 3,
+  "so_to_hop": 12,
+  "diem_min": 15,
+  "diem_max": 28.91
+ },
+ {
+  "ten": "Ngành Tài chính",
+  "id": null,
+  "so_truong": 3,
+  "so_to_hop": 12,
+  "diem_min": 15,
+  "diem_max": 29.9
+ },
+ {
+  "ten": "Nghệ thuật số",
+  "id": null,
+  "so_truong": 3,
+  "so_to_hop": 14,
+  "diem_min": 15,
+  "diem_max": 17.67
+ },
+ {
+  "ten": "Ngôn ngữ Đức",
+  "id": 1284,
+  "so_truong": 3,
+  "so_to_hop": 11,
+  "diem_min": 22.3,
+  "diem_max": 28.35
+ },
+ {
+  "ten": "Phát triển nông thôn",
+  "id": 1221,
+  "so_truong": 3,
+  "so_to_hop": 32,
+  "diem_min": 15,
+  "diem_max": 17
+ },
+ {
+  "ten": "Quản hệ lao động",
+  "id": 1261,
+  "so_truong": 3,
+  "so_to_hop": 9,
+  "diem_min": 20,
+  "diem_max": 25
+ },
+ {
+  "ten": "Quản lý bệnh viện",
+  "id": 1168,
+  "so_truong": 3,
+  "so_to_hop": 12,
+  "diem_min": 15,
+  "diem_max": 17
+ },
+ {
+  "ten": "Quản lý phát triển đô thị và bất động sản",
+  "id": 1268,
+  "so_truong": 3,
+  "so_to_hop": 31,
+  "diem_min": 15,
+  "diem_max": 22.9
+ },
+ {
+  "ten": "Quản lý thủy sản",
+  "id": 1223,
+  "so_truong": 3,
+  "so_to_hop": 16,
+  "diem_min": 15,
+  "diem_max": 20
+ },
+ {
+  "ten": "Quản trị doanh nghiệp",
+  "id": 923,
+  "so_truong": 3,
+  "so_to_hop": 11,
+  "diem_min": 19.5,
+  "diem_max": 24.98
+ },
+ {
+  "ten": "Quản trị du lịch và khách sạn",
+  "id": 952,
+  "so_truong": 3,
+  "so_to_hop": 12,
+  "diem_min": 19.5,
+  "diem_max": 23.53
+ },
+ {
+  "ten": "Thiết kế công nghiệp",
+  "id": 1236,
+  "so_truong": 3,
+  "so_to_hop": 49,
+  "diem_min": 15,
+  "diem_max": 24.2
+ },
+ {
+  "ten": "Thiết kế vi mạch",
+  "id": 996,
+  "so_truong": 3,
+  "so_to_hop": 4,
+  "diem_min": 24.75,
+  "diem_max": 27.36
+ },
+ {
+  "ten": "Tiếng Anh thương mại",
+  "id": 918,
+  "so_truong": 3,
+  "so_to_hop": 18,
+  "diem_min": 24.5,
+  "diem_max": 27.61
+ },
+ {
+  "ten": "Toán kinh tế",
+  "id": 1241,
+  "so_truong": 3,
+  "so_to_hop": 21,
+  "diem_min": 23,
+  "diem_max": 26.73
+ },
+ {
+  "ten": "Toán tin",
+  "id": 1247,
+  "so_truong": 3,
+  "so_to_hop": 12,
+  "diem_min": 16.5,
+  "diem_max": 25.5
+ },
+ {
+  "ten": "Vật lý y khoa",
+  "id": 1170,
+  "so_truong": 3,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 25.84
+ },
+ {
+  "ten": "An ninh mạng và phòng chống tội phạm công nghệ cao",
+  "id": 1007,
+  "so_truong": 2,
+  "so_to_hop": 39,
+  "diem_min": 19.25,
+  "diem_max": 22.04
+ },
+ {
+  "ten": "Âm nhạc",
+  "id": 1143,
+  "so_truong": 2,
+  "so_to_hop": 2,
+  "diem_min": 15,
+  "diem_max": 17.62
+ },
+ {
+  "ten": "Bảo hộ lao động",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 10,
+  "diem_min": 19.69,
+  "diem_max": 20
+ },
+ {
+  "ten": "Bệnh học thủy sản",
+  "id": 1229,
+  "so_truong": 2,
+  "so_to_hop": 16,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Biến đổi khí hậu và phát triển bền vững",
+  "id": 1006,
+  "so_truong": 2,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Chăn nuôi thú y",
+  "id": 1186,
+  "so_truong": 2,
+  "so_to_hop": 14,
+  "diem_min": 15,
+  "diem_max": 17
+ },
+ {
+  "ten": "Chỉ huy tham mưu lục quân",
+  "id": 1202,
+  "so_truong": 2,
+  "so_to_hop": 3,
+  "diem_min": 21.75,
+  "diem_max": 24.2
+ },
+ {
+  "ten": "Chương trình ĐHNNQT Logistics và Quản lý chuỗi cung ứng",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 4,
+  "diem_min": 27.6,
+  "diem_max": 28.3
+ },
+ {
+  "ten": "Chương trình ĐHNNQT truyền thông Marketing tích hợp",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 4,
+  "diem_min": 27.5,
+  "diem_max": 27.5
+ },
+ {
+  "ten": "Chương trình tiêu chuẩn Kế toán",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 8,
+  "diem_min": 25.8,
+  "diem_max": 25.8
+ },
+ {
+  "ten": "Chương trình tiêu chuẩn Kinh tế đối ngoại",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 5,
+  "diem_min": 26.2,
+  "diem_max": 26.2
+ },
+ {
+  "ten": "Chương trình tiêu chuẩn Quản trị kinh doanh",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 4,
+  "diem_min": 24.9,
+  "diem_max": 25.75
+ },
+ {
+  "ten": "Chương trình tiêu chuẩn Tài chính quốc tế",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 4,
+  "diem_min": 26.65,
+  "diem_max": 26.65
+ },
+ {
+  "ten": "Công nghệ kỹ thuật giao thông",
+  "id": 1246,
+  "so_truong": 2,
+  "so_to_hop": 12,
+  "diem_min": 17.89,
+  "diem_max": 17.89
+ },
+ {
+  "ten": "Công nghệ sinh học y dược",
+  "id": 1172,
+  "so_truong": 2,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 18.01
+ },
+ {
+  "ten": "Công nghệ thẩm mỹ",
+  "id": 1174,
+  "so_truong": 2,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Công nghệ và đổi mới sáng tạo",
+  "id": 973,
+  "so_truong": 2,
+  "so_to_hop": 30,
+  "diem_min": 15,
+  "diem_max": 23
+ },
+ {
+  "ten": "Công nghệ Vi mạch bán dẫn",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 4,
+  "diem_min": 23,
+  "diem_max": 25.5
+ },
+ {
+  "ten": "Cơ điện tử ô tô",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 7,
+  "diem_min": 19,
+  "diem_max": 21
+ },
+ {
+  "ten": "Đạo diễn điện ảnh truyền hình",
+  "id": 1132,
+  "so_truong": 2,
+  "so_to_hop": 7,
+  "diem_min": 17,
+  "diem_max": 18
+ },
+ {
+  "ten": "Đầu tư tài chính",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 27,
+  "diem_min": 21,
+  "diem_max": 24.4
+ },
+ {
+  "ten": "Địa kỹ thuật xây dựng",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 31,
+  "diem_min": 15.5,
+  "diem_max": 15.5
+ },
+ {
+  "ten": "Điều khiển thông minh và tự động hóa",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 24,
+  "diem_min": 20,
+  "diem_max": 23.4
+ },
+ {
+  "ten": "Đông Nam Á học",
+  "id": 1279,
+  "so_truong": 2,
+  "so_to_hop": 34,
+  "diem_min": 21.75,
+  "diem_max": 21.8
+ },
+ {
+  "ten": "Giáo dục Pháp luật",
+  "id": 1127,
+  "so_truong": 2,
+  "so_to_hop": 12,
+  "diem_min": 26.52,
+  "diem_max": 27.33
+ },
+ {
+  "ten": "Giáo dục Quốc phòng và An ninh",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 5,
+  "diem_min": 27.27,
+  "diem_max": 37.21
+ },
+ {
+  "ten": "Hải dương học",
+  "id": 1016,
+  "so_truong": 2,
+  "so_to_hop": 15,
+  "diem_min": 21.5,
+  "diem_max": 22.65
+ },
+ {
+  "ten": "Hải quan và Logistics",
+  "id": 938,
+  "so_truong": 2,
+  "so_to_hop": 8,
+  "diem_min": 20,
+  "diem_max": 23
+ },
+ {
+  "ten": "Hán Nôm",
+  "id": 1303,
+  "so_truong": 2,
+  "so_to_hop": 10,
+  "diem_min": 16,
+  "diem_max": 24.76
+ },
+ {
+  "ten": "Hoa Kỳ học",
+  "id": 1312,
+  "so_truong": 2,
+  "so_to_hop": 14,
+  "diem_min": 15,
+  "diem_max": 24.17
+ },
+ {
+  "ten": "Hỗ trợ giáo dục người khuyết tật",
+  "id": 1136,
+  "so_truong": 2,
+  "so_to_hop": 9,
+  "diem_min": 15,
+  "diem_max": 25.28
+ },
+ {
+  "ten": "Khoa học đất",
+  "id": 1231,
+  "so_truong": 2,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 16.61
+ },
+ {
+  "ten": "Khoa học và công nghệ thực phẩm",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 17,
+  "diem_min": 18.25,
+  "diem_max": 22.8
+ },
+ {
+  "ten": "Khúc xạ nhãn khoa",
+  "id": 1178,
+  "so_truong": 2,
+  "so_to_hop": 3,
+  "diem_min": 21,
+  "diem_max": 23.23
+ },
+ {
+  "ten": "Kỹ thuật Dầu khí",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 25,
+  "diem_min": 17,
+  "diem_max": 20
+ },
+ {
+  "ten": "Kỹ thuật điện, điện tử",
+  "id": 1035,
+  "so_truong": 2,
+  "so_to_hop": 37,
+  "diem_min": 18.5,
+  "diem_max": 22
+ },
+ {
+  "ten": "Kỹ thuật mỏ",
+  "id": 1109,
+  "so_truong": 2,
+  "so_to_hop": 27,
+  "diem_min": 15,
+  "diem_max": 17
+ },
+ {
+  "ten": "Kỹ thuật tài nguyên nước",
+  "id": 1021,
+  "so_truong": 2,
+  "so_to_hop": 25,
+  "diem_min": 15,
+  "diem_max": 18.49
+ },
+ {
+  "ten": "Kỹ thuật tàu thủy",
+  "id": 1023,
+  "so_truong": 2,
+  "so_to_hop": 4,
+  "diem_min": 19.3,
+  "diem_max": 20.5
+ },
+ {
+  "ten": "Kỹ thuật thực phẩm",
+  "id": 1055,
+  "so_truong": 2,
+  "so_to_hop": 8,
+  "diem_min": 17,
+  "diem_max": 23.38
+ },
+ {
+  "ten": "Kỹ thuật tuyển khoáng",
+  "id": 1114,
+  "so_truong": 2,
+  "so_to_hop": 11,
+  "diem_min": 15.5,
+  "diem_max": 17
+ },
+ {
+  "ten": "Lâm học",
+  "id": 1207,
+  "so_truong": 2,
+  "so_to_hop": 8,
+  "diem_min": 17,
+  "diem_max": 24
+ },
+ {
+  "ten": "Logistics và chuỗi cung ứng",
+  "id": 931,
+  "so_truong": 2,
+  "so_to_hop": 7,
+  "diem_min": 18,
+  "diem_max": 24.88
+ },
+ {
+  "ten": "Luật dân sự và tố tụng dân sự",
+  "id": 1080,
+  "so_truong": 2,
+  "so_to_hop": 8,
+  "diem_min": 18,
+  "diem_max": 25.69
+ },
+ {
+  "ten": "Mỹ thuật đô thị",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 4,
+  "diem_min": 20.57,
+  "diem_max": 22.3
+ },
+ {
+  "ten": "Ngành Kế toán",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 10,
+  "diem_min": 23.23,
+  "diem_max": 24.2
+ },
+ {
+  "ten": "Ngành Kinh tế",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 10,
+  "diem_min": 22.02,
+  "diem_max": 24.3
+ },
+ {
+  "ten": "Ngành Kinh tế phát triển",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 10,
+  "diem_min": 22.36,
+  "diem_max": 24.2
+ },
+ {
+  "ten": "Ngành Kinh tế quốc tế",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 11,
+  "diem_min": 22,
+  "diem_max": 28.61
+ },
+ {
+  "ten": "Ngành Luật kinh tế",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 9,
+  "diem_min": 15,
+  "diem_max": 26.73
+ },
+ {
+  "ten": "Ngành Marketing",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 8,
+  "diem_min": 15,
+  "diem_max": 28.66
+ },
+ {
+  "ten": "Ngành Truyền thông Đa phương tiện",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 7,
+  "diem_min": 15,
+  "diem_max": 36.5
+ },
+ {
+  "ten": "Ngành Y Khoa",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 7,
+  "diem_min": 20.5,
+  "diem_max": 30
+ },
+ {
+  "ten": "Ngôn ngữ Italia",
+  "id": 1298,
+  "so_truong": 2,
+  "so_to_hop": 4,
+  "diem_min": 20.3,
+  "diem_max": 25.08
+ },
+ {
+  "ten": "Ngôn ngữ Tây Ban Nha",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 1,
+  "diem_min": 21.6,
+  "diem_max": 27.08
+ },
+ {
+  "ten": "Nhân học",
+  "id": 1305,
+  "so_truong": 2,
+  "so_to_hop": 7,
+  "diem_min": 25.8,
+  "diem_max": 26.2
+ },
+ {
+  "ten": "Nhóm ngành nghiệp vụ Cảnh sát",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 4,
+  "diem_min": 15.95,
+  "diem_max": 26.28
+ },
+ {
+  "ten": "Phòng cháy chữa cháy và cứu nạn cứu hộ",
+  "id": 1218,
+  "so_truong": 2,
+  "so_to_hop": 4,
+  "diem_min": 19.75,
+  "diem_max": 24.23
+ },
+ {
+  "ten": "Piano",
+  "id": 1134,
+  "so_truong": 2,
+  "so_to_hop": 0,
+  "diem_min": 15,
+  "diem_max": 18
+ },
+ {
+  "ten": "Quản lí giáo dục",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 11,
+  "diem_min": 23.97,
+  "diem_max": 24.68
+ },
+ {
+  "ten": "Quản lý dự án",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 6,
+  "diem_min": 24.55,
+  "diem_max": 26.63
+ },
+ {
+  "ten": "Quản lý năng lượng",
+  "id": 999,
+  "so_truong": 2,
+  "so_to_hop": 7,
+  "diem_min": 18.17,
+  "diem_max": 23.7
+ },
+ {
+  "ten": "Quản lý TDTT",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 9,
+  "diem_min": 21.5,
+  "diem_max": 24.5
+ },
+ {
+  "ten": "Quản trị bệnh viện",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 27,
+  "diem_min": 15,
+  "diem_max": 22.8
+ },
+ {
+  "ten": "Quản trị kinh doanh thực phẩm",
+  "id": 1058,
+  "so_truong": 2,
+  "so_to_hop": 40,
+  "diem_min": 20.5,
+  "diem_max": 20.5
+ },
+ {
+  "ten": "Quản trị lữ hành",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 41,
+  "diem_min": 22,
+  "diem_max": 24.64
+ },
+ {
+  "ten": "Quản trị Marketing",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 9,
+  "diem_min": 19.5,
+  "diem_max": 22.5
+ },
+ {
+  "ten": "Quản trị tài chính kế toán",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 6,
+  "diem_min": 22,
+  "diem_max": 22.15
+ },
+ {
+  "ten": "Tài chính quốc tế",
+  "id": 936,
+  "so_truong": 2,
+  "so_to_hop": 34,
+  "diem_min": 26.3,
+  "diem_max": 26.3
+ },
+ {
+  "ten": "Thủy văn học",
+  "id": 1028,
+  "so_truong": 2,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Thương mại quốc tế",
+  "id": 1292,
+  "so_truong": 2,
+  "so_to_hop": 42,
+  "diem_min": 22.5,
+  "diem_max": 23
+ },
+ {
+  "ten": "Tiếng Nhật thương mại",
+  "id": 920,
+  "so_truong": 2,
+  "so_to_hop": 6,
+  "diem_min": 24,
+  "diem_max": 24
+ },
+ {
+  "ten": "Tôn giáo học",
+  "id": 1309,
+  "so_truong": 2,
+  "so_to_hop": 7,
+  "diem_min": 21.85,
+  "diem_max": 23.5
+ },
+ {
+  "ten": "Truyền thông Marketing",
+  "id": 1054,
+  "so_truong": 2,
+  "so_to_hop": 8,
+  "diem_min": 23.03,
+  "diem_max": 27.61
+ },
+ {
+  "ten": "Truyền thông số",
+  "id": null,
+  "so_truong": 2,
+  "so_to_hop": 12,
+  "diem_min": 20,
+  "diem_max": 22
+ },
+ {
+  "ten": "Văn hóa du lịch",
+  "id": 966,
+  "so_truong": 2,
+  "so_to_hop": 19,
+  "diem_min": 20,
+  "diem_max": 25.33
+ },
+ {
+  "ten": "Xây dựng công trình",
+  "id": 1278,
+  "so_truong": 2,
+  "so_to_hop": 27,
+  "diem_min": 16,
+  "diem_max": 18.35
+ },
+ {
+  "ten": "Xây dựng và quản lý hạ tầng đô thị",
+  "id": 1280,
+  "so_truong": 2,
+  "so_to_hop": 6,
+  "diem_min": 19,
+  "diem_max": 19
+ },
+ {
+  "ten": "An toàn dữ liệu và an ninh mạng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 23,
+  "diem_max": 23
+ },
+ {
+  "ten": "An toàn không gian mạng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 2,
+  "diem_min": 24.38,
+  "diem_max": 24.38
+ },
+ {
+  "ten": "An toàn không gian số",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 28.69,
+  "diem_max": 28.69
+ },
+ {
+  "ten": "An toàn, sức khoẻ và môi trường",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "An toàn, Vệ sinh lao động",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 25,
+  "diem_min": 17,
+  "diem_max": 17
+ },
+ {
+  "ten": "Bảo tàng học",
+  "id": 1307,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 23.2,
+  "diem_max": 23.2
+ },
+ {
+  "ten": "Biên phòng",
+  "id": 1188,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 29.52,
+  "diem_max": 31.33
+ },
+ {
+  "ten": "Biểu diễn nhạc cụ truyền thống",
+  "id": 1147,
+  "so_truong": 1,
+  "so_to_hop": 0,
+  "diem_min": 17.62,
+  "diem_max": 17.62
+ },
+ {
+  "ten": "Cảnh quan và Kỹ thuật hoa viên",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 16,
+  "diem_max": 16
+ },
+ {
+  "ten": "Cao đẳng chính quy ngành Giáo dục Mầm non",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 11,
+  "diem_min": 24.03,
+  "diem_max": 24.03
+ },
+ {
+  "ten": "Cao đẳng Giáo dục mầm non",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "CĐ Giáo dục Mầm non",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 7,
+  "diem_min": 23.76,
+  "diem_max": 23.76
+ },
+ {
+  "ten": "Chất lượng cao Hệ thống thông tin quản lý",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 21.95,
+  "diem_max": 21.95
+ },
+ {
+  "ten": "Chất lượng cao Hoạch định và tư vấn tài chính",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 21.05,
+  "diem_max": 21.05
+ },
+ {
+  "ten": "Chất lượng cao Kế toán",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 21.57,
+  "diem_max": 21.57
+ },
+ {
+  "ten": "Chất lượng cao Kinh doanh quốc tế",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 23.4,
+  "diem_max": 23.4
+ },
+ {
+  "ten": "Chất lượng cao Kinh tế đầu tư",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 22.13,
+  "diem_max": 22.13
+ },
+ {
+  "ten": "Chất lượng cao Marketing số",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 23.1,
+  "diem_max": 23.1
+ },
+ {
+  "ten": "Chất lượng cao Ngân hàng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 21.98,
+  "diem_max": 21.98
+ },
+ {
+  "ten": "Chất lượng cao Ngân hàng trung ương và chính sách công",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 21.2,
+  "diem_max": 21.2
+ },
+ {
+  "ten": "Chất lượng cao Ngân hàng và Tài chính quốc tế",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 22.94,
+  "diem_max": 22.94
+ },
+ {
+  "ten": "Chất lượng cao Ngôn ngữ Anh Tài chính",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 21.82,
+  "diem_max": 21.82
+ },
+ {
+  "ten": "Chất lượng cao Quản trị kinh doanh",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 22.1,
+  "diem_max": 22.1
+ },
+ {
+  "ten": "Chất lượng cao Tài chính",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 21.6,
+  "diem_max": 21.6
+ },
+ {
+  "ten": "Chất lượng cao Thương mại điện tử",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 23.48,
+  "diem_max": 23.48
+ },
+ {
+  "ten": "Chỉ huy kỹ thuật công binh",
+  "id": 1190,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Chỉ huy tham mưu hải quân",
+  "id": 1198,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 23.08,
+  "diem_max": 23.96
+ },
+ {
+  "ten": "Chỉ huy tham mưu không quân phi công quân sự",
+  "id": 1200,
+  "so_truong": 1,
+  "so_to_hop": 2,
+  "diem_min": 16.85,
+  "diem_max": 16.85
+ },
+ {
+  "ten": "Chỉ huy tham mưu pháo binh",
+  "id": 1204,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 22.25,
+  "diem_max": 24.4
+ },
+ {
+  "ten": "Chỉ huy tham mưu phòng không không quân và tác chiến điện tử",
+  "id": 1206,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 22.75,
+  "diem_max": 23.84
+ },
+ {
+  "ten": "Chỉ huy tham mưu tăng thiết giáp",
+  "id": 1208,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Chip bán dẫn và Công nghệ đóng gói",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 21,
+  "diem_max": 21
+ },
+ {
+  "ten": "Chủ nghĩa xã hội khoa học",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 26,
+  "diem_max": 26
+ },
+ {
+  "ten": "Chuyên ngành Chính sách công thuộc ngành Chính trị học",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 7,
+  "diem_min": 25.35,
+  "diem_max": 25.35
+ },
+ {
+  "ten": "Chuyên ngành Hệ thống thông tin thương mại điện tử thuộc ngành Hệ thống thông tin",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 19.75,
+  "diem_max": 19.75
+ },
+ {
+  "ten": "Chuyên ngành Kinh tế du lịch thuộc ngành Kinh tể",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 23.5,
+  "diem_max": 23.5
+ },
+ {
+  "ten": "Chuyên ngành Quản lý di sản văn hóa và phát triển du lịch thuộc ngành Quản lý văn hóa",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 25.55,
+  "diem_max": 25.55
+ },
+ {
+  "ten": "Chuyên ngành Quản trị thông tin thuộc ngành Thông tin",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 22.35,
+  "diem_max": 22.35
+ },
+ {
+  "ten": "Chuyên ngành Thanh tra thuộc ngành Luật",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 24.2,
+  "diem_max": 24.2
+ },
+ {
+  "ten": "Chuyên ngành Thư ký văn phòng doanh nghiệp thuộc ngành Quản trị văn phòng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 24.05,
+  "diem_max": 24.05
+ },
+ {
+  "ten": "Chuyên ngành Văn hóa Du lịch thuộc ngành Văn hóa học",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 23.9,
+  "diem_max": 23.9
+ },
+ {
+  "ten": "Chuyên ngành Văn hóa Truyền thông thuộc ngành Văn hóa học",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 23.9,
+  "diem_max": 23.9
+ },
+ {
+  "ten": "Chuyên ngành Văn thư",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 25.9,
+  "diem_max": 25.9
+ },
+ {
+  "ten": "Chương trình đào tạo Cơ khí",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 24.75,
+  "diem_max": 24.75
+ },
+ {
+  "ten": "Chương trình đào tạo Khoa học thực phẩm & Dinh dưỡng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 23.53,
+  "diem_max": 23.53
+ },
+ {
+  "ten": "Chương trình đào tạo kỹ sư chất lượng cao Việt",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 21.38,
+  "diem_max": 21.38
+ },
+ {
+  "ten": "Chương trình đào tạo Kỹ thuật Thiết kế vi mạch",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 29.93,
+  "diem_max": 29.93
+ },
+ {
+  "ten": "Chương trình đào tạo nguồn nhân lực quốc tế ngành Tài chính",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 27,
+  "diem_min": 24.5,
+  "diem_max": 24.5
+ },
+ {
+  "ten": "Chương trình ĐHNNQT Kế toán",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 25.7,
+  "diem_max": 25.7
+ },
+ {
+  "ten": "Chương trình ĐHNNQT Khoa học máy tính và dữ liệu trong kinh tế và kinh doanh",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 8,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Chương trình ĐHNNQT Kinh doanh quốc tế theo mô hình tiên tiến Nhật Bản",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 26.3,
+  "diem_max": 26.3
+ },
+ {
+  "ten": "Chương trình ĐHNNQT Kinh doanh số",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 26.3,
+  "diem_max": 26.3
+ },
+ {
+  "ten": "Chương trình ĐHNNQT Luật Kinh doanh quốc tế theo mô hình thực hành nghề nghiệp",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 25,
+  "diem_max": 25
+ },
+ {
+  "ten": "Chương trình ĐHNNQT Marketing số",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 27.15,
+  "diem_max": 27.15
+ },
+ {
+  "ten": "Chương trình ĐHNNQT Quản trị khách sạn",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 24.2,
+  "diem_max": 24.2
+ },
+ {
+  "ten": "Chương trình ĐHPTQT Kinh tế chính trị quốc tế",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 24,
+  "diem_max": 24
+ },
+ {
+  "ten": "Chương trình Kế toán tích hợp chứng chỉ nghề nghiệp quốc tế ACCA",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 27,
+  "diem_min": 23.2,
+  "diem_max": 23.2
+ },
+ {
+  "ten": "Chương trình Kế toán tích hợp chứng chỉ nghề nghiệp quốc tế ICAEW",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 27,
+  "diem_min": 23,
+  "diem_max": 23
+ },
+ {
+  "ten": "Chương trình liên kết QT Ngành Quản trị kinh doanh",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Chương trình tiên tiến Việt",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 23.09,
+  "diem_max": 23.09
+ },
+ {
+  "ten": "Chương trình tiên tiến Việt-Mỹ ngành Hệ thống Nhúng và IoT",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 23.68,
+  "diem_max": 23.68
+ },
+ {
+  "ten": "Chương trình tiêu chuẩn",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 8,
+  "diem_min": 26.55,
+  "diem_max": 26.55
+ },
+ {
+  "ten": "Chương trình tiêu chuẩn Kinh doanh quốc tế",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 8,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Chương trình tiêu chuẩn Kinh tế quốc tế",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 8,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Chương trình tiêu chuẩn Kinh tế và Phát triển quốc tế",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 8,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Chương trình tiêu chuẩn Luật thương mại quốc tế",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 24.7,
+  "diem_max": 24.7
+ },
+ {
+  "ten": "Chương trình tiêu chuẩn Ngân hàng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 8,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Chương trình tiêu chuẩn Phân tích và đầu tư tài chính",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 8,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Chương trình tiêu chuẩn Quản trị kinh doanh quốc tế",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Chương trình tiêu chuẩn Tài chính quốc tế; Ngân hàng; Phân tích đầu tư tài chính",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 25.36,
+  "diem_max": 25.36
+ },
+ {
+  "ten": "Chương trình tiêu chuẩn Tiếng Anh Thương mại",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 1,
+  "diem_min": 32.4,
+  "diem_max": 32.4
+ },
+ {
+  "ten": "Chương trình tiêu chuẩn Tiếng Nhật thương mại",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 2,
+  "diem_min": 30,
+  "diem_max": 30
+ },
+ {
+  "ten": "Chương trình tiêu chuẩn Tiếng Pháp thương mại",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 2,
+  "diem_min": 30,
+  "diem_max": 30
+ },
+ {
+  "ten": "Chương trình tiêu chuẩn Tiếng Trung Thương mại",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 2,
+  "diem_min": 35.15,
+  "diem_max": 35.15
+ },
+ {
+  "ten": "CNKT Cầu đường bộ",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 16,
+  "diem_max": 16
+ },
+ {
+  "ten": "CNKT công trình xây dựng dân dụng và công nghiệp",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 16,
+  "diem_max": 16
+ },
+ {
+  "ten": "CNKT cơ điện tử",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 47,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "CNKT cơ khí đầu máy",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 16,
+  "diem_max": 16
+ },
+ {
+  "ten": "CNKT cơ khí tàu thủy và công trình nổi",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 16,
+  "diem_max": 16
+ },
+ {
+  "ten": "CNKT điện điện tử",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 47,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "CNKT điện tử viễn thông",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 47,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "CNKT Đường sắt tốc độ cao",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 16,
+  "diem_max": 16
+ },
+ {
+  "ten": "CNTT: Khoa học Máy tính",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 29.19,
+  "diem_max": 29.19
+ },
+ {
+  "ten": "CNTT: Kỹ thuật Máy tính",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 28.83,
+  "diem_max": 28.83
+ },
+ {
+  "ten": "Công nghệ cơ điện công trình",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 16.1,
+  "diem_max": 16.1
+ },
+ {
+  "ten": "Công nghệ dầu khí và khai thác dầu",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 21.35,
+  "diem_max": 21.35
+ },
+ {
+  "ten": "Công nghệ điện tử, vi mạch và bán dẫn",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 19.25,
+  "diem_max": 19.25
+ },
+ {
+  "ten": "Công nghệ game",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 21.75,
+  "diem_max": 21.75
+ },
+ {
+  "ten": "Công nghệ hàng không vũ trụ",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 23.96,
+  "diem_max": 23.96
+ },
+ {
+  "ten": "Công nghệ hóa học",
+  "id": 1066,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 20,
+  "diem_max": 24
+ },
+ {
+  "ten": "Công nghệ hóa thực phẩm",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Công nghệ Internet vạn vật",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 2,
+  "diem_min": 17.25,
+  "diem_max": 17.25
+ },
+ {
+  "ten": "Công nghệ kĩ thuật môi trường",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 20.86,
+  "diem_max": 20.86
+ },
+ {
+  "ten": "Công nghệ kỹ thuật điện tử y sinh",
+  "id": 1180,
+  "so_truong": 1,
+  "so_to_hop": 2,
+  "diem_min": 20.6,
+  "diem_max": 20.6
+ },
+ {
+  "ten": "Công nghệ kỹ thuật in",
+  "id": 1061,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 23.48,
+  "diem_max": 23.48
+ },
+ {
+  "ten": "Công nghệ Logistics",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 22,
+  "diem_min": 25.4,
+  "diem_max": 25.4
+ },
+ {
+  "ten": "Công nghệ Logistics và Quản lý chuỗi cung ứng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 13,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Công nghệ Marketing",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 27,
+  "diem_min": 26.65,
+  "diem_max": 26.65
+ },
+ {
+  "ten": "Công nghệ nghệ thuật ArtTech",
+  "id": 1150,
+  "so_truong": 1,
+  "so_to_hop": 22,
+  "diem_min": 24.9,
+  "diem_max": 24.9
+ },
+ {
+  "ten": "Công nghệ nông nghiệp",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 22,
+  "diem_max": 22
+ },
+ {
+  "ten": "Công nghệ nông nghiệp số",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 25,
+  "diem_min": 16,
+  "diem_max": 16
+ },
+ {
+  "ten": "Công nghệ ô tô",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 35,
+  "diem_min": 18,
+  "diem_max": 18
+ },
+ {
+  "ten": "Công nghệ ô tô điện",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Công nghệ ô tô điện và ô tô hybrid",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 22,
+  "diem_max": 22
+ },
+ {
+  "ten": "Công nghệ ô tô và giao thông thông minh",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 21.5,
+  "diem_max": 21.5
+ },
+ {
+  "ten": "Công nghệ phần mềm",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 2,
+  "diem_min": 22.25,
+  "diem_max": 22.25
+ },
+ {
+  "ten": "Công nghệ phần mềm và Trí tuệ nhân tạo",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 32,
+  "diem_min": 18,
+  "diem_max": 18
+ },
+ {
+  "ten": "Công nghệ rau hoa quả và cảnh quan",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Công nghệ sản xuất tự động",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 12,
+  "diem_min": 20,
+  "diem_max": 20
+ },
+ {
+  "ten": "Công nghệ sợi dệt",
+  "id": 1195,
+  "so_truong": 1,
+  "so_to_hop": 8,
+  "diem_min": 16,
+  "diem_max": 16
+ },
+ {
+  "ten": "Công nghệ Truyền thông đa phương tiện",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Công nghệ và quản lý môi trường",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 16,
+  "diem_max": 16
+ },
+ {
+  "ten": "Công tác Thanh thiếu niên",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 18.5,
+  "diem_max": 18.5
+ },
+ {
+  "ten": "Công trình giao thông và cơ sở hạ tầng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 20.35,
+  "diem_max": 20.35
+ },
+ {
+  "ten": "Cơ điện tử thông minh và sản xuất theo phương thức Nhật Bản",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 20.5,
+  "diem_max": 20.5
+ },
+ {
+  "ten": "Cơ khí",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 25,
+  "diem_max": 25
+ },
+ {
+  "ten": "Cơ khí chế tạo máy",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 12,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Cơ khí hàng không",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 25.84,
+  "diem_max": 25.84
+ },
+ {
+  "ten": "Cơ khí thủy sản thông minh",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 2,
+  "diem_min": 20,
+  "diem_max": 20
+ },
+ {
+  "ten": "Cơ kỹ thuật",
+  "id": 1018,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 26.15,
+  "diem_max": 26.15
+ },
+ {
+  "ten": "CTĐT định hướng giáo viên Tiếng Anh",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 19.5,
+  "diem_max": 19.5
+ },
+ {
+  "ten": "CTĐT Toán học định hướng giảng dạy bằng tiếng Anh",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 19.5,
+  "diem_max": 19.5
+ },
+ {
+  "ten": "CTĐT Toán học định hướng giảng dạy bằng tiếng Việt",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 19.5,
+  "diem_max": 19.5
+ },
+ {
+  "ten": "Cử nhân ISB ASEAN Co-op",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 27,
+  "diem_min": 24.7,
+  "diem_max": 24.7
+ },
+ {
+  "ten": "Cử nhân Tài năng ISB BBus",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 27,
+  "diem_min": 25,
+  "diem_max": 25
+ },
+ {
+  "ten": "Di sản học, chuyên ngành Di sản và bảo tàng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 25,
+  "diem_max": 25
+ },
+ {
+  "ten": "Di sản học, chuyên ngành Di sản và phát triển du lịch",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 24.8,
+  "diem_max": 24.8
+ },
+ {
+  "ten": "Diễn viên kịch điện ảnh",
+  "id": 1130,
+  "so_truong": 1,
+  "so_to_hop": 1,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Dược liệu và hợp chất thiên nhiên",
+  "id": 1176,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Đá quý đá mỹ nghệ",
+  "id": 1107,
+  "so_truong": 1,
+  "so_to_hop": 25,
+  "diem_min": 15.5,
+  "diem_max": 15.5
+ },
+ {
+  "ten": "ĐH Bảo vệ thực vật",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "ĐH Công nghệ kỹ thuật cơ điện tử",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "ĐH Công nghệ kỹ thuật cơ khí",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "ĐH Công nghệ kỹ thuật điều khiển & tự động hóa",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "ĐH Công nghệ kỹ thuật xây dựng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "ĐH Công nghệ sinh học",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "ĐH Công nghệ thông tin",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "ĐH Công nghệ thực phẩm",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "ĐH Du lịch",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "ĐH Kế toán",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "ĐH Kinh tế",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "ĐH Luật",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 18,
+  "diem_max": 18
+ },
+ {
+  "ten": "ĐH Nuôi trồng thủy sản",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "ĐH Quản trị kinh doanh",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "ĐH Tài chính ngân hàng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "ĐH Văn hóa học",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 13,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Địa lý tự nhiên",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 14,
+  "diem_min": 23.95,
+  "diem_max": 23.95
+ },
+ {
+  "ten": "Địa tin học",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 25,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Điêu khắc",
+  "id": 1138,
+  "so_truong": 1,
+  "so_to_hop": 0,
+  "diem_min": 18.5,
+  "diem_max": 18.5
+ },
+ {
+  "ten": "Điều khiển tàu biển",
+  "id": 1012,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 21.1,
+  "diem_max": 22.6
+ },
+ {
+  "ten": "Định phí Bảo hiểm & Quản trị rủi ro",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 25.5,
+  "diem_max": 25.5
+ },
+ {
+  "ten": "Đóng tàu và công trình ngoài khơi",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 19.85,
+  "diem_max": 19.85
+ },
+ {
+  "ten": "Đồ hoạ",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Đồ họa game",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 0,
+  "diem_min": 26.7,
+  "diem_max": 26.7
+ },
+ {
+  "ten": "Đô thị học",
+  "id": 1266,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 25.55,
+  "diem_max": 25.55
+ },
+ {
+  "ten": "Đổi mới và Phát triển toàn cầu",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 20.5,
+  "diem_max": 20.5
+ },
+ {
+  "ten": "Đường sắt tốc độ cao",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 18,
+  "diem_max": 18
+ },
+ {
+  "ten": "Giảng dạy tiếng Hàn",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 2,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Giảng dạy tiếng Trung",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Giới và phát triển",
+  "id": 1310,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 22.42,
+  "diem_max": 22.42
+ },
+ {
+  "ten": "Hạ tầng giao thông đô thị thông minh",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 17,
+  "diem_max": 17
+ },
+ {
+  "ten": "Hậu cần quân sự",
+  "id": 1212,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 23.67,
+  "diem_max": 28.33
+ },
+ {
+  "ten": "Hệ thống Cơ điện tử thông minh",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 25.5,
+  "diem_max": 25.5
+ },
+ {
+  "ten": "Hệ thống điện và năng lượng tái tạo",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 26.56,
+  "diem_max": 26.56
+ },
+ {
+  "ten": "Hệ thống kỹ thuật công trình xây dựng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 23.65,
+  "diem_max": 23.65
+ },
+ {
+  "ten": "Hệ thống nhúng thông minh và IoT",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 27.85,
+  "diem_max": 27.85
+ },
+ {
+  "ten": "Hệ thống nhúng và IoT",
+  "id": 975,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 27.28,
+  "diem_max": 27.28
+ },
+ {
+  "ten": "Hóa học",
+  "id": 1002,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 21.25,
+  "diem_max": 21.25
+ },
+ {
+  "ten": "Hội họa",
+  "id": 1140,
+  "so_truong": 1,
+  "so_to_hop": 0,
+  "diem_min": 24.25,
+  "diem_max": 24.25
+ },
+ {
+  "ten": "Kế hoạch tài chính",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 24.75,
+  "diem_max": 24.75
+ },
+ {
+  "ten": "Khai thác máy tàu biển",
+  "id": 1017,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 19.85,
+  "diem_max": 21.35
+ },
+ {
+  "ten": "Khoa học & Kỹ thuật máy tính",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 20.75,
+  "diem_max": 20.75
+ },
+ {
+  "ten": "Khoa học chế biến món ăn",
+  "id": 1060,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 21,
+  "diem_max": 21
+ },
+ {
+  "ten": "Khoa học dinh dưỡng và ẩm thực",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 19,
+  "diem_max": 19
+ },
+ {
+  "ten": "Khoa học dữ liệu trong kinh tế và kinh doanh",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 23.84,
+  "diem_max": 23.84
+ },
+ {
+  "ten": "Khoa học dữ liệu trong tài chính",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 25.52,
+  "diem_max": 25.52
+ },
+ {
+  "ten": "Khoa học hàng hải",
+  "id": 1004,
+  "so_truong": 1,
+  "so_to_hop": 2,
+  "diem_min": 24,
+  "diem_max": 24
+ },
+ {
+  "ten": "Khoa học sự sống và Hóa học , Kỹ thuật hóa học)",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 7,
+  "diem_min": 18.5,
+  "diem_max": 18.5
+ },
+ {
+  "ten": "Khoa học sự sống và Hóa học )",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 7,
+  "diem_min": 19.75,
+  "diem_max": 19.75
+ },
+ {
+  "ten": "Khoa học thông tin địa không gian",
+  "id": 1038,
+  "so_truong": 1,
+  "so_to_hop": 14,
+  "diem_min": 23.5,
+  "diem_max": 23.5
+ },
+ {
+  "ten": "Khoa học thủy sản",
+  "id": 1233,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 20,
+  "diem_max": 20
+ },
+ {
+  "ten": "Khoa học và công nghệ y khoa",
+  "id": 1162,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 19.25,
+  "diem_max": 19.25
+ },
+ {
+  "ten": "Khoa học và kỹ thuật vật liệu",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 23.7,
+  "diem_max": 23.7
+ },
+ {
+  "ten": "Khoa học và Quản lý môi trường",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Khoa học vũ trụ và công nghệ vệ tinh",
+  "id": 1043,
+  "so_truong": 1,
+  "so_to_hop": 11,
+  "diem_min": 18.35,
+  "diem_max": 18.35
+ },
+ {
+  "ten": "Khởi nghiệp và Phát triển Bền vững",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Khởi nghiệp và phát triển kinh doanh /ngành QTKD",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 24.92,
+  "diem_max": 24.92
+ },
+ {
+  "ten": "Khuyến nông",
+  "id": 1235,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Kĩ thuật hóa học",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 22.09,
+  "diem_max": 22.09
+ },
+ {
+  "ten": "Kinh tế vận tải",
+  "id": 939,
+  "so_truong": 1,
+  "so_to_hop": 8,
+  "diem_min": 21.42,
+  "diem_max": 23.58
+ },
+ {
+  "ten": "Kỹ nghệ gỗ và nội thất",
+  "id": 1237,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 22.48,
+  "diem_max": 22.48
+ },
+ {
+  "ten": "Kỹ sư quân sự",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 2,
+  "diem_min": 26.4,
+  "diem_max": 29.25
+ },
+ {
+  "ten": "Kỹ thuật an toàn giao thông",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 21.44,
+  "diem_max": 21.44
+ },
+ {
+  "ten": "Kỹ thuật an toàn hàng hải",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 20.85,
+  "diem_max": 20.85
+ },
+ {
+  "ten": "Kỹ thuật bảo dưỡng tàu bay",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 32,
+  "diem_min": 24,
+  "diem_max": 24
+ },
+ {
+  "ten": "Kỹ thuật biển",
+  "id": 1020,
+  "so_truong": 1,
+  "so_to_hop": 2,
+  "diem_min": 20,
+  "diem_max": 20
+ },
+ {
+  "ten": "Kỹ thuật công nghệ hóa học",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 19.85,
+  "diem_max": 19.85
+ },
+ {
+  "ten": "Kỹ thuật công nghiệp",
+  "id": 1019,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 25.48,
+  "diem_max": 25.48
+ },
+ {
+  "ten": "Kỹ thuật dữ liệu",
+  "id": 982,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 27.48,
+  "diem_max": 27.48
+ },
+ {
+  "ten": "Kỹ thuật địa vật lý",
+  "id": 1112,
+  "so_truong": 1,
+  "so_to_hop": 8,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Kỹ thuật điều khiển tự động hóa",
+  "id": 987,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 28.12,
+  "diem_max": 28.48
+ },
+ {
+  "ten": "Kỹ thuật điều kiển và tự động hoá",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 8,
+  "diem_min": 18.5,
+  "diem_max": 18.5
+ },
+ {
+  "ten": "Kỹ thuật hạ tầng đô thị",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 16.1,
+  "diem_max": 16.1
+ },
+ {
+  "ten": "Kỹ thuật Hóa dược",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 21.38,
+  "diem_max": 21.38
+ },
+ {
+  "ten": "Kỹ thuật in",
+  "id": 1064,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 24.06,
+  "diem_max": 24.06
+ },
+ {
+  "ten": "Kỹ thuật khí thiên nhiên",
+  "id": 1175,
+  "so_truong": 1,
+  "so_to_hop": 25,
+  "diem_min": 16,
+  "diem_max": 16
+ },
+ {
+  "ten": "Kỹ thuật không gian",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 8,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Kỹ thuật môi trường đô thị",
+  "id": 1177,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 16.1,
+  "diem_max": 16.1
+ },
+ {
+  "ten": "Kỹ thuật năng lượng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 24.87,
+  "diem_max": 24.87
+ },
+ {
+  "ten": "Kỹ thuật phục hình răng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 2,
+  "diem_min": 21.5,
+  "diem_max": 21.5
+ },
+ {
+  "ten": "Kỹ thuật sản xuất thông minh",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 2,
+  "diem_min": 22.5,
+  "diem_max": 22.5
+ },
+ {
+  "ten": "Kỹ thuật sinh học",
+  "id": 1073,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 20,
+  "diem_max": 23.02
+ },
+ {
+  "ten": "Kỹ thuật thiết bị bay không người lái",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 32,
+  "diem_min": 20,
+  "diem_max": 20
+ },
+ {
+  "ten": "Kỹ thuật thủy lợi thông minh",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15.1,
+  "diem_max": 15.1
+ },
+ {
+  "ten": "Kỹ thuật truyền thông và mạng máy tính",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 21.5,
+  "diem_max": 21.5
+ },
+ {
+  "ten": "Kỹ thuật Vi điện tử và Công nghệ nano",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 28.25,
+  "diem_max": 28.25
+ },
+ {
+  "ten": "Kỹ thuật vi điện tử và vật lý bán dẫn",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 21,
+  "diem_max": 21
+ },
+ {
+  "ten": "Logictics và Quản lý chuỗi cung ứng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 14,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Luật hàng hải",
+  "id": 1084,
+  "so_truong": 1,
+  "so_to_hop": 7,
+  "diem_min": 23.6,
+  "diem_max": 23.6
+ },
+ {
+  "ten": "Luật hiến pháp và luật hành chính",
+  "id": 1082,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 18,
+  "diem_max": 18
+ },
+ {
+  "ten": "Luật hình sự và tố tụng hình sự",
+  "id": 1085,
+  "so_truong": 1,
+  "so_to_hop": 0,
+  "diem_min": 21,
+  "diem_max": 21
+ },
+ {
+  "ten": "Lữ hành và du lịch",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 18,
+  "diem_max": 22
+ },
+ {
+  "ten": "Lữ hành, hướng dẫn du lịch",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 25.7,
+  "diem_max": 25.7
+ },
+ {
+  "ten": "Lý luận, lịch sử và phê bình mỹ thuật",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 0,
+  "diem_min": 22,
+  "diem_max": 22
+ },
+ {
+  "ten": "Mạng máy tính & truyền thông dữ liệu",
+  "id": 990,
+  "so_truong": 1,
+  "so_to_hop": 7,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Mạng máy tính và Truyền thông",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Máy tàu thủy",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 20.85,
+  "diem_max": 20.85
+ },
+ {
+  "ten": "Máy và thiết bị tự động hóa xây dựng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 16,
+  "diem_max": 16
+ },
+ {
+  "ten": "Máy và tự động công nghiệp",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 21.17,
+  "diem_max": 21.17
+ },
+ {
+  "ten": "Máy và tự động hóa xếp dỡ",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 20.6,
+  "diem_max": 20.6
+ },
+ {
+  "ten": "Mô hình thông tin công trình giao thông",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 16,
+  "diem_max": 16
+ },
+ {
+  "ten": "Môi trường, sức khỏe và an toàn",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 14,
+  "diem_min": 21.2,
+  "diem_max": 21.2
+ },
+ {
+  "ten": "Năng lượng tái tạo",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 25.38,
+  "diem_max": 25.38
+ },
+ {
+  "ten": "Ngành An ninh mạng và phòng chống tội phạm công nghệ cao",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 2,
+  "diem_min": 20.63,
+  "diem_max": 24.69
+ },
+ {
+  "ten": "Ngành An toàn Thông tin",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Báo chí, chuyên ngành Ảnh báo chí",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 35.08,
+  "diem_max": 35.08
+ },
+ {
+  "ten": "Ngành Báo chí, chuyên ngành Báo in",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 34.82,
+  "diem_max": 34.82
+ },
+ {
+  "ten": "Ngành Báo chí, chuyên ngành Báo in_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Báo chí, chuyên ngành Báo mạng điện tử",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 35.57,
+  "diem_max": 35.57
+ },
+ {
+  "ten": "Ngành Báo chí, chuyên ngành Báo mạng điện tử_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Báo chí, chuyên ngành Báo phát thanh",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 35.3,
+  "diem_max": 35.3
+ },
+ {
+  "ten": "Ngành Báo chí, chuyên ngành Báo phát thanh_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Báo chí, chuyên ngành Báo truyền hình",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 35.71,
+  "diem_max": 35.71
+ },
+ {
+  "ten": "Ngành Báo chí, chuyên ngành Báo truyền hình_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Báo chí, chuyên ngành Quay phim truyền hình",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 34.14,
+  "diem_max": 34.14
+ },
+ {
+  "ten": "Ngành Chỉ huy Kỹ thuật hóa học",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 22.45,
+  "diem_max": 22.99
+ },
+ {
+  "ten": "Ngành Chỉ huy tham mưu Đặc công",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 21.5,
+  "diem_max": 22.5
+ },
+ {
+  "ten": "Ngành Chỉ huy Tham mưu Phòng không, Không quân và Tác chiến điện tử",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 23.25,
+  "diem_max": 24.73
+ },
+ {
+  "ten": "Ngành Chính trị học, chuyên ngành Chính trị phát triển",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 23.57,
+  "diem_max": 23.57
+ },
+ {
+  "ten": "Ngành Chính trị học, chuyên ngành Chính trị phát triển_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Chính trị học, chuyên ngành Công tác tư tưởng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 23.48,
+  "diem_max": 23.48
+ },
+ {
+  "ten": "Ngành Chính trị học, chuyên ngành Công tác tư tưởng_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Chính trị học, chuyên ngành Truyền thông chính sách",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 24.6,
+  "diem_max": 24.6
+ },
+ {
+  "ten": "Ngành Chính trị học, chuyên ngành Truyền thông chính sách_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Chính trị học, chuyên ngành Tư tưởng Hồ Chí Minh",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 23.67,
+  "diem_max": 23.67
+ },
+ {
+  "ten": "Ngành Chính trị học, chuyên ngành Tư tưởng Hồ Chí Minh_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Chủ nghĩa xã hội khoa học",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 23.46,
+  "diem_max": 23.46
+ },
+ {
+  "ten": "Ngành Chủ nghĩa xã hội khoa học_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Công nghệ Chế tạo Máy",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Công nghệ Kỹ thuật Công trình Xây dựng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Công nghệ Kỹ thuật Điện, Điện tử",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Công nghệ Kỹ thuật Môi trường",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Công nghệ Kỹ thuật Ô tô",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Công nghệ Tài chính",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Công nghệ thông tin",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 2,
+  "diem_min": 21.98,
+  "diem_max": 21.98
+ },
+ {
+  "ten": "Ngành Công tác xã hội",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 24.2,
+  "diem_max": 24.2
+ },
+ {
+  "ten": "Ngành Du lịch",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Dược",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 19,
+  "diem_max": 19
+ },
+ {
+  "ten": "Ngành Giáo dục thể chất",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 26,
+  "diem_max": 26
+ },
+ {
+  "ten": "Ngành Hệ thống Thông tin Quản lý",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Huấn luyện thể thao",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 24.65,
+  "diem_max": 24.65
+ },
+ {
+  "ten": "Ngành Kế toán có các chuyên ngành: Kế toán Doanh nghiệp; Kế toán Quản trị",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Khoa học Dữ liệu",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Khoa học Máy tính",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Khoa học Máy tính có các chuyên ngành Khoa học máy tính, Kỹ thuật máy tính",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Kiểm toán",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Kiến trúc có chuyên ngành: Kiến trúc công trình, Thiết kế nội thất",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 20,
+  "diem_max": 20
+ },
+ {
+  "ten": "Ngành Kinh doanh Thương mại",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Kinh tế chính trị",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 24.82,
+  "diem_max": 24.82
+ },
+ {
+  "ten": "Ngành Kinh tế chính trị_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Kinh tế Đầu tư có chuyên ngành: Kinh tế đầu tư; Kinh tế quốc tế",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Kinh tế Gia đình",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Kinh tế số",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 23.35,
+  "diem_max": 23.35
+ },
+ {
+  "ten": "Ngành kinh tế, chuyên ngành Quản lý kinh tế",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 24.58,
+  "diem_max": 24.58
+ },
+ {
+  "ten": "Ngành Kinh tế, chuyên ngành Quản lý kinh tế_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Kỹ thuật Điện",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Kỹ thuật Điều khiển & Tự động hóa",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Kỹ thuật Hàng không",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 25.17,
+  "diem_max": 26.5
+ },
+ {
+  "ten": "Ngành Kỹ thuật Phần mềm",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Kỹ thuật Phần mềm có các chuyên ngành Công nghệ Phần mềm; Thiết kế Games và Multimedia)",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Kỹ thuật Xây dựng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Kỹ thuật Xét nghiệm Y học",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 17,
+  "diem_max": 17
+ },
+ {
+  "ten": "Ngành Kỹ thuật Y sinh",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Lịch sử_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Lịch sử, chuyên ngành Lịch sử Đảng Cộng sản Việt Nam",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 35.26,
+  "diem_max": 35.26
+ },
+ {
+  "ten": "Ngành Logistics & Quản lý Chuỗi cung ứng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Luật",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Mạng Máy tính & Truyền thông Dữ liệu",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Marketing có các chuyên ngành: Quản trị kinh doanh Marketing, Digital Marketing",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Nghiệp vụ an ninh",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 18.78,
+  "diem_max": 26.27
+ },
+ {
+  "ten": "Ngành Ngôn Ngữ Hàn Quốc",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Ngôn ngữ Nhật",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Ngôn Ngữ Trung Quốc",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Quan hệ Công chúng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Quan hệ công chúng, chuyên ngành Quan hệ công chúng chuyên nghiệp",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 36.2,
+  "diem_max": 36.2
+ },
+ {
+  "ten": "Ngành Quan hệ công chúng, chuyên ngành Quan hệ công chúng chuyên nghiệp_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Quan hệ công chúng, chuyên ngành Truyền thông marketing",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 37.25,
+  "diem_max": 37.25
+ },
+ {
+  "ten": "Ngành Quan hệ công chúng, chuyên ngành Truyền thông marketing_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Quan hệ Quốc tế",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Quan hệ quốc tế, chuyên ngành Quan hệ chính trị và truyền thông quốc tế",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 36,
+  "diem_max": 36
+ },
+ {
+  "ten": "Ngành Quan hệ quốc tế, chuyên ngành Quan hệ chính trị và truyền thông quốc tế_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Quan hệ quốc tế, chuyên ngành Quan hệ quốc tế và truyền thông toàn cầu",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 35.73,
+  "diem_max": 35.73
+ },
+ {
+  "ten": "Ngành Quan hệ quốc tế, chuyên ngành Quan hệ quốc tế và truyền thông toàn cầu_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Quan hệ quốc tế, chuyên ngành Thông tin đối ngoại",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 35.75,
+  "diem_max": 35.75
+ },
+ {
+  "ten": "Ngành Quan hệ quốc tế, chuyên ngành Thông tin đối ngoại_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Quản lý công",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 24,
+  "diem_max": 24
+ },
+ {
+  "ten": "Ngành Quản lý nhà nước",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 26.39,
+  "diem_max": 26.39
+ },
+ {
+  "ten": "Ngành Quản lý nhà nước_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Quản lý Tài nguyên & Môi trường",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Quản lý thể dục thể thao",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 22.85,
+  "diem_max": 22.85
+ },
+ {
+  "ten": "Ngành Quản trị Dịch vụ Du lịch & Lữ hành",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Quản trị Khách sạn",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Quản trị Nhà hàng & Dịch vụ Ăn uống",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Quản trị Nhân lực",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Quản trị Sự kiện",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Quảng cáo",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 36.5,
+  "diem_max": 36.5
+ },
+ {
+  "ten": "Ngành Quảng cáo_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Răng-Hàm-Mặt",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 20.5,
+  "diem_max": 20.5
+ },
+ {
+  "ten": "Ngành Tài chính-Ngân hành",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Thiết kế Đồ họa",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Thiết kế Thời trang",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Thương mại Điện tử",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Trí tuệ Nhân tạo",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Triết học",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 23.11,
+  "diem_max": 23.11
+ },
+ {
+  "ten": "Ngành Triết học_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Truyền thông đa phương tiện_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Truyền thông đại chúng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 35.74,
+  "diem_max": 35.74
+ },
+ {
+  "ten": "Ngành Truyền thông đại chúng_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Truyền thông quốc tế",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 36.75,
+  "diem_max": 36.75
+ },
+ {
+  "ten": "Ngành Truyền thông quốc tế_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Văn học",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Việt Nam học",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngành Xã hội học",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 24.44,
+  "diem_max": 24.44
+ },
+ {
+  "ten": "Ngành Xã hội học_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Xây dựng Đảng và Chính quyền nhà nước",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 23.18,
+  "diem_max": 23.18
+ },
+ {
+  "ten": "Ngành Xây dựng Đảng và Chính quyền nhà nước_100",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Ngành Xuất bản, chuyên ngành Biên tập xuất bản",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 34.33,
+  "diem_max": 34.33
+ },
+ {
+  "ten": "Ngành Xuất bản, chuyên ngành Xuất bản điện tử",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 34.19,
+  "diem_max": 34.19
+ },
+ {
+  "ten": "Nghệ thuật học",
+  "id": 1151,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 24.5,
+  "diem_max": 24.5
+ },
+ {
+  "ten": "Nghệ thuật thị giác",
+  "id": 1124,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 22.43,
+  "diem_max": 23.98
+ },
+ {
+  "ten": "Nghiên cứu phát triển",
+  "id": 1311,
+  "so_truong": 1,
+  "so_to_hop": 1,
+  "diem_min": 25.75,
+  "diem_max": 25.75
+ },
+ {
+  "ten": "Nghiên cứu văn hóa",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 26.73,
+  "diem_max": 26.73
+ },
+ {
+  "ten": "Nghiệp vụ an ninh",
+  "id": 1216,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 17.66,
+  "diem_max": 26.05
+ },
+ {
+  "ten": "Ngoại thương",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 27,
+  "diem_max": 27
+ },
+ {
+  "ten": "Ngôn ngữ Ả Rập",
+  "id": 1290,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 21.88,
+  "diem_max": 21.88
+ },
+ {
+  "ten": "Ngôn ngữ Bồ Đào Nha",
+  "id": 1294,
+  "so_truong": 1,
+  "so_to_hop": 2,
+  "diem_min": 23.35,
+  "diem_max": 23.35
+ },
+ {
+  "ten": "Ngôn ngữ Khmer",
+  "id": 1300,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Ngôn ngữ Thái Lan",
+  "id": 1302,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 19.3,
+  "diem_max": 19.3
+ },
+ {
+  "ten": "Ngôn ngữ và văn hóa các dân tộc thiểu số Việt Nam",
+  "id": 1304,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 16,
+  "diem_max": 16
+ },
+ {
+  "ten": "Ngôn ngữ Văn hóa Nhật Bản",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Nhóm ngành Công nghệ thông tin gồm 04 ngành Công nghệ thông tin; Kỹ thuật phần mềm; Khoa học máy tính; Hệ thống thông tin; và 02 chuyên ngành: Trí tuệ nhân tạo; Khoa học dữ liệu",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 24.5,
+  "diem_max": 24.5
+ },
+ {
+  "ten": "Nhóm ngành Công nghệ thông tin gồm 04 ngành: Công nghệ thông tin; Kỹ thuật phần mềm; Khoa học máy tính; Hệ thống thông tin.",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 22,
+  "diem_max": 22
+ },
+ {
+  "ten": "Nhóm ngành Địa chất học",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 12,
+  "diem_min": 20.46,
+  "diem_max": 20.46
+ },
+ {
+  "ten": "Nhóm ngành Kế toán",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Nhóm ngành Khoa học dữ liệu",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 27.67,
+  "diem_max": 27.67
+ },
+ {
+  "ten": "Nhóm ngành Kiến trúc",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Nhom ngành Kỹ thuật cấp thoát nước",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Nhóm ngành Kỹ thuật môi trường",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Nhóm ngành Kỹ thuật phần mềm",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 7,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Nhóm ngành Kỹ thuật xây dựng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Nhóm ngành Kỹ thuật xây dựng công trình Giao thông",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Nhóm ngành Kỹ thuật Xây dựng Công trình thủy",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Nhóm ngành Ngôn ngữ gồm 02 ngành: Ngôn ngữ Anh; Ngôn ngữ Trung",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 23.25,
+  "diem_max": 23.25
+ },
+ {
+  "ten": "Nhóm ngành Quản lý đô thị và công trình",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Nhóm ngành Toán học, Toán ứng dụng, Toán tin",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 25.11,
+  "diem_max": 25.11
+ },
+ {
+  "ten": "Nhóm ngành Vật lý học, Công nghệ Vật lý điện tử và tin học, Công nghệ bán dẫn",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 7,
+  "diem_min": 26.25,
+  "diem_max": 26.25
+ },
+ {
+  "ten": "Nhóm Tài chính ngân hàng gồm 02 ngành: Ngân hàng; Công nghệ tài chính",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 24,
+  "diem_max": 24
+ },
+ {
+  "ten": "Phát triển công nghiệp văn hóa",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 24.83,
+  "diem_max": 24.83
+ },
+ {
+  "ten": "Phân tích dữ liệu kinh tế",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 26.78,
+  "diem_max": 26.78
+ },
+ {
+  "ten": "Phân tích kinh doanh /ngành QTKD",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 27.5,
+  "diem_max": 27.5
+ },
+ {
+  "ten": "Phân tích kinh doanh tài chính",
+  "id": 941,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 23.56,
+  "diem_max": 23.56
+ },
+ {
+  "ten": "Phân tích rủi ro và định phí bảo hiểm",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 27,
+  "diem_min": 23,
+  "diem_max": 23
+ },
+ {
+  "ten": "Phân tích tài chính",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 21,
+  "diem_max": 21
+ },
+ {
+  "ten": "QL Tài nguyên và Môi trường",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "QT nhà hàng và dịch vụ ăn uống",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "QTDV Du lịch và Lữ hành",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Quản lí công",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 23.07,
+  "diem_max": 23.07
+ },
+ {
+  "ten": "Quản lí đất đai",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 11,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Quản lí tài nguyên & Môi trường",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 11,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Quản lí tài nguyên rừng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 11,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Quản Lí tài nguyên và môi trường",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 26,
+  "diem_min": 16.25,
+  "diem_max": 16.25
+ },
+ {
+  "ten": "Quản lí xây dựng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Quản lý an toàn, sức khỏe và môi trường",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 15.5,
+  "diem_max": 15.5
+ },
+ {
+  "ten": "Quản lý bất động sản",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 18.6,
+  "diem_max": 18.6
+ },
+ {
+  "ten": "Quản lý biển",
+  "id": 1181,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Quản lý di sản văn hóa",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 24.44,
+  "diem_max": 24.44
+ },
+ {
+  "ten": "Quản lý du lịch quốc tế",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Quản lý dự án xây dựng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 19.98,
+  "diem_max": 19.98
+ },
+ {
+  "ten": "Quản lý giải trí và sự kiện",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 25,
+  "diem_min": 24,
+  "diem_max": 24
+ },
+ {
+  "ten": "Quản lý hàng hải",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 23.85,
+  "diem_max": 23.85
+ },
+ {
+  "ten": "Quản lý hoạt động bay",
+  "id": 1034,
+  "so_truong": 1,
+  "so_to_hop": 32,
+  "diem_min": 25,
+  "diem_max": 27
+ },
+ {
+  "ten": "Quản lý khai thác và bảo trì đường cao tốc",
+  "id": 1270,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 16,
+  "diem_max": 16
+ },
+ {
+  "ten": "Quản lý kinh doanh thương mại điện tử",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 20.46,
+  "diem_max": 20.46
+ },
+ {
+  "ten": "Quản lý kinh doanh và Marketing",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 20.66,
+  "diem_max": 20.66
+ },
+ {
+  "ten": "Quản lý kỹ thuật công nghiệp",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 22.1,
+  "diem_max": 22.1
+ },
+ {
+  "ten": "Quản lý logistics và chuỗi cung ứng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 35,
+  "diem_min": 20.5,
+  "diem_max": 20.5
+ },
+ {
+  "ten": "Quản lý phân tích dữ liệu khoa học Trái Đất",
+  "id": 1313,
+  "so_truong": 1,
+  "so_to_hop": 7,
+  "diem_min": 19,
+  "diem_max": 19
+ },
+ {
+  "ten": "Quản lý tài chính công",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 22.55,
+  "diem_max": 22.55
+ },
+ {
+  "ten": "Quản lý thị trường",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 24.66,
+  "diem_max": 24.66
+ },
+ {
+  "ten": "Quản lý và điều hành vận tải đường sắt",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 18,
+  "diem_max": 18
+ },
+ {
+  "ten": "Quản lý và khai thác cảng HK",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 32,
+  "diem_min": 20,
+  "diem_max": 20
+ },
+ {
+  "ten": "Quản lý và phân tích dữ liệu khoa học",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 8,
+  "diem_min": 16,
+  "diem_max": 16
+ },
+ {
+  "ten": "Quản lý và vận hành hạ tầng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 23.38,
+  "diem_max": 23.38
+ },
+ {
+  "ten": "Quản lý vận tải và Logistics",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 22,
+  "diem_max": 22
+ },
+ {
+  "ten": "Quản trị An ninh phi truyền thống",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 7,
+  "diem_min": 19,
+  "diem_max": 19
+ },
+ {
+  "ten": "Quản trị bền vững doanh nghiệp và môi trường",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 27,
+  "diem_min": 23.6,
+  "diem_max": 23.6
+ },
+ {
+  "ten": "Quản trị chất lượng và Đổi mới /ngành QTKD",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 24.2,
+  "diem_max": 24.2
+ },
+ {
+  "ten": "Quản trị công nghệ truyền thông",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Quản trị dịch vụ khách hàng và Chăm sóc sức khỏe",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 7,
+  "diem_min": 19,
+  "diem_max": 19
+ },
+ {
+  "ten": "Quản trị dịch vụ thương mại hàng không",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 41,
+  "diem_min": 23.5,
+  "diem_max": 23.5
+ },
+ {
+  "ten": "Quản trị du lịch cộng đồng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 26.62,
+  "diem_max": 26.62
+ },
+ {
+  "ten": "Quản trị DV Du lịch và Lữ hành",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Quản trị điều hành thông minh /ngành QTKD",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 25.1,
+  "diem_max": 25.1
+ },
+ {
+  "ten": "Quản trị đô thị thông minh và bền vững",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 15,
+  "diem_min": 21.85,
+  "diem_max": 21.85
+ },
+ {
+  "ten": "Quản trị giải trí và sự kiện",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 25.89,
+  "diem_max": 25.89
+ },
+ {
+  "ten": "Quản trị hải quan ngoại thương",
+  "id": 940,
+  "so_truong": 1,
+  "so_to_hop": 27,
+  "diem_min": 25.3,
+  "diem_max": 25.3
+ },
+ {
+  "ten": "Quản trị Hàng không",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 13,
+  "diem_min": 21,
+  "diem_max": 21
+ },
+ {
+  "ten": "Quản trị kinh doanh Luật",
+  "id": 1306,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Quản trị logistics",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 8,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Quản trị lữ hành, khách sạn",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 23.5,
+  "diem_max": 23.5
+ },
+ {
+  "ten": "Quản trị nguồn nhân lực :",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 20.5,
+  "diem_max": 23.5
+ },
+ {
+  "ten": "Quản trị NH và DV ăn uống",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 24.73,
+  "diem_max": 24.73
+ },
+ {
+  "ten": "Quản trị nhà hàng & Dịch vụ ăn uống",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Quản trị tài chính ngân hàng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 2,
+  "diem_min": 22,
+  "diem_max": 22
+ },
+ {
+  "ten": "Quản trị tài nguyên di sản",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 19,
+  "diem_min": 23.88,
+  "diem_max": 23.88
+ },
+ {
+  "ten": "Quản trị thư viện",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 24,
+  "diem_max": 24
+ },
+ {
+  "ten": "Quản trị thương hiệu",
+  "id": 1062,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 24,
+  "diem_max": 24
+ },
+ {
+  "ten": "Quản trị thương mại điện tử",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 8,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Quản trị truyền thông",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 17,
+  "diem_max": 17
+ },
+ {
+  "ten": "Quản trị và An ninh",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 7,
+  "diem_min": 19,
+  "diem_max": 19
+ },
+ {
+  "ten": "Quản trị và phân tích dữ liệu",
+  "id": 949,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 16,
+  "diem_max": 16
+ },
+ {
+  "ten": "Quân sự cơ sở",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 1,
+  "diem_min": 15.85,
+  "diem_max": 20.25
+ },
+ {
+  "ten": "Sinh dược học",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 12,
+  "diem_min": 20.1,
+  "diem_max": 20.1
+ },
+ {
+  "ten": "Song ngành Kinh tế",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 16,
+  "diem_max": 16
+ },
+ {
+  "ten": "Song ngữ Anh",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 16.35,
+  "diem_max": 16.35
+ },
+ {
+  "ten": "Sư phạm Kỹ thuật công nghiệp",
+  "id": 1115,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 21.44,
+  "diem_max": 21.44
+ },
+ {
+  "ten": "Sư phạm kỹ thuật nông nghiệp",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 23.84,
+  "diem_max": 23.84
+ },
+ {
+  "ten": "Sư phạm Lịch sử Địa lý",
+  "id": 1089,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 26.4,
+  "diem_max": 26.4
+ },
+ {
+  "ten": "Sư phạm Tiếng H’mong",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 8,
+  "diem_min": 21.05,
+  "diem_max": 21.05
+ },
+ {
+  "ten": "Sư phạm Tiếng Hàn Quốc",
+  "id": 1104,
+  "so_truong": 1,
+  "so_to_hop": 12,
+  "diem_min": 27.81,
+  "diem_max": 27.81
+ },
+ {
+  "ten": "Sư phạm Tiếng Nga",
+  "id": 1106,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 21.15,
+  "diem_max": 21.15
+ },
+ {
+  "ten": "Sư phạm Tiếng Nhật",
+  "id": 1108,
+  "so_truong": 1,
+  "so_to_hop": 12,
+  "diem_min": 28.1,
+  "diem_max": 28.1
+ },
+ {
+  "ten": "Tài chính ngân hàng Luật",
+  "id": 1098,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Tài năng Khoa học máy tính",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 23,
+  "diem_max": 23
+ },
+ {
+  "ten": "Tài nguyên nước và môi trường",
+  "id": 1179,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 18,
+  "diem_max": 18
+ },
+ {
+  "ten": "Tài nguyên và du lịch sinh thái",
+  "id": 963,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 21.25,
+  "diem_max": 21.25
+ },
+ {
+  "ten": "Tài nguyên và môi trường",
+  "id": 1169,
+  "so_truong": 1,
+  "so_to_hop": 15,
+  "diem_min": 21.1,
+  "diem_max": 21.1
+ },
+ {
+  "ten": "Tâm lí học",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 26.03,
+  "diem_max": 26.03
+ },
+ {
+  "ten": "Tham vấn Tâm lý Học đường",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Thanh tra và quản lý công trình giao thông",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 16,
+  "diem_max": 16
+ },
+ {
+  "ten": "Thẩm định giá và kinh doanh bất động sản",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 21,
+  "diem_max": 21.51
+ },
+ {
+  "ten": "Thẩm định giá và quản tị tài sản",
+  "id": 951,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 24.55,
+  "diem_max": 24.55
+ },
+ {
+  "ten": "Thẩm định giá và Quản trị tài sản",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 27,
+  "diem_min": 22.8,
+  "diem_max": 22.8
+ },
+ {
+  "ten": "Thị trường chứng khoán",
+  "id": 917,
+  "so_truong": 1,
+  "so_to_hop": 27,
+  "diem_min": 23.1,
+  "diem_max": 23.1
+ },
+ {
+  "ten": "Thiết bị bay không người lái và Robotics",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 32,
+  "diem_min": 18,
+  "diem_max": 18
+ },
+ {
+  "ten": "Thiết kế cơ khí và kiểu dáng công nghiệp",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 2,
+  "diem_min": 21.35,
+  "diem_max": 21.35
+ },
+ {
+  "ten": "Thiết kế đô thị",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 17.01,
+  "diem_max": 17.01
+ },
+ {
+  "ten": "Thiết kế game và Multimedia",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 20,
+  "diem_max": 20
+ },
+ {
+  "ten": "Thiết kế sáng tạo",
+  "id": 1126,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 22.95,
+  "diem_max": 24.91
+ },
+ {
+  "ten": "Thiết kế tàu và công trình ngoài khơi",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 20.35,
+  "diem_max": 20.35
+ },
+ {
+  "ten": "Thiết kế và phát triển Game",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 23.48,
+  "diem_max": 23.48
+ },
+ {
+  "ten": "Thống kê kinh doanh",
+  "id": 1245,
+  "so_truong": 1,
+  "so_to_hop": 27,
+  "diem_min": 24.8,
+  "diem_max": 24.8
+ },
+ {
+  "ten": "Thuế",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 27,
+  "diem_min": 23.5,
+  "diem_max": 23.5
+ },
+ {
+  "ten": "Thuế và Quản trị thuế",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 21,
+  "diem_max": 21
+ },
+ {
+  "ten": "Thư viện",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 10,
+  "diem_min": 16,
+  "diem_max": 16
+ },
+ {
+  "ten": "Thư viện và thiết bị trường học",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 23.84,
+  "diem_max": 23.84
+ },
+ {
+  "ten": "Tiếng Anh chuyên nghiệp quốc tế",
+  "id": 1308,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 24.8,
+  "diem_max": 24.8
+ },
+ {
+  "ten": "Tiếng Anh KHKT và Công nghệ",
+  "id": 916,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 24.8,
+  "diem_max": 24.8
+ },
+ {
+  "ten": "Tiếng Anh tài chính kế toán",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 24.1,
+  "diem_max": 24.1
+ },
+ {
+  "ten": "Tiếng Anh truyền thông",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 8,
+  "diem_min": 22,
+  "diem_max": 22
+ },
+ {
+  "ten": "Tiếng Trung Hành chính văn phòng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Tiếng Trung KHKT và Công nghệ",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 25.36,
+  "diem_max": 25.36
+ },
+ {
+  "ten": "Tin học công nghiệp và Tự động hóa",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 27.27,
+  "diem_max": 27.27
+ },
+ {
+  "ten": "Tin học tài chính kế toán",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 25.07,
+  "diem_max": 25.07
+ },
+ {
+  "ten": "Tin học và Kỹ thuật máy tính",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 19.5,
+  "diem_max": 19.5
+ },
+ {
+  "ten": "Tin học xây dựng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 12,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Tổ chức hoạt động nghệ thuật",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 25.71,
+  "diem_max": 25.71
+ },
+ {
+  "ten": "Tổ chức sự kiện văn hóa",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 25.55,
+  "diem_max": 25.55
+ },
+ {
+  "ten": "Trinh sát kỹ thuật",
+  "id": 1220,
+  "so_truong": 1,
+  "so_to_hop": 2,
+  "diem_min": 26.09,
+  "diem_max": 26.5
+ },
+ {
+  "ten": "Truyền thông doanh nghiệp",
+  "id": 953,
+  "so_truong": 1,
+  "so_to_hop": 2,
+  "diem_min": 26.35,
+  "diem_max": 26.35
+ },
+ {
+  "ten": "Truyền thông đại chúng",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 24.7,
+  "diem_max": 24.7
+ },
+ {
+  "ten": "Truyền thông quốc tế",
+  "id": 944,
+  "so_truong": 1,
+  "so_to_hop": 13,
+  "diem_min": 25.9,
+  "diem_max": 25.9
+ },
+ {
+  "ten": "Truyền thông số và Kỹ thuật đa phương tiện",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 26.62,
+  "diem_max": 26.62
+ },
+ {
+  "ten": "Truyền thông số và thiết kế đa phương tiện",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 28,
+  "diem_min": 26.3,
+  "diem_max": 26.3
+ },
+ {
+  "ten": "Truyền thông, chuyên ngành Báo chí",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 19,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Văn hóa các dân tộc thiểu số Việt Nam",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 24.5,
+  "diem_max": 24.5
+ },
+ {
+  "ten": "Văn hóa đối ngoại",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 25.5,
+  "diem_max": 25.5
+ },
+ {
+  "ten": "Văn hóa truyền thông",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 9,
+  "diem_min": 25.86,
+  "diem_max": 25.86
+ },
+ {
+  "ten": "Văn hóa truyền thông xuyên quốc gia",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Vật lí học",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 2,
+  "diem_min": 22.35,
+  "diem_max": 22.35
+ },
+ {
+  "ten": "Vật liệu thông minh và trí tuệ nhân tạo",
+  "id": 1047,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 20,
+  "diem_max": 20
+ },
+ {
+  "ten": "Vật liệu tiên tiến và công nghệ nano",
+  "id": 1050,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 20,
+  "diem_max": 20
+ },
+ {
+  "ten": "Vi mạch bán dẫn",
+  "id": 1001,
+  "so_truong": 1,
+  "so_to_hop": 23,
+  "diem_min": null,
+  "diem_max": null
+ },
+ {
+  "ten": "Xây dựng công trình thủy",
+  "id": 1030,
+  "so_truong": 1,
+  "so_to_hop": 5,
+  "diem_min": 19.4,
+  "diem_max": 19.4
+ },
+ {
+  "ten": "Xây dựng và phát triển cảng HK",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 32,
+  "diem_min": 18,
+  "diem_max": 18
+ },
+ {
+  "ten": "Xây dựng và quản lí công trình thủy",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Xây dựng và quản lý đô thị thông minh",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 6,
+  "diem_min": 15,
+  "diem_max": 15
+ },
+ {
+  "ten": "Y sinh học TDTT",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 4,
+  "diem_min": 18,
+  "diem_max": 18
+ },
+ {
+  "ten": "Y sinh học thể dục thể thao",
+  "id": null,
+  "so_truong": 1,
+  "so_to_hop": 3,
+  "diem_min": 21,
+  "diem_max": 21
+ }
+]
