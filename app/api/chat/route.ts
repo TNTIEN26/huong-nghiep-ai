@@ -3,6 +3,8 @@ import { NextResponse } from "next/server";
 import { chatReply, streamChatReply } from "@/lib/ai";
 import type { ChatMessage } from "@/lib/ai";
 import { kiemTraGioiHan } from "@/lib/rate-limit";
+import { buildTraCuuContext } from "@/lib/prompt";
+import { timTheoCauHoi } from "@/lib/tra-cuu";
 
 export const runtime = "nodejs";
 
@@ -63,8 +65,15 @@ export async function POST(request: Request) {
   }
 
   const messages = body.messages;
-  const context = body.context?.trim() ?? "";
+  const contextGoc = body.context?.trim() ?? "";
   const { stream } = body;
+
+  const cauHoiCuoi = [...messages].reverse().find((m) => m.role === "user")?.content ?? "";
+  const dongTraCuu = timTheoCauHoi(cauHoiCuoi);
+  const context =
+    dongTraCuu.length > 0
+      ? [contextGoc, buildTraCuuContext(dongTraCuu)].filter(Boolean).join("\n\n").slice(0, 3000)
+      : contextGoc;
 
   // ---------- STREAMING (SSE): trả lời token by token ----------
   if (stream === true) {

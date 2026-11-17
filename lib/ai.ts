@@ -8,10 +8,12 @@ import {
   buildFormatInstruction,
   buildChatSystemPrompt,
   buildSurveyPrompt,
+  buildTraCuuContext,
   findByLop,
 } from "./prompt";
 import { parseSurvey } from "./survey";
 import { khoiThiList, nganhNgheList, truongDhList } from "./data";
+import { duLieuChoTuVan } from "./tra-cuu";
 
 export type ChatMessage = {
   role: "user" | "assistant";
@@ -868,10 +870,12 @@ export async function getCareerAdvice(
     topTruong.length > 0 ? topTruong : truongDhList.slice(0, 6),
     cap,
   );
+  const dongTraCuu = duLieuChoTuVan(topNganh.map((n) => n.ten), 4);
+  const groundingDayDu = dongTraCuu.length > 0 ? `${grounding}\n\n${buildTraCuuContext(dongTraCuu)}` : grounding;
   const userMessage =
     cheDo === "baseline"
       ? `${buildUserPrompt(form)}\n\n${buildFormatInstruction()}`
-      : `${buildUserPrompt(form)}\n\n${buildFormatInstruction()}\n\n${grounding}`;
+      : `${buildUserPrompt(form)}\n\n${buildFormatInstruction()}\n\n${groundingDayDu}`;
   const systemPrompt = buildSystemPrompt(cheDo);
 
   if (provider === "gemini") {

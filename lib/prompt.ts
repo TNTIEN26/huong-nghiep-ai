@@ -73,15 +73,36 @@ export function buildGroundingContext(
   ].join("\n");
 }
 
-export function buildSystemPrompt(cheDo: CheDoDoLuong = "grounded"): string {
-  const rangBuocDuLieu =
+export type DongTraCuu = {
+  nganh: string;
+  truong: string;
+  to_hop: string[];
+  diem2025: number | null;
+  diem2024: number | null;
+};
+
+export function buildTraCuuContext(rows: DongTraCuu[]): string {
+  if (rows.length === 0) return "";
+  const dong = rows.map((r) => {
+    const diem = r.diem2025 != null ? `${r.diem2025}` : "chưa có";
+    const diem24 = r.diem2024 != null ? ` (2024: ${r.diem2024})` : "";
+    return `- ${r.nganh} | ${r.truong} | tổ hợp: ${r.to_hop.join(", ") || "chưa rõ"} | điểm chuẩn 2025: ${diem}${diem24}`;
+  });
+  return [
+    `4) DỮ LIỆU ĐIỂM CHUẨN THỰC TẾ (trích đề án tuyển sinh 2025 — dùng đúng tên trường và con số này khi gợi ý trường):`,
+    ...dong,
+  ].join("\n");
+}
+
+export function buildSystemPrompt(cheDo: CheDoDoLuong = "grounded"): string {  const rangBuocDuLieu =
     cheDo === "baseline"
       ? `- Được phép dùng kiến thức chung về ngành nghề, khối thi và trường đại học tại Việt Nam. Mọi con số (điểm chuẩn, học phí, mức lương) phải ghi rõ "tham khảo / ước tính".
 - Khối thi phải là mã phổ biến trong hệ thống xét tuyển Việt Nam (ví dụ A00, A01, B00, C00, D01…).
 - Trường tiêu biểu phải là trường đại học có thật tại Việt Nam; nếu không chắc chắn thì để mảng rỗng, không bịa tên trường.`
       : `- BẮT BUỘC chỉ sử dụng dữ liệu được cung cấp trong phần "THÔNG TIN BẠN ĐANG TƯ VẤN". Tuyệt đối KHÔNG tự bịa thêm ngành, khối thi, trường hay điểm chuẩn ngoài dữ liệu đó.
 - Khối thi đề nghị phải nằm trong danh sách khối, và phải khớp với trường "khoi_phu_hop" của ngành đó.
-- Trường tiêu biểu phải lấy đúng tên trường và tổ hợp từ danh sách trường. Nếu ngành gợi ý không có trường tương ứng trong danh sách thì để mảng rỗng, không bịa.`;
+- Trường tiêu biểu phải lấy đúng tên trường và tổ hợp từ danh sách trường (mục 3) hoặc từ "DỮ LIỆU ĐIỂM CHUẨN THỰC TẾ" (mục 4). Nếu ngành gợi ý không có trường tương ứng trong danh sách thì để mảng rỗng, không bịa.
+- Khi nêu điểm chuẩn, chỉ dùng con số ở mục 4; nếu không có thì nói "chưa có dữ liệu", KHÔNG tự đoán số.`;
 
   return `Bạn là chuyên gia tư vấn hướng nghiệp hàng đầu Việt Nam, có trên 15 năm kinh nghiệm tư vấn cho học sinh cấp 2 và cấp 3 về định hướng nghề nghiệp và chọn khối thi.
 
