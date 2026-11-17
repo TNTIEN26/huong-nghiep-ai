@@ -7,6 +7,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import SiteNav from "../../../components/SiteNav";
+import NoiDungDeAn from "../../../components/NoiDungDeAn";
 import deAnData from "@/data/tra-cuu/de-an.json";
 import { locMuc } from "@/lib/tra-cuu";
 
@@ -66,7 +67,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     <div className="relative z-10 flex min-h-screen flex-col text-stone-900">
       <SiteNav active="tra-cuu" />
 
-      <main className="mx-auto w-full max-w-[1200px] flex-1 px-4 py-10 sm:px-8">
+      <main className="mx-auto w-full max-w-[1600px] flex-1 px-4 py-10 sm:px-8">
         <nav className="flex items-center gap-1.5 text-xs font-semibold text-stone-400">
           <Link href="/tra-cuu/de-an" className="hover:text-blue-700">
             Tra cứu đề án
@@ -100,10 +101,10 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           </a>
         </div>
 
-        <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px]">
-          <article className="min-w-0 rounded-2xl border border-stone-900/10 bg-white p-5 sm:p-8">
+        <div className="mt-8 grid gap-8 xl:grid-cols-[minmax(0,1fr)_340px]">
+          <article className="min-w-0 rounded-2xl border border-stone-900/10 bg-white p-4 sm:p-7">
             {html ? (
-              <div className="de-an-noi-dung" dangerouslySetInnerHTML={{ __html: html }} />
+              <NoiDungDeAn html={html} />
             ) : (
               <p className="text-sm leading-relaxed text-stone-500">
                 Chưa tải được nội dung đề án.{" "}

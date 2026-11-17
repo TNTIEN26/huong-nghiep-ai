@@ -92,7 +92,8 @@ body {
 .de-an-noi-dung ol { list-style: decimal; margin: 0.5em 0 0.5em 1.5em; }
 .de-an-noi-dung li { margin: 0.2em 0; }
 .de-an-noi-dung a { color: #1d4ed8; text-decoration: underline; text-underline-offset: 2px; }
-.de-an-noi-dung img { display: block; max-width: 100%; height: auto; margin: 0.9em auto; border-radius: 10px; }
+.de-an-noi-dung img { display: block; max-width: 100%; height: auto; margin: 0.9em auto; border-radius: 10px; cursor: zoom-in; }
+.de-an-noi-dung img.anh-rong { width: 100%; }
 .de-an-noi-dung table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 0.9em 0; font-size: 13px; }
 .de-an-noi-dung th,
 .de-an-noi-dung td { border: 1px solid rgba(28, 25, 23, 0.15); padding: 6px 9px; vertical-align: top; }

@@ -61,6 +61,7 @@ fs.mkdirSync(OUT_ANH, { recursive: true });
 fs.mkdirSync(OUT_HTML, { recursive: true });
 
 const mapAnh = {};
+const kichThuoc = {};
 const danhSach = [...urls.keys()];
 let xong = 0;
 let tongTruoc = 0;
@@ -113,10 +114,12 @@ await pool(danhSach, CONC, async (u) => {
     tongSau += buf.length;
   } else {
     try {
+      const meta = await sharp(buf).metadata();
+      if (meta.width) kichThuoc[u] = [meta.width, meta.height || 0];
       const out = await sharp(buf)
         .rotate()
-        .resize({ width: 1200, height: 1200, fit: "inside", withoutEnlargement: true })
-        .webp({ quality: 80, effort: 4 })
+        .resize({ width: 1400, height: 1400, fit: "inside", withoutEnlargement: true })
+        .webp({ quality: 82, effort: 4 })
         .toBuffer();
       const f = bam(u) + ".webp";
       fs.writeFileSync(path.join(OUT_ANH, f), out);
@@ -154,9 +157,15 @@ function lamSach(html) {
   h = h.replace(/<img\b[^>]*>/gi, (tag) => {
     const src = (/src="([^"]+)"/i.exec(tag) || [])[1];
     if (!src) return "";
-    const local = mapAnh[chuanUrl(src)];
+    const u = chuanUrl(src);
+    const local = mapAnh[u];
     if (!local) return "";
     const alt = (/alt="([^"]*)"/i.exec(tag) || [])[1] || "";
+    const kt = kichThuoc[u];
+    if (kt) {
+      const rong = kt[0] >= 480;
+      return `<img src="${local}" alt="${alt}" width="${kt[0]}" height="${kt[1]}" loading="lazy"${rong ? ' class="anh-rong"' : ""} />`;
+    }
     return `<img src="${local}" alt="${alt}" loading="lazy" />`;
   });
   h = h.replace(/<a\b([^>]*)>/gi, (m, attrs) => {
