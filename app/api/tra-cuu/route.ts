@@ -24,6 +24,7 @@ export async function GET(request: Request) {
     nganh: sp.get("nganh") ?? undefined,
     nganh_id: so(sp.get("nganh_id")),
     truong: sp.get("truong") ?? undefined,
+    truong_id: so(sp.get("truong_id")),
     tohop: sp.get("tohop") ?? undefined,
     min: so(sp.get("min")),
     max: so(sp.get("max")),

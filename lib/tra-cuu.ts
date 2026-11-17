@@ -73,6 +73,7 @@ export type LocMucParams = {
   nganh?: string;
   nganh_id?: number;
   truong?: string;
+  truong_id?: number;
   tohop?: string;
   min?: number;
   max?: number;
@@ -90,6 +91,7 @@ export function locMuc(p: LocMucParams): MucDiem[] {
       const n = boDau(m.nganh);
       if (!(n === k || n.includes(k) || k.includes(n))) continue;
     }
+    if (p.truong_id != null && m.truong_id !== p.truong_id) continue;
     if (p.truong && !boDau(m.truong).includes(boDau(p.truong))) continue;
     if (p.tohop && !m.to_hop.includes(p.tohop.toUpperCase())) continue;
     const d = m.diem["2025"];

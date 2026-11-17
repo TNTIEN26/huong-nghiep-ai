@@ -1,8 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 
 import SiteNav from "../../components/SiteNav";
+import { slugNganh } from "@/lib/nganh-slug";
 import type { NganhNghe } from "@/lib/types";
 import nganhNgheData from "@/data/nganh-nghe.json";
 import indexData from "@/data/tra-cuu/index-nganh.json";
@@ -150,13 +152,28 @@ export default function TraCuuNganhPage() {
 
                   {nghe && <p className="mt-3 text-sm leading-relaxed text-stone-600">{nghe.mo_ta}</p>}
 
-                  <button
-                    type="button"
-                    onClick={() => moChiTiet(n)}
-                    className="mt-4 self-start rounded-lg border border-blue-600/30 px-3 py-1.5 text-xs font-bold text-blue-700 transition hover:bg-blue-600 hover:text-white"
-                  >
-                    {dangMo ? "Ẩn danh sách trường" : "Xem trường & điểm chuẩn"}
-                  </button>
+                  {(() => {
+                    const slug = slugNganh(n.ten);
+                    if (slug) {
+                      return (
+                        <Link
+                          href={`/tra-cuu/nganh/${slug}`}
+                          className="mt-4 self-start rounded-lg border border-blue-600/30 px-3 py-1.5 text-xs font-bold text-blue-700 transition hover:bg-blue-600 hover:text-white"
+                        >
+                          Xem trường &amp; điểm chuẩn 2026 →
+                        </Link>
+                      );
+                    }
+                    return (
+                      <button
+                        type="button"
+                        onClick={() => moChiTiet(n)}
+                        className="mt-4 self-start rounded-lg border border-stone-900/15 px-3 py-1.5 text-xs font-bold text-stone-600 transition hover:border-stone-900/30"
+                      >
+                        {dangMo ? "Ẩn danh sách trường" : "Xem điểm chuẩn 2025"}
+                      </button>
+                    );
+                  })()}
 
                   {dangMo && (
                     <div className="mt-3 border-t border-stone-900/10 pt-3">
