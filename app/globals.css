@@ -78,3 +78,24 @@ body {
 .chat-md th,
 .chat-md td { border: 1px solid rgba(28, 25, 23, 0.18); padding: 0.3em 0.6em; }
 .chat-md hr { border: 0; border-top: 1px solid rgba(28, 25, 23, 0.15); margin: 0.6em 0; }
+
+/* ---------- Noi dung de an tuyen sinh (HTML cao tu hocmai) ---------- */
+.de-an-noi-dung { font-size: 15px; line-height: 1.7; color: #292524; overflow-wrap: anywhere; }
+.de-an-noi-dung > :first-child { margin-top: 0; }
+.de-an-noi-dung p { margin: 0.55em 0; }
+.de-an-noi-dung h2,
+.de-an-noi-dung h3,
+.de-an-noi-dung h4 { margin: 1.1em 0 0.4em; font-weight: 800; line-height: 1.35; }
+.de-an-noi-dung h2 { font-size: 1.25em; }
+.de-an-noi-dung h3 { font-size: 1.1em; }
+.de-an-noi-dung ul { list-style: disc; margin: 0.5em 0 0.5em 1.25em; }
+.de-an-noi-dung ol { list-style: decimal; margin: 0.5em 0 0.5em 1.5em; }
+.de-an-noi-dung li { margin: 0.2em 0; }
+.de-an-noi-dung a { color: #1d4ed8; text-decoration: underline; text-underline-offset: 2px; }
+.de-an-noi-dung img { display: block; max-width: 100%; height: auto; margin: 0.9em auto; border-radius: 10px; }
+.de-an-noi-dung table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 0.9em 0; font-size: 13px; }
+.de-an-noi-dung th,
+.de-an-noi-dung td { border: 1px solid rgba(28, 25, 23, 0.15); padding: 6px 9px; vertical-align: top; }
+.de-an-noi-dung th { background: rgba(28, 25, 23, 0.04); font-weight: 700; }
+.de-an-noi-dung strong { font-weight: 700; }
+

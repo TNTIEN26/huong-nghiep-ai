@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 
 import SiteNav from "../../components/SiteNav";
 import truongData from "@/data/tra-cuu/truong.json";
@@ -174,10 +175,18 @@ export default function TraCuuDeAnPage() {
                   </div>
 
                   <div className="mt-4 flex flex-wrap items-center gap-3">
+                    {t.de_an ? (
+                      <Link
+                        href={`/tra-cuu/de-an/${t.de_an.slug}`}
+                        className="rounded-lg border border-blue-600/30 bg-blue-600 px-3 py-1.5 text-xs font-bold text-white transition hover:bg-blue-700"
+                      >
+                        Xem đề án đầy đủ →
+                      </Link>
+                    ) : null}
                     <button
                       type="button"
                       onClick={() => moChiTiet(t)}
-                      className="rounded-lg border border-blue-600/30 px-3 py-1.5 text-xs font-bold text-blue-700 transition hover:bg-blue-600 hover:text-white"
+                      className="rounded-lg border border-stone-900/15 px-3 py-1.5 text-xs font-bold text-stone-600 transition hover:border-stone-900/30"
                     >
                       {dangMo ? "Ẩn danh sách ngành" : "Xem ngành & điểm chuẩn"}
                     </button>
