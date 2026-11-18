@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
@@ -122,7 +122,7 @@ export default function TraCuuDeAnPage() {
             <button
               type="button"
               onClick={() => setThanhPho("")}
-              className={`rounded-full px-3.5 py-1.5 text-xs font-bold transition ${
+              className={`rounded-lg px-3.5 py-1.5 text-xs font-bold transition ${
                 thanhPho === ""
                   ? "bg-blue-600 text-white"
                   : "border border-stone-900/10 bg-white text-stone-600 hover:border-stone-900/25"
@@ -138,7 +138,7 @@ export default function TraCuuDeAnPage() {
                   setThanhPho(tp === thanhPho ? "" : tp);
                   setSoHien(24);
                 }}
-                className={`rounded-full px-3.5 py-1.5 text-xs font-bold transition ${
+                className={`rounded-lg px-3.5 py-1.5 text-xs font-bold transition ${
                   thanhPho === tp
                     ? "bg-blue-600 text-white"
                     : "border border-stone-900/10 bg-white text-stone-600 hover:border-stone-900/25"
@@ -215,7 +215,7 @@ export default function TraCuuDeAnPage() {
                     {chiTietHref && (
                       <Link
                         href={chiTietHref}
-                        className="hidden shrink-0 items-center self-start rounded-xl bg-indigo-100 px-4 py-2.5 text-sm font-bold text-indigo-600 transition hover:bg-indigo-200 sm:flex"
+                        className="hidden shrink-0 items-center self-start rounded-xl bg-blue-50 px-4 py-2.5 text-sm font-bold text-blue-700 transition hover:bg-blue-100 sm:flex"
                       >
                         Xem chi tiết
                       </Link>
@@ -240,7 +240,7 @@ export default function TraCuuDeAnPage() {
                   {chiTietHref && (
                     <Link
                       href={chiTietHref}
-                      className="mt-3 flex items-center justify-center rounded-xl bg-indigo-100 px-4 py-2 text-sm font-bold text-indigo-600 transition hover:bg-indigo-200 sm:hidden"
+                      className="mt-3 flex items-center justify-center rounded-xl bg-blue-50 px-4 py-2 text-sm font-bold text-blue-700 transition hover:bg-blue-100 sm:hidden"
                     >
                       Xem chi tiết
                     </Link>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState, useSyncExternalStore } from "react";
 
@@ -125,7 +125,7 @@ export default function ExamCountdown() {
                     <div className="flex items-center justify-between gap-3">
                       <p className="text-sm font-bold">{m.mon}</p>
                       {active && (
-                        <span className="shrink-0 rounded-full border border-white/40 px-2.5 py-1 text-[11px] font-bold">
+                        <span className="shrink-0 rounded-md border border-white/40 px-2.5 py-1 text-[11px] font-bold">
                           {quaRoi ? "Đã kết thúc" : "Đang đếm ngược"}
                         </span>
                       )}

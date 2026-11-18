@@ -1,15 +1,48 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f4f8fe;
-  --foreground: #1c1917;
-  --dot: rgba(28, 25, 23, 0.08);
+  --background: #f6f9ff;
+  --foreground: #101a28;
+  --dot: rgba(16, 26, 40, 0.09);
+}
+
+@theme {
+  /* Xanh azure sáng, thay cho blue mặc định của Tailwind */
+  --color-blue-50: #eef5ff;
+  --color-blue-100: #d9e8ff;
+  --color-blue-200: #bcd9ff;
+  --color-blue-300: #8ec0ff;
+  --color-blue-400: #589dff;
+  --color-blue-500: #2f7eff;
+  --color-blue-600: #0f63f0;
+  --color-blue-700: #0b4ecb;
+  --color-blue-800: #0c41a3;
+  --color-blue-900: #0e3880;
+
+  /* Trung tính lạnh hơn stone, hợp tông xanh */
+  --color-stone-50: #f7f8fa;
+  --color-stone-100: #eef0f4;
+  --color-stone-200: #dde1e8;
+  --color-stone-300: #c2c8d3;
+  --color-stone-400: #8e96a4;
+  --color-stone-500: #66707f;
+  --color-stone-600: #4c5666;
+  --color-stone-700: #39424f;
+  --color-stone-800: #242c37;
+  --color-stone-900: #131a23;
+
+  /* Bo góc gọn hơn, bớt "bo tròn kiểu AI" */
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.625rem;
+  --radius-2xl: 0.75rem;
+  --radius-3xl: 0.875rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-be-vietnam), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bricolage), var(--font-manrope), ui-sans-serif, sans-serif;
 }
 
 html {
@@ -19,13 +52,17 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-be-vietnam), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   line-height: 1.6;
 }
 
 ::selection {
-  background: #2563eb;
-  color: #eff6ff;
+  background: #0f63f0;
+  color: #eef5ff;
+}
+
+.so-bang {
+  font-variant-numeric: tabular-nums;
 }
 
 /* Mascot: chớp mắt + bay nhẹ */
@@ -67,13 +104,13 @@ body {
 .chat-md h2,
 .chat-md h3,
 .chat-md h4 { margin: 0.6em 0 0.25em; font-weight: 800; }
-.chat-md strong { font-weight: 800; color: #1e40af; }
+.chat-md strong { font-weight: 800; color: #0b4ecb; }
 .chat-md em { font-style: italic; }
 .chat-md code { background: rgba(28, 25, 23, 0.07); border-radius: 0.35em; padding: 0.1em 0.35em; font-size: 0.85em; }
 .chat-md pre { background: #1c1917; color: #F4F8FE; border: 1px solid rgba(28, 25, 23, 0.15); border-radius: 0.6em; padding: 0.7em 0.9em; overflow-x: auto; font-size: 0.82em; }
 .chat-md pre code { background: transparent; padding: 0; }
-.chat-md a { color: #2563eb; text-decoration: underline; text-underline-offset: 2px; }
-.chat-md blockquote { border-left: 3px solid rgba(37, 99, 235, 0.4); padding-left: 0.7em; margin: 0.4em 0; color: #78716c; }
+.chat-md a { color: #0f63f0; text-decoration: underline; text-underline-offset: 2px; }
+.chat-md blockquote { border-left: 3px solid rgba(15, 99, 240, 0.4); padding-left: 0.7em; margin: 0.4em 0; color: #78716c; }
 .chat-md table { border-collapse: collapse; font-size: 0.85em; margin: 0.4em 0; }
 .chat-md th,
 .chat-md td { border: 1px solid rgba(28, 25, 23, 0.18); padding: 0.3em 0.6em; }
@@ -91,7 +128,7 @@ body {
 .de-an-noi-dung ul { list-style: disc; margin: 0.5em 0 0.5em 1.25em; }
 .de-an-noi-dung ol { list-style: decimal; margin: 0.5em 0 0.5em 1.5em; }
 .de-an-noi-dung li { margin: 0.2em 0; }
-.de-an-noi-dung a { color: #1d4ed8; text-decoration: underline; text-underline-offset: 2px; }
+.de-an-noi-dung a { color: #0b4ecb; text-decoration: underline; text-underline-offset: 2px; }
 .de-an-noi-dung img { display: block; max-width: 100%; height: auto; margin: 0.9em auto; border-radius: 10px; cursor: zoom-in; }
 .de-an-noi-dung img.anh-rong { width: 100%; }
 .de-an-noi-dung table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 0.9em 0; font-size: 13px; }

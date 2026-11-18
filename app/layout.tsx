@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
-import { Be_Vietnam_Pro } from "next/font/google";
+import { Bricolage_Grotesque, Manrope } from "next/font/google";
 import "./globals.css";
 import FloatingSupplies from "./components/FloatingSupplies";
 
-const beVietnam = Be_Vietnam_Pro({
-  variable: "--font-be-vietnam",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin", "vietnamese"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
+  subsets: ["latin", "vietnamese"],
 });
 
 export const metadata: Metadata = {
@@ -17,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="vi" className={`${beVietnam.variable} h-full antialiased`}>
+    <html lang="vi" className={`${manrope.variable} ${bricolage.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <FloatingSupplies />
         {children}

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -177,7 +177,7 @@ export default function TinTuc() {
             type="button"
             onClick={() => setTab(i)}
             aria-pressed={tab === i}
-            className={`rounded-full px-5 py-2.5 text-sm font-bold transition ${
+            className={`rounded-lg px-5 py-2.5 text-sm font-bold transition ${
               tab === i
                 ? "bg-stone-900 text-[#F4F8FE]"
                 : "border border-stone-900/10 bg-white text-stone-500 hover:border-stone-900/25 hover:text-stone-900"

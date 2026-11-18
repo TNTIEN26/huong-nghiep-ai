@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useState } from "react";
 
@@ -186,7 +186,7 @@ function CauHoi({
                 type="button"
                 onClick={() => toggle(opt)}
                 aria-pressed={arr.includes(opt)}
-                className={`rounded-full border px-3.5 py-1.5 text-[13px] font-semibold transition ${
+                className={`rounded-lg border px-3.5 py-1.5 text-[13px] font-semibold transition ${
                   arr.includes(opt)
                     ? "border-blue-600 bg-blue-600 text-white"
                     : "border-stone-900/10 bg-white text-stone-600 hover:border-blue-400/60 hover:text-stone-900"

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useState } from "react";
 
@@ -136,7 +136,7 @@ export default function TraCuuToHopPage() {
                   disabled={day || so === 0}
                   title={so === 0 ? "Chưa có tổ hợp nào trong dữ liệu dùng môn này" : `${so} tổ hợp`}
                   className={
-                    "flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition " +
+                    "flex items-center gap-2 rounded-lg border px-4 py-2 text-sm font-semibold transition " +
                     (chon
                       ? "border-blue-600 bg-blue-600 text-white shadow-sm"
                       : day || so === 0

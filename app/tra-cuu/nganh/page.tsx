@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
@@ -130,7 +130,7 @@ export default function TraCuuNganhPage() {
                   <div className="flex items-start justify-between gap-3">
                     <h2 className="text-base font-extrabold leading-snug text-stone-900">{n.ten}</h2>
                     {nghe && (
-                      <span className="shrink-0 rounded-full bg-blue-600/10 px-3 py-1 text-xs font-bold text-blue-700">
+                      <span className="shrink-0 rounded-md bg-blue-600/10 px-3 py-1 text-xs font-bold text-blue-700">
                         {nghe.linh_vuc}
                       </span>
                     )}

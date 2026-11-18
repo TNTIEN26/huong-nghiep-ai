@@ -5,12 +5,41 @@ import MascotOwl from "./components/MascotOwl";
 import SiteNav from "./components/SiteNav";
 import TinTuc from "./components/TinTuc";
 
-function TieuDeMuc({ nho, to, moTa }: { nho: string; to: string; moTa: string }) {
+const LUOI = {
+  backgroundImage:
+    "linear-gradient(to right, rgba(16,26,40,0.055) 1px, transparent 1px), linear-gradient(to bottom, rgba(16,26,40,0.055) 1px, transparent 1px)",
+  backgroundSize: "56px 56px",
+} as const;
+
+const SO_LIEU = [
+  ["12", "tổ hợp môn"],
+  ["07", "cổng tra cứu"],
+  ["04", "kỳ thi riêng"],
+] as const;
+
+function TieuDeMuc({
+  so,
+  nho,
+  to,
+  moTa,
+}: {
+  so: string;
+  nho: string;
+  to: string;
+  moTa: string;
+}) {
   return (
-    <div className="mx-auto max-w-2xl text-center">
-      <p className="text-xs font-bold uppercase tracking-[0.18em] text-blue-600">{nho}</p>
-      <h2 className="mt-2 text-2xl font-black tracking-tight sm:text-3xl">{to}</h2>
-      <p className="mt-2 text-sm leading-relaxed text-stone-500 sm:text-[15px]">{moTa}</p>
+    <div className="flex flex-col gap-4 border-t-2 border-stone-900 pt-5 sm:flex-row sm:items-end sm:justify-between sm:gap-10">
+      <div className="flex items-start gap-4">
+        <span className="so-bang mt-1 font-display text-[13px] font-extrabold text-blue-600">{so}</span>
+        <div>
+          <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-stone-400">{nho}</p>
+          <h2 className="mt-1.5 font-display text-[1.6rem] font-extrabold leading-tight tracking-[-0.025em] sm:text-[2rem]">
+            {to}
+          </h2>
+        </div>
+      </div>
+      <p className="max-w-md text-sm leading-relaxed text-stone-500 sm:text-right">{moTa}</p>
     </div>
   );
 }
@@ -24,74 +53,108 @@ export default function Home() {
       <header className="relative overflow-hidden border-b border-stone-900/10">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0"
+          className="pointer-events-none absolute inset-0 opacity-70"
           style={{
-            backgroundImage: "radial-gradient(var(--dot) 1px, transparent 1px)",
-            backgroundSize: "26px 26px",
-            maskImage: "radial-gradient(ellipse 75% 65% at 50% 0%, black 25%, transparent 78%)",
-            WebkitMaskImage:
-              "radial-gradient(ellipse 75% 65% at 50% 0%, black 25%, transparent 78%)",
+            ...LUOI,
+            maskImage: "linear-gradient(to bottom, black 10%, transparent 92%)",
+            WebkitMaskImage: "linear-gradient(to bottom, black 10%, transparent 92%)",
           }}
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute -top-32 left-1/2 h-64 w-[720px] max-w-full -translate-x-1/2 rounded-full bg-blue-300/30 blur-[100px]"
+          className="pointer-events-none absolute inset-y-0 right-0 hidden w-[42%] bg-blue-50/70 lg:block"
         />
-        <div className="relative mx-auto grid w-full max-w-[1440px] items-center gap-8 px-4 py-10 sm:px-8 sm:py-12 lg:grid-cols-[1.1fr_0.9fr]">
+
+        <div className="relative mx-auto grid w-full max-w-[1440px] items-center gap-10 px-4 py-12 sm:px-8 sm:py-16 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
           <div>
-            <p className="inline-flex items-center gap-2 rounded-full border border-blue-600/30 bg-blue-50 px-4 py-1.5 text-xs font-bold text-blue-700">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-blue-500" />
-              CÚ ĐẬU • HƯỚNG NGHIỆP AI
-            </p>
-            <h1 className="mt-4 text-4xl font-black leading-[1.08] tracking-tight sm:text-5xl">
-              Chọn đúng ngành,
+            <div className="flex items-center gap-3">
+              <span aria-hidden className="h-px w-10 bg-blue-600" />
+              <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-blue-700">
+                Cú Đậu · Hướng nghiệp AI
+              </p>
+            </div>
+
+            <h1 className="mt-5 font-display text-[clamp(2.6rem,5.4vw,4.5rem)] font-extrabold leading-[0.98] tracking-[-0.035em]">
+              Chọn đúng ngành.
               <br />
-              <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-sky-500 bg-clip-text text-transparent">
-                đi đúng đường.
-              </span>
+              <span className="text-blue-600">Đi đúng đường.</span>
             </h1>
-            <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-stone-500 sm:text-base">
-              Một lần chọn sai đánh đổi bằng nhiều năm tháng. Hiểu rõ bản thân từ ghế nhà
-              trường — Cú Đậu đồng hành cùng bạn từ chat, tính điểm tới ngày thi.
+
+            <p className="mt-5 max-w-[48ch] text-[16.5px] leading-relaxed text-stone-600">
+              Một lần chọn sai đánh đổi bằng nhiều năm tháng. Hiểu rõ bản thân từ ghế nhà trường —
+              Cú Đậu đồng hành cùng bạn từ chat, tính điểm tới ngày thi.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
+
+            <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/huong-nghiep"
-                className="rounded-2xl bg-blue-600 px-7 py-3.5 text-[15px] font-bold text-white shadow-[0_18px_40px_-16px_rgba(37,99,235,0.6)] transition hover:bg-blue-500"
+                className="group inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3.5 text-[15px] font-bold text-white transition hover:bg-blue-700"
               >
-                Chat với Cú Đậu →
+                Chat với Cú Đậu
+                <span aria-hidden className="transition group-hover:translate-x-0.5">→</span>
               </Link>
               <Link
                 href="/tinh-diem"
-                className="rounded-2xl border border-stone-900/15 bg-white px-7 py-3.5 text-[15px] font-bold transition hover:border-blue-400/60"
+                className="rounded-lg border border-stone-900/20 px-6 py-3.5 text-[15px] font-bold text-stone-800 transition hover:border-stone-900/45 hover:bg-white"
               >
                 Tính điểm ngay
               </Link>
             </div>
-            <dl className="mt-6 flex gap-7">
-              {[
-                ["12", "tổ hợp môn"],
-                ["7", "cổng tra cứu"],
-                ["4", "kỳ thi riêng"],
-              ].map(([so, label]) => (
-                <div key={label}>
-                  <dt className="sr-only">{label}</dt>
-                  <dd className="text-xl font-black">{so}</dd>
-                  <dd className="mt-0.5 text-xs text-stone-500">{label}</dd>
+
+            <dl className="mt-9 flex flex-wrap items-start gap-x-10 gap-y-5 border-t border-stone-900/15 pt-6">
+              {SO_LIEU.map(([so, nhan]) => (
+                <div key={nhan}>
+                  <dt className="sr-only">{nhan}</dt>
+                  <dd className="so-bang font-display text-[1.7rem] font-extrabold leading-none tracking-[-0.02em]">
+                    {so}
+                  </dd>
+                  <dd className="mt-2 text-xs font-semibold text-stone-500">{nhan}</dd>
                 </div>
               ))}
             </dl>
           </div>
-          <div className="relative hidden justify-center lg:flex">
-            <MascotOwl className="h-80 w-80 lg:h-96 lg:w-96" src="/cudemhocbai.png" />
+
+          <div className="relative mx-auto w-full max-w-[430px]">
+            <div aria-hidden className="absolute inset-0 translate-x-2.5 translate-y-2.5 bg-blue-600/20" />
+            <div className="relative border border-stone-900/15 bg-white p-3">
+              <div className="flex items-center justify-between border-b border-stone-900/10 pb-2.5 text-[10px] font-extrabold uppercase tracking-[0.16em] text-stone-400">
+                <span>Hồ sơ 2027</span>
+                <span className="so-bang">VN</span>
+              </div>
+              <div className="relative mt-3 overflow-hidden bg-blue-50">
+                <div
+                  aria-hidden
+                  className="absolute inset-0 opacity-60"
+                  style={{ ...LUOI, backgroundSize: "28px 28px" }}
+                />
+                <MascotOwl className="relative mx-auto h-60 w-60 sm:h-72 sm:w-72" src="/cudemhocbai.png" />
+              </div>
+              <dl className="mt-3 grid grid-cols-3 divide-x divide-stone-900/10 border-t border-stone-900/10 pt-3 text-center">
+                {[
+                  ["12", "tổ hợp"],
+                  ["07", "cổng"],
+                  ["04", "kỳ thi"],
+                ].map(([so, nhan]) => (
+                  <div key={nhan}>
+                    <dt className="sr-only">{nhan}</dt>
+                    <dd className="so-bang font-display text-base font-extrabold">{so}</dd>
+                    <dd className="text-[11px] font-semibold text-stone-400">{nhan}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+            <p className="mt-3 text-center text-[11px] font-semibold text-stone-400">
+              Cú Đậu — trợ lý hướng nghiệp cho học sinh cấp 2, cấp 3
+            </p>
           </div>
         </div>
       </header>
 
-<main id="trai-nghiem" className="mx-auto w-full max-w-[1440px] flex-1 px-4 sm:px-8">
+      <main id="trai-nghiem" className="mx-auto w-full max-w-[1440px] flex-1 px-4 sm:px-8">
         {/* TIN TỨC */}
-        <section className="border-t border-stone-900/10 py-12 sm:py-16">
+        <section className="py-12 sm:py-16">
           <TieuDeMuc
+            so="01"
             nho="Tin tuyển sinh & giáo dục"
             to="Nắm bắt thông tin từng kỳ thi"
             moTa="Chọn từng nhóm kỳ thi để xem link tra cứu, cách tính điểm và cổng chính thức."
@@ -101,55 +164,67 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ĐẾM NGƯỢC — gọn, đúng chỗ */}
-        <section id="lich-thi" className="scroll-mt-20 border-t border-stone-900/10 py-12 sm:py-16">
+        {/* ĐẾM NGƯỢC */}
+        <section id="lich-thi" className="scroll-mt-20 py-12 sm:py-16">
           <TieuDeMuc
+            so="02"
             nho="Đếm ngược"
             to="Kỳ thi tốt nghiệp THPT 2027"
             moTa="Bấm vào từng môn để xem đồng hồ chạy theo đúng giờ thi."
           />
-          <div className="mx-auto mt-8 max-w-6xl">
+          <div className="mt-8">
             <ExamCountdown />
           </div>
         </section>
 
         {/* CTA CHAT */}
         <section className="pb-14 sm:pb-20">
-          <div className="flex flex-col items-center gap-5 rounded-[2rem] bg-stone-900 px-6 py-10 text-center text-[#F4F8FE] sm:flex-row sm:gap-8 sm:p-10 sm:text-left">
-            <MascotOwl className="h-28 w-28 shrink-0 sm:h-36 sm:w-36" />
-            <div className="min-w-0 flex-1">
-              <h2 className="text-2xl font-black tracking-tight sm:text-3xl">
-                Còn phân vân? Hỏi Cú Đậu.
-              </h2>
-              <p className="mt-2 text-sm leading-relaxed text-stone-300 sm:text-[15px]">
-                Kể về môn học, sở thích, tính cách — Cú Đậu gợi ý ngành và lộ trình riêng cho bạn.
-              </p>
+          <div className="relative overflow-hidden bg-stone-900">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 opacity-40"
+              style={{
+                backgroundImage:
+                  "linear-gradient(to right, rgba(255,255,255,0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.07) 1px, transparent 1px)",
+                backgroundSize: "48px 48px",
+              }}
+            />
+            <div className="relative flex flex-col items-center gap-6 px-6 py-10 text-center text-white sm:flex-row sm:gap-10 sm:p-12 sm:text-left">
+              <MascotOwl className="h-28 w-28 shrink-0 sm:h-36 sm:w-36" />
+              <div className="min-w-0 flex-1">
+                <h2 className="font-display text-[1.9rem] font-extrabold leading-[1.05] tracking-[-0.03em] sm:text-[2.5rem]">
+                  Còn phân vân?
+                  <br />
+                  Hỏi Cú Đậu.
+                </h2>
+                <p className="mt-3 max-w-lg text-sm leading-relaxed text-stone-300 sm:text-[15px]">
+                  Kể về môn học, sở thích, tính cách — Cú Đậu gợi ý ngành và lộ trình riêng cho bạn.
+                </p>
+              </div>
               <Link
                 href="/huong-nghiep"
-                className="mt-5 inline-block rounded-2xl bg-blue-600 px-8 py-3.5 text-[15px] font-bold text-white transition hover:bg-blue-500"
+                className="shrink-0 rounded-lg bg-blue-500 px-7 py-3.5 text-[15px] font-bold text-white transition hover:bg-blue-400"
               >
-                Hãy bắt đầu →
+                Bắt đầu chat →
               </Link>
             </div>
           </div>
-          {/*
-            TẠM ẨN form tư vấn (CareerConsult) khỏi hiển thị theo yêu cầu.
-            File + API /api/consult vẫn giữ nguyên cho bạn phụ trách tính năng.
-          */}
         </section>
       </main>
 
       {/* FOOTER */}
-      <footer className="mt-auto border-t border-stone-900/10 bg-white/60 px-4 py-10 sm:px-8">
+      <footer className="mt-auto border-t border-stone-900/10 bg-white/70 px-4 py-10 sm:px-8">
         <div className="mx-auto grid w-full max-w-[1440px] gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <p className="text-sm font-black">CÚ ĐẬU</p>
+            <p className="font-display text-[15px] font-extrabold tracking-[-0.01em]">
+              CÚ ĐẬU<span className="text-blue-600">.</span>
+            </p>
             <p className="mt-2 max-w-xs text-[13px] leading-relaxed text-stone-500">
               Trợ lý AI đồng hành cùng học sinh chọn ngành, tính điểm và về đích kỳ thi.
             </p>
           </div>
           <nav aria-label="Công cụ">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-stone-400">Công cụ</p>
+            <p className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-stone-400">Công cụ</p>
             <ul className="mt-3 space-y-2 text-sm font-semibold">
               <li><Link href="/tinh-diem" className="hover:text-blue-700">Tính điểm</Link></li>
               <li><Link href="/huong-nghiep" className="hover:text-blue-700">Chat hướng nghiệp</Link></li>
@@ -157,7 +232,7 @@ export default function Home() {
             </ul>
           </nav>
           <nav aria-label="Tham khảo">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-stone-400">Tham khảo</p>
+            <p className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-stone-400">Tham khảo</p>
             <ul className="mt-3 space-y-2 text-sm font-semibold">
               <li><a href="https://moet.gov.vn/" target="_blank" rel="noreferrer" className="hover:text-blue-700">Bộ GD&ĐT</a></li>
               <li><a href="https://tuyensinh.moet.gov.vn/" target="_blank" rel="noreferrer" className="hover:text-blue-700">Cổng tuyển sinh</a></li>
@@ -165,7 +240,7 @@ export default function Home() {
             </ul>
           </nav>
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-stone-400">Lưu ý</p>
+            <p className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-stone-400">Lưu ý</p>
             <p className="mt-3 max-w-xs text-[13px] leading-relaxed text-stone-500">
               Kết quả chỉ mang tính tham khảo, không thay thế tư vấn trực tiếp từ thầy cô.
               Đối chiếu website chính thức của từng trường trước khi đăng ký nguyện vọng.
