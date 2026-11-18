@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import DemNguocHoSo from "./components/DemNguocHoSo";
 import ExamCountdown from "./components/ExamCountdown";
 import MascotOwl from "./components/MascotOwl";
 import SiteNav from "./components/SiteNav";
@@ -100,8 +101,8 @@ export default function Home() {
             <div aria-hidden className="absolute inset-0 translate-x-2.5 translate-y-2.5 bg-blue-600/20" />
             <div className="relative border border-stone-900/15 bg-white p-3">
               <div className="flex items-center justify-between border-b border-stone-900/10 pb-2.5 text-[10px] font-extrabold uppercase tracking-[0.16em] text-stone-400">
-                <span>Hồ sơ 2027</span>
-                <span className="so-bang">VN</span>
+                <span>Cú Đậu hướng nghiệp</span>
+                <span className="so-bang">11·06·2027</span>
               </div>
               <div className="relative mt-3 overflow-hidden bg-blue-50">
                 <div
@@ -111,19 +112,8 @@ export default function Home() {
                 />
                 <MascotOwl className="relative mx-auto h-60 w-60 sm:h-72 sm:w-72" src="/cudemhocbai.png" />
               </div>
-              <dl className="mt-3 grid grid-cols-3 divide-x divide-stone-900/10 border-t border-stone-900/10 pt-3 text-center">
-                {[
-                  ["12", "tổ hợp"],
-                  ["07", "cổng"],
-                  ["04", "kỳ thi"],
-                ].map(([so, nhan]) => (
-                  <div key={nhan}>
-                    <dt className="sr-only">{nhan}</dt>
-                    <dd className="so-bang font-display text-base font-extrabold">{so}</dd>
-                    <dd className="text-[11px] font-semibold text-stone-400">{nhan}</dd>
-                  </div>
-                ))}
-              </dl>
+              <DemNguocHoSo />
+
             </div>
             <p className="mt-3 text-center text-[11px] font-semibold text-stone-400">
               Cú Đậu — trợ lý hướng nghiệp cho học sinh cấp 2, cấp 3
