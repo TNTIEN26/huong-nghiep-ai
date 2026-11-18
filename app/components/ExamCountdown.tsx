@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useState, useSyncExternalStore } from "react";
 
@@ -85,7 +85,7 @@ export default function ExamCountdown() {
             {o.map(([so, label]) => (
               <div key={label} className="min-w-0 text-center">
                 <div className="flex min-h-[8rem] items-center justify-center overflow-hidden rounded-2xl bg-stone-900 px-1 py-8 sm:min-h-[11rem] sm:py-10">
-                  <p className="whitespace-nowrap text-3xl font-black tabular-nums leading-none tracking-tighter text-[#F4F8FE] md:text-4xl xl:text-5xl">
+                  <p className="whitespace-nowrap font-display text-3xl font-black tabular-nums leading-none tracking-tighter text-[#F4F8FE] md:text-4xl xl:text-5xl">
                     {so}
                   </p>
                 </div>

@@ -11,12 +11,6 @@ const LUOI = {
   backgroundSize: "56px 56px",
 } as const;
 
-const SO_LIEU = [
-  ["12", "tổ hợp môn"],
-  ["07", "cổng tra cứu"],
-  ["04", "kỳ thi riêng"],
-] as const;
-
 function TieuDeMuc({
   so,
   nho,
@@ -100,18 +94,6 @@ export default function Home() {
                 Tính điểm ngay
               </Link>
             </div>
-
-            <dl className="mt-9 flex flex-wrap items-start gap-x-10 gap-y-5 border-t border-stone-900/15 pt-6">
-              {SO_LIEU.map(([so, nhan]) => (
-                <div key={nhan}>
-                  <dt className="sr-only">{nhan}</dt>
-                  <dd className="so-bang font-display text-[1.7rem] font-extrabold leading-none tracking-[-0.02em]">
-                    {so}
-                  </dd>
-                  <dd className="mt-2 text-xs font-semibold text-stone-500">{nhan}</dd>
-                </div>
-              ))}
-            </dl>
           </div>
 
           <div className="relative mx-auto w-full max-w-[430px]">

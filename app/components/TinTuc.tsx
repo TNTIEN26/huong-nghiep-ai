@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -158,7 +158,7 @@ function AnhTin({ tin }: { tin: Tin }) {
     );
   }
   return (
-    <span className="flex h-full w-full items-center justify-center bg-gradient-to-br from-blue-100 via-sky-50 to-[#F4F8FE] px-4 text-center text-3xl font-black tracking-tight text-stone-900/25 sm:text-4xl">
+    <span className="flex h-full w-full items-center justify-center bg-gradient-to-br from-blue-100 via-sky-50 to-[#F4F8FE] px-4 text-center font-display text-3xl font-black tracking-tight text-stone-900/25 sm:text-4xl">
       {tin.chu}
     </span>
   );

@@ -29,7 +29,7 @@ export default function SiteNav({ active }: { active?: MucNav }) {
   return (
     <nav className="sticky top-0 z-50 border-b border-stone-900/10 bg-[#F4F8FE]/90 backdrop-blur">
       <div className="relative flex w-full items-center gap-3 px-5 py-3.5 sm:px-8">
-        <Link href="/" className="flex items-center gap-2 text-[15px] font-black tracking-tight text-stone-900">
+        <Link href="/" className="flex items-center gap-2 font-display text-[15px] font-black tracking-tight text-stone-900">
           <MascotOwl className="h-9 w-9" bay={false} />
           CÚ ĐẬU
         </Link>
