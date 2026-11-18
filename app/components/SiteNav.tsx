@@ -22,7 +22,7 @@ const TRA_CUU: { ten: string; href: string; moTa: string }[] = [
 export default function SiteNav({ active }: { active?: MucNav }) {
   const [moTraCuu, setMoTraCuu] = useState(false);
 
-  const nutChung = "whitespace-nowrap rounded-lg px-2.5 py-2 text-[13px] transition sm:px-5 sm:py-2.5 sm:text-[15px]";
+  const nutChung = "whitespace-nowrap rounded-lg px-2 py-2 text-[12px] transition sm:px-5 sm:py-2.5 sm:text-[15px]";
   const nutThuong = `${nutChung} text-stone-500 hover:bg-stone-900/5 hover:text-stone-900`;
   const nutDangXem = "bg-blue-600 font-semibold text-[#F4F8FE]";
 
