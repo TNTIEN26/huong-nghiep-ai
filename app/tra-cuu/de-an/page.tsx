@@ -224,7 +224,7 @@ export default function TraCuuDeAnPage() {
 
                   <div className="mt-4 grid grid-cols-2 gap-3 border-t border-stone-900/10 pt-3">
                     <div>
-                      <p className="text-xs font-semibold text-stone-400">Điểm chuẩn 2025</p>
+                      <p className="text-xs font-semibold text-stone-400">Điểm chuẩn 2026</p>
                       <p className="text-sm font-bold text-blue-700">
                         {t.diem_min != null && t.diem_max != null
                           ? `${soDiem(t.diem_min)} – ${soDiem(t.diem_max)}`
@@ -282,8 +282,8 @@ export default function TraCuuDeAnPage() {
                               <span className="font-bold text-stone-900">{d.nganh}</span>
                               <span className="text-xs text-stone-500">
                                 {" "}
-                                · 2025: <b className="text-emerald-700">{soDiem(d.diem["2025"] ?? null)}</b>
-                                {" · "}2024: {soDiem(d.diem["2024"] ?? null)}
+                                · 2026: <b className="text-emerald-700">{soDiem(d.diem["2026"] ?? d.diem["2025"] ?? null)}</b>
+                                {" · "}2025: {soDiem(d.diem["2025"] ?? null)}
                                 {d.to_hop.length > 0 && (
                                   <span className="text-stone-400"> · {d.to_hop.slice(0, 5).join(", ")}{d.to_hop.length > 5 ? "…" : ""}</span>
                                 )}
@@ -313,7 +313,7 @@ export default function TraCuuDeAnPage() {
         )}
 
         <p className="mt-8 text-xs text-stone-400">
-          Nguồn: tổng hợp đề án tuyển sinh từ HOCMAI (dữ liệu 2025, tham khảo — đối chiếu đề án chính thức của trường).
+          Nguồn: tổng hợp đề án tuyển sinh từ HOCMAI (dữ liệu 2026, tham khảo — đối chiếu đề án chính thức của trường).
         </p>
       </main>
     </div>

@@ -23,7 +23,7 @@ export type ChatMessage = {
 const provider = (process.env.AI_PROVIDER ?? "openrouter").trim().toLowerCase();
 
 const geminiApiKey = process.env.GEMINI_API_KEY ?? "";
-const geminiModel = process.env.GEMINI_MODEL ?? "gemini-2.5-flash";
+const geminiModel = process.env.GEMINI_MODEL ?? "gemini-3.5-flash-lite";
 const geminiClient = geminiApiKey ? new GoogleGenAI({ apiKey: geminiApiKey }) : null;
 
 const openRouterApiKey = process.env.OPENROUTER_API_KEY ?? "";
@@ -362,14 +362,33 @@ async function callOpenRouter(userMessage: string, systemPrompt: string): Promis
   );
 }
 
+function formatGeminiContents(
+  messages: ChatMessage[],
+): { role: "user" | "model"; parts: { text: string }[] }[] {
+  const contents: { role: "user" | "model"; parts: { text: string }[] }[] = [];
+  for (const m of messages) {
+    const role: "user" | "model" = m.role === "assistant" ? "model" : "user";
+    if (contents.length > 0 && contents[contents.length - 1].role === role) {
+      contents[contents.length - 1].parts[0].text += `\n\n${m.content}`;
+    } else {
+      contents.push({ role, parts: [{ text: m.content }] });
+    }
+  }
+  // Gemini requires multiturn conversation to start with "user"
+  while (contents.length > 0 && contents[0].role === "model") {
+    contents.shift();
+  }
+  if (contents.length === 0) {
+    contents.push({ role: "user", parts: [{ text: "Xin chào Cú Đậu!" }] });
+  }
+  return contents;
+}
+
 async function callGeminiChat(messages: ChatMessage[], systemPrompt: string): Promise<string> {
   if (!geminiClient) {
     throw new Error("Thiếu GEMINI_API_KEY. Thêm vào .env.local (xem .env.local.example).");
   }
-  const contents = messages.map((m) => ({
-    role: m.role === "assistant" ? "model" : "user",
-    parts: [{ text: m.content }],
-  }));
+  const contents = formatGeminiContents(messages);
   const response = await geminiClient.models.generateContent({
     model: geminiModel,
     contents,
@@ -607,10 +626,7 @@ async function streamGeminiChat(
     return;
   }
   try {
-    const contents = messages.map((m) => ({
-      role: m.role === "assistant" ? "model" : "user",
-      parts: [{ text: m.content }],
-    }));
+    const contents = formatGeminiContents(messages);
     const stream = await geminiClient.models.generateContentStream({
       model: geminiModel,
       contents,

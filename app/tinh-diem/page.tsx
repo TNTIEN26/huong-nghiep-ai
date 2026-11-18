@@ -34,15 +34,9 @@ const NHAN_COT: Record<Cot, string> = {
 const PHUONG_THUC: { id: string; ten: string; cot: Cot[]; ghiChu: string }[] = [
   {
     id: "3-nam",
-    ten: "Học bạ 3 năm",
+    ten: "Học bạ 3 năm (6 học kỳ)",
     cot: ["l10", "l11", "l12"],
     ghiChu: "Trung bình điểm cả năm của lớp 10, 11, 12 (mỗi năm tính như nhau).",
-  },
-  {
-    id: "6-hk",
-    ten: "Học bạ 6 học kỳ",
-    cot: ["l10", "l11", "l12"],
-    ghiChu: "ĐTB cả năm = trung bình 2 học kỳ, nên 6 học kỳ tương đương 3 năm.",
   },
   {
     id: "nam-12",
@@ -52,7 +46,7 @@ const PHUONG_THUC: { id: string; ten: string; cot: Cot[]; ghiChu: string }[] = [
   },
   {
     id: "10-11-hk1",
-    ten: "Lớp 10, 11 + HK1 lớp 12",
+    ten: "Lớp 10, 11 + HK1 lớp 12 (5 học kỳ)",
     cot: ["l10", "l11", "hk1-12"],
     ghiChu: "Dùng điểm cả năm lớp 10, cả năm lớp 11 và học kỳ 1 lớp 12.",
   },
@@ -61,12 +55,6 @@ const PHUONG_THUC: { id: string; ten: string; cot: Cot[]; ghiChu: string }[] = [
     ten: "Học bạ 3 học kỳ",
     cot: ["l11", "hk1-12"],
     ghiChu: "Cả năm lớp 11 (2 học kỳ) + học kỳ 1 lớp 12.",
-  },
-  {
-    id: "5-hk",
-    ten: "Học bạ 5 học kỳ",
-    cot: ["l10", "l11", "hk1-12"],
-    ghiChu: "Cả năm lớp 10, cả năm lớp 11 + học kỳ 1 lớp 12.",
   },
 ];
 
@@ -106,7 +94,7 @@ function parseDiemNhanh(v: string): number | null {
 }
 
 const DANH_MUC: { id: Muc; so: string; ten: string; moTa: string }[] = [
-  { id: "hocba", so: "1", ten: "Học bạ cấp 3", moTa: "11 môn × lớp 10, 11, 12 · 6 cách xét" },
+  { id: "hocba", so: "1", ten: "Học bạ cấp 3", moTa: "11 môn × lớp 10, 11, 12 · 4 cách xét" },
   { id: "totnghiep", so: "2", ten: "Xét tốt nghiệp", moTa: "Tự lấy TB 3 năm, nhập thêm 4 môn thi" },
   { id: "quydoi", so: "3", ten: "Quy đổi ĐGNL", moTa: "Đổi điểm HSA, V-ACT, TSA sang thang 30" },
 ];
@@ -142,7 +130,7 @@ function KetQua({ tieuDe, so, nhanXet }: { tieuDe: string; so: string; nhanXet: 
 
 /* ---------- MỤC 1: HỌC BẠ ---------- */
 const oDiem =
-  "w-full min-w-0 rounded-md border border-stone-900/15 bg-white px-2 py-2 text-center text-sm tabular-nums text-stone-900 outline-none transition placeholder:text-stone-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/15";
+  "h-11 w-full min-w-0 rounded-lg border border-stone-900/20 bg-white px-1 text-center text-base font-semibold tabular-nums text-stone-900 outline-none transition placeholder:font-normal placeholder:text-stone-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20";
 
 function MucHocBa({
   bang,
@@ -198,17 +186,17 @@ function MucHocBa({
   toHop.sort((a, b) => b.diemUt - a.diemUt);
 
   return (
-    <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_420px]">
-      <div>
+    <div className="grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,1fr)_420px]">
+      <div className="min-w-0">
         <p className="text-sm font-bold text-stone-900">Phương thức xét học bạ</p>
-        <div className="mt-2 flex flex-wrap gap-2">
+        <div className="mt-2 grid grid-cols-2 gap-2 lg:grid-cols-4">
           {PHUONG_THUC.map((x) => (
             <button
               key={x.id}
               type="button"
               onClick={() => setPt(x.id)}
               aria-pressed={pt === x.id}
-              className={`rounded-lg px-3.5 py-2 text-sm font-bold transition ${
+              className={`flex min-h-[3.25rem] items-center justify-center rounded-xl px-2.5 py-2 text-center text-[13.5px] font-bold leading-snug transition sm:text-sm ${
                 pt === x.id
                   ? "bg-blue-600 text-white"
                   : "border border-stone-900/10 bg-white text-stone-600 hover:border-stone-900/25"
@@ -218,15 +206,15 @@ function MucHocBa({
             </button>
           ))}
         </div>
-        <p className="mt-2 text-xs leading-relaxed text-stone-500">{phuongThuc.ghiChu}</p>
+        <p className="mt-2.5 rounded-lg bg-blue-50 px-3 py-2 text-[13px] leading-relaxed text-blue-900">{phuongThuc.ghiChu}</p>
 
-        <div className="mt-4 overflow-x-auto rounded-lg border border-stone-900/10">
-          <table className="w-full min-w-[480px] border-collapse text-sm">
+        <div className="mt-4 overflow-hidden rounded-xl border border-stone-900/10">
+          <table className="w-full table-fixed border-collapse text-sm">
             <thead>
               <tr className="bg-stone-900 text-[#F4F8FE]">
-                <th className="sticky left-0 z-10 bg-stone-900 px-3 py-2.5 text-left font-bold">Môn học</th>
+                <th className="w-[30%] bg-stone-900 px-3 py-2.5 text-left text-[13px] font-bold sm:w-40 sm:text-sm">Môn học</th>
                 {cot.map((c) => (
-                  <th key={c} className="px-2 py-2.5 text-center font-bold">
+                  <th key={c} className="px-1 py-2.5 text-center text-[12.5px] font-bold leading-tight sm:text-sm">
                     {NHAN_COT[c]}
                   </th>
                 ))}
@@ -237,14 +225,14 @@ function MucHocBa({
                 <tr key={mon} className={i % 2 ? "bg-[#F7FAFF]" : "bg-white"}>
                   <th
                     scope="row"
-                    className={`sticky left-0 z-10 whitespace-nowrap px-3 py-1.5 text-left font-semibold ${
+                    className={`px-3 py-1.5 text-left text-[14.5px] font-semibold leading-tight sm:text-[15px] ${
                       i % 2 ? "bg-[#F7FAFF]" : "bg-white"
                     }`}
                   >
                     {mon}
                   </th>
                   {cot.map((c) => (
-                    <td key={c} className="px-2 py-1.5">
+                    <td key={c} className="px-1.5 py-1.5 sm:px-2">
                       <input
                         value={bang[mon]?.[c] ?? ""}
                         onChange={(e) => datDiem(mon, c, e.target.value)}
@@ -357,6 +345,59 @@ function MucHocBa({
   );
 }
 
+/* ---------- Sơ đồ tính điểm tốt nghiệp (từng bước) ---------- */
+function Chip({ nhan, v, tone = "xam" }: { nhan: string; v: string; tone?: "xam" | "xanh" | "cam" }) {
+  const mau =
+    tone === "xanh"
+      ? "border-blue-200 bg-blue-50 text-blue-800"
+      : tone === "cam"
+        ? "border-amber-200 bg-amber-50 text-amber-800"
+        : "border-stone-900/10 bg-white text-stone-900";
+  return (
+    <span className={`inline-flex min-w-[3.25rem] flex-col items-center rounded-lg border px-2 py-1 leading-tight ${mau}`}>
+      <span className="text-[11px] font-medium opacity-70">{nhan}</span>
+      <span className="text-[15px] font-bold tabular-nums">{v}</span>
+    </span>
+  );
+}
+
+function Toan({ c }: { c: string }) {
+  return <span className="px-0.5 text-base font-bold text-stone-400">{c}</span>;
+}
+
+function BuocSoDo({
+  so,
+  tieuDe,
+  moTa,
+  ketQua,
+  children,
+}: {
+  so: number;
+  tieuDe: string;
+  moTa?: string;
+  ketQua: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <li className="relative rounded-xl border border-stone-900/10 bg-white p-3.5">
+      <div className="flex items-start gap-2.5">
+        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">
+          {so}
+        </span>
+        <div className="min-w-0 flex-1">
+          <p className="text-[15px] font-bold leading-snug text-stone-900">{tieuDe}</p>
+          {moTa && <p className="mt-0.5 text-[13px] leading-snug text-stone-500">{moTa}</p>}
+        </div>
+      </div>
+      <div className="mt-3 flex flex-wrap items-center gap-1.5">{children}</div>
+      <p className="mt-3 flex items-baseline justify-between gap-3 border-t border-dashed border-stone-900/15 pt-2.5">
+        <span className="text-[13px] font-semibold text-stone-500">Kết quả bước {so}</span>
+        <span className="text-xl font-black tabular-nums text-blue-700">{ketQua}</span>
+      </p>
+    </li>
+  );
+}
+
 /* ---------- MỤC 2: XÉT TỐT NGHIỆP ---------- */
 function MucTotNghiep({ tbSan, tbNam }: { tbSan: string; tbNam: { lop10: string; lop11: string; lop12: string } }) {
   const [toan, setToan] = useState("");
@@ -385,6 +426,12 @@ function MucTotNghiep({ tbSan, tbNam }: { tbSan: string; tbNam: { lop10: string;
   const hien = (v: string) => (parseDiem(v) === null ? "…" : v.trim());
   const hb = [tbNam.lop10, tbNam.lop11, tbNam.lop12].map((v) => parseDiem(v));
   const hbDu = hb.every((d) => d !== null);
+  const tbSo = parseDiem(tb);
+  const bon = ds.slice(0, 4) as (number | null)[];
+  const tb4 =
+    bon.every((d) => d !== null) && k !== null
+      ? ((bon as number[]).reduce((x, y) => x + y, 0) + k) / 4
+      : null;
 
   return (
     <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_420px]">
@@ -450,82 +497,70 @@ function MucTotNghiep({ tbSan, tbNam }: { tbSan: string; tbNam: { lop10: string;
       </p>
       </div>
 
-      {/* Sơ đồ tính điểm kiểu Phenikaa — số nhảy theo từng ô nhập */}
-      <aside className="h-fit rounded-2xl border border-stone-900/10 bg-[#F4F8FE] p-4 xl:sticky xl:top-24">
-        <p className="text-xs font-bold uppercase tracking-[0.14em] text-stone-500">Sơ đồ tính điểm</p>
+      {/* Sơ đồ tính điểm — từng bước, số nhảy theo ô nhập */}
+      <aside className="h-fit rounded-2xl border border-stone-900/10 bg-[#F4F8FE] p-4 sm:p-5 xl:sticky xl:top-24">
+        <p className="text-sm font-extrabold text-stone-900">Cách tính điểm xét tốt nghiệp</p>
+        <p className="mt-1 text-[13px] leading-snug text-stone-500">
+          Chia 3 bước. Nhập điểm bên cạnh, các số dưới đây tự cập nhật.
+        </p>
 
-        {/* Khung 1: ĐTB các năm học */}
-        <div className="mt-3 rounded-md border-[3px] border-dashed border-blue-800 bg-white p-2.5 text-stone-900">
-          <p className="mx-auto w-fit rounded bg-red-600 px-2 py-0.5 text-center text-[10px] font-bold leading-tight text-white">
-            ĐIỂM TRUNG BÌNH CÁC NĂM HỌC
-          </p>
-          <div className="mt-2 flex items-center gap-1">
-            <span className="shrink-0 bg-yellow-300 px-1 py-1 text-center text-[9px] font-bold leading-tight">
-              ĐTB CÁC
-              <br />
-              NĂM HỌC
-            </span>
-            <span className="font-black">=</span>
-            <span className="min-w-0 flex-1 text-center font-serif text-[11px] leading-snug">
-              <span className="block border-b-2 border-blue-900 px-0.5 pb-0.5">
-                (ĐTB LỚP 10)x1 + (ĐTB LỚP 11)x2 + (ĐTB LỚP 12)x3
-              </span>
-              <span className="block pt-0.5 font-bold">6</span>
-            </span>
-          </div>
-          <p className="mt-1.5 border-t border-dashed border-stone-900/15 pt-1.5 text-center text-[13px] tabular-nums text-stone-700">
-            = ({hien(tbNam.lop10)}×1 + {hien(tbNam.lop11)}×2 + {hien(tbNam.lop12)}×3) ÷ 6 ={" "}
-            <span className="font-black text-blue-700">
-              {hbDu && tb ? Number(tb).toFixed(2) : "…"}
-            </span>
-          </p>
-        </div>
+        <ol className="mt-4 space-y-3">
+          <BuocSoDo
+            so={1}
+            tieuDe="Điểm trung bình các năm học"
+            moTa="Lớp 11 tính gấp đôi, lớp 12 gấp ba, rồi chia 6"
+            ketQua={hbDu ? ((hb[0]! + hb[1]! * 2 + hb[2]! * 3) / 6).toFixed(2) : tb !== "" && parseDiem(tb) !== null ? Number(tb).toFixed(2) : "…"}
+          >
+            <Toan c="(" />
+            <Chip nhan="Lớp 10 ×1" v={hien(tbNam.lop10)} tone="xanh" />
+            <Toan c="+" />
+            <Chip nhan="Lớp 11 ×2" v={hien(tbNam.lop11)} tone="xanh" />
+            <Toan c="+" />
+            <Chip nhan="Lớp 12 ×3" v={hien(tbNam.lop12)} tone="xanh" />
+            <Toan c=")" />
+            <Toan c="÷ 6" />
+          </BuocSoDo>
 
-        {/* Khung 2: ĐXTN */}
-        <div className="mt-3 rounded-md border-[3px] border-dashed border-blue-800 bg-white p-2.5 text-stone-900">
-          <p className="mx-auto w-fit rounded bg-yellow-300 px-2 py-0.5 text-center text-[10px] font-bold leading-tight">
-            CÁCH TÍNH ĐIỂM XÉT TỐT NGHIỆP
-          </p>
-          <div className="mt-2 flex items-center gap-1">
-            <span className="shrink-0 bg-yellow-300 px-1.5 py-1 text-[10px] font-bold">ĐXTN</span>
-            <span className="font-black">=</span>
-            <span className="min-w-0 flex-1 text-center font-serif text-[11px] leading-snug">
-              <span className="flex items-center justify-center gap-1">
-                <span className="border-b-2 border-red-600 px-1 pb-0.5">
-                  <span className="inline-block align-top">
-                    Tổng điểm 4<br />
-                    môn thi
-                  </span>
-                  <span className="font-sans font-black text-red-600"> + </span>
-                  <span className="inline-block align-top">
-                    Điểm khuyến
-                    <br />
-                    khích (nếu có)
-                  </span>
-                </span>
-                <span className="font-sans font-bold">+</span>
-                <span className="rounded-sm bg-red-600 px-1 py-px font-sans text-[9px] font-bold text-white">
-                  ĐTB CÁC NĂM HỌC
-                </span>
-              </span>
-              <span className="block pt-0.5 font-bold">4</span>
-              <span className="block border-b-2 border-blue-900" />
-              <span className="block pt-0.5 font-bold">2</span>
-            </span>
-            <span className="shrink-0 text-center font-sans text-[9px] font-bold leading-tight">
-              <span className="text-red-700">+</span> ĐIỂM
-              <br />
-              ƯU TIÊN
-              <br />
-              (NẾU CÓ)
-            </span>
-          </div>
-          <p className="mt-1.5 border-t border-dashed border-stone-900/15 pt-1.5 text-center text-[13px] tabular-nums leading-relaxed text-stone-700">
-            = [({hien(toan)}+{hien(van)}+{hien(tc1)}+{hien(tc2)}+{kk.trim() === "" ? "0" : hien(kk)})÷4
-            + {tb !== "" ? Number(tb).toFixed(2) : "…"}]÷2+{u.toFixed(2)} ={" "}
-            <span className="font-black text-blue-700">{kq === null ? "…" : kq.toFixed(2)}</span>
-          </p>
-        </div>
+          <BuocSoDo
+            so={2}
+            tieuDe="Trung bình 4 bài thi + điểm khuyến khích"
+            moTa="Cộng 4 bài thi và điểm khuyến khích, chia 4"
+            ketQua={tb4 === null ? "…" : tb4.toFixed(2)}
+          >
+            <Toan c="(" />
+            <Chip nhan="Toán" v={hien(toan)} />
+            <Toan c="+" />
+            <Chip nhan="Ngữ văn" v={hien(van)} />
+            <Toan c="+" />
+            <Chip nhan="Tự chọn 1" v={hien(tc1)} />
+            <Toan c="+" />
+            <Chip nhan="Tự chọn 2" v={hien(tc2)} />
+            <Toan c="+" />
+            <Chip nhan="Khuyến khích" v={kk.trim() === "" ? "0" : hien(kk)} tone="cam" />
+            <Toan c=")" />
+            <Toan c="÷ 4" />
+          </BuocSoDo>
+
+          <BuocSoDo
+            so={3}
+            tieuDe="Điểm xét tốt nghiệp"
+            moTa="Trung bình của bước 2 và bước 1, rồi cộng điểm ưu tiên"
+            ketQua={kq === null ? "…" : kq.toFixed(2)}
+          >
+            <Toan c="(" />
+            <Chip nhan="Bước 2" v={tb4 === null ? "…" : tb4.toFixed(2)} tone="xanh" />
+            <Toan c="+" />
+            <Chip nhan="Bước 1" v={tbSo === null ? "…" : tbSo.toFixed(2)} tone="xanh" />
+            <Toan c=")" />
+            <Toan c="÷ 2" />
+            <Toan c="+" />
+            <Chip nhan="Ưu tiên" v={u.toFixed(2)} tone="cam" />
+          </BuocSoDo>
+        </ol>
+
+        <p className="mt-3 text-[13px] leading-snug text-stone-500">
+          Đỗ khi <b>mọi bài thi trên 1.0</b> và điểm xét từ <b>5.0</b> trở lên.
+        </p>
       </aside>
     </div>
   );
@@ -926,7 +961,7 @@ export default function TinhDiemPage() {
     <div className="relative z-10 flex min-h-screen flex-col text-stone-900">
       <SiteNav active="tinh-diem" />
 
-      <main className="mx-auto w-full max-w-[1200px] flex-1 px-4 py-10 sm:px-8 sm:py-14">
+      <main className="mx-auto w-full max-w-[1200px] flex-1 px-3 py-6 sm:px-8 sm:py-14">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-blue-700">
@@ -944,32 +979,32 @@ export default function TinhDiemPage() {
 
         <nav
           aria-label="Danh mục tính điểm"
-          className="sticky top-[68px] z-30 mt-7 rounded-xl border border-stone-900/10 bg-white/90 p-1.5 shadow-[0_12px_30px_-24px_rgba(15,99,240,0.5)] backdrop-blur"
+          className="mt-5 rounded-xl md:sticky md:top-[68px] md:z-30 md:mt-7 border border-stone-900/10 bg-white/90 p-1.5 shadow-[0_12px_30px_-24px_rgba(15,99,240,0.5)] backdrop-blur"
         >
-          <div className="flex gap-1.5 overflow-x-auto">
+          <div className="grid grid-cols-3 gap-1.5">
             {DANH_MUC.map((d) => (
               <button
                 key={d.id}
                 type="button"
                 onClick={() => setMuc(d.id)}
                 aria-pressed={muc === d.id}
-                className={`flex min-w-[168px] flex-1 items-center gap-3 rounded-lg px-3 py-2.5 text-left transition ${
+                className={`flex min-w-0 flex-col items-center gap-1 rounded-lg px-1.5 py-2 text-center transition sm:flex-row sm:gap-3 sm:px-3 sm:py-2.5 sm:text-left ${
                   muc === d.id
                     ? "bg-stone-900 text-[#F4F8FE]"
                     : "text-stone-600 hover:bg-stone-900/5 hover:text-stone-900"
                 }`}
               >
                 <span
-                  className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm font-black ${
+                  className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-[13px] font-black sm:h-8 sm:w-8 sm:text-sm ${
                     muc === d.id ? "bg-blue-500 text-white" : "bg-stone-900/5 text-stone-500"
                   }`}
                 >
                   {d.so}
                 </span>
-                <span className="min-w-0">
-                  <span className="block truncate text-sm font-bold">{d.ten}</span>
+                <span className="min-w-0 flex-1">
+                  <span className="block text-[13px] font-bold leading-tight sm:truncate sm:text-sm">{d.ten}</span>
                   <span
-                    className={`mt-0.5 block truncate text-xs ${
+                    className={`mt-0.5 hidden truncate text-xs sm:block ${
                       muc === d.id ? "text-stone-300" : "text-stone-500"
                     }`}
                   >
@@ -981,7 +1016,7 @@ export default function TinhDiemPage() {
           </div>
         </nav>
 
-        <div className="mt-4 rounded-2xl border border-stone-900/10 bg-white p-5 shadow-[0_24px_70px_-50px_rgba(15,99,240,0.55)] sm:p-7">
+        <div className="mt-4 rounded-2xl border border-stone-900/10 bg-white p-3.5 shadow-[0_24px_70px_-50px_rgba(15,99,240,0.55)] sm:p-7">
           {muc === "hocba" && <MucHocBa bang={bang} setBang={setBang} />}
           {muc === "totnghiep" && <MucTotNghiep tbSan={tb3} tbNam={tbNam} />}
           {muc === "quydoi" && <MucQuyDoi />}

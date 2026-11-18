@@ -39,7 +39,7 @@ export default function SurveyCard({
 
   if (dangTao || !survey) {
     return (
-      <div className="max-w-[85%] rounded-2xl border border-stone-900/10 bg-blue-50 px-4 py-3.5 text-sm text-stone-500">
+      <div className="max-w-full rounded-2xl border border-stone-900/10 bg-white px-4 py-3.5 text-[15px] text-stone-500 shadow-sm">
         {loi ? (
           <div>
             <p className="font-medium text-red-700">⚠️ {loi}</p>
@@ -47,14 +47,14 @@ export default function SurveyCard({
               <button
                 type="button"
                 onClick={onThuLai}
-                className="rounded-lg bg-blue-600 px-4 py-2 text-xs font-bold text-white transition hover:bg-blue-500"
+                className="h-9 rounded-lg bg-blue-600 px-4 text-[13px] font-bold text-white transition hover:bg-blue-500"
               >
                 Thử lại
               </button>
               <button
                 type="button"
                 onClick={onDong}
-                className="rounded-lg border border-stone-900/10 px-4 py-2 text-xs font-semibold text-stone-600 transition hover:bg-stone-900/5"
+                className="h-9 rounded-lg border border-stone-900/10 px-4 text-[13px] font-semibold text-stone-600 transition hover:bg-stone-900/5"
               >
                 Đóng
               </button>
@@ -80,24 +80,24 @@ export default function SurveyCard({
   return (
     <form
       onSubmit={submit}
-      className="w-full min-w-[280px] max-w-[85%] space-y-4 rounded-2xl border border-stone-900/10 bg-blue-50 p-4 text-sm text-stone-900 sm:p-5"
+      className="w-full max-w-2xl space-y-5 rounded-2xl border border-stone-900/10 bg-white p-4 text-[15px] text-stone-900 shadow-sm sm:p-6"
     >
       <div className="flex items-start justify-between gap-3">
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.14em] text-blue-600">
+          <p className="text-[13px] font-bold uppercase tracking-[0.12em] text-blue-600">
             {survey.title ?? "Phiếu khảo sát nhanh"}
           </p>
           {survey.moTa && (
-            <p className="mt-1 text-xs leading-relaxed text-stone-500">{survey.moTa}</p>
+            <p className="mt-1 text-sm leading-relaxed text-stone-500">{survey.moTa}</p>
           )}
         </div>
         <button
           type="button"
           onClick={onDong}
           aria-label="Đóng phiếu khảo sát"
-          className="rounded-lg px-2 py-1 text-stone-500 transition hover:bg-stone-900/5 hover:text-stone-900"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-stone-500 transition hover:bg-stone-900/5 hover:text-stone-900"
         >
-          ✕
+          <svg aria-hidden viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M6 6l12 12M18 6L6 18" /></svg>
         </button>
       </div>
 
@@ -108,12 +108,12 @@ export default function SurveyCard({
       </div>
 
       {loi && (
-        <p className="rounded-xl border border-red-500/30 bg-red-50 px-3 py-2 text-xs font-medium text-red-700">
+        <p className="rounded-xl border border-red-500/30 bg-red-50 px-3 py-2 text-sm font-medium text-red-700">
           ⚠️ {loi}
         </p>
       )}
       {thieuBatBuoc && (
-        <p className="text-xs font-medium text-stone-500">
+        <p className="text-sm font-medium text-stone-500">
           Vui lòng trả lời các câu có dấu * trước khi gửi.
         </p>
       )}
@@ -121,10 +121,11 @@ export default function SurveyCard({
       <button
         type="submit"
         disabled={thieuBatBuoc || dangGui}
-        className="w-full rounded-xl bg-blue-600 px-6 py-3 text-[15px] font-bold text-white transition hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-40"
+        className="h-11 w-full rounded-xl bg-blue-600 px-6 text-[15px] font-bold text-white sm:w-auto sm:min-w-[220px] sm:float-right transition hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-40"
       >
         {dangGui ? "Đang phân tích, vui lòng chờ…" : "Gửi phiếu để tư vấn"}
       </button>
+      <div className="clear-both" />
     </form>
   );
 }
@@ -140,7 +141,7 @@ function CauHoi({
 }) {
   const batBuoc = q.bat_buoc ?? false;
   const tieuDe = (
-    <p className="font-bold leading-snug text-stone-900">
+    <p className="text-base font-bold leading-snug text-stone-900">
       {q.title}
       {batBuoc && <span className="ml-1 text-blue-600">*</span>}
     </p>
@@ -151,14 +152,14 @@ function CauHoi({
       return (
         <div>
           {tieuDe}
-          <div className="mt-2.5 flex flex-wrap gap-2">
+          <div className="mt-3 flex flex-wrap gap-2">
             {LOP_OPTIONS.map((l) => (
               <button
                 key={l}
                 type="button"
                 onClick={() => set(q.id, l)}
                 aria-pressed={value === l}
-                className={`rounded-lg px-3.5 py-2 text-[13px] font-semibold transition ${
+                className={`h-10 rounded-lg px-4 text-sm font-semibold transition ${
                   value === l
                     ? "bg-stone-900 text-[#F4F8FE]"
                     : "border border-stone-900/10 bg-white text-stone-600 hover:border-blue-400/60 hover:text-stone-900"
@@ -178,15 +179,15 @@ function CauHoi({
       return (
         <div>
           {tieuDe}
-          <p className="mt-0.5 text-[11px] text-stone-500">Chọn nhiều.</p>
-          <div className="mt-2.5 flex flex-wrap gap-2">
+          <p className="mt-0.5 text-xs text-stone-500">Chọn nhiều.</p>
+          <div className="mt-3 flex flex-wrap gap-2">
             {q.options.map((opt) => (
               <button
                 key={opt}
                 type="button"
                 onClick={() => toggle(opt)}
                 aria-pressed={arr.includes(opt)}
-                className={`rounded-lg border px-3.5 py-1.5 text-[13px] font-semibold transition ${
+                className={`min-h-10 rounded-lg border px-4 py-2 text-sm font-semibold transition ${
                   arr.includes(opt)
                     ? "border-blue-600 bg-blue-600 text-white"
                     : "border-stone-900/10 bg-white text-stone-600 hover:border-blue-400/60 hover:text-stone-900"
@@ -203,14 +204,14 @@ function CauHoi({
       return (
         <div>
           {tieuDe}
-          <div className="mt-2.5 flex flex-wrap gap-2">
+          <div className="mt-3 flex flex-wrap gap-2">
             {q.options.map((opt) => (
               <button
                 key={opt}
                 type="button"
                 onClick={() => set(q.id, opt)}
                 aria-pressed={value === opt}
-                className={`rounded-xl border px-4 py-2 text-[13px] font-semibold transition ${
+                className={`min-h-10 rounded-xl border px-4 py-2 text-sm font-semibold transition ${
                   value === opt
                     ? "border-blue-600 bg-blue-600 text-white"
                     : "border-stone-900/10 bg-white text-stone-600 hover:border-blue-400/60 hover:text-stone-900"
@@ -228,14 +229,14 @@ function CauHoi({
       return (
         <div>
           {tieuDe}
-          <div className="mt-2.5 flex flex-wrap gap-1.5">
+          <div className="mt-3 grid grid-cols-5 gap-2 sm:flex sm:flex-wrap">
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
               <button
                 key={n}
                 type="button"
                 onClick={() => set(q.id, n)}
                 aria-pressed={so === n}
-                className={`h-8 w-8 rounded-lg text-[12px] font-bold transition ${
+                className={`h-10 rounded-lg text-sm font-bold transition sm:w-10 ${
                   so === n
                     ? "bg-blue-600 text-white"
                     : "border border-stone-900/10 bg-white text-stone-500 hover:border-blue-400/60"
@@ -245,7 +246,7 @@ function CauHoi({
               </button>
             ))}
           </div>
-          <p className="mt-1 text-[11px] text-stone-500">
+          <p className="mt-2 text-xs text-stone-500">
             1 = hoàn toàn không · 10 = rất đúng với bạn
           </p>
         </div>
@@ -262,7 +263,7 @@ function CauHoi({
             value={typeof value === "string" ? value : ""}
             onChange={(e) => set(q.id, e.target.value)}
             placeholder={q.placeholder ?? "Viết ngắn gọn 1-3 câu…"}
-            className="mt-2.5 w-full resize-none rounded-xl border border-stone-900/10 bg-white p-3 text-[13px] leading-relaxed text-stone-900 outline-none placeholder:text-stone-400 focus:border-blue-500/60"
+            className="mt-3 w-full resize-none rounded-xl border border-stone-900/15 bg-[#F4F8FE] p-3 text-base leading-relaxed text-stone-900 outline-none placeholder:text-stone-400 focus:border-blue-500/60"
           />
         </div>
       );

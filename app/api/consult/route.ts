@@ -20,15 +20,8 @@ const validClasses = [
 
 const encoder = new TextEncoder();
 
-// Rotating progress messages so the student can see the AI is working
-// (a full consult usually takes 20–90 seconds).
-const STATUS_MESSAGES = [
-  "Đọc dữ li ngành nghề…",
-  "Nối môn học, sở thích với ngành…",
-  "Trò chuyện với model AI…",
-  "Viết phân tích…",
-  "Đang phân tích, vui lòng chờ…",
-] as const;
+// Thông báo chờ phản hồi từ AI
+const STATUS_MESSAGE = "Cú Đậu đang phân tích và chuẩn bị lộ trình cho bạn nhé…";
 
 function isValidForm(body: unknown): body is FormData {
   if (typeof body !== "object" || body === null) return false;
@@ -121,15 +114,13 @@ export async function POST(request: Request) {
         const pipe = (ms: number) =>
           new Promise<void>((resolve) => setTimeout(resolve, ms));
 
-        let ticks = 0;
         while (true) {
           const finished = await Promise.race([
             settled.then(() => true),
             pipe(3000).then(() => false),
           ]);
           if (finished) break;
-          send({ s: STATUS_MESSAGES[Math.min(ticks, STATUS_MESSAGES.length - 1)] });
-          ticks += 1;
+          send({ s: STATUS_MESSAGE });
         }
 
         if (finalError !== null) {
