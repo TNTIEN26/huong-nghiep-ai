@@ -101,11 +101,11 @@ export default function CareerResult({
       </div>
 
       {(result.canh_bao ?? []).length > 0 && (
-        <div className="rounded-2xl border border-sky-400/40 bg-sky-50 p-5 sm:p-6 dark:border-sky-400/30 dark:bg-sky-400/10">
-          <h3 className="text-sm font-extrabold text-sky-900 dark:text-sky-200">
-            ⚠ Bẫy hướng nghiệp — xem trước khi chọn
+        <div className="rounded-2xl border border-amber-300 bg-amber-50 p-5 sm:p-6 shadow-sm">
+          <h3 className="flex items-center gap-2 text-sm font-extrabold text-amber-950">
+            <span aria-hidden>⚠️</span> Bẫy hướng nghiệp — xem trước khi chọn
           </h3>
-          <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-sky-900 dark:text-sky-200">
+          <ul className="mt-3 list-disc space-y-2 pl-5 text-[14px] leading-relaxed font-medium text-amber-950">
             {(result.canh_bao ?? []).map((c) => (
               <li key={c}>{c}</li>
             ))}
@@ -114,11 +114,11 @@ export default function CareerResult({
       )}
 
       {(result.xu_truong ?? []).length > 0 && (
-        <div className="rounded-2xl border border-sky-300/40 bg-sky-50 p-5 sm:p-6 dark:border-sky-400/30 dark:bg-sky-400/10">
-          <h3 className="text-sm font-extrabold text-sky-900 dark:text-sky-200">
-            Xu hướng thị trường lao động · tham khảo
+        <div className="rounded-2xl border border-blue-200 bg-blue-50 p-5 sm:p-6 shadow-sm">
+          <h3 className="flex items-center gap-2 text-sm font-extrabold text-blue-950">
+            <span aria-hidden>📈</span> Xu hướng thị trường lao động · tham khảo
           </h3>
-          <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-sky-900 dark:text-sky-200">
+          <ul className="mt-3 list-disc space-y-2 pl-5 text-[14px] leading-relaxed font-medium text-blue-950">
             {(result.xu_truong ?? []).map((x) => (
               <li key={x}>{x}</li>
             ))}
@@ -133,7 +133,7 @@ export default function CareerResult({
             className="rounded-2xl border border-stone-900/10 bg-white p-6 sm:p-7"
           >
             <div className="flex items-baseline justify-between gap-4">
-              <h2 className="text-lg font-extrabold tracking-tight">
+              <h2 className="text-lg font-extrabold tracking-tight text-stone-900">
                 <span className="mr-2 text-sm font-bold text-stone-500">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -144,16 +144,16 @@ export default function CareerResult({
               </p>
             </div>
             <div className="mt-3">{thanhDoPhuHop(nganh.do_phu_hop)}</div>
-            <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-slate-400">
+            <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-stone-600">
               Vì sao phù hợp
             </p>
-            <p className="mt-1 text-[15px] leading-relaxed text-stone-600 dark:text-slate-400">{nganh.ly_do}</p>
+            <p className="mt-1 text-[15px] leading-relaxed text-stone-800">{nganh.ly_do}</p>
 
             <div className="mt-4 flex flex-wrap gap-2">
               {nganh.khoi_thi.map((k) => (
                 <span
                   key={k}
-                  className="rounded-md border border-stone-900/10 bg-stone-900/[0.04] px-2.5 py-1 text-xs font-semibold text-stone-600"
+                  className="rounded-md border border-stone-900/10 bg-stone-900/[0.04] px-2.5 py-1 text-xs font-semibold text-stone-700"
                 >
                   {k}
                 </span>
@@ -171,35 +171,35 @@ export default function CareerResult({
 
             <dl className="mt-5 grid gap-4 border-t border-stone-900/10 pt-5 text-sm sm:grid-cols-2">
               <div>
-                <dt className="text-xs font-semibold uppercase tracking-wider text-stone-500">
+                <dt className="text-xs font-semibold uppercase tracking-wider text-stone-600">
                   Môn trọng tâm
                 </dt>
-                <dd className="mt-1 font-medium text-stone-700">
+                <dd className="mt-1 font-medium text-stone-800">
                   {nganh.mon_trong_tam.join(" · ")}
                 </dd>
               </div>
               {nganh.muc_luong_tk && (
                 <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-slate-400">
+                  <dt className="text-xs font-semibold uppercase tracking-wider text-stone-600">
                     Mức lương (tham khảo)
                   </dt>
-                  <dd className="mt-1 font-medium text-stone-700 dark:text-slate-300">{nganh.muc_luong_tk}</dd>
+                  <dd className="mt-1 font-semibold text-stone-800">{nganh.muc_luong_tk}</dd>
                 </div>
               )}
               {nganh.rui_ro && (
                 <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-slate-400">
+                  <dt className="text-xs font-semibold uppercase tracking-wider text-stone-600">
                     Rủi ro / xu hướng
                   </dt>
-                  <dd className="mt-1 font-medium text-stone-700 dark:text-slate-300">{nganh.rui_ro}</dd>
+                  <dd className="mt-1 font-medium text-stone-800">{nganh.rui_ro}</dd>
                 </div>
               )}
               {nganh.truong_tieu_bieu.length > 0 && (
                 <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wider text-stone-500">
+                  <dt className="text-xs font-semibold uppercase tracking-wider text-stone-600">
                     Trường tiêu biểu
                   </dt>
-                  <dd className="mt-1 space-y-1 font-medium text-stone-700">
+                  <dd className="mt-1 space-y-1 font-medium text-stone-800">
                     {nganh.truong_tieu_bieu.map((t) => (
                       <p key={t}>— {t}</p>
                     ))}
@@ -208,23 +208,23 @@ export default function CareerResult({
               )}
             </dl>
 
-            <div className="mt-4 rounded-xl border border-stone-900/10 bg-[#F4F8FE] p-4 text-sm leading-relaxed text-stone-600">
-              <span className="font-bold text-stone-900">Lộ trình. </span>
+            <div className="mt-4 rounded-xl border border-stone-900/10 bg-[#F4F8FE] p-4 text-sm leading-relaxed text-stone-700">
+              <span className="font-bold text-stone-900">Lộ trình: </span>
               {nganh.lo_trinh}
             </div>
 
             {findTruong(nganh.truong_tieu_bieu).map((t) => (
-              <div key={t.ten} className="mt-4 rounded-xl border border-stone-900/10 bg-[#F4F8FE] dark:border-white/10 dark:bg-[#060f1e] p-4">
-                <p className="text-sm font-bold text-stone-900 dark:text-slate-100">
+              <div key={t.ten} className="mt-4 rounded-xl border border-stone-900/10 bg-[#F4F8FE] p-4">
+                <p className="text-sm font-bold text-stone-900">
                   {t.ten}
-                  <span className="ml-1.5 text-xs font-medium text-stone-500 dark:text-slate-400">
+                  <span className="ml-1.5 text-xs font-medium text-stone-600">
                     · {t.thanh_pho} · điểm {t.khu} (tham khảo)
                   </span>
                 </p>
-                <ul className="mt-2 space-y-1.5 text-[13px] leading-snug text-stone-600 dark:text-slate-400">
+                <ul className="mt-2 space-y-1.5 text-[13px] leading-snug text-stone-700">
                   {t.nhom_nganh.map((p) => (
                     <li key={`${t.ten}-${p.ten}`}>
-                      <span className="font-semibold text-stone-800 dark:text-slate-200">{p.ten}</span>
+                      <span className="font-semibold text-stone-900">{p.ten}</span>
                       {" — "}
                       {diemTieu(p)}
                       {p.nguon ? (
@@ -249,7 +249,7 @@ export default function CareerResult({
                   ))}
                 </ul>
                 {t.nhom_nganh[0]?.hoc_bong && (
-                  <p className="mt-1.5 text-xs text-stone-500 dark:text-slate-500">Học bổng: {t.nhom_nganh[0].hoc_bong}</p>
+                  <p className="mt-1.5 text-xs text-stone-600">Học bổng: {t.nhom_nganh[0].hoc_bong}</p>
                 )}
               </div>
             ))}
@@ -259,12 +259,12 @@ export default function CareerResult({
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="rounded-2xl border border-stone-900/10 bg-white p-6">
-          <h3 className="font-bold">Lời khuyên</h3>
-          <p className="mt-2 text-sm leading-relaxed text-stone-500">{result.loi_khuyen}</p>
+          <h3 className="font-bold text-stone-900">Lời khuyên</h3>
+          <p className="mt-2 text-sm leading-relaxed text-stone-700">{result.loi_khuyen}</p>
         </div>
         <div className="rounded-2xl border border-stone-900/15 bg-stone-900/[0.03] p-6">
           <h3 className="font-bold text-stone-900">Lưu ý</h3>
-          <p className="mt-2 text-sm leading-relaxed text-stone-400">{result.luu_y}</p>
+          <p className="mt-2 text-sm leading-relaxed text-stone-600">{result.luu_y}</p>
         </div>
       </div>
 

@@ -76,10 +76,10 @@ export default function KetQuaDaLuu() {
   }
 
   return (
-    <section aria-label="Kết quả đã lưu" className="mx-auto w-full max-w-3xl space-y-4">
-      <div className="rounded-2xl border border-stone-900/10 bg-white p-6 sm:p-7">
-        <h2 className="font-extrabold tracking-tight">Kết quả đã lưu của em ({ds.length})</h2>
-        <p className="mt-1 text-[13px] text-stone-500">
+    <section aria-label="Kết quả đã lưu" className="mx-auto w-full max-w-4xl space-y-4">
+      <div className="rounded-2xl border border-stone-900/10 bg-white p-4 sm:p-6">
+        <h2 className="text-lg font-extrabold tracking-tight">Kết quả đã lưu của em ({ds.length})</h2>
+        <p className="mt-1 text-sm text-stone-500">
           Chỉ lưu ở máy này, không gửi đi đâu. Tick 2 bản để so sánh.
         </p>
         <ul className="mt-4 space-y-3">
@@ -87,25 +87,25 @@ export default function KetQuaDaLuu() {
             const dangMo = moId === k.id;
             const duocChon = chon.includes(k.id);
             return (
-              <li key={k.id} className="rounded-xl border border-stone-900/10 bg-[#F4F8FE] p-4">
+              <li key={k.id} className="rounded-xl border border-stone-900/10 bg-[#F4F8FE] p-3.5 sm:p-4">
                 <div className="flex items-start gap-3">
                   <input
                     type="checkbox"
                     checked={duocChon}
                     onChange={() => bamChon(k.id)}
                     aria-label={`Chọn để so sánh: ${ngayDep(k.ngay)}`}
-                    className="mt-1 h-4 w-4 accent-blue-600"
+                    className="mt-1 h-5 w-5 shrink-0 accent-blue-600"
                   />
                   <div className="min-w-0 flex-1">
-                    <p className="text-sm font-bold text-stone-900">
+                    <p className="text-[15px] font-bold text-stone-900">
                       {ngayDep(k.ngay)} · {k.lop}
                     </p>
-                    <p className="mt-1 text-[13px] leading-relaxed text-stone-600">{tomTat(k)}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-stone-600">{tomTat(k)}</p>
                     <div className="mt-2 flex flex-wrap gap-2">
                       <button
                         type="button"
                         onClick={() => setMoId(dangMo ? null : k.id)}
-                        className="rounded-lg border border-stone-900/15 px-3 py-1.5 text-xs font-bold text-stone-700 transition hover:border-blue-400/60"
+                        className="h-9 rounded-lg border border-stone-900/15 bg-white px-3.5 text-[13px] font-bold text-stone-700 transition hover:border-blue-400/60"
                       >
                         {dangMo ? "Thu gọn" : "Xem lại"}
                       </button>
@@ -116,7 +116,7 @@ export default function KetQuaDaLuu() {
                           setChon((c) => c.filter((x) => x !== k.id));
                           if (moId === k.id) setMoId(null);
                         }}
-                        className="rounded-lg border border-stone-900/15 px-3 py-1.5 text-xs font-bold text-stone-500 transition hover:border-red-400/60 hover:text-red-600"
+                        className="h-9 rounded-lg border border-stone-900/15 bg-white px-3.5 text-[13px] font-bold text-stone-500 transition hover:border-red-400/60 hover:text-red-600"
                       >
                         Xóa
                       </button>

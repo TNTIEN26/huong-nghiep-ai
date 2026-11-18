@@ -94,7 +94,7 @@ export default function TraCuuNganhPage() {
         <p className="text-xs font-bold uppercase tracking-[0.18em] text-blue-600">Tra cứu</p>
         <h1 className="mt-1 text-3xl font-extrabold tracking-tight sm:text-4xl">Tra cứu ngành học</h1>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-stone-500">
-          {DS.length} ngành theo dữ liệu đề án tuyển sinh 2025. Xem ngành nào có bao nhiêu trường đào tạo,
+          {DS.length} ngành theo dữ liệu đề án tuyển sinh 2026. Xem ngành nào có bao nhiêu trường đào tạo,
           điểm chuẩn từ đâu đến đâu và xét tuyển bằng tổ hợp nào.
         </p>
 
@@ -170,7 +170,7 @@ export default function TraCuuNganhPage() {
                         onClick={() => moChiTiet(n)}
                         className="mt-4 self-start rounded-lg border border-stone-900/15 px-3 py-1.5 text-xs font-bold text-stone-600 transition hover:border-stone-900/30"
                       >
-                        {dangMo ? "Ẩn danh sách trường" : "Xem điểm chuẩn 2025"}
+                        {dangMo ? "Ẩn danh sách trường" : "Xem điểm chuẩn 2026"}
                       </button>
                     );
                   })()}
@@ -188,9 +188,9 @@ export default function TraCuuNganhPage() {
                               <span className="font-bold text-stone-900">{d.truong}</span>
                               <span className="text-stone-500"> — {d.nganh}</span>
                               <div className="mt-0.5 flex flex-wrap gap-1 text-xs text-stone-500">
-                                <span className="font-semibold text-emerald-700">2025: {diemCua(d.diem, "2025")}</span>
+                                <span className="font-semibold text-emerald-700">2026: {diemCua(d.diem, "2026") || diemCua(d.diem, "2025")}</span>
+                                <span>· 2025: {diemCua(d.diem, "2025")}</span>
                                 <span>· 2024: {diemCua(d.diem, "2024")}</span>
-                                <span>· 2023: {diemCua(d.diem, "2023")}</span>
                                 {d.to_hop.length > 0 && (
                                   <span className="text-stone-400">· {d.to_hop.slice(0, 6).join(", ")}{d.to_hop.length > 6 ? "…" : ""}</span>
                                 )}
@@ -220,7 +220,7 @@ export default function TraCuuNganhPage() {
         )}
 
         <p className="mt-8 text-xs text-stone-400">
-          Nguồn: tổng hợp đề án tuyển sinh từ HOCMAI (dữ liệu 2025, tham khảo — đối chiếu đề án chính thức của trường).
+          Nguồn: tổng hợp đề án tuyển sinh từ HOCMAI (dữ liệu 2026, tham khảo — đối chiếu đề án chính thức của trường).
         </p>
       </main>
     </div>

@@ -9,7 +9,7 @@ import { timTheoCauHoi } from "@/lib/tra-cuu";
 export const runtime = "nodejs";
 
 const MAX_MESSAGES = 30;
-const MAX_CONTENT_LEN = 2000;
+const MAX_CONTENT_LEN = 5000;
 const MAX_CONTEXT_LEN = 500;
 
 const encoder = new TextEncoder();
@@ -68,8 +68,12 @@ export async function POST(request: Request) {
   const contextGoc = body.context?.trim() ?? "";
   const { stream } = body;
 
-  const cauHoiCuoi = [...messages].reverse().find((m) => m.role === "user")?.content ?? "";
-  const dongTraCuu = timTheoCauHoi(cauHoiCuoi);
+  // Lấy các câu trao đổi gần nhất để tra cứu dữ liệu trường và điểm chuẩn thực tế
+  const doanChatGan = messages
+    .slice(-4)
+    .map((m) => m.content)
+    .join("\n");
+  const dongTraCuu = timTheoCauHoi(doanChatGan);
   const context =
     dongTraCuu.length > 0
       ? [contextGoc, buildTraCuuContext(dongTraCuu)].filter(Boolean).join("\n\n").slice(0, 3000)

@@ -238,7 +238,7 @@ export default function TraCuuToHopPage() {
 
                   {x.diem_min != null && x.diem_max != null && (
                     <p className="mt-3 text-xs font-bold text-emerald-800">
-                      Điểm chuẩn 2025: {soDiem(x.diem_min)}–{soDiem(x.diem_max)}
+                      Điểm chuẩn 2026: {soDiem(x.diem_min)}–{soDiem(x.diem_max)}
                     </p>
                   )}
 
@@ -262,7 +262,7 @@ export default function TraCuuToHopPage() {
                             <li key={`${d.truong}-${d.nganh}`} className="text-xs leading-relaxed">
                               <span className="font-bold text-stone-900">{d.nganh}</span>
                               <span className="text-stone-500"> — {d.truong}</span>
-                              <span className="ml-1 font-semibold text-emerald-700">{soDiem(d.diem["2025"] ?? null)}</span>
+                              <span className="ml-1 font-semibold text-emerald-700">{soDiem(d.diem["2026"] ?? d.diem["2025"] ?? null)}</span>
                             </li>
                           ))}
                         </ul>
@@ -276,7 +276,7 @@ export default function TraCuuToHopPage() {
         )}
 
         <p className="mt-8 text-xs text-stone-400">
-          Nguồn: tổng hợp đề án tuyển sinh từ HOCMAI (dữ liệu 2025, tham khảo — đối chiếu đề án chính thức của trường).
+          Nguồn: tổng hợp đề án tuyển sinh từ HOCMAI (dữ liệu 2026, tham khảo — đối chiếu đề án chính thức của trường).
         </p>
       </main>
     </div>

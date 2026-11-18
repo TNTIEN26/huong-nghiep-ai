@@ -94,7 +94,7 @@ export function locMuc(p: LocMucParams): MucDiem[] {
     if (p.truong_id != null && m.truong_id !== p.truong_id) continue;
     if (p.truong && !boDau(m.truong).includes(boDau(p.truong))) continue;
     if (p.tohop && !m.to_hop.includes(p.tohop.toUpperCase())) continue;
-    const d = m.diem["2025"];
+    const d = m.diem["2026"] ?? m.diem["2025"];
     if (p.min != null && (d == null || d < p.min)) continue;
     if (p.max != null && (d == null || d > p.max)) continue;
     if (p.q) {
@@ -105,8 +105,8 @@ export function locMuc(p: LocMucParams): MucDiem[] {
   }
 
   kq.sort((a, b) => {
-    const da = a.diem["2025"] ?? -1;
-    const db = b.diem["2025"] ?? -1;
+    const da = a.diem["2026"] ?? a.diem["2025"] ?? -1;
+    const db = b.diem["2026"] ?? b.diem["2025"] ?? -1;
     if (db !== da) return db - da;
     return a.truong.localeCompare(b.truong, "vi");
   });
@@ -122,8 +122,8 @@ export function mucTheoNganh(tenNganh: string, gioiHan = 8): MucDiem[] {
     return n === k || n.includes(k) || (n.length >= 4 && k.includes(n));
   });
   kq.sort((a, b) => {
-    const da = a.diem["2025"] ?? -1;
-    const db = b.diem["2025"] ?? -1;
+    const da = a.diem["2026"] ?? a.diem["2025"] ?? -1;
+    const db = b.diem["2026"] ?? b.diem["2025"] ?? -1;
     if (db !== da) return db - da;
     return a.truong.localeCompare(b.truong, "vi");
   });
@@ -147,6 +147,7 @@ export type DongTuVan = {
   nganh: string;
   truong: string;
   to_hop: string[];
+  diem2026: number | null;
   diem2025: number | null;
   diem2024: number | null;
 };
@@ -189,6 +190,7 @@ export function duLieuChoTuVan(tenNganh: string[], moiNganh = 4): DongTuVan[] { 
         nganh: m.nganh,
         truong: m.truong,
         to_hop: m.to_hop.slice(0, 8),
+        diem2026: m.diem["2026"] ?? null,
         diem2025: m.diem["2025"] ?? null,
         diem2024: m.diem["2024"] ?? null,
       });
