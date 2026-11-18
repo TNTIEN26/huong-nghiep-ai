@@ -198,8 +198,8 @@ function MucHocBa({
   toHop.sort((a, b) => b.diemUt - a.diemUt);
 
   return (
-    <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_420px]">
-      <div>
+    <div className="grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,1fr)_420px]">
+      <div className="min-w-0">
         <p className="text-sm font-bold text-stone-900">Phương thức xét học bạ</p>
         <div className="mt-2 flex flex-wrap gap-2">
           {PHUONG_THUC.map((x) => (
@@ -946,30 +946,30 @@ export default function TinhDiemPage() {
           aria-label="Danh mục tính điểm"
           className="sticky top-[68px] z-30 mt-7 rounded-xl border border-stone-900/10 bg-white/90 p-1.5 shadow-[0_12px_30px_-24px_rgba(15,99,240,0.5)] backdrop-blur"
         >
-          <div className="flex gap-1.5 overflow-x-auto">
+          <div className="grid grid-cols-3 gap-1.5">
             {DANH_MUC.map((d) => (
               <button
                 key={d.id}
                 type="button"
                 onClick={() => setMuc(d.id)}
                 aria-pressed={muc === d.id}
-                className={`flex min-w-[168px] flex-1 items-center gap-3 rounded-lg px-3 py-2.5 text-left transition ${
+                className={`flex min-w-0 items-center gap-2 rounded-lg px-2 py-2.5 text-left transition sm:gap-3 sm:px-3 ${
                   muc === d.id
                     ? "bg-stone-900 text-[#F4F8FE]"
                     : "text-stone-600 hover:bg-stone-900/5 hover:text-stone-900"
                 }`}
               >
                 <span
-                  className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm font-black ${
+                  className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-[13px] font-black sm:h-8 sm:w-8 sm:text-sm ${
                     muc === d.id ? "bg-blue-500 text-white" : "bg-stone-900/5 text-stone-500"
                   }`}
                 >
                   {d.so}
                 </span>
-                <span className="min-w-0">
-                  <span className="block truncate text-sm font-bold">{d.ten}</span>
+                <span className="min-w-0 flex-1">
+                  <span className="block truncate text-[12.5px] font-bold sm:text-sm">{d.ten}</span>
                   <span
-                    className={`mt-0.5 block truncate text-xs ${
+                    className={`mt-0.5 hidden truncate text-xs sm:block ${
                       muc === d.id ? "text-stone-300" : "text-stone-500"
                     }`}
                   >
