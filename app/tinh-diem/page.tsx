@@ -198,7 +198,7 @@ function MucHocBa({
   toHop.sort((a, b) => b.diemUt - a.diemUt);
 
   return (
-    <div className="grid gap-6 xl:grid-cols-[1fr_400px]">
+    <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_420px]">
       <div>
         <p className="text-sm font-bold text-stone-900">Phương thức xét học bạ</p>
         <div className="mt-2 flex flex-wrap gap-2">
@@ -387,7 +387,7 @@ function MucTotNghiep({ tbSan, tbNam }: { tbSan: string; tbNam: { lop10: string;
   const hbDu = hb.every((d) => d !== null);
 
   return (
-    <div className="grid gap-6 xl:grid-cols-[1fr_560px]">
+    <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_420px]">
       <div>
       <Nhan ten="Điểm trung bình dùng để xét">
         <input
@@ -926,25 +926,37 @@ export default function TinhDiemPage() {
     <div className="relative z-10 flex min-h-screen flex-col text-stone-900">
       <SiteNav active="tinh-diem" />
 
-      <main className="mx-auto w-full max-w-[1440px] flex-1 px-4 py-12 sm:px-8 sm:py-16">
-        <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Tính điểm</h1>
-        <p className="mt-2 text-sm leading-relaxed text-stone-500">
-          Làm theo thứ tự 3 mục: nhập học bạ, tính tốt nghiệp, quy đổi ĐGNL. Chỉ mang tính tham khảo.
-        </p>
+      <main className="mx-auto w-full max-w-[1200px] flex-1 px-4 py-10 sm:px-8 sm:py-14">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-blue-700">
+              Công cụ tính điểm
+            </p>
+            <h1 className="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">Tính điểm</h1>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-stone-500">
+              Làm theo thứ tự 3 bước bên dưới. Kết quả chỉ mang tính tham khảo.
+            </p>
+          </div>
+          <p className="hidden text-xs font-semibold text-stone-400 sm:block">
+            Thang điểm 10 · 0–30
+          </p>
+        </div>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-[320px_1fr] xl:gap-8">
-          {/* Danh mục bên trái */}
-          <nav aria-label="Danh mục tính điểm" className="flex gap-2 overflow-x-auto lg:flex-col lg:overflow-visible">
+        <nav
+          aria-label="Danh mục tính điểm"
+          className="sticky top-[68px] z-30 mt-7 rounded-xl border border-stone-900/10 bg-white/90 p-1.5 shadow-[0_12px_30px_-24px_rgba(15,99,240,0.5)] backdrop-blur"
+        >
+          <div className="flex gap-1.5 overflow-x-auto">
             {DANH_MUC.map((d) => (
               <button
                 key={d.id}
                 type="button"
                 onClick={() => setMuc(d.id)}
                 aria-pressed={muc === d.id}
-                className={`flex min-w-[220px] items-start gap-3 rounded-2xl border p-4 text-left transition lg:min-w-0 ${
+                className={`flex min-w-[168px] flex-1 items-center gap-3 rounded-lg px-3 py-2.5 text-left transition ${
                   muc === d.id
-                    ? "border-stone-900 bg-stone-900 text-[#F4F8FE] shadow-[0_16px_40px_-20px_rgba(28,25,23,0.5)]"
-                    : "border-stone-900/10 bg-white text-stone-700 hover:border-stone-900/25 hover:text-stone-900"
+                    ? "bg-stone-900 text-[#F4F8FE]"
+                    : "text-stone-600 hover:bg-stone-900/5 hover:text-stone-900"
                 }`}
               >
                 <span
@@ -954,22 +966,25 @@ export default function TinhDiemPage() {
                 >
                   {d.so}
                 </span>
-                <span>
-                  <span className="block text-sm font-bold">{d.ten}</span>
-                  <span className={`mt-0.5 block text-xs ${muc === d.id ? "text-stone-300" : "text-stone-500"}`}>
+                <span className="min-w-0">
+                  <span className="block truncate text-sm font-bold">{d.ten}</span>
+                  <span
+                    className={`mt-0.5 block truncate text-xs ${
+                      muc === d.id ? "text-stone-300" : "text-stone-500"
+                    }`}
+                  >
                     {d.moTa}
                   </span>
                 </span>
               </button>
             ))}
-          </nav>
-
-          {/* Nội dung */}
-          <div className="rounded-2xl border border-stone-900/10 bg-white p-6 shadow-[0_20px_60px_-30px_rgba(37,99,235,0.35)] sm:p-8">
-            {muc === "hocba" && <MucHocBa bang={bang} setBang={setBang} />}
-            {muc === "totnghiep" && <MucTotNghiep tbSan={tb3} tbNam={tbNam} />}
-            {muc === "quydoi" && <MucQuyDoi />}
           </div>
+        </nav>
+
+        <div className="mt-4 rounded-2xl border border-stone-900/10 bg-white p-5 shadow-[0_24px_70px_-50px_rgba(15,99,240,0.55)] sm:p-7">
+          {muc === "hocba" && <MucHocBa bang={bang} setBang={setBang} />}
+          {muc === "totnghiep" && <MucTotNghiep tbSan={tb3} tbNam={tbNam} />}
+          {muc === "quydoi" && <MucQuyDoi />}
         </div>
       </main>
 
