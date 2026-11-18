@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 
 import SiteNav from "../../components/SiteNav";
+import { NHOM_MON, TO_HOP_MON, nhomMonCua } from "@/lib/to-hop";
 import type { KhoiThi } from "@/lib/types";
 import khoiThiData from "@/data/khoi-thi.json";
 import toHopData from "@/data/tra-cuu/to-hop.json";
@@ -34,6 +35,7 @@ function norm(s: string): string {
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
+    .replace(/đ/g, "d")
     .replace(/[^a-z0-9 ]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
@@ -45,19 +47,48 @@ function soDiem(v: number | null): string {
 
 export default function TraCuuToHopPage() {
   const [tuKhoa, setTuKhoa] = useState("");
+  const [chonMon, setChonMon] = useState<string[]>([]);
   const [mo, setMo] = useState<string | null>(null);
   const [chiTiet, setChiTiet] = useState<{ [ma: string]: DongDiem[] }>({});
   const [dangTai, setDangTai] = useState<string | null>(null);
 
+  const nhomTheoMa = useMemo(() => {
+    const m = new Map<string, string[]>();
+    for (const x of DS) m.set(x.ma, nhomMonCua(x.ma));
+    return m;
+  }, []);
+
   const ketQua = useMemo(() => {
     const k = norm(tuKhoa);
-    if (!k) return DS;
     return DS.filter((x) => {
+      if (chonMon.length > 0) {
+        const nhom = nhomTheoMa.get(x.ma) ?? [];
+        if (nhom.length === 0) return false;
+        if (!chonMon.every((c) => nhom.includes(c))) return false;
+      }
+      if (!k) return true;
       const goc = KHOI.get(x.ma);
-      const noi = [x.ma, goc?.ten ?? "", ...(goc?.mon_thi ?? []), ...(goc?.phu_hop ?? [])].join(" ");
+      const noi = [x.ma, goc?.ten ?? "", ...(goc?.mon_thi ?? []), ...(goc?.phu_hop ?? ""), ...(TO_HOP_MON.get(x.ma)?.mon ?? [])].join(" ");
       return norm(noi).includes(k);
     });
-  }, [tuKhoa]);
+  }, [tuKhoa, chonMon, nhomTheoMa]);
+
+  function bamChonMon(ten: string) {
+    setMo(null);
+    setChonMon((cu) => {
+      if (cu.includes(ten)) return cu.filter((x) => x !== ten);
+      if (cu.length >= 3) return cu;
+      return [...cu, ten];
+    });
+  }
+
+  const maChuaMon = useMemo(() => {
+    const dem = new Map<string, number>();
+    for (const x of DS) {
+      for (const n of nhomTheoMa.get(x.ma) ?? []) dem.set(n, (dem.get(n) ?? 0) + 1);
+    }
+    return dem;
+  }, [nhomTheoMa]);
 
   async function moChiTiet(x: MucToHop) {
     if (mo === x.ma) {
@@ -88,7 +119,66 @@ export default function TraCuuToHopPage() {
           và điểm chuẩn dao động bao nhiêu.
         </p>
 
-        <div className="mt-7 max-w-3xl">
+        <section className="mt-8 rounded-2xl border border-stone-900/10 bg-white p-5 sm:p-6">
+          <h2 className="text-lg font-extrabold tracking-tight sm:text-xl">Chọn môn học trong tổ hợp của em</h2>
+          <p className="mt-1 text-sm italic text-stone-500">Lưu ý: Chọn tối đa 03 môn trong tổ hợp</p>
+
+          <div className="mt-4 flex flex-wrap gap-2">
+            {NHOM_MON.map((n) => {
+              const chon = chonMon.includes(n.ten);
+              const so = maChuaMon.get(n.ten) ?? 0;
+              const day = !chon && chonMon.length >= 3;
+              return (
+                <button
+                  key={n.ten}
+                  type="button"
+                  onClick={() => bamChonMon(n.ten)}
+                  disabled={day || so === 0}
+                  title={so === 0 ? "Chưa có tổ hợp nào trong dữ liệu dùng môn này" : `${so} tổ hợp`}
+                  className={
+                    "flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition " +
+                    (chon
+                      ? "border-blue-600 bg-blue-600 text-white shadow-sm"
+                      : day || so === 0
+                        ? "cursor-not-allowed border-stone-900/10 bg-stone-50 text-stone-300"
+                        : "border-stone-900/10 bg-white text-stone-700 hover:border-blue-600/40 hover:text-blue-700")
+                  }
+                >
+                  <span aria-hidden="true">{n.bieuTuong}</span>
+                  {n.ten}
+                  {so > 0 && (
+                    <span className={"text-xs font-bold " + (chon ? "text-white/70" : "text-stone-400")}>{so}</span>
+                  )}
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="mt-4 flex flex-wrap items-center gap-3 text-sm">
+            <p className="font-semibold text-stone-600">
+              Đã chọn:{" "}
+              {chonMon.length === 0 ? (
+                <span className="font-normal text-stone-400">chưa chọn môn nào</span>
+              ) : (
+                <span className="font-extrabold text-blue-700">{chonMon.join(" · ")}</span>
+              )}
+            </p>
+            {chonMon.length > 0 && (
+              <button
+                type="button"
+                onClick={() => setChonMon([])}
+                className="rounded-lg border border-stone-900/15 px-3 py-1 text-xs font-bold text-stone-600 transition hover:border-stone-900/30"
+              >
+                Xóa lựa chọn
+              </button>
+            )}
+            {chonMon.length === 3 && (
+              <span className="text-xs font-semibold text-emerald-700">Đã đủ 3 môn</span>
+            )}
+          </div>
+        </section>
+
+        <div className="mt-6 max-w-3xl">
           <input
             value={tuKhoa}
             onChange={(e) => setTuKhoa(e.target.value)}
@@ -99,6 +189,7 @@ export default function TraCuuToHopPage() {
 
         <p className="mt-5 text-sm font-semibold text-stone-500">
           Tìm thấy <span className="font-black text-stone-900">{ketQua.length}</span> tổ hợp
+          {chonMon.length > 0 && <span className="font-normal text-stone-400"> có đủ các môn đã chọn</span>}
         </p>
 
         {ketQua.length === 0 ? (
@@ -128,18 +219,22 @@ export default function TraCuuToHopPage() {
                     </div>
                   </div>
 
-                  {goc && (
-                    <div className="mt-4 flex flex-wrap gap-1.5">
-                      {goc.mon_thi.map((m) => (
-                        <span
-                          key={m}
-                          className="rounded-md border border-stone-900/10 bg-stone-900/[0.04] px-2.5 py-1 text-xs font-semibold text-stone-700"
-                        >
-                          {m}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+                  {(() => {
+                    const mon = TO_HOP_MON.get(x.ma)?.mon ?? goc?.mon_thi ?? [];
+                    if (mon.length === 0) return null;
+                    return (
+                      <div className="mt-4 flex flex-wrap gap-1.5">
+                        {mon.map((m) => (
+                          <span
+                            key={m}
+                            className="rounded-md border border-stone-900/10 bg-stone-900/[0.04] px-2.5 py-1 text-xs font-semibold text-stone-700"
+                          >
+                            {m}
+                          </span>
+                        ))}
+                      </div>
+                    );
+                  })()}
 
                   {x.diem_min != null && x.diem_max != null && (
                     <p className="mt-3 text-xs font-bold text-emerald-800">
