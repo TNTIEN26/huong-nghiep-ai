@@ -1,10 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 import SiteNav from "../../components/SiteNav";
 import truongData from "@/data/tra-cuu/truong.json";
+import boSungData from "@/data/tra-cuu/de-an-bo-sung.json";
 
 type MucTruong = {
   ten: string;
@@ -17,6 +19,8 @@ type MucTruong = {
   de_an: { slug: string; link: string; so_nganh: number | null; phuong_thuc: number } | null;
 };
 
+type BoSung = { anh: string | null; phuong_thuc: string[] };
+
 type DongDiem = {
   truong: string;
   nganh: string;
@@ -25,6 +29,7 @@ type DongDiem = {
 };
 
 const DS: MucTruong[] = truongData;
+const BO_SUNG = boSungData as { [slug: string]: BoSung };
 
 const oNhap =
   "w-full rounded-xl border border-stone-900/10 bg-[#F4F8FE] px-4 py-3 text-[15px] text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-blue-500/60";
@@ -40,7 +45,13 @@ function norm(s: string): string {
 }
 
 function soDiem(v: number | null): string {
-  return v == null ? "—" : v.toFixed(2).replace(/\.00$/, "");
+  return v == null ? "—" : v.toFixed(2).replace(/\.00$/, "").replace(".", ",");
+}
+
+function chuDau(ten: string): string {
+  const bo = ten.replace(/^(Trường|Đại học|ĐH|Học viện|HV)\s+/gi, "").trim();
+  const tu = (bo || ten).split(/\s+/).slice(0, 3);
+  return tu.map((t) => t[0]?.toUpperCase() ?? "").join("");
 }
 
 export default function TraCuuDeAnPage() {
@@ -49,7 +60,7 @@ export default function TraCuuDeAnPage() {
   const [mo, setMo] = useState<string | null>(null);
   const [chiTiet, setChiTiet] = useState<{ [ten: string]: DongDiem[] }>({});
   const [dangTai, setDangTai] = useState<string | null>(null);
-  const [soHien, setSoHien] = useState(36);
+  const [soHien, setSoHien] = useState(24);
 
   const cacThanhPho = useMemo(
     () => Array.from(new Set(DS.map((t) => t.thanh_pho).filter((x): x is string => !!x))).sort(),
@@ -93,8 +104,8 @@ export default function TraCuuDeAnPage() {
           Tra cứu đề án tuyển sinh
         </h1>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-stone-500">
-          {DS.length} trường có dữ liệu đề án. Gõ tên trường hoặc chọn thành phố — mở ra xem toàn bộ
-          ngành, tổ hợp và điểm chuẩn 2025/2024/2023.
+          {DS.length} trường có dữ liệu đề án. Bấm vào trường để xem toàn văn đề án, phương án tuyển sinh
+          và điểm chuẩn các năm.
         </p>
 
         <div className="mt-7 max-w-3xl">
@@ -102,7 +113,7 @@ export default function TraCuuDeAnPage() {
             value={tuKhoa}
             onChange={(e) => {
               setTuKhoa(e.target.value);
-              setSoHien(36);
+              setSoHien(24);
             }}
             placeholder="VD: Bách Khoa, Y Hà Nội, Sư phạm, Cần Thơ..."
             className={oNhap}
@@ -125,7 +136,7 @@ export default function TraCuuDeAnPage() {
                 type="button"
                 onClick={() => {
                   setThanhPho(tp === thanhPho ? "" : tp);
-                  setSoHien(36);
+                  setSoHien(24);
                 }}
                 className={`rounded-full px-3.5 py-1.5 text-xs font-bold transition ${
                   thanhPho === tp
@@ -149,60 +160,113 @@ export default function TraCuuDeAnPage() {
             <p className="mt-1 text-sm text-stone-500">Thử bỏ bộ lọc thành phố hoặc đổi từ khóa.</p>
           </div>
         ) : (
-          <ul className="mt-4 grid gap-4 lg:grid-cols-2">
+          <ul className="mt-4 grid gap-4 xl:grid-cols-2">
             {ketQua.slice(0, soHien).map((t) => {
+              const bst = t.de_an ? BO_SUNG[t.de_an.slug] : undefined;
+              const anh = bst?.anh ?? null;
+              const pt = bst?.phuong_thuc ?? [];
               const dangMo = mo === t.ten;
               const dong = chiTiet[t.ten];
-              return (
-                <li key={t.ten} className="rounded-2xl border border-stone-900/10 bg-white p-5">
-                  <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-stone-900/10 pb-3">
-                    <h2 className="text-base font-extrabold text-stone-900">{t.ten}</h2>
-                    <span className="text-xs font-semibold text-stone-500">{t.thanh_pho ?? "—"}</span>
-                  </div>
+              const chiTietHref = t.de_an ? `/tra-cuu/de-an/${t.de_an.slug}` : null;
 
-                  <div className="mt-3 flex flex-wrap gap-1.5 text-xs font-semibold">
-                    <span className="rounded-md border border-stone-900/10 bg-stone-900/[0.04] px-2.5 py-1 text-stone-600">
-                      {t.so_nganh} ngành
-                    </span>
-                    <span className="rounded-md border border-stone-900/10 bg-stone-900/[0.04] px-2.5 py-1 text-stone-600">
-                      {t.so_to_hop} tổ hợp
-                    </span>
-                    {t.diem_min != null && t.diem_max != null && (
-                      <span className="rounded-md border border-emerald-600/20 bg-emerald-600/10 px-2.5 py-1 text-emerald-800">
-                        {soDiem(t.diem_min)}–{soDiem(t.diem_max)} điểm
-                      </span>
+              return (
+                <li
+                  key={t.ten}
+                  className="group flex flex-col rounded-2xl border border-stone-900/10 bg-white p-4 shadow-[0_1px_2px_rgba(28,25,23,0.04)] transition hover:border-blue-600/25 hover:shadow-[0_6px_20px_rgba(28,25,23,0.08)]"
+                >
+                  <div className="flex gap-4">
+                    <div className="relative h-[92px] w-[124px] shrink-0 overflow-hidden rounded-xl bg-[#F4F8FE] sm:h-[104px] sm:w-[150px]">
+                      {anh ? (
+                        <Image
+                          src={anh}
+                          alt={`Ảnh ${t.ten}`}
+                          width={150}
+                          height={104}
+                          className="h-full w-full object-cover"
+                        />
+                      ) : (
+                        <div className="flex h-full w-full items-center justify-center text-xl font-black text-blue-600/50">
+                          {chuDau(t.ten)}
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="min-w-0 flex-1">
+                      <p className="text-xs font-semibold text-stone-400">{t.thanh_pho ?? "Việt Nam"}</p>
+                      {chiTietHref ? (
+                        <Link
+                          href={chiTietHref}
+                          className="mt-0.5 block text-base font-extrabold leading-snug text-blue-700 hover:underline sm:text-lg"
+                        >
+                          {t.ten}
+                        </Link>
+                      ) : (
+                        <h2 className="mt-0.5 text-base font-extrabold leading-snug text-stone-800 sm:text-lg">
+                          {t.ten}
+                        </h2>
+                      )}
+
+                      <p className="mt-2 text-xs font-semibold text-stone-400">Phương án tuyển sinh</p>
+                      <p className="text-sm font-semibold text-stone-700">
+                        {pt.length > 0 ? pt.join(", ") : "Đang cập nhật"}
+                      </p>
+                    </div>
+
+                    {chiTietHref && (
+                      <Link
+                        href={chiTietHref}
+                        className="hidden shrink-0 items-center self-start rounded-xl bg-indigo-100 px-4 py-2.5 text-sm font-bold text-indigo-600 transition hover:bg-indigo-200 sm:flex"
+                      >
+                        Xem chi tiết
+                      </Link>
                     )}
                   </div>
 
-                  <div className="mt-4 flex flex-wrap items-center gap-3">
-                    {t.de_an ? (
-                      <Link
-                        href={`/tra-cuu/de-an/${t.de_an.slug}`}
-                        className="rounded-lg border border-blue-600/30 bg-blue-600 px-3 py-1.5 text-xs font-bold text-white transition hover:bg-blue-700"
-                      >
-                        Xem đề án đầy đủ →
-                      </Link>
-                    ) : null}
+                  <div className="mt-4 grid grid-cols-2 gap-3 border-t border-stone-900/10 pt-3">
+                    <div>
+                      <p className="text-xs font-semibold text-stone-400">Điểm chuẩn 2025</p>
+                      <p className="text-sm font-bold text-blue-700">
+                        {t.diem_min != null && t.diem_max != null
+                          ? `${soDiem(t.diem_min)} – ${soDiem(t.diem_max)}`
+                          : "Đang cập nhật"}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-stone-400">Số ngành tuyển sinh</p>
+                      <p className="text-sm font-bold text-blue-700">{t.so_nganh > 0 ? t.so_nganh : "—"}</p>
+                    </div>
+                  </div>
+
+                  {chiTietHref && (
+                    <Link
+                      href={chiTietHref}
+                      className="mt-3 flex items-center justify-center rounded-xl bg-indigo-100 px-4 py-2 text-sm font-bold text-indigo-600 transition hover:bg-indigo-200 sm:hidden"
+                    >
+                      Xem chi tiết
+                    </Link>
+                  )}
+
+                  <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
                     <button
                       type="button"
                       onClick={() => moChiTiet(t)}
-                      className="rounded-lg border border-stone-900/15 px-3 py-1.5 text-xs font-bold text-stone-600 transition hover:border-stone-900/30"
+                      className="text-xs font-bold text-stone-500 underline decoration-stone-300 underline-offset-2 transition hover:text-blue-700"
                     >
                       {dangMo ? "Ẩn danh sách ngành" : "Xem ngành & điểm chuẩn"}
                     </button>
-                    {t.de_an && (
-                      <a
-                        href={t.de_an.link}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-xs font-bold text-stone-500 underline decoration-stone-300 underline-offset-2 hover:text-blue-700"
-                      >
-                        Đề án gốc ↗
-                      </a>
-                    )}
-                    {!t.de_an && (
-                      <span className="text-xs font-semibold text-stone-400">Chưa có bài đề án riêng</span>
-                    )}
+                    <div className="flex items-center gap-3 text-xs font-semibold text-stone-400">
+                      <span>{t.so_to_hop} tổ hợp</span>
+                      {t.de_an && (
+                        <a
+                          href={t.de_an.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-blue-700"
+                        >
+                          Đề án gốc ↗
+                        </a>
+                      )}
+                    </div>
                   </div>
 
                   {dangMo && (
@@ -240,7 +304,7 @@ export default function TraCuuDeAnPage() {
           <div className="mt-6 text-center">
             <button
               type="button"
-              onClick={() => setSoHien((s) => s + 36)}
+              onClick={() => setSoHien((s) => s + 24)}
               className="rounded-xl border border-stone-900/15 bg-white px-5 py-2.5 text-sm font-bold text-stone-700 transition hover:border-stone-900/30"
             >
               Xem thêm ({ketQua.length - soHien} trường)
