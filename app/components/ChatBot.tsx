@@ -373,7 +373,7 @@ export default function ChatBot() {
   }
 
   return (
-    <div className="flex h-[calc(100dvh-16rem)] min-h-[420px] flex-col overflow-hidden rounded-2xl border border-stone-900/10 bg-white shadow-[0_24px_70px_-30px_rgba(37,99,235,0.4)]">
+    <div className="flex h-[calc(100dvh-10.5rem)] min-h-[460px] flex-col overflow-hidden rounded-2xl border border-stone-900/10 bg-white shadow-[0_24px_70px_-30px_rgba(37,99,235,0.4)] sm:h-[calc(100dvh-12rem)]">
       <div className="flex items-center gap-3 border-b border-stone-900/10 px-5 py-3.5">
         <span className="h-2.5 w-2.5 rounded-full bg-blue-500" />
         <p className="text-sm font-bold">Trợ lý AI</p>
@@ -466,18 +466,18 @@ export default function ChatBot() {
         )}
       </div>
 
-      <div className="flex justify-end px-3 pb-1.5">
+      <div className="flex px-3 pb-2">
         <button
           type="button"
           onClick={batDauSurvey}
           disabled={dangGo || !!surveyMsg}
-          className="rounded-lg border border-blue-600/30 bg-blue-50 px-3 py-1.5 text-xs font-bold text-blue-700 transition hover:bg-blue-100 disabled:cursor-not-allowed disabled:opacity-50"
+          className="w-full rounded-lg border border-blue-600/30 bg-blue-50 px-3 py-2.5 text-xs font-bold text-blue-700 transition hover:bg-blue-100 disabled:cursor-not-allowed disabled:opacity-50 sm:ml-auto sm:w-auto sm:py-1.5"
         >
           📋 Tư vấn nhanh — điền phiếu khảo sát
         </button>
       </div>
 
-      <form onSubmit={gui} className="border-t border-stone-900/10 p-3">
+      <form onSubmit={gui} className="border-t border-stone-900/10 p-3 sm:p-4">
         <div className="flex items-center gap-2 rounded-xl border border-stone-900/10 bg-[#F4F8FE] py-1.5 pl-4 pr-1.5 transition focus-within:border-blue-500/60">
           <input
             value={nhap}
@@ -485,12 +485,12 @@ export default function ChatBot() {
             onChange={(e) => setNhap(e.target.value)}
             placeholder="Nhập tin nhắn…"
             aria-label="Nhập tin nhắn"
-            className="h-10 w-full bg-transparent text-sm text-stone-900 outline-none placeholder:text-stone-400"
+            className="h-11 w-full bg-transparent text-[15px] text-stone-900 outline-none placeholder:text-stone-400"
           />
           <button
             type="submit"
             aria-label="Gửi tin nhắn"
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-600 text-base font-bold text-white transition hover:bg-blue-500"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-blue-600 text-lg font-bold text-white transition hover:bg-blue-500"
           >
             →
           </button>
