@@ -3,11 +3,110 @@
 import { useState } from "react";
 
 import SiteNav from "../components/SiteNav";
+import toHopMonData from "@/data/tra-cuu/to-hop-mon.json";
 
 type Muc = "hocba" | "totnghiep" | "quydoi";
 
+type Cot = "l10" | "l11" | "l12" | "hk1-12";
+type BangDiem = { [mon: string]: Partial<Record<Cot, string>> };
+
+const MON_HOC = [
+  "Toán",
+  "Ngữ văn",
+  "Tiếng Anh",
+  "Lịch sử",
+  "Địa lí",
+  "GDKTPL",
+  "Vật lí",
+  "Hóa học",
+  "Sinh học",
+  "Tin học",
+  "Công nghệ",
+] as const;
+
+const NHAN_COT: Record<Cot, string> = {
+  l10: "Cả năm lớp 10",
+  l11: "Cả năm lớp 11",
+  l12: "Cả năm lớp 12",
+  "hk1-12": "HK1 lớp 12",
+};
+
+const PHUONG_THUC: { id: string; ten: string; cot: Cot[]; ghiChu: string }[] = [
+  {
+    id: "3-nam",
+    ten: "Học bạ 3 năm",
+    cot: ["l10", "l11", "l12"],
+    ghiChu: "Trung bình điểm cả năm của lớp 10, 11, 12 (mỗi năm tính như nhau).",
+  },
+  {
+    id: "6-hk",
+    ten: "Học bạ 6 học kỳ",
+    cot: ["l10", "l11", "l12"],
+    ghiChu: "ĐTB cả năm = trung bình 2 học kỳ, nên 6 học kỳ tương đương 3 năm.",
+  },
+  {
+    id: "nam-12",
+    ten: "Cả năm lớp 12",
+    cot: ["l12"],
+    ghiChu: "Chỉ dùng điểm cả năm lớp 12.",
+  },
+  {
+    id: "10-11-hk1",
+    ten: "Lớp 10, 11 + HK1 lớp 12",
+    cot: ["l10", "l11", "hk1-12"],
+    ghiChu: "Dùng điểm cả năm lớp 10, cả năm lớp 11 và học kỳ 1 lớp 12.",
+  },
+  {
+    id: "3-hk",
+    ten: "Học bạ 3 học kỳ",
+    cot: ["l11", "hk1-12"],
+    ghiChu: "Cả năm lớp 11 (2 học kỳ) + học kỳ 1 lớp 12.",
+  },
+  {
+    id: "5-hk",
+    ten: "Học bạ 5 học kỳ",
+    cot: ["l10", "l11", "hk1-12"],
+    ghiChu: "Cả năm lớp 10, cả năm lớp 11 + học kỳ 1 lớp 12.",
+  },
+];
+
+const TO_HOP = toHopMonData as { ma: string; mon: string[] }[];
+
+function chuanHoaMon(s: string): string | null {
+  const k = s
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/đ/g, "d")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+  if (k === "toan") return "Toán";
+  if (k === "van" || k === "ngu van") return "Ngữ văn";
+  if (k === "tieng anh" || k === "anh") return "Tiếng Anh";
+  if (k === "lich su") return "Lịch sử";
+  if (k === "dia li" || k === "dia ly" || k === "dia") return "Địa lí";
+  if (k.startsWith("gdkt") || k.startsWith("gdcd") || k === "giao duc kinh te va phap luat") return "GDKTPL";
+  if (k === "vat li" || k === "vat ly") return "Vật lí";
+  if (k === "hoa hoc" || k === "hoa") return "Hóa học";
+  if (k === "sinh hoc" || k === "sinh") return "Sinh học";
+  if (k === "tin hoc" || k === "tin") return "Tin học";
+  if (k.startsWith("cong nghe")) return "Công nghệ";
+  return null;
+}
+
+// Nhập nhanh kiểu tuyensinh247: 66 → 6.6, 625 → 6.25, 100 → 10.0
+function parseDiemNhanh(v: string): number | null {
+  const s = v.trim().replace(",", ".");
+  if (s === "") return null;
+  if (/^\d+$/.test(s) && s !== "10") {
+    if (s.length === 2) return Number(s[0] + "." + s[1]);
+    if (s.length === 3) return Number(s[0] + "." + s.slice(1));
+  }
+  return parseDiem(v);
+}
+
 const DANH_MUC: { id: Muc; so: string; ten: string; moTa: string }[] = [
-  { id: "hocba", so: "1", ten: "Học bạ cấp 3", moTa: "Nhập điểm TB cả năm lớp 10, 11, 12" },
+  { id: "hocba", so: "1", ten: "Học bạ cấp 3", moTa: "11 môn × lớp 10, 11, 12 · 6 cách xét" },
   { id: "totnghiep", so: "2", ten: "Xét tốt nghiệp", moTa: "Tự lấy TB 3 năm, nhập thêm 4 môn thi" },
   { id: "quydoi", so: "3", ten: "Quy đổi ĐGNL", moTa: "Đổi điểm HSA, V-ACT, TSA sang thang 30" },
 ];
@@ -42,57 +141,224 @@ function KetQua({ tieuDe, so, nhanXet }: { tieuDe: string; so: string; nhanXet: 
 }
 
 /* ---------- MỤC 1: HỌC BẠ ---------- */
-function MucHocBa({
-  hocBa,
-  setHocBa,
-}: {
-  hocBa: { lop10: string; lop11: string; lop12: string };
-  setHocBa: (h: { lop10: string; lop11: string; lop12: string }) => void;
-}) {
-  const ds = [hocBa.lop10, hocBa.lop11, hocBa.lop12].map((v) => parseDiem(v));
-  const du = ds.every((d) => d !== null);
-  // Trọng số chính thức: lớp 10 × 1, lớp 11 × 2, lớp 12 × 3, chia 6
-  const tb3 = du
-    ? (Math.round((((ds as number[])[0] + (ds as number[])[1] * 2 + (ds as number[])[2] * 3) / 6) * 100) / 100).toFixed(2)
-    : null;
+const oDiem =
+  "w-full min-w-0 rounded-md border border-stone-900/15 bg-white px-2 py-2 text-center text-sm tabular-nums text-stone-900 outline-none transition placeholder:text-stone-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/15";
 
-  const o = [
-    ["lop10", "Điểm TB cả năm lớp 10", hocBa.lop10],
-    ["lop11", "Điểm TB cả năm lớp 11", hocBa.lop11],
-    ["lop12", "Điểm TB cả năm lớp 12", hocBa.lop12],
-  ] as const;
+function MucHocBa({
+  bang,
+  setBang,
+}: {
+  bang: BangDiem;
+  setBang: React.Dispatch<React.SetStateAction<BangDiem>>;
+}) {
+  const [pt, setPt] = useState("3-nam");
+  const [heSo2, setHeSo2] = useState("");
+  const [uuTien, setUuTien] = useState("");
+
+  const phuongThuc = PHUONG_THUC.find((x) => x.id === pt) ?? PHUONG_THUC[0];
+  const cot = phuongThuc.cot;
+
+  const datDiem = (mon: string, c: Cot, v: string) => {
+    setBang((cu) => ({ ...cu, [mon]: { ...(cu[mon] ?? {}), [c]: v } }));
+  };
+
+  // ĐTB từng môn trên các cột đang dùng; ô trống tính là 0.00
+  const monDiem = MON_HOC.map((mon) => {
+    const o = bang[mon] ?? {};
+    const coNhap = cot.some((c) => (o[c] ?? "").trim() !== "");
+    const tong = cot.reduce((s, c) => s + (parseDiemNhanh(o[c] ?? "") ?? 0), 0);
+    return { mon, coNhap, tb: tong / cot.length };
+  });
+  const theoMon = new Map<string, { mon: string; coNhap: boolean; tb: number }>(
+    monDiem.map((x) => [x.mon, x]),
+  );
+
+  const u = Math.min(3, Math.max(0, parseDiemNhanh(uuTien) ?? 0));
+  const heSoKey = heSo2 === "" ? null : chuanHoaMon(heSo2);
+
+  const toHop: { ma: string; mon: string[]; diem: number; diemUt: number }[] = [];
+  for (const th of TO_HOP) {
+    const mons = th.mon.map(chuanHoaMon);
+    if (mons.some((m) => m === null)) continue;
+    const sach = mons as string[];
+    const dong = sach.map((m) => theoMon.get(m));
+    if (dong.some((d) => !d || !d.coNhap)) continue;
+    const viTriHeSo = heSoKey ? sach.indexOf(heSoKey) : -1;
+    if (heSoKey && viTriHeSo === -1) continue;
+    let diem = 0;
+    let toiDa = 30;
+    for (let i = 0; i < sach.length; i++) {
+      const x2 = i === viTriHeSo;
+      diem += (dong[i] as { tb: number }).tb * (x2 ? 2 : 1);
+      if (x2) toiDa += 10;
+    }
+    const diemUt = diem < 22.5 ? diem + u : diem + ((toiDa - diem) / 7.5) * u;
+    toHop.push({ ma: th.ma, mon: sach, diem, diemUt });
+  }
+  toHop.sort((a, b) => b.diemUt - a.diemUt);
 
   return (
-    <div>
-      <div className="grid gap-4 sm:grid-cols-3">
-        {o.map(([key, ten, val]) => (
-          <Nhan key={key} ten={ten}>
-            <input
-              value={val}
-              onChange={(e) => setHocBa({ ...hocBa, [key]: e.target.value })}
-              inputMode="decimal"
-              placeholder="VD: 8.2"
-              className={oNhap}
-            />
-          </Nhan>
-        ))}
-      </div>
-      {tb3 !== null ? (
-        <KetQua tieuDe="Điểm TB các năm (trọng số 1–2–3)" so={tb3} nhanXet="Đã tự chuyển sang mục 2 để tính tốt nghiệp." />
-      ) : (
-        <p className="mt-6 rounded-2xl border border-stone-900/10 bg-[#F4F8FE] p-6 text-center text-sm text-stone-500">
-          Nhập đủ điểm 3 năm để tính trung bình. Thang điểm 0–10.
+    <div className="grid gap-6 xl:grid-cols-[1fr_400px]">
+      <div>
+        <p className="text-sm font-bold text-stone-900">Phương thức xét học bạ</p>
+        <div className="mt-2 flex flex-wrap gap-2">
+          {PHUONG_THUC.map((x) => (
+            <button
+              key={x.id}
+              type="button"
+              onClick={() => setPt(x.id)}
+              aria-pressed={pt === x.id}
+              className={`rounded-lg px-3.5 py-2 text-sm font-bold transition ${
+                pt === x.id
+                  ? "bg-blue-600 text-white"
+                  : "border border-stone-900/10 bg-white text-stone-600 hover:border-stone-900/25"
+              }`}
+            >
+              {x.ten}
+            </button>
+          ))}
+        </div>
+        <p className="mt-2 text-xs leading-relaxed text-stone-500">{phuongThuc.ghiChu}</p>
+
+        <div className="mt-4 overflow-x-auto rounded-lg border border-stone-900/10">
+          <table className="w-full min-w-[480px] border-collapse text-sm">
+            <thead>
+              <tr className="bg-stone-900 text-[#F4F8FE]">
+                <th className="sticky left-0 z-10 bg-stone-900 px-3 py-2.5 text-left font-bold">Môn học</th>
+                {cot.map((c) => (
+                  <th key={c} className="px-2 py-2.5 text-center font-bold">
+                    {NHAN_COT[c]}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {MON_HOC.map((mon, i) => (
+                <tr key={mon} className={i % 2 ? "bg-[#F7FAFF]" : "bg-white"}>
+                  <th
+                    scope="row"
+                    className={`sticky left-0 z-10 whitespace-nowrap px-3 py-1.5 text-left font-semibold ${
+                      i % 2 ? "bg-[#F7FAFF]" : "bg-white"
+                    }`}
+                  >
+                    {mon}
+                  </th>
+                  {cot.map((c) => (
+                    <td key={c} className="px-2 py-1.5">
+                      <input
+                        value={bang[mon]?.[c] ?? ""}
+                        onChange={(e) => datDiem(mon, c, e.target.value)}
+                        inputMode="decimal"
+                        placeholder="0.00"
+                        aria-label={`${mon} – ${NHAN_COT[c]}`}
+                        className={oDiem}
+                      />
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <p className="mt-2 text-xs leading-relaxed text-stone-500">
+          Không bắt buộc nhập hết: ô để trống tính là <b>0.00</b> (chỉ nên bỏ trống môn không học/xét).
+          Mẹo nhập nhanh: <span className="tabular-nums">66</span> = 6.6,{" "}
+          <span className="tabular-nums">625</span> = 6.25, <span className="tabular-nums">100</span> = 10.0.
         </p>
-      )}
-      <p className="mt-4 text-xs leading-relaxed text-stone-500">
-        Công thức: (ĐTB lớp 10 × 1 + ĐTB lớp 11 × 2 + ĐTB lớp 12 × 3) / 6.
-      </p>
+      </div>
+
+      <aside className="h-fit xl:sticky xl:top-24">
+        <div className="rounded-xl border border-stone-900/10 bg-[#F4F8FE] p-4">
+          <p className="text-xs font-bold uppercase tracking-[0.14em] text-stone-500">Kết quả xét học bạ</p>
+
+          <div className="mt-3 grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
+            <Nhan ten="Điểm ưu tiên (Ư.T, nếu có)">
+              <input
+                value={uuTien}
+                onChange={(e) => setUuTien(e.target.value)}
+                inputMode="decimal"
+                placeholder="VD: 0.5"
+                className={oNhap}
+              />
+            </Nhan>
+            <Nhan ten="Môn nhân hệ số 2 (nếu trường xét)">
+              <select
+                value={heSo2}
+                onChange={(e) => setHeSo2(e.target.value)}
+                className="w-full rounded-xl border border-stone-900/10 bg-white px-4 py-3 text-[15px] font-bold text-stone-900 outline-none focus:border-blue-500/60"
+              >
+                <option value="">Không nhân hệ số</option>
+                {MON_HOC.map((m) => (
+                  <option key={m} value={m}>
+                    {m}
+                  </option>
+                ))}
+              </select>
+            </Nhan>
+          </div>
+
+          <div className="mt-4">
+            <p className="text-xs font-bold uppercase tracking-[0.12em] text-stone-500">ĐTB từng môn</p>
+            <ul className="mt-2 grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
+              {monDiem.map((x) => (
+                <li key={x.mon} className="flex items-baseline justify-between gap-2">
+                  <span className="truncate text-stone-600">{x.mon}</span>
+                  <span
+                    className={`tabular-nums font-bold ${x.coNhap ? "text-stone-900" : "text-stone-300"}`}
+                  >
+                    {x.tb.toFixed(2)}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mt-5 border-t border-stone-900/10 pt-3">
+            <p className="text-xs font-bold uppercase tracking-[0.12em] text-stone-500">
+              Điểm theo tổ hợp {toHop.length > 0 && `(${toHop.length})`}
+            </p>
+            {toHop.length === 0 ? (
+              <p className="mt-2 text-sm leading-relaxed text-stone-500">
+                Nhập điểm của ít nhất 3 môn có trong tổ hợp để xem điểm xét tuyển.
+              </p>
+            ) : (
+              <ul className="mt-2 max-h-80 space-y-1.5 overflow-y-auto pr-1">
+                {toHop.map((x) => (
+                  <li
+                    key={x.ma}
+                    className="flex items-baseline justify-between gap-2 rounded-md bg-white px-2.5 py-1.5"
+                  >
+                    <span className="min-w-0">
+                      <span className="text-sm font-bold text-blue-700">{x.ma}</span>
+                      <span className="ml-1.5 truncate text-xs text-stone-400">{x.mon.join(" · ")}</span>
+                    </span>
+                    <span className="shrink-0 tabular-nums text-sm font-black text-stone-900">
+                      {x.diemUt.toFixed(2)}
+                      {u > 0 && (
+                        <span className="ml-1 text-[10px] font-semibold text-stone-400">
+                          (gốc {x.diem.toFixed(2)})
+                        </span>
+                      )}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
+          <p className="mt-3 text-[11px] leading-relaxed text-stone-500">
+            Tổ hợp = tổng ĐTB 3 môn (thang 30). Cộng ưu tiên: dưới 22.5 cộng thẳng; từ 22.5 trở lên cộng
+            [(tối đa − tổng)/7.5] × Ư.T. Kết quả tham khảo.
+          </p>
+        </div>
+      </aside>
     </div>
   );
 }
 
 /* ---------- MỤC 2: XÉT TỐT NGHIỆP ---------- */
-function MucTotNghiep({ tbSan, hocBa }: { tbSan: string; hocBa: { lop10: string; lop11: string; lop12: string } }) {
+function MucTotNghiep({ tbSan, tbNam }: { tbSan: string; tbNam: { lop10: string; lop11: string; lop12: string } }) {
   const [toan, setToan] = useState("");
   const [van, setVan] = useState("");
   const [tc1, setTc1] = useState("");
@@ -117,7 +383,7 @@ function MucTotNghiep({ tbSan, hocBa }: { tbSan: string; hocBa: { lop10: string;
 
   // Số hiện trên sơ đồ (chưa nhập thì hiện …)
   const hien = (v: string) => (parseDiem(v) === null ? "…" : v.trim());
-  const hb = [hocBa.lop10, hocBa.lop11, hocBa.lop12].map((v) => parseDiem(v));
+  const hb = [tbNam.lop10, tbNam.lop11, tbNam.lop12].map((v) => parseDiem(v));
   const hbDu = hb.every((d) => d !== null);
 
   return (
@@ -208,7 +474,7 @@ function MucTotNghiep({ tbSan, hocBa }: { tbSan: string; hocBa: { lop10: string;
             </span>
           </div>
           <p className="mt-1.5 border-t border-dashed border-stone-900/15 pt-1.5 text-center text-[13px] tabular-nums text-stone-700">
-            = ({hien(hocBa.lop10)}×1 + {hien(hocBa.lop11)}×2 + {hien(hocBa.lop12)}×3) ÷ 6 ={" "}
+            = ({hien(tbNam.lop10)}×1 + {hien(tbNam.lop11)}×2 + {hien(tbNam.lop12)}×3) ÷ 6 ={" "}
             <span className="font-black text-blue-700">
               {hbDu && tb ? Number(tb).toFixed(2) : "…"}
             </span>
@@ -635,9 +901,23 @@ function MucQuyDoi() {
 
 export default function TinhDiemPage() {
   const [muc, setMuc] = useState<Muc>("hocba");
-  const [hocBa, setHocBa] = useState({ lop10: "", lop11: "", lop12: "" });
+  const [bang, setBang] = useState<BangDiem>({});
 
-  const ds = [hocBa.lop10, hocBa.lop11, hocBa.lop12].map((v) => parseDiem(v));
+  const tbMotNam = (c: Cot): string => {
+    let tong = 0;
+    for (const mon of MON_HOC) {
+      const v = parseDiemNhanh(bang[mon]?.[c] ?? "");
+      if (v === null) return "";
+      tong += v;
+    }
+    return (tong / MON_HOC.length).toFixed(2);
+  };
+  const tbNam = {
+    lop10: tbMotNam("l10"),
+    lop11: tbMotNam("l11"),
+    lop12: tbMotNam("l12"),
+  };
+  const ds = [tbNam.lop10, tbNam.lop11, tbNam.lop12].map((v) => parseDiem(v));
   const tb3 = ds.every((d) => d !== null)
     ? String(Math.round((((ds as number[])[0] + (ds as number[])[1] * 2 + (ds as number[])[2] * 3) / 6) * 100) / 100)
     : "";
@@ -686,8 +966,8 @@ export default function TinhDiemPage() {
 
           {/* Nội dung */}
           <div className="rounded-2xl border border-stone-900/10 bg-white p-6 shadow-[0_20px_60px_-30px_rgba(37,99,235,0.35)] sm:p-8">
-            {muc === "hocba" && <MucHocBa hocBa={hocBa} setHocBa={setHocBa} />}
-            {muc === "totnghiep" && <MucTotNghiep tbSan={tb3} hocBa={hocBa} />}
+            {muc === "hocba" && <MucHocBa bang={bang} setBang={setBang} />}
+            {muc === "totnghiep" && <MucTotNghiep tbSan={tb3} tbNam={tbNam} />}
             {muc === "quydoi" && <MucQuyDoi />}
           </div>
         </div>
