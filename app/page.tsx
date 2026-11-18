@@ -101,7 +101,7 @@ export default function Home() {
             <div aria-hidden className="absolute inset-0 translate-x-2.5 translate-y-2.5 bg-blue-600/20" />
             <div className="relative border border-stone-900/15 bg-white p-3">
               <div className="flex items-center justify-between border-b border-stone-900/10 pb-2.5 text-[10px] font-extrabold uppercase tracking-[0.16em] text-stone-400">
-                <span>Cú Đậu hướng nghiệp</span>
+                <span>Đếm ngược cùng Cú Đậu</span>
                 <span className="so-bang">11·06·2027</span>
               </div>
               <div className="relative mt-3 overflow-hidden bg-blue-50">
