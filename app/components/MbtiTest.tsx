@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 
-import type { MbtiKetQua, MbtiPole, MbtiType } from "@/lib/mbti";
+import type { MbtiDiem, MbtiKetQua, MbtiPole, MbtiType } from "@/lib/mbti";
 import { MBTI_QUESTIONS, MBTI_TYPE_MAP, tinhMbti } from "@/lib/mbti";
 import MbtiCarousel from "./MbtiCarousel";
 
@@ -13,10 +13,23 @@ type View = "gioi-thieu" | "lam-bai" | "ket-qua";
 
 const SO_CAU = MBTI_QUESTIONS.length;
 const KH_MBTI = "hn:mbti";
+const KH_MBTI_HISTORY = "hn:mbti-history";
 
 type MbtiDaLuu = {
   code: string;
   traLoi: MbtiPole[];
+};
+
+type MbtiLichSuItem = {
+  code: string;
+  ten: string;
+  nhom: string;
+  moTa: string;
+  manh: string[];
+  ngheNghiep: string[];
+  dem: MbtiDiem;
+  traLoi: MbtiPole[];
+  ngay: string;
 };
 
 function luuMbti(kq: MbtiKetQua, traLoi: MbtiPole[]) {
@@ -58,6 +71,46 @@ function docMbtiDaLuu(): MbtiDaLuu | null {
     return { code, traLoi };
   } catch {
     return null;
+  }
+}
+
+function luuLichSu(kq: MbtiKetQua, traLoi: MbtiPole[]) {
+  try {
+    const cu = localStorage.getItem(KH_MBTI_HISTORY);
+    const ds = cu ? (JSON.parse(cu) as unknown[]) : [];
+    const moi: MbtiLichSuItem = {
+      code: kq.code,
+      ten: kq.type.ten,
+      nhom: kq.type.nhom,
+      moTa: kq.type.moTa,
+      manh: kq.type.manh,
+      ngheNghiep: kq.type.ngheNghiep,
+      dem: kq.dem,
+      traLoi,
+      ngay: new Date().toISOString(),
+    };
+    localStorage.setItem(KH_MBTI_HISTORY, JSON.stringify([...ds, moi].slice(-20)));
+  } catch {
+  }
+}
+
+function docLichSu(): MbtiLichSuItem[] {
+  try {
+    const raw = localStorage.getItem(KH_MBTI_HISTORY);
+    if (!raw) return [];
+    const o: unknown = JSON.parse(raw);
+    if (!Array.isArray(o)) return [];
+    return o.filter(
+      (e): e is MbtiLichSuItem =>
+        typeof e === "object" &&
+        e !== null &&
+        typeof (e as MbtiLichSuItem).code === "string" &&
+        typeof (e as MbtiLichSuItem).ten === "string" &&
+        Array.isArray((e as MbtiLichSuItem).traLoi) &&
+        (e as MbtiLichSuItem).traLoi.length === SO_CAU,
+    );
+  } catch {
+    return [];
   }
 }
 
@@ -152,6 +205,7 @@ export default function MbtiTest({ initialType }: { initialType?: string }) {
     Array(SO_CAU).fill(null),
   );
   const [ketQua, setKetQua] = useState<MbtiKetQua | null>(null);
+  const [lichSu, setLichSu] = useState<MbtiLichSuItem[]>([]);
 
   const typeParam = (initialType ?? "").toUpperCase();
   const xemType = typeParam && MBTI_TYPE_MAP[typeParam] ? MBTI_TYPE_MAP[typeParam] : null;
@@ -164,6 +218,7 @@ export default function MbtiTest({ initialType }: { initialType?: string }) {
       setKetQua(tinhMbti(daLuu.traLoi));
       setView("ket-qua");
     }
+    setLichSu(docLichSu());
     /* eslint-enable react-hooks/set-state-in-effect */
   }, []);
 
@@ -235,6 +290,8 @@ export default function MbtiTest({ initialType }: { initialType?: string }) {
       setKetQua(kq);
       setView("ket-qua");
       luuMbti(kq, traLoi);
+      luuLichSu(kq, traLoi);
+      setLichSu(docLichSu());
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       setCurrent(current + 1);
@@ -244,6 +301,17 @@ export default function MbtiTest({ initialType }: { initialType?: string }) {
   function quayLai() {
     if (current > 0) setCurrent(current - 1);
     else setView("gioi-thieu");
+  }
+
+  function moLichSu(i: number) {
+    const ds = docLichSu();
+    const e = ds[i];
+    if (!e) return;
+    const traLoi = e.traLoi;
+    const kq = tinhMbti(traLoi);
+    setAnswers(traLoi);
+    setKetQua(kq);
+    setView("ket-qua");
   }
 
   function moChat() {
@@ -470,6 +538,27 @@ export default function MbtiTest({ initialType }: { initialType?: string }) {
             </button>
           </div>
         </section>
+
+        {lichSu.length > 1 && (
+          <section className="rounded-2xl border border-stone-900/10 bg-white p-5 shadow-sm">
+            <h2 className="font-display text-xl font-extrabold tracking-tight">Lịch sử làm</h2>
+            <div className="mt-4 space-y-2">
+              {lichSu.map((e, i) => (
+                <button
+                  key={`${e.ngay}-${e.code}-${i}`}
+                  type="button"
+                  onClick={() => moLichSu(i)}
+                  className="w-full rounded-xl border border-stone-900/10 px-4 py-3 text-left transition hover:border-blue-400/60 hover:bg-blue-50/60"
+                >
+                  <span className="text-sm font-bold text-stone-900">{e.code}</span>
+                  <span className="ml-2 text-xs font-semibold text-stone-400">
+                    {new Date(e.ngay).toLocaleString("vi-VN")}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </section>
+        )}
       </div>
     );
   }
