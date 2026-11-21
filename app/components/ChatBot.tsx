@@ -33,6 +33,7 @@ const isTinVanBan = (t: TinNhan): t is TinVanBan =>
 const KH_HISTORY = "hn:chat-history";
 const KH_CONTEXT = "hn:student-context";
 const KH_DRAFT = "hn:chat-draft";
+const KH_MBTI = "hn:mbti";
 const MAX_TIN = 30; // giới hạn MAX_MESSAGES bên server
 
 // Đọc lịch sử chat từ localStorage — không mất khi refresh trang (lưu cả tin nhắn văn bản và kết quả tư vấn)
@@ -141,19 +142,77 @@ function chuyenDoiLichSuChoAi(
 }
 
 // Đọc thông tin học sinh (lưu từ form tư vấn khi đã điền) — gắn vào prompt chat
+type MbtiLuu = {
+  code: string;
+  ten: string;
+  nhom?: string;
+  moTa?: string;
+  manh?: string[];
+  ngheNghiep?: string[];
+};
+
+function docMangChuoi(value: unknown): string[] | undefined {
+  return Array.isArray(value)
+    ? value.filter((n): n is string => typeof n === "string")
+    : undefined;
+}
+
+function readMbti(): MbtiLuu | null {
+  try {
+    const raw = localStorage.getItem(KH_MBTI);
+    if (!raw) return null;
+    const obj: unknown = JSON.parse(raw);
+    if (typeof obj !== "object" || obj === null) return null;
+    const data = obj as Record<string, unknown>;
+    if (typeof data.code !== "string" || typeof data.ten !== "string") return null;
+    return {
+      code: data.code,
+      ten: data.ten,
+      nhom: typeof data.nhom === "string" ? data.nhom : undefined,
+      moTa: typeof data.moTa === "string" ? data.moTa : undefined,
+      manh: docMangChuoi(data.manh),
+      ngheNghiep: docMangChuoi(data.ngheNghiep),
+    };
+  } catch {
+    return null;
+  }
+}
+
 function readStudentContext(): string {
   try {
     const raw = localStorage.getItem(KH_CONTEXT);
-    if (!raw) return "";
-    const obj: unknown = JSON.parse(raw);
-    if (typeof obj !== "object" || obj === null) return "";
-    const data = obj as Record<string, unknown>;
-    const lop = typeof data.lop === "string" ? data.lop.trim() : "";
-    const moTa = typeof data.vanBan === "string" ? data.vanBan.trim() : "";
-    if (!lop && !moTa) return "";
+    const mbti = readMbti();
+    let lop = "";
+    let moTa = "";
+    if (raw) {
+      const obj: unknown = JSON.parse(raw);
+      if (typeof obj === "object" && obj !== null) {
+        const data = obj as Record<string, unknown>;
+        lop = typeof data.lop === "string" ? data.lop.trim() : "";
+        moTa = typeof data.vanBan === "string" ? data.vanBan.trim() : "";
+      }
+    }
+    const mbtiText = mbti
+      ? [
+          `Kết quả trắc nghiệm tính cách: ${mbti.code} — ${mbti.ten}${
+            mbti.nhom ? ` (nhóm ${mbti.nhom})` : ""
+          }.`,
+          mbti.moTa ? `Mô tả: ${mbti.moTa}` : "",
+          mbti.manh && mbti.manh.length > 0
+            ? `Điểm mạnh: ${mbti.manh.join(", ")}.`
+            : "",
+          mbti.ngheNghiep && mbti.ngheNghiep.length > 0
+            ? `Ngành gợi ý theo tính cách: ${mbti.ngheNghiep.join(", ")}.`
+            : "",
+        ]
+          .filter(Boolean)
+          .join(" ")
+      : "";
+    if (!lop && !moTa && !mbtiText) return "";
     return [
       lop ? `Học sinh đang học: ${lop}.` : "",
       moTa ? `Mô tả bản thân: ${moTa}` : "",
+      mbtiText,
     ]
       .filter(Boolean)
       .join(" ");
@@ -207,7 +266,6 @@ export default function ChatBot() {
   const [dangGo, setDangGo] = useState(false);
   const [tinNhans, setTinNhans] = useState<TinNhan[]>(DEFAULT_WELCOME);
   const khungRef = useRef<HTMLDivElement>(null);
-  const surveyRef = useRef<HTMLDivElement>(null);
   const daCuonTinNhanRef = useRef<Set<string>>(new Set());
 
   // Phiếu khảo sát đang mở (survey = null nghĩa là đang chờ AI soạn)
@@ -226,6 +284,17 @@ export default function ChatBot() {
       const saved = restoreHistory();
       if (saved.length > 0) {
         setTinNhans(saved);
+      } else {
+        const mbti = readMbti();
+        if (mbti) {
+          setTinNhans([
+            ...DEFAULT_WELCOME,
+            {
+              tuAi: "bot",
+              noiDung: `Mình thấy bạn vừa hoàn thành trắc nghiệm tính cách: ${mbti.code} — ${mbti.ten}. Bạn muốn mình gợi ý ngành học, khối thi và trường phù hợp với nhóm tính cách này không?`,
+            },
+          ]);
+        }
       }
       if (
         localStorage.getItem(KH_CONTEXT) ||
@@ -242,14 +311,19 @@ export default function ChatBot() {
     }
   }, []);
 
-  // Khi mở phiếu khảo sát: tự động cuộn lên ĐẦU phiếu để học sinh bắt đầu làm ngay
+  // Phiếu khảo sát hiển thị dạng popup: khoá cuộn nền và cho phép đóng bằng Esc
   useEffect(() => {
-    if (surveyMsg) {
-      const timer = setTimeout(() => {
-        cuonLenDauPhanTu(surveyRef.current, khungRef.current);
-      }, 70);
-      return () => clearTimeout(timer);
+    if (!surveyMsg) return;
+    const TruocDo = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    function esc(e: KeyboardEvent) {
+      if (e.key === "Escape") setSurveyMsg(null);
     }
+    document.addEventListener("keydown", esc);
+    return () => {
+      document.body.style.overflow = TruocDo;
+      document.removeEventListener("keydown", esc);
+    };
   }, [surveyMsg]);
 
   // Lưu tự động lịch sử chat — lưu cả tin nhắn văn bản và kết quả khảo sát hoàn tất từ AI
@@ -559,6 +633,7 @@ export default function ChatBot() {
   const cot = "mx-auto w-full max-w-4xl";
 
   return (
+    <>
     <div className="-mx-4 flex h-[calc(100dvh-8rem)] min-h-[520px] flex-col overflow-hidden border-y border-stone-900/10 bg-white sm:mx-0 sm:h-[calc(100dvh-7.5rem)] max-sm:[[data-nav-an=true]_&]:h-[calc(100dvh-4.75rem)] transition-[height] duration-300 sm:rounded-2xl sm:border sm:shadow-[0_24px_70px_-30px_rgba(37,99,235,0.4)]">
       {/* Tiêu đề khung chat — gọn một hàng */}
       <div className="flex items-center gap-3 border-b border-stone-900/10 px-4 py-2.5 sm:px-6">
@@ -657,19 +732,6 @@ export default function ChatBot() {
               </p>
             </div>
           )}
-
-          {surveyMsg && (
-            <div ref={surveyRef} id="survey-card-container" className="flex justify-start">
-              <SurveyCard
-                survey={surveyMsg.survey}
-                loi={surveyMsg.loi}
-                dangTao={!surveyMsg.survey && !surveyMsg.loi}
-                onGui={guiSurvey}
-                onDong={() => setSurveyMsg(null)}
-                onThuLai={batDauSurvey}
-              />
-            </div>
-          )}
         </div>
       </div>
 
@@ -716,5 +778,32 @@ export default function ChatBot() {
         </div>
       </form>
     </div>
+
+    {surveyMsg && (
+      <div
+        role="dialog"
+        aria-modal="true"
+        className="fixed inset-0 z-[999] flex items-center justify-center p-3 sm:p-6"
+      >
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-stone-950/60 backdrop-blur-[2px]"
+          onClick={() => setSurveyMsg(null)}
+        />
+        <div className="relative flex max-h-[92dvh] w-full max-w-2xl flex-col overflow-hidden rounded-2xl bg-white shadow-2xl">
+          <div className="flex-1 overflow-y-auto">
+            <SurveyCard
+              survey={surveyMsg.survey}
+              loi={surveyMsg.loi}
+              dangTao={!surveyMsg.survey && !surveyMsg.loi}
+              onGui={guiSurvey}
+              onDong={() => setSurveyMsg(null)}
+              onThuLai={batDauSurvey}
+            />
+          </div>
+        </div>
+      </div>
+    )}
+    </>
   );
 }

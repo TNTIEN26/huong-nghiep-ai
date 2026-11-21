@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 
 import MascotOwl from "./MascotOwl";
 
-type MucNav = "trang-chu" | "tinh-diem" | "huong-nghiep" | "tra-cuu";
+type MucNav = "trang-chu" | "tinh-diem" | "huong-nghiep" | "tra-cuu" | "trac-nghiem";
 
 const Icon = ({ children }: { children: ReactNode }) => (
   <svg
@@ -37,10 +37,14 @@ const ICON_TIM = (
     <path d="M20 20l-4-4" />
   </>
 );
+const ICON_TINH_CACH = (
+  <path d="M12 3l2.4 5.6L20 11l-5.6 2.4L12 19l-2.4-5.6L4 11l5.6-2.4z" />
+);
 
 const CAC_MUC: { id: Exclude<MucNav, "tra-cuu">; ten: string; href: string; icon: ReactNode }[] = [
   { id: "trang-chu", ten: "Trang chủ", href: "/", icon: ICON_NHA },
   { id: "huong-nghiep", ten: "Hướng nghiệp", href: "/huong-nghiep", icon: ICON_CHAT },
+  { id: "trac-nghiem", ten: "Tính cách", href: "/trac-nghiem-tinh-cach", icon: ICON_TINH_CACH },
   { id: "tinh-diem", ten: "Tính điểm", href: "/tinh-diem", icon: ICON_TINH },
 ];
 
@@ -123,7 +127,7 @@ export default function SiteNav({ active }: { active?: MucNav }) {
 
   // Điện thoại: icon trên, chữ dưới (kiểu tab bar). Máy tính: chỉ chữ, nút rộng.
   const mucChung =
-    "flex flex-col items-center justify-center gap-1 rounded-xl px-1 py-1.5 text-center text-[11.5px] leading-tight transition md:flex-row md:gap-1.5 md:whitespace-nowrap md:rounded-lg md:px-5 md:py-2.5 md:text-[15px]";
+    "flex flex-col items-center justify-center gap-1 rounded-xl px-1 py-1.5 text-center text-[11px] leading-tight transition md:flex-row md:gap-1.5 md:whitespace-nowrap md:rounded-lg md:px-5 md:py-2.5 md:text-[15px]";
   const mucThuong = `${mucChung} font-medium text-stone-500 hover:bg-stone-900/5 hover:text-stone-900`;
   const mucDangXem = `${mucChung} bg-blue-600 font-semibold text-[#F4F8FE]`;
 
@@ -151,7 +155,7 @@ export default function SiteNav({ active }: { active?: MucNav }) {
           }`}
         >
         <div
-          className={`grid min-h-0 grid-cols-4 gap-2 md:flex md:flex-1 md:items-center md:justify-center md:gap-1 md:overflow-visible ${
+          className={`grid min-h-0 grid-cols-5 gap-2 md:flex md:flex-1 md:items-center md:justify-center md:gap-1 md:overflow-visible ${
             an ? "overflow-hidden" : "overflow-visible"
           }`}
         >

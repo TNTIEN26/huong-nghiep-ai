@@ -10,7 +10,7 @@ export const runtime = "nodejs";
 
 const MAX_MESSAGES = 30;
 const MAX_CONTENT_LEN = 5000;
-const MAX_CONTEXT_LEN = 500;
+const MAX_CONTEXT_LEN = 2000;
 
 const encoder = new TextEncoder();
 

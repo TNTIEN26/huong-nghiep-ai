@@ -72,6 +72,14 @@ h4 {
   font-variant-numeric: tabular-nums;
 }
 
+.khong-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.khong-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Mascot: chớp mắt + bay nhẹ */
 @keyframes chop-mat {
   0%, 92%, 100% { transform: scaleY(1); }

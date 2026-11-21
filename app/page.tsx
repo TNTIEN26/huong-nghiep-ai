@@ -3,6 +3,7 @@ import Link from "next/link";
 import DemNguocHoSo from "./components/DemNguocHoSo";
 import ExamCountdown from "./components/ExamCountdown";
 import MascotOwl from "./components/MascotOwl";
+import MbtiCarousel from "./components/MbtiCarousel";
 import SiteNav from "./components/SiteNav";
 import TinTuc from "./components/TinTuc";
 
@@ -82,10 +83,10 @@ export default function Home() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="/huong-nghiep"
+                href="/trac-nghiem-tinh-cach"
                 className="group inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3.5 text-[15px] font-bold text-white transition hover:bg-blue-700"
               >
-                Chat với Cú Đậu
+                Tìm hiểu bản thân
                 <span aria-hidden className="transition group-hover:translate-x-0.5">→</span>
               </Link>
               <Link
@@ -123,10 +124,34 @@ export default function Home() {
       </header>
 
       <main id="trai-nghiem" className="mx-auto w-full max-w-[1440px] flex-1 px-4 sm:px-8">
-        {/* TIN TỨC */}
+        {/* TÍNH CÁCH */}
         <section className="py-12 sm:py-16">
           <TieuDeMuc
             so="01"
+            nho="Trắc nghiệm tính cách"
+            to="Khám phá tính cách của bạn"
+            moTa="Chọn một nhóm tính cách để xem mô tả, điểm mạnh và ngành nghề gợi ý — hoặc làm trắc nghiệm 20 câu để tìm ra nhóm của chính mình."
+          />
+          <div className="mt-8">
+            <MbtiCarousel />
+          </div>
+          <div className="mt-8 text-center">
+            <Link
+              href="/trac-nghiem-tinh-cach"
+              className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-7 py-3.5 text-[15px] font-bold text-white transition hover:bg-blue-700"
+            >
+              Khám phá 16 nhóm tính cách →
+            </Link>
+            <p className="mt-2 text-xs text-stone-400">
+              Làm trắc nghiệm trước, rồi cùng Cú Đậu nối tính cách với ngành học.
+            </p>
+          </div>
+        </section>
+
+        {/* TIN TỨC */}
+        <section className="py-12 sm:py-16">
+          <TieuDeMuc
+            so="02"
             nho="Tin tuyển sinh & giáo dục"
             to="Nắm bắt thông tin từng kỳ thi"
             moTa="Chọn từng nhóm kỳ thi để xem link tra cứu, cách tính điểm và cổng chính thức."
@@ -139,7 +164,7 @@ export default function Home() {
         {/* ĐẾM NGƯỢC */}
         <section id="lich-thi" className="scroll-mt-20 py-12 sm:py-16">
           <TieuDeMuc
-            so="02"
+            so="03"
             nho="Đếm ngược"
             to="Kỳ thi tốt nghiệp THPT 2027"
             moTa="Bấm vào từng môn để xem đồng hồ chạy theo đúng giờ thi."
