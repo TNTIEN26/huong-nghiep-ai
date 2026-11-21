@@ -28,6 +28,59 @@ const geminiClient = geminiApiKey ? new GoogleGenAI({ apiKey: geminiApiKey }) : 
 
 const openRouterApiKey = process.env.OPENROUTER_API_KEY ?? "";
 
+// Model dự phòng (cùng provider Gemini) khi model chính quá tải — thêm qua
+// GEMINI_MODEL_FALLBACK trong .env.local, phân tách bởi dấu phẩy.
+function danhSachModelGemini(): string[] {
+  const ds = [geminiModel];
+  const them = (process.env.GEMINI_MODEL_FALLBACK ?? "")
+    .split(",")
+    .map((m) => m.trim())
+    .filter(Boolean);
+  for (const m of them) if (!ds.includes(m)) ds.push(m);
+  return ds;
+}
+
+const MAU_LOI_TAM_THOI =
+  /429|503|unavailable|overloaded|high demand|rate limit|resource_exhausted|quá tải|timeout|timed out|aborted|ECONNRESET|ETIMEDOUT|ENOTFOUND|fetch failed/i;
+
+function laLoiTamThoi(msg: string): boolean {
+  return MAU_LOI_TAM_THOI.test(msg);
+}
+
+function cho(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+// Thử lại tối đa `soLan` lần với backoff kép cho các lỗi mạng/model quá tải.
+async function thuLai<T>(fn: () => Promise<T>, soLan = 4): Promise<T> {
+  let loiCuoi: unknown;
+  for (let lan = 0; lan < soLan; lan++) {
+    try {
+      return await fn();
+    } catch (err) {
+      loiCuoi = err;
+      const msg = err instanceof Error ? err.message : String(err);
+      if (!laLoiTamThoi(msg) || lan === soLan - 1) throw err;
+      await cho(800 * Math.pow(2, lan) + Math.random() * 300);
+    }
+  }
+  throw loiCuoi;
+}
+
+// Đưa lỗi thô của Gemini về thông báo thân thiện hiển thị cho học sinh.
+function thongBaoLoiGemini(msg: string): string {
+  if (/429|rate limit|resource_exhausted/i.test(msg)) {
+    return "Hệ thống AI đang giới hạn tốc độ, bạn thử lại sau ít giây nhé.";
+  }
+  if (/503|unavailable|overloaded|high demand|quá tải/i.test(msg)) {
+    return "Hệ thống AI đang quá tải, bạn thử lại sau ít giây nhé.";
+  }
+  if (/401|403|api key|unauthorized|permission/i.test(msg)) {
+    return "Cấu hình AI chưa hợp lệ, vui lòng kiểm tra GEMINI_API_KEY trong .env.local.";
+  }
+  return msg;
+}
+
 export function moTaModel(): string {
   if (provider === "gemini") return `gemini:${geminiModel}`;
   if (provider === "openrouter") return "openrouter";
@@ -199,17 +252,29 @@ async function callGemini(userMessage: string, systemPrompt: string): Promise<Ap
   if (!geminiClient) {
     throw new Error("Thiếu GEMINI_API_KEY. Thêm vào .env.local (xem .env.local.example).");
   }
-  const response = await geminiClient.models.generateContent({
-    model: geminiModel,
-    contents: userMessage,
-    config: {
-      systemInstruction: systemPrompt,
-      responseMimeType: "application/json",
-      responseSchema: GEMINI_RESPONSE_SCHEMA,
-      temperature: 0.5,
-    },
-  });
-  return parseResult(response.text ?? "");
+  const models = danhSachModelGemini();
+  let loiCuoi = "";
+  for (const model of models) {
+    try {
+      const response = await thuLai(() =>
+        geminiClient!.models.generateContent({
+          model,
+          contents: userMessage,
+          config: {
+            systemInstruction: systemPrompt,
+            responseMimeType: "application/json",
+            responseSchema: GEMINI_RESPONSE_SCHEMA,
+            temperature: 0.5,
+          },
+        }),
+      );
+      return parseResult(response.text ?? "");
+    } catch (err) {
+      loiCuoi = err instanceof Error ? err.message : String(err);
+      if (!laLoiTamThoi(loiCuoi)) break;
+    }
+  }
+  throw new Error(thongBaoLoiGemini(loiCuoi));
 }
 
 const SPECIALIZED_MODEL = /vl|sante|fin|content-safety|code|note-preview|omni|inkling|nemotron|gemma-4-31b/i;
@@ -389,15 +454,26 @@ async function callGeminiChat(messages: ChatMessage[], systemPrompt: string): Pr
     throw new Error("Thiếu GEMINI_API_KEY. Thêm vào .env.local (xem .env.local.example).");
   }
   const contents = formatGeminiContents(messages);
-  const response = await geminiClient.models.generateContent({
-    model: geminiModel,
-    contents,
-    config: {
-      systemInstruction: systemPrompt,
-      temperature: 0.7,
-    },
-  });
-  return (response.text ?? "").trim();
+  let loiCuoi = "";
+  for (const model of danhSachModelGemini()) {
+    try {
+      const response = await thuLai(() =>
+        geminiClient!.models.generateContent({
+          model,
+          contents,
+          config: {
+            systemInstruction: systemPrompt,
+            temperature: 0.7,
+          },
+        }),
+      );
+      return (response.text ?? "").trim();
+    } catch (err) {
+      loiCuoi = err instanceof Error ? err.message : String(err);
+      if (!laLoiTamThoi(loiCuoi)) break;
+    }
+  }
+  throw new Error(thongBaoLoiGemini(loiCuoi));
 }
 
 type ChatAttempt =
@@ -625,32 +701,49 @@ async function streamGeminiChat(
     });
     return;
   }
-  try {
-    const contents = formatGeminiContents(messages);
-    const stream = await geminiClient.models.generateContentStream({
-      model: geminiModel,
-      contents,
-      config: {
-        systemInstruction: systemPrompt,
-        temperature: 0.7,
-      },
-    });
-    let any = false;
-    for await (const chunk of stream) {
-      const piece = chunk.text ?? "";
-      if (piece) {
-        any = true;
-        onEvent({ type: "delta", delta: piece });
+  const contents = formatGeminiContents(messages);
+  let loiCuoi = "";
+
+  // Thử lại tối đa 3 lần cho mỗi model; chỉ thử lại khi chưa token nào được
+  // phát ra (nếu đã phát một phần thì không quay lại được).
+  for (const model of danhSachModelGemini()) {
+    for (let lan = 0; lan < 3; lan++) {
+      let any = false;
+      try {
+        const stream = await geminiClient!.models.generateContentStream({
+          model,
+          contents,
+          config: {
+            systemInstruction: systemPrompt,
+            temperature: 0.7,
+          },
+        });
+        for await (const chunk of stream) {
+          const piece = chunk.text ?? "";
+          if (piece) {
+            any = true;
+            onEvent({ type: "delta", delta: piece });
+          }
+        }
+        if (any) {
+          onEvent({ type: "done" });
+          return;
+        }
+        loiCuoi = "Model trả về nội dung rỗng.";
+      } catch (err) {
+        loiCuoi = err instanceof Error ? err.message : String(err);
+        if (any) {
+          onEvent({ type: "error", error: thongBaoLoiGemini(loiCuoi) });
+          return;
+        }
       }
+      if (!laLoiTamThoi(loiCuoi)) break;
+      await cho(800 * Math.pow(2, lan) + Math.random() * 300);
     }
-    if (any) {
-      onEvent({ type: "done" });
-    } else {
-      onEvent({ type: "error", error: "Model trả về nội dung rỗng." });
-    }
-  } catch (err) {
-    onEvent({ type: "error", error: err instanceof Error ? err.message : String(err) });
+    if (!laLoiTamThoi(loiCuoi)) break;
   }
+
+  onEvent({ type: "error", error: thongBaoLoiGemini(loiCuoi) });
 }
 
 async function streamOpenRouterChat(
@@ -726,20 +819,26 @@ export async function generateSurvey(): Promise<Survey | null> {
 
   if (provider === "gemini") {
     if (!geminiClient) return null;
-    try {
-      const response = await geminiClient.models.generateContent({
-        model: geminiModel,
-        contents: userMessage,
-        config: {
-          systemInstruction: systemPrompt,
-          responseMimeType: "application/json",
-          temperature: 0.6,
-        },
-      });
-      return parseSurvey(response.text ?? "");
-    } catch {
-      return null;
+    for (const model of danhSachModelGemini()) {
+      try {
+        const response = await thuLai(() =>
+          geminiClient!.models.generateContent({
+            model,
+            contents: userMessage,
+            config: {
+              systemInstruction: systemPrompt,
+              responseMimeType: "application/json",
+              temperature: 0.6,
+            },
+          }),
+        );
+        const survey = parseSurvey(response.text ?? "");
+        if (survey) return survey;
+      } catch {
+        // thử model dự phòng, còn không thì dùng SURVEY_DEFAULT
+      }
     }
+    return null;
   }
 
   if (provider !== "openrouter" || !openRouterApiKey) return null;

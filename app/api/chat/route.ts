@@ -4,6 +4,7 @@ import { chatReply, streamChatReply } from "@/lib/ai";
 import type { ChatMessage } from "@/lib/ai";
 import { kiemTraGioiHan } from "@/lib/rate-limit";
 import { buildTraCuuContext } from "@/lib/prompt";
+import { cauTraLoiTuChoi } from "@/lib/chat-guard";
 import { timTheoCauHoi } from "@/lib/tra-cuu";
 
 export const runtime = "nodejs";
@@ -67,6 +68,14 @@ export async function POST(request: Request) {
   const messages = body.messages;
   const contextGoc = body.context?.trim() ?? "";
   const { stream } = body;
+
+  // Chặn cứng: câu hỏi rõ ràng ngoài phạm vi hướng nghiệp/học hành thì trả lời
+  // từ chối sẵn, không gọi model (tiết kiệm chi phí, chắc chắn không lọt).
+  const cauHoiGanNhat = [...messages].reverse().find((m) => m.role === "user")?.content ?? "";
+  const tuChoi = cauTraLoiTuChoi(cauHoiGanNhat);
+  if (tuChoi) {
+    return NextResponse.json({ reply: tuChoi });
+  }
 
   // Lấy các câu trao đổi gần nhất để tra cứu dữ liệu trường và điểm chuẩn thực tế
   const doanChatGan = messages
