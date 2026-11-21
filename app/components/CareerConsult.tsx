@@ -8,6 +8,25 @@ import CareerResult from "./CareerResult";
 import { layPhienMa } from "./DanhGia";
 
 const lopOptions = ["Lớp 6", "Lớp 7", "Lớp 8", "Lớp 9", "Lớp 10", "Lớp 11", "Lớp 12"];
+const KH_CONSULT = "hn:consult-state";
+
+type ConsultState = { lop: string; vanBan: string; result: ApiResult | null };
+
+function docConsultState(): ConsultState | null {
+  try {
+    const raw = localStorage.getItem(KH_CONSULT);
+    if (!raw) return null;
+    const o = JSON.parse(raw) as Partial<ConsultState>;
+    if (typeof o.lop !== "string" || typeof o.vanBan !== "string") return null;
+    const result =
+      o.result && typeof o.result === "object" && Array.isArray((o.result as ApiResult).nghe_nghiep)
+        ? (o.result as ApiResult)
+        : null;
+    return { lop: o.lop, vanBan: o.vanBan, result };
+  } catch {
+    return null;
+  }
+}
 
 const goiYNhanh = [
   "Mình học lớp 11, giỏi Toán và Tin, yếu Văn. Thích mày mò máy tính, lắp ráp đồ điện tử. Tính kiên trì, thích làm một mình.",
@@ -60,7 +79,30 @@ export default function CareerConsult() {
   const [error, setError] = useState<string | null>(null);
   const [status, setStatus] = useState<string | null>(null);
   const [result, setResult] = useState<ApiResult | null>(null);
+  const [daKhoiPhuc, setDaKhoiPhuc] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  // Khôi phục trạng thái tư vấn sau khi mount (giống chatbot)
+  useEffect(() => {
+    const s = docConsultState();
+    if (s) {
+      /* eslint-disable react-hooks/set-state-in-effect -- khôi phục localStorage sau mount, tránh hydration mismatch */
+      if (lopOptions.includes(s.lop)) setLop(s.lop);
+      setVanBan(s.vanBan);
+      setResult(s.result);
+      /* eslint-enable react-hooks/set-state-in-effect */
+    }
+    setDaKhoiPhuc(true);
+  }, []);
+
+  useEffect(() => {
+    if (!daKhoiPhuc) return;
+    try {
+      localStorage.setItem(KH_CONSULT, JSON.stringify({ lop, vanBan, result }));
+    } catch {
+      // bỏ qua
+    }
+  }, [lop, vanBan, result, daKhoiPhuc]);
 
   // Nhận nội dung gõ từ ô nhập trên hero
   useEffect(() => {
