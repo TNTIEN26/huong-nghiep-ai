@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import type { MbtiKetQua, MbtiPole, MbtiType } from "@/lib/mbti";
 import { MBTI_QUESTIONS, MBTI_TYPE_MAP, tinhMbti } from "@/lib/mbti";
@@ -12,11 +12,17 @@ import MbtiCarousel from "./MbtiCarousel";
 type View = "gioi-thieu" | "lam-bai" | "ket-qua";
 
 const SO_CAU = MBTI_QUESTIONS.length;
+const KH_MBTI = "hn:mbti";
 
-function luuMbti(kq: MbtiKetQua) {
+type MbtiDaLuu = {
+  code: string;
+  traLoi: MbtiPole[];
+};
+
+function luuMbti(kq: MbtiKetQua, traLoi: MbtiPole[]) {
   try {
     localStorage.setItem(
-      "hn:mbti",
+      KH_MBTI,
       JSON.stringify({
         code: kq.code,
         ten: kq.type.ten,
@@ -24,10 +30,34 @@ function luuMbti(kq: MbtiKetQua) {
         moTa: kq.type.moTa,
         manh: kq.type.manh,
         ngheNghiep: kq.type.ngheNghiep,
+        dem: kq.dem,
+        traLoi,
+        ngay: new Date().toISOString(),
       }),
     );
   } catch {
     // localStorage có thể bị chặn — không ảnh hưởng kết quả
+  }
+}
+
+const POLES: MbtiPole[] = ["E", "I", "S", "N", "T", "F", "J", "P"];
+
+function docMbtiDaLuu(): MbtiDaLuu | null {
+  try {
+    const raw = localStorage.getItem(KH_MBTI);
+    if (!raw) return null;
+    const o: unknown = JSON.parse(raw);
+    if (typeof o !== "object" || o === null) return null;
+    const code = (o as { code?: unknown }).code;
+    if (typeof code !== "string" || !MBTI_TYPE_MAP[code]) return null;
+    const traLoiRaw = (o as { traLoi?: unknown }).traLoi;
+    const traLoi = Array.isArray(traLoiRaw)
+      ? traLoiRaw.filter((p): p is MbtiPole => POLES.includes(p as MbtiPole))
+      : [];
+    if (traLoi.length !== SO_CAU) return null;
+    return { code, traLoi };
+  } catch {
+    return null;
   }
 }
 
@@ -126,6 +156,17 @@ export default function MbtiTest({ initialType }: { initialType?: string }) {
   const typeParam = (initialType ?? "").toUpperCase();
   const xemType = typeParam && MBTI_TYPE_MAP[typeParam] ? MBTI_TYPE_MAP[typeParam] : null;
 
+  useEffect(() => {
+    /* eslint-disable react-hooks/set-state-in-effect -- khôi phục localStorage sau mount, tránh hydration mismatch */
+    const daLuu = docMbtiDaLuu();
+    if (daLuu) {
+      setAnswers(daLuu.traLoi);
+      setKetQua(tinhMbti(daLuu.traLoi));
+      setView("ket-qua");
+    }
+    /* eslint-enable react-hooks/set-state-in-effect */
+  }, []);
+
   const tiLe = useMemo(() => {
     if (!ketQua) return [];
     const d = ketQua.dem;
@@ -173,6 +214,8 @@ export default function MbtiTest({ initialType }: { initialType?: string }) {
     ];
   }, [ketQua]);
 
+  const coDuLieu = ketQua ? Object.values(ketQua.dem).some((v) => v > 0) : false;
+
   function batDau() {
     setAnswers(Array(SO_CAU).fill(null));
     setCurrent(0);
@@ -187,10 +230,11 @@ export default function MbtiTest({ initialType }: { initialType?: string }) {
     setAnswers(next);
 
     if (current === SO_CAU - 1) {
-      const kq = tinhMbti(next.filter((p): p is MbtiPole => p !== null));
+      const traLoi = next.filter((p): p is MbtiPole => p !== null);
+      const kq = tinhMbti(traLoi);
       setKetQua(kq);
       setView("ket-qua");
-      luuMbti(kq);
+      luuMbti(kq, traLoi);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       setCurrent(current + 1);
@@ -204,13 +248,13 @@ export default function MbtiTest({ initialType }: { initialType?: string }) {
 
   function moChat() {
     if (!ketQua) return;
-    luuMbti(ketQua);
+    luuMbti(ketQua, answers.filter((p): p is MbtiPole => p !== null));
     router.push("/huong-nghiep");
   }
 
   function xemChiTiet() {
     if (!ketQua) return;
-    luuMbti(ketQua);
+    luuMbti(ketQua, answers.filter((p): p is MbtiPole => p !== null));
     router.push(`/mbti/${ketQua.code}`);
   }
 
@@ -323,6 +367,7 @@ export default function MbtiTest({ initialType }: { initialType?: string }) {
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/85">{t.moTa}</p>
           </div>
 
+          {coDuLieu && (
           <div className="p-5 sm:p-7">
             <h2 className="text-sm font-extrabold uppercase tracking-[0.16em] text-stone-400">
               Bốn nhóm thiên hướng
@@ -352,6 +397,7 @@ export default function MbtiTest({ initialType }: { initialType?: string }) {
               })}
             </div>
           </div>
+          )}
         </section>
 
         <div className="grid gap-5 sm:grid-cols-2">
