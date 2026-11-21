@@ -51,7 +51,7 @@ const CAC_MUC: { id: Exclude<MucNav, "tra-cuu">; ten: string; href: string; icon
 const TRA_CUU: { ten: string; href: string; moTa: string }[] = [
   { ten: "Tra cứu ngành học", href: "/tra-cuu/nganh", moTa: "833 ngành · trường, điểm chuẩn, tổ hợp" },
   { ten: "Tra cứu đề án tuyển sinh", href: "/tra-cuu/de-an", moTa: "280 trường · đề án, điểm chuẩn" },
-  { ten: "Tra cứu tổ hợp môn", href: "/tra-cuu/to-hop", moTa: "148 tổ hợp · mã khối, môn thi" },
+  { ten: "Tra cứu tổ hợp môn", href: "/tra-cuu/to-hop", moTa: "298 tổ hợp · mã khối, môn thi" },
 ];
 
 export default function SiteNav({ active }: { active?: MucNav }) {
