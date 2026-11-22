@@ -3,8 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 // Render câu trả lời AI dạng Markdown (react-markdown + remark-gfm)
 import ReactMarkdown from "react-markdown";
-import rehypeSanitize from "rehype-sanitize";
+import rehypeKatex from "rehype-katex";
 import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
 
 import type { ApiResult, FormData, Survey, SurveyAnswers } from "@/lib/types";
 import { surveyAnswersToForm } from "@/lib/survey";
@@ -703,8 +704,8 @@ export default function ChatBot() {
                 ) : (
                   <div className="chat-md max-w-[94%] break-words rounded-2xl rounded-tl-md border border-stone-900/10 bg-white px-4 py-3 text-base leading-relaxed text-stone-900 shadow-sm sm:max-w-[88%]">
                     <ReactMarkdown
-                      remarkPlugins={[remarkGfm]}
-                      rehypePlugins={[rehypeSanitize]}
+                      remarkPlugins={[remarkGfm, remarkMath]}
+                      rehypePlugins={[rehypeKatex]}
                       components={{
                         a: ({ href, children }) => (
                           <a

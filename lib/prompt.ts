@@ -140,8 +140,16 @@ export function buildUserPrompt(form: FormData): string {
   ].join("\n");
 }
 
+export function chatMathFormatRule(): string {
+  return [
+    "QUY TẮC TRÌNH BÀY TOÁN VÀ CÂU TRẮC NGHIỆM (BẮT BUỘC):",
+    "- Công thức toán viết trong cặp $...$ (ví dụ $f(x) = x^3 - 3x^2 + 1$), không viết trần kiểu x^2 hay bọc trong backtick. Công thức dài hoặc đứng riêng một dòng thì dùng $$...$$.",
+    "- Câu trắc nghiệm: mỗi đáp án nằm trên MỘT DÒNG riêng, dạng \"A. nội dung\", \"B. nội dung\", ... Tuyệt đối không dùng dấu \"|\" để ngăn cách và không viết A|B|C|D trên cùng một dòng.",
+  ].join("\n");
+}
+
 export function buildChatSystemPrompt(context?: string): string {
-  const base = chatSystemPromptBase();
+  const base = `${chatSystemPromptBase()}\n\n${chatMathFormatRule()}`;
   if (!context || !context.trim()) return base;
   return `${base}\n\nTHÔNG TIN HỌC SINH (hệ thống cung cấp từ app; dùng chỉ để trả lời cho đúng, phù hợp độ tuổi, khối thi, môn mạnh/yếu học sinh):\n${context.trim()}`;
 }

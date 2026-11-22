@@ -130,6 +130,8 @@ h4 {
 .chat-md th,
 .chat-md td { border: 1px solid rgba(28, 25, 23, 0.18); padding: 0.3em 0.6em; }
 .chat-md hr { border: 0; border-top: 1px solid rgba(28, 25, 23, 0.15); margin: 0.6em 0; }
+.chat-md .katex { font-size: 1.05em; }
+.chat-md .katex-display { margin: 0.5em 0; overflow-x: auto; overflow-y: hidden; padding: 0.15em 0; }
 
 /* ---------- Noi dung de an tuyen sinh (HTML cao tu hocmai) ---------- */
 .de-an-noi-dung { font-size: 15px; line-height: 1.7; color: #292524; overflow-wrap: anywhere; }
