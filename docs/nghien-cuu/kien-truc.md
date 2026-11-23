@@ -26,8 +26,8 @@ Bốn tầng, xếp theo chiều dữ liệu đi qua:
                             │ prompt
 ┌───────────────────────────▼──────────────────────────────────┐
 │ 3. GỌI MODEL (lib/ai.ts)                                     │
-│    resolveCandidateModels()  → hàng đợi model dự phòng       │
-│    callOpenRouter() / callGemini()                           │
+│    danhSachModelGemini()     → model chính + dự phòng        │
+│    callGemini() · vòng key × model (xoay API key)            │
 │    deadline tuyệt đối · timeout từng model · phân loại lỗi   │
 └───────────────────────────┬──────────────────────────────────┘
                             │ chuỗi JSON
@@ -86,10 +86,9 @@ Nhóm cấp quyết định ngành nào được đưa vào ngữ cảnh. Học 
 
 ### 3.4 Ép định dạng
 
-Hai đường ép song song, vì hai nhà cung cấp hỗ trợ khác nhau:
+Dùng một đường ép duy nhất (Gemini):
 
-- OpenRouter: dùng `response_format` kiểu `json_object`, không ép schema đầy đủ; nếu model từ chối (lỗi 400 vì không hỗ trợ), hệ thống thử lại không kèm `response_format` và dựa vào phần dặn định dạng trong prompt. Vì vậy hình dạng cuối cùng phải được kiểm tra ở tầng hậu kiểm, không thể tin vào cờ định dạng.
-- Gemini: dùng `GEMINI_RESPONSE_SCHEMA` khai báo cấu trúc phản hồi, kèm `responseMimeType: "application/json"`.
+- Gemini: dùng `GEMINI_RESPONSE_SCHEMA` khai báo cấu trúc phản hồi, kèm `responseMimeType: "application/json"`. Vì vậy hình dạng cuối cùng vẫn được kiểm tra ở tầng hậu kiểm, không thể tin tuyệt đối vào cờ định dạng.
 
 Hình dạng đích (`ApiResult` trong `lib/types.ts`):
 
@@ -107,41 +106,32 @@ Chú ý: `lo_trinh` nằm **trong từng ngành**, không phải trường cấp
 
 ## 4. Tầng gọi model
 
-### 4.1 Chọn nhà cung cấp
+### 4.1 Chọn nhà cung cấp và xoay API key
 
-`provider = AI_PROVIDER ?? "openrouter"`. Hai nhánh:
+Hệ thống chỉ dùng Google Gemini. `danhSachGeminiKey()` gom `GEMINI_API_KEY` rồi `GEMINI_API_KEY_2..5` (trim, bỏ trùng) thành danh sách client. Nếu không có key nào, lời gọi ném lỗi có hướng dẫn thay vì lỗi mơ hồ.
 
-- `openrouter` (mặc định): dùng `OPENROUTER_API_KEY`.
-- `gemini`: dùng `GEMINI_API_KEY`; nếu thiếu key, client là `null` và lời gọi ném lỗi có hướng dẫn thay vì lỗi mơ hồ.
+Vòng lặp ngoài duyệt qua từng key, vòng trong duyệt qua từng model; gặp lỗi khóa/hết quota (`401/403/429`, `resource_exhausted`, `api key not valid`…) thì chuyển sang key kế tiếp, nhờ đó nhiều account Google có thể gánh tải thay nhau.
 
-Nhánh Gemini hiện **không dùng được trong môi trường này** vì `.env.local` chỉ có `AI_PROVIDER`, `OPENROUTER_API_KEY`, `OPENROUTER_MODEL`, `THONG_KE_KEY`. Kiến trúc vẫn giữ nhánh này vì nó là đường thoát khi nhà cung cấp chính gặp sự cố.
+### 4.2 Danh sách model dự phòng
 
-### 4.2 Hàng đợi model dự phòng
+Danh sách model do cấu hình quyết định, không lấy động từ API. `danhSachModelGemini()` đặt `GEMINI_MODEL` (mặc định `gemini-3.1-flash-lite`) lên đầu, rồi nối thêm các model trong `GEMINI_MODEL_FALLBACK` (phân tách bằng dấu phẩy), bỏ trùng. Nhờ vậy việc đổi model dự phòng chỉ là sửa biến môi trường, không cần build lại logic.
 
-Danh sách mặc định gồm 5 model miễn phí. `resolveCandidateModels()` lấy danh mục từ OpenRouter, cache 10 phút, rồi xếp hạng:
+Không có xếp hạng tự động, không cache danh mục, không chặn số model thử: mỗi lượt gọi đi hết danh sách theo thứ tự cho tới khi một model trả về kết quả hợp lệ. Đổi lại, thứ tự trong danh sách chính là thứ tự ưu tiên — model đứng trước được thử trước.
 
-1. Model do `OPENROUTER_MODEL` chỉ định (hỗ trợ danh sách phân tách bằng dấu phẩy).
-2. Model `:free` còn lại, loại những model chuyên biệt không phù hợp văn bản tư vấn (bộ lọc `SPECIALIZED_MODEL` loại các nhóm như thị giác, tài chính, an toàn nội dung, sinh mã, ghi chú).
+### 4.3 Thử lại và giãn cách
 
-Giới hạn `MAX_CANDIDATE_MODELS = 3`: mỗi lượt gọi thử tối đa ba model. Con số này là cân bằng giữa khả năng chịu lỗi và độ trễ: thử cả 5 model sẽ khiến trường hợp xấu nhất chậm gấp rưỡi mà xác suất thành công tăng không đáng kể.
+Mỗi lần gọi model được bọc trong `thuLai()`: tối đa 4 lần, chỉ thử lại khi lỗi thuộc nhóm tạm thời (`laLoiTamThoi`). Giữa các lần chờ theo cấp số nhân `800 × 2^lần + nhiễu ngẫu nhiên 0–300 ms`, để lỗi mạng chớp nhoáng tự khỏi mà không dội thêm tải lên model đang quá tải.
 
-### 4.3 Ngân sách thời gian
-
-Hai lớp chặn thời gian, có chủ ý khác nhau:
-
-- **Deadline tuyệt đối 90 000 ms** cho cả lượt gọi: dù thử bao nhiêu model, tổng thời gian không vượt ngưỡng này.
-- **Timeout từng model khoảng 60 000 ms**: một model treo không được ăn hết ngân sách của các model sau.
-
-Không có hai lớp này, hàng đợi dự phòng có thể biến một lượt gọi chậm thành một lượt gọi treo vô hạn.
+Lỗi cứng (sai khoá, sai yêu cầu) không thử lại — chuyển thẳng sang bước xử lý lỗi bên dưới.
 
 ### 4.4 Phân loại lỗi
 
-`tryModel()` trả về `{ ok, fatal }`. Lỗi được chia hai loại:
+Sau khi hết lượt thử lại, thông điệp lỗi được phân hai nhánh:
 
-- **Không fatal** (ví dụ model quá tải, lỗi tạm thời): thử model kế tiếp.
-- **Fatal** (ví dụ sai khoá, sai yêu cầu): dừng hàng đợi ngay, vì thử model khác cũng hỏng theo cùng lý do.
+- **Lỗi khoá/hết quota** (`401/403/429`, `resource_exhausted`, `api key not valid`, `user not found`…): `laLoiKhoa` báo đúng → thoát vòng model của key hiện tại, sang key kế tiếp.
+- **Lỗi cứng của model** (không thuộc nhóm tạm thời): thoát vòng model hiện tại, thử model kế tiếp trong danh sách.
 
-Khi tất cả đều thất bại, thông điệp trả cho người dùng phân biệt hai tình huống: toàn bộ là timeout → báo "phản hồi quá chậm (quá tải)"; có lỗi khác → báo tên lỗi đầu tiên kèm gợi ý thử lại. Thông điệp mơ hồ kiểu "đã xảy ra lỗi" bị loại bỏ vì không giúp người dùng quyết định có nên thử lại hay không.
+Khi mọi key và model đều thất bại, `thongBaoLoiGemini()` đổi lỗi thô thành câu thân thiện: bị giới hạn tốc độ → "đang giới hạn tốc độ, thử lại sau ít giây"; quá tải → "đang quá tải, thử lại sau ít giây"; lỗi khoá → nhắc kiểm tra `GEMINI_API_KEY`; còn lại trả nguyên văn lỗi. Thông điệp mơ hồ kiểu "đã xảy ra lỗi" bị loại bỏ vì không giúp người dùng quyết định có nên thử lại hay không.
 
 ### 4.5 Chấm điểm ngành (đường không dùng LLM)
 

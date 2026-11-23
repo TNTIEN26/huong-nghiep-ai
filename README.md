@@ -6,18 +6,19 @@ Dựa trên câu trả lời của học sinh, hệ thống gợi ý ngành ngh�
 ## Công nghệ
 
 - **Next.js** (App Router + TypeScript + Tailwind CSS)
-- **OpenRouter** (mặc định — key miễn phí, chạy cả một số model miễn phí), hoặc **Google Gemini** để dự phòng
+- **Google Gemini** (hỗ trợ xoay vòng nhiều API key khi key trước hết quota/bị khóa)
 - Dữ liệu khối thi / ngành nghề / trường ĐH dạng JSON trong thư mục `data/`
 
 ## Cách chạy
 
 1. Cài Node.js (bản 20 trở lên).
-2. Tạo key miễn phí tại <https://openrouter.ai/keys> (đăng nhập Google là xong).
+2. Tạo API key miễn phí tại <https://aistudio.google.com/apikey>.
 3. Tạo file `.env.local` (sao chép từ `.env.local.example`) và dán key vào:
    ```
-   AI_PROVIDER=openrouter
-   OPENROUTER_API_KEY=key_cua_ban
+   GEMINI_API_KEY=key_cua_ban
    ```
+   Có thể thêm `GEMINI_API_KEY_2..5` (key của account Google khác) để tự động
+   xoay vòng khi key trước hết quota hoặc bị khóa.
 4. Cài dependencies và chạy:
    ```bash
    npm install
@@ -25,15 +26,11 @@ Dựa trên câu trả lời của học sinh, hệ thống gợi ý ngành ngh�
    ```
 5. Mở <http://localhost:3000> và trải nghiệm.
 
-> **Thời gian phản hồi:** mỗi lần tư vấn mất khoảng **20–90 giây** (model AI miễn phí sinh văn bản chậm hơn model trả phí). App tự động thử lần lượt nhiều model nếu model đầu bị quá tải. Có thể đổi thứ tự/ thêm model trong `OPENROUTER_MODEL` ở `.env.local`.
+> **Thời gian phản hồi:** mỗi lần tư vấn mất khoảng **20–90 giây**. App tự động thử lần lượt các model dự phòng (`GEMINI_MODEL_FALLBACK`) và xoay vòng API key nếu key đầu bị quá tải hoặc hết quota. Có thể đổi model trong `GEMINI_MODEL` ở `.env.local`.
 >
 > **Streaming (SSE):** the chat bot streams its reply token by token, and the career form
-> shows live status updates ("Đọc dữ li…", "Viết phân tích…") while the AI works.
+> shows live status updates ("Đọc dữ liệu…", "Viết phân tích…") while the AI works.
 > The non-streaming JSON endpoints still work for API clients (just omit `stream: true`).
->
-> **Nếu muốn đổi sang Google Gemini:** trong `.env.local` đặt `AI_PROVIDER=gemini`
-> và thêm `GEMINI_API_KEY`. Lưu ý: từ giữa 2026 Google cấp key dạng mới `AQ.`
-> và hiện có lỗi khiến nhiều key bị từ chối (`API key not valid`).
 
 ## Cấu trúc
 
@@ -58,8 +55,8 @@ thay đổi hằng năm. Trước khi dùng chính thức, hãy đối chiếu v
 
 1. Đẩy project lên GitHub.
 2. Vào <https://vercel.com/new>, import repo.
-3. Trong phần Environment Variables, thêm `AI_PROVIDER=openrouter` và `OPENROUTER_API_KEY` = key của bạn.
-4. Deploy — có nhiều model miễn phí trên OpenRouter đủ dùng cho demo.
+3. Trong phần Environment Variables, thêm `GEMINI_API_KEY` (và tùy chọn `GEMINI_API_KEY_2..5`, `GEMINI_MODEL`, `GEMINI_MODEL_FALLBACK`).
+4. Deploy — Gemini có hạn mức miễn phí đủ dùng cho demo; thêm nhiều key để tránh gián đoạn khi hết quota.
 
 ## App mobile (kế hoạch tương lai)
 

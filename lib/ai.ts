@@ -20,13 +20,22 @@ export type ChatMessage = {
   content: string;
 };
 
-const provider = (process.env.AI_PROVIDER ?? "openrouter").trim().toLowerCase();
+const geminiModel = process.env.GEMINI_MODEL ?? "gemini-3.1-flash-lite";
 
-const geminiApiKey = process.env.GEMINI_API_KEY ?? "";
-const geminiModel = process.env.GEMINI_MODEL ?? "gemini-3.5-flash-lite";
-const geminiClient = geminiApiKey ? new GoogleGenAI({ apiKey: geminiApiKey }) : null;
+// Nhiều API key (account Google khác nhau) để xoay vòng khi key trước hết
+// quota hoặc bị khóa: GEMINI_API_KEY, GEMINI_API_KEY_2 ... GEMINI_API_KEY_5.
+function danhSachGeminiKey(): string[] {
+  const ds: string[] = [];
+  const them = (k: string | undefined) => {
+    const v = (k ?? "").trim();
+    if (v && !ds.includes(v)) ds.push(v);
+  };
+  them(process.env.GEMINI_API_KEY);
+  for (let i = 2; i <= 5; i++) them(process.env[`GEMINI_API_KEY_${i}`]);
+  return ds;
+}
 
-const openRouterApiKey = process.env.OPENROUTER_API_KEY ?? "";
+const geminiClients = danhSachGeminiKey().map((apiKey) => new GoogleGenAI({ apiKey }));
 
 // Model dự phòng (cùng provider Gemini) khi model chính quá tải — thêm qua
 // GEMINI_MODEL_FALLBACK trong .env.local, phân tách bởi dấu phẩy.
@@ -45,6 +54,14 @@ const MAU_LOI_TAM_THOI =
 
 function laLoiTamThoi(msg: string): boolean {
   return MAU_LOI_TAM_THOI.test(msg);
+}
+
+// Key hết quota / bị khóa / không hợp lệ → bỏ key này, xoay sang key kế tiếp.
+const MAU_LOI_KHOA =
+  /401|403|429|quota|resource_exhausted|rate limit|permission|unauthenticated|api key not valid|invalid api key|user not found/i;
+
+function laLoiKhoa(msg: string): boolean {
+  return MAU_LOI_KHOA.test(msg);
 }
 
 function cho(ms: number): Promise<void> {
@@ -82,23 +99,8 @@ function thongBaoLoiGemini(msg: string): string {
 }
 
 export function moTaModel(): string {
-  if (provider === "gemini") return `gemini:${geminiModel}`;
-  if (provider === "openrouter") return "openrouter";
-  return provider;
+  return `gemini:${geminiModel}`;
 }
-
-const DEFAULT_FREE_MODELS = [
-  "dots-studio/dots-3-note-preview:free",
-  "qwen/qwen3.8-27b:free",
-  "google/gemma-4-26b-a4b-it:free",
-  "poolside/laguna-xs-2.1:free",
-  "liquid/lfm-2.5-2.6b:free",
-];
-
-const openRouterModels = (process.env.OPENROUTER_MODEL ?? DEFAULT_FREE_MODELS.join(","))
-  .split(",")
-  .map((m) => m.trim())
-  .filter(Boolean);
 
 const GEMINI_RESPONSE_SCHEMA = {
   type: "object",
@@ -249,182 +251,35 @@ function normalizeApiResult(result: ApiResult): ApiResult {
 }
 
 async function callGemini(userMessage: string, systemPrompt: string): Promise<ApiResult> {
-  if (!geminiClient) {
+  if (geminiClients.length === 0) {
     throw new Error("Thiếu GEMINI_API_KEY. Thêm vào .env.local (xem .env.local.example).");
   }
   const models = danhSachModelGemini();
   let loiCuoi = "";
-  for (const model of models) {
-    try {
-      const response = await thuLai(() =>
-        geminiClient!.models.generateContent({
-          model,
-          contents: userMessage,
-          config: {
-            systemInstruction: systemPrompt,
-            responseMimeType: "application/json",
-            responseSchema: GEMINI_RESPONSE_SCHEMA,
-            temperature: 0.5,
-          },
-        }),
-      );
-      return parseResult(response.text ?? "");
-    } catch (err) {
-      loiCuoi = err instanceof Error ? err.message : String(err);
-      if (!laLoiTamThoi(loiCuoi)) break;
+  for (const client of geminiClients) {
+    for (const model of models) {
+      try {
+        const response = await thuLai(() =>
+          client.models.generateContent({
+            model,
+            contents: userMessage,
+            config: {
+              systemInstruction: systemPrompt,
+              responseMimeType: "application/json",
+              responseSchema: GEMINI_RESPONSE_SCHEMA,
+              temperature: 0.5,
+            },
+          }),
+        );
+        return parseResult(response.text ?? "");
+      } catch (err) {
+        loiCuoi = err instanceof Error ? err.message : String(err);
+        if (laLoiKhoa(loiCuoi)) break; // key hỏng/hết quota → sang key kế
+        if (!laLoiTamThoi(loiCuoi)) break; // lỗi cứng của model → thử model kế
+      }
     }
   }
   throw new Error(thongBaoLoiGemini(loiCuoi));
-}
-
-const SPECIALIZED_MODEL = /vl|sante|fin|content-safety|code|note-preview|omni|inkling|nemotron|gemma-4-31b/i;
-
-// Cache danh sách model free 10 phút để mỗi tin nhắn không phải fetch /models một lần.
-let modelCache: { at: number; models: string[] } | null = null;
-const MODEL_CACHE_MS = 10 * 60 * 1000;
-const MAX_CANDIDATE_MODELS = 3;
-
-async function resolveCandidateModels(): Promise<string[]> {
-  if (modelCache && Date.now() - modelCache.at < MODEL_CACHE_MS) {
-    return modelCache.models;
-  }
-  const candidates: string[] = [];
-  try {
-    const res = await fetch("https://openrouter.ai/api/v1/models", { cache: "no-store" });
-    if (res.ok) {
-      const data = (await res.json()) as {
-        data?: { id: string; pricing?: { prompt?: string }; context_length?: number }[];
-      };
-      const free = (data.data ?? []).filter((m) => m.id.endsWith(":free"));
-      const available = new Set(free.map((m) => m.id));
-
-      for (const preferred of openRouterModels) {
-        if (available.has(preferred)) candidates.push(preferred);
-      }
-
-      const general = free
-        .filter(
-          (m) =>
-            !SPECIALIZED_MODEL.test(m.id) && (m.pricing?.prompt ?? "1") === "0",
-        )
-        .sort((a, b) => (a.context_length ?? 0) - (b.context_length ?? 0));
-
-      for (const g of general) {
-        if (!candidates.includes(g.id)) candidates.push(g.id);
-      }
-    }
-  } catch {
-    // bỏ qua, dùng danh sách tĩnh bên dưới
-  }
-  for (const preferred of openRouterModels) {
-    if (!candidates.includes(preferred)) candidates.push(preferred);
-  }
-  const trimmed = candidates.slice(0, MAX_CANDIDATE_MODELS);
-  modelCache = { at: Date.now(), models: trimmed };
-  return trimmed;
-}
-
-type ModelAttempt =
-  | { ok: true; value: ApiResult }
-  | { ok: false; fatal: boolean; error: string };
-
-async function tryModel(
-  model: string,
-  userMessage: string,
-  systemPrompt: string,
-): Promise<ModelAttempt> {
-  const post = async (body: Record<string, unknown>) => {
-    return fetch("https://openrouter.ai/api/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${openRouterApiKey}`,
-      },
-      body: JSON.stringify(body),
-      cache: "no-store",
-      signal: AbortSignal.timeout(60000),
-    });
-  };
-
-  const baseBody = {
-    model,
-    messages: [
-      { role: "system", content: systemPrompt },
-      { role: "user", content: userMessage },
-    ],
-    temperature: 0.5,
-    response_format: { type: "json_object" },
-  };
-
-  try {
-    let res = await post(baseBody);
-
-    if (res.status === 400) {
-      const fallback = { ...baseBody };
-      delete (fallback as { response_format?: unknown }).response_format;
-      res = await post(fallback);
-    }
-
-    if (!res.ok) {
-      const text = await res.text();
-      if (res.status === 401 || res.status === 403) {
-        const isAuthError = /invalid api key|unauthorized|authentication|permission/i.test(text);
-        if (isAuthError) {
-          return {
-            ok: false,
-            fatal: true,
-            error: `OpenRouter từ chối key (${res.status}). Kiểm tra OPENROUTER_API_KEY trong .env.local.`,
-          };
-        }
-      }
-      console.error(`[ai] model ${model} HTTP ${res.status}:`, text.slice(0, 500));
-      return { ok: false, fatal: false, error: `Model ${model} quá tải (HTTP ${res.status}).` };
-    }
-
-    const data = (await res.json()) as {
-      choices?: { message?: { content?: string } }[];
-    };
-    const content = data?.choices?.[0]?.message?.content ?? "";
-    return { ok: true, value: parseResult(content) };
-  } catch (err) {
-    const msg = err instanceof Error ? err.message : String(err);
-    return { ok: false, fatal: false, error: msg };
-  }
-}
-
-async function callOpenRouter(userMessage: string, systemPrompt: string): Promise<ApiResult> {
-  if (!openRouterApiKey) {
-    throw new Error(
-      "Thiếu OPENROUTER_API_KEY. Tạo key miễn phí tại https://openrouter.ai/keys rồi thêm vào .env.local (xem .env.local.example).",
-    );
-  }
-
-  const models = await resolveCandidateModels();
-  if (models.length === 0) {
-    throw new Error("Không tìm thấy model miễn phí nào trên OpenRouter.");
-  }
-
-  const deadline = Date.now() + 90000;
-  const errors: string[] = [];
-  for (const model of models) {
-    if (Date.now() > deadline) break;
-    const attempt = await tryModel(model, userMessage, systemPrompt);
-    if (attempt.ok) return attempt.value;
-    errors.push(`${model} → ${attempt.error}`);
-    if (attempt.fatal) break;
-  }
-
-  const timeoutCount = errors.filter((e) => /timeout|abort/i.test(e)).length;
-  if (timeoutCount === errors.length && errors.length > 0) {
-    throw new Error(
-      "Các model AI miễn phí đang phản hồi quá chậm (quá tải). Hãy chờ 1–2 phút rồi thử lại, hoặc thêm model khác vào OPENROUTER_MODEL trong .env.local.",
-    );
-  }
-  throw new Error(
-    errors[0]
-      ? `Các model AI miễn phí đang quá tải: ${errors[0].slice(0, 160)}. Hãy thử lại sau 1–2 phút.`
-      : "Không có model AI nào phản hồi. Hãy thử lại sau.",
-  );
 }
 
 function formatGeminiContents(
@@ -450,124 +305,33 @@ function formatGeminiContents(
 }
 
 async function callGeminiChat(messages: ChatMessage[], systemPrompt: string): Promise<string> {
-  if (!geminiClient) {
+  if (geminiClients.length === 0) {
     throw new Error("Thiếu GEMINI_API_KEY. Thêm vào .env.local (xem .env.local.example).");
   }
   const contents = formatGeminiContents(messages);
   let loiCuoi = "";
-  for (const model of danhSachModelGemini()) {
-    try {
-      const response = await thuLai(() =>
-        geminiClient!.models.generateContent({
-          model,
-          contents,
-          config: {
-            systemInstruction: systemPrompt,
-            temperature: 0.7,
-          },
-        }),
-      );
-      return (response.text ?? "").trim();
-    } catch (err) {
-      loiCuoi = err instanceof Error ? err.message : String(err);
-      if (!laLoiTamThoi(loiCuoi)) break;
+  for (const client of geminiClients) {
+    for (const model of danhSachModelGemini()) {
+      try {
+        const response = await thuLai(() =>
+          client.models.generateContent({
+            model,
+            contents,
+            config: {
+              systemInstruction: systemPrompt,
+              temperature: 0.7,
+            },
+          }),
+        );
+        return (response.text ?? "").trim();
+      } catch (err) {
+        loiCuoi = err instanceof Error ? err.message : String(err);
+        if (laLoiKhoa(loiCuoi)) break;
+        if (!laLoiTamThoi(loiCuoi)) break;
+      }
     }
   }
   throw new Error(thongBaoLoiGemini(loiCuoi));
-}
-
-type ChatAttempt =
-  | { ok: true; value: string }
-  | { ok: false; fatal: boolean; error: string };
-
-async function tryChatModel(
-  model: string,
-  messages: ChatMessage[],
-  systemPrompt: string,
-): Promise<ChatAttempt> {
-  const post = async (body: Record<string, unknown>) => {
-    return fetch("https://openrouter.ai/api/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${openRouterApiKey}`,
-      },
-      body: JSON.stringify(body),
-      cache: "no-store",
-      signal: AbortSignal.timeout(30000),
-    });
-  };
-
-  const baseBody = {
-    model,
-    messages: [
-      { role: "system", content: systemPrompt },
-      ...messages.map((m) => ({
-        role: m.role === "assistant" ? "assistant" : "user",
-        content: m.content,
-      })),
-    ],
-    temperature: 0.7,
-  };
-
-  try {
-    const res = await post(baseBody);
-    if (!res.ok) {
-      const text = await res.text();
-      if (res.status === 401 || res.status === 403) {
-        const isAuthError = /invalid api key|unauthorized|authentication|permission/i.test(text);
-        if (isAuthError) {
-          return {
-            ok: false,
-            fatal: true,
-            error: `OpenRouter từ chối key (${res.status}). Kiểm tra OPENROUTER_API_KEY trong .env.local.`,
-          };
-        }
-      }
-      console.error(`[ai] model ${model} HTTP ${res.status}:`, text.slice(0, 500));
-      return { ok: false, fatal: false, error: `Model ${model} quá tải (HTTP ${res.status}).` };
-    }
-    const data = (await res.json()) as {
-      choices?: { message?: { content?: string } }[];
-    };
-    const content = data?.choices?.[0]?.message?.content ?? "";
-    if (!content.trim()) {
-      return { ok: false, fatal: false, error: "Model trả về nội dung rỗng." };
-    }
-    return { ok: true, value: content.trim() };
-  } catch (err) {
-    const msg = err instanceof Error ? err.message : String(err);
-    return { ok: false, fatal: false, error: msg };
-  }
-}
-
-async function callOpenRouterChat(messages: ChatMessage[], systemPrompt: string): Promise<string> {
-  if (!openRouterApiKey) {
-    throw new Error(
-      "Thiếu OPENROUTER_API_KEY. Tạo key miễn phí tại https://openrouter.ai/keys rồi thêm vào .env.local (xem .env.local.example).",
-    );
-  }
-
-  const models = await resolveCandidateModels();
-  if (models.length === 0) {
-    throw new Error("Không tìm thấy model miễn phí nào trên OpenRouter.");
-  }
-
-  const deadline = Date.now() + 60000;
-  const errors: string[] = [];
-  for (const model of models) {
-    if (Date.now() > deadline) break;
-    const attempt = await tryChatModel(model, messages, systemPrompt);
-    if (attempt.ok) return attempt.value;
-    errors.push(`${model} → ${attempt.error}`);
-    if (attempt.fatal) break;
-  }
-
-  throw new Error(
-    errors[0]
-      ? `Các model AI miễn phí đang quá tải: ${errors[0].slice(0, 160)}. Hãy thử lại sau 1–2 phút.`
-      : "Không có model AI nào phản hồi. Hãy thử lại sau.",
-  );
 }
 
 // ---------- STREAMING (SSE) ----------
@@ -577,124 +341,12 @@ export type ChatStreamEvent =
   | { type: "done" }
   | { type: "error"; error: string };
 
-type ChatStreamAttempt =
-  | { ok: true; emitted: boolean; error: "" }
-  | { ok: false; fatal: boolean; emitted: boolean; error: string };
-
-// Streams one chat completion through OpenRouter (SSE). onDelta is called per token;
-// returns ok:true when the stream finished cleanly.
-async function tryChatModelStream(
-  model: string,
-  messages: ChatMessage[],
-  systemPrompt: string,
-  onDelta: (delta: string) => void,
-): Promise<ChatStreamAttempt> {
-  let emitted = false;
-  const post = async (body: Record<string, unknown>) => {
-    return fetch("https://openrouter.ai/api/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${openRouterApiKey}`,
-      },
-      body: JSON.stringify(body),
-      cache: "no-store",
-      signal: AbortSignal.timeout(60000),
-    });
-  };
-
-  const baseBody = {
-    model,
-    messages: [
-      { role: "system", content: systemPrompt },
-      ...messages.map((m) => ({
-        role: m.role === "assistant" ? "assistant" : "user",
-        content: m.content,
-      })),
-    ],
-    temperature: 0.7,
-    stream: true,
-  };
-
-  try {
-    const res = await post(baseBody);
-    if (!res.ok) {
-      const text = await res.text();
-      if (res.status === 401 || res.status === 403) {
-        const isAuthError = /invalid api key|unauthorized|authentication|permission/i.test(text);
-        if (isAuthError) {
-          return {
-            ok: false,
-            fatal: true,
-            emitted,
-            error: `OpenRouter từ chối key (${res.status}). Kiểm tra OPENROUTER_API_KEY trong .env.local.`,
-          };
-        }
-      }
-      return { ok: false, fatal: false, emitted, error: `HTTP ${res.status}: ${text.slice(0, 160)}` };
-    }
-
-    if (!res.body) {
-      return { ok: false, fatal: false, emitted, error: "OpenRouter không trả về content stream." };
-    }
-
-    const reader = res.body.getReader();
-    const decoder = new TextDecoder();
-    let buf = "";
-    let finishOk = false;
-
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      buf += decoder.decode(value, { stream: true });
-
-      let idx: number;
-      while ((idx = buf.indexOf("\n")) >= 0) {
-        const line = buf.slice(0, idx).trim();
-        buf = buf.slice(idx + 1);
-        if (!line.startsWith("data:")) continue;
-        const payload = line.slice(5).trim();
-        if (payload === "[DONE]") {
-          finishOk = true;
-          break;
-        }
-        if (!payload) continue;
-        try {
-          const json = JSON.parse(payload) as {
-            choices?: { delta?: { content?: string }; message?: { content?: string } }[];
-          };
-          const piece =
-            json?.choices?.[0]?.delta?.content ??
-            json?.choices?.[0]?.message?.content ??
-            "";
-          if (piece) {
-            emitted = true;
-            onDelta(piece);
-          }
-        } catch {
-          // ignore broken/empty SSE frames
-        }
-      }
-      if (finishOk) break;
-    }
-    try {
-      reader.cancel();
-    } catch {
-      // client closed — ignore
-    }
-    return { ok: true, emitted, error: "" };
-  } catch (err) {
-    const msg = err instanceof Error ? err.message : String(err);
-    return { ok: false, fatal: false, emitted, error: msg };
-  }
-}
-
 async function streamGeminiChat(
   messages: ChatMessage[],
   systemPrompt: string,
   onEvent: (ev: ChatStreamEvent) => void,
 ): Promise<void> {
-  if (!geminiClient) {
+  if (geminiClients.length === 0) {
     onEvent({
       type: "error",
       error: "Thiếu GEMINI_API_KEY. Thêm vào .env.local (xem .env.local.example).",
@@ -704,110 +356,49 @@ async function streamGeminiChat(
   const contents = formatGeminiContents(messages);
   let loiCuoi = "";
 
-  // Thử lại tối đa 3 lần cho mỗi model; chỉ thử lại khi chưa token nào được
-  // phát ra (nếu đã phát một phần thì không quay lại được).
-  for (const model of danhSachModelGemini()) {
-    for (let lan = 0; lan < 3; lan++) {
-      let any = false;
-      try {
-        const stream = await geminiClient!.models.generateContentStream({
-          model,
-          contents,
-          config: {
-            systemInstruction: systemPrompt,
-            temperature: 0.7,
-          },
-        });
-        for await (const chunk of stream) {
-          const piece = chunk.text ?? "";
-          if (piece) {
-            any = true;
-            onEvent({ type: "delta", delta: piece });
+  // Vòng ngoài = xoay API key; vòng trong = model. Mỗi model thử lại tối đa
+  // 3 lần, chỉ khi chưa phát token nào (đã phát rồi thì không quay lại được).
+  for (const client of geminiClients) {
+    for (const model of danhSachModelGemini()) {
+      for (let lan = 0; lan < 3; lan++) {
+        let any = false;
+        try {
+          const stream = await client.models.generateContentStream({
+            model,
+            contents,
+            config: {
+              systemInstruction: systemPrompt,
+              temperature: 0.7,
+            },
+          });
+          for await (const chunk of stream) {
+            const piece = chunk.text ?? "";
+            if (piece) {
+              any = true;
+              onEvent({ type: "delta", delta: piece });
+            }
+          }
+          if (any) {
+            onEvent({ type: "done" });
+            return;
+          }
+          loiCuoi = "Model trả về nội dung rỗng.";
+        } catch (err) {
+          loiCuoi = err instanceof Error ? err.message : String(err);
+          if (any) {
+            onEvent({ type: "error", error: thongBaoLoiGemini(loiCuoi) });
+            return;
           }
         }
-        if (any) {
-          onEvent({ type: "done" });
-          return;
-        }
-        loiCuoi = "Model trả về nội dung rỗng.";
-      } catch (err) {
-        loiCuoi = err instanceof Error ? err.message : String(err);
-        if (any) {
-          onEvent({ type: "error", error: thongBaoLoiGemini(loiCuoi) });
-          return;
-        }
+        if (!laLoiTamThoi(loiCuoi)) break;
+        await cho(800 * Math.pow(2, lan) + Math.random() * 300);
       }
+      if (laLoiKhoa(loiCuoi)) break;
       if (!laLoiTamThoi(loiCuoi)) break;
-      await cho(800 * Math.pow(2, lan) + Math.random() * 300);
     }
-    if (!laLoiTamThoi(loiCuoi)) break;
   }
 
   onEvent({ type: "error", error: thongBaoLoiGemini(loiCuoi) });
-}
-
-async function streamOpenRouterChat(
-  messages: ChatMessage[],
-  systemPrompt: string,
-  onEvent: (ev: ChatStreamEvent) => void,
-): Promise<void> {
-  if (!openRouterApiKey) {
-    onEvent({
-      type: "error",
-      error:
-        "Thiếu OPENROUTER_API_KEY. Tạo key miễn phí tại https://openrouter.ai/keys rồi thêm vào .env.local (xem .env.local.example).",
-    });
-    return;
-  }
-
-  const models = await resolveCandidateModels();
-  if (models.length === 0) {
-    onEvent({ type: "error", error: "Không tìm thấy model miễn phí nào trên OpenRouter." });
-    return;
-  }
-
-  const deadline = Date.now() + 90000;
-  const errors: string[] = [];
-  for (const model of models) {
-    if (Date.now() > deadline) break;
-    const attempt = await tryChatModelStream(model, messages, systemPrompt, (delta) => {
-      onEvent({ type: "delta", delta });
-    });
-    if (attempt.ok) {
-      if (!attempt.emitted) {
-        errors.push(`${model} → nội dung rỗng`);
-        continue;
-      }
-      onEvent({ type: "done" });
-      return;
-    }
-    if (attempt.emitted) {
-      // Stream already started — can't restart with another model mid-way, report error.
-      onEvent({
-        type: "error",
-        error: `Trả lời đang sinh bị ngắt: ${attempt.error.slice(0, 160)}. Hãy thử lại.`,
-      });
-      return;
-    }
-    errors.push(`${model} → ${attempt.error}`);
-    if (attempt.fatal) break;
-  }
-
-  const timeoutCount = errors.filter((e) => /timeout|abort/i.test(e)).length;
-  if (timeoutCount === errors.length && errors.length > 0) {
-    onEvent({
-      type: "error",
-      error:
-        "Các model AI miễn phí đang phản hồi quá chậm (quá tải). Hãy chờ 1–2 phút rồi thử lại, hoặc thêm model khác vào OPENROUTER_MODEL trong .env.local.",
-    });
-    return;
-  }
-  onEvent({
-    type: "error",
-    error: errors[0]
-      ? `Các model AI miễn phí đang quá tải: ${errors[0].slice(0, 160)}. Hãy thử lại sau 1–2 phút.`
-      : "Không có model AI nào phản hồi. Hãy thử lại sau.",
-  });
 }
 
 // AI sinh phiếu khảo sát nhanh (JSON) để học sinh điền một lượt thay vì chat qua lại.
@@ -817,12 +408,11 @@ export async function generateSurvey(): Promise<Survey | null> {
   const userMessage =
     "Tạo phiếu khảo sát hướng nghiệp nhanh cho học sinh, theo đúng yêu cầu định dạng ở trên.";
 
-  if (provider === "gemini") {
-    if (!geminiClient) return null;
+  for (const client of geminiClients) {
     for (const model of danhSachModelGemini()) {
       try {
         const response = await thuLai(() =>
-          geminiClient!.models.generateContent({
+          client.models.generateContent({
             model,
             contents: userMessage,
             config: {
@@ -834,57 +424,11 @@ export async function generateSurvey(): Promise<Survey | null> {
         );
         const survey = parseSurvey(response.text ?? "");
         if (survey) return survey;
-      } catch {
-        // thử model dự phòng, còn không thì dùng SURVEY_DEFAULT
+      } catch (loi) {
+        const thongBao = loi instanceof Error ? loi.message : String(loi);
+        // key hỏng/hết quota → thử key kế tiếp; còn lại thử model kế tiếp
+        if (laLoiKhoa(thongBao)) break;
       }
-    }
-    return null;
-  }
-
-  if (provider !== "openrouter" || !openRouterApiKey) return null;
-
-  const models = await resolveCandidateModels();
-  if (models.length === 0) return null;
-
-  const deadline = Date.now() + 90000;
-  for (const model of models) {
-    if (Date.now() > deadline) break;
-    const baseBody: Record<string, unknown> = {
-      model,
-      messages: [
-        { role: "system", content: systemPrompt },
-        { role: "user", content: userMessage },
-      ],
-      temperature: 0.6,
-      response_format: { type: "json_object" },
-    };
-    const post = (body: Record<string, unknown>) =>
-      fetch("https://openrouter.ai/api/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${openRouterApiKey}`,
-        },
-        body: JSON.stringify(body),
-        cache: "no-store",
-        signal: AbortSignal.timeout(60000),
-      });
-
-    try {
-      let res = await post(baseBody);
-      if (res.status === 400) {
-        const fallback = { ...baseBody };
-        delete (fallback as { response_format?: unknown }).response_format;
-        res = await post(fallback);
-      }
-      if (!res.ok) continue;
-      const data = (await res.json()) as {
-        choices?: { message?: { content?: string } }[];
-      };
-      const survey = parseSurvey(data?.choices?.[0]?.message?.content ?? "");
-      if (survey) return survey;
-    } catch {
-      // model lỗi/timeout → thử model kế tiếp
     }
   }
   return null;
@@ -895,29 +439,11 @@ export async function streamChatReply(
   context: string,
   onEvent: (ev: ChatStreamEvent) => void,
 ): Promise<void> {
-  const systemPrompt = buildChatSystemPrompt(context);
-  if (provider === "gemini") {
-    await streamGeminiChat(messages, systemPrompt, onEvent);
-    return;
-  }
-  if (provider === "openrouter") {
-    await streamOpenRouterChat(messages, systemPrompt, onEvent);
-    return;
-  }
-  onEvent({
-    type: "error",
-    error: `AI_PROVIDER không hợp lệ: "${provider}" (chỉ chấp nhận "gemini" hoặc "openrouter").`,
-  });
+  await streamGeminiChat(messages, buildChatSystemPrompt(context), onEvent);
 }
+
 export async function chatReply(messages: ChatMessage[], context?: string): Promise<string> {
-  const systemPrompt = buildChatSystemPrompt(context);
-  if (provider === "gemini") {
-    return callGeminiChat(messages, systemPrompt);
-  }
-  if (provider === "openrouter") {
-    return callOpenRouterChat(messages, systemPrompt);
-  }
-  throw new Error(`AI_PROVIDER không hợp lệ: "${provider}" (chỉ chấp nhận "gemini" hoặc "openrouter").`);
+  return callGeminiChat(messages, buildChatSystemPrompt(context));
 }
 
 // So khớp theo từ nguyên (bỏ dấu, tách từ): "Toán" khớp từ "toán" đứng
@@ -993,11 +519,5 @@ export async function getCareerAdvice(
       : `${buildUserPrompt(form)}\n\n${buildFormatInstruction()}\n\n${groundingDayDu}`;
   const systemPrompt = buildSystemPrompt(cheDo);
 
-  if (provider === "gemini") {
-    return callGemini(userMessage, systemPrompt);
-  }
-  if (provider === "openrouter") {
-    return callOpenRouter(userMessage, systemPrompt);
-  }
-  throw new Error(`AI_PROVIDER không hợp lệ: "${provider}" (chỉ chấp nhận "gemini" hoặc "openrouter").`);
+  return callGemini(userMessage, systemPrompt);
 }

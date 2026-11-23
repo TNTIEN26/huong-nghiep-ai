@@ -127,6 +127,5 @@ Video demo dự phòng là hạng mục bắt buộc, không phải tuỳ chọn
 
 - Lewis, P. và cộng sự. *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.* NeurIPS 2020.
 - Ji, Z. và cộng sự. *Survey of Hallucination in Natural Language Generation.* ACM Computing Surveys, 2023.
-- Tài liệu kỹ thuật OpenRouter API (danh mục model, định dạng phản hồi có cấu trúc).
-- Tài liệu Google Gemini API (structured output, response schema).
+- Tài liệu Google Gemini API (structured output, response schema, giới hạn tốc độ theo khoá).
 - Tài liệu Next.js App Router và React 19.
