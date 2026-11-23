@@ -17,8 +17,9 @@ Dựa trên câu trả lời của học sinh, hệ thống gợi ý ngành ngh�
    ```
    GEMINI_API_KEY=key_cua_ban
    ```
-   Có thể thêm `GEMINI_API_KEY_2..5` (key của account Google khác) để tự động
-   xoay vòng khi key trước hết quota hoặc bị khóa.
+   Có thể thêm `GEMINI_API_KEY_2..20` (key của account Google khác) hoặc gộp
+   nhiều key vào một biến `GEMINI_API_KEYS=key1,key2,...` để tự động xoay vòng
+   khi key trước hết quota hoặc bị khóa.
 4. Cài dependencies và chạy:
    ```bash
    npm install
@@ -55,7 +56,7 @@ thay đổi hằng năm. Trước khi dùng chính thức, hãy đối chiếu v
 
 1. Đẩy project lên GitHub.
 2. Vào <https://vercel.com/new>, import repo.
-3. Trong phần Environment Variables, thêm `GEMINI_API_KEY` (và tùy chọn `GEMINI_API_KEY_2..5`, `GEMINI_MODEL`, `GEMINI_MODEL_FALLBACK`).
+3. Trong phần Environment Variables, thêm `GEMINI_API_KEY` (và tùy chọn `GEMINI_API_KEY_2..20`, `GEMINI_API_KEYS`, `GEMINI_MODEL`, `GEMINI_MODEL_FALLBACK`).
 4. Deploy — Gemini có hạn mức miễn phí đủ dùng cho demo; thêm nhiều key để tránh gián đoạn khi hết quota.
 
 ## App mobile (kế hoạch tương lai)

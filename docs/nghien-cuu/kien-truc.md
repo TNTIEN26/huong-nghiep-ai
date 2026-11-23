@@ -108,7 +108,7 @@ Chú ý: `lo_trinh` nằm **trong từng ngành**, không phải trường cấp
 
 ### 4.1 Chọn nhà cung cấp và xoay API key
 
-Hệ thống chỉ dùng Google Gemini. `danhSachGeminiKey()` gom `GEMINI_API_KEY` rồi `GEMINI_API_KEY_2..5` (trim, bỏ trùng) thành danh sách client. Nếu không có key nào, lời gọi ném lỗi có hướng dẫn thay vì lỗi mơ hồ.
+Hệ thống chỉ dùng Google Gemini. `danhSachGeminiKey()` gom `GEMINI_API_KEY`, `GEMINI_API_KEY_2..20` và `GEMINI_API_KEYS` (trim, bỏ trùng) thành danh sách client. Nếu không có key nào, lời gọi ném lỗi có hướng dẫn thay vì lỗi mơ hồ.
 
 Vòng lặp ngoài duyệt qua từng key, vòng trong duyệt qua từng model; gặp lỗi khóa/hết quota (`401/403/429`, `resource_exhausted`, `api key not valid`…) thì chuyển sang key kế tiếp, nhờ đó nhiều account Google có thể gánh tải thay nhau.
 

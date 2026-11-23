@@ -23,7 +23,10 @@ export type ChatMessage = {
 const geminiModel = process.env.GEMINI_MODEL ?? "gemini-3.1-flash-lite";
 
 // Nhiều API key (account Google khác nhau) để xoay vòng khi key trước hết
-// quota hoặc bị khóa: GEMINI_API_KEY, GEMINI_API_KEY_2 ... GEMINI_API_KEY_5.
+// quota hoặc bị khóa: GEMINI_API_KEY, GEMINI_API_KEY_2 ... GEMINI_API_KEY_20,
+// hoặc gộp nhiều key vào một biến GEMINI_API_KEYS (phân tách bởi dấu phẩy).
+const SO_KEY_TOI_DA = 20;
+
 function danhSachGeminiKey(): string[] {
   const ds: string[] = [];
   const them = (k: string | undefined) => {
@@ -31,11 +34,87 @@ function danhSachGeminiKey(): string[] {
     if (v && !ds.includes(v)) ds.push(v);
   };
   them(process.env.GEMINI_API_KEY);
-  for (let i = 2; i <= 5; i++) them(process.env[`GEMINI_API_KEY_${i}`]);
+  for (let i = 2; i <= SO_KEY_TOI_DA; i++) them(process.env[`GEMINI_API_KEY_${i}`]);
+  for (const k of (process.env.GEMINI_API_KEYS ?? "").split(",")) them(k);
   return ds;
 }
 
-const geminiClients = danhSachGeminiKey().map((apiKey) => new GoogleGenAI({ apiKey }));
+type KetNoiGemini = { apiKey: string; client: GoogleGenAI };
+
+const geminiKetNoi: KetNoiGemini[] = danhSachGeminiKey().map((apiKey) => ({
+  apiKey,
+  client: new GoogleGenAI({ apiKey }),
+}));
+
+// Key vừa hết quota/bị khóa → tạm nghỉ để không phí lượt gọi; hết hạn thì dùng lại.
+const HAN_DUNG_KEY_MS = 60_000;
+const keyDangNghi = new Map<string, number>();
+
+function keyConDung(apiKey: string): boolean {
+  const hetHanLuc = keyDangNghi.get(apiKey);
+  if (hetHanLuc === undefined) return true;
+  if (Date.now() >= hetHanLuc) {
+    keyDangNghi.delete(apiKey);
+    return true;
+  }
+  return false;
+}
+
+function danhDauKeyHet(apiKey: string): void {
+  keyDangNghi.set(apiKey, Date.now() + HAN_DUNG_KEY_MS);
+}
+
+// Xoay vòng điểm bắt đầu để key #1 không gánh toàn bộ tải.
+let viTriXoay = 0;
+
+function thuTuKetNoi(): KetNoiGemini[] {
+  if (geminiKetNoi.length === 0) return [];
+  const bat = viTriXoay % geminiKetNoi.length;
+  viTriXoay = (viTriXoay + 1) % geminiKetNoi.length;
+  return geminiKetNoi.slice(bat).concat(geminiKetNoi.slice(0, bat));
+}
+
+// Chọn danh sách key để thử: ưu tiên key còn hạn, nhưng nếu tất cả đang nghỉ
+// thì vẫn thử hết để không trả lỗi oan khi cooldown chỉ là tạm thời.
+function danhSachKetNoiThu(): KetNoiGemini[] {
+  const tatCa = thuTuKetNoi();
+  const conDung = tatCa.filter((k) => keyConDung(k.apiKey));
+  return conDung.length > 0 ? conDung : tatCa;
+}
+
+// Xoay vòng qua từng key (bỏ key vừa hết quota) và từng model dự phòng.
+// `goi` nhận client + model đã chọn rồi trả kết quả; lỗi 429/khóa key sẽ đánh
+// dấu key nghỉ và sang key kế, lỗi tạm thời thì thử model kế hoặc chờ một vòng.
+async function xoayKeyVaModel<T>(
+  goi: (client: GoogleGenAI, model: string) => Promise<T>,
+  soVong = 2,
+): Promise<T> {
+  if (geminiKetNoi.length === 0) {
+    throw new Error("Thiếu GEMINI_API_KEY. Thêm vào .env.local (xem .env.local.example).");
+  }
+  let loiCuoi = "";
+  for (let vong = 0; vong < soVong; vong++) {
+    for (const { apiKey, client } of danhSachKetNoiThu()) {
+      for (const model of danhSachModelGemini()) {
+        try {
+          return await goi(client, model);
+        } catch (err) {
+          loiCuoi = err instanceof Error ? err.message : String(err);
+          if (laLoiKhoa(loiCuoi)) {
+            danhDauKeyHet(apiKey);
+            break; // key này hỏng/hết quota → sang key kế
+          }
+          if (!laLoiTamThoi(loiCuoi)) break; // lỗi cứng của model → thử model kế
+        }
+      }
+    }
+    if (vong < soVong - 1 && laLoiTamThoi(loiCuoi)) {
+      await cho(1200 + Math.random() * 600);
+      continue;
+    }
+  }
+  throw new Error(thongBaoLoiGemini(loiCuoi));
+}
 
 // Model dự phòng (cùng provider Gemini) khi model chính quá tải — thêm qua
 // GEMINI_MODEL_FALLBACK trong .env.local, phân tách bởi dấu phẩy.
@@ -69,7 +148,8 @@ function cho(ms: number): Promise<void> {
 }
 
 // Thử lại tối đa `soLan` lần với backoff kép cho các lỗi mạng/model quá tải.
-async function thuLai<T>(fn: () => Promise<T>, soLan = 4): Promise<T> {
+// Không thử lại khi key đã hết quota (429/khóa) — để tầng xoay key đổi key ngay.
+async function thuLai<T>(fn: () => Promise<T>, soLan = 3): Promise<T> {
   let loiCuoi: unknown;
   for (let lan = 0; lan < soLan; lan++) {
     try {
@@ -77,7 +157,7 @@ async function thuLai<T>(fn: () => Promise<T>, soLan = 4): Promise<T> {
     } catch (err) {
       loiCuoi = err;
       const msg = err instanceof Error ? err.message : String(err);
-      if (!laLoiTamThoi(msg) || lan === soLan - 1) throw err;
+      if (!laLoiTamThoi(msg) || laLoiKhoa(msg) || lan === soLan - 1) throw err;
       await cho(800 * Math.pow(2, lan) + Math.random() * 300);
     }
   }
@@ -251,35 +331,21 @@ function normalizeApiResult(result: ApiResult): ApiResult {
 }
 
 async function callGemini(userMessage: string, systemPrompt: string): Promise<ApiResult> {
-  if (geminiClients.length === 0) {
-    throw new Error("Thiếu GEMINI_API_KEY. Thêm vào .env.local (xem .env.local.example).");
-  }
-  const models = danhSachModelGemini();
-  let loiCuoi = "";
-  for (const client of geminiClients) {
-    for (const model of models) {
-      try {
-        const response = await thuLai(() =>
-          client.models.generateContent({
-            model,
-            contents: userMessage,
-            config: {
-              systemInstruction: systemPrompt,
-              responseMimeType: "application/json",
-              responseSchema: GEMINI_RESPONSE_SCHEMA,
-              temperature: 0.5,
-            },
-          }),
-        );
-        return parseResult(response.text ?? "");
-      } catch (err) {
-        loiCuoi = err instanceof Error ? err.message : String(err);
-        if (laLoiKhoa(loiCuoi)) break; // key hỏng/hết quota → sang key kế
-        if (!laLoiTamThoi(loiCuoi)) break; // lỗi cứng của model → thử model kế
-      }
-    }
-  }
-  throw new Error(thongBaoLoiGemini(loiCuoi));
+  const response = await xoayKeyVaModel((client, model) =>
+    thuLai(() =>
+      client.models.generateContent({
+        model,
+        contents: userMessage,
+        config: {
+          systemInstruction: systemPrompt,
+          responseMimeType: "application/json",
+          responseSchema: GEMINI_RESPONSE_SCHEMA,
+          temperature: 0.5,
+        },
+      }),
+    ),
+  );
+  return parseResult(response.text ?? "");
 }
 
 function formatGeminiContents(
@@ -305,33 +371,20 @@ function formatGeminiContents(
 }
 
 async function callGeminiChat(messages: ChatMessage[], systemPrompt: string): Promise<string> {
-  if (geminiClients.length === 0) {
-    throw new Error("Thiếu GEMINI_API_KEY. Thêm vào .env.local (xem .env.local.example).");
-  }
   const contents = formatGeminiContents(messages);
-  let loiCuoi = "";
-  for (const client of geminiClients) {
-    for (const model of danhSachModelGemini()) {
-      try {
-        const response = await thuLai(() =>
-          client.models.generateContent({
-            model,
-            contents,
-            config: {
-              systemInstruction: systemPrompt,
-              temperature: 0.7,
-            },
-          }),
-        );
-        return (response.text ?? "").trim();
-      } catch (err) {
-        loiCuoi = err instanceof Error ? err.message : String(err);
-        if (laLoiKhoa(loiCuoi)) break;
-        if (!laLoiTamThoi(loiCuoi)) break;
-      }
-    }
-  }
-  throw new Error(thongBaoLoiGemini(loiCuoi));
+  const response = await xoayKeyVaModel((client, model) =>
+    thuLai(() =>
+      client.models.generateContent({
+        model,
+        contents,
+        config: {
+          systemInstruction: systemPrompt,
+          temperature: 0.7,
+        },
+      }),
+    ),
+  );
+  return (response.text ?? "").trim();
 }
 
 // ---------- STREAMING (SSE) ----------
@@ -346,7 +399,7 @@ async function streamGeminiChat(
   systemPrompt: string,
   onEvent: (ev: ChatStreamEvent) => void,
 ): Promise<void> {
-  if (geminiClients.length === 0) {
+  if (geminiKetNoi.length === 0) {
     onEvent({
       type: "error",
       error: "Thiếu GEMINI_API_KEY. Thêm vào .env.local (xem .env.local.example).",
@@ -356,45 +409,55 @@ async function streamGeminiChat(
   const contents = formatGeminiContents(messages);
   let loiCuoi = "";
 
-  // Vòng ngoài = xoay API key; vòng trong = model. Mỗi model thử lại tối đa
-  // 3 lần, chỉ khi chưa phát token nào (đã phát rồi thì không quay lại được).
-  for (const client of geminiClients) {
-    for (const model of danhSachModelGemini()) {
-      for (let lan = 0; lan < 3; lan++) {
-        let any = false;
-        try {
-          const stream = await client.models.generateContentStream({
-            model,
-            contents,
-            config: {
-              systemInstruction: systemPrompt,
-              temperature: 0.7,
-            },
-          });
-          for await (const chunk of stream) {
-            const piece = chunk.text ?? "";
-            if (piece) {
-              any = true;
-              onEvent({ type: "delta", delta: piece });
+  // Vòng ngoài = chờ rồi thử lại toàn bộ key; vòng giữa = xoay API key;
+  // vòng trong = model. Mỗi model thử tối đa 3 lần, chỉ khi chưa phát token nào
+  // (đã phát rồi thì không quay lại được).
+  for (let vong = 0; vong < 2; vong++) {
+    for (const { apiKey, client } of danhSachKetNoiThu()) {
+      for (const model of danhSachModelGemini()) {
+        for (let lan = 0; lan < 3; lan++) {
+          let any = false;
+          try {
+            const stream = await client.models.generateContentStream({
+              model,
+              contents,
+              config: {
+                systemInstruction: systemPrompt,
+                temperature: 0.7,
+              },
+            });
+            for await (const chunk of stream) {
+              const piece = chunk.text ?? "";
+              if (piece) {
+                any = true;
+                onEvent({ type: "delta", delta: piece });
+              }
+            }
+            if (any) {
+              onEvent({ type: "done" });
+              return;
+            }
+            loiCuoi = "Model trả về nội dung rỗng.";
+          } catch (err) {
+            loiCuoi = err instanceof Error ? err.message : String(err);
+            if (any) {
+              onEvent({ type: "error", error: thongBaoLoiGemini(loiCuoi) });
+              return;
             }
           }
-          if (any) {
-            onEvent({ type: "done" });
-            return;
-          }
-          loiCuoi = "Model trả về nội dung rỗng.";
-        } catch (err) {
-          loiCuoi = err instanceof Error ? err.message : String(err);
-          if (any) {
-            onEvent({ type: "error", error: thongBaoLoiGemini(loiCuoi) });
-            return;
-          }
+          if (!laLoiTamThoi(loiCuoi) || laLoiKhoa(loiCuoi)) break;
+          await cho(800 * Math.pow(2, lan) + Math.random() * 300);
         }
-        if (!laLoiTamThoi(loiCuoi)) break;
-        await cho(800 * Math.pow(2, lan) + Math.random() * 300);
+        if (laLoiKhoa(loiCuoi)) {
+          danhDauKeyHet(apiKey);
+          break; // key hỏng/hết quota → sang key kế
+        }
+        if (!laLoiTamThoi(loiCuoi)) break; // lỗi cứng của model → thử model kế
       }
-      if (laLoiKhoa(loiCuoi)) break;
-      if (!laLoiTamThoi(loiCuoi)) break;
+    }
+    if (vong < 1 && laLoiTamThoi(loiCuoi)) {
+      await cho(1200 + Math.random() * 600);
+      continue;
     }
   }
 
@@ -408,30 +471,26 @@ export async function generateSurvey(): Promise<Survey | null> {
   const userMessage =
     "Tạo phiếu khảo sát hướng nghiệp nhanh cho học sinh, theo đúng yêu cầu định dạng ở trên.";
 
-  for (const client of geminiClients) {
-    for (const model of danhSachModelGemini()) {
-      try {
-        const response = await thuLai(() =>
-          client.models.generateContent({
-            model,
-            contents: userMessage,
-            config: {
-              systemInstruction: systemPrompt,
-              responseMimeType: "application/json",
-              temperature: 0.6,
-            },
-          }),
-        );
-        const survey = parseSurvey(response.text ?? "");
-        if (survey) return survey;
-      } catch (loi) {
-        const thongBao = loi instanceof Error ? loi.message : String(loi);
-        // key hỏng/hết quota → thử key kế tiếp; còn lại thử model kế tiếp
-        if (laLoiKhoa(thongBao)) break;
-      }
-    }
+  if (geminiKetNoi.length === 0) return null;
+
+  try {
+    return await xoayKeyVaModel(async (client, model) => {
+      const response = await client.models.generateContent({
+        model,
+        contents: userMessage,
+        config: {
+          systemInstruction: systemPrompt,
+          responseMimeType: "application/json",
+          temperature: 0.6,
+        },
+      });
+      const survey = parseSurvey(response.text ?? "");
+      if (!survey) throw new Error("Phiếu khảo sát không hợp lệ.");
+      return survey;
+    });
+  } catch {
+    return null;
   }
-  return null;
 }
 
 export async function streamChatReply(
