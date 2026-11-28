@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import SiteNav from "../components/SiteNav";
 import toHopMonData from "@/data/tra-cuu/to-hop-mon.json";
@@ -135,9 +135,13 @@ const oDiem =
 function MucHocBa({
   bang,
   setBang,
+  tbNam,
+  tb3,
 }: {
   bang: BangDiem;
   setBang: React.Dispatch<React.SetStateAction<BangDiem>>;
+  tbNam: { lop10: string; lop11: string; lop12: string };
+  tb3: string;
 }) {
   const [pt, setPt] = useState("3-nam");
   const [heSo2, setHeSo2] = useState("");
@@ -302,6 +306,40 @@ function MucHocBa({
             </ul>
           </div>
 
+          {/* Điểm trung bình từng năm — chỉ tính các môn đã nhập điểm */}
+          <div className="mt-4 rounded-lg border border-blue-600/20 bg-blue-50/70 p-3">
+            <p className="text-xs font-bold uppercase tracking-[0.12em] text-blue-900">
+              Điểm trung bình từng năm
+            </p>
+            <p className="mt-1 text-[11px] leading-snug text-blue-900/70">
+              Chỉ tính các môn đã nhập điểm. Môn để trống (không học) không được chia trung bình.
+            </p>
+            <div className="mt-2 grid grid-cols-3 gap-2">
+              {(["lop10", "lop11", "lop12"] as const).map((k, i) => (
+                <div key={k} className="rounded-lg bg-white px-1 py-2 text-center">
+                  <span className="block text-[11px] font-semibold text-stone-500">Lớp {10 + i}</span>
+                  <span
+                    className={`tabular-nums text-base font-black ${tbNam[k] ? "text-blue-700" : "text-stone-300"}`}
+                  >
+                    {tbNam[k] || "—"}
+                  </span>
+                </div>
+              ))}
+            </div>
+            {tb3 ? (
+              <p className="mt-2 border-t border-blue-600/15 pt-2 text-xs font-semibold text-blue-900">
+                ĐTB 3 năm (L10×1 + L11×2 + L12×3) ÷ 6: <span className="font-black">{tb3}</span>
+                <span className="mt-0.5 block font-normal text-blue-900/70">
+                  Đã tự động điền sang mục 2 “Điểm trung bình dùng để xét”.
+                </span>
+              </p>
+            ) : (
+              <p className="mt-2 text-[11px] text-blue-900/70">
+                Nhập điểm ở ít nhất một năm để xem ĐTB 3 năm.
+              </p>
+            )}
+          </div>
+
           <div className="mt-5 border-t border-stone-900/10 pt-3">
             <p className="text-xs font-bold uppercase tracking-[0.12em] text-stone-500">
               Điểm theo tổ hợp {toHop.length > 0 && `(${toHop.length})`}
@@ -408,6 +446,12 @@ function MucTotNghiep({ tbSan, tbNam }: { tbSan: string; tbNam: { lop10: string;
   const [kk, setKk] = useState("");
   const [dien, setDien] = useState("D1");
 
+  // Tự động điền ĐTB 3 năm từ mục 1 vào ô "Điểm trung bình dùng để xét".
+  // Người dùng vẫn có thể sửa tay; giá trị tự động chỉ cập nhật khi dữ liệu mục 1 đổi.
+  useEffect(() => {
+    if (tbSan) setTbTay(tbSan);
+  }, [tbSan]);
+
   // Ưu tiên số người dùng tự gõ, nếu chưa gõ thì lấy TB 3 năm từ mục 1
   const tb = tbTay !== "" ? tbTay : tbSan;
 
@@ -445,8 +489,10 @@ function MucTotNghiep({ tbSan, tbNam }: { tbSan: string; tbNam: { lop10: string;
           className={oNhap}
         />
       </Nhan>
-      {tbSan && tbTay === "" && (
-        <p className="mt-1.5 text-xs text-stone-500">Đang dùng TB 3 năm từ mục 1 — bấm vào để sửa tay.</p>
+      {tbSan && tbTay === tbSan && (
+        <p className="mt-1.5 text-xs text-stone-500">
+          Đã tự động điền TB 3 năm từ mục 1 — bạn có thể sửa tay nếu cần.
+        </p>
       )}
 
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -938,14 +984,19 @@ export default function TinhDiemPage() {
   const [muc, setMuc] = useState<Muc>("hocba");
   const [bang, setBang] = useState<BangDiem>({});
 
+  // Chỉ tính trung bình các môn đã nhập điểm; môn không học / để trống
+  // không được đưa vào mẫu số (không chia tb cho môn đó).
   const tbMotNam = (c: Cot): string => {
     let tong = 0;
+    let dem = 0;
     for (const mon of MON_HOC) {
       const v = parseDiemNhanh(bang[mon]?.[c] ?? "");
-      if (v === null) return "";
+      if (v === null) continue;
       tong += v;
+      dem += 1;
     }
-    return (tong / MON_HOC.length).toFixed(2);
+    if (dem === 0) return "";
+    return (tong / dem).toFixed(2);
   };
   const tbNam = {
     lop10: tbMotNam("l10"),
@@ -1017,7 +1068,9 @@ export default function TinhDiemPage() {
         </nav>
 
         <div className="mt-4 rounded-2xl border border-stone-900/10 bg-white p-3.5 shadow-[0_24px_70px_-50px_rgba(15,99,240,0.55)] sm:p-7">
-          {muc === "hocba" && <MucHocBa bang={bang} setBang={setBang} />}
+          {muc === "hocba" && (
+            <MucHocBa bang={bang} setBang={setBang} tbNam={tbNam} tb3={tb3} />
+          )}
           {muc === "totnghiep" && <MucTotNghiep tbSan={tb3} tbNam={tbNam} />}
           {muc === "quydoi" && <MucQuyDoi />}
         </div>

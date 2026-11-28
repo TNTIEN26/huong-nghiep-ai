@@ -1284,6 +1284,10 @@
           "A01"
         ],
         "diem_chuan_tk": 26,
+        "diem_10": 8.5,
+        "diem_11": 8.7,
+        "diem_12": 9.0,
+        "diem_trung_binh_dung_de_xet": 8.73,
         "ghichu": "",
         "hoc_phi_tk": "",
         "hoc_bong": "",
@@ -1298,6 +1302,10 @@
           "D01"
         ],
         "diem_chuan_tk": 27.5,
+        "diem_10": 8.0,
+        "diem_11": 8.3,
+        "diem_12": 8.8,
+        "diem_trung_binh_dung_de_xet": 8.37,
         "ghichu": "",
         "hoc_phi_tk": "",
         "hoc_bong": "",
