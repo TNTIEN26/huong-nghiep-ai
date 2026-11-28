@@ -20,6 +20,7 @@ export type MucNganhIndex = {
   so_to_hop: number;
   diem_min: number | null;
   diem_max: number | null;
+  nam?: number | null;
 };
 
 export type MucTruong = {
@@ -30,6 +31,7 @@ export type MucTruong = {
   so_to_hop: number;
   diem_min: number | null;
   diem_max: number | null;
+  nam?: number | null;
   de_an: { slug: string; link: string; so_nganh: number | null; phuong_thuc: number } | null;
 };
 
@@ -39,7 +41,16 @@ export type MucToHop = {
   so_nganh: number;
   diem_min: number | null;
   diem_max: number | null;
+  nam?: number | null;
 };
+
+/** Năm của mức điểm đang dùng để so sánh (2026 nếu có, ngược lại năm gần nhất). */
+export function namCuaDiem(m: MucDiem): number | null {
+  for (const y of ["2026", "2025", "2024", "2023"]) {
+    if (m.diem[y] != null) return Number(y);
+  }
+  return null;
+}
 
 export type MucDeAn = {
   ten: string;

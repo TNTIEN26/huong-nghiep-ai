@@ -61,7 +61,18 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   if (!d) notFound();
 
   const html = docHtml(slug);
-  const diem = d.truong_id != null ? locMuc({ truong_id: d.truong_id, limit: 10 }) : [];
+  const tatCaDiem = d.truong_id != null ? locMuc({ truong_id: d.truong_id, limit: 200 }) : [];
+  const namDiem = tatCaDiem.some((m) => m.diem["2026"] != null)
+    ? 2026
+    : tatCaDiem.some((m) => m.diem["2025"] != null)
+      ? 2025
+      : null;
+  const diem = namDiem != null
+    ? tatCaDiem
+        .filter((m) => m.diem[String(namDiem)] != null)
+        .sort((a, b) => (b.diem[String(namDiem)] ?? 0) - (a.diem[String(namDiem)] ?? 0))
+        .slice(0, 10)
+    : [];
 
   return (
     <div className="relative z-10 flex min-h-screen flex-col text-stone-900">
@@ -119,14 +130,16 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             {diem.length > 0 && (
               <div className="rounded-2xl border border-stone-900/10 bg-white p-5">
                 <h2 className="text-sm font-extrabold uppercase tracking-wide text-stone-500">
-                  Điểm chuẩn 2026 cao nhất
+                  Điểm chuẩn {namDiem ?? ""} cao nhất
                 </h2>
                 <ul className="mt-3 space-y-2.5">
                   {diem.map((m) => (
                     <li key={`${m.nganh}-${m.to_hop.join()}`} className="text-sm leading-snug">
                       <div className="flex items-baseline justify-between gap-2">
                         <span className="font-semibold text-stone-800">{m.nganh}</span>
-                        <span className="shrink-0 font-extrabold text-emerald-700">{soDiem(m.diem["2026"] ?? m.diem["2025"])}</span>
+                        <span className="shrink-0 font-extrabold text-emerald-700">
+                          {soDiem(namDiem != null ? m.diem[String(namDiem)] : null)}
+                        </span>
                       </div>
                       {m.to_hop.length > 0 && (
                         <p className="mt-0.5 text-xs text-stone-400">{m.to_hop.slice(0, 5).join(", ")}</p>

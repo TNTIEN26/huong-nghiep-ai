@@ -16,6 +16,7 @@ type MucTruong = {
   so_to_hop: number;
   diem_min: number | null;
   diem_max: number | null;
+  nam?: number | null;
   de_an: { slug: string; link: string; so_nganh: number | null; phuong_thuc: number } | null;
 };
 
@@ -224,7 +225,7 @@ export default function TraCuuDeAnPage() {
 
                   <div className="mt-4 grid grid-cols-2 gap-3 border-t border-stone-900/10 pt-3">
                     <div>
-                      <p className="text-xs font-semibold text-stone-400">Điểm chuẩn 2026</p>
+                      <p className="text-xs font-semibold text-stone-400">Điểm chuẩn {t.nam ?? ""}</p>
                       <p className="text-sm font-bold text-blue-700">
                         {t.diem_min != null && t.diem_max != null
                           ? `${soDiem(t.diem_min)} – ${soDiem(t.diem_max)}`
@@ -282,7 +283,7 @@ export default function TraCuuDeAnPage() {
                               <span className="font-bold text-stone-900">{d.nganh}</span>
                               <span className="text-xs text-stone-500">
                                 {" "}
-                                · 2026: <b className="text-emerald-700">{soDiem(d.diem["2026"] ?? d.diem["2025"] ?? null)}</b>
+                                · 2026: <b className="text-emerald-700">{soDiem(d.diem["2026"] ?? null)}</b>
                                 {" · "}2025: {soDiem(d.diem["2025"] ?? null)}
                                 {d.to_hop.length > 0 && (
                                   <span className="text-stone-400"> · {d.to_hop.slice(0, 5).join(", ")}{d.to_hop.length > 5 ? "…" : ""}</span>
@@ -313,7 +314,7 @@ export default function TraCuuDeAnPage() {
         )}
 
         <p className="mt-8 text-xs text-stone-400">
-          Nguồn: tổng hợp đề án tuyển sinh từ HOCMAI (dữ liệu 2026, tham khảo — đối chiếu đề án chính thức của trường).
+          Nguồn: tổng hợp đề án tuyển sinh từ HOCMAI. Điểm 2026 lấy từ bảng điểm thi THPT; trường chưa có 2026 hiển thị năm gần nhất (tham khảo — đối chiếu đề án chính thức của trường).
         </p>
       </main>
     </div>

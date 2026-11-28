@@ -14,6 +14,22 @@ const doc = (f) => JSON.parse(fs.readFileSync(path.join(root, "data", f), "utf-8
 const khoiThi = doc("khoi-thi.json");
 const truongDh = doc("truong-dh.json");
 
+// Dữ liệu tra cứu thật (2026) — dùng để đối chiếu độ phủ khối, tránh cảnh báo sai
+// khi truong-dh.json chỉ là tập mẫu nhỏ.
+const traCuuPath = path.join(root, "data", "tra-cuu", "diem-chuan.json");
+const diemChuan = fs.existsSync(traCuuPath) ? JSON.parse(fs.readFileSync(traCuuPath, "utf-8")) : [];
+const khoiTraCuu = new Set();
+const truongTraCuu = new Map(); // mã khối -> Set trường
+for (const m of diemChuan) {
+  const coDiem = m.diem && (m.diem["2026"] != null || m.diem["2025"] != null);
+  if (!coDiem) continue;
+  for (const c of m.to_hop ?? []) {
+    khoiTraCuu.add(c);
+    if (!truongTraCuu.has(c)) truongTraCuu.set(c, new Set());
+    truongTraCuu.get(c).add(m.truong_id ?? m.truong);
+  }
+}
+
 const maKhoi = new Set(khoiThi.map((k) => k.code));
 const loi = [];
 const canhBao = [];
@@ -53,7 +69,11 @@ for (const t of truongDh) {
 }
 
 for (const code of [...maKhoi].sort()) {
-  if (!khoiDuocPhu.has(code)) {
+  if (khoiDuocPhu.has(code)) continue;
+  if (khoiTraCuu.has(code)) {
+    const soTruong = truongTraCuu.get(code)?.size ?? 0;
+    console.log(`  · Khối ${code}: không có trong truong-dh.json nhưng CÓ ${soTruong} trường trong dữ liệu tra cứu 2026.`);
+  } else {
     canhBao.push(`Khối ${code} chưa trường nào phủ (AI gợi ý khối này sẽ thiếu trường)`);
   }
 }

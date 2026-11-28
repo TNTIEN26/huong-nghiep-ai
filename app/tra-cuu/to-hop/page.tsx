@@ -14,6 +14,7 @@ type MucToHop = {
   so_nganh: number;
   diem_min: number | null;
   diem_max: number | null;
+  nam?: number | null;
 };
 
 type DongDiem = {
@@ -238,7 +239,7 @@ export default function TraCuuToHopPage() {
 
                   {x.diem_min != null && x.diem_max != null && (
                     <p className="mt-3 text-xs font-bold text-emerald-800">
-                      Điểm chuẩn 2026: {soDiem(x.diem_min)}–{soDiem(x.diem_max)}
+                      Điểm chuẩn {x.nam ?? ""}: {soDiem(x.diem_min)}–{soDiem(x.diem_max)}
                     </p>
                   )}
 
@@ -258,13 +259,19 @@ export default function TraCuuToHopPage() {
                         <p className="text-sm text-stone-500">Chưa có dữ liệu cho tổ hợp này.</p>
                       ) : (
                         <ul className="max-h-72 space-y-1.5 overflow-y-auto pr-1">
-                          {dong.map((d) => (
-                            <li key={`${d.truong}-${d.nganh}`} className="text-xs leading-relaxed">
-                              <span className="font-bold text-stone-900">{d.nganh}</span>
-                              <span className="text-stone-500"> — {d.truong}</span>
-                              <span className="ml-1 font-semibold text-emerald-700">{soDiem(d.diem["2026"] ?? d.diem["2025"] ?? null)}</span>
-                            </li>
-                          ))}
+                          {dong.map((d) => {
+                            const nam = d.diem["2026"] != null ? 2026 : d.diem["2025"] != null ? 2025 : d.diem["2024"] != null ? 2024 : null;
+                            return (
+                              <li key={`${d.truong}-${d.nganh}`} className="text-xs leading-relaxed">
+                                <span className="font-bold text-stone-900">{d.nganh}</span>
+                                <span className="text-stone-500"> — {d.truong}</span>
+                                <span className="ml-1 font-semibold text-emerald-700">
+                                  {soDiem(nam != null ? d.diem[String(nam)] : null)}
+                                  {nam != null && nam !== 2026 && <span className="font-normal text-stone-400"> ({nam})</span>}
+                                </span>
+                              </li>
+                            );
+                          })}
                         </ul>
                       )}
                     </div>
@@ -276,7 +283,7 @@ export default function TraCuuToHopPage() {
         )}
 
         <p className="mt-8 text-xs text-stone-400">
-          Nguồn: tổng hợp đề án tuyển sinh từ HOCMAI (dữ liệu 2026, tham khảo — đối chiếu đề án chính thức của trường).
+          Nguồn: tổng hợp đề án tuyển sinh từ HOCMAI. Điểm 2026 lấy từ bảng điểm thi THPT; tổ hợp chưa có 2026 hiển thị năm gần nhất (tham khảo — đối chiếu đề án chính thức của trường).
         </p>
       </main>
     </div>

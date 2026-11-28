@@ -16,6 +16,7 @@ type MucNganh = {
   so_to_hop: number;
   diem_min: number | null;
   diem_max: number | null;
+  nam?: number | null;
 };
 
 type DongDiem = {
@@ -98,7 +99,7 @@ export default function TraCuuNganhClient({
         <p className="text-xs font-bold uppercase tracking-[0.18em] text-blue-600">Tra cứu</p>
         <h1 className="mt-1 text-3xl font-extrabold tracking-tight sm:text-4xl">Tra cứu ngành học</h1>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-stone-500">
-          {DS.length} ngành theo dữ liệu đề án tuyển sinh 2026. Xem ngành nào có bao nhiêu trường đào tạo,
+          {DS.length} ngành theo dữ liệu tuyển sinh 2026 (dùng điểm 2025 khi ngành chưa công bố 2026). Xem ngành nào có bao nhiêu trường đào tạo,
           điểm chuẩn từ đâu đến đâu và xét tuyển bằng tổ hợp nào.
         </p>
 
@@ -147,6 +148,7 @@ export default function TraCuuNganhClient({
                     {n.diem_min != null && n.diem_max != null && (
                       <span className="rounded-md border border-emerald-600/20 bg-emerald-600/10 px-2.5 py-1 text-emerald-800">
                         {n.diem_min.toFixed(2).replace(/\.00$/, "")}–{n.diem_max.toFixed(2).replace(/\.00$/, "")} điểm
+                        {n.nam != null && n.nam !== 2026 ? ` (${n.nam})` : ""}
                       </span>
                     )}
                     <span className="rounded-md border border-stone-900/10 bg-stone-900/[0.04] px-2.5 py-1 text-stone-600">
@@ -164,7 +166,7 @@ export default function TraCuuNganhClient({
                           href={`/tra-cuu/nganh/${slug}`}
                           className="mt-4 self-start rounded-lg border border-blue-600/30 px-3 py-1.5 text-xs font-bold text-blue-700 transition hover:bg-blue-600 hover:text-white"
                         >
-                          Xem trường &amp; điểm chuẩn 2026 →
+                          Xem trường &amp; điểm chuẩn {n.nam ?? ""} →
                         </Link>
                       );
                     }
@@ -174,7 +176,7 @@ export default function TraCuuNganhClient({
                         onClick={() => moChiTiet(n)}
                         className="mt-4 self-start rounded-lg border border-stone-900/15 px-3 py-1.5 text-xs font-bold text-stone-600 transition hover:border-stone-900/30"
                       >
-                        {dangMo ? "Ẩn danh sách trường" : "Xem điểm chuẩn 2026"}
+                        {dangMo ? "Ẩn danh sách trường" : `Xem điểm chuẩn ${n.nam ?? ""}`}
                       </button>
                     );
                   })()}
@@ -192,7 +194,7 @@ export default function TraCuuNganhClient({
                               <span className="font-bold text-stone-900">{d.truong}</span>
                               <span className="text-stone-500"> — {d.nganh}</span>
                               <div className="mt-0.5 flex flex-wrap gap-1 text-xs text-stone-500">
-                                <span className="font-semibold text-emerald-700">2026: {diemCua(d.diem, "2026") || diemCua(d.diem, "2025")}</span>
+                                <span className="font-semibold text-emerald-700">2026: {diemCua(d.diem, "2026")}</span>
                                 <span>· 2025: {diemCua(d.diem, "2025")}</span>
                                 <span>· 2024: {diemCua(d.diem, "2024")}</span>
                                 {d.to_hop.length > 0 && (
@@ -224,7 +226,7 @@ export default function TraCuuNganhClient({
         )}
 
         <p className="mt-8 text-xs text-stone-400">
-          Nguồn: tổng hợp đề án tuyển sinh từ HOCMAI (dữ liệu 2026, tham khảo — đối chiếu đề án chính thức của trường).
+          Nguồn: tổng hợp đề án tuyển sinh từ HOCMAI. Điểm 2026 lấy từ bảng điểm thi THPT; ngành chưa có 2026 hiển thị năm gần nhất (tham khảo — đối chiếu đề án chính thức của trường).
         </p>
       </main>
     </div>
